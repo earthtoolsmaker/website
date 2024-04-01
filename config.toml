@@ -1,8 +1,8 @@
 #-------------------------------
 # General Site Settings
-baseURL = "http://example.org/"
+baseURL = "https://earthtoolsmaker.org/"
 languageCode = "en-us"
-title = "Simpler"
+title = "Earth Tools Maker"
 googleAnalytics = "" # Add your identifier. For example UA-99631805-1.
 paginate = 6
 
@@ -10,14 +10,14 @@ paginate = 6
 [params]
   logo = "/images/logo.png" # You can add own logo. For example "/images/logo.png".
   logo_dark = "/images/logo.png"
-  description = "Simpler – A modern portfolio theme for Jekyll"
+  description = "Earth Tools Maker – TODO: add description"
   color_scheme = "auto" # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
 
 
   #-------------------------------
   # Author Settings
   [params.author]
-    author_name = "Aaron Simons"
+    author_name = "Earth Tools Maker"
 
 
 #-------------------------------
@@ -120,11 +120,12 @@ paginate = 6
   # Hero Settings
   [params.hero]
     enable = true
-    hero_title = "Aaron Simons. Building Digital <span><i>Products & Brands</i></span>" # Add the "span" tag to highlight text.
+    # hero_title = "Aaron Simons. Building Digital <span><i>Products & Brands</i></span>" # Add the "span" tag to highlight text.
+    hero_title = "Earth Tools Maker. Using technology to <span><i>protect the planet</i></span>" # Add the "span" tag to highlight text.
     hero_description = "I’m Aaron, a creative Illustrator & Art Director based in San Francisco. I seek to push the limits of creativity to create high-engaging and memorable interactive experiences."
-    hero_image = "https://via.placeholder.com/1920x1080"
+    hero_image = "/images/home-hero.jpg"
     hero_button_contact = "Get In Touch"
-    hero_button_about = "About Me"
+    hero_button_about = "About"
 
 
   #-------------------------------
@@ -211,7 +212,7 @@ paginate = 6
   #-------------------------------
   # Comment Section (Disqus)
   [params.disqus]
-    enable = true
+    enable = false
     disqusShortname = "anvodstudio-demo" # Add your shortname for Disqus Comment. For example anvodstudio-demo
 
 
