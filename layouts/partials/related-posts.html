@@ -1,0 +1,50 @@
+<!-- begin related posts -->
+<div class="container">
+  <section class="section related-posts">
+
+    <div class="section__info">
+      <div class="section__head">
+        <h2 class="section__title">👍 You may also like</h2>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+    </div>
+
+    <div class="row">
+      {{ range first 2 ( where ( where .Site.Pages.ByDate.Reverse ".Params.tags" "intersect" .Params.tags ) "Permalink" "!=" .Permalink ) }}
+        <div class="article col col-6 col-t-12 animate">
+        
+          <div class="article__inner">
+        
+            {{ if .Params.Image }}
+            <a class="article__image" href="{{ .RelPermalink }}">
+              <img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Title }}">
+            </a>
+            {{ end }}
+        
+            <div class="article__content">
+              {{ if .Params.tags }}
+              <div class="article-tags__box">
+                {{ range (.GetTerms "tags") }}
+                <a href="{{ .Permalink }}" class="article__tag">{{ .LinkTitle }}</a>
+                {{ end }}
+              </div>
+              {{ end }}
+        
+              <h2 class="article__title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              </h2>
+        
+              <div class="article__meta">
+                <time class="article__date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2 Jan, 2006" }} </time>
+                <span class="article__minutes">· {{ .ReadingTime }} min read</span>
+              </div>
+            </div>
+        
+          </div>
+        
+        </div>
+      {{ end }}
+    </div>
+  </section>
+</div>
+<!-- end related posts -->

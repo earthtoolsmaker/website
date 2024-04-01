@@ -1,0 +1,16 @@
+<div class="widget-sidebar recent-projects">
+  <h2 class="widget-sidebar__title">Other Works</h2>
+  {{ $related_projects := shuffle ( where (where site.RegularPages "Section" "projects" ) "Permalink" "!=" .Permalink ) }}
+  {{ range $related_projects | first 3 }}
+  <div class="recent-project">
+    {{ if .Params.Image }}
+    <a href="{{ .RelPermalink }}" class="recent-project__image"><img class="lazy" data-src="{{.Params.Image | absURL }}" alt="{{ .Title }}"></a>
+    {{ end }}
+  
+    <div class="recent-project__content">
+      <h4 class="recent-project__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+      <p class="recent-project__summary">{{ .Params.summary }}</p>
+    </div>
+  </div>
+  {{ end }}
+</div>

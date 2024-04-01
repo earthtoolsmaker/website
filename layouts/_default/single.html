@@ -1,0 +1,110 @@
+{{ define "main" }}
+
+{{ if or (eq .Section "post") (eq .Section "posts") }}
+
+
+<div class="container">
+  <div class="post-head">
+
+    <div class="post-info">
+
+      <div class="post-meta">
+        {{ if .Params.tags }}
+        <div class="post-tags">
+          {{ range ($.GetTerms "tags") }}
+          <a href="{{ .Permalink }}" class="post__tag">{{ .LinkTitle }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
+        <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2 January, 2006" }}</time> /
+        {{ if .Site.Params.author.author_name }}
+        <a href="/about/" class="post-author">{{ .Site.Params.author.author_name }}</a> /
+        {{ end }}
+        <span class="post-minutes">{{ .ReadingTime }} min read</span>
+      </div>
+
+      {{ if .Title }}
+      <h1 class="post-title">{{ .Title }}</h1>
+      {{ end }}
+
+      {{ if .Description }}
+      <p class="post-description">{{.Description }}</p>
+      {{ end }}
+
+    </div>
+
+    {{ if .Params.Image }}
+    <div class="post-image">
+      <img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Title }}">
+    </div>
+    {{ if .Params.image_caption }}
+    <div class="post-image-caption">{{ .Params.image_caption | markdownify }}</div>
+    {{ end }}
+    {{ end }}
+
+  </div>
+</div>
+
+<!-- begin post -->
+<div class="container">
+  <article class="post">
+
+    <div class="post__content">
+      {{ .Content }}
+    </div>
+
+    {{ partial "share-buttons.html" . }}
+
+    {{ partial "post-navigation.html" . }}
+
+  </article>
+</div>
+<!-- end post -->
+
+{{ partial "related-posts.html" . }}
+
+{{ if .Site.Params.disqus.disqusShortname }}
+<div class="container">
+  {{ partial "disqus-comments.html" . }}
+</div>
+{{ end }}
+
+{{ else }}
+
+<div class="container">
+  <div class="page-head">
+
+    <div class="page-info">
+      {{ if .Title }}
+      <h1 class="page-title">{{ .Title }}</h1>
+      {{ end }}
+      {{ if .Description }}
+      <p class="page-description">{{.Description }}</p>
+      {{ end }}
+    </div>
+
+    {{ if .Params.Image }}
+    <div class="page-image">
+      <img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Title }}">
+    </div>
+    {{ if .Params.image_caption }}
+    <div class="page-image-caption">{{ .Params.image_caption | markdownify }}</div>
+    {{ end }}
+    {{ end }}
+
+  </div>
+</div>
+
+<!-- begin page -->
+<div class="container">
+  <article class="page">
+    <div class="page__content">
+      {{ .Content }}
+    </div>
+  </article>
+</div>
+<!-- end page -->
+
+{{ end }}
+
+{{ end }}

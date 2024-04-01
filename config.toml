@@ -1,0 +1,227 @@
+#-------------------------------
+# General Site Settings
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Simpler"
+googleAnalytics = "" # Add your identifier. For example UA-99631805-1.
+paginate = 6
+
+
+[params]
+  logo = "/images/logo.png" # You can add own logo. For example "/images/logo.png".
+  logo_dark = "/images/logo.png"
+  description = "Simpler – A modern portfolio theme for Jekyll"
+  color_scheme = "auto" # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
+
+
+  #-------------------------------
+  # Author Settings
+  [params.author]
+    author_name = "Aaron Simons"
+
+
+#-------------------------------
+# Main Menu
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+
+  [[menu.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 4
+    hasChildren = true
+
+      [[menu.main]]
+      parent = "Pages"
+      name = "Contact"
+      url = "/contact/"
+      weight = 1
+
+      [[menu.main]]
+      parent = "Pages"
+      name = "Elements"
+      url = "/elements/"
+      weight = 2
+
+      # Footer Menu
+      [[menu.footer]]
+      name = "Home"
+      url = "/"
+      weight = 1
+
+      [[menu.footer]]
+      name = "About"
+      url = "/about/"
+      weight = 2
+
+      [[menu.footer]]
+      name = "Projects"
+      url = "/projects/"
+      weight = 3
+
+      [[menu.footer]]
+      identifier = "blog"
+      name = "Blog"
+      url = "/posts/"
+      weight = 4
+
+      [[menu.footer]]
+      name = "Contact"
+      url = "/contact/"
+      weight = 5
+
+      [[menu.footer]]
+      name = "Elements"
+      url = "/elements/"
+      weight = 6
+
+
+  #-------------------------------
+  # Social Settings
+  [[params.social]]
+    icon = "fa-brands fa-twitter"
+    name = "Twitter"
+    link = "https://twitter.com"
+
+  [[params.social]]
+    icon = "fa-brands fa-facebook"
+    name = "Facebook"
+    link = "https://facebook.com"
+
+  [[params.social]]
+    icon = "fa-brands fa-pinterest"
+    name = "Pinterest"
+    link = "https://pinterest.com"
+
+  # Example of adding a new link to the header and footer:
+  # [[params.social]]
+  #  icon = "fa-brands fa-youtube"
+  #  name = "Youtube"
+  #  link = "https://youtube.com"
+
+  # Other icons can be found at https://fontawesome.com/icons
+
+
+  #-------------------------------
+  # Hero Settings
+  [params.hero]
+    enable = true
+    hero_title = "Aaron Simons. Building Digital <span><i>Products & Brands</i></span>" # Add the "span" tag to highlight text.
+    hero_description = "I’m Aaron, a creative Illustrator & Art Director based in San Francisco. I seek to push the limits of creativity to create high-engaging and memorable interactive experiences."
+    hero_image = "https://via.placeholder.com/1920x1080"
+    hero_button_contact = "Get In Touch"
+    hero_button_about = "About Me"
+
+
+  #-------------------------------
+  # Projects Settings
+  [params.projects]
+    enable = true
+    projects_title= "👨🏻‍💻 Selected Works"
+
+
+  #-------------------------------
+  # Testimonials Section
+  [params.testimonials]
+    enable = true
+    testimonial_title = "🙂 What Clients Say"
+
+  [[params.testimonial_item]]
+    name = "Carla Kenter"
+    image = "https://via.placeholder.com/200x200"
+    designation = "Professional Artist"
+    link = "https://twitter.com/"
+    content = "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
+
+  [[params.testimonial_item]]
+    name = "Kierra Botosh"
+    image = "https://via.placeholder.com/200x200"
+    designation = "Growth & Community"
+    link = "https://facebook.com/"
+    content = "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
+
+  [[params.testimonial_item]]
+    name = "Randy Herwitz"
+    image = "https://via.placeholder.com/200x200"
+    designation = "Executive Assistant"
+    link = "https://twitter.com/"
+    content = "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
+
+  [[params.testimonial_item]]
+    name = "Hanna Franci"
+    image = "https://via.placeholder.com/200x200"
+    designation = "Product Designer"
+    link = "https://facebook.com/"
+    content = "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
+
+
+  #-------------------------------
+  # Blog Section
+  [params.blog]
+    enable = true
+    blog_title = "📚 Read Latest Posts"
+
+
+  #-------------------------------
+  # Tags Section
+  [params.tags]
+    enable = true
+    tags_title = "✌️ Explore Topics"
+
+
+  #-------------------------------
+  # Newsletter Settings
+  [params.mailchimp]
+    enable = true
+    mailchimp_title = "Get interesting news"
+    mailchimp_identifier = "frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3" # Add your MailChimp form identifier. For example - frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3
+    mailchimp_input_text = "Enter your email address"
+    mailchimp_background_image = "https://via.placeholder.com/1920x1080"
+
+
+  #-------------------------------
+  # Footer Settings
+  [params.footer]
+    footer_description = "I’m Aaron, a creative Illustrator & Art Director based in San Francisco. I seek to push the limits of creativity to create high-engaging and memorable interactive experiences."
+
+
+  #-------------------------------
+  # Contact Settings
+  [params.contact]
+    contact_email = "your@email.com" # Add your form_id
+
+    # NOTE
+    # Simpler theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
+
+
+  #-------------------------------
+  # Comment Section (Disqus)
+  [params.disqus]
+    enable = true
+    disqusShortname = "anvodstudio-demo" # Add your shortname for Disqus Comment. For example anvodstudio-demo
+
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+
+[markup.highlight]
+  codeFences = true
+  guessSyntax = true
+  noClasses = false

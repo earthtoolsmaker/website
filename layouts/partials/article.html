@@ -1,0 +1,32 @@
+<div class="article col col-4 col-d-6 col-t-12 animate grid__post">
+
+  <div class="article__inner">
+
+    {{ if .Params.Image }}
+    <a class="article__image" href="{{ .RelPermalink }}">
+      <img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Title }}">
+    </a>
+    {{ end }}
+  
+    <div class="article__content">
+      {{ if .Params.tags }}
+      <div class="article-tags__box">
+      {{ range ($.GetTerms "tags") }}
+        <a href="{{ .Permalink }}" class="article__tag">{{ .LinkTitle }}</a>
+      {{ end }}
+      </div>
+      {{ end }}
+    
+      <h2 class="article__title">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h2>
+    
+      <div class="article__meta">
+        <time class="article__date" datetime="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2 Jan, 2006" }} </time>
+        <span class="article__minutes">· {{ .ReadingTime }} min read</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>

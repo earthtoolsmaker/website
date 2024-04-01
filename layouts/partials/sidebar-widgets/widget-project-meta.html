@@ -1,0 +1,25 @@
+<div class="widget-sidebar project-meta">
+  <h2 class="widget-sidebar__title">Project Details</h2>
+  {{ if .Params.summary }}
+  <p class="project-meta__summary">{{ .Params.summary }}</p>
+  {{ end }}
+  {{ if .Params.client }}
+  <div class="project-meta__item">
+    <h3 class="project-meta__name">Client</h3>
+    <div class="project-meta__text">{{ .Params.client }}</div>
+  </div>
+  {{ end }}
+  {{ if .Params.tools }}
+  <div class="project-meta__item">
+    <h3 class="project-meta__name">Made With</h3>
+    <div class="project-meta__text">{{ .Params.tools }}</div>
+  </div>
+  {{ end }}
+  {{ if .Params.date }}
+  <div class="project-meta__item">
+    <h3 class="project-meta__name">Date</h3>
+    <time class="project-meta__text" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2 January, 2006" }}
+    </time>
+  </div>
+  {{ end }}
+</div>

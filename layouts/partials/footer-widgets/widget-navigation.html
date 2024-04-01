@@ -1,0 +1,16 @@
+<div class="col col-3 col-d-12">
+  <div class="widget-footer widget-nav">
+    <h3 class="widget-title">Navigation</h3>
+    <ul class="footer__nav-list list-reset">
+      {{ $currentPage := . }}
+      {{ range.Site.Menus.footer }}
+      {{ $menuURL := .URL | absLangURL }}
+      {{ $pageURL:= $currentPage.Permalink | absLangURL }}
+      {{ $active := eq $menuURL $pageURL }}
+      <li class="footer__nav-item">
+        <a href="{{ .URL }}" class="footer__nav-link{{ if $active }} active-link{{ end }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>

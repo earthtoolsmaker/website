@@ -1,0 +1,50 @@
+{{ if .Site.Params.tags.enable }}
+<!-- begin section-tags -->
+<section class="section section-tags animate">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+
+          {{ if .Site.Params.tags.tags_title }}
+          <div class="section__info">
+            <div class="section__head">
+              <h3 class="section__title">{{ .Site.Params.tags.tags_title | safeHTML }}</h3>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+          </div>
+          {{ end }}
+  
+          {{ $.Scratch.Set "myLimit" 0 }}
+          {{ $tags := .Site.Taxonomies.tags }}
+  
+          <div class="row">
+          {{ range $name, $taxonomy := $tags }}
+            {{ $.Scratch.Set "myLimit" (add ($.Scratch.Get "myLimit") 1) }}
+            {{ if le ($.Scratch.Get "myLimit") 6 }}
+              {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+              <div class="col col-2 col-w-3 col-d-4 col-t-6 col-m-12">
+                <a href="{{ .RelPermalink }}" class="tag-container">
+                  <div class="tag-image">
+                    <img class="lazy" {{ range first 1 .Data.Pages }}data-src="{{ .Params.Image | absURL }}"{{ end }} alt="{{ .Title }}">
+                  </div>
+                  <div class="tag-meta">
+                    {{ if .Title }}
+                    <span class="tag-name">{{ .Title }}</span>
+                    {{ end }}
+                    <span class="tag-count">{{ len .Pages }} {{ if lt (len .Pages) 2 }}Post{{ else }}Posts{{ end }}</span>
+                  </div>
+                </a>
+              </div>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end section-tags -->
+{{ end }}
