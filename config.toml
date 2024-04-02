@@ -10,7 +10,7 @@ paginate = 6
 [params]
   logo = "/images/logo.png" # You can add own logo. For example "/images/logo.png".
   logo_dark = "/images/logo.png"
-  description = "Earth Tools Maker – Open Technology for the Wildlife and the Planet"
+  description = "Open Technology for the Wildlife and the Planet"
   # color_scheme = "auto" # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
   color_scheme = "light" # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
 
@@ -121,7 +121,7 @@ paginate = 6
   # Hero Settings
   [params.hero]
     enable = true
-    hero_title = "Earth Tools Maker. Open Technology for <span><i>wildlife and the planet</i></span>" # Add the "span" tag to highlight text.
+    hero_title = "Open Technology for <span><i>wildlife + planet</i></span>" # Add the "span" tag to highlight text.
     hero_description = "Developing Open Source technology to address conservation and environmental challenges for wildlife and the planet."
     hero_image = "/images/home-hero.jpg"
     hero_button_contact = "Get In Touch"
@@ -189,7 +189,7 @@ paginate = 6
   [params.mailchimp]
     enable = true
     mailchimp_title = "Get interesting news"
-    # TODO: fixme
+    # FIXME:
     mailchimp_identifier = "caillau.us22.list-manage.com/subscribe/post?u=d8421822b19ca15ee7e4b0a6d&amp;id=8f6a5abb56&amp;f_id=007ac1e1f0"
     # mailchimp_identifier = "frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3" # Add your MailChimp form identifier. For example - frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3
     mailchimp_input_text = "Enter your email address"
