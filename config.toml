@@ -10,8 +10,9 @@ paginate = 6
 [params]
   logo = "/images/logo.png" # You can add own logo. For example "/images/logo.png".
   logo_dark = "/images/logo.png"
-  description = "Earth Tools Maker – TODO: add description"
-  color_scheme = "auto" # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
+  description = "Earth Tools Maker – Open Technology for the Wildlife and the Planet"
+  # color_scheme = "auto" # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
+  color_scheme = "light" # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
 
 
   #-------------------------------
@@ -120,9 +121,8 @@ paginate = 6
   # Hero Settings
   [params.hero]
     enable = true
-    # hero_title = "Aaron Simons. Building Digital <span><i>Products & Brands</i></span>" # Add the "span" tag to highlight text.
-    hero_title = "Earth Tools Maker. Using technology to <span><i>protect the planet</i></span>" # Add the "span" tag to highlight text.
-    hero_description = "I’m Aaron, a creative Illustrator & Art Director based in San Francisco. I seek to push the limits of creativity to create high-engaging and memorable interactive experiences."
+    hero_title = "Earth Tools Maker. Open Technology for <span><i>wildlife and the planet</i></span>" # Add the "span" tag to highlight text.
+    hero_description = "Developing Open Source technology to address conservation and environmental challenges for wildlife and the planet."
     hero_image = "/images/home-hero.jpg"
     hero_button_contact = "Get In Touch"
     hero_button_about = "About"
@@ -189,21 +189,24 @@ paginate = 6
   [params.mailchimp]
     enable = true
     mailchimp_title = "Get interesting news"
-    mailchimp_identifier = "frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3" # Add your MailChimp form identifier. For example - frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3
+    # TODO: fixme
+    mailchimp_identifier = "caillau.us22.list-manage.com/subscribe/post?u=d8421822b19ca15ee7e4b0a6d&amp;id=8f6a5abb56&amp;f_id=007ac1e1f0"
+    # mailchimp_identifier = "frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3" # Add your MailChimp form identifier. For example - frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3
     mailchimp_input_text = "Enter your email address"
-    mailchimp_background_image = "https://via.placeholder.com/1920x1080"
+    mailchimp_background_image = "/images/subscribe-bg.jpg"
 
 
   #-------------------------------
   # Footer Settings
   [params.footer]
-    footer_description = "I’m Aaron, a creative Illustrator & Art Director based in San Francisco. I seek to push the limits of creativity to create high-engaging and memorable interactive experiences."
+    # footer_description = "I’m Aaron, a creative Illustrator & Art Director based in San Francisco. I seek to push the limits of creativity to create high-engaging and memorable interactive experiences."
+    footer_description = "Developing Open Source technology to address conservation and environmental challenges for wildlife and the planet."
 
 
   #-------------------------------
   # Contact Settings
   [params.contact]
-    contact_email = "your@email.com" # Add your form_id
+    contact_email = "mqkrynry" # Add your form_id
 
     # NOTE
     # Simpler theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
