@@ -21,7 +21,8 @@ monitoring bears poses challenges due to their elusive and expansive habitats.
 The available toolkit for non-invasive bear research is restricted, resulting
 in a diminished grasp of their population dynamics and trends.
 
-![Identification Pipeline Overview](https://gitlab.com/fruitpunch/projects/ai-for-bears/face-detection-and-segmentation/albear/-/raw/main/docs/development/assets/images/pipeline.png)
+![Identification Pipeline Overview](/images/projects/bear_identification/pipeline.png)
+*Overview of the __tools developed to identify bears__*
 
 This project entails a close collaboration with the [BearID
 Project](https://bearresearch.org/) to enhance their Computer Vision system for
@@ -66,6 +67,16 @@ Overall, the presence of bears in an ecosystem signifies a healthy and balanced
 environment. Protecting and conserving bear populations is not only essential
 for their survival but also for the integrity and resilience of the ecosystems
 they inhabit.
+
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/projects/bear_identification/bears/bear1.jpg" loading="lazy">
+    <img src="/images/projects/bear_identification/bears/bear2.jpg" loading="lazy">
+    <img src="/images/projects/bear_identification/bears/bear3.jpg" loading="lazy">
+    <img src="/images/projects/bear_identification/bears/bear4.jpg" loading="lazy">
+  </div>
+  <em>Gallery / Different individuals from the <a href="https://bearresearch.org" target="_blank">BearID Project</a></em>
+</div>
 
 ## Conservation concerns
 
@@ -123,6 +134,7 @@ and biodiversity.
    informs proactive measures like bear-proofing, and evaluates the
 effectiveness of coexistence strategies.
 
+
 ## Project Scope and Objectives
 
 The primary objective of our collaboration is to pioneer non-invasive tools to
@@ -134,7 +146,7 @@ Presently, the existing face recognition system achieves a top-1 accuracy of
 64.9% and a top-5 accuracy of
 70.7%.
 
-_Note_: Top-5 accuracy measures the model's performance by considering the N
+__Note__: Top-5 accuracy measures the model's performance by considering the N
 highest probability predictions it generates. If any of these predictions
 matches the true label, the model deems the prediction as correct.
 
@@ -147,15 +159,23 @@ that likely apply to a diverse range of species:
 - __Inconsistent Pelage Markings:__ Unlike many species with distinctive fur
    patterns, brown bears lack consistent and unique markings, making facial
 recognition a valuable alternative for individual identification.
-
 - __Morphological Variation:__ Their morphology varies significantly across
    different habitats and geographic regions, posing a challenge for developing
 a universally applicable recognition system.
-
 - __Seasonal and Age-related Changes:__ Brown bears undergo substantial weight
    fluctuations between seasons and throughout their lifespan, necessitating
 adaptive algorithms capable of accounting for these variations in facial
 appearance.
+
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/projects/bear_identification/bears/bf32_3.jpg" loading="lazy" alt="bf32 picture 1" \>
+    <img src="/images/projects/bear_identification/bears/bf32_1.jpg" loading="lazy" alt="bf32 picture 2" \>
+    <img src="/images/projects/bear_identification/bears/bf32_2.jpg" loading="lazy" alt="bf32 picture 3" \>
+    <img src="/images/projects/bear_identification/bears/bf32_4.jpg" loading="lazy" alt="bf32 picture 4" \>
+  </div>
+  <em>Gallery / Same individual at different times and locations from the <a href="https://bearresearch.org" target="_blank">BearID Project</a></em>
+</div>
 
 ## Camera Traps
 
@@ -177,25 +197,26 @@ advancements in design, functionality, and affordability.
   <em>Gallery / Camera Traps</em>
 </div>
 
-## Facial Recognition
+## Developped Tools
 
-Bea
-Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna. Ut orci risus, accumsan porttitor, cursus quis.
+Open source tools were developed during this project. The system
+comprises two Machine Learning models that perform the following tasks:
 
-Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Aenean lectus elit, fermentum non, convallis sagit.
+1. __Instance Segmentation:__ This model localizes the head of a bear in a camera trap picture. It produces a segmented and normalized image of the bear face.
 
-> Using machine learning techniques, we are developing software tools that can identify bears (Ursidae), starting with individual ID using face recognition.
->
-> <cite>– BearID Project</cite>
+![Instance Segmentation](/images/projects/bear_identification/instance_segmentation.png)
+*Instance segmentation of bear faces*
 
+2. __Metric Learning:__ Segmented bear faces from the previous model are embedded as points in a high-dimensional vector space. This embedding enables clustering of similar individuals and ensures dissimilar ones are distant from each other.
 
-Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede. Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. Nullam mauris orci, aliquet et, iaculis et, viverra vitae, ligula. Nulla ut felis in purus aliquam imperdiet. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+![Metric Learning - Embedding](/images/projects/bear_identification/metric_learning_embed.png)
+*Mapping bear faces to points in a vector space*
 
-- Etiam ultrices. Suspendisse in justo massa fusce non tortor.
-- Quisque volutpat condimentum velit class aptent taciti sodales.
-- Aenean lectus elit fermentum non convallis id sagittis neque porttitor.
-- Morbi lectus risus iaculis vel suscipit luctus nostra non massa.
+Once the bear faces are mapped onto a high-dimensional space, querying and retrieving the nearest individuals becomes feasible, as summarized in the diagram below:
 
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis sem.
+![Identification Pipeline Overview](/images/projects/bear_identification/pipeline.png)
+*Full Pipeline Overview*
 
+## Conclusion
 
+The state-of-the-art Machine Learning models designed for the precise identification of brown bears in camera trap imagery represent a significant advancement with profound implications for bear population monitoring and conservation. The development of open-source tools in this project signifies a valuable contribution, not only facilitating adaptability to various species but also holding potential to enhance conservation endeavors on a global scale.
