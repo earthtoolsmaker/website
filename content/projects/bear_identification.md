@@ -11,7 +11,7 @@ tools:
   - Computer Vision
   - Maching Learning
 date: 2024-04-03
-image: 'https://via.placeholder.com/1920x1080'
+image: '/images/projects/bear_identification/cover.png'
 ---
 
 Bears, particularly brown bears, are not only charismatic but also serve as
@@ -51,3 +51,5 @@ Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ul
 - Morbi lectus risus iaculis vel suscipit luctus nostra non massa.
 
 Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis sem.
+
+
