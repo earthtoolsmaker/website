@@ -1,10 +1,10 @@
 ---
-title: Social Environment
-subtitle: Abstract
-summary: Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc curabitur tortor.
-client: Anvod Studio
-tools: 1. Figma 2. Illustrator 3. Procreate
-date: 2023-01-02 08:01:35 +0300
+title: Bear Identification
+subtitle: Conservation
+summary: Noninvasive technologies to identify and monitor bears, facilitating their conservation.
+client: BearID
+tools: 1. Computer Vision 2. Maching Learning 
+date: 2024-04-03
 image: 'https://via.placeholder.com/1920x1080'
 ---
 

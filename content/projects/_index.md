@@ -1,4 +1,4 @@
 ---
-title: My Works
-description: I shows only the best websites and portfolios built completely with passion, simplicity & creativity!
+title: Projects
+description: We proudly display collaborative projects crafted with passion, simplicity, and creativity!
 ---

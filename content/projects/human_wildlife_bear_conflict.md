@@ -1,9 +1,10 @@
 ---
-title: Evening Camping Trip
-subtitle: Desing
-summary: Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc curabitur tortor.
-tools: 1. Illustrator 2. Procreate
-date: 2023-01-03 08:01:35 +0300
+title: Human-Bear Conflict
+subtitle: Appeasing human-wildlife conflict
+summary: Utilizing low-power technology to detect and deter bears from encroaching on Romanian farms.
+client: HackThePlanet
+tools: 1. Computer Vision 2. Machine Learning
+date: 2024-04-02
 image: 'https://via.placeholder.com/1920x1080'
 ---
 

@@ -1,10 +1,9 @@
 ---
-title: Meditation Practices
-subtitle: Design
-summary: Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc curabitur tortor.
-client: Anvod Studio
-tools: 1. Illustrator 2. Pixelmator Pro
-date: 2023-01-09 08:01:35 +0300
+title: Coral Reefs Health Monitoring
+subtitle: Conservation
+summary: Leveraging computer vision for the segmentation of coral reefs in benthic imagery holds the potential to quantify the long-term growth or decline of coral cover within marine protected areas.
+client: ReefSupport
+date: 2024-01-30
 image: 'https://via.placeholder.com/1920x1080'
 ---
 
