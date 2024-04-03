@@ -1,18 +1,31 @@
 <div class="widget-sidebar project-meta">
+  {{ if .Params.github_repo }}
+    <a class="project-meta__github_repo" href="{{ .Params.github_repo }}"><img src="/images/logos/github-mark.png"/></a>
+  {{ end }}
   <h2 class="widget-sidebar__title">Project Details</h2>
   {{ if .Params.summary }}
   <p class="project-meta__summary">{{ .Params.summary }}</p>
   {{ end }}
   {{ if .Params.client }}
   <div class="project-meta__item">
-    <h3 class="project-meta__name">Client</h3>
-    <div class="project-meta__text">{{ .Params.client }}</div>
+    <h3 class="project-meta__name">Partner</h3>
+    <div class="project-meta__text">
+      <a target="_blank" href="{{ .Params.client.link }}">
+        <img src="{{ .Params.client.logo }}" alt="{{ .Params.client.name }}"/>
+      </a>
+    </div>
   </div>
   {{ end }}
   {{ if .Params.tools }}
   <div class="project-meta__item">
     <h3 class="project-meta__name">Made With</h3>
-    <div class="project-meta__text">{{ .Params.tools }}</div>
+    <div class="project-meta__text">
+      <ul>
+      {{ range .Params.tools }}
+        <li>{{ . }}</li>
+      {{ end }}
+      </ul>
+    </div>
   </div>
   {{ end }}
   {{ if .Params.date }}

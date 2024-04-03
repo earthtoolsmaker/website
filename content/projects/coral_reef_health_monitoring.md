@@ -1,8 +1,14 @@
 ---
 title: Coral Reefs Health Monitoring
 subtitle: Conservation
-summary: Leveraging computer vision for the segmentation of coral reefs in benthic imagery holds the potential to quantify the long-term growth or decline of coral cover within marine protected areas.
-client: ReefSupport
+summary: Segmentation of coral reefs in benthic imagery to quantify the long-term growth or decline of coral cover within marine protected areas.
+client: 
+  name: ReefSupport
+  link: https://reef.support
+  logo: /images/clients/reefsupport/logo.png
+tools:
+  - Computer Vision
+  - Machine Learning
 date: 2024-01-30
 image: 'https://via.placeholder.com/1920x1080'
 ---
