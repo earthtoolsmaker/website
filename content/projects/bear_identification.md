@@ -11,7 +11,7 @@ tools:
   - Computer Vision
   - Maching Learning
 date: 2024-04-03
-image: '/images/projects/bear_identification/cover.png'
+image: images/projects/bear_identification/cover.png
 ---
 
 Brown bears, especially, possess charisma and play pivotal roles as both
