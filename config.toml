@@ -144,7 +144,7 @@ paginate = 6
   # Testimonials Section
   [params.testimonials]
     enable = true
-    testimonial_title = "🙂 What Clients Say"
+    testimonial_title = "🙂 What Partners Say"
 
   [[params.testimonial_item]]
     name = "Carla Kenter"

@@ -134,7 +134,6 @@ and biodiversity.
    informs proactive measures like bear-proofing, and evaluates the
 effectiveness of coexistence strategies.
 
-
 ## Project Scope and Objectives
 
 The primary objective of our collaboration is to pioneer non-invasive tools to
