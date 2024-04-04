@@ -94,19 +94,24 @@ paginate = 6
   #-------------------------------
   # Social Settings
   [[params.social]]
-    icon = "fa-brands fa-twitter"
-    name = "Twitter"
-    link = "https://twitter.com"
+    icon = "fa-brands fa-github"
+    name = "Github"
+    link = "https://github.com/earthtoolsmaker"
 
-  [[params.social]]
-    icon = "fa-brands fa-facebook"
-    name = "Facebook"
-    link = "https://facebook.com"
+  # [[params.social]]
+  #   icon = "fa-brands fa-twitter"
+  #   name = "Twitter"
+  #   link = "https://twitter.com"
 
-  [[params.social]]
-    icon = "fa-brands fa-pinterest"
-    name = "Pinterest"
-    link = "https://pinterest.com"
+  # [[params.social]]
+  #   icon = "fa-brands fa-facebook"
+  #   name = "Facebook"
+  #   link = "https://facebook.com"
+
+  # [[params.social]]
+  #   icon = "fa-brands fa-pinterest"
+  #   name = "Pinterest"
+  #   link = "https://pinterest.com"
 
   # Example of adding a new link to the header and footer:
   # [[params.social]]
