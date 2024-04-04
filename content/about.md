@@ -1,30 +1,33 @@
 ---
 title: About
-# image: 'https://via.placeholder.com/1200x800'
 image: '/images/projects-hero.jpg'
 ---
 
-Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet.
+Welcome to EarthToolsMaker, a pioneering European-based organization
+dedicated to leveraging and developing open-source technology for
+global conservation efforts. At EarthToolsMaker, we are committed to
+advancing the common good through innovative research and development
+initiatives.
 
-Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue.
+Our mission is clear: to develop open and impact-driven conservation
+technologies tailored to the needs of conservation organizations
+worldwide. By harnessing the power of open solutions, we strive to
+provide accessible, cost-effective, and dependable tools that empower
+the global conservation community.
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="https://via.placeholder.com/1200x800" loading="lazy" alt="Project">
-    <img src="https://via.placeholder.com/1200x800" loading="lazy" alt="Project">
+    <img src="/images/about/bearidentification.png" loading="lazy" alt="Bear Identification Project">
+    <img src="/images/about/bearidentification.png" loading="lazy" alt="Bear Identification Project">
   </div>
-  <em>Gallery / <a href="https://via.placeholder.com/1200x800" target="_blank">Freepic</a></em>
+  <em>Gallery / Examples of projects: <b>Bear Identification</b> and <b>Coral Reefs Health Monitoring</b></em>
 </div>
 
-Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue proin sodales eget ante.
+Collaboration and transparency are essential for achieving our shared
+goal of preserving our planet's biodiversity. Through our dedication to
+open-source principles, we aim to foster a culture of innovation and
+cooperation that transcends borders and disciplines.
 
-> The longer I live, the more I realize that I am never wrong about anything, and that all the pains I have so humbly taken to verify my notions have only wasted my time!
-
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.
-
-![Forest](https://via.placeholder.com/1200x800)
-*Photo by [Freepik](https://via.placeholder.com/1200x800)*
-
-Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas augue.
-
-Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui.
+> Together, let's embark on a journey to better conserve, monitor, and
+> protect our beautiful planet and to safeguard the
+> natural world for future generations.
