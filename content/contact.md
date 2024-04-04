@@ -4,4 +4,4 @@ title: Contact
 image: '/images/contact.jpg'
 ---
 
-Simpler comes with a built-in contact form, that you can use with Formspree service to handle up to 50 submissions per month for free. You could also easily switch to another contact form service if you want.
+We're thrilled that you're interested in reaching out to us. Whether you have a question, a suggestion, or just want to say hello, we're here to listen and respond. Please feel free to fill out the contact form below, and we'll get back to you as soon as possible.
