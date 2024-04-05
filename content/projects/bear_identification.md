@@ -196,7 +196,7 @@ advancements in design, functionality, and affordability.
   <em>Gallery / Camera Traps</em>
 </div>
 
-## Developped Tools
+## Developed Tools
 
 Open source tools were developed during this project. The system
 comprises two Machine Learning models that perform the following tasks:

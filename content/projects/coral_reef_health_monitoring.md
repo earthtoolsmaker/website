@@ -165,6 +165,17 @@ the unique characteristics of underwater imagery. Advances in this field have
 the potential to contribute significantly to marine biology, environmental
 monitoring, and underwater exploration.
 
+## Developed tools
+
+Open source tools were developed during this project. The system
+comprises of a set of Machine Learning models of
+different sizes and accuracy/speed tradeoff that perform
+instance segmentation of hard and soft corals on
+underwater imagery.
+
+![Instance Segmentation](/images/projects/coral_reef_segmentation/instance_segmentation.png)
+*Gallery / Open Source Instance Segmentation AI Model*
+
 ## Conclusion
 
 Harnessing automated benthic analysis systems holds
