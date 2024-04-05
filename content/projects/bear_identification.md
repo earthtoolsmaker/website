@@ -206,7 +206,7 @@ camera trap picture. It produces a segmented and normalized image of the bear
 face.
 
 ![Instance Segmentation](/images/projects/bear_identification/instance_segmentation.png)
-*Instance segmentation of bear faces*
+*Gallery / Instance segmentation of bear faces*
 
 2. __Metric Learning:__ Segmented bear faces from the previous model are
 embedded as points in a high-dimensional vector space. This embedding enables
@@ -214,12 +214,12 @@ clustering of similar individuals and ensures dissimilar ones are distant from
 each other.
 
 ![Metric Learning - Embedding](/images/projects/bear_identification/metric_learning_embed.png)
-*Mapping bear faces to points in a vector space*
+*Gallery / Mapping bear faces to points in a vector space*
 
 Once the bear faces are mapped onto a high-dimensional space, querying and retrieving the nearest individuals becomes feasible, as summarized in the diagram below:
 
 ![Identification Pipeline Overview](/images/projects/bear_identification/pipeline.png)
-*Full Pipeline Overview*
+*Gallery / Full Pipeline Overview*
 
 ## Conclusion
 
