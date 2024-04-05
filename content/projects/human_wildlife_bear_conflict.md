@@ -181,17 +181,20 @@ system as required in the future.
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube1.gif" loading="lazy" alt="Inflatable Tube Man 1" \>
-    <img src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube2.gif" loading="lazy" alt="Inflatable Tube Man 2" \>
+    <img style="height: 300px;" src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube1.gif" loading="lazy" alt="Inflatable Tube Man 1" \>
+    <img style="height: 300px;" src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube2.gif" loading="lazy" alt="Inflatable Tube Man 2" \>
   </div>
-  <em>Gallery / Camera trap pictures of bears in Romania, near the farms where the system is deployed</em>
+  <em>Inflatable Tube Man - Small (left) and large (right) tube men</em>
 </div>
 
 ## Conclusion
 
 The state-of-the-art Machine Learning model developed for real-time, low-power bear detection marks a significant milestone in mitigating human-wildlife conflicts. By fostering the creation of open-source tools, this project makes a substantial contribution toward harmonizing the coexistence of farmers and predators like bears. Moreover, its potential extends beyond bear management, offering promising avenues for resolving human-wildlife conflicts across diverse species.
 
-<p>
-  <iframe src="https://www.youtube.com/embed/1AH17GkMWzg" loading="lazy" frameborder="0" allowfullscreen></iframe>
-  <em>Instant Bear Scare Device Demo</em>
-</p>
+<iframe src="https://www.youtube.com/embed/1AH17GkMWzg" loading="lazy" frameborder="0" allowfullscreen></iframe>
+
+<span class="gallery-box">
+  <span class="gallery"></span>
+  <em>Instant Bear Scare Device Demo by <a target="_blank" href="https://hack-the-planet.io">HackThePlanet</a></em>
+</span>
+<br/>

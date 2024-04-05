@@ -17,8 +17,8 @@ the global conservation community.
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/about/bearidentification.png" loading="lazy" alt="Bear Identification Project">
-    <img src="/images/about/bearidentification.png" loading="lazy" alt="Bear Identification Project">
+    <img style="height: 300px;" src="/images/about/bearidentification.png" loading="lazy" alt="Bear Identification Project">
+    <img style="height: 300px;" src="/images/about/coral_reef_segmentation.jpg" loading="lazy" alt="Coral Reef Segmentation Project">
   </div>
   <em>Gallery / Examples of projects: <b>Bear Identification</b> and <b>Coral Reefs Health Monitoring</b></em>
 </div>

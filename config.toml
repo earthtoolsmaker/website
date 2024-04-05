@@ -8,7 +8,7 @@ paginate = 6
 
 
 [params]
-  logo = "/images/logo.png" # You can add own logo. For example "/images/logo.png".
+  logo = "/images/logos/earth-tools-maker.png" # You can add own logo. For example "/images/logo.png".
   logo_dark = "/images/logo.png"
   description = "Open Technology for the Wildlife and the Planet"
   # color_scheme = "auto" # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
