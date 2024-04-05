@@ -2,10 +2,9 @@
 # General Site Settings
 baseURL = "https://earthtoolsmaker.org/"
 languageCode = "en-us"
-title = "Earth Tools Maker"
+title = "EarthToolsMaker"
 googleAnalytics = "" # Add your identifier. For example UA-99631805-1.
 paginate = 6
-
 
 [params]
   logo = "/images/logos/earth-tools-maker.png" # You can add own logo. For example "/images/logo.png".
@@ -52,11 +51,11 @@ paginate = 6
       url = "/contact/"
       weight = 1
 
-      [[menu.main]]
-      parent = "Pages"
-      name = "Elements"
-      url = "/elements/"
-      weight = 2
+      # [[menu.main]]
+      # parent = "Pages"
+      # name = "Elements"
+      # url = "/elements/"
+      # weight = 2
 
       # Footer Menu
       [[menu.footer]]
@@ -85,10 +84,10 @@ paginate = 6
       url = "/contact/"
       weight = 5
 
-      [[menu.footer]]
-      name = "Elements"
-      url = "/elements/"
-      weight = 6
+      # [[menu.footer]]
+      # name = "Elements"
+      # url = "/elements/"
+      # weight = 6
 
 
   #-------------------------------
@@ -143,7 +142,7 @@ paginate = 6
   #-------------------------------
   # Testimonials Section
   [params.testimonials]
-    enable = true
+    enable = false
     testimonial_title = "🙂 What Partners Say"
 
   [[params.testimonial_item]]
