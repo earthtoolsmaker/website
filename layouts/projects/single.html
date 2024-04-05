@@ -32,6 +32,7 @@
             </div>
           </div>
           <a class="project__nav-image" href="{{ .PrevInSection.Permalink }}">
+            {{/* <img class="lazy" data-src="{{ .PrevInSection.Params.Image | absURL }}" alt="{{ .PrevInSection.Title }}"> */}}
             <img class="lazy" data-src="{{ .PrevInSection.Params.Image }}" alt="{{ .PrevInSection.Title }}">
           </a>
         </div>

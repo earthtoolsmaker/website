@@ -11,7 +11,7 @@ tools:
   - "Computer Vision"
   - "Machine Learning"
 date: 2024-04-02
-image: images/projects/human_wildlife_conflict_bear/cover.png
+image: /images/projects/human_wildlife_conflict_bear/cover.png
 ---
 
 Brown bears serve as pivotal indicators and umbrella species, playing a
