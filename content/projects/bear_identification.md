@@ -190,8 +190,8 @@ advancements in design, functionality, and affordability.
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/projects/bear_identification/camera_traps/camera1.png" loading="lazy" alt="Camera Trap" />
-    <img src="/images/projects/bear_identification/camera_traps/camera3.jpg" loading="lazy" alt="Camera Trap" />
+    <img style="height: 300px; object-fit: cover;" src="/images/projects/bear_identification/camera_traps/camera1.png" loading="lazy" alt="Camera Trap" />
+    <img style="height: 300px; object-fit: cover;" src="/images/projects/bear_identification/camera_traps/camera3.jpg" loading="lazy" alt="Camera Trap" />
   </div>
   <em>Gallery / Camera Traps</em>
 </div>
