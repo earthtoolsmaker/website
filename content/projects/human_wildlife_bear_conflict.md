@@ -189,7 +189,13 @@ system as required in the future.
 
 ## Conclusion
 
-The state-of-the-art Machine Learning model developed for real-time, low-power bear detection marks a significant milestone in mitigating human-wildlife conflicts. By fostering the creation of open-source tools, this project makes a substantial contribution toward harmonizing the coexistence of farmers and predators like bears. Moreover, its potential extends beyond bear management, offering promising avenues for resolving human-wildlife conflicts across diverse species.
+The state-of-the-art Machine Learning model developed for real-time, low-power
+bear detection marks a significant milestone in mitigating human-wildlife
+conflicts. By fostering the creation of open-source tools, this project makes a
+substantial contribution toward harmonizing the coexistence of farmers and
+predators like bears. Moreover, its potential extends beyond bear management,
+offering promising avenues for resolving human-wildlife conflicts across
+diverse species.
 
 <iframe src="https://www.youtube.com/embed/1AH17GkMWzg" loading="lazy" frameborder="0" allowfullscreen></iframe>
 

@@ -201,12 +201,17 @@ advancements in design, functionality, and affordability.
 Open source tools were developed during this project. The system
 comprises two Machine Learning models that perform the following tasks:
 
-1. __Instance Segmentation:__ This model localizes the head of a bear in a camera trap picture. It produces a segmented and normalized image of the bear face.
+1. __Instance Segmentation:__ This model localizes the head of a bear in a
+camera trap picture. It produces a segmented and normalized image of the bear
+face.
 
 ![Instance Segmentation](/images/projects/bear_identification/instance_segmentation.png)
 *Instance segmentation of bear faces*
 
-2. __Metric Learning:__ Segmented bear faces from the previous model are embedded as points in a high-dimensional vector space. This embedding enables clustering of similar individuals and ensures dissimilar ones are distant from each other.
+2. __Metric Learning:__ Segmented bear faces from the previous model are
+embedded as points in a high-dimensional vector space. This embedding enables
+clustering of similar individuals and ensures dissimilar ones are distant from
+each other.
 
 ![Metric Learning - Embedding](/images/projects/bear_identification/metric_learning_embed.png)
 *Mapping bear faces to points in a vector space*
@@ -218,4 +223,9 @@ Once the bear faces are mapped onto a high-dimensional space, querying and retri
 
 ## Conclusion
 
-The state-of-the-art Machine Learning models designed for the precise identification of brown bears in camera trap imagery represent a significant advancement with profound implications for bear population monitoring and conservation. The development of open-source tools in this project signifies a valuable contribution, not only facilitating adaptability to various species but also holding potential to enhance conservation endeavors on a global scale.
+The state-of-the-art Machine Learning models designed for the precise
+identification of brown bears in camera trap imagery represent a significant
+advancement with profound implications for bear population monitoring and
+conservation. The development of open-source tools in this project signifies a
+valuable contribution, not only facilitating adaptability to various species
+but also holding potential to enhance conservation endeavors on a global scale.
