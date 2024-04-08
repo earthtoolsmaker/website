@@ -16,7 +16,7 @@ image: /images/projects/coral_reef_segmentation/cover.jpg
 
 Marine biologists engaged in the study of coral reefs invest a significant
 portion of their time in manually processing data obtained from research dives.
-The objective of this challenge is to create an image segmentation pipeline
+The objective of this collaboration is to create an image segmentation pipeline
 that accelerates the analysis of such data. This endeavor aims to assist
 conservationists and researchers in enhancing their efforts to protect and
 comprehend these vital ocean ecosystems. Leveraging computer vision for the
