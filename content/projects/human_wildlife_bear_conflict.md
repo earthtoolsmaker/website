@@ -181,8 +181,8 @@ system as required in the future.
 
 <div class="gallery-box">
   <div class="gallery">
-    <img style="height: 300px;" src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube1.gif" loading="lazy" alt="Inflatable Tube Man 1" \>
-    <img style="height: 300px;" src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube2.gif" loading="lazy" alt="Inflatable Tube Man 2" \>
+    <img src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube1.gif" loading="lazy" alt="Inflatable Tube Man 1" \>
+    <img src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube2.gif" loading="lazy" alt="Inflatable Tube Man 2" \>
   </div>
   <em>Inflatable Tube Man - Small (left) and large (right) tube men</em>
 </div>
