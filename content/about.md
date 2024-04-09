@@ -1,6 +1,6 @@
 ---
 title: About
-image: images/projects-hero.jpg
+image: images/pages/about/hero.jpg
 ---
 
 Welcome to EarthToolsMaker, a pioneering European-based organization
