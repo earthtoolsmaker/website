@@ -2,7 +2,8 @@
 title: How to build a real time bear detection system
 description: Detecting bears in real time using low-power technology.
 date: 2024-04-09
-image: 'https://via.placeholder.com/1200x800'
+# image: 'https://via.placeholder.com/1200x800'
+image: /images/posts/bear_detection/cover.png 
 tags: ["AI", "vision", "low power", "camera traps"]
 ---
 
@@ -15,8 +16,12 @@ safeguard Romanian farms by deterring bear encroachments.
 > and livestock holds promise in fostering harmonious relations between
 > humans and bears.
 
-TODO: add a nice image and link to the project.
-For more context about this project, go read this page: 
+For a comprehensive understanding of this project, please click on the pipeline
+overview below:
+
+<a href='{{< ref "/projects/human_wildlife_bear_conflict.md" >}}' title="Project Details">
+  <img src="/images/posts/bear_detection/pipeline_overview.png" />
+</a>
 
 ## Project Scope
 
@@ -169,7 +174,14 @@ Augment the minority class by introducing small variations or perturbations to
 the existing data, similar to techniques used in image processing.
 
 ![Data Augmentation](/images/posts/bear_detection/data_augmentation/tencrop.png)
-*Data Augmentation / TenCrop - Generate 10 images from one to mitigate the class imbalance*
+*Data Augmentation / [TenCrop](https://pytorch.org/vision/main/generated/torchvision.transforms.TenCrop.html) - Generate 10 images from one to mitigate the class imbalance*
+
+We conducted thorough testing and evaluation of common resampling and
+data augmentation methods. In our experiments, we observed that data
+augmentation yielded particularly effective results when applied to
+empty frames and images featuring other animals. This approach allowed
+us to maintain a high number of bear images while introducing subtle
+variations into the dataset.
 
 ### Data Annotation
 
@@ -227,6 +239,14 @@ in tasks such as image retrieval and cross-modal understanding.
 
 ## Data Modeling
 
+### Data split
+
+The annotated dataset has been divided into three sets: train,
+validation, and test, with the following ratios: 80%, 10%, and 10%,
+respectively. To prevent any potential data leakage between training and
+testing phases, we partitioned the data based on camera reference and
+date information extracted from the picture's exif metadata
+
 ### Image Classification vs Object Detection
 
 How might we approach modeling this dataset? One option is to conceptualize the
@@ -234,6 +254,14 @@ problem as a binary image classification task, where the goal is to predict
 whether an image contains a bear or not. Alternatively, it could be formulated
 as an object detection task, aiming to predict bounding boxes that delineate
 the location of any detected bears within the image.
+
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/posts/bear_detection/cv_tasks/image_classification.png" loading="lazy" alt="Image Classification" \>
+    <img src="/images/posts/bear_detection/cv_tasks/object_detection.png" loading="lazy" alt="Object Detection" \>
+  </div>
+  <em>Image Classification (left) vs Object Detection (right)</em>
+</div>
 
 Both approaches have their advantages and drawbacks. Initially, when we opted
 for the straightforward image classification task to model the dataset, we
@@ -243,6 +271,8 @@ potentially hinder generalization when deploying the system. However, framing
 the problem as an object detection task resulted in improved performance.
 
 ### YOLOv8
+
+#### Overview
 
 We opted to utilize a pretrained
 [YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tune it for
@@ -254,6 +284,50 @@ classification, and pose estimation.
 ![YOLOv8 CV Tasks](/images/posts/bear_detection/yolov8_tasks.png)
 *YOLOv8 Computer Vision Tasks*
 
+#### Model size
+
+As we aim to deploy our solution on a low-power microcontroller, we selected
+the most compact variant of YOLOv8, known as the `'nano'` version or `'YOLOv8n'`.
+The table below illustrates the tradeoff between model size (a proxy for
+accuracy) and processing speed.
+
+| Model                                                                                     | size<br><sup>(pixels) | mAP<sup>val<br>50-95 | Speed<br><sup>CPU ONNX<br>(ms) | Speed<br><sup>A100 TensorRT<br>(ms) | params<br><sup>(M) | FLOPs<br><sup>(B) |
+| ----------------------------------------------------------------------------------------- | --------------------- | -------------------- | ------------------------------ | ----------------------------------- | ------------------ | ----------------- |
+| [YOLOv8n](https://github.com/ultralytics/assets/releases/download/v8.1.0/yolov8n-oiv7.pt) | 640                   | 18.4                 | 142.4                          | 1.21                                | 3.5                | 10.5              |
+| [YOLOv8s](https://github.com/ultralytics/assets/releases/download/v8.1.0/yolov8s-oiv7.pt) | 640                   | 27.7                 | 183.1                          | 1.40                                | 11.4               | 29.7              |
+| [YOLOv8m](https://github.com/ultralytics/assets/releases/download/v8.1.0/yolov8m-oiv7.pt) | 640                   | 33.6                 | 408.5                          | 2.26                                | 26.2               | 80.6              |
+| [YOLOv8l](https://github.com/ultralytics/assets/releases/download/v8.1.0/yolov8l-oiv7.pt) | 640                   | 34.9                 | 596.9                          | 2.43                                | 44.1               | 167.4             |
+| [YOLOv8x](https://github.com/ultralytics/assets/releases/download/v8.1.0/yolov8x-oiv7.pt) | 640                   | 36.3                 | 860.6                          | 3.56                                | 68.7               | 260.6             |
+
+#### Training
+
+We conducted training over 200 epochs on the training set, with
+continuous monitoring of model performance using mean Intersection over
+Union (IoU), Box Precision, and Box Recall as primary metrics, utilizing
+the validation set. To enhance model robustness and generalization, we
+employed various common data augmentation techniques, including random
+horizontal flipping, random cropping, mosaic image aggregation,
+rotation, color filtering, among others.
+
+![Data Augmentation](/images/posts/bear_detection/data_augmentation/mosaic_rotation.jpg)
+*Data augmentation during training - Mosaic, rotation, etc*
+
+Throughout the training process, these metrics were continuously
+evaluated on both the training and validation sets.
+
+![Training Results](/images/posts/bear_detection/training_results.png)
+
+#### Evaluation
+
+The evaluation is conducted on the test set, and the performance is
+reported using a confusion matrix. In this evaluation, the model acts as
+a binary classifier: if the probability of a bear being localized
+exceeds a specific threshold, the image is classified as containing a
+bear.
+
+![Confusion Matrix Normalized - imgsz 1024](/images/posts/bear_detection/speed_accuracy_tradeoff/1024/confusion_matrix_normalized.png)
+*Confusion Matrix Normalized - imgsz 1024*
+
 ### Inference Speed vs Model Accuracy
 
 The real-time requirement of this system necessitates careful consideration of
@@ -263,7 +337,19 @@ accuracy but at the expense of slower processing speed. Evaluating this
 tradeoff was crucial in selecting the most suitable model for the task.
 
 ![Inference Speed vs Model Accuracy](/images/posts/bear_detection/speed_accuracy_tradeoff/tradeoff.png)
+*Inference speed and model accuracy tradeoff on the Raspberry Pi 5*
 
 ## Conclusion
 
+This guide has outlined the methodology employed to construct an
+advanced Machine Learning model for real-time bear detection. The
+Exploratory Data Analysis phase meticulously addressed various data
+quality concerns within the dataset and examined multiple modeling
+strategies. Utilizing GroundingDINO proved instrumental in swiftly
+annotating the camera trap images. Furthermore, we underscored the
+significance of striking a balance between speed and accuracy when
+selecting a model suitable for deployment on low-power devices.
 
+Notably, this framework possesses the potential to transcend bear
+management, offering promising avenues for mitigating human-wildlife
+conflicts across a spectrum of species.
