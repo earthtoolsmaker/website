@@ -32,6 +32,9 @@ Additionally, since brown bear activities can occur day
 or night, the system must remain operational around the
 clock.
 
+![RPi5 Microcontroller](/images/posts/bear_detection/rpi5.png)
+*Gallery / Raspberry Pi5 - Low Power device*
+
 Maintaining a low false positive rate is essential for
 two key reasons: Firstly, to uphold trust among farmers
 who rely on the system daily, it must avoid triggering
@@ -107,6 +110,9 @@ testing, or machine learning, by guiding feature selection, model building, and
 evaluation strategies.
 
 #### Data quality issues
+
+This section outlines various data quality issues identified during the
+Exploratory Data Analysis (EDA) process.
 
 ##### Bursts of Images
 
@@ -235,6 +241,18 @@ encountered an issue: The model learned to rely on recurring image backgrounds
 captured by the fixed camera traps to make predictions. This tendency could
 potentially hinder generalization when deploying the system. However, framing
 the problem as an object detection task resulted in improved performance.
+
+### YOLOv8
+
+We opted to utilize a pretrained
+[YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tune it for
+our specific object detection task. Renowned for its speed, accuracy, and
+user-friendly interface, YOLOv8 stands out as an ideal solution for various
+tasks, including object detection, tracking, instance segmentation, image
+classification, and pose estimation.
+
+![YOLOv8 CV Tasks](/images/posts/bear_detection/yolov8_tasks.png)
+*YOLOv8 Computer Vision Tasks*
 
 ### Inference Speed vs Model Accuracy
 
