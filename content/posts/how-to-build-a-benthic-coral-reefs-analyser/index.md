@@ -210,10 +210,42 @@ models that inadequately address minority classes,
 impacting overall performance.
 
 ![Class Imbalance](./images/eda/data_quality/class_imbalance/distributions.png)
+*Class imbalance distributions*
 
 ### Data Preparation
 
 #### YOLOv8 TXT format
+
+To leverage the YOLOv8 ecosystem, it is imperative to preprocess the raw
+datasets provided into [a format that is
+compatible](https://roboflow.com/formats/yolov8-pytorch-txt) with the
+model’s requirements.
+
+![YOLOv8 TXT Format from Individual Masks](./images/yolov8_txt_format.png)
+*YOLOv8 TXT format conversion*
+
+Each line represents an instance of a class with a defined contour. It
+has the following format:
+
+```txt
+class_number x1 y1 x2 y2 x3 y3 ... xk yk
+class_number x1 y1 x2 y2 x3 y3 ... xj yj
+```
+
+Where the coordinates x and y are normalized to the image width and
+height accordingly. Therefore, they always lie in the range [0,1].
+
+___Example:___
+
+```txt
+1 0.617 0.359 0.114 0.173 0.322 0.654
+0 0.094 0.386 0.156 0.236 0.875 0.134
+```
+
+Therefore, each line corresponds to an individual mask instance.
+
+The [OpenCV](https://opencv.org/) library is employed to convert the
+dense individual masks into contour coordinates.
 
 ## Data Modeling
 
@@ -239,7 +271,22 @@ against the global dataset.
 | SEAVIEW   | IDN_PHL     | 80/10/10     | 189   | 24   | 24   | 237   |
 | SEAVIEW   | PAC_AUS     | 80/10/10     | 467   | 58   | 59   | 584   |
 | TETES     | PROVIDENCIA | 80/10/10     | 84    | 10   | 11   | 105   |
+
 ### Instance Segmentation vs Semantic Segmentation
+
+Semantic segmentation assigns a class label to each pixel in an image,
+such as 'person,' 'dog,' or 'flower,' grouping together pixels of the
+same class. Conversely, instance segmentation distinguishes between
+individual instances of objects within the same class, treating each one
+as a separate entity.
+
+![Semantic Segmentation vs Instance Segmentation](./images/semantic_segmentation_vs_instance_segmentation.png)
+*Semantic segmentation vs Instance segmentation*
+
+For analyzing benthic coral reefs, an instance segmentation approach
+proves superior as it enables precise localization and counting of reef
+organisms.
+
 ### Evaluation Metrics
 
 The __mean Intersection Over Union (mIoU)__ and the __Dice Coefficient__ were selected to evaluate the performance of the semantic segmentation results from the models. We stayed away from mean Precision Accuracy (mPA) as it can be very problematic in skewed datasets.
@@ -424,3 +471,21 @@ models lies in their faster execution and compatibility with smaller hardware
 devices.
 
 ## Conclusion
+
+In our investigation, YOLOv8 has emerged as an exceptionally suitable
+model for our dataset and the associated computer vision task,
+particularly in instance segmentation. Its remarkable performance, even
+on modest hardware configurations, positions it as an effective solution
+for resource-constrained environments. Moreover, YOLOv8 demonstrates
+real-time capabilities when applied to video streams, significantly
+enhancing its practical utility.
+
+![Hard Coral Viz](./images/hard_coral_viz.png)
+*Benthic Segmentation / Hard Coral*
+
+In conclusion, while YOLOv8 presents a robust solution for the instance
+segmentation task, it is crucial to carefully address issues related to
+regional model performance, data leakage, and dataset quality. The
+insights gained from our findings are invaluable for refining and
+optimizing computer vision applications in marine biology and underwater
+image segmentation.
