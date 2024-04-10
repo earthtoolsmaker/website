@@ -1,6 +1,6 @@
 ---
 title: How to build a benthic coral reefs analyser
-description: This is a description
+description: Learn how to successfully train a computer vision model to accurately analyse underwater benthic imagery.
 date: 2024-04-10
 params:
   math: true
