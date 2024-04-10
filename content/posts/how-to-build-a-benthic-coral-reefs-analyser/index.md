@@ -1,9 +1,8 @@
 ---
-title: How to analyse benthic coral reefs
+title: How to build a benthic coral reefs analyser
 description: This is a description
 date: 2024-04-10
-image: /images/posts/bear_detection/cover.png 
-image: /images/posts/how-to-analyse-benthic-coral-reefs/cover.jpg
+image: /images/posts/how-to-build-a-benthic-coral-reefs-analyser/cover.jpg
 tags: ["AI", "vision"]
 ---
 
