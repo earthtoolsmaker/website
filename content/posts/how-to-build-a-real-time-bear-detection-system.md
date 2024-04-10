@@ -157,10 +157,6 @@ When dealing with imbalanced datasets in machine learning, where one class is
 significantly more prevalent than the others, it can lead to biased models that
 perform poorly on minority classes.
 
-After filtering out the corrupted images, we observed that the dataset was
-heavily skewed towards bear images, with a prevalence approximately five times
-higher than that of images featuring other animals or empty frames.
-
 ##### Resampling Techniques
 
 - __Oversampling__: Increase the number of instances in the minority class by
