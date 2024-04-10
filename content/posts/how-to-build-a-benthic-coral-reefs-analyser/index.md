@@ -410,6 +410,10 @@ devices, enabling real-time video stream segmentation, to high-end GPUs
 delivering peak performance. This approach ensures flexibility to
 accommodate various deployment scenarios.
 
+The pre-trained YOLOv8 models undergo fine-tuning for 140 epochs with images
+resized to 1024x1024 pixels. Additionally, random flipping and rotation of
+images up to 45 degrees are applied during training.
+
 ![Data Augmentation](./images/data_augmentation/samples.png)
 *Data Augmentation / Batch Samples*
 
