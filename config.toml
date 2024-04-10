@@ -7,6 +7,7 @@ googleAnalytics = "" # Add your identifier. For example UA-99631805-1.
 paginate = 6
 
 [params]
+  math = true
   logo = "/images/logos/earth-tools-maker.png" # You can add own logo. For example "/images/logo.png".
   # logo_dark = "/images/logo.png"
   description = "Open Technology for Wildlife and the Planet"
@@ -227,6 +228,13 @@ paginate = 6
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
 
 
 [markup.highlight]
