@@ -218,6 +218,27 @@ impacting overall performance.
 ## Data Modeling
 
 ### Data Split
+
+In this section, we elucidate the methodology employed for the train/val/test
+splits across different datasets.
+
+For each region, a dedicated dataset is created with an `80/10/10` split ratio
+for train/val/test. Simultaneously, a comprehensive global dataset is
+established using the same split ratios. Importantly, any image allocated to
+the test set for a region-specific dataset is also included in the test set for
+the global dataset (similarly for train and val splits). This design
+facilitates the evaluation of models trained on region-specific datasets
+against the global dataset.
+
+| Dataset   | Region      | splits ratio | train | val  | test | total |
+|-----------|-------------|--------------|-------|------|------|-------|
+| ALL       | ALL         | 80/10/10     | 1392  | 173  | 177  | 1742  |
+| SEAFLOWER | BOLIVAR     | 80/10/10     | 196   | 24   | 25   | 245   |
+| SEAFLOWER | COURTOWN    | 80/10/10     | 192   | 24   | 25   | 241   |
+| SEAVIEW   | ATL         | 80/10/10     | 264   | 33   | 33   | 330   |
+| SEAVIEW   | IDN_PHL     | 80/10/10     | 189   | 24   | 24   | 237   |
+| SEAVIEW   | PAC_AUS     | 80/10/10     | 467   | 58   | 59   | 584   |
+| TETES     | PROVIDENCIA | 80/10/10     | 84    | 10   | 11   | 105   |
 ### Instance Segmentation vs Semantic Segmentation
 ### Evaluation Metrics
 
@@ -292,10 +313,114 @@ especially in cases of class imbalance where accuracy alone may not provide a
 clear picture of the model's performance.
 
 ### YOLOv8
+
 #### Overview
+
+We opted to utilize a pretrained
+[YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tune it for
+our specific instance segmentation task. Renowned for its speed, accuracy, and
+user-friendly interface, YOLOv8 stands out as an ideal solution for various
+tasks, including object detection, tracking, instance segmentation, image
+classification, and pose estimation.
+
+![YOLOv8 CV Tasks](./images/yolov8_tasks.png)
+*YOLOv8 Computer Vision Tasks*
+
 #### Training
+
+##### Baseline
+
+A __baseline__ model was swiftly established to gauge the effectiveness of
+our approach and assess the potential performance enhancements that
+could be achieved.
+A medium size pretrained model is finetuned for 5 epochs on the train split.
+
+| mIoU | IoU_hard | IoU_soft | IoU_other | mDice | Dice_hard | Dice_soft | Dice_other |
+| ---- | ---------| -------- | --------- | ----- | --------- | --------- | ---------- |
+| __0.70__ | 0.64     | 0.58     | 0.89      | 0.82  | 0.78      | 0.73      | 0.94       |
+
+![Quantitative Baseline Results](./images/evaluation/baseline/quantitative.png)
+*Results / Quantitative - Training metrics (left) and pixel level confusion matrix (right)*
+
+![Qualitative Baseline Results](./images/evaluation/baseline/qualitative.png)
+*Results / Qualitative*
+
+The initial results are highly promising, prompting us to further
+optimize the performance of the modeling approach through meticulous
+selection of hyperparameters.
+
+##### Best Model
+
+In this section, we showcase the optimal models achieved through
+extensive fine-tuning efforts, involving hundreds of hours of GPU time
+to identify effective hyperparameter combinations.
+
+Given the uncertainty about ReefSupport’s hardware configurations and
+the intended use of the models (including the possibility of running on
+live video streams from underwater cameras), we aimed to offer a diverse
+range of models. These span from models suitable for embedding on edge
+devices, enabling real-time video stream segmentation, to high-end GPUs
+delivering peak performance. This approach ensures flexibility to
+accommodate various deployment scenarios.
+
+![Data Augmentation](./images/data_augmentation/samples.png)
+*Data Augmentation / Batch Samples*
+
+| mIoU | IoU_hard | IoU_soft | IoU_other | mDice | Dice_hard | Dice_soft | Dice_other |
+| ---- | ---------| -------- | --------- | ----- | --------- | --------- | ---------- |
+| __0.85__ | 0.80     | 0.81     | 0.94      | 0.92  | 0.89      | 0.90      | 0.97       |
+
+![Quantitative Baseline Results](./images/evaluation/best/quantitative.png)
+*Results / Quantitative - Training metrics (left) and pixel level confusion matrix (right)*
+
+![Qualitative Baseline Results](./images/evaluation/best/qualitative.png)
+*Results / Qualitative*
+
 #### Evaluation
+
+The subsequent table provides a summary of the performance of the best
+model on the test sets for each region:
+
+| data    | mIoU     | IoU_hard | IoU_soft | IoU_other | mDice | Dice_hard | Dice_soft | Dice_other |
+| ------- | -------- | ---------| -------- | --------- | ----- | --------- | --------- | ---------- |
+| all     | __0.85__ | 0.80     | 0.81     | 0.94      | 0.92  | 0.89      | 0.90      | 0.97       |
+| sf_bol  | 0.80     | __0.85__ | 0.63     | 0.93      | 0.89  | 0.92      | 0.77      | 0.97       |
+| sf_crt  | 0.72     | 0.70     | 0.54     | 0.94      | 0.83  | 0.82      | 0.70      | 0.97       |
+| sv_atl  | 0.78     | 0.63     | 0.78     | 0.92      | 0.87  | 0.78      | 0.87      | 0.96       |
+| sv_phl  | __0.62__ | 0.75     | __0.21__ | 0.91      | 0.72  | 0.86      | 0.34      | 0.95       |
+| sv_aus  | 0.69     | 0.76     | 0.38     | 0.92      | 0.79  | 0.86      | 0.55      | 0.96       |
+| tt_pro  | __0.87__ | 0.77     | __0.88__ | 0.96      | 0.93  | 0.87      | 0.94      | 0.98       |
+
+As the various evaluation metrics are weighted in proportion to the number of
+pixels per region, we provide a summary below, illustrating the different
+weights assigned to regions based on their respective pixel counts:
+
+| data    | # images (test) | # pixels   | weight (%) | mIoU     | IoU_hard | IoU_soft | IoU_other |
+|---------|-----------------|------------|------------|----------|----------|----------|-----------|
+| sf_bol  | __25__          | 7056000000 | __39.2__   | 0.80     | __0.85__ | 0.63     | 0.93      |
+| sf_crt  | 25              | 1912699566 | 10.6       | 0.72     | 0.70     | 0.54     | 0.94      |
+| sv_atl  | 33              | 1136559093 | 6.3        | 0.78     | 0.63     | 0.78     | 0.92      |
+| sv_phl  | __24__          | 866520651  | __4.8__    | __0.62__ | 0.75     | __0.21__ | 0.91      |
+| sv_aus  | 59              | 1944497328 | 10.8       | 0.69     | 0.76     | 0.38     | 0.92      |
+| tt_pro  | __11__          | 5079158784 | __28.2__   | __0.87__ | 0.77     | __0.88__ | 0.96      |
+
 ### Model size vs Model accuracy
 
-## Conclusion
+The table below summarizes the performance of the different YOLOv8 models that
+are trained on the same training set, using the same test set for evaluation.
 
+| model size | mIoU | IoU_hard | IoU_soft | IoU_other | mDice | Dice_hard | Dice_soft | Dice_other |
+| ---------- | ---- | ---------| -------- | --------- | ----- | --------- | --------- | ---------- |
+| x          | __0.85__ | 0.79     | __0.81__     | __0.94__      | __0.92__  | 0.88      | __0.90__      | 0.97       |
+| __l__      | __0.85__ | __0.80__     | __0.81__     | __0.94__      | __0.92__  | __0.89__      | __0.90__      | 0.97       |
+| m          | __0.85__ | __0.80__     | 0.80     | __0.94__      | __0.92__  | __0.89__      | 0.89      | 0.97       |
+| s          | 0.84 | 0.78     | 0.80     | 0.93      | 0.91  | 0.88      | 0.89      | __0.98__       |
+| n          | 0.83 | 0.77     | 0.80     | 0.93      | 0.91  | 0.87      | 0.89      | 0.97       |
+
+The top-performing model is the `l` size model, as indicated in the table
+above. As the model size decreases, there is a slight degradation in
+performance—from a mIoU of 0.85 to 0.83. However, the advantage of smaller
+models lies in their faster execution and compatibility with smaller hardware
+devices.
+
+## Conclusion
