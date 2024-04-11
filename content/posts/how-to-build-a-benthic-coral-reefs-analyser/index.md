@@ -289,7 +289,11 @@ organisms.
 
 ### Evaluation Metrics
 
-The __mean Intersection Over Union (mIoU)__ and the __Dice Coefficient__ were selected to evaluate the performance of the semantic segmentation results from the models. We stayed away from mean Precision Accuracy (mPA) as it can be very problematic in skewed datasets.
+The __mean Intersection Over Union (mIoU)__ and the
+__Dice Coefficient__ were selected to evaluate the
+performance of the semantic segmentation results from the
+models. We stayed away from mean Precision Accuracy (mPA)
+as it can be very problematic in skewed datasets.
 
 #### mIoU or Jaccard Index
 
