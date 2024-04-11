@@ -185,7 +185,7 @@ paginate = 6
   #-------------------------------
   # Tags Section
   [params.tags]
-    enable = false
+    enable = true
     tags_title = "✌️ Explore Topics"
 
 
