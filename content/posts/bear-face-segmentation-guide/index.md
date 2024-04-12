@@ -64,7 +64,6 @@ Falls.
   <em>Gallery / Different individuals from the <a href="https://bearresearch.org" target="_blank">BearID Project</a></em>
 </div>
 
-
 ### Exploratory Data Analysis
 
 Exploratory Data Analysis (EDA) is an approach to analyzing datasets to
