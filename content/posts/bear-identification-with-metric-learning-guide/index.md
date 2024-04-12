@@ -469,14 +469,20 @@ optimizer.
 ![Best Model Embeddings](./images/evaluation/best/umap_epoch_75.png)
 *Visualizing the Learned Metric Space: Clusters have emerged*
 
+This robust model excels in identifying bears with exceptional accuracy, even
+in disjoint and open set scenarios, representing a significant advancement over
+the existing solution developed by BearID. Additionally, we opted to forego the
+face alignment stage, deeming it unnecessary due to the superior performance of
+our current approach.
+
 ## Conclusion
 
 In this guide, we've detailed the development of an open-source,
 state-of-the-art model tailored for animal re-identification,
 specifically targeting brown bear faces. The comprehensive system,
-crafted for deployment by The BearID Project to monitor bear populations
-in Canada, represents a significant step forward in wildlife
-conservation efforts. With its adaptable design, this technology stands
-poised to transcend species boundaries, offering potential applications
+crafted for deployment by [The BearID Project](https://bearresearch.org) to
+monitor bear populations in Canada, represents a significant step forward in
+wildlife conservation efforts. With its adaptable design, this technology
+stands poised to transcend species boundaries, offering potential applications
 across diverse ecosystems. The scalability and versatility of the model
 hold promise for advancing conservation endeavors on a global scale.
