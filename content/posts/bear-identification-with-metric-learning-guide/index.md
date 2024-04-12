@@ -6,6 +6,11 @@ image: /images/posts/bear-identification-with-metric-learning-guide/cover.png
 tags: ["AI", "vision", "metric learning"]
 ---
 
+TODO: 
+- add paper for each loss function
+- add illustration for open set, closed set and disjoint set
+- 
+
 In this blog post we'll delve into the technical
 development of a bear face recognition system which is a
 critical component of the bear identification
@@ -54,7 +59,7 @@ retrieve the closest matching individuals.
 
 Our collaboration with [The BearID Project](https://bearresearch.org)
 aims to significantly enhance their current model performance, which
-currently stands at precision (top-1): 0.649 and precision (top-5): 0.707.
+currently stands at accuracy@1 (top-1): 0.649 and accuracy@5 (top-5): 0.707.
 
 ## Provided Dataset
 
@@ -167,7 +172,7 @@ Overall, animal re-identification plays a vital role in understanding and
 managing wildlife populations, facilitating conservation efforts, and
 supporting ecological research initiatives.
 
-### Closed Set, Open Set, Disjoint Set
+### Closed Set, Open Set and Disjoint Set
 
 In the context of __re-ID__, understanding the concepts of open sets, closed
 sets, and disjoint sets is critical.
@@ -231,36 +236,175 @@ entities.
 comprise entirely different identities, mimicking scenarios where the system
 encounters novel entities during deployment
 
-To avoid data leakage, we implemented a careful splitting strategy based on
-both camera reference and date. This ensures that bursts of images captured by
-the same camera at the same time are consistently grouped into the same split
-(train, validation, or test).
+To avoid data leakage in the open-set split, we implemented a careful splitting
+strategy based on both camera reference and date. This ensures that bursts of
+images captured by the same camera at the same time are consistently grouped
+into the same split (train, validation, or test).
 
 ### Metric Learning
 
 #### Overview
 
+Metric learning is a machine learning paradigm focused on learning a distance
+metric or similarity function directly from data. Instead of relying on
+predefined distance measures, metric learning algorithms aim to discover a
+distance metric that optimally represents the underlying structure or
+relationships within the data. The goal is to ensure that similar instances are
+mapped closer together in the learned metric space, while dissimilar instances
+are pushed farther apart. Metric learning has applications in various domains,
+including image retrieval, face recognition, clustering, and classification,
+where accurately capturing the similarity or dissimilarity between data points
+is crucial for task performance.
+
+![Bear Face Embedding](./images/embed_overview.png)
+*Learning a metric space to embed bear faces*
+
 #### Losses
 
-3. Identification
+Loss functions play an important role in metric learning as they guide the
+optimization process to learn effective distance metrics or embedding spaces.
+Let's explore the importance of some common losses in metric learning:
 
-Data splits Types of data splits and sets: closed set, open sed, disjoint set and pros and cons of each
+##### Contrastive Loss
 
-3. Data Modeling
-3.1. Data Splits
-3.2. Metric Learning
-3.2.1. Overview
-3.2.2. Losses: Contrastive Loss, TripletMarginLoss, ArcFaceLoss
-3.3. LightGlue: Local Feature Matching
-3.3. Evaluation Metrics
-3.4. Architecture Overview
-3.5. Training
-3.5.1. Baseline
-3.5.2. Hyperparameters
-3.5.3. Hyperparmater search
+The contrastive loss encourages similar instances to be closer together and
+dissimilar instances to be pushed apart in the embedding space. It achieves
+this by penalizing pairs of similar instances that are far apart and pairs of
+dissimilar instances that are close together.
 
-4. Evaluation
+By using a contrastive loss, the model learns to map instances of the same
+class (or similar instances) close to each other while maximizing the distance
+between instances of different classes (or dissimilar instances).
+
+##### Triplet Margin Loss
+
+A triplet margin loss builds upon contrastive loss by considering triplets of
+anchor, positive, and negative examples. It ensures that the distance between
+the anchor and the positive example is smaller than the distance between the
+anchor and the negative example by at least a margin.
+
+The Triplet margin loss explicitly enforces relative distance relationships
+between instances, which can lead to more discriminative embeddings. It helps
+in dealing with the issue of intra-class variance and inter-class separability.
+
+##### ArcFace Loss
+
+The ArcFace loss is particularly effective for face recognition tasks. It
+enhances the discriminative power of the learned embeddings by introducing a
+margin-based angular penalty.
+
+The ArcFace loss operates in a hypersphere embedding space, where the angle
+between the feature vectors and the corresponding class-specific hypersphere
+centers is optimized. This ensures that intra-class variations are minimized
+while inter-class variations are maximized, leading to improved classification
+accuracy and better generalization.
+
+##### Losses Summary
+
+In summary, losses in metric learning are crucial for guiding the optimization
+process towards learning effective embedding spaces. They encourage the model
+to embed similar instances close together while pushing dissimilar instances
+apart. Each loss function has its advantages and is suitable for different
+applications and tasks, ultimately contributing to improved performance in
+tasks such as image retrieval, face recognition, and clustering.
+
+### Evaluation Metrics
+
+#### Main metric - Accuracy@k
+
+Accuracy at k is an evaluation metric used to measure the correctness of the
+top-k predictions made by a model. It assesses how many of the correct answers
+fall within the top-k ranked predictions. This metric is commonly used in
+classification tasks, recommendation systems, and information retrieval tasks.
+
+Here's how accuracy at k works:
+
+1. __Top-k Predictions__: After making predictions for a set of inputs (e.g.,
+   class labels, recommendations, or search results), the model ranks these
+predictions based on their confidence scores or relevance scores.
+2. __Correctness Evaluation__: Accuracy at k evaluates the correctness of the
+   top-k predictions by considering whether the correct answer is among these
+top-k predictions.
+3. __Calculation__: The accuracy at k is calculated by dividing the number of correct predictions within the top-k ranked results by k.
+4. __Interpretation__: Accuracy at k provides insights into how well the model
+   performs when considering only the top-ranked predictions. A higher accuracy
+at k indicates that a larger fraction of the correct answers are included
+within the top-k predictions, suggesting better performance.
+
+__Accuracy@k__ is particularly useful in scenarios where only the top-ranked
+predictions are considered, such as recommendation systems where users are only
+shown a limited number of recommendations or search engines where users
+typically only view the top search results. It helps assess the effectiveness
+of the model in providing relevant and accurate predictions within the top-k
+ranked results.
+
+We monitor the accuracy at different values of k, including accuracy@1,
+accuracy@3, accuracy@5, and accuracy@10, both during the training process and
+during evaluation.
+
+### Model Topology
+
+The model architecture we adopted consists of a common pretrained backbone,
+complemented by a compact embedder head, as illustrated below:
+
+![Model Topology](./images/model_topology.png)
+*Model Topology - Backbone (trunk) and embedder head*
+
+### Training
+
+The training process is executed across two GPUs for over 100 epochs.
+Throughout training, evaluation metrics are continuously monitored, and we save
+the weights of the best-performing model. Training halts if there's no
+improvement in model performance beyond a specified threshold, determined by
+the patience parameter.
+We visualize the metric spaces using UMAP, a versatile manifold learning and
+dimension reduction algorithm, and save the visualizations after every epoch.
+This enables us to track and evaluate the improvement of the embedder over
+time.
+
+#### Hard Negative Mining
+
+Hard negative mining specifically targets the difficult or misclassified
+samples that contribute the most to the loss function, ensuring that the model
+focuses on learning from these challenging examples.
+
+Here's why hard negative mining is important in metric learning:
+
+- __Enhancing Discriminative Power__: Hard mining helps to identify and
+prioritize the training samples that are most informative for improving the
+model's ability to discriminate between classes or categories. By focusing on
+the "hard" examples, which are often misclassified or have ambiguous class
+boundaries, the model can learn more discriminative features.
+- __Effective Utilization of Training Data__: In large-scale datasets, not all
+samples contribute equally to the learning process. Hard mining allows the
+model to efficiently utilize the training data by emphasizing the most
+informative samples, leading to faster convergence and better generalization
+performance.
+- __Addressing Class Imbalance__: In many real-world applications, classes may
+be imbalanced, with fewer examples of certain classes compared to others. Hard
+mining helps to mitigate the effects of class imbalance by ensuring that the
+model learns equally from both easy and challenging examples, thus improving
+the overall performance on underrepresented classes.
+- __Improving Robustness to Outliers and Noise__: Hard mining encourages the
+model to focus on learning from challenging samples, which can help improve its
+robustness to outliers, noisy data, and variations in the input space. By
+effectively handling difficult examples, the model becomes more resilient to
+noise and generalizes better to unseen data.
+
+Overall, hard negative mining is critical in metric learning because it enables the
+model to concentrate on the most informative and challenging training samples,
+leading to more discriminative embeddings and improved performance animal
+re-identification.
+
+#### Baseline
+
+#### Best
+
+Random Hyperparameter search
+
+### Evaluation
+
 Show table of results here
 4.1 Evaluation pitfalls: use reference and gallery in a good way, get rid of bursts of images
 
-Conclusion
+## Conclusion
