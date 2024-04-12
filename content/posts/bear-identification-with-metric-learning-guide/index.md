@@ -102,14 +102,145 @@ the data.
 ![Individual counts distribution](./images/eda/individual_counts_distribution.png)
 *Individual counts distribution - How many image faces per individual?*
 
-2. Provided Dataset
+## re-IDentification
 
-Generated chips
+### Definition
 
-2.1. EDA
-2.1.1. Data Distributions
-2.1.1. Class imbalance - Bursts of images
-2.1.2. 
+Re-identification, often abbreviated as __re-ID__, involves identifying and
+tracking individual animals across different camera traps or instances in
+wildlife habitats.
+
+### Objective
+
+> The primary goal is to accurately identify and track individual animals over
+> time, allowing researchers to study behavior, population dynamics, migration
+> patterns, and other ecological factors.
+
+### Challenges
+
+Animal re-identification faces unique challenges compared to person or object
+re-identification:
+
+- __Variability in Appearance__: Animals may exhibit variations in
+appearance due to factors such as changes in fur color, markings, or
+physical condition (e.g., injuries).
+- __Environmental Conditions__: Camera traps are often deployed in outdoor
+environments where lighting conditions, weather, and vegetation can vary
+significantly, affecting image quality and visibility of animals.
+- __Species Variability__: Different species may exhibit diverse
+morphologies and behaviors, requiring specialized models and approaches for
+accurate re-identification.
+
+### Common approach
+
+Similar to other re-identification tasks, animal re-identification often
+involves the following steps:
+
+- __Feature Extraction__: Deep learning-based models, such as convolutional
+neural networks (CNNs), are used to extract discriminative features from
+images captured by camera traps. These features encode unique
+characteristics of individual animals, such as fur patterns or facial
+markings. For brown bears - which lack unique fur and body markings - facial
+markings are key.
+- __Matching__: Extracted features are then compared across different camera
+traps or instances to identify and track individual animals. Matching
+algorithms, such as nearest neighbor search or clustering, are commonly used
+to find similar feature representations corresponding to the same animal
+across different images.
+
+### Applications
+
+Animal re-identification has numerous applications in wildlife conservation and
+ecological research:
+
+- __Population Monitoring__: Researchers can use re-identification data to
+estimate population sizes, monitor trends, and assess the impact of
+environmental changes or human activities on wildlife populations.
+- __Behavioral Studies__: Long-term tracking of individual animals allows
+for detailed studies of behavior, movement patterns, habitat use, and social
+interactions within animal populations.
+- __Conservation Planning__: Re-identification data can inform conservation
+strategies by identifying key habitats, migration corridors, and areas of
+high wildlife activity for targeted conservation efforts.
+
+Overall, animal re-identification plays a vital role in understanding and
+managing wildlife populations, facilitating conservation efforts, and
+supporting ecological research initiatives.
+
+### Closed Set, Open Set, Disjoint Set
+
+In the context of __re-ID__, understanding the concepts of open sets, closed
+sets, and disjoint sets is critical.
+
+#### Closed Set Identification
+
+In a closed set scenario, the system is trained to recognize a
+predefined set of classes or identities.
+For example, in a closed set re-identification task, the system is
+trained to identify a specific set of animals from a gallery of known
+individuals.
+The key characteristic of a closed set approach is that the identities
+present in the testing or operational phase are limited to those seen
+during training. In other words, the system only recognizes identities
+that it has been explicitly trained on.
+
+#### Open Set Identification
+
+In contrast to closed set identification, open set identification deals with
+scenarios where the testing data might contain identities not seen during
+training.
+The system needs to be able to recognize known identities (closed set) while
+also detecting and handling unknown or novel identities.
+This means the system must have the capability to distinguish between familiar
+identities (in-distribution data) and unfamiliar ones (out-of-distribution
+data).
+Open set identification systems often incorporate techniques like anomaly
+detection or thresholding to identify instances that don't belong to any known
+class.
+
+#### Disjoint Set Identification
+
+Disjoint set identification refers to situations where the identities in the
+training and testing datasets are completely separate.
+In other words, there is no overlap between the identities seen during training
+and those encountered during testing.
+This scenario is common in real-world applications where the population of
+identities is constantly changing, such as surveillance systems in crowded
+areas or public spaces.
+
+#### Summary
+
+In summary, closed set identification deals with recognizing a fixed set
+of known identities, open set identification extends this to handle
+unknown or novel identities, and disjoint set identification involves
+training and testing on completely separate sets of identities. Each
+approach has its own challenges and requirements, and the choice depends
+on the specific application and the nature of the data.
+
+## Data Modeling
+
+### Data Splits
+
+We opted to create two distinct splits to assess the performance of the
+identification system in real-world scenarios:
+
+- __Open-set split__: This split includes a portion of newly introduced
+identities in the testing phase, simulating encounters with previously unseen
+entities.
+- __Disjoint-set split__: In this split, the training and testing datasets
+comprise entirely different identities, mimicking scenarios where the system
+encounters novel entities during deployment
+
+To avoid data leakage, we implemented a careful splitting strategy based on
+both camera reference and date. This ensures that bursts of images captured by
+the same camera at the same time are consistently grouped into the same split
+(train, validation, or test).
+
+### Metric Learning
+
+#### Overview
+
+#### Losses
 
 3. Identification
 
