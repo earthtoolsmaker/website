@@ -474,3 +474,13 @@ optimizer.
 *Visualizing the Learned Metric Space: Clusters have emerged*
 
 ## Conclusion
+
+In this guide, we've detailed the development of an open-source,
+state-of-the-art model tailored for animal re-identification,
+specifically targeting brown bear faces. The comprehensive system,
+crafted for deployment by The BearID Project to monitor bear populations
+in Canada, represents a significant step forward in wildlife
+conservation efforts. With its adaptable design, this technology stands
+poised to transcend species boundaries, offering potential applications
+across diverse ecosystems. The scalability and versatility of the model
+hold promise for advancing conservation endeavors on a global scale.
