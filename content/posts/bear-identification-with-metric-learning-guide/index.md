@@ -52,7 +52,26 @@ retrieve the closest matching individuals.
 ![Bear Face Querying](./images/query_overview.png)
 *Retrieving closest individuals from the learned mapping*
 
+Our collaboration with [The BearID Project](https://bearresearch.org)
+aims to significantly enhance their current model performance, which
+currently stands at precision (top-1): 0.649 and precision (top-5): 0.707.
+
 ## Provided Dataset
+
+The [BearID Project](https://bearresearch.org) has compiled a collection
+of bear images, showcasing their facial features,
+captured over recent years in forests across British Columbia and Brooks
+Falls.
+
+After the development of the bear face segmentation system, as detailed
+in [a prior blog post]({{< ref
+"posts/bear-face-segmentation-guide" >}}), we successfully
+generated approximately 4700 bear face images,
+representing a total of 132 individuals.
+
+![Generated Chips](./images/chips.png)
+*Generated bear faces by the segmentation model*
+
 
 2. Provided Dataset
 
