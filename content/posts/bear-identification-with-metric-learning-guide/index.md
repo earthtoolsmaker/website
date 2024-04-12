@@ -6,10 +6,11 @@ image: /images/posts/bear-identification-with-metric-learning-guide/cover.png
 tags: ["AI", "vision", "metric learning"]
 ---
 
-TODO: 
+```txt
+TODO:
 - add paper for each loss function
 - add illustration for open set, closed set and disjoint set
-- 
+```
 
 In this blog post we'll delve into the technical
 development of a bear face recognition system which is a
@@ -287,6 +288,20 @@ The Triplet margin loss explicitly enforces relative distance relationships
 between instances, which can lead to more discriminative embeddings. It helps
 in dealing with the issue of intra-class variance and inter-class separability.
 
+##### Circle Loss
+
+A circle Loss defines a circular decision boundary in the embedding space, with
+each class represented by a circle. The radius of the circle is dynamically
+adjusted based on the intra-class variations, ensuring that samples from the
+same class are pulled together within the circle while maintaining a margin
+from samples of other classes.
+
+A circle Loss offers several advantages over traditional softmax-based losses,
+including better handling of intra-class variations, robustness to noisy data,
+and improved generalization to unseen classes. It has been shown to achieve
+state-of-the-art performance in various metric learning tasks, particularly in
+scenarios with large intra-class variations or class imbalances.
+
 ##### ArcFace Loss
 
 The ArcFace loss is particularly effective for face recognition tasks. It
@@ -325,7 +340,8 @@ predictions based on their confidence scores or relevance scores.
 2. __Correctness Evaluation__: Accuracy at k evaluates the correctness of the
    top-k predictions by considering whether the correct answer is among these
 top-k predictions.
-3. __Calculation__: The accuracy at k is calculated by dividing the number of correct predictions within the top-k ranked results by k.
+3. __Calculation__: The accuracy at k is calculated by dividing the number of
+   correct predictions within the top-k ranked results by k.
 4. __Interpretation__: Accuracy at k provides insights into how well the model
    performs when considering only the top-ranked predictions. A higher accuracy
 at k indicates that a larger fraction of the correct answers are included
@@ -357,10 +373,23 @@ Throughout training, evaluation metrics are continuously monitored, and we save
 the weights of the best-performing model. Training halts if there's no
 improvement in model performance beyond a specified threshold, determined by
 the patience parameter.
+
+We adopt different learning rates for training the backbone and the heads. This
+decision stems from the fact that the backbone is typically pretrained on large
+datasets for feature extraction, whereas the embedder is trained from scratch
+for the specific task. Typically, we employ a learning rate ratio of 10 to 100
+between the backbone and the embedder to effectively balance the learning rates
+and ensure optimal training dynamics.
+
+#### Metric Space Visualization - Embeddings
+
 We visualize the metric spaces using UMAP, a versatile manifold learning and
 dimension reduction algorithm, and save the visualizations after every epoch.
 This enables us to track and evaluate the improvement of the embedder over
 time.
+
+![Embeddings with epochs](./images/embeddings_evolution.png)
+*Embeddings over training time*
 
 #### Hard Negative Mining
 
@@ -398,13 +427,50 @@ re-identification.
 
 #### Baseline
 
-#### Best
+A baseline was quickly established using a pretrained ResNet18 as the backbone
+and a Circle Loss for 1 epoch.
 
-Random Hyperparameter search
+| Split         | Backbone | Loss         | Epochs | accuracy@1 | accuracy@3 | accuracy@5 | accuracy@10 |
+|:-------------:|:--------:|:------------:|:------:|:----------:|:----------:|:----------:|:-----------:|
+| Disjoint Set  | ResNet18 |  Circle Loss | 1      | 43.9       | 56.0       | 62.7       | 70.0        |
+| Open Set      | ResNet18 |  Circle Loss | 1      | 54.0       | 66.2       | 71.0       | 79.6        |
 
-### Evaluation
+![Baseline Embeddings](./images/evaluation/baseline/umap_epoch_1.png)
+*Visualizing the Learned Metric Space: Clusters Yet to Emerge*
 
-Show table of results here
-4.1 Evaluation pitfalls: use reference and gallery in a good way, get rid of bursts of images
+The approach shows great promise, and selecting the appropriate hyperparameters
+was key in maximizing the model's performance
+
+#### Hyperparameter Search
+
+After configuring experiment tracking, we conducted a random hyperparameter
+search across the following parameter space:
+
+- backbones: ResNet18, ResNet50, Convnext_tiny, Convnext_large
+- losses: tripletmargin, circle, arcface
+- learning rates
+- weight decay
+- mining strategies: easy, semi hard, hard
+- embedder's depth
+- optimizers: Adam, SGD, etc
+- embedding size; 512, 1024, 2048
+- data augmentation steps: rotation, color jitter, etc
+
+We randomly sampled configurations from this parameter space and conducted
+training sessions for a few days on two GPUs.
+
+#### Best Model
+
+The winning combination comprises a convnext_large backbone paired with an
+arcface loss, employing a hard mining strategy, and trained using the Adam
+optimizer.
+
+| Split         | Backbone       | Loss          | Epochs | accuracy@1 | accuracy@3 | accuracy@5 | accuracy@10 |
+|:-------------:|:--------------:|:-------------:|:------:|:----------:|:----------:|:----------:|:-----------:|
+| Disjoint Set  | Convnext_large |  ArcFace Loss | 200    | 95.5       | 96.5       | 97.3       | 98.5        |
+| Open Set      | Convnext_large |  ArcFace Loss | 200    | 95.0       | 95.5       | 95.9       | 96.8        |
+
+![Best Model Embeddings](./images/evaluation/best/umap_epoch_75.png)
+*Visualizing the Learned Metric Space: Clusters have emerged*
 
 ## Conclusion
