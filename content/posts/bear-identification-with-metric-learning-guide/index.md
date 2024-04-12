@@ -6,12 +6,6 @@ image: /images/posts/bear-identification-with-metric-learning-guide/cover.png
 tags: ["AI", "vision", "metric learning"]
 ---
 
-```txt
-TODO:
-- add paper for each loss function
-- add illustration for open set, closed set and disjoint set
-```
-
 In this blog post we'll delve into the technical
 development of a bear face recognition system which is a
 critical component of the bear identification
@@ -268,10 +262,10 @@ Let's explore the importance of some common losses in metric learning:
 
 ##### Contrastive Loss
 
-The contrastive loss encourages similar instances to be closer together and
-dissimilar instances to be pushed apart in the embedding space. It achieves
-this by penalizing pairs of similar instances that are far apart and pairs of
-dissimilar instances that are close together.
+The [Contrastive Loss](https://arxiv.org/abs/2004.11362) encourages similar
+instances to be closer together and dissimilar instances to be pushed apart in
+the embedding space. It achieves this by penalizing pairs of similar instances
+that are far apart and pairs of dissimilar instances that are close together.
 
 By using a contrastive loss, the model learns to map instances of the same
 class (or similar instances) close to each other while maximizing the distance
@@ -279,10 +273,12 @@ between instances of different classes (or dissimilar instances).
 
 ##### Triplet Margin Loss
 
-A triplet margin loss builds upon contrastive loss by considering triplets of
-anchor, positive, and negative examples. It ensures that the distance between
-the anchor and the positive example is smaller than the distance between the
-anchor and the negative example by at least a margin.
+A [Triplet Margin
+Loss](https://paperswithcode.com/paper/triplet-loss-in-siamese-network-for-object)
+builds upon contrastive loss by considering triplets of anchor, positive, and
+negative examples. It ensures that the distance between the anchor and the
+positive example is smaller than the distance between the anchor and the
+negative example by at least a margin.
 
 The Triplet margin loss explicitly enforces relative distance relationships
 between instances, which can lead to more discriminative embeddings. It helps
@@ -290,11 +286,11 @@ in dealing with the issue of intra-class variance and inter-class separability.
 
 ##### Circle Loss
 
-A circle Loss defines a circular decision boundary in the embedding space, with
-each class represented by a circle. The radius of the circle is dynamically
-adjusted based on the intra-class variations, ensuring that samples from the
-same class are pulled together within the circle while maintaining a margin
-from samples of other classes.
+A [Circle Loss](https://arxiv.org/abs/2002.10857) defines a circular decision
+boundary in the embedding space, with each class represented by a circle. The
+radius of the circle is dynamically adjusted based on the intra-class
+variations, ensuring that samples from the same class are pulled together
+within the circle while maintaining a margin from samples of other classes.
 
 A circle Loss offers several advantages over traditional softmax-based losses,
 including better handling of intra-class variations, robustness to noisy data,
@@ -304,9 +300,9 @@ scenarios with large intra-class variations or class imbalances.
 
 ##### ArcFace Loss
 
-The ArcFace loss is particularly effective for face recognition tasks. It
-enhances the discriminative power of the learned embeddings by introducing a
-margin-based angular penalty.
+The [ArcFace loss](https://arxiv.org/abs/1801.07698) is particularly effective
+for face recognition tasks. It enhances the discriminative power of the learned
+embeddings by introducing a margin-based angular penalty.
 
 The ArcFace loss operates in a hypersphere embedding space, where the angle
 between the feature vectors and the corresponding class-specific hypersphere
