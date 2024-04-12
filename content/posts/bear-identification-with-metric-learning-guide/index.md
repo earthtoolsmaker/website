@@ -72,6 +72,35 @@ representing a total of 132 individuals.
 ![Generated Chips](./images/chips.png)
 *Generated bear faces by the segmentation model*
 
+### Bursts of images
+
+When encountering a bear, photographs or camera traps often capture
+multiple images of the same individual in very similar poses. Proper
+handling of these bursts of images during data splitting is crucial.
+Neglecting this step may lead to train/test data leakage, which can
+cause the model to inaccurately overreport its performance.
+
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="./images/eda/bursts/1.jpg" loading="lazy">
+    <img src="./images/eda/bursts/2.jpg" loading="lazy">
+    <img src="./images/eda/bursts/3.jpg" loading="lazy">
+    <img src="./images/eda/bursts/4.jpg" loading="lazy">
+  </div>
+  <em>Gallery / Provided labels by <a href="https://bearrearch.org">The BearID Project</a> - A burst of images with the same individual</em>
+</div>
+
+### Individual counts distribution
+
+The curated dataset primarily consists of only a few image faces for
+most bears, posing a potential challenge for accurate identification.
+Conversely, some bears have hundreds of image faces, largely derived
+from bursts of images captured during encounters. Below, we present a
+distribution plot of individual counts to provide further insight into
+the data.
+
+![Individual counts distribution](./images/eda/individual_counts_distribution.png)
+*Individual counts distribution - How many image faces per individual?*
 
 2. Provided Dataset
 
