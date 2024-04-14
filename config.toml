@@ -143,36 +143,36 @@ paginate = 6
   #-------------------------------
   # Testimonials Section
   [params.testimonials]
-    enable = false
+    enable = true
     testimonial_title = "🙂 What Partners Say"
 
   [[params.testimonial_item]]
-    name = "Carla Kenter"
-    image = "https://via.placeholder.com/200x200"
-    designation = "Professional Artist"
-    link = "https://twitter.com/"
-    content = "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
+    name = "Yohan Runhaar"
+    image = "/images/testimonials/yohan-reefsupport.jpg"
+    designation = "CTO - ReefSupport"
+    link = "https://reef.support"
+    content = "I am very excited for what is ahead, there is so much potential in the work that's been done. Your hard work and passion have really shone through!"
 
-  [[params.testimonial_item]]
-    name = "Kierra Botosh"
-    image = "https://via.placeholder.com/200x200"
-    designation = "Growth & Community"
-    link = "https://facebook.com/"
-    content = "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
+  # [[params.testimonial_item]]
+  #   name = "Kierra Botosh"
+  #   image = "https://via.placeholder.com/200x200"
+  #   designation = "Growth & Community"
+  #   link = "https://facebook.com/"
+  #   content = "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
 
-  [[params.testimonial_item]]
-    name = "Randy Herwitz"
-    image = "https://via.placeholder.com/200x200"
-    designation = "Executive Assistant"
-    link = "https://twitter.com/"
-    content = "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
+  # [[params.testimonial_item]]
+  #   name = "Randy Herwitz"
+  #   image = "https://via.placeholder.com/200x200"
+  #   designation = "Executive Assistant"
+  #   link = "https://twitter.com/"
+  #   content = "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
 
-  [[params.testimonial_item]]
-    name = "Hanna Franci"
-    image = "https://via.placeholder.com/200x200"
-    designation = "Product Designer"
-    link = "https://facebook.com/"
-    content = "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
+  # [[params.testimonial_item]]
+  #   name = "Hanna Franci"
+  #   image = "https://via.placeholder.com/200x200"
+  #   designation = "Product Designer"
+  #   link = "https://facebook.com/"
+  #   content = "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
 
 
   #-------------------------------
