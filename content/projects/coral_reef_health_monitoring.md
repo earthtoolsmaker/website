@@ -6,7 +6,7 @@ client:
   name: ReefSupport
   link: https://reef.support
   logo: /images/clients/reefsupport/logo.png
-github_repo: https://gitlab.com/fruitpunch/projects/ai-for-coral-reefs-2/supervised-learning/yolov8
+github_repo: https://github.com/earthtoolsmaker/coralreef-conservation
 tools:
   - Computer Vision
   - Machine Learning
@@ -40,13 +40,35 @@ bottleneck in reporting results persists due to image processing.
 
 Coral reefs are incredibly important for several reasons:
 
-- __Biodiversity Hotspots__: Coral reefs are among the most biodiverse ecosystems on the planet, providing a home for an estimated 25% of all marine species despite covering less than 1% of the ocean floor. They offer habitat, breeding grounds, and shelter for numerous marine organisms, from fish to invertebrates.
-- __Economic Value__: Coral reefs support a vast array of industries and economies worldwide. They are crucial for fisheries, tourism, and coastal protection. Millions of people depend on coral reefs for food, livelihoods, and income through activities such as fishing and tourism.
-- __Coastal Protection__: Coral reefs act as natural barriers that help protect coastal communities from storms, waves, and erosion. They absorb and dissipate wave energy, reducing the impact of storms and protecting shorelines from damage.
-- __Carbon Cycling and Climate Regulation__: Coral reefs play a role in the global carbon cycle by sequestering carbon dioxide from the atmosphere. They also help regulate the Earth's climate by influencing oceanic and atmospheric circulation patterns.
-- __Medicinal Resources__: Coral reef organisms produce compounds that have potential pharmaceutical applications. These include treatments for cancer, pain, and other diseases. Research into coral reef organisms continues to uncover new compounds with medicinal properties.
-- __Recreational and Educational Value__: Coral reefs attract millions of tourists each year who engage in activities such as snorkeling, diving, and reef exploration. These experiences foster appreciation for marine ecosystems and can contribute to conservation efforts.
-- __Cultural Importance__: Coral reefs hold significant cultural value for many indigenous and coastal communities around the world. They are often central to cultural practices, traditions, and spiritual beliefs, serving as important symbols of identity and connection to the sea.
+- __Biodiversity Hotspots__: Coral reefs are among the most biodiverse
+ecosystems on the planet, providing a home for an estimated 25% of all marine
+species despite covering less than 1% of the ocean floor. They offer habitat,
+breeding grounds, and shelter for numerous marine organisms, from fish to
+invertebrates.
+- __Economic Value__: Coral reefs support a vast array of industries and
+economies worldwide. They are crucial for fisheries, tourism, and coastal
+protection. Millions of people depend on coral reefs for food, livelihoods, and
+income through activities such as fishing and tourism.
+- __Coastal Protection__: Coral reefs act as natural barriers that help protect
+coastal communities from storms, waves, and erosion. They absorb and dissipate
+wave energy, reducing the impact of storms and protecting shorelines from
+damage.
+- __Carbon Cycling and Climate Regulation__: Coral reefs play a role in the
+global carbon cycle by sequestering carbon dioxide from the atmosphere. They
+also help regulate the Earth's climate by influencing oceanic and atmospheric
+circulation patterns.
+- __Medicinal Resources__: Coral reef organisms produce compounds that have
+potential pharmaceutical applications. These include treatments for cancer,
+pain, and other diseases. Research into coral reef organisms continues to
+uncover new compounds with medicinal properties.
+- __Recreational and Educational Value__: Coral reefs attract millions of
+tourists each year who engage in activities such as snorkeling, diving, and
+reef exploration. These experiences foster appreciation for marine ecosystems
+and can contribute to conservation efforts.
+- __Cultural Importance__: Coral reefs hold significant cultural value for many
+indigenous and coastal communities around the world. They are often central to
+cultural practices, traditions, and spiritual beliefs, serving as important
+symbols of identity and connection to the sea.
 
 Overall, coral reefs are not only ecologically significant but also
 economically, socially, and culturally important. Protecting and preserving

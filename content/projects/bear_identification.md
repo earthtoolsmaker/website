@@ -6,7 +6,7 @@ client:
   name: BearID
   link: https://bearresearch.org
   logo: /images/clients/bearid/logo.png
-github_repo: https://gitlab.com/fruitpunch/projects/ai-for-bears/face-detection-and-segmentation/albear
+github_repo: https://github.com/earthtoolsmaker/bear-conservation
 tools: 
   - Computer Vision
   - Maching Learning
