@@ -139,7 +139,7 @@ effectiveness of coexistence strategies.
 The primary objective of our collaboration is to pioneer non-invasive tools to
 support bear research, monitoring, and conservation efforts. Our overarching
 aim is to design a low power open-source model that can accurately identify
-individual bears with a precision surpassing 90%.
+individual bears with an accuracy surpassing 90%.
 
 Presently, the existing face recognition system achieves a top-1 accuracy of
 64.9% and a top-5 accuracy of
