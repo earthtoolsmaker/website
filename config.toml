@@ -156,7 +156,7 @@ paginate = 6
   [[params.testimonial_item]]
     name = "Melanie Clapham"
     image = "/images/testimonials/melanie-bearid.jpg"
-    designation = "Director & Conservation Scientist - BearID"
+    designation = "Director & Conservation Scientist - The BearID Project"
     link = "https://bearresearch.org/"
     content = "There is definitely a want and need from the conservation community to work with people like you, with your expertise, as the technical side to this type of development is often the barrier. "
 
