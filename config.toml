@@ -153,12 +153,12 @@ paginate = 6
     link = "https://reef.support"
     content = "I am very excited for what is ahead, there is so much potential in the work that's been done. Your hard work and passion have really shone through!"
 
-  # [[params.testimonial_item]]
-  #   name = "Kierra Botosh"
-  #   image = "https://via.placeholder.com/200x200"
-  #   designation = "Growth & Community"
-  #   link = "https://facebook.com/"
-  #   content = "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
+  [[params.testimonial_item]]
+    name = "Melanie Clapham"
+    image = "/images/testimonials/melanie-bearid.jpg"
+    designation = "Director & Conservation Scientist - BearID"
+    link = "https://bearresearch.org/"
+    content = "There is definitely a want and need from the conservation community to work with people like you, with your expertise, as the technical side to this type of development is often the barrier. "
 
   # [[params.testimonial_item]]
   #   name = "Randy Herwitz"
