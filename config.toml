@@ -160,12 +160,12 @@ paginate = 6
     link = "https://bearresearch.org/"
     content = "There is definitely a want and need from the conservation community to work with people like you, with your expertise, as the technical side to this type of development is often the barrier. "
 
-  # [[params.testimonial_item]]
-  #   name = "Randy Herwitz"
-  #   image = "https://via.placeholder.com/200x200"
-  #   designation = "Executive Assistant"
-  #   link = "https://twitter.com/"
-  #   content = "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
+  [[params.testimonial_item]]
+    name = "Thijs Suijten"
+    image = "/images/testimonials/thijs-hacktheplanet.jpg"
+    designation = "Co-founder & CTO - HackThePlanet"
+    link = "https://www.hack-the-planet.io/"
+    content = "They really helped us by training a YOLOv8 model for our system to prevent human-bear-conflicts. He thinks along well, knows what he is talking about and is a nice person to work with!"
 
   # [[params.testimonial_item]]
   #   name = "Hanna Franci"
