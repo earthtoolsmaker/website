@@ -44,13 +44,18 @@ paginate = 6
     name = "Projects"
     url = "/projects/"
     weight = 4
-    hasChildren = true
+    # hasChildren = true
 
-      [[menu.main]]
-      parent = "Pages"
-      name = "Contact"
-      url = "/contact/"
-      weight = 1
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
+
+      # [[menu.main]]
+      # parent = "Pages"
+      # name = "Contact"
+      # url = "/contact/"
+      # weight = 1
 
       # [[menu.main]]
       # parent = "Pages"
