@@ -137,7 +137,7 @@ paginate = 6
   # Projects Settings
   [params.projects]
     enable = true
-    projects_title= "👨🏻‍💻 Selected Works"
+    projects_title= "👨🏻‍💻 Selected Projects"
 
 
   #-------------------------------
