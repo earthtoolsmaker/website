@@ -159,7 +159,7 @@ paginate = 6
 
   [params.projects.fundraising]
     enable = true
-    projects_title= "😇 Looking for funding"
+    projects_title= "😇 Looking for Funding"
     limit = 3
 
 
