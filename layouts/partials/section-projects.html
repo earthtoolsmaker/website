@@ -18,7 +18,7 @@
             {{ end }}
 
             <div class="row">
-              {{ range (where (where .Site.RegularPages "Section" "projects" | first .Site.Params.projects.completed.limit ) ".Params.status" "fundraising") }}
+              {{ range (where (where .Site.RegularPages "Section" "projects")  ".Params.status" "fundraising") | first .Site.Params.projects.fundraising.limit  }}
               <article class="project col col-4 col-w-6 col-t-12">
                 <div class="project__content">
                   {{ if .Params.Image }}
@@ -73,7 +73,8 @@
             {{ end }}
 
             <div class="row">
-              {{ range (where (where .Site.RegularPages "Section" "projects" | first .Site.Params.projects.completed.limit ) ".Params.status" "completed") }}
+              {{ range (where (where .Site.RegularPages "Section" "projects")  ".Params.status" "completed") | first .Site.Params.projects.completed.limit  }}
+              {{/* {{ range (where (where .Site.RegularPages "Section" "projects" | first .Site.Params.projects.completed.limit ) ".Params.status" "completed") }} */}}
               <article class="project col col-4 col-w-6 col-t-12">
                 <div class="project__content">
                   {{ if .Params.Image }}

@@ -11,10 +11,17 @@ tools:
   - Bio Acoustics
   - Passive Acoustic Monitoring
   - Machine Learning
-draft: true
-date: 2023-05-01
+status: fundraising
+date: 2024-04-23
 image: /images/projects/forest_elephants_passive_acoustic_monitoring/cover.png
 ---
+
+## 😇 Looking for Funding
+
+{{< donate_sponsor_cta >}}
+
+<br/>
+<br/>
 
 Forest elephants play a crucial role as ecosystem
 engineers within Central Africa's tropical rainforests.
@@ -37,3 +44,7 @@ for conservation practitioners. These tools not only aid
 in monitoring population trends and landscape use
 patterns but also support anti-poaching initiatives and
 mitigate human-elephant conflicts.
+
+## Project Scope and Objectives
+
+TODO
