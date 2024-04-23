@@ -10,10 +10,20 @@ client:
 tools:
   - Computer Vision
   - Machine Learning
+  - MLOps
 status: fundraising
 date: 2024-04-23
 image: /images/projects/early_forest_fire_detection/cover.png
 ---
+
+## 😇 Looking for Funding
+
+{{< donate_sponsor_cta >}}
+
+<br/>
+<br/>
+
+## Context
 
 Pyronear presents a comprehensive fire risk management
 solution. At its core, Pyronear integrates an advanced
@@ -49,7 +59,6 @@ moisture, reduce erosion, and sustain the flow of rivers
 and streams. Wildfires can disrupt these processes,
 leading to soil degradation and affecting water quality
 and availability.
-
 - __Economic Impact:__ Forests provide various ecosystem
 services, including timber, non-timber forest products,
 and recreational opportunities. Wildfires can damage
@@ -70,8 +79,8 @@ health and biodiversity.
 
 ## Project Scope and Objectives
 
-Our partnership is focused on enhancing the precision of
-our early forest fire detection system, with the goal of
+Our partnership is focused on __enhancing the precision of
+the early forest fire detection system__, with the goal of
 minimizing false alarms to bolster confidence among
 firefighters and stakeholders. Additionally, we aspire
 to incorporate industry-leading methodologies for
