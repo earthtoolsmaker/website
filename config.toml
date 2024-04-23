@@ -153,6 +153,16 @@ paginate = 6
     enable = true
     projects_title= "👨🏻‍💻 Selected Projects"
 
+  [params.projects.completed]
+    enable = true
+    projects_title= "👨🏻‍💻 Completed Projects"
+    limit = 4
+
+  [params.projects.fundraising]
+    enable = true
+    projects_title= "👨🏻‍💻 Looking for funding"
+    limit = 4
+
 
   #-------------------------------
   # Testimonials Section

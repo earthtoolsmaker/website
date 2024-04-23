@@ -10,6 +10,7 @@ github_repo: https://gitlab.com/fruitpunch/projects/ai-for-bears/face-detection-
 tools: 
   - "Computer Vision"
   - "Machine Learning"
+status: completed
 date: 2024-04-02
 image: /images/projects/human_wildlife_conflict_bear/cover.png
 ---

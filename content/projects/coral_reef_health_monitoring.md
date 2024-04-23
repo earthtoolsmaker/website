@@ -10,6 +10,7 @@ github_repo: https://github.com/earthtoolsmaker/coralreef-conservation
 tools:
   - Computer Vision
   - Machine Learning
+status: completed
 date: 2024-01-30
 image: /images/projects/coral_reef_segmentation/cover.jpg
 ---

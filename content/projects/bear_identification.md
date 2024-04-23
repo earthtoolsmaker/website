@@ -10,6 +10,7 @@ github_repo: https://github.com/earthtoolsmaker/bear-conservation
 tools: 
   - Computer Vision
   - Maching Learning
+status: completed
 date: 2024-04-03
 image: /images/projects/bear_identification/cover.png
 ---
