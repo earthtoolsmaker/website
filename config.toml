@@ -151,7 +151,6 @@ paginate = 6
   # Projects Settings
   [params.projects]
     enable = true
-    projects_title= "👨🏻‍💻 Selected Projects"
 
   [params.projects.completed]
     enable = true
@@ -160,7 +159,7 @@ paginate = 6
 
   [params.projects.fundraising]
     enable = true
-    projects_title= "👨🏻‍💻 Looking for funding"
+    projects_title= "😇 Looking for funding"
     limit = 4
 
 
