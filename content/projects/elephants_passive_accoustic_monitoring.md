@@ -23,6 +23,8 @@ image: /images/projects/forest_elephants_passive_acoustic_monitoring/cover.png
 <br/>
 <br/>
 
+## Context
+
 Forest elephants play a crucial role as ecosystem
 engineers within Central Africa's tropical rainforests.
 However, their populations are dwindling due to ivory
@@ -47,4 +49,14 @@ mitigate human-elephant conflicts.
 
 ## Project Scope and Objectives
 
-TODO
+Our collaboration is dedicated to enhancing the Machine Learning models
+utilized by the [Elephant Listening
+Project](https://www.elephantlisteningproject.org). These models are
+designed to harness sound recordings to accurately detect elephant
+rumble
+vocalizations and distinguish them from gunshots within the Central
+African rainforest. Our goal is to meticulously refine and optimize
+these models, constructing an automated pipeline that prioritizes model
+efficiency and effectiveness. By focusing solely on algorithmic
+improvements, we streamline the process without the need for intricate
+hardware integration.
