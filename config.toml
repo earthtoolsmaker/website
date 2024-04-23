@@ -155,7 +155,7 @@ paginate = 6
   [params.projects.completed]
     enable = true
     projects_title= "👨🏻‍💻 Completed Projects"
-    limit = 4
+    limit = 6
 
   [params.projects.fundraising]
     enable = true
