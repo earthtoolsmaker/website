@@ -6,7 +6,7 @@ client:
   name: Pyronear
   link: https://pyronear.org
   logo: /images/clients/pyronear/logo.png
-# github_repo: https://gitlab.com/fruitpunch/projects/ai-for-coral-reefs-2/supervised-learning/yolov8
+github_repo: https://github.com/earthtoolsmaker/pyronear-mlops
 tools:
   - Computer Vision
   - Machine Learning
