@@ -25,15 +25,12 @@ image: /images/projects/early_forest_fire_detection/cover.png
 
 ## Context
 
-Pyronear presents a comprehensive fire risk management
-solution. At its core, Pyronear integrates an advanced
-early wildfire detection algorithm, seamlessly executed
-on a compact microcomputer. This system is strategically
-complemented by a network of high-resolution cameras
-strategically positioned atop elevated vantage points,
-offering panoramic views of forested areas. Together,
-these components form a robust and proactive approach to
-wildfire prevention and management.
+Pyronear offers a holistic solution for managing fire risks. Central to its
+capabilities is an innovative early wildfire detection algorithm, seamlessly
+operated on a compact microcomputer. This core system is augmented by a network
+of high-resolution cameras strategically positioned at elevated vantage points,
+providing panoramic coverage of forested regions. Together, these components
+form a resilient and proactive strategy for wildfire prevention and management.
 
 > Our detectors communicate fire alerts to a database that is connected
 > to a supervision platform for the fire department.
