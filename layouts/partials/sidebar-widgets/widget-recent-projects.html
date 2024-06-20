@@ -4,7 +4,9 @@
   {{ range $related_projects | first 3 }}
   <div class="recent-project">
     {{ if .Params.Image }}
-    <a href="{{ .RelPermalink }}" class="recent-project__image"><img class="lazy" data-src="{{.Params.Image | absURL }}" alt="{{ .Title }}"></a>
+    <a href="{{ .RelPermalink }}" class="recent-project__image">
+      <img class="lazy" data-src="{{.Params.Image | absURL }}" alt="{{ .Title }}">
+    </a>
     {{ end }}
   
     <div class="recent-project__content">
