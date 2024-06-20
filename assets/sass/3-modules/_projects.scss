@@ -20,9 +20,11 @@
 
 .project__head {
   display: block;
-  padding: 20px;
+  // padding: 20px;
+  padding: 18px;
   border-radius: 22px;
-  background: var(--background-alt-color);
+  // background: var(--background-alt-color);
+  background: #ede0d4;
   transition: transform .3s ease;
 
   @media (max-width: $mobile) {
