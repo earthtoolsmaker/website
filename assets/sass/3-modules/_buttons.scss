@@ -42,7 +42,36 @@
     width: 100%;
   }
 
+  &--cta {
+    color: var(--white);
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+
+    &:hover {
+      color: var(--dark);
+      background-color: var(--primary-color);
+    }
+  }
+
   @media (max-width: $tablet) {
     font-size: 16px;
+  }
+}
+
+.link-no-decoration {
+  border-bottom: none !important;
+  text-decoration:none;
+
+  &:link {
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
   }
 }

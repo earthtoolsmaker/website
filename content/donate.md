@@ -1,6 +1,6 @@
 ---
 layout: contact
-title: Support the project
+title: Support our Mission
 image: /images/pages/about/hero.jpg
 ---
 
