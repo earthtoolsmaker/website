@@ -1,6 +1,6 @@
 ---
 layout: contact
-title: Become a sponsor
+title: Become a Sponsor
 image: /images/pages/about/hero.jpg
 ---
 
