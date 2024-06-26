@@ -1,10 +1,11 @@
 ---
 title: How to detect elephant rumbles at scale
 description: Learn how to leverage audio processing to localize elephant rumbles on terabytes of data.
-date: 2024-06-26
+date: 2024-06-29
 params:
   math: true
 image: /images/posts/how-to-detect-elephant-rumbles-at-scale/cover.png
+draft: true
 tags: ["AI", "audio"]
 ---
 

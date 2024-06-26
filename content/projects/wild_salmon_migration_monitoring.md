@@ -16,6 +16,14 @@ date: 2024-06-25
 image: /images/projects/wild_salmon_migration_monitoring/cover.png
 ---
 
+## 😇 Looking for Funding
+
+{{< donate_sponsor_cta >}}
+
+<br/>
+
+## Context
+
 Wild salmon are integral to the ecological, cultural, and economic
 fabric of British Columbia, underscoring the importance of their
 effective conservation and management.
