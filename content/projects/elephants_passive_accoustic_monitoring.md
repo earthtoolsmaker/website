@@ -102,8 +102,9 @@ prices in the marketplace. This preference is especially strong in Japan, where
 traditional Japanese plucking tools for the shamisen, are made exclusively from
 forest elephant tusks.
 
-![Poaching picture](/images/projects/forest_elephants_passive_acoustic_monitoring/threats/poaching-trophies.jpg)
-*Gallery / basket of rhino horns left next to a pyre of burning elephant ivory in Kenya, 2016. Photo credit to Ben Curtis, AP*
+![Poaching picture](/images/projects/forest_elephants_passive_acoustic_monitoring/threats/poaching-trophies.jpg "Poaching artifacts: rhino horns and elephant ivory")
+*Gallery / basket of rhino horns left next to a pyre of burning elephant ivory
+in Kenya, 2016. Photo credit to Ben Curtis, AP*
 
 Poaching is particularly difficult to detect in the dense rainforests of
 Central Africa. Most estimates of poaching levels come from ivory seizures at
@@ -143,7 +144,7 @@ and monitor access by private vehicles.
 Elephant rumbles are low-frequency vocalizations produced by elephants,
 primarily for communication.
 
-![Spectrogram Elephant Rumbles](/images/projects/forest_elephants_passive_acoustic_monitoring/spectrograms/rumbles_intro.png)
+![Spectrogram Elephant Rumbles](/images/projects/forest_elephants_passive_acoustic_monitoring/spectrograms/rumbles_intro.png "Spectrogram of elephant rumbles")
 *Gallery / Spectrogram of elephant rumbles*
 
 These rumbles are a fundamental part of elephant
@@ -255,8 +256,8 @@ elephant rumbles with very high accuracy.
 
 | Spectrogram | Prediction |
 |:-----------:|:----------:|
-| ![Spectrogram 0](/images/projects/forest_elephants_passive_acoustic_monitoring/spectrograms/spectrogram_0.png) | ![Prediction 0](/images/projects/forest_elephants_passive_acoustic_monitoring/predictions/prediction_0.png) |
-| ![Spectrogram 1](/images/projects/forest_elephants_passive_acoustic_monitoring/spectrograms/spectrogram_2.png) | ![Prediction 1](/images/projects/forest_elephants_passive_acoustic_monitoring/predictions/prediction_2.png) |
+| ![Spectrogram 0](/images/projects/forest_elephants_passive_acoustic_monitoring/spectrograms/spectrogram_0.png "Spectrogram") | ![Prediction 0](/images/projects/forest_elephants_passive_acoustic_monitoring/predictions/prediction_0.png "Rumbles prediction") |
+| ![Spectrogram 1](/images/projects/forest_elephants_passive_acoustic_monitoring/spectrograms/spectrogram_2.png "Spectrogram") | ![Prediction 1](/images/projects/forest_elephants_passive_acoustic_monitoring/predictions/prediction_2.png "Rumbles prediction") |
 
 
 ## Conclusion
