@@ -152,7 +152,7 @@ img,
     display: block;
     margin-top: 12px;
     font-size: 12px;
-    line-height: 1;
+    line-height: 1.4em;
     font-style: normal;
     font-weight: normal;
   
@@ -216,7 +216,7 @@ table th {
 table tr {
   background-color: var(--tr-color);
   transition: all .3s ease;
-  &:nth-child(even) {
+  &:nth-child(odd) {
     background-color: transparent;
   }
 }

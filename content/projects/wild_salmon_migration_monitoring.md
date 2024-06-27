@@ -24,17 +24,19 @@ image: /images/projects/wild_salmon_migration_monitoring/cover.png
 
 ## Context
 
+Pacific salmon are anadromous, meaning they begin life in freshwater,
+migrate to the ocean, and return to freshwater to spawn and die. Adult
+salmon travel long distances, often hundreds of miles, to reach their
+birthplace. Overcoming various obstacles, they engage in courtship and
+breeding. The males and females release sperm and eggs simultaneously,
+which settle in nests (redds) prepared by the females. After spawning,
+the adult salmon die, their bodies providing nutrients to the
+surrounding environment.
+One can learn more about the Pacific salmon life cycle [here](https://psf.ca/learn/species-lifecycle/).
+
 Wild salmon are integral to the ecological, cultural, and economic
 fabric of British Columbia, underscoring the importance of their
 effective conservation and management.
-
-This project involves a close collaboration with the [Pacific Salmon
-Foundation](https://psf.ca/) and [Simon Fraser
-University](https://www.sfu.ca/) to develop an advanced monitoring
-system. The system automatically counts different salmon species
-migrating back to their natal streams, utilizing underwater cameras,
-sonar technology, drone imagery, and satellite connectivity for data streaming,
-and computer vision systems to generate automated count reports.
 
 ## Wild salmons are vital for the ecosystems
 
@@ -127,6 +129,83 @@ populations.
 accessible data, the system can engage local communities, Indigenous groups,
 and other stakeholders in salmon conservation efforts. Informed communities are
 more likely to support and participate in conservation initiatives.
+
+## Project Scope and Collaboration
+
+This project involves a close collaboration with the [Pacific Salmon
+Foundation](https://psf.ca/) and [Simon Fraser
+University](https://www.sfu.ca/) to develop an advanced monitoring
+system. The system automatically counts different fish species
+migrating back to their natal streams, utilizing underwater cameras,
+sonar technology, drone imagery, and satellite connectivity for data streaming,
+and computer vision systems to generate automated count reports.
+
+### Main Salmon species
+
+Below is a table showcasing the seven main salmon species found in Canada, all
+of which our systems can automatically recognize and count.
+
+| Species | Description | Image |
+|---------|-------------|-------|
+| [Steelhead](https://psf.ca/info/steelhead/)  | Found primarily in eastern Pacific waters, Steelhead can live up to eight years and spawn up to three times, although many, especially males, do not survive that long. They can grow large, with some reaching over 30 pounds and 45 inches in length, though most are between eight and 20 pounds. | ![Steelhead](/images/projects/wild_salmon_migration_monitoring/species/steelhead-trout.png) |
+| [Sockeye](https://psf.ca/info/sockeye/) | Sockeye salmon, known for their slim, streamlined bodies and brilliant colors, inhabit rivers and lakes of the Pacific Northwest. They are culturally significant to First Nations and provide essential nutrition to many communities. At maturity, usually around four years old, Sockeye weigh between five to 12 pounds and measure 20 to 28 inches in length. | ![Pink](/images/projects/wild_salmon_migration_monitoring/species/sockeye.png) |
+| [Pink](https://psf.ca/info/pink/) | Pink salmon are the smallest and most populous Pacific salmon in British Columbia, and the least vulnerable to extinction. They typically weigh between three to 11 pounds and measure 18 to 24 inches in length. | ![Pink](/images/projects/wild_salmon_migration_monitoring/species/pink_0.png) |
+| [Coho](https://psf.ca/info/coho/) | Coho salmon are highly adaptable and found in rivers and streams across North America. They typically weigh 8 to 12 pounds and measure 18 to 24 inches in length. | ![Coho](/images/projects/wild_salmon_migration_monitoring/species/coho.png) |
+| [Chum](https://psf.ca/info/chum/) | Chum salmon are the second largest in the Oncorhynchus genus, after Chinook. They typically weigh between 12 to 15 pounds and measure 35 to 45 inches in length. | ![Chum](/images/projects/wild_salmon_migration_monitoring/species/chum.png) |
+| [Chinook](https://psf.ca/info/chinook/) | Chinook are the largest Pacific salmon, capable of weighing over 100 pounds, though they typically average around 30 pounds. At maturity, they measure between 40 to 60 inches in length. | ![Chinook](/images/projects/wild_salmon_migration_monitoring/species/chinook.png) |
+
+<em style="font-size:14px;line-height:1.4em;display:block;">
+Gallery / Main Pacific Salmon species in Canada - courtesy to Pacific Salmon
+  Foundation for the images
+</em>
+<br/>
+
+Additionally, our system categorizes the following fish species: Bull Trout,
+Rainbow Trout, Whitefish, Shiner, Pikeminnow, Jack Chinook, Lamprey, and
+Cutthroat Trout.
+
+### Deployed Systems
+
+#### Underwater Cameras
+
+We have deployed underwater cameras equipped with motion sensors. Upon
+detecting motion, the camera activates, enabling our computer vision system to
+precisely count fish movements and classify the species.
+
+<p><iframe src="https://www.youtube.com/embed/V-rZSeM5YtY" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
+
+This enables the generation of daily counts of fish moving back to their native
+streams.
+
+#### Sonar
+
+Sonar, short for __Sound Navigation and Ranging__, is a technology that uses
+sound waves to detect objects underwater. It works by emitting pulses of sound
+waves (sonar pings) and then listening for the echoes bounced back from objects
+in the water. By analyzing the time it takes for the sound waves to return and
+the characteristics of the echoes, sonar systems can determine the distance,
+size, shape, and sometimes even the composition of underwater objects. Sonar is
+widely used in various applications such as navigation, underwater mapping,
+fishing, and military operations.
+
+![Sonar setup at Haida](/images/projects/wild_salmon_migration_monitoring/sonar/haida-sonar.jpg)
+*Gallery/ Setting up sonars at Haida site*
+
+The system is coupled with a sonar that also performs fish counting.
+
+<p><iframe src="https://www.youtube.com/embed/DlKYhipkSNk" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
+
+#### Drone imagery
+
+Drones are increasingly utilized in certain regions to monitor and
+classify the number of fish migrating upstream. They provide aerial
+perspectives that aid in accurately reporting fish populations and their
+movement patterns.
+
+![Drone Imagery](/images/projects/wild_salmon_migration_monitoring/drone/drone_imagery.webp)
+*Gallery / Photogrammetry of a fresh water stream where salmon migrate - Courtesy to [Aeria.ai](https://aeria.ai) for the picture*
+
+## Conclusion
 
 Overall, a wild salmon migration monitoring system is a powerful tool for
 conserving wild salmon by providing the data needed for effective management,
