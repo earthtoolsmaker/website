@@ -2,10 +2,10 @@
 title: "Tropical Bat Call Detection and Classification"
 subtitle: Conservation
 summary: Transforming bat population monitoring in Cambodia through advanced bio-acoustic analysis driven by Machine Learning algorithms.
-client: 
-  name: Citibats Cambodia
-  link: https://www.inaturalist.org/projects/citibats-cambodia
-  logo: /images/clients/citibats_cambodia/logo.png
+clients: 
+  - name: Citibats Cambodia
+    link: https://www.inaturalist.org/projects/citibats-cambodia
+    logo: /images/clients/citibats_cambodia/logo.png
 # github_repo: https://gitlab.com/fruitpunch/projects/ai-for-coral-reefs-2/supervised-learning/yolov8
 tools:
   - Machine Learning

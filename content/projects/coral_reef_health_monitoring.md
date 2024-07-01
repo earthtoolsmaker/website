@@ -2,10 +2,10 @@
 title: Coral Reefs Health Monitoring
 subtitle: Conservation
 summary: Segmentation of coral reefs in benthic imagery to quantify the long-term growth or decline of coral cover within marine protected areas.
-client: 
-  name: ReefSupport
-  link: https://reef.support
-  logo: /images/clients/reefsupport/logo.png
+clients:
+  - name: ReefSupport
+    link: https://reef.support
+    logo: /images/clients/reefsupport/logo.png
 github_repo: https://github.com/earthtoolsmaker/coralreef-conservation
 tools:
   - Computer Vision

@@ -171,6 +171,28 @@
     font-size: 18px;
   }
 
+  .project-meta__text-container {
+    font-size: 16px;
+    color: var(--white);
+    display: flex;
+    flex-direction: row; /* This is the default, so it can be omitted */
+    // justify-content: space-between; /* Adjusts the space between items */
+    justify-content: flex-start; /* Aligns items to the start (left) */
+    align-items: center; /* Aligns items vertically in the center */
+    gap: 15px; /* Adds space between the items (optional) */
+
+    a {
+      display: block;
+
+      img {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        max-height: 100px;
+      }
+    }
+
+  }
+
   .project-meta__text {
     display: block;
     font-size: 16px;

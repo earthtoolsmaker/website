@@ -2,10 +2,10 @@
 title: Early Forest Fire Detection
 subtitle: Protection
 summary: Democratize open and low-tech solutions for fighting wildfires, for the benefit of the ecosystems and the citizens.
-client: 
-  name: Pyronear
-  link: https://pyronear.org
-  logo: /images/clients/pyronear/logo.png
+clients:
+  - name: Pyronear
+    link: https://pyronear.org
+    logo: /images/clients/pyronear/logo.png
 github_repo: https://github.com/earthtoolsmaker/pyronear-mlops
 tools:
   - Computer Vision

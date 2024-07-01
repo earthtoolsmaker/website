@@ -2,12 +2,12 @@
 title: Bear Identification
 subtitle: Conservation
 summary: Noninvasive technologies to identify and monitor bears, facilitating their conservation.
-client: 
-  name: BearID
-  link: https://bearresearch.org
-  logo: /images/clients/bearid/logo.png
+clients:
+  - name: BearID
+    link: https://bearresearch.org
+    logo: /images/clients/bearid/logo.png
 github_repo: https://github.com/earthtoolsmaker/bear-conservation
-tools: 
+tools:
   - Computer Vision
   - Maching Learning
 status: completed

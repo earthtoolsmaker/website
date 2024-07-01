@@ -4,8 +4,15 @@ subtitle: Conservation
 summary: Conservation efforts struggle to monitor forest elephants in dense rainforests, with acoustic monitoring providing a promising solution via accurate, user-friendly detection systems that aid in population monitoring and anti-poaching efforts while mitigating human-elephant conflicts.
 client:
   name: Elephant Listening Project
-  link: https://www.elephantlisteningproject.org/ 
-  logo: /images/clients/elephantlistening/logo.png
+  link: https://www.elephantlisteningproject.org/
+  logo: /images/clients/cornell_lab/logo.svg
+clients:
+  - name: Elephant Listening Project
+    link: https://www.elephantlisteningproject.org/
+    logo: /images/clients/elephantlistening/logo.png
+  - name: CornellLab
+    link: https://www.birds.cornell.edu/
+    logo: /images/clients/cornell_lab/logo.svg
 github_repo: https://github.com/earthtoolsmaker/forest-elephants-rumble-detection
 tools:
   - Bio Acoustics

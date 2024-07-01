@@ -6,16 +6,24 @@
   {{ if .Params.summary }}
   <p class="project-meta__summary">{{ .Params.summary }}</p>
   {{ end }}
-  {{ if .Params.client }}
-  <div class="project-meta__item">
-    <h3 class="project-meta__name">Partner</h3>
-    <div class="project-meta__text">
-      <a target="_blank" href="{{ .Params.client.link }}">
-        {{/* <img style="background-color: rgba(255, 255, 255, 1); border-radius: 3px; padding: 10px;" src="{{ .Params.client.logo }}" alt="{{ .Params.client.name }}"/> */}}
-        <img src="{{ .Params.client.logo }}" alt="{{ .Params.client.name }}"/>
-      </a>
-    </div>
-  </div>
+  {{ $clients := .Params.clients }}
+  {{ if .Params.clients }}
+      <div class="project-meta__item">
+        <h3 class="project-meta__name">
+          {{ if gt (len $clients) 1 }}
+            Partners
+          {{ else }}
+            Partner
+          {{ end }}
+        </h3>
+        <div class="project-meta__text-container">
+          {{ range .Params.clients }}
+            <a target="_blank" href="{{ .link }}">
+              <img src="{{ .logo }}" alt="{{ .name }}"/>
+            </a>
+          {{ end }}
+        </div>
+      </div>
   {{ end }}
   {{ if .Params.tools }}
   <div class="project-meta__item">

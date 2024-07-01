@@ -2,10 +2,16 @@
 title: Wild Salmon Migration Monitoring
 subtitle: Conservation
 summary: The project monitors wild salmon migration to ensure the number passing through meets state regulations, addressing threats from human activities like fisheries and dams.
-client:
-  name: Pacific Salmon Foundation
-  link: https://psf.ca/
-  logo: /images/clients/psf/logo.png
+clients:
+  - name: Pacific Salmon Foundation
+    link: https://psf.ca/
+    logo: /images/clients/psf/logo.png
+  - name: Aeria
+    link: https://aeria.ai/
+    logo: /images/clients/aeria/logo.png
+  - name: Simon Fraser University
+    link: https://sfu.ca/
+    logo: /images/clients/sfu/logo.png
 tools:
   - Computer Vision
   - Machine Learning

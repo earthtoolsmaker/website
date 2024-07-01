@@ -2,10 +2,10 @@
 title: Human-Wildlife Conflict
 subtitle: Appeasing human-bear conflict
 summary: Utilizing low-power technology to detect and deter bears from encroaching on Romanian farms.
-client: 
-  name: HackThePlanet
-  link: https://www.hack-the-planet.io
-  logo: /images/clients/hacktheplanet/logo.png
+clients:
+  - name: HackThePlanet
+    link: https://www.hack-the-planet.io
+    logo: /images/clients/hacktheplanet/logo.png
 github_repo: https://gitlab.com/fruitpunch/projects/ai-for-bears/face-detection-and-segmentation/albear
 tools: 
   - "Computer Vision"
