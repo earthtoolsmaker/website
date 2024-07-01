@@ -268,8 +268,8 @@ approximately 20 seconds.
 > hours, not weeks!
 
 Analyzing 1TB of data - approximately 1 month of audio recordings for the 50
-recorders - would require 14.6 hours with CPUs, but only 8.3 hours using the
-GPU and CPU cores.
+recorders - would require __14.6 hours__ with CPUs, but only __8.3 hours__
+using the GPU and CPU cores.
 
 
 ## Conclusion
