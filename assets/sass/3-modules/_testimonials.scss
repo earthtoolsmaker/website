@@ -18,6 +18,7 @@
 
 .testimonial-item {
   margin-bottom: 36px;
+  position: relative;
 
   @media (max-width: $mobile) {
     margin-bottom: 32px;
@@ -42,10 +43,10 @@
 
 .client-meta {
   text-align: center;
+
 }
 
 .image-container {
-  position: relative;
   display: block;
   width: 100px;
   height: 100px;
@@ -75,8 +76,22 @@
   }
 }
 
+.client-logo {
+  width: 100%;
+  position: relative;
+
+  .client-logo-image {
+    display: block;
+    position: absolute;
+    top: -16px; /* Distance from the top of its normal position */
+    right: -16px; /* Distance from the right of its normal position */
+    height: 30px;
+  }
+}
+
 .client-info {
   margin-bottom: 16px;
+
 
   .client-name {
     margin-bottom: 4px;
@@ -84,7 +99,7 @@
     font-family: $base-font-family;
     font-weight: 700;
   }
-  
+
   .client-designation {
     margin-bottom: 0;
     font-size: 14px;

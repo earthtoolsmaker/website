@@ -22,13 +22,20 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
           </div>
           {{ end }}
-  
+
           <div class="testimonials__slider my-slider">
           {{ with .Site.Params.testimonial_item }}
             {{ range . }}
               <div class="testimonial-item">
                 <div class="testimonial-content">
                   <div class="client-meta">
+                    {{ if .logo }}
+                      <div class="client-logo">
+                        <a href="{{ .link }}" target="_blank">
+                          <img class="client-logo-image" src="{{ .logo }}" />
+                        </a>
+                      </div>
+                    {{ end }}
                     {{ if .image }}
                     <a href="{{ .link }}" class="image-container" target="_blank" rel="noopener">
                       <img class="client-avatar" src="{{ .image }}" alt="{{ .name }}" loading="lazy">

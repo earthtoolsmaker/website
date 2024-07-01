@@ -182,6 +182,7 @@ paginate = 6
   [[params.testimonial_item]]
     name = "Yohan Runhaar"
     image = "/images/testimonials/yohan-reefsupport.jpg"
+    logo = "/images/clients/reefsupport/logo_without_text.png"
     designation = "CTO - ReefSupport"
     link = "https://reef.support"
     content = "I am very excited for what is ahead, there is so much potential in the work that's been done. Your hard work and passion have really shone through!"
@@ -189,6 +190,7 @@ paginate = 6
   [[params.testimonial_item]]
     name = "Melanie Clapham"
     image = "/images/testimonials/melanie-bearid.jpg"
+    logo = "/images/clients/bearid/logo_without_text.png"
     designation = "Director & Conservation Scientist - The BearID Project"
     link = "https://bearresearch.org/"
     content = "There is definitely a want and need from the conservation community to work with people like you, with your expertise, as the technical side to this type of development is often the barrier. "
@@ -196,6 +198,7 @@ paginate = 6
   [[params.testimonial_item]]
     name = "Thijs Suijten"
     image = "/images/testimonials/thijs-hacktheplanet.jpg"
+    logo = "/images/clients/hacktheplanet/logo_without_text.png"
     designation = "Co-founder & CTO - HackThePlanet"
     link = "https://www.hack-the-planet.io/"
     content = "They really helped us by training a YOLOv8 model for our system to prevent human-bear-conflicts. He thinks along well, knows what he is talking about and is a nice person to work with!"
