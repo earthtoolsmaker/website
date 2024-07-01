@@ -86,6 +86,12 @@
     top: -16px; /* Distance from the top of its normal position */
     right: -16px; /* Distance from the right of its normal position */
     height: 30px;
+
+    @media (max-width: $mobile) {
+      height: 20px;
+      top: -10px; /* Distance from the top of its normal position */
+      right: -10px; /* Distance from the right of its normal position */
+    }
   }
 }
 
