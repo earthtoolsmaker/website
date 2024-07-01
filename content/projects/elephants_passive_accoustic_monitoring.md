@@ -250,14 +250,26 @@ several key benefits:
 
 [Open source
 tools](https://github.com/earthtoolsmaker/forest-elephants-rumble-detection)
-were developed during this project. Large amount of audio data can be
-processed in batch, leveraging multi processing and can localize forest
-elephant rumbles with very high accuracy.
+were developed during this project to process large amounts of audio data in
+batch, leveraging multiprocessing to localize forest elephant rumbles with high
+accuracy. The aim is to enable rapid analysis of large-scale audio datasets,
+potentially reaching terabyte scales, by optimizing processing speed and
+efficiency through the use of maximum CPU and GPU cores. Benchmark analyses
+show that processing a 24-hour audio file on an 8-core CPU takes approximately
+35 seconds, while using a GPU (T4) and an 8-core CPU reduces the time to
+approximately 20 seconds.
 
 | Spectrogram | Prediction |
 |:-----------:|:----------:|
 | ![Spectrogram 0](/images/projects/forest_elephants_passive_acoustic_monitoring/spectrograms/spectrogram_0.png "Spectrogram") | ![Prediction 0](/images/projects/forest_elephants_passive_acoustic_monitoring/predictions/prediction_0.png "Rumbles prediction") |
 | ![Spectrogram 1](/images/projects/forest_elephants_passive_acoustic_monitoring/spectrograms/spectrogram_2.png "Spectrogram") | ![Prediction 1](/images/projects/forest_elephants_passive_acoustic_monitoring/predictions/prediction_2.png "Rumbles prediction") |
+
+> Analyzing months of audio recordings can now be done in a matter of
+> hours, not weeks!
+
+Analyzing 1TB of data - approximately 1 month of audio recordings for the 50
+recorders - would require 14.6 hours with CPUs, but only 8.3 hours using the
+GPU and CPU cores.
 
 
 ## Conclusion
