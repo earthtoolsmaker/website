@@ -18,7 +18,7 @@
         </h3>
         <div class="project-meta__text-container">
           {{ range .Params.clients }}
-            <a target="_blank" href="{{ .link }}">
+            <a target="_blank" href="{{ .link }}" title="{{ .name }}">
               <img src="{{ .logo }}" alt="{{ .name }}"/>
             </a>
           {{ end }}

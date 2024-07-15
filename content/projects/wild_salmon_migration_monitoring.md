@@ -6,6 +6,9 @@ clients:
   - name: Pacific Salmon Foundation
     link: https://psf.ca/
     logo: /images/clients/psf/logo.png
+  - name: Wild Salmon Centre
+    link: https://wildsalmoncenter.org/
+    logo: /images/clients/wild_salmon_centre/logo.png
   - name: Aeria
     link: https://aeria.ai/
     logo: /images/clients/aeria/logo.png
