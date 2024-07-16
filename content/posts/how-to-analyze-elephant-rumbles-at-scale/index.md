@@ -20,7 +20,7 @@ Project](https://www.elephantlisteningproject.org).
 
 For a comprehensive understanding of this project, one can read more on the
 detailed project page on [passive acoustic monitoring for forest elephants]({{<
-ref "/projects/elephants_passive_accoustic_monitoring" >}}).
+ref "/projects/elephants_passive_acoustic_monitoring" >}}).
 
 ## What is sound?
 
