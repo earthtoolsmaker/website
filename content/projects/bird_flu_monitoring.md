@@ -62,6 +62,5 @@ Management strategies to mitigate the impact of bird flu on breeding colonies
 include surveillance, early detection, quarantine measures, vaccination (where
 applicable), and sometimes culling infected birds to prevent further spread.
 Monitoring and research are essential to understand the dynamics of avian
-
 influenza in breeding populations and to implement effective conservation
 measures when necessary.
