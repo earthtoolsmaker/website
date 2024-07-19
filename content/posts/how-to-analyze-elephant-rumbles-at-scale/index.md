@@ -214,6 +214,66 @@ hunger or distress, prompting a response from their mothers.
 
 ## Designing a ML pipeline to process large audio files
 
-About 50 sound recorders are recording forest sounds around the clock in Congo. Terabytes of data are commonly generated in about a couple of months. Being able to process this amount of audio data  fast and with accuracy is key to monitor the forest elephant population.
+About 50 sound recorders are recording forest sounds around the clock in a forest in Congo. Terabytes of data are commonly generated in about a couple of months. Being able to process this amount of audio data fast and with accuracy is key to monitor the forest elephant population.
 
-WIP
+FIXME: asset showing the pipeline
+Raw waveforms -> Spectrograms -> Object Detection Model -> CSV format that can be loaded in RavenPro
+
+
+The system is required to be able to analyze Terabytes of data in a matter of hours. The main identified bottlenecks of the data pipelines are  the following: 
+- The spectrogram generation where one needs to turn raw audio into a relevant spectrogram to see elephant rumbles 
+- The model inference step that performs object detection on the spectrograms and reports bounding boxes with probabilities of elephant rumbles
+
+The pipeline will do the following:
+
+1. Generate spectrograms in the frequency range 0-250Hz, where all the elephant rumbles are located
+2. Run the rumble object detector on batches of spectrograms
+3. Save the predictions as a CSV file
+
+| Spectrogram | Prediction |
+|:-----------:|:----------:|
+| ![Spectrogram 0](./images/spectrograms/spectrogram_0.png) | ![Prediction 0](./images/predictions/prediction_0.png) |
+| ![Spectrogram 1](./images/spectrograms/spectrogram_1.png) | ![Prediction 1](./images/predictions/prediction_1.png) |
+| ![Spectrogram 2](./images/spectrograms/spectrogram_2.png) | ![Prediction 2](./images/predictions/prediction_2.png) |
+
+Below is a sample of a generated CSV file:
+
+| probability | freq_start | freq_end | t_start | t_end | audio_filepath | instance_class |
+|:-----------:|:----------:|:--------:|:-------:|:-----:|:--------------:|:--------------:|
+| 0.7848126888275146 | 185.34618616104126 | 238.925039768219 | 6.117525324225426 | 11.526521265506744 | data/08_artifacts/audio/rumbles/sample_0.wav | rumble |
+| 0.7789380550384521 | 187.46885657310486 | 237.14002966880798 | 107.4117157459259 | 112.39507365226746 | data/08_artifacts/audio/rumbles/sample_0.wav | rumble |
+| 0.6963282823562622 | 150.82329511642456 | 238.47350478172302 | 89.08285737037659 | 94.3071436882019 | data/08_artifacts/audio/rumbles/sample_0.wav | rumble |
+| 0.6579649448394775 | 203.18885147571564 | 231.6151112318039 | 44.13426876068115 | 47.50721764564514 | data/08_artifacts/audio/rumbles/sample_0.wav | rumble |
+| ... | ... | ... | ... | ... | ... | ... |
+
+### Fast Spectrogram Generation
+
+Intro and context
+
+#### Librosa
+
+#### TorchAudio
+
+### Fast ML model inference
+
+Following our approach, we are now facing an object detection problem using spectrograms instead of having to deal with raw audio data. There is a small preprocessing cost to transform the audio waveforms into spectrograms but the problem is now turned into a well understood computer vision problem.
+
+![Localizing rumbles on Spectrograms](/images/projects/forest_elephants_passive_acoustic_monitoring/spectrograms/rumbles_intro.png "Localizing rumbles on spectrograms")
+*Gallery / Detection of elephant rumbles in spectrograms*
+
+#### YOLO Overview
+
+We opted to utilize a pretrained
+[YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tune it for
+our specific object detection task. Renowned for its speed, accuracy, and
+user-friendly interface, YOLOv8 stands out as an ideal solution for various
+tasks, including object detection, tracking, instance segmentation, image
+classification, and pose estimation.
+
+![YOLOv8 CV Tasks](./images/yolov8_tasks.png)
+*YOLOv8 Computer Vision Tasks*
+
+
+### Results
+
+
