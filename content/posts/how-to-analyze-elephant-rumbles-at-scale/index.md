@@ -5,7 +5,7 @@ date: 2024-06-29
 params:
   math: true
 image: /images/posts/how-to-detect-elephant-rumbles-at-scale/cover2.png
-tags: ["AI", "audio", "vision"]
+tags: ["AI", "audio"]
 ---
 
 This blog post will detail the development process of an elephant rumble
