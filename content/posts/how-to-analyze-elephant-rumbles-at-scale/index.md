@@ -5,7 +5,6 @@ date: 2024-06-29
 params:
   math: true
 image: /images/posts/how-to-detect-elephant-rumbles-at-scale/cover2.png
-draft: true
 tags: ["AI", "audio", "vision"]
 ---
 
