@@ -20,7 +20,7 @@ tools:
   - Machine Learning
   - Sonar
   - Drones
-status: fundraising
+status: completed
 date: 2024-06-25
 image: /images/projects/wild_salmon_migration_monitoring/cover.png
 ---
