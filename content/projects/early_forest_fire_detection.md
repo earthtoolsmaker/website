@@ -97,7 +97,7 @@ analyzes real-time images from cameras mounted on tower antennas.
 ![Overview ML Model](/images/projects/early_forest_fire_detection/overview_ai_model.png)
 *Overview of the embedded ML system*
 
-### How to set up up the Pyronear system
+### Setting up the Pyronear system
 
 In this section, we detail the setup of the Pyronear system in Fontainebleau
 before the summer of 2024. This pilot project, initiated by the fire
