@@ -18,10 +18,20 @@ the global conservation community.
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/pages/about/bearidentification.png" loading="lazy" alt="Bear Identification Project">
-    <img src="/images/pages/about/coral_reef_segmentation.jpg" loading="lazy" alt="Coral Reef Segmentation Project">
+    <a target="_blank" href="{{< ref "projects/bear_identification.md" >}}">
+      <img src="/images/pages/about/solutions/bear_identification.jpg" loading="lazy" alt="Bear Identification Project" />
+    </a>
+    <a target="_blank" href="{{< ref "projects/coral_reef_health_monitoring.md" >}}">
+      <img src="/images/pages/about/solutions/coral_reef_segmentation.jpg" loading="lazy" alt="Coral Reef Segmentation and Analysis" />
+    </a>
+    <a target="_blank" href="{{< ref "projects/elephants_passive_acoustic_monitoring.md" >}}">
+      <img src="/images/pages/about/solutions/elephant_rumbles.jpg" loading="lazy" alt="Elephant Rumbles" />
+    </a>
+    <a target="_blank" href="{{< ref "projects/early_forest_fire_detection.md" >}}">
+      <img src="/images/pages/about/solutions/fire_detection.jpg" loading="lazy" alt="Elephant Rumbles" />
+    </a>
   </div>
-  <em>Gallery / Examples of projects: <b>Bear Identification</b> and <b>Coral Reefs Health Monitoring</b></em>
+  <em>Gallery / Examples of projects: <b>Bear Identification</b>, <b>Coral Reefs Health Monitoring</b>, <b>Elephant Rumbles detection</b> and <b>Early Forest Fire Detection</b></em>
 </div>
 
 Collaboration and transparency are essential for achieving our shared
