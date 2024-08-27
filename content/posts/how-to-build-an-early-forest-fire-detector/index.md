@@ -16,6 +16,13 @@ early forest fire detector, created in partnership with the NGO
 >
 > <cite>– Pyronear</cite>
 
+Pyronear offers a holistic solution for managing fire risks. Central to its
+capabilities is an innovative early wildfire detection algorithm, seamlessly
+operated on a compact microcomputer. This core system is augmented by a network
+of high-resolution cameras strategically positioned at elevated vantage points,
+providing panoramic coverage of forested regions. Together, these components
+form a resilient and proactive strategy for wildfire prevention and management.
+
 ![System Overview](./images/overview_system.png)
 *Overview of the Pyronear system to monitor forests around the clock*
 
@@ -65,7 +72,6 @@ The Pyronear team developped a plug and play system composed of a central proces
 ![Cameras range](./images/cameras/fontainebleau/setup/camera_range.png)
 *Range covered by the two cameras by taking pictures at different angles*
 
-
 #### Covered sites
 
 <div class="gallery-box">
@@ -81,4 +87,3 @@ The Pyronear team developped a plug and play system composed of a central proces
 <p><iframe src="https://www.youtube.com/embed/i9Qy-zY16Ew" loading="lazy" frameborder="0" allowfullscreen></iframe>
 </p>
 The computer vision model detects a forest fire in Fontainebleau from a distance of 35 kilometers in real time. Setting a new record for the Pyronear systems.
-
