@@ -10,6 +10,18 @@
   align-content: center;
   grid-gap: 20px;
 
+  a {
+    border-bottom: 0px !important;
+  }
+
+  a:hover {
+    border-bottom: 0px !important;
+  }
+
+  .animate-translate-upwards:hover {
+    transform: translateY(-8px);
+  }
+
   .gallery__image {
     background: var(--background-color);
 

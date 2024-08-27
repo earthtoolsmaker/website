@@ -18,16 +18,16 @@ the global conservation community.
 
 <div class="gallery-box">
   <div class="gallery">
-    <a target="_blank" href="{{< ref "projects/bear_identification.md" >}}">
+    <a class="animate-translate-upwards" target="_blank" href="{{< ref "projects/bear_identification.md" >}}" title="Bear IDentification">
       <img src="/images/pages/about/solutions/bear_identification.jpg" loading="lazy" alt="Bear Identification Project" />
     </a>
-    <a target="_blank" href="{{< ref "projects/coral_reef_health_monitoring.md" >}}">
+    <a class="animate-translate-upwards" target="_blank" href="{{< ref "projects/coral_reef_health_monitoring.md" >}}" title="Coral Reef Health Monitoring">
       <img src="/images/pages/about/solutions/coral_reef_segmentation.jpg" loading="lazy" alt="Coral Reef Segmentation and Analysis" />
     </a>
-    <a target="_blank" href="{{< ref "projects/elephants_passive_acoustic_monitoring.md" >}}">
+    <a class="animate-translate-upwards" target="_blank" href="{{< ref "projects/elephants_passive_acoustic_monitoring.md" >}}" title="Elephant Rumbles Detection" >
       <img src="/images/pages/about/solutions/elephant_rumbles.jpg" loading="lazy" alt="Elephant Rumbles" />
     </a>
-    <a target="_blank" href="{{< ref "projects/early_forest_fire_detection.md" >}}">
+    <a class="animate-translate-upwards" target="_blank" href="{{< ref "projects/early_forest_fire_detection.md" >}}" title="Early Forest Fire Detection">
       <img src="/images/pages/about/solutions/fire_detection.jpg" loading="lazy" alt="Elephant Rumbles" />
     </a>
   </div>
