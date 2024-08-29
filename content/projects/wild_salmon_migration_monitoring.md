@@ -47,6 +47,17 @@ Wild salmon are integral to the ecological, cultural, and economic
 fabric of British Columbia, underscoring the importance of their
 effective conservation and management.
 
+Through a collaborative partnership with the [Pacific Salmon Foundation
+(PSF)](https://psf.ca/),
+the [Wild Salmon Center](https://wildsalmoncenter.org/),
+[Aeria](https://aeria.ai/), and [Simon Fraser University](https://sfu.ca/), we
+developed an automated tracking and counting system -
+[__SalmonVision__](https://salmonvision.org/) - designed to monitor a wide
+range of salmon species returning to their natal streams.
+
+![System Overview](/images/projects/wild_salmon_migration_monitoring/system_overview.png)
+*Gallery / System overview of the [__SalmonVision__](https://salmonvision.org/) application*
+
 ## Wild salmons are vital for the ecosystems
 
 Wild salmon in British Columbia (BC), Canada, play a crucial role in the
@@ -80,12 +91,21 @@ providing jobs and supporting local economies. Sustainable management of salmon
 populations is crucial for the long-term viability of these economic
 activities.
 
-Overall, wild salmon are integral to the ecological, cultural, and economic fabric of British Columbia, highlighting the importance of conserving and managing their populations effectively.
+Overall, wild salmon are integral to the ecological, cultural, and economic
+fabric of British Columbia, highlighting the importance of conserving and
+managing their populations effectively.
 
 ## Conservation concerns
 
 Wild salmon in British Columbia and around the world face several main
-conservation threats:
+conservation threats.
+
+> We must take every step in our control now as climate-change related trends
+> will make things more difficult for salmon populations in the years ahead.
+> This demands urgency for Pacific salmon and for the 130+ species, including
+> grizzlies, orcas and eagles, that depend on Pacific salmon.
+>
+> <cite>– Pacific Salmon Foundation</cite>
 
 - __Habitat Destruction__: Urban development, logging, and agriculture
 can degrade and destroy salmon habitats, particularly spawning and
@@ -142,12 +162,17 @@ more likely to support and participate in conservation initiatives.
 ## Project Scope and Collaboration
 
 This project involves a close collaboration with the [Pacific Salmon
-Foundation](https://psf.ca/) and [Simon Fraser
+Foundation](https://psf.ca/), the [Wild Salmon
+Center](https://wildsalmoncenter.org/),
+[Aeria](https://aeria.ai/), and [Simon Fraser
 University](https://www.sfu.ca/) to develop an advanced monitoring
 system. The system automatically counts different fish species
 migrating back to their natal streams, utilizing underwater cameras,
 sonar technology, drone imagery, and satellite connectivity for data streaming,
 and computer vision systems to generate automated count reports.
+
+![Web application overview](/images/projects/wild_salmon_migration_monitoring/webapp_overview.png)
+*Gallery / Overview of the web application developed to centralize counts reports and video clips*
 
 ### Main Salmon species
 
@@ -182,6 +207,9 @@ detecting motion, the camera activates, enabling our computer vision system to
 precisely count fish movements and classify the species.
 
 <p><iframe src="https://www.youtube.com/embed/V-rZSeM5YtY" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
+<em style="font-size:14px;line-height:1.4em;display:block;">Underwater Camera Activated at Bear Creek River: Monitoring System Now Live
+</em>
+<br/>
 
 This enables the generation of daily counts of fish moving back to their native
 streams.
@@ -212,7 +240,8 @@ perspectives that aid in accurately reporting fish populations and their
 movement patterns.
 
 ![Drone Imagery](/images/projects/wild_salmon_migration_monitoring/drone/drone_imagery.webp)
-*Gallery / Photogrammetry of a fresh water stream where salmon migrate - Courtesy to [Aeria.ai](https://aeria.ai) for the picture*
+*Gallery / Photogrammetry of a fresh water stream where salmon migrate -
+Courtesy to [Aeria.ai](https://aeria.ai) for the picture*
 
 ## Conclusion
 
