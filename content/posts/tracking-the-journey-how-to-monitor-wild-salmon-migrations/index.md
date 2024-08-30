@@ -1,7 +1,7 @@
 ---
 title: "Tracking the Journey: How to Monitor Wild Salmon Migrations"
 description: An in-depth look at the systems developed and deployed to track the journey of wild salmon as they return to their natal streams.
-date: 2024-08-10
+date: 2024-08-30
 image: /images/posts/tracking-the-journey-how-to-monitor-wild-salmon-migrations/cover.png
 draft: true
 tags: ["AI", "vision", "low power", "camera traps"]
@@ -77,6 +77,15 @@ FIXME: add an image of a RPi and an underwater camera
 
 ## Deployment at sites
 
+Some hardware is deployed to operate at each site location. A Raspberry Pi coordinates the system by making use of the motion detectors, the underwater cameras and the starlink connectors. It is the brain of the setup and it controls how the different hardware pieces function together.
+
+![Hardware deployed at sites](./images/hardware/deployed_river.png)
+
+![Sonar setup at Haida](/images/projects/wild_salmon_migration_monitoring/sonar/haida-sonar.jpg)
+*Gallery/ Setting up sonars and underwater cameras at Haida site*
+
+FIXME: improve image layout
+
 ## Web Application
 
 Rather than reinventing the wheel for displaying the predictions made by our
@@ -146,33 +155,154 @@ Selecting a row from the table displays the video clip with bounding boxes overl
 ![ML object detection](./images/labelstudio/object_detection.png)
 *Video clip overlaid with the ML model predictions*
 
-## Project Scope
-## Provided Datasets
-### EDA
+## Data modelling
+
+A team of post docs and scientists from the Simon Fraser University took on the task to collect a salmon dataset and train the ML models.
+
+To learn more about the research that went into it, one can refer to the [following research paper](./papers/fmars-10-1200408.pdf).
+
+### Exploratory Data Analysis
+
+Exploratory Data Analysis (EDA) is an approach to analyzing datasets to
+summarize their main characteristics, often employing visual methods. The
+primary goal of EDA is to uncover patterns, relationships, and anomalies in the
+data, which can then inform subsequent analysis or modeling tasks.
+
+EDA typically involves the following steps:
+
+1. __Data Collection__: Gathering the relevant dataset(s) from various sources.
+2. __Data Cleaning__: Identifying and handling missing values, outliers, and
+   inconsistencies in the data.
+3. __Summary Statistics__: Computing descriptive statistics such as mean,
+   median, mode, standard deviation, etc., to understand the central tendencies
+and variability of the data.
+4. __Data Visualization__: Creating visual representations of the data using
+   plots, charts, histograms, scatter plots, etc., to explore patterns,
+distributions, correlations, and trends within the data.
+5. __Exploratory Modeling__: Building simple models or using statistical
+   techniques to further understand relationships within the data.
+6. __Hypothesis Testing__: Formulating and testing hypotheses about the data to
+   validate assumptions or gain insights.
+7. __Iterative Analysis__: Iteratively exploring the data, refining analysis
+   techniques, and generating new hypotheses as insights emerge.
+
+EDA is a crucial initial step in any data analysis or modeling project as it
+helps analysts gain a deeper understanding of the dataset, identify potential
+challenges or biases, and inform subsequent analytical decisions. It provides a
+foundation for more advanced analyses, such as predictive modeling, hypothesis
+testing, or machine learning, by guiding feature selection, model building, and
+evaluation strategies.
+
 #### Class imbalance
-Distributions of species and sites
-## Overview of the system
-## Web application System
-### Fork of LabelStudio Community Edition
-add images that show the UI
-explain what was added to the fork: multi tenant system (mutliple orgs)
-Possibility to update salmon counts when updating and submitting the annotations
+
+The research team has curated a dataset featuring 16 distinct species of fish found in the rivers of British Columbia. Below, you'll find graphs illustrating the distribution of each species within the dataset.
+
+![Salmon Counts distribution](./images/dataset/salmon_counts_distribution.png)
+
+The fish dataset was gathered from four
+different rivers between 2019 and 2023. The
+plots below showcase the species distribution
+across these river sites.
+
+![Ground Truth Annotations four rivers](./images/dataset/ground_truth_annotations_four_rivers.png)
+
+Class imbalance in computer vision can be a
+significant issue for machine learning models
+because it leads to biased learning. When one
+class dominates the dataset, the model tends to
+become biased towards that class, making it
+more likely to misclassify or overlook the
+minority classes. This can result in poor
+generalization, where the model performs well
+on the majority class but fails to accurately
+predict or detect instances of the minority
+classes, which may be critical in real-world
+applications. Balancing the classes or using
+techniques like oversampling, undersampling, or
+weighted loss functions is often necessary to
+mitigate this issue and improve model
+performance.
 
 ## ML System
-### YOLOv8
-#### Overview
-#### Object Detection
-#### Bytetracking
-### Classified species and performances
-  add confusion matrix from research paper
-### Automated counts reports
-  table of counts to show how it works
-### Positive feedback loop to acquire a large dataset and expediate the labelling process with ML.
+
+### YOLO Overview
+
+We opted to utilize a pretrained
+[YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tune it for
+our specific object detection task. Renowned for its speed, accuracy, and
+user-friendly interface, YOLOv8 stands out as an ideal solution for various
+tasks, including object detection, tracking, instance segmentation, image
+classification, and pose estimation.
+
+![YOLOv8 CV Tasks](./images/yolov8_tasks.png)
+*YOLOv8 Computer Vision Tasks*
+
+#### ByteTrack
+
+Building on our fine-tuned YOLO object detection model, we implement [ByteTrack](https://github.com/ifzhang/ByteTrack), a powerful multi-object tracking algorithm.
+
+ByteTrack is designed to handle occlusions and varying object sizes with greater accuracy. It extends the Simple Online and Realtime Tracking (SORT) method by tracking both high-confidence and low-confidence detections, ensuring consistent object tracking even when detections are temporarily lost due to occlusions or other challenges.
+
+When integrated with YOLO, ByteTrack significantly improves the tracking of detected objects across video frames, providing more reliable and continuous monitoring of movement.
+
+#### Fish Counts
+
+By post-processing the output from the ByteTrack algorithm, we can
+automatically generate detailed reports on fish counts, enabling effective
+monitoring of fish migration across various river sites.
+
+| River Site | Camera Reference | Day        | Coho | Bull | Sockeye | Rainbow | ... | Chinook |
+|------------|------------------|------------|------|------|---------|---------|-----|---------|
+| Bear Creak | Jetson 0         | 2024-08-29 | 12   | 5    | 108     | 8       | ... | 0       |
+| Bear Creak | Jetson 1         | 2024-08-29 | 7    | 9    | 78      | 2       | ... | 1       |
+| ...        | ...              | ...        | ...  | ...  | ...     | ...     | ... | ...     |
+| Koeye      | Jetson 0         | 2024-08-29 | 54   | 32   | 12      | 0       | ... | 14      |
+| Koeye      | Jetson 1         | 2024-08-29 | 24   | 25   | 18      | 1       | ... | 9       |
+
+#### ML Pipeline
+
+The machine learning pipeline developed for this project integrates YOLO object detection, ByteTrack, and post-processing techniques to accurately count fish in a given video stream.
+
+1. __Detection with YOLO__: YOLO is employed to detect objects in each video frame, producing bounding boxes, class labels, and confidence scores for each detected fish.
+2. __Tracking with ByteTrack__: The YOLO detections (including bounding boxes, scores, and labels) are fed into ByteTrack. ByteTrack associates detections across frames, assigning unique IDs to each fish and maintaining these IDs as the fish move through the video, even in cases of temporary occlusion.
+3. __Post-Processing__: The tracking data from ByteTrack is then used to analyze fish trajectories, count the number of fish, and monitor their behavior over time.
+
+#### Model performance
+
+We evaluate the performance of our object
+detection model using a holdout test set. Below
+is the confusion matrix for the fine-tuned
+YOLOv8 object detector.
+
+![Confusion Matrix](./images/model/confusion_matrix.png)
+
+Although the model isn't perfect yet, it is
+effective for practical use. Our strategy
+involves continuously gathering more data as we
+deploy the systems at additional river sites
+and retraining our models with these expanded
+datasets to enhance accuracy. This approach
+creates a positive feedback loop, benefiting
+all users of the system.
 
 ## Future development
-  sonar
-  aerial
-  expand to more sites
+
+At the current stage, our system can reliably collect and analyze video
+clips of fish swimming back to their natal streams using underwater
+cameras. To expand our coverage to more river sites, we are testing sonar
+technology, which will provide additional insights into migrating fish.
+Additionally, drone imagery is being explored to monitor other parts of the
+river.
+
+As the project progresses and we deploy to more river sites, we aim to
+build one of the largest datasets of salmon in Canada. This will enable us
+to develop highly accurate machine learning models for automatic monitoring
+of these fish.
 
 ## Conclusion
 
+This article provided an overview of the __SalmonVision__ project, covering
+everything from the hardware and software developed to monitor and count
+wild salmon migrating back to their natal streams. This solution is crucial
+for effectively managing and mitigating threats to salmon populations and
+will play a key role in engaging stakeholders in conservation efforts.
