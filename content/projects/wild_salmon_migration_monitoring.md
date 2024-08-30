@@ -2,6 +2,7 @@
 title: Wild Salmon Migration Monitoring
 subtitle: Conservation
 summary: The project monitors wild salmon migration to ensure the number passing through meets state regulations, addressing threats from human activities like fisheries and dams.
+github_repo: https://github.com/Salmon-Computer-Vision/salmon-computer-vision/tree/master
 clients:
   - name: Pacific Salmon Foundation
     link: https://psf.ca/
@@ -24,12 +25,6 @@ status: completed
 date: 2024-06-25
 image: /images/projects/wild_salmon_migration_monitoring/cover.png
 ---
-
-## 😇 Looking for Funding
-
-{{< donate_sponsor_cta >}}
-
-<br/>
 
 ## Context
 

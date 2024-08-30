@@ -170,13 +170,14 @@ counts.
 ![ML object detection](./images/labelstudio/object_detection.png)
 *Video clip overlaid with the ML model predictions*
 
-## Data modelling
+## Data Modeling
 
-A team of post docs and scientists from the Simon Fraser University took on the
-task to collect a salmon dataset and train the ML models.
+A team of postdoctoral researchers and scientists from Simon
+Fraser University undertook the task of collecting a salmon
+dataset and training the machine learning models.
 
-To learn more about the research that went into it, one can refer to the
-[following research paper](./papers/fmars-10-1200408.pdf).
+For more details on the research and methodology, please refer to
+the [following research paper](./papers/fmars-10-1200408.pdf).
 
 ### Exploratory Data Analysis
 
@@ -210,7 +211,7 @@ foundation for more advanced analyses, such as predictive modeling, hypothesis
 testing, or machine learning, by guiding feature selection, model building, and
 evaluation strategies.
 
-#### Class imbalance
+#### Class Imbalance
 
 The research team has curated a dataset featuring 16 distinct species of fish
 found in the rivers of British Columbia. Below, you'll find graphs illustrating
@@ -306,6 +307,14 @@ strategy involves continuously gathering more data as we deploy the systems at
 additional river sites and retraining our models with these expanded datasets
 to enhance accuracy. This approach creates a positive feedback loop, benefiting
 all users of the system.
+
+| Ground Truth                                     | Prediction                                     |
+|:------------------------------------------------:|:----------------------------------------------:|
+| ![Ground Truth](./images/model/ground_truth.png) | ![Predictions](./images/model/predictions.png) |
+
+The table above displays a random sample of images alongside
+the corresponding predictions made by the machine learning
+model.
 
 ## Future development
 

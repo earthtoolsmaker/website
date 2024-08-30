@@ -11,17 +11,10 @@ tools:
   - Computer Vision
   - Machine Learning
   - MLOps
-status: fundraising
+status: completed
 date: 2024-04-23
 image: /images/projects/early_forest_fire_detection/cover.png
 ---
-
-## 😇 Looking for Funding
-
-{{< donate_sponsor_cta >}}
-
-<br/>
-<br/>
 
 ## Context
 
