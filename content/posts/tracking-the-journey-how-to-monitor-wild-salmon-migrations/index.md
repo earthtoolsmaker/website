@@ -284,6 +284,9 @@ The machine learning pipeline developed for this project integrates YOLO object
 detection, ByteTrack, and post-processing techniques to accurately count fish
 in a given video stream.
 
+![ML Pipeline](./images/ml_pipeline.png)
+*Gallery / Overview of the ML Pipeline*
+
 1. __Detection with YOLO__: YOLO is employed to detect objects in each video
    frame, producing bounding boxes, class labels, and confidence scores for
 each detected fish.
