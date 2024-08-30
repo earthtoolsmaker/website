@@ -3,7 +3,6 @@ title: "Tracking the Journey: How to Monitor Wild Salmon Migrations"
 description: An in-depth look at the systems developed and deployed to track the journey of wild salmon as they return to their natal streams.
 date: 2024-08-30
 image: /images/posts/tracking-the-journey-how-to-monitor-wild-salmon-migrations/cover.png
-draft: true
 tags: ["AI", "vision", "low power", "camera traps"]
 ---
 
