@@ -180,12 +180,12 @@ paginate = 6
     testimonial_title = "🙂 What Partners Say"
 
   [[params.testimonial_item]]
-    name = "Yohan Runhaar"
-    image = "/images/testimonials/yohan-reefsupport.jpg"
-    logo = "/images/clients/reefsupport/logo_without_text.png"
-    designation = "CTO - ReefSupport"
-    link = "https://reef.support"
-    content = "I am very excited for what is ahead, there is so much potential in the work that's been done. Your hard work and passion have really shone through!"
+    name = "Matéo Lostanlen"
+    image = "/images/testimonials/mateo_pyronear.png"
+    logo = "/images/clients/pyronear/logo.png"
+    designation = "CTO - Pyronear"
+    link = "https://www.pyronear.org"
+    content = "We absolutely love working with you. You are incredibly professional. They trained our latest model and achieved outstanding performance, setting a new benchmark. They also implemented the MLOps pipeline!"
 
   [[params.testimonial_item]]
     name = "Will Atlas"
@@ -194,6 +194,15 @@ paginate = 6
     designation = "Salmon Watershed Scientist - Wild Salmon Center"
     link = "https://wildsalmoncenter.org/"
     content = "It has been an absolute pleasure working with you on SalmonVision. Your diverse skillset, ability to be forward thinking, and work with our team of collaborators was essential to the success of our project. We really couldn't have done it without you! I hope we can continue working together to improve and expand the tools offered by SalmonVision over the coming years."
+
+  [[params.testimonial_item]]
+    name = "Yohan Runhaar"
+    image = "/images/testimonials/yohan-reefsupport.jpg"
+    logo = "/images/clients/reefsupport/logo_without_text.png"
+    designation = "CTO - ReefSupport"
+    link = "https://reef.support"
+    content = "I am very excited for what is ahead, there is so much potential in the work that's been done. Your hard work and passion have really shone through!"
+
 
   [[params.testimonial_item]]
     name = "Thijs Suijten"
