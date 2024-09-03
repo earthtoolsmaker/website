@@ -188,6 +188,14 @@ paginate = 6
     content = "I am very excited for what is ahead, there is so much potential in the work that's been done. Your hard work and passion have really shone through!"
 
   [[params.testimonial_item]]
+    name = "Will Atlas"
+    image = "/images/testimonials/will-atlas.jpg"
+    logo = "/images/clients/wild_salmon_centre/logo.png"
+    designation = "Salmon Watershed Scientist - Wild Salmon Center"
+    link = "https://wildsalmoncenter.org/"
+    content = "It has been an absolute pleasure working with you on SalmonVision. Your diverse skillset, ability to be forward thinking, and work with our team of collaborators was essential to the success of our project. We really couldn't have done it without you! I hope we can continue working together to improve and expand the tools offered by SalmonVision over the coming years."
+
+  [[params.testimonial_item]]
     name = "Thijs Suijten"
     image = "/images/testimonials/thijs-hacktheplanet.jpg"
     logo = "/images/clients/hacktheplanet/logo_without_text.png"
