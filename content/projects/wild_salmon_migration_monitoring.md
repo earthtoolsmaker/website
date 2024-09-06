@@ -22,7 +22,7 @@ tools:
   - Sonar
   - Drones
 status: completed
-date: 2024-06-25
+date: 2024-08-20
 image: /images/projects/wild_salmon_migration_monitoring/cover.png
 ---
 

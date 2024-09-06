@@ -346,6 +346,7 @@ techniques such as rotation, translation, mixup, and mosaic. These
 augmentations help improve model robustness and performance.
 
 ![Data Augmentation](./images/model/yolov8/best/train_batch0.jpg)
+*Data Augmentation: A combination of rotation, translation, mixup and mosaic*
 
 #### Training
 
@@ -356,6 +357,7 @@ hyperparameter space.
 Below is the best-performing YOLOv8 model, evaluated on the holdout test set:
 
 ![Training Results of the best YOLOv8 Model](./images/model/yolov8/best/results.png)
+*Training results of the best YOLOv8 model*
 
 Versions 9 and 10 of YOLO were also tested using a similar approach, but
 neither demonstrated better performance compared to version 8.
@@ -367,8 +369,14 @@ metrics outlined above. This model significantly outperformed previous versions
 and has been deployed to the Pyronear systems as the new best model.
 
 | Precision | Recall | F1 Score |
-|-----------|--------|----------|
+|:---------:|:------:|:--------:|
 | 0.922     | 0.898  | 0.910    |
+
+Here is a quantitative evaluation based on a random sample from the evaluation set.
+
+| Ground Truth | Prediction |
+|:------------:|:----------:|
+| ![GT, batch1](./images/model/yolov8/best/val_batch1_labels.jpg) | ![Prediction, batch1](./images/model/yolov8/best/val_batch1_pred.jpg) |
 
 ## MLOps
 
