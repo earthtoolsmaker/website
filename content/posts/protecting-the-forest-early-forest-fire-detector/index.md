@@ -435,8 +435,13 @@ established a solid foundation for future development. We are excited to see
 our contributions go live, with the system now actively detecting wildfires and
 helping to protect forests!
 
-<p><iframe src="https://www.youtube.com/embed/i9Qy-zY16Ew" loading="lazy" frameborder="0" allowfullscreen></iframe>
-</p>
+{{< youtube id=i9Qy-zY16Ew >}}
+<br/>
+
 The computer vision model detects a forest fire in Fontainebleau from a
 distance of 35 kilometers in real time. Setting a new record for the Pyronear
 systems.
+
+Try out the model here!
+
+{{< hf_space "earthtoolsmaker-forest-fire-pyronear" >}}

@@ -159,9 +159,8 @@ The computer vision model detected a forest fire in Fontainebleau from a
 distance of 35 kilometers in real time, setting a new record for the Pyronear
 system. The video below shows a thin black smoke rising in the distance.
 
-<p>
-  <iframe src="https://www.youtube.com/embed/i9Qy-zY16Ew" loading="lazy" frameborder="0" allowfullscreen></iframe>
-</p>
+{{< youtube id=i9Qy-zY16Ew >}}
+<br/>
 
 ## Conclusion
 
@@ -170,3 +169,7 @@ forest fires provides a cost-effective and efficient means of safeguarding our
 forests. This technology facilitates the swift deployment of firefighters,
 greatly improving our capacity to protect forests that are increasingly
 threatened by the impacts of global warming.
+
+Try out the model directly from the snippet below:
+
+{{< hf_space "earthtoolsmaker-forest-fire-pyronear" >}}
