@@ -208,3 +208,7 @@ health and dynamics.
 
 ![Benthic Analysis System](/images/projects/coral_reef_segmentation/coral_ai.gif)
 *Gallery / Benthic Imagery Analysis System by <a href="https://reef.support">Reef Support</a>*
+
+Try out the model directly from the snippet below:
+
+{{< hf_space "earthtoolsmaker-coral-segmentation-reef-support" >}}
