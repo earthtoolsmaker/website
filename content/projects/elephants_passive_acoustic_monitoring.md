@@ -287,3 +287,7 @@ non-invasive monitoring, enhances our understanding of elephant behavior, aids
 in anti-poaching efforts, informs habitat management, supports research,
 engages local communities, and offers a cost-effective, scalable solution for
 conservation efforts.
+
+Try out the model directly from the snippet below:
+
+{{< hf_space "earthtoolsmaker-forest-elephant-rumbles-detection" >}}
