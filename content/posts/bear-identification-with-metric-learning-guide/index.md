@@ -486,3 +486,7 @@ wildlife conservation efforts. With its adaptable design, this technology
 stands poised to transcend species boundaries, offering potential applications
 across diverse ecosystems. The scalability and versatility of the model
 hold promise for advancing conservation endeavors on a global scale.
+
+Try out the model directly from the snippet below:
+
+{{< hf_space "earthtoolsmaker-bear-face-recognition" >}}
