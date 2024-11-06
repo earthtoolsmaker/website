@@ -352,3 +352,7 @@ selecting a model suitable for deployment on low-power devices.
 Notably, this framework possesses the potential to transcend bear
 management, offering promising avenues for mitigating human-wildlife
 conflicts across a spectrum of species.
+
+Try out the model directly from the snippet below:
+
+{{< hf_space "earthtoolsmaker-bear-detection" >}}

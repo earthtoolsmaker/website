@@ -205,3 +205,7 @@ diverse species.
   <em>Instant Bear Scare Device Demo by <a target="_blank" href="https://hack-the-planet.io">HackThePlanet</a></em>
 </span>
 <br/>
+
+Try out the model directly from the snippet below:
+
+{{< hf_space "earthtoolsmaker-bear-detection" >}}
