@@ -64,21 +64,58 @@
       {{ end }}
     </ul>
     {{ .Content }}
-    {{ if .PrevInSection }}
-    <div class="space__nav">
-      <div class="space__prev">
-        <div class="space__box">
-          <span class="space__nav-info">Next Space</span>
-          <h2 class="space__nav-title">
-            <a href="{{ .PrevInSection.Permalink }}" class="space__nav-link">{{ .PrevInSection.Title }}</a>
-          </h2>
+
+    {{ if or .NextInSection .PrevInSection }}
+    <div class="space__navigation">
+
+      {{ if .PrevInSection }}
+      <div class="prev">
+        <a href="{{ .PrevInSection.Permalink }}" class="prev__image">
+          <div class="space__nav__next_img" class="lazy" alt="{{ .PrevInSection.Title }}">
+            <div class="space__nav__next_emoji">{{ .PrevInSection.Params.emoji }}</div>
+          </div>
+        </a>
+        <div class="prev__box">
+          <span class="space__nav space__nav__prev">Prev Space</span>
+          <h4 class="space__nav__title"><a href="{{ .PrevInSection.Permalink }}">{{ .PrevInSection.Title }}</a></h4>
         </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-      <a class="space__nav-image" href="{{ .PrevInSection.Permalink }}">
-        <img class="lazy" data-src="{{ .PrevInSection.Params.Image }}" alt="{{ .PrevInSection.Title }}">
-      </a>
+      {{ end }}
+
+      {{ if .NextInSection }}
+      <div class="next">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="next__box">
+          <span class="space__nav space__nav__next">Next Space</span>
+          <h4 class="space__nav__title"><a href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }}</a></h4>
+        </div>
+        <a href="{{ .NextInSection.Permalink }}" class="next__image">
+          <div class="space__nav__next_img" class="lazy" alt="{{ .NextInSection.Title }}">
+            <div class="space__nav__next_emoji">{{ .NextInSection.Params.emoji }}</div>
+          </div>
+        </a>
+        {{/*{{ end }}*/}}
+      </div>
+      {{ end }}
+
     </div>
     {{ end }}
+
   </div>
 </div>
 
