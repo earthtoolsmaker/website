@@ -29,23 +29,24 @@
       {{ range (where .Site.RegularPages "Section" "spaces" ) }}
       <article class="space col col-4 col-w-6 col-t-12">
         <div class="space__content">
-          {{ if .Params.Image }}
           <div class="space__head">
-            <div class="space__image">
-              <img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Params.Title }}">
+            <div class="space__image-container">
+              <div class="space__image">
+                <div class="space__image-emoji">{{ .Params.emoji }}</div>
+              </div>
+              {{/*<img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Params.Title }}">*/}}
             </div>
           </div>
-          {{ end }}
-          <div class="project__inner">
-            <div class="project__info">
+          <div class="space__inner">
+            <div class="space__info">
               {{ if .Params.subtitle }}
-              <div class="project__subtitle">{{ .Params.subtitle }}</div>
+              <div class="space__subtitle">{{ .Params.subtitle }}</div>
               {{ end }}
               {{ if .Params.title }}
-              <h3 class="project__title"><a href="{{ .RelPermalink }}" class="project__link">{{ .Params.title }}</a></h3>
+              <h3 class="space__title"><a href="{{ .RelPermalink }}" class="space__link">{{ .Params.title }}</a></h3>
               {{ end }}
               {{ if .Params.summary }}
-              <p class="project__excerpt">{{ .Params.summary }}</p>
+              <p class="space__excerpt">{{ .Params.summary }}</p>
               {{ end }}
             </div>
           </div>

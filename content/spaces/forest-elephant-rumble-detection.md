@@ -1,8 +1,6 @@
 ---
 title: Forest Elephant Rumbles Detection
-emoji: 🔥
-colorFrom: green
-colorTo: red
+emoji: 🐘
 summary: An audio analysis system designed to process recordings from African forests, specifically focusing on detecting elephant rumbles. The machine learning pipeline efficiently analyzes audio files to identify and classify these distinct vocalizations, contributing to wildlife monitoring and conservation efforts.
 github_repo: https://github.com/earthtoolsmaker/forest-elephants-rumble-detection
 date: 2024-06-26

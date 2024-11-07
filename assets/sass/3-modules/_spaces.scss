@@ -32,7 +32,7 @@
   }
 }
 
-.space__image {
+.space__image-container {
   position: relative;
   display: block;
   width: 100%;
@@ -48,6 +48,24 @@
     content: "";
     display: table;
     padding-top: 70%;
+  }
+
+  .space__image-emoji {
+    font-size: 4em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .space__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#e66465, #9198e5);
+    // background-color: green;
   }
 
   img {
