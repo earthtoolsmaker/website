@@ -5,7 +5,7 @@ summary: A computer vision system utilizes facial recognition technology to anal
 github_repo: https://github.com/earthtoolsmaker/bear-conservation
 date: 2024-04-03
 hero_image: /images/pages/spaces/bear_identification/hero.png
-project: /projects/coral_reef_health_monitoring/
+project: /projects/bear_identification/
 hf_space: earthtoolsmaker-bear-face-recognition
 hf_space_code: https://huggingface.co/spaces/earthtoolsmaker/bear-face-recognition/tree/main
 manual_steps:
