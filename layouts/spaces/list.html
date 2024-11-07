@@ -26,12 +26,12 @@
 
   <div class="container animate">
     <div class="row">
-      {{ range (where .Site.RegularPages "Section" "projects" ) }}
-      <article class="project col col-4 col-w-6 col-t-12">
-        <div class="project__content">
+      {{ range (where .Site.RegularPages "Section" "spaces" ) }}
+      <article class="space col col-4 col-w-6 col-t-12">
+        <div class="space__content">
           {{ if .Params.Image }}
-          <div class="project__head">
-            <div class="project__image">
+          <div class="space__head">
+            <div class="space__image">
               <img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Params.Title }}">
             </div>
           </div>

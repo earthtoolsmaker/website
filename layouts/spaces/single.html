@@ -1,0 +1,89 @@
+{{ define "main" }}
+
+{{ if .Params.hero_image }}
+<!-- begin hero image -->
+<div class="hero__image">
+  <div class="hero__image__inner">
+    <img class="lazy" data-src="{{ .Params.hero_image }}" alt="{{ .Title }}">
+  </div>
+</div>
+<!-- end hero image -->
+{{ end }}
+
+<div class="container">
+
+  <div class="space-info">
+    {{ if .Title }}
+    <h1 class="space-info__title">{{ .Title }}</h1>
+    {{ end }}
+    {{ if .Params.summary }}
+    <div class="space-info__summary">{{ .Params.summary }}</div>
+    {{ end }}
+  </div>
+  <hr class="space-separator">
+
+  <div class="space-content">
+    {{ $manual_steps := .Params.manual_steps }}
+    {{ if .Params.manual_steps }}
+    <div class="space-content__manual">
+      <b class="space-content__manual-title">🧑🏾‍🏫 Manual  📖</b>
+      <ol class="space-content__manual_steps_list">
+        {{ range $manual_steps }}
+          <li class="space-content__manual_step_item"><b>{{ .step_name }}:</b> {{ .description }}</li>
+        {{ end }}
+      </ol>
+    </div>
+
+    {{ end }}
+    {{ if .Params.hf_space }}
+    <div class="space-content__hf_space">
+    <iframe
+        src="https://{{ .Params.hf_space }}.hf.space"
+        style="display: block; border:0; height:100vh; width:100%;"
+        frameborder="0"
+        ></iframe>
+    </div>
+    {{ end }}
+    <ul>
+      {{ if .Params.project }}
+      <li>
+       🛠️  
+        Learn more about the project <a target="_blank" href="{{ .Params.project }}">here</a>.
+      </li>
+      {{ end }}
+      {{ if .Params.github_repo }}
+      <li>
+        <i class="fa-brands fa-github"></i>
+        The code is available <a target="_blank" href="{{ .Params.github_repo }}">here</a>.
+      </li>
+      {{ end }}
+      {{ if .Params.hf_space_code }}
+        <li>
+          🤗 The application is hosted <a target="_blank" href="{{ .Params.hf_space_code }}">here</a>.
+        </li>
+      {{ end }}
+    </ul>
+    {{ .Content }}
+    {{ if .PrevInSection }}
+    <div class="space__nav">
+      <div class="space__prev">
+        <div class="space__box">
+          <span class="space__nav-info">Next Space</span>
+          <h2 class="space__nav-title">
+            <a href="{{ .PrevInSection.Permalink }}" class="space__nav-link">{{ .PrevInSection.Title }}</a>
+          </h2>
+        </div>
+      </div>
+      <a class="space__nav-image" href="{{ .PrevInSection.Permalink }}">
+        <img class="lazy" data-src="{{ .PrevInSection.Params.Image }}" alt="{{ .PrevInSection.Title }}">
+      </a>
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+</div>
+
+</div>
+
+{{ end }}
