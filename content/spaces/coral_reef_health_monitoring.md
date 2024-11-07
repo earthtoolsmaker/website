@@ -14,7 +14,7 @@ manual_steps:
   - step_name: Run the ML model
     description: Click the 'Submit' button to initiate the machine learning model.
   - step_name: Visualize the results
-    description: The system will generate bounding boxes and segmentation masks for the detected coral specieis with an associated probability.
+    description: The system will generate bounding boxes and segmentation masks for the detected coral species, each accompanied by a corresponding probability score.
 ---
 
 
