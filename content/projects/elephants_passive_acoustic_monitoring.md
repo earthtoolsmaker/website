@@ -14,6 +14,7 @@ clients:
     link: https://www.birds.cornell.edu/
     logo: /images/clients/cornell_lab/logo.svg
 github_repo: https://github.com/earthtoolsmaker/forest-elephants-rumble-detection
+space: /spaces/forest_elephant_rumble_detection/
 tools:
   - Bio Acoustics
   - Passive Acoustic Monitoring

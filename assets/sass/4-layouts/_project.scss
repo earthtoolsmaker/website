@@ -161,6 +161,22 @@
       color: white;
     }
   }
+
+  .project-meta__space {
+    font-size: 1.6em;
+    display: block;
+    max-width: 35px;
+    position: absolute;
+    bottom: 70px;
+    right: 18px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+
+    &:hover {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
+    }
+  }
   .project-meta__summary {
     font-size: 18px;
     margin-bottom: 20px;
