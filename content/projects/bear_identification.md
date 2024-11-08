@@ -232,6 +232,6 @@ conservation. The development of open-source tools in this project signifies a
 valuable contribution, not only facilitating adaptability to various species
 but also holding potential to enhance conservation endeavors on a global scale.
 
-Try out the model directly from the snippet below:
+One can try out the model from the [ML Space]({{< ref "/spaces/bear_identification" >}}) or directly from the snippet below:
 
 {{< hf_space "earthtoolsmaker-bear-face-recognition" >}}

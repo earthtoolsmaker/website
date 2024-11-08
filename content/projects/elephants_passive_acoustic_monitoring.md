@@ -279,7 +279,6 @@ Analyzing 1TB of data - approximately 1 month of audio recordings for the 50
 recorders - would require __14.6 hours__ with CPUs, but only __8.3 hours__
 using the GPU and CPU cores.
 
-
 ## Conclusion
 
 In summary, an audio analyzer that detects elephant rumbles offers numerous
@@ -289,6 +288,6 @@ in anti-poaching efforts, informs habitat management, supports research,
 engages local communities, and offers a cost-effective, scalable solution for
 conservation efforts.
 
-Try out the model directly from the snippet below:
+One can try out the model from the [ML Space]({{< ref "/spaces/forest_elephant_rumble_detection" >}}) or directly from the snippet below:
 
 {{< hf_space "earthtoolsmaker-forest-elephant-rumbles-detection" >}}
