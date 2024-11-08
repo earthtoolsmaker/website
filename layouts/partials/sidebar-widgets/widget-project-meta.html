@@ -1,6 +1,8 @@
 <div class="widget-sidebar project-meta {{ if eq .Params.status "fundraising"}} project-status-fundraising {{ end }}">
   {{ if .Params.github_repo }}
-    <a class="project-meta__github_repo" href="{{ .Params.github_repo }}"><img src="/images/logos/github-mark.png"/></a>
+    <a class="project-meta__github_repo" href="{{ .Params.github_repo }}">
+      <i class="fa-brands fa-github" title="Code Repository"></i>
+    </a>
   {{ end }}
   <h2 class="widget-sidebar__title">Project Details</h2>
   {{ if .Params.summary }}

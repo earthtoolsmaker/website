@@ -150,11 +150,16 @@
   }
 
   .project-meta__github_repo {
+    font-size: 1.6em;
     display: block;
     max-width: 35px;
     position: absolute;
     bottom: 20px;
     right: 20px;
+
+    &:hover {
+      color: white;
+    }
   }
   .project-meta__summary {
     font-size: 18px;
