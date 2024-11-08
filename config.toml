@@ -121,6 +121,13 @@ paginate = 6
     name = "Github"
     link = "https://github.com/earthtoolsmaker"
 
+  [[params.social]]
+    icon = "fa-brands fa-solid fa-face-smiling-hands"
+    # icon = "fa-brands fa-twitter"
+    image = "/images/social/hf.svg"
+    name = "HuggingFace"
+    link = "https://huggingface.co/earthtoolsmaker"
+
   # [[params.social]]
   #   icon = "fa-brands fa-twitter"
   #   name = "Twitter"

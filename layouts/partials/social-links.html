@@ -3,7 +3,14 @@
   {{ range . }}
   <li class="social__item">
     <a class="social__link" href="{{ .link }}" target="_blank" rel="noopener"
-      aria-label="{{ .name }} link"><i class="{{ .icon }}"></i></a>
+      aria-label="{{ .name }} link">
+      {{ if .icon }}
+        <i class="{{ .icon }}"></i>
+      {{ end }}
+      {{ if .image }}
+      <img src="{{ .image }}" height="26" width="26"/>
+      {{ end}}
+    </a>
   </li>
   {{ end }}
 </ul>
