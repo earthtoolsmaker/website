@@ -491,6 +491,6 @@ conservation initiatives. Moreover, the methods and techniques presented can be
 adapted to various conservation applications, including rare species
 identification and biodiversity monitoring.
 
-Try out the model directly from the snippet below:
+One can try out the model from the [ML Space]({{< ref "/spaces/forest_elephant_rumble_detection" >}}) or directly from the snippet below:
 
 {{< hf_space "earthtoolsmaker-forest-elephant-rumbles-detection" >}}

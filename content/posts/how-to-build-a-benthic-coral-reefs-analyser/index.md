@@ -498,6 +498,6 @@ insights gained from our findings are invaluable for refining and
 optimizing computer vision applications in marine biology and underwater
 image segmentation.
 
-Try out the model directly from the snippet below:
+One can try out the model from the [ML Space]({{< ref "/spaces/coral_reef_health_monitoring" >}}) or directly from the snippet below:
 
 {{< hf_space "earthtoolsmaker-coral-segmentation-reef-support" >}}

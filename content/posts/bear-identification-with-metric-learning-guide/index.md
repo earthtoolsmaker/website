@@ -487,6 +487,6 @@ stands poised to transcend species boundaries, offering potential applications
 across diverse ecosystems. The scalability and versatility of the model
 hold promise for advancing conservation endeavors on a global scale.
 
-Try out the model directly from the snippet below:
+One can try out the model from the [ML Space]({{< ref "/spaces/bear_identification" >}}) or directly from the snippet below:
 
 {{< hf_space "earthtoolsmaker-bear-face-recognition" >}}
