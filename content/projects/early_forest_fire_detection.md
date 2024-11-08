@@ -7,6 +7,7 @@ clients:
     link: https://pyronear.org
     logo: /images/clients/pyronear/logo.png
 github_repo: https://github.com/earthtoolsmaker/pyronear-mlops
+space: /spaces/early_forest_fire_detection/
 tools:
   - Computer Vision
   - Machine Learning

@@ -7,6 +7,7 @@ clients:
     link: https://reef.support
     logo: /images/clients/reefsupport/logo.png
 github_repo: https://github.com/earthtoolsmaker/coralreef-conservation
+space: /spaces/coral_reef_health_monitoring/
 tools:
   - Computer Vision
   - Machine Learning

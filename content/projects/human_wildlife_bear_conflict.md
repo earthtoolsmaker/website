@@ -7,7 +7,8 @@ clients:
     link: https://www.hack-the-planet.io
     logo: /images/clients/hacktheplanet/logo.png
 github_repo: https://gitlab.com/fruitpunch/projects/ai-for-bears/face-detection-and-segmentation/albear
-tools: 
+space: /spaces/human_wildlife_bear_conflict/
+tools:
   - "Computer Vision"
   - "Machine Learning"
 status: completed

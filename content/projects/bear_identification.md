@@ -7,6 +7,7 @@ clients:
     link: https://bearresearch.org
     logo: /images/clients/bearid/logo.png
 github_repo: https://github.com/earthtoolsmaker/bear-conservation
+space: /spaces/bear_identification/
 tools:
   - Computer Vision
   - Maching Learning
