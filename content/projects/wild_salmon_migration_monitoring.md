@@ -3,6 +3,7 @@ title: Wild Salmon Migration Monitoring
 subtitle: Conservation
 summary: The project monitors wild salmon migration to ensure the number passing through meets state regulations, addressing threats from human activities like fisheries and dams.
 github_repo: https://github.com/Salmon-Computer-Vision/salmon-computer-vision/tree/master
+space: /spaces/wild_salmon_migration_monitoring/
 clients:
   - name: Pacific Salmon Foundation
     link: https://psf.ca/
@@ -244,3 +245,8 @@ Overall, a wild salmon migration monitoring system is a powerful tool for
 conserving wild salmon by providing the data needed for effective management,
 identifying and addressing threats, and engaging stakeholders in conservation
 efforts.
+
+One can try out the model from the [ML Space]({{< ref
+"/spaces/wild_salmon_migration_monitoring" >}}) or directly from the snippet below:
+
+{{< hf_space "earthtoolsmaker-salmon-vision" >}}

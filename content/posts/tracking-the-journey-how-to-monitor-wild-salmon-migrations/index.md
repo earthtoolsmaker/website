@@ -340,3 +340,8 @@ everything from the hardware and software developed to monitor and count
 wild salmon migrating back to their natal streams. This solution is crucial
 for effectively managing and mitigating threats to salmon populations and
 will play a key role in engaging stakeholders in conservation efforts.
+
+One can try out the model from the [ML Space]({{< ref
+"/spaces/wild_salmon_migration_monitoring" >}}) or directly from the snippet below:
+
+{{< hf_space "earthtoolsmaker-salmon-vision" >}}
