@@ -10,7 +10,7 @@ hf_space: earthtoolsmaker-salmon-vision
 hf_space_code: https://huggingface.co/spaces/earthtoolsmaker/salmon-vision/tree/main
 manual_steps:
   - step_name: Video Selection
-    description: Choose n video file containing salmons from the examples provided below, or upload your own video data.
+    description: Choose a video file containing salmons from the examples provided below, or upload your own video.
   - step_name: Run the ML model
     description: Click the 'Submit' button to initiate the machine learning model.
   - step_name: Visualize the results
