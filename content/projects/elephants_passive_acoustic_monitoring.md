@@ -2,10 +2,6 @@
 title: Forest Elephants Passive Acoustic Monitoring
 subtitle: Conservation
 summary: Conservation efforts struggle to monitor forest elephants in dense rainforests, with acoustic monitoring providing a promising solution via accurate, user-friendly detection systems that aid in population monitoring and anti-poaching efforts while mitigating human-elephant conflicts.
-client:
-  name: Elephant Listening Project
-  link: https://www.elephantlisteningproject.org/
-  logo: /images/clients/cornell_lab/logo.svg
 clients:
   - name: Elephant Listening Project
     link: https://www.elephantlisteningproject.org/
@@ -13,6 +9,8 @@ clients:
   - name: CornellLab
     link: https://www.birds.cornell.edu/
     logo: /images/clients/cornell_lab/logo.svg
+related_posts:
+  - how-to-analyze-elephant-rumbles-at-scale
 github_repo: https://github.com/earthtoolsmaker/forest-elephants-rumble-detection
 space: /spaces/forest_elephant_rumble_detection/
 tools:

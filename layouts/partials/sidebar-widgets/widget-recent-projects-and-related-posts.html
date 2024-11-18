@@ -1,0 +1,41 @@
+<div class="widget-sidebar recent-projects">
+  {{ if .Params.related_posts }}
+    <div class="widget-sidebar__related_posts">
+      <h2 class="widget-sidebar__title">Related Posts</h2>
+      {{ range .Params.related_posts }}
+        {{ $related_post := site.GetPage "posts" .}}
+        <div class="recent-project">
+          {{ if $related_post.Params.Image }}
+          <a href="{{ $related_post.RelPermalink }}" class="recent-project__image">
+            <img class="lazy" data-src="{{$related_post.Params.Image | absURL }}" alt="{{ $related_post.Title }}">
+          </a>
+          {{ end }}
+
+          <div class="recent-project__content">
+            <h4 class="recent-project__title"><a href="{{ $related_post.RelPermalink }}">{{ $related_post.Title }}</a></h4>
+            <p class="recent-project__summary">{{ $related_post.Params.description }}</p>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  <h2 class="widget-sidebar__title">Other Projects</h2>
+  {{ $related_projects := shuffle ( where (where site.RegularPages "Section" "projects" ) "Permalink" "!=" .Permalink ) }}
+  {{ range $related_projects | first 3 }}
+  <div class="recent-project">
+    {{ if .Params.Image }}
+    <a href="{{ .RelPermalink }}" class="recent-project__image">
+      <img class="lazy" data-src="{{.Params.Image | absURL }}" alt="{{ .Title }}">
+    </a>
+    {{ end }}
+  
+    <div class="recent-project__content">
+      <h4 class="recent-project__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+      <p class="recent-project__summary">{{ .Params.summary }}</p>
+    </div>
+  </div>
+  {{ end }}
+
+</div>
+
