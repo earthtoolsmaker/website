@@ -6,6 +6,9 @@ clients:
   - name: BearID
     link: https://bearresearch.org
     logo: /images/clients/bearid/logo.png
+related_posts:
+  - bear-face-segmentation-guide
+  - bear-identification-with-metric-learning-guide
 github_repo: https://github.com/earthtoolsmaker/bear-conservation
 space: /spaces/bear_identification/
 tools:

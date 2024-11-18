@@ -6,6 +6,8 @@ clients:
   - name: ReefSupport
     link: https://reef.support
     logo: /images/clients/reefsupport/logo.png
+related_posts:
+  - how-to-build-a-benthic-coral-reefs-analyser
 github_repo: https://github.com/earthtoolsmaker/coralreef-conservation
 space: /spaces/coral_reef_health_monitoring/
 tools:

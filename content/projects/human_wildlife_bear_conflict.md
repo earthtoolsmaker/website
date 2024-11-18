@@ -6,6 +6,8 @@ clients:
   - name: HackThePlanet
     link: https://www.hack-the-planet.io
     logo: /images/clients/hacktheplanet/logo.png
+related_posts:
+  - how-to-build-a-real-time-bear-detection-system
 github_repo: https://gitlab.com/fruitpunch/projects/ai-for-bears/face-detection-and-segmentation/albear
 space: /spaces/human_wildlife_bear_conflict/
 tools:

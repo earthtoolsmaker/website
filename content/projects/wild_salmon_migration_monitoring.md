@@ -17,6 +17,8 @@ clients:
   - name: Simon Fraser University
     link: https://sfu.ca/
     logo: /images/clients/sfu/logo.png
+related_posts:
+  - tracking-the-journey-how-to-monitor-wild-salmon-migrations
 tools:
   - Computer Vision
   - Machine Learning
