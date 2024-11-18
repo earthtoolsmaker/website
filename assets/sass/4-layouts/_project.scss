@@ -155,7 +155,7 @@
     max-width: 35px;
     position: absolute;
     bottom: 20px;
-    right: 20px;
+    right: 65px;
 
     &:hover {
       color: white;
@@ -167,8 +167,9 @@
     display: block;
     max-width: 35px;
     position: absolute;
-    bottom: 70px;
-    right: 18px;
+    line-height: 1.6em;
+    bottom: 23px;
+    right: 20px;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 
