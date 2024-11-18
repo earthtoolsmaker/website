@@ -13,6 +13,7 @@ tools:
   - Machine Learning
   - MLOps
 status: completed
+pinned: true
 date: 2024-04-23
 image: /images/projects/early_forest_fire_detection/cover.png
 ---

@@ -20,6 +20,7 @@ tools:
   - Passive Acoustic Monitoring
   - Machine Learning
 status: completed
+pinned: true
 date: 2024-06-26
 image: /images/projects/forest_elephants_passive_acoustic_monitoring/cover.png
 ---
