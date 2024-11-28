@@ -37,11 +37,18 @@
     {{ end }}
     {{ if .Params.hf_space }}
     <div class="space-content__hf_space">
-    <iframe
-        src="https://{{ .Params.hf_space }}.hf.space"
-        style="display: block; border:0; height:100vh; width:100%;"
-        frameborder="0"
-        ></iframe>
+    {{/*load the right gradio version*/}}
+    <script
+      type="module"
+      src="https://gradio.s3-us-west-2.amazonaws.com/5.4.0/gradio.js"
+    ></script>
+    <gradio-app
+            src="https://{{ .Params.hf_space }}.hf.space"
+            initial_height="0px"
+            theme_mode="light"
+            eager="true"
+            container="false"
+      ></gradio-app>
     </div>
     {{ end }}
     <ul>
