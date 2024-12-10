@@ -7,6 +7,8 @@ clients:
     link: https://aeria.ai/
     logo: /images/clients/aeria/logo.png
 space: /spaces/trout_identification/
+related_posts:
+  - trout-identification-preprocessing
 tools:
   - Machine Learning
   - Computer Vision
