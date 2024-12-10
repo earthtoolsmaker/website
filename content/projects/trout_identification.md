@@ -9,6 +9,7 @@ clients:
 space: /spaces/trout_identification/
 related_posts:
   - trout-identification-preprocessing
+  - trout-identification-matching
 tools:
   - Machine Learning
   - Computer Vision

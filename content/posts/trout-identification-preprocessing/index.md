@@ -6,6 +6,8 @@ image: /images/posts/trout-identification-preprocessing/cover.png
 tags: ["AI", "vision"]
 ---
 
+WIP
+
 In this blog post, we will dive into the pivotal preprocessing techniques used to normalize raw trout pictures to make them ready for the identification stage. We will focus on the first stage of the ML pipeline that was developed to successfuly identify trouts based on their unique spot patterns.
 
 ![ML Pipeline for Trout Identification](/images/projects/trout_identification/pipeline.png)
