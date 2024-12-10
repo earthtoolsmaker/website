@@ -29,18 +29,19 @@ markings.
 ![Westslope Cutthroat Trout](/images/projects/trout_identification/wct_example.png)
 *Gallery / Westslope Cutthroat Trout*
 
-The Westslope Cutthroat Trout (Oncorhynchus clarkii lewisi) is a distinctive
+The Westslope Cutthroat Trout (Oncorhynchus clarkii lewisi) is a unique
 subspecies of cutthroat trout native to the freshwater systems of British
-Columbia, Canada, and parts of the northwestern United States. 
-The Westslope Cutthroat Trout is one of two cutthroat trout sub-species that
-occur naturally in Canada. This species is found in two distinct populations:
-one in Alberta and one in British Columbia (Pacific). Renowned for its striking
-appearance, this trout features a vibrant coloration that includes a
-golden-yellow body adorned with numerous small black spots, and a
-characteristic red or orange slash beneath its jaw. The Westslope Cutthroat
-Trout thrives in cold, clear streams, rivers, and lakes, where it plays a vital
-role in the aquatic ecosystem. Due to its specific habitat needs, this species
-is often used as an indicator of ecosystem health.
+Columbia, Canada, and parts of the northwestern United States. It is one of
+only two cutthroat trout subspecies found naturally in Canada, with distinct
+populations located in Alberta and the Pacific region of British Columbia.
+
+Renowned for its striking appearance, the Westslope Cutthroat Trout boasts a
+vibrant golden-yellow body adorned with numerous small black spots,
+complemented by a characteristic red or orange slash beneath its jaw. This
+trout thrives in cold, clear streams, rivers, and lakes, where it plays a
+crucial role in the aquatic ecosystem. Due to its specific habitat
+requirements, the Westslope Cutthroat Trout is often regarded as an important
+indicator of ecosystem health.
 
 ![Elk River](/images/projects/trout_identification/map_elk_river.png)
 *Gallery / Map of the Elk River where the trout population is monitored*
