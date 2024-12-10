@@ -36,8 +36,8 @@ Trout thrives in cold, clear streams, rivers, and lakes, where it plays a vital
 role in the aquatic ecosystem. Due to its specific habitat needs, this species
 is often used as an indicator of ecosystem health.
 
-![Stable Spot patterns](/images/projects/trout_identification/lightglue/lightglue_matching.png)
-*Gallery / Unique spot patterns are like fingerprints*
+![Elk River](/images/projects/trout_identification/map_elk_river.png)
+*Gallery / Map of the Elk River where the trout population is monitored*
 
 One fascinating aspect of trouts is their stable and unique spot patterns. Just
 like human fingerprints, these patterns can be used to identify individual
@@ -47,6 +47,10 @@ to study trout populations, monitor their health, and track their movements in
 the wild. This method of identification not only aids in conservation efforts
 but also enhances our understanding of trout behavior and ecology, highlighting
 the importance of these remarkable fish in freshwater ecosystems.
+
+![Stable Spot patterns](/images/projects/trout_identification/lightglue/lightglue_matching.png)
+*Gallery / Unique spot patterns are like fingerprints*
+
 
 ## A vital role for the ecosystems
 
