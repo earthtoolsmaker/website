@@ -20,10 +20,10 @@ data, which can then inform subsequent analysis or modeling tasks.
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="./images/raw/1.jpg" loading="lazy" alt="random image from the dataset" \>
-    <img src="./images/raw/2.jpg" loading="lazy" alt="random image from the dataset" \>
-    <img src="./images/raw/3.jpg" loading="lazy" alt="random image from the dataset" \>
-    <img src="./images/raw/4.jpg" loading="lazy" alt="random image from the dataset" \>
+    <img src="./images/raw/sample/1.jpg" loading="lazy" alt="random image from the dataset" \>
+    <img src="./images/raw/sample/2.jpg" loading="lazy" alt="random image from the dataset" \>
+    <img src="./images/raw/sample/3.jpg" loading="lazy" alt="random image from the dataset" \>
+    <img src="./images/raw/sample/4.jpg" loading="lazy" alt="random image from the dataset" \>
   </div>
   <em>Gallery / Random batch from the dataset</em>
 </div>
