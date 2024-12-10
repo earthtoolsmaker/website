@@ -14,6 +14,7 @@ tools:
   - Computer Vision
   - Machine Learning
 status: completed
+pinned: true
 date: 2024-01-30
 image: /images/projects/coral_reef_segmentation/cover.jpg
 ---

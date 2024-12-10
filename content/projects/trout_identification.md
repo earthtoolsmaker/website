@@ -14,7 +14,7 @@ tools:
   - Machine Learning
   - Computer Vision
 status: completed
-pinned: false
+pinned: true
 date: 2024-12-08
 image: /images/projects/trout_identification/cover.png
 ---

@@ -16,6 +16,7 @@ tools:
   - Maching Learning
 status: completed
 date: 2024-04-03
+pinned: true
 image: /images/projects/bear_identification/cover.png
 ---
 
