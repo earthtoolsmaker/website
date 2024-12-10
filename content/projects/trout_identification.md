@@ -118,6 +118,8 @@ ecosystems they inhabit.
 
 ## Developed Tools
 
+### Pipeline Overview
+
 Throughout this project, a variety of tools were developed to
 effectively utilize the unique biomarkers of trouts for enhanced
 identification and monitoring.
@@ -125,10 +127,26 @@ identification and monitoring.
 ![ML Pipeline for Trout Identification](/images/projects/trout_identification/pipeline.png)
 *Gallery / Overview of the ML pipeline developed to identify trouts*
 
+### Preprocessing Stage
+
 The preprocessing stage is meticulously designed to transform a raw
 image of a trout into a normalized, segmented representation of the
 fish. This critical step ensures high accuracy during the subsequent
 identification phase of the pipeline.
+
+The table below illustrates how the preprocessing stage transforms the original
+image into a normalized representation of the trout, allowing for the
+extraction of its unique markings.
+
+| Original Picture | Normalized Trout | Extracted Keypoints |
+|:-------:|:----------:|:---------:|
+| ![Picture 1](/images/projects/trout_identification/images/raw/1.jpg) | ![Normalized 1](/images/projects/trout_identification/images/normalized/1.webp) | ![Keypoints 1](/images/projects/trout_identification/images/keypoints/1.webp) |
+| ![Picture 2](/images/projects/trout_identification/images/raw/2.jpg) | ![Normalized 2](/images/projects/trout_identification/images/normalized/2.webp) | ![Keypoints 2](/images/projects/trout_identification/images/keypoints/2.webp) |
+| ![Picture 3](/images/projects/trout_identification/images/raw/3.jpg) | ![Normalized 3](/images/projects/trout_identification/images/normalized/3.webp) | ![Keypoints 3](/images/projects/trout_identification/images/keypoints/3.webp) |
+| ![Picture 4](/images/projects/trout_identification/images/raw/4.jpg) | ![Normalized 4](/images/projects/trout_identification/images/normalized/4.webp) | ![Keypoints 4](/images/projects/trout_identification/images/keypoints/4.webp) |
+| ![Picture 5](/images/projects/trout_identification/images/raw/5.jpg) | ![Normalized 5](/images/projects/trout_identification/images/normalized/5.webp) | ![Keypoints 5](/images/projects/trout_identification/images/keypoints/5.webp) |
+
+### Identification Stage
 
 Once the trout image is normalized, the algorithm extracts key
 biomarkers, specifically the unique spot patterns of the trout, and
@@ -138,6 +156,17 @@ fish as a match and retrieves its associated PIT tag and name.
 Conversely, if the comparison score is low, it indicates that the trout
 does not correspond to any entries in the database, and the system
 classifies it as a new individual.
+
+The table below demonstrates the functionality of the matching algorithm using
+the extracted keypoints. On the left, you will find examples of matching pairs,
+while the right side displays examples of non-matching pairs.
+
+| ✅ Keypoints match | ❌ Keypoints do not match |
+|:-----:|:---------:|
+| ![Match 1](/images/projects/trout_identification/images/matches/match_1.webp) | ![Non Match 1](/images/projects/trout_identification/images/matches/non_match_1.webp) |
+| ![Match 2](/images/projects/trout_identification/images/matches/match_2.webp) | ![Non Match 2](/images/projects/trout_identification/images/matches/non_match_2.webp) |
+| ![Match 3](/images/projects/trout_identification/images/matches/match_3.webp) | ![Non Match 3](/images/projects/trout_identification/images/matches/non_match_3.webp) |
+| ![Match 4](/images/projects/trout_identification/images/matches/match_4.webp) | ![Non Match 4](/images/projects/trout_identification/images/matches/non_match_4.webp) |
 
 ## Conclusion
 
