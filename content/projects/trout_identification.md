@@ -23,6 +23,9 @@ includes salmon and char. They are found in various habitats, including rivers,
 lakes, and streams, and are known for their vibrant colors and distinctive
 markings.
 
+![Westslope Cutthroat Trout](/images/projects/trout_identification/wct_example.png)
+*Gallery / Westslope Cutthroat Trout*
+
 The Westslope Cutthroat Trout (Oncorhynchus clarkii lewisi) is a distinctive
 subspecies of cutthroat trout native to the freshwater systems of British
 Columbia, Canada, and parts of the northwestern United States. 
