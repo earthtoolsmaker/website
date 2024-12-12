@@ -1,5 +1,5 @@
 ---
-title: Trout Identitication
+title: Trout Identification
 subtitle: Conservation
 summary: Non-invasive technology for monitoring trout populations using computer vision to accurately identify individual fish.
 clients:
@@ -8,8 +8,8 @@ clients:
     logo: /images/clients/aeria/logo.png
 space: /spaces/trout_identification/
 related_posts:
-  - trout-identification-preprocessing
-  - trout-identification-matching
+  - how-to-prepare-data-for-identitication
+  - local-feature-matching
 tools:
   - Machine Learning
   - Computer Vision
