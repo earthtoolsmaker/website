@@ -10,12 +10,16 @@ In this blog post, we will explore a powerful technique widely used for
 identifying individuals across various species. This method leverages unique
 physical markings that remain relatively stable throughout an organism's
 lifetime, making it effective for species with distinct patterns. For instance,
-Whale Sharks, Trout, Turtles, and Seals all possess unique spot or scale
-patterns that lend themselves well to this computer vision approach. By
-harnessing these identifiable features, researchers and conservationists can
-track and monitor individual animals, contributing to our understanding of
-biodiversity and aiding in conservation efforts. Join us as we delve into the
-intricacies of this technique and its applications in wildlife identification.
+[whale sharks](https://www.sharkguardian.org/whale-shark-research), [trout]({{< ref "projects/trout_identification" >}}),
+[turtles](https://app.fruitpunch.ai/article/2024/02/01/tracking-turtles-how-ai-helps-conservationists-to),
+and
+[seals](https://app.fruitpunch.ai/article/2023/03/23/understanding-seals-with-ai)
+all possess unique spot or scale patterns that lend themselves well to this
+computer vision approach. By harnessing these identifiable features,
+researchers and conservationists can track and monitor individual animals,
+contributing to our understanding of biodiversity and aiding in conservation
+efforts. Join us as we delve into the intricacies of this technique and its
+applications in wildlife identification.
 
 ## Local Feature Matching
 
@@ -26,21 +30,29 @@ stitching, 3D reconstruction, and more. One of the prominent approaches to
 image matching is local feature matching, which focuses on identifying and
 matching distinctive features in images.
 
+![LightGlue Matching Trout](./images/matching/lightglue_matching_trout_1.png)
+*Gallery / Local Feature Matching on trout spot patterns*
+
 ### Overview of Local Feature Matching
 
 Local feature matching involves several key steps:
 
 1. __Feature Detection__: The first step is to detect keypoints in the images.
    Keypoints are specific points in the image that are likely to be stable and
-distinctive. Common algorithms for feature detection include:
+distinctive. Common classical algorithms for feature detection include:
    - __Harris Corner Detector__: Identifies corners in the image.
    - __SIFT (Scale-Invariant Feature Transform)__: Detects keypoints that are
-   invariant to scale and rotation.
+   invariant to scale and rotation. It focuses on areas of high contrast. It is
+   the Gold Standard for classical locale feature extraction.
    - __DISK (Dense Image Keypoint)__: A method that generates dense keypoints
    across the image, focusing on capturing a wide range of features.
    - __ALIKED (A Local Image Keypoint Descriptor)__: A descriptor that
    emphasizes local image characteristics, providing robust matching
    capabilities.
+
+Current state-of-the-art methods effectively utilize deep learning-based
+features; however, classical methods continue to be strong contenders for
+feature extraction.
 
 2. __Feature Description__: Once keypoints are detected, the next step is to
    describe the local image patches around these keypoints. This is done using
@@ -48,11 +60,18 @@ feature descriptors that capture the appearance of the keypoints. Common
 descriptors include:
    - __SIFT Descriptors__: Provide a vector representation of the local image
    patch.
+
+![SIFT Descriptors](./images/sift/sift_descriptors.png)
+*SIFT descriptors describe the direction and magnitude of gradients*
+
    - __DISK Descriptors__: Work in conjunction with the DISK keypoints to
    provide a rich representation of local features.
    - __SuperPoint__: A deep learning-based approach that generates both
    keypoints and descriptors in a single network, providing high-quality
    matches and robustness to various transformations.
+
+![SuperPoint - Compute Keypoints and Descriptors in a single forward pass](./images/superpoint/superpoint_matching.png)
+*Superpoint Deep Learning Model Architecture - Computes keypoints and descriptors in a single forward pass*
 
 3. __Feature Matching__: After extracting keypoints and their descriptors from
    both images, the next step is to match these features. This can be done
@@ -93,8 +112,10 @@ Local feature matching is widely used in various applications, including:
 
 ## LightGlue
 
-LightGlue is a modern feature matching model designed to provide efficient and
-accurate matching of keypoints in images. It is an evolution of the SuperGlue
+[LightGlue](https://github.com/cvg/LightGlue) is a modern feature matching
+model designed to provide efficient and accurate matching of keypoints in
+images. It is an evolution of the
+[SuperGlue](https://github.com/magicleap/SuperGluePretrainedNetwork)
 model, which leverages deep learning techniques to enhance the quality of
 feature matching by considering both local features and global context.
 LightGlue is specifically optimized for real-time applications, making it
@@ -114,7 +135,7 @@ maintaining fast processing times, making it a valuable tool in various
 computer vision applications, including augmented reality, robotics, and image
 stitching.
 
-## Comprehensive Benchmark
+### Comprehensive Benchmark
 
 To identify the optimal combination of parameters and feature extractors for
 your dataset, it is advisable to conduct a comprehensive benchmark that
@@ -165,3 +186,49 @@ By carefully determining this threshold, we can effectively distinguish between
 known individuals and new entries, enhancing the accuracy of our identification
 process. This optimization ensures that we minimize false positives and
 negatives, leading to more reliable outcomes in our analysis.
+
+### Inference Speed
+
+When trying to identify an individual with Local Feature Matching, the algorithm needs to compare the input image to all images of the known individuals. To be useful, it needs to run very fast for it to be useful as the known corpus of individuals can be large.
+
+This is a very different approach from [Metric Learning](https://en.wikipedia.org/wiki/Similarity_learning) which scales much better with the size of the known corpus but requires a much bigger dataset of recaptures for training the model.
+
+LightGlue is know as "Local Feature Matching at Light Speed" when it is run on a GPU.
+
+To get a better understanding of how long it would take to identify an individual, we ran some benchmarks and evaluated how the size of the known corpus would impact the time it takes to run the identification.
+
+We loaded the already computed keypoints and descriptors of the trout dataset containing about 2750 entries.
+We then run the identification stage which does the following:
+
+1. Extract keypoints and descriptors from the input image.
+2. Pairwise Match the keypoints and descriptors to the entire known corpus (2750 individuals). The data is batched so that the LightGlue Matcher model can make better used of the GPU
+
+The table below summarizes the results of the benchmark.
+
+| Hardware   | Dataset Size             | Extractor Type | number keypoints | Batch Size | Extraction (ms) | Identification | Pair processing time (ms) |
+|:----------:|:------------------------:|:--------------:|:----------------:|:----------:|:---------------:|:--------------:|:-------------------------:|
+| CPU        | 2750                     | ALIKED         | 1024             | 1          | 5400            | 1h5min         | 1418
+| 1xGPU (T4) | 2750                     | ALIKED         | 1024             | 1          | 129             | 1min22s        | 29.8
+| 1xGPU (T4) | 2750                     | ALIKED         | 1024             | 8          | 129             | 1min8s         | 24.7
+| 1xGPU (T4) | 2750                     | ALIKED         | 1024             | 16         | 129             | 1min6s         | 24.0
+| 1xGPU (T4) | 2750                     | ALIKED         | 1024             | 32         | 129             | 1min4s         | 23.2
+| 1xGPU (T4) | 2750                     | ALIKED         | 1024             | 64         | 129             | 1min3s         | 22.9
+| 2xGPU (T4) | 2750                     | ALIKED         | 1024             | 64         | 129             | 35s            | 12.7
+| 4xGPU (T4) | 2750                     | ALIKED         | 1024             | 64         | 129             | 20s            | 7.3
+
+FIXME: finish the table above
+
+As demonstrated, using a larger batch size, reducing the number of keypoints to
+match, or utilizing multiple GPUs can significantly enhance processing speed.
+Notably, employing a GPU can yield up to a 50x increase in performance compared
+to a CPU.
+
+Running LightGlue on a CPU is generally impractical, as it requires an
+excessive amount of time to process even a single input image. The optimal
+setup ultimately depends on the specific use case and the available budget for
+time and resources.
+
+For occasional identification of individuals in images, a CPU may suffice.
+However, when dealing with a large volume of images, relying on a CPU becomes
+unfeasible. In such cases, selecting a GPU configuration from the table above
+is essential to ensure the pipeline operates within a reasonable timeframe.
