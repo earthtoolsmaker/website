@@ -22,7 +22,7 @@
     <div class="widget-sidebar__related_posts">
       <h2 class="widget-sidebar__title">Related Posts</h2>
       {{ range .Params.related_posts }}
-        {{ $related_post := site.GetPage "posts" .}}
+        {{ $related_post := site.GetPage "posts" . }}
         <div class="recent-project">
           {{ if $related_post.Params.Image }}
           <a href="{{ $related_post.RelPermalink }}" class="recent-project__image">

@@ -8,8 +8,8 @@ clients:
     logo: /images/clients/aeria/logo.png
 space: /spaces/trout_identification/
 related_posts:
-  - how-to-prepare-data-for-identification/index.md
-  - local-feature-matching/index.md
+  - how-to-prepare-data-for-identification
+  - local-feature-matching-lightglue
 tools:
   - Machine Learning
   - Computer Vision
