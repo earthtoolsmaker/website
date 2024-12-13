@@ -1,9 +1,9 @@
 ---
 title: "Identify individuals with Local Feature Matching"
-description: A comprehensive examination of the systems designed to accurately identify trout by matching their unique markings using computer vision techniques.
+description: A comprehensive examination of using local feature matching for individual identification.
 date: 2024-12-09
 image: /images/posts/trout-identification-preprocessing/cover.png
-tags: ["AI", "vision", "identification"]
+tags: ["AI", "vision", "identification", "local feature matching"]
 ---
 
 In this blog post, we will explore a powerful technique widely used for
@@ -15,7 +15,20 @@ lifetime, making it effective for species with distinct patterns. For instance,
 and
 [seals](https://app.fruitpunch.ai/article/2023/03/23/understanding-seals-with-ai)
 all possess unique spot or scale patterns that lend themselves well to this
-computer vision approach. By harnessing these identifiable features,
+computer vision approach. 
+
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="./images/species/whale-shark.jpg" loading="lazy" title="Whale Shark">
+    <img src="./images/species/turtle.jpg" loading="lazy" title="Turtle">
+    <img src="./images/species/trout.jpg" loading="lazy" title="Trout">
+    <img src="./images/species/seal.jpg" loading="lazy" title="Seal">
+  </div>
+  <em>Gallery / Unique and stable markings for different animal species</em>
+</div>
+
+
+By harnessing these identifiable features,
 researchers and conservationists can track and monitor individual animals,
 contributing to our understanding of biodiversity and aiding in conservation
 efforts. Join us as we delve into the intricacies of this technique and its
@@ -205,12 +218,12 @@ effective, this process needs to be executed rapidly, especially since the
 known corpus can be quite large.
 
 This approach contrasts sharply with [Metric
-Learning](https://en.wikipedia.org/wiki/Similarity_learning), which scales more
+Learning]({{< ref "posts/bear-identification-with-metric-learning-guide" >}}), which scales more
 efficiently with the size of the known corpus but necessitates a significantly
 larger dataset of recaptures for model training.
 
-LightGlue is often referred to as "Local Feature Matching at Light Speed" when
-executed on a GPU.
+LightGlue, a local feature matching algorithm, is often referred to as "Local
+Feature Matching at Light Speed" when executed on a GPU.
 
 To better understand the time required for individual identification, we
 conducted benchmarks to evaluate how the size of the known corpus affects
@@ -222,28 +235,55 @@ the following steps:
 
 1. Extracting keypoints and descriptors from the input image.
 2. Performing pairwise matching of the keypoints and descriptors against the
-entire known corpus (2,750 individuals). The data is batched to optimize the
+   entire known corpus (2,750 individuals). The data is batched to optimize the
 performance of the LightGlue Matcher model on the GPU.
 
 The table below summarizes the results of our benchmark.
 
-| Hardware   | Extractor Type | number keypoints | Batch Size | Extraction (ms) | Identification | Pair processing time (ms) |
-|:----------:|:--------------:|:----------------:|:----------:|:---------------:|:--------------:|:-------------------------:|
-| CPU        | ALIKED         | 1024             | 1          | 5400            | 1h5min         | 1418
-| 1xGPU (T4) | ALIKED         | 1024             | 1          | 129             | 1min22s        | 29.8
-| 1xGPU (T4) | ALIKED         | 1024             | 8          | 129             | 1min8s         | 24.7
-| 1xGPU (T4) | ALIKED         | 1024             | 16         | 129             | 1min6s         | 24.0
-| 1xGPU (T4) | ALIKED         | 1024             | 32         | 129             | 1min4s         | 23.2
-| 1xGPU (T4) | ALIKED         | 1024             | 64         | 129             | 1min3s         | 22.9
-| 2xGPU (T4) | ALIKED         | 1024             | 64         | 129             | 35s            | 12.7
-| 4xGPU (T4) | ALIKED         | 1024             | 64         | 129             | 20s            | 7.3
+| Hardware       | Extractor Type | number keypoints | Batch Size | Extraction (ms) | Identification | Pair processing time (ms) |
+|:--------------:|:--------------:|:----------------:|:----------:|:---------------:|:--------------:|:-------------------------:|
+| __CPU__        | ALIKED         | 1024             | 1          | 5400            | 1h5min         | 1418                      |
+| 1xGPU (T4)     | ALIKED         | 1024             | 1          | 129             | 1min22s        | 29.8                      |
+| 1xGPU (T4)     | ALIKED         | 1024             | 8          | 129             | 1min8s         | 24.7                      |
+| 1xGPU (T4)     | ALIKED         | 1024             | 16         | 129             | 1min6s         | 24.0                      |
+| 1xGPU (T4)     | ALIKED         | 1024             | 32         | 129             | 1min4s         | 23.2                      |
+| 1xGPU (T4)     | ALIKED         | 1024             | __64__     | 129             | 1min3s         | 22.9                      |
+| 2xGPU (T4)     | ALIKED         | 1024             | 64         | 129             | 35s            | 12.7                      |
+| __4xGPU__ (T4) | ALIKED         | 1024             | 64         | 129             | 20s            | __7.3__                   |
+| 1xGPU (T4)     | SIFT           | 1024             | 1          | 196             | 1min14s        | 26.9                      |
+| 1xGPU (T4)     | SIFT           | 1024             | 64         | 196             | 53s            | 19.3                      |
+| 1xGPU (T4)     | SIFT           | 512              | 64         | 196             | 38s            | 13.8                      |
+| 1xGPU (T4)     | SIFT           | 256              | 64         | 196             | 32s            | 11.6                      |
+| 1xGPU (T4)     | SIFT           | __128__          | 64         | 196             | 28s            | __10.2__                  |
+| 1xGPU (T4)     | SUPERPOINT     | 1024             | 1          | 160             | 1min17s        | 28.0                      |
+| 1xGPU (T4)     | SUPERPOINT     | 1024             | 64         | 160             | 58s            | 21.1                      |
+| 1xGPU (T4)     | DISK           | 1024             | 1          | 202             | 1min23s        | 30.2                      |
+| 1xGPU (T4)     | DISK           | 1024             | 64         | 202             | 1min12s        | 26.2                      |
 
-FIXME: finish the table above
+As demonstrated, using a larger __batch size__, reducing the __number of
+keypoints__ to match, or utilizing __multiple GPUs__ can significantly enhance
+processing speed. Notably, employing a GPU can yield up to a 50x increase in
+performance compared to a CPU.
 
-As demonstrated, using a larger batch size, reducing the number of keypoints to
-match, or utilizing multiple GPUs can significantly enhance processing speed.
-Notably, employing a GPU can yield up to a 50x increase in performance compared
-to a CPU.
+The different matchers run at approximately the same speed. With a batch size
+of 64, it takes between 20 and 30 milliseconds to match two sets of keypoints
+and descriptors. This provides a good indicator for the total time it takes,
+depending on the size of the known corpus.
+
+| Dataset size | Comparisons time (ms) |
+|:------------:|:---------------------:|
+| 1            | 20ms                  |
+| 10           | 200ms                 |
+| 100          | 2s                    |
+| 1.000        | 20s                   |
+| 10.000       | 3min20s               |
+| 100.000      | 33min20s              |
+
+<span class="gallery-box">
+  <span class="gallery"></span>
+  <em>This method scales linearly with the size of the dataset. It can become impractical for large datasets.</em>
+</span>
+<br/>
 
 Running LightGlue on a CPU is generally impractical, as it requires an
 excessive amount of time to process even a single input image. The optimal
@@ -254,3 +294,21 @@ For occasional identification of individuals in images, a CPU may suffice.
 However, when dealing with a large volume of images, relying on a CPU becomes
 unfeasible. In such cases, selecting a GPU configuration from the table above
 is essential to ensure the pipeline operates within a reasonable timeframe.
+
+## Conclusion
+
+Local Feature Matching is a powerful technique for image matching and animal
+identification, applicable to a wide range of species with unique and stable
+body markings. The success of this approach depends on selecting the
+appropriate keypoints, descriptors, and matcher. While effective, Local Feature
+Matching can be challenging to implement for very large datasets of known
+individuals, as it requires pairwise matching against the entire corpus.
+However, conservationists can leverage this non-invasive technology to
+accurately re-identify individuals, making it a valuable tool for wildlife
+monitoring and conservation efforts.
+
+One can try out the model from the [ML pipeline that performs Local Feature
+Matching on trout spot patterns]({{< ref "/spaces/trout_identification" >}}) or
+directly from the snippet below:
+
+{{< hf_space "earthtoolsmaker-trout-reid" >}}
