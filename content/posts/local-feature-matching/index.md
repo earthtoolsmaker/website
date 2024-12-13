@@ -158,6 +158,50 @@ maintaining fast processing times, making it a valuable tool in various
 computer vision applications, including augmented reality, robotics, and image
 stitching.
 
+### Metrics
+
+Different metrics can be used to analyze the matching scores outputted by the LightGlue matcher. A simple approach is to examine the length of the LightGlue matches, which is an array of match scores that exceed a specific threshold. However, this method does not fully utilize the complete score distribution.
+
+Two more sophisticated metrics are often employed:
+
+1. __Area Under Curve (AUC)__: The AUC provides a comprehensive assessment of
+   the matcher's performance by measuring the area under the Receiver Operating
+Characteristic (ROC) curve. This metric considers the trade-off between the
+true positive rate and the false positive rate across all possible thresholds.
+
+![Area Under Curve](./images/metrics/auc.webp)
+*Area Under Curve (AUC) between ___a___ and ___b___*
+
+2. __Wasserstein Distance__: Also known as the Earth Mover's Distance, the
+   Wasserstein Distance quantifies the difference between the distributions of
+match scores for true matches and non-matches (null distribution). This metric
+captures more nuanced information about the score distributions compared to
+simply looking at match lengths.
+
+![Wasserstein Distance](./images/metrics/wasserstein.png)
+*Wasserstein Distance: Required energy to turn the red distribution into the blue distribution*
+
+Using these more advanced metrics, one can gain deeper insights into the
+overall effectiveness and discriminative power of the LightGlue matcher, beyond
+a basic analysis of match lengths.
+
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="./images/metrics/matcher_metric_auc.png" loading="lazy" title="AUC metric to compare two individuals">
+    <img src="./images/metrics/matcher_metric_wasserstein.png" loading="lazy" title="Wasserstein distance to compare two individuals">
+  </div>
+  <em>
+      Left: AUC scores when comparing different individuals | Right: Wasserstein scores when comparing different individuals.<br/>
+      0 and 1 are the same individual different pictures while 2 is a different individual.
+   </em>
+</div>
+
+We found that the AUC (Area Under Curve) and Wasserstein Distance metrics have
+very similar discriminative power when applied to the LightGlue matching score
+distributions. This suggests that either metric can be used to effectively
+evaluate the performance of the LightGlue matcher, without a significant
+difference in the insights they provide.
+
 ### Comprehensive Benchmark
 
 To identify the optimal combination of parameters and feature extractors for

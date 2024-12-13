@@ -58,7 +58,6 @@ the importance of these remarkable fish in freshwater ecosystems.
 ![Stable Spot patterns](/images/projects/trout_identification/lightglue/lightglue_matching.png)
 *Gallery / Unique spot patterns are like fingerprints*
 
-
 ## A vital role for the ecosystems
 
 The Westslope Cutthroat Trout plays a crucial role in its ecosystem for several reasons:
