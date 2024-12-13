@@ -110,6 +110,16 @@ Local feature matching is widely used in various applications, including:
 - __Object Recognition__: Identifying and classifying objects within images.
 - __3D Reconstruction__: Creating 3D models from multiple 2D images.
 
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="./images/matching/match_1.webp" loading="lazy">
+    <img src="./images/matching/match_2.webp" loading="lazy">
+    <img src="./images/matching/match_3.webp" loading="lazy">
+    <img src="./images/matching/match_4.webp" loading="lazy">
+  </div>
+  <em>Local Feature Matching to identify trout individuals</em>
+</div>
+
 ## LightGlue
 
 [LightGlue](https://github.com/cvg/LightGlue) is a modern feature matching
