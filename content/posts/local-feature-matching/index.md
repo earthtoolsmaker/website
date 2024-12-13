@@ -189,32 +189,44 @@ negatives, leading to more reliable outcomes in our analysis.
 
 ### Inference Speed
 
-When trying to identify an individual with Local Feature Matching, the algorithm needs to compare the input image to all images of the known individuals. To be useful, it needs to run very fast for it to be useful as the known corpus of individuals can be large.
+When identifying an individual using Local Feature Matching, the algorithm must
+compare the input image against all images of known individuals. To be
+effective, this process needs to be executed rapidly, especially since the
+known corpus can be quite large.
 
-This is a very different approach from [Metric Learning](https://en.wikipedia.org/wiki/Similarity_learning) which scales much better with the size of the known corpus but requires a much bigger dataset of recaptures for training the model.
+This approach contrasts sharply with [Metric
+Learning](https://en.wikipedia.org/wiki/Similarity_learning), which scales more
+efficiently with the size of the known corpus but necessitates a significantly
+larger dataset of recaptures for model training.
 
-LightGlue is know as "Local Feature Matching at Light Speed" when it is run on a GPU.
+LightGlue is often referred to as "Local Feature Matching at Light Speed" when
+executed on a GPU.
 
-To get a better understanding of how long it would take to identify an individual, we ran some benchmarks and evaluated how the size of the known corpus would impact the time it takes to run the identification.
+To better understand the time required for individual identification, we
+conducted benchmarks to evaluate how the size of the known corpus affects
+identification speed.
 
-We loaded the already computed keypoints and descriptors of the trout dataset containing about 2750 entries.
-We then run the identification stage which does the following:
+We utilized pre-computed keypoints and descriptors from the trout dataset,
+which contains approximately 2,750 entries. The identification process involved
+the following steps:
 
-1. Extract keypoints and descriptors from the input image.
-2. Pairwise Match the keypoints and descriptors to the entire known corpus (2750 individuals). The data is batched so that the LightGlue Matcher model can make better used of the GPU
+1. Extracting keypoints and descriptors from the input image.
+2. Performing pairwise matching of the keypoints and descriptors against the
+entire known corpus (2,750 individuals). The data is batched to optimize the
+performance of the LightGlue Matcher model on the GPU.
 
-The table below summarizes the results of the benchmark.
+The table below summarizes the results of our benchmark.
 
-| Hardware   | Dataset Size             | Extractor Type | number keypoints | Batch Size | Extraction (ms) | Identification | Pair processing time (ms) |
-|:----------:|:------------------------:|:--------------:|:----------------:|:----------:|:---------------:|:--------------:|:-------------------------:|
-| CPU        | 2750                     | ALIKED         | 1024             | 1          | 5400            | 1h5min         | 1418
-| 1xGPU (T4) | 2750                     | ALIKED         | 1024             | 1          | 129             | 1min22s        | 29.8
-| 1xGPU (T4) | 2750                     | ALIKED         | 1024             | 8          | 129             | 1min8s         | 24.7
-| 1xGPU (T4) | 2750                     | ALIKED         | 1024             | 16         | 129             | 1min6s         | 24.0
-| 1xGPU (T4) | 2750                     | ALIKED         | 1024             | 32         | 129             | 1min4s         | 23.2
-| 1xGPU (T4) | 2750                     | ALIKED         | 1024             | 64         | 129             | 1min3s         | 22.9
-| 2xGPU (T4) | 2750                     | ALIKED         | 1024             | 64         | 129             | 35s            | 12.7
-| 4xGPU (T4) | 2750                     | ALIKED         | 1024             | 64         | 129             | 20s            | 7.3
+| Hardware   | Extractor Type | number keypoints | Batch Size | Extraction (ms) | Identification | Pair processing time (ms) |
+|:----------:|:--------------:|:----------------:|:----------:|:---------------:|:--------------:|:-------------------------:|
+| CPU        | ALIKED         | 1024             | 1          | 5400            | 1h5min         | 1418
+| 1xGPU (T4) | ALIKED         | 1024             | 1          | 129             | 1min22s        | 29.8
+| 1xGPU (T4) | ALIKED         | 1024             | 8          | 129             | 1min8s         | 24.7
+| 1xGPU (T4) | ALIKED         | 1024             | 16         | 129             | 1min6s         | 24.0
+| 1xGPU (T4) | ALIKED         | 1024             | 32         | 129             | 1min4s         | 23.2
+| 1xGPU (T4) | ALIKED         | 1024             | 64         | 129             | 1min3s         | 22.9
+| 2xGPU (T4) | ALIKED         | 1024             | 64         | 129             | 35s            | 12.7
+| 4xGPU (T4) | ALIKED         | 1024             | 64         | 129             | 20s            | 7.3
 
 FIXME: finish the table above
 

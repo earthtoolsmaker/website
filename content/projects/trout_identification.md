@@ -8,7 +8,7 @@ clients:
     logo: /images/clients/aeria/logo.png
 space: /spaces/trout_identification/
 related_posts:
-  - how-to-prepare-data-for-identitication
+  - how-to-prepare-data-for-identification
   - local-feature-matching
 tools:
   - Machine Learning
