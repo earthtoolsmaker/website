@@ -20,7 +20,7 @@ markings with Metric Learning*
 
 In the [bear identification project]({{< ref "projects/bear_identification.md"
 >}}), the processing stage encompasses bear face detection, head segmentation,
->and head normalization.
+and head normalization.
 
 
 ![ML Pipeline for Trout Identification](/images/projects/trout_identification/pipeline.png)
