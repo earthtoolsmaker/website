@@ -22,7 +22,6 @@ In the [bear identification project]({{< ref "projects/bear_identification.md"
 >}}), the processing stage encompasses bear face detection, head segmentation,
 and head normalization.
 
-
 ![ML Pipeline for Trout Identification](/images/projects/trout_identification/pipeline.png)
 *Gallery / Overview of the ML pipeline developed to identify __trouts__ using
 their spot patterns with Local Feature Matching*
@@ -127,6 +126,64 @@ segmentation and real-time processing.
 ![YOLOv8 CV Tasks](./images/yolov8_tasks.png)
 *YOLOv8 Computer Vision Tasks*
 
+#### Training
+
+##### Data Augmentation
+
+We can employ various data augmentation techniques to artificially
+enhance our training set. These techniques help increase the diversity
+of the data and improve the model's robustness. Common augmentation
+methods include:
+
+- __Random Scaling__: Varying the size of the images to simulate different
+distances from the camera.
+- __Random Rotation__: Rotating images by a random angle to account for
+variations in orientation.
+- __Mosaic Augmentation__: Combining multiple images into a single mosaic to
+create a more complex training example.
+- __Flipping__: Horizontally or vertically flipping images to introduce mirror variations.
+- __Color Jittering__: Randomly adjusting the brightness, contrast, saturation,
+and hue of the images to simulate different lighting conditions.
+- __Cropping__: Randomly cropping sections of the images to focus on different
+parts of the trout, which can help the model learn to identify keypoints in
+various contexts.
+- __Gaussian Noise__: Adding random noise to the images to make the model more
+resilient to variations in input quality.
+
+By applying these augmentation techniques before feeding the images to the
+model, we can significantly enhance the training dataset, leading to improved
+model performance and generalization.
+
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="./images/segmentation/model/train_batch0.jpg" loading="lazy" alt="Batch 0" title="Annotated Dataset - Batch 0" \>
+    <img src="./images/segmentation/model/train_batch1.jpg" loading="lazy" alt="Batch 1" title="Annotated Dataset - Batch 1" \>
+    <img src="./images/segmentation/model/train_batch2.jpg" loading="lazy" alt="Batch 2" title="Annotated Dataset - Batch 2" \>
+    <img src="./images/segmentation/model/train_batch910.jpg" loading="lazy" alt="Batch 910" title="Annotated Dataset - Batch 910" \>
+  </div>
+  <em>Data Augmentation (rotation, scaling, cropping) of the annoted trout dataset - Random batches.</em>
+</div>
+
+##### Training Results
+
+Typically, training a satisfactory segmentation model requires only a
+relatively small number of epochs. This allows for efficient model
+development while still achieving effective performance on the task.
+
+![Finetuning of a Segmentation Model on Trouts](./images/segmentation/model/results.png)
+*Results of the training of a segmentation model on trouts for 100 epochs*
+
+##### Qualitative Results
+
+A qualitative evaluation of segmentation model was conducted on a random
+batch from the validation set. The results demonstrate that the model
+performs with high accuracy, effectively localizing and segmenting out
+trouts.
+
+| Ground Truth | Prediction |
+|:------------:|:----------:|
+| ![Val batch 0 label](./images/segmentation/model/val_batch0_labels.jpg) | ![Val batch 0 pred](./images/segmentation/model/val_batch0_pred.jpg) |
+
 ## Normalization
 
 Producing normalized images for the identification stage is critical. It makes it easier to compare different individuals in a consistent manner and it boosts the model accuracy.
@@ -150,14 +207,101 @@ For trouts, we want to realign the fish to face the same direction and then appl
 
 ### Rotation
 
-In most cases, one will need to apply a rotation operation to the original images so that all images are aligned using the same angle. That can be needed for identification model that are sensitive to rotation.
+In many instances, it is necessary to apply a rotation operation to the
+original images to ensure that all images are aligned using a consistent angle.
+This alignment is particularly important for identification models that are
+sensitive to variations in rotation.
 
-TODO: add illustration here.
-
-To find the rotation angle needed to align the pictures in a consistent way, one can leverage a class of ML models know as pose estimation models that learn to predict specific parts of the animal: eye, nose, mouth, tail, etc.
+To determine the appropriate rotation angle for consistent alignment, we can
+leverage a class of machine learning models known as pose estimation models.
+These models are trained to predict specific anatomical features of the animal,
+such as the eye, nose, mouth, tail, and other keypoints. By accurately
+localizing these features, we can calculate the required rotation angle to
+standardize the orientation of the images.
 
 #### Pose Estimation 101
 
+![Pose Estimation Human Example](./images/pose/pose-estimation-examples.avif)
+*Gallery / Pose Estimation to localize the key points on a human body*
+
+Pose estimation is a vital domain within computer vision that aims to ascertain
+the spatial configuration of individuals or objects within images or videos.
+This process involves accurately identifying the positions of key points on
+body — such as joints, facial landmarks—or determining the orientation of
+various objects. By leveraging these detected keypoints, pose estimation can
+facilitate the normalization of images, allowing for realignment and consistent
+representation based on the identified poses.
+
+This capability to accurately identify these keypoints with a machine learning
+model enables us to realign and normalize images, ensuring that all trout are
+oriented in the same direction. Additionally, it allows for the detection of
+the side of the trout that is visible in the image, enhancing our ability to
+analyze and interpret the data effectively.
+
+![Pose Estimation Trout](./images/pose/keypoints.png)
+*Gallery / Pose estimation to localize the keypoints of a trout: eye, tail, fins*
+
+To realign the trout images, we utilize the predicted keypoints, particularly
+the pelvic and anal fins, to determine the appropriate rotation angle needed
+for horizontal alignment. By calculating this angle based on the positions of
+these keypoints, we can effectively adjust the orientation of the image,
+ensuring that the trout is consistently aligned for analysis.
+
+The green line in the images below, drawn between the pelvic and anal fins,
+serves as a reference point for rotating the image. This line acts as an
+anchor, allowing us to accurately adjust the orientation of the trout for
+consistent alignment.
+
+| Original | Keypoints | Rotated | Final |
+|:--------:|:---------:|:-------:|:-----:|
+| ![Original 1](./images/pose/rotation/1_original.png) | ![Keypoints 1](./images/pose/rotation/1_keypoints.png) | ![Rotated](./images/pose/rotation/1_rotation.png) | ![Final 1](./images/pose/rotation/1_final.png) |
+| ![Original 2](./images/pose/rotation/2_original.png) | ![Keypoints 2](./images/pose/rotation/2_keypoints.png) | ![Rotated](./images/pose/rotation/2_rotation.png) | ![Final 2](./images/pose/rotation/2_final.png) |
+| ![Original 3](./images/pose/rotation/3_original.png) | ![Keypoints 3](./images/pose/rotation/3_keypoints.png) | ![Rotated](./images/pose/rotation/3_rotation.png) | ![Final 3](./images/pose/rotation/3_final.png) |
+
 #### Fine tuning a pose estimation model
+
+By utilizing a pretrained model designed for human pose estimation, we can
+apply transfer learning techniques to adapt the model for localizing specific
+keypoints on trout, such as the eye, pelvic fin, dorsal fin, tail, and others.
+
+We can annotate a small dataset with the identified keypoints that we want the
+pose estimation model to learn. For the trout identification project, a few
+hundred annotated images proved sufficient to train a highly accurate model.
+The annotation process is typically conducted in stages, where an initial model
+can bootstrap the expansion of the annotated dataset, allowing for iterative
+improvements and enhanced performance over time.
+
+##### Data Augmentation
+
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="./images/pose/model/train_batch0.jpg" loading="lazy" alt="Batch 0" title="Annotated Dataset - Batch 0" \>
+    <img src="./images/pose/model/train_batch1.jpg" loading="lazy" alt="Batch 1" title="Annotated Dataset - Batch 1" \>
+    <img src="./images/pose/model/train_batch2.jpg" loading="lazy" alt="Batch 2" title="Annotated Dataset - Batch 2" \>
+    <img src="./images/pose/model/train_batch910.jpg" loading="lazy" alt="Batch 910" title="Annotated Dataset - Batch 910" \>
+  </div>
+  <em>Data Augmentation (rotation, scaling, cropping) of the annoted trout dataset - Random batches.</em>
+</div>
+
+##### Training Results
+
+Typically, only a limited number of epochs are required to train a satisfactory
+initial pose estimation model. This foundational model can then be further
+enhanced by incorporating additional data points into the annotated dataset,
+allowing for continuous improvement in accuracy and performance.
+
+![Finetuning of a Pose Estimation Model on Trouts](./images/pose/model/results.png)
+*Results of the training of a pose estimation model for trout keypoints localization for 100 epochs*
+
+##### Qualitative Results
+
+A qualitative evaluation of the pose estimation model was conducted on a
+random batch from the validation set. The results demonstrate that the
+model performs with high accuracy, effectively identifying and
+localizing keypoints on the trout.
+
+| Ground Truth | Prediction |
+|:------------:|:----------:|
+| ![Val batch 0 label](./images/pose/model/val_batch0_labels.jpg) | ![Val batch 0 pred](./images/pose/model/val_batch0_pred.jpg) |
 
 ### Misc
