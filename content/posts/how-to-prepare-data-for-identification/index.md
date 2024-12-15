@@ -258,7 +258,7 @@ consistent alignment.
 | ![Original 2](./images/pose/rotation/2_original.png) | ![Keypoints 2](./images/pose/rotation/2_keypoints.png) | ![Rotated](./images/pose/rotation/2_rotation.png) | ![Final 2](./images/pose/rotation/2_final.png) |
 | ![Original 3](./images/pose/rotation/3_original.png) | ![Keypoints 3](./images/pose/rotation/3_keypoints.png) | ![Rotated](./images/pose/rotation/3_rotation.png) | ![Final 3](./images/pose/rotation/3_final.png) |
 
-#### Fine tuning a pose estimation model
+#### Finetuning a Pose Estimation model
 
 By utilizing a pretrained model designed for human pose estimation, we can
 apply transfer learning techniques to adapt the model for localizing specific
@@ -304,4 +304,21 @@ localizing keypoints on the trout.
 |:------------:|:----------:|
 | ![Val batch 0 label](./images/pose/model/val_batch0_labels.jpg) | ![Val batch 0 pred](./images/pose/model/val_batch0_pred.jpg) |
 
-### Misc
+## Conclusion
+
+In this article, we have explored various standard computer vision
+techniques that often complement each other effectively. An open-set
+object detector, such as GroundingDINO, combined with a promptable
+segmentation model like SAM, can facilitate the curation of a training
+mask dataset. If necessary, a smaller segmentation model designed for
+real-time performance and capable of running on CPU, such as YOLO, can
+be trained on this generated dataset.
+
+Normalizing and standardizing the dataset used for downstream
+identification models is crucial. This can be achieved through various
+methods, including training a pose estimation model to realign images
+based on specific keypoints.
+
+These techniques are versatile and applicable to a wide range of
+problems, making them essential tools in the modern computer vision
+toolkit.
