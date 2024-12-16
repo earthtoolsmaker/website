@@ -3,7 +3,7 @@ title: A guide to designing a bear face recognition system
 description: Identify bears with Metric Learning.
 date: 2024-04-12
 image: /images/posts/bear-identification-with-metric-learning-guide/cover.png 
-tags: ["AI", "vision", "metric learning"]
+tags: ["AI", "vision", "metric learning", "identification"]
 ---
 
 In this blog post we'll delve into the technical
