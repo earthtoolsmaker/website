@@ -2,7 +2,7 @@
 title: "Identify individuals with Local Feature Matching"
 description: A comprehensive examination of using local feature matching for individual identification.
 date: 2024-12-09
-image: /images/posts/trout-identification-preprocessing/cover.png
+image: /images/posts/local-feature-matching-lightglue/cover.png
 tags: ["AI", "vision", "identification", "local feature matching"]
 ---
 
@@ -19,14 +19,13 @@ computer vision approach.
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="./images/species/whale-shark.jpg" loading="lazy" title="Whale Shark">
-    <img src="./images/species/turtle.jpg" loading="lazy" title="Turtle">
-    <img src="./images/species/trout.jpg" loading="lazy" title="Trout">
+    <img src="./images/species/turtle2.png" loading="lazy" title="Turtle">
     <img src="./images/species/seal.jpg" loading="lazy" title="Seal">
+    <img src="./images/species/trout.jpg" loading="lazy" title="Trout">
+    <img src="./images/species/whale-shark2.png" loading="lazy" title="Whale Shark">
   </div>
   <em>Gallery / Unique and stable markings for different animal species</em>
 </div>
-
 
 By harnessing these identifiable features,
 researchers and conservationists can track and monitor individual animals,
