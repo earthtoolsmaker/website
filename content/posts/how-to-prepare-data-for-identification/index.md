@@ -2,7 +2,7 @@
 title: "How to prepare data for IDentification?"
 description: An in-depth look at the common preprocessing stages required to perform identification using computer vision.
 date: 2024-12-08
-image: /images/posts/trout-identification-preprocessing/cover.png
+image: /images/posts/how-to-prepare-data-for-identification/cover.png
 tags: ["AI", "vision", "identification"]
 ---
 
