@@ -15,6 +15,7 @@ tools:
   - "Machine Learning"
 status: completed
 date: 2024-04-02
+pinned: true
 image: /images/projects/human_wildlife_conflict_bear/cover.png
 ---
 
