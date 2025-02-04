@@ -228,6 +228,9 @@ learning model that can accurately classify the various species found in the
 area, such as grey wolves, Pallas cats, brown bears, pikas, snow leopards,
 tetraes...
 
+![Detection and Classification of Species](/images/projects/snow_leopard_monitoring/ml_model_detection.png)
+*Automated Detection and Classification of Himalayan Species*
+
 This machine learning model for identifying individual snow leopards will be
 made available to other NGOs and conservation organizations working in similar
 regions with comparable species. It holds the potential to significantly aid
@@ -245,6 +248,16 @@ benefit the broader conservation community, as it will work with any camera
 trap dataset and allow users to visualize species detections on an interactive
 map.
 
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/projects/snow_leopard_monitoring/cocomap/1.png" loading="lazy" alt="Cocomap 1" title="Cocomap 1" \>
+    <img src="/images/projects/snow_leopard_monitoring/cocomap/3.png" loading="lazy" alt="Cocomap 3" title="Cocomap 3" \>
+    <img src="/images/projects/snow_leopard_monitoring/cocomap/4.png" loading="lazy" alt="Cocomap 4" title="Cocomap 4" \>
+    <img src="/images/projects/snow_leopard_monitoring/cocomap/2.png" loading="lazy" alt="Cocomap 2" title="Cocomap 2" \>
+  </div>
+  <em>Gallery / Current Prototype for visualizing camera trap data on an interactive map</em>
+</div>
+
 #### Identification of Snow Leopards
 
 Accurately monitoring the snow leopard population is crucial, and a key
@@ -259,3 +272,6 @@ Automating this identification process has the potential to significantly
 streamline and improve the reliability of snow leopard population monitoring
 efforts, providing conservation organizations with a powerful tool to better
 understand and protect this elusive and endangered species.
+
+![Identification of individuals](/images/projects/snow_leopard_monitoring/ml_model_identification.png)
+*Automated Individual Snow Leopard Identification ML Model*
