@@ -131,7 +131,15 @@ efforts, as it not only helps to maintain the ecological balance of these
 high-altitude ecosystems, but also mitigates the tensions between the big cats
 and the human communities that share their habitat.
 
-TODO: add images of their preys
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/projects/snow_leopard_monitoring/pika.png" loading="lazy" alt="Pika" title="Pika" \>
+    <img src="/images/projects/snow_leopard_monitoring/grey_marmot.png" loading="lazy" alt="Grey Marmot" title="Grey Marmot" \>
+    <img src="/images/projects/snow_leopard_monitoring/tetraogallus_himalayensis.png" loading="lazy" alt="Tetraogallus Himalayensis" title="Tetraogallus Himalayensis" \>
+    <img src="/images/projects/snow_leopard_monitoring/ibex_female.png" loading="lazy" alt="Ibex" title="Ibex" \>
+  </div>
+  <em>Gallery / Sample of prey species</em>
+</div>
 
 ### Habitat fragmentation and degradation
 
@@ -275,3 +283,16 @@ understand and protect this elusive and endangered species.
 
 ![Identification of individuals](/images/projects/snow_leopard_monitoring/ml_model_identification.png)
 *Automated Individual Snow Leopard Identification ML Model*
+
+## Conclusion
+
+Harnessing simple yet powerful computer vision technologies to analyze camera
+trap data offers numerous advantages for the conservation of snow leopards and
+other Himalayan species. This automated approach has the potential to inform
+habitat management decisions by providing detailed insights into species
+distribution, movement patterns, and population trends, support critical
+research efforts by streamlining the processing and analysis of large-scale
+camera trap datasets, engage local communities by involving them in the data
+collection and validation process, and provide a cost-effective and scalable
+solution to supplement and enhance traditional conservation efforts across the
+fragile Himalayan ecosystems and the iconic species that inhabit them.
