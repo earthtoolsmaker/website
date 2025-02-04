@@ -168,6 +168,16 @@ in Central Asia. OSI Panthera's primary goal is to study and protect the
 wildlife in Central Asia, with a particular focus on the snow leopard (Panthera
 uncia), which serves as an umbrella species for the region's ecosystems.
 
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/projects/snow_leopard_monitoring/snow_leopards/1.png" loading="lazy" alt="Snow Leopard" title="Snow Leopard" \>
+    <img src="/images/projects/snow_leopard_monitoring/snow_leopards/2.png" loading="lazy" alt="Snow Leopard" title="Snow Leopard" \>
+    <img src="/images/projects/snow_leopard_monitoring/snow_leopards/3.png" loading="lazy" alt="Snow Leopard" title="Snow Leopard" \>
+    <img src="/images/projects/snow_leopard_monitoring/snow_leopards/4.png" loading="lazy" alt="Snow Leopard" title="Snow Leopard" \>
+  </div>
+  <em>Gallery / Sample of Snow Leopards recorded by OSI Panthera camera traps</em>
+</div>
+
 ### OSI Panthera
 
 The program also has a strong educational component, aimed at raising awareness
@@ -175,6 +185,18 @@ among local and international participants about the importance of ecology and
 biodiversity conservation. These expeditions involve the collection of evidence
 of the presence of sensitive species, such as snow leopards, as well as other
 carnivores, ungulates, and birds.
+
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/projects/snow_leopard_monitoring/brown_bear_isabelle.jpg" loading="lazy" alt="Isabelle Brown Bear" title="Isabelle Brown Bear" \>
+    <img src="/images/projects/snow_leopard_monitoring/ibex_male.png" loading="lazy" alt="Siberian Ibex" title="Siberian Ibex" \>
+    <img src="/images/projects/snow_leopard_monitoring/tetraogallus_himalayensis.png" loading="lazy" alt="Tetraogallus Himalayensis" title="Tetraogallus Himalayensis" \>
+    <img src="/images/projects/snow_leopard_monitoring/pallas_cat.png" loading="lazy" alt="Pallas Cat" title="Pallas Cat" \>
+    <img src="/images/projects/snow_leopard_monitoring/lynx.png" loading="lazy" alt="Lynx Isabellinus" title="Lynx Isabellinus" \>
+    <img src="/images/projects/snow_leopard_monitoring/grey_wolf.png" loading="lazy" alt="Grey Wolf" title="Grey Wolf" \>
+  </div>
+  <em>Gallery / Sample of endemic species captured by OSI Panthera: Brown Bears, Ibexes, Pallas Cats, Lynxes, Wolves, etc.</em>
+</div>
 
 All the data collected in and around the Shamshy and Chon Jarguilchak valleys
 are then analyzed to better understand the local ecosystems and their
