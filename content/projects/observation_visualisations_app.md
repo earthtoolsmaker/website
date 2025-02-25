@@ -32,13 +32,13 @@ In recent years, conservation efforts have increasingly relied on various record
 
 ## Advancements in Machine Learning for Camera Trap Data
 
-Machine learning (ML) has played a pivotal role in addressing data processing challenges, leading to the development of numerous tools designed to automate species identification and behavior analysis. Surveys such as the Camera Trap Data Management Survey and catalogs like the Camera Trap ML Survey showcase the growing ecosystem of ML-based solutions. However, while AI-driven classification has made data processing more efficient, the focus has largely remained on the automation aspect rather than on how conservationists can explore and interpret the processed results.
+Machine learning (ML) has played a pivotal role in addressing data processing challenges, leading to the development of numerous tools designed to automate species identification and behavior analysis. Surveys such as the [Camera Trap Data Management Survey on Wildlabs](https://wildlabs.net/discussion/camera-trap-data-management-survey-results) and catalogs like the [Camera Trap ML Survey showcase](https://agentmorris.github.io/camera-trap-ml-survey/) the growing ecosystem of ML-based solutions. However, while AI-driven classification has made data processing more efficient, the focus has largely remained on the automation aspect rather than on how conservationists can explore and interpret the processed results.
 
 ## Bridging the Gap: Making Data Accessible to Conservationists
 
 Despite advancements in AI, conservationists often struggle to make use of processed data due to a lack of technical skills or funding for specialized analytics. Simply classifying species in images is not enough—researchers need user-friendly tools to interactively explore trends, spatial patterns, and ecological insights derived from their datasets.
 
-To address this challenge, we are developing a cross-platform desktop application that will enable conservationists to locally import classified observations and visualize the data through interactive tools. Unlike web-based platforms like Wildlife Insights, a desktop app ensures data privacy, supports large datasets without the need for extensive uploads, and remains accessible in remote field locations. Our goal is to create an application that is easy to install and use—requiring no technical expertise beyond a simple double-click installation.
+To address this challenge, we are developing a cross-platform desktop application that will enable conservationists to locally import classified observations and visualize the data through interactive tools. Unlike web-based platforms like [Wildlife Insights](https://www.wildlifeinsights.org/), a desktop app ensures data privacy, supports large datasets without the need for extensive uploads, and remains accessible in remote field locations. Our goal is to create an application that is easy to install and use—requiring no technical expertise beyond a simple double-click installation.
 
 ## Features
 
@@ -60,7 +60,7 @@ Our application will provide a suite of visualization tools designed to enhance 
 
 ## Technical Approach
 
-We are building our application using Electron and React, leveraging their popularity and strong ecosystems to encourage contributions and maximise longevity. Mapbox will be used for interactive mapping, and the project will be open-source on GitHub to encourage community collaboration and contributions.
+We are building our application using [Electron](https://www.electronjs.org/) and [React](https://react.dev/), leveraging their popularity and strong ecosystems to encourage contributions and maximise longevity. [Mapbox](https://www.mapbox.com/) will be used for interactive mapping, and the project will be open-source on GitHub to encourage community collaboration and contributions.
 
 ## Conclusion
 
