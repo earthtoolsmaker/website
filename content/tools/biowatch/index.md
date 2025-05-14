@@ -1,6 +1,6 @@
 ---
 title: Biowatch
-emoji: 📷
+button_cta: Download and Install
 icon: /images/logos/biowatch-icon.png
 summary: Biowatch is a powerful tool for wildlife researchers and conservationists to analyze, visualize, and explore CamtrapDP datasets with ease.
 github_repo: https://github.com/earthtoolsmaker/biowatch
