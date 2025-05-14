@@ -16,6 +16,7 @@ tools:
 status: completed
 pinned: true
 date: 2024-12-08
+github_repo: https://github.com/earthtoolsmaker/trout-reid
 image: /images/projects/trout_identification/cover.png
 ---
 
