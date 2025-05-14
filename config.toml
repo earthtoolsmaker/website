@@ -1,6 +1,6 @@
 #-------------------------------
 # General Site Settings
-baseURL = "https://earthtoolsmaker.org/"
+baseURL = "https://earthtoolsmaker.org"
 languageCode = "en-us"
 title = "EarthToolsMaker"
 googleAnalytics = "" # Add your identifier. For example UA-99631805-1.
@@ -21,7 +21,7 @@ pagerSize = 6
   #-------------------------------
   # Author Settings
   [params.author]
-    author_name = "Earth Tools Maker"
+    author_name = "EarthToolsMaker"
 
 
 #-------------------------------
