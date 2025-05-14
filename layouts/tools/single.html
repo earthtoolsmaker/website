@@ -18,7 +18,9 @@
       {{ if .Params.icon }}
       <img class="tool-info__title-icon" src="{{ .Params.icon }}" />
       {{ end }}
-      {{ .Title }}
+      {{ if .Params.show_title }}
+        {{ .Title }}
+      {{ end }}
     </h1>
     {{ end }}
     {{ if .Params.landing_page_url }}

@@ -1,5 +1,6 @@
 ---
 title: SalmonVision
+show_title: false
 button_cta: Sign up to SalmonVision
 icon: /images/logos/salmon-vision-logo.svg
 summary: Underwater cameras, sonar and drones combined with innovative AI technology to enable precise and automated salmon counting in rivers.
