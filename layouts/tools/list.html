@@ -1,0 +1,64 @@
+{{ define "main" }}
+
+{{ if .Params.Image }}
+<!-- begin hero image -->
+<div class="hero__image">
+  <div class="hero__image__inner">
+    <img class="lazy" data-src="{{ .Params.Image }}" alt="{{ .Title }}">
+  </div>
+</div>
+<!-- end hero image -->
+{{ end }}
+
+<!-- begin page-wrapper -->
+<div class="page-wrapper">
+
+  <div class="container">
+    <div class="page-wrapper__info">
+      {{ if .Title }}
+      <h1 class="page-info__title">{{ .Title }}</h1>
+      {{ end }}
+      {{ if .Description }}
+      <p class="page-info__description">{{ .Description }}</p>
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="container animate">
+    <div class="row">
+      {{ range (where .Site.RegularPages "Section" "tools" ) }}
+      <article class="tool col col-4 col-w-6 col-t-12">
+        <div class="tool__content">
+          <div class="tool__head">
+            <div class="tool__image-container">
+              <div class="tool__image">
+                <div class="tool__icon">
+                  <img src="{{ .Params.icon }}" />
+                </div>
+              </div>
+              {{/*<img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Params.Title }}">*/}}
+            </div>
+          </div>
+          <div class="tool__inner">
+            <div class="tool__info">
+              {{ if .Params.subtitle }}
+              <div class="tool__subtitle">{{ .Params.subtitle }}</div>
+              {{ end }}
+              {{ if .Params.title }}
+              <h3 class="tool__title"><a href="{{ .Params.landing_page_url }}" class="tool__link">{{ .Params.title }}</a></h3>
+              {{ end }}
+              {{ if .Params.summary }}
+              <p class="tool__excerpt">{{ .Params.summary }}</p>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+
+</div>
+<!-- end page-wrapper -->
+
+{{ end }}
