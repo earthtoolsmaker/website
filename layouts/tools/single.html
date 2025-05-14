@@ -12,45 +12,31 @@
 
 <div class="container">
 
-  <div class="space-info">
+  <div class="tool-info">
     {{ if .Title }}
-    <h1 class="space-info__title">{{ .Title }}</h1>
+    <h1 class="tool-info__title">
+      {{ if .Params.icon }}
+      <img class="tool-info__title-icon" src="{{ .Params.icon }}" />
+      {{ end }}
+      {{ .Title }}
+    </h1>
     {{ end }}
-    {{ if .Params.summary }}
-    <div class="space-info__summary">{{ .Params.summary }}</div>
+    {{ if .Params.landing_page_url }}
+    <div class="tool-info__download">
+      <a class="link-no-decoration" href="{{ .Params.landing_page_url }}" >
+        <button class="button button-cta">
+          Download and Install
+        </button>
+      </a>
+    </div>
     {{ end }}
   </div>
-  <hr class="space-separator">
 
-  <div class="space-content">
-    {{ $manual_steps := .Params.manual_steps }}
-    {{ if .Params.manual_steps }}
-    <div class="space-content__manual">
-      <b class="space-content__manual-title">🧑🏾‍🏫 Manual  📖</b>
-      <ol class="space-content__manual_steps_list">
-        {{ range $manual_steps }}
-          <li class="space-content__manual_step_item"><b>{{ .step_name }}:</b> {{ .description }}</li>
-        {{ end }}
-      </ol>
-    </div>
+  <div class="tool-content">
+    {{ .Content }}
 
-    {{ end }}
-    {{ if .Params.hf_space }}
-    <div class="space-content__hf_space">
-    {{/*load the right gradio version*/}}
-    <script
-      type="module"
-      src="https://gradio.s3-us-west-2.amazonaws.com/5.4.0/gradio.js"
-    ></script>
-    <gradio-app
-            src="https://{{ .Params.hf_space }}.hf.space"
-            initial_height="0px"
-            theme_mode="light"
-            eager="true"
-            container="false"
-      ></gradio-app>
-    </div>
-    {{ end }}
+    <br/>
+    <br/>
     <ul>
       {{ if .Params.project }}
       <li>
@@ -64,65 +50,12 @@
         The code is available <a target="_blank" href="{{ .Params.github_repo }}">here</a>.
       </li>
       {{ end }}
-      {{ if .Params.hf_space_code }}
+      {{ if .Params.landing_page_url }}
         <li>
-          🤗 The application is hosted <a target="_blank" href="{{ .Params.hf_space_code }}">here</a>.
+          🚀 The application can be downloaded <a target="_blank" href="{{ .Params.landing_page_url }}">here</a>.
         </li>
       {{ end }}
     </ul>
-    {{ .Content }}
-
-    {{ if or .NextInSection .PrevInSection }}
-    <div class="space__navigation">
-
-      {{ if .PrevInSection }}
-      <div class="prev">
-        <a href="{{ .PrevInSection.Permalink }}" class="prev__image">
-          <div class="space__nav__next_img" class="lazy" alt="{{ .PrevInSection.Title }}">
-            <div class="space__nav__next_emoji">{{ .PrevInSection.Params.emoji }}</div>
-          </div>
-        </a>
-        <div class="prev__box">
-          <span class="space__nav space__nav__prev">Prev Space</span>
-          <h4 class="space__nav__title"><a href="{{ .PrevInSection.Permalink }}">{{ .PrevInSection.Title }}</a></h4>
-        </div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      {{ end }}
-
-      {{ if .NextInSection }}
-      <div class="next">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div class="next__box">
-          <span class="space__nav space__nav__next">Next Space</span>
-          <h4 class="space__nav__title"><a href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }}</a></h4>
-        </div>
-        <a href="{{ .NextInSection.Permalink }}" class="next__image">
-          <div class="space__nav__next_img" class="lazy" alt="{{ .NextInSection.Title }}">
-            <div class="space__nav__next_emoji">{{ .NextInSection.Params.emoji }}</div>
-          </div>
-        </a>
-        {{/*{{ end }}*/}}
-      </div>
-      {{ end }}
-
-    </div>
-    {{ end }}
-
   </div>
 </div>
 

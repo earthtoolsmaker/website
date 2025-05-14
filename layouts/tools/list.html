@@ -45,7 +45,8 @@
               <div class="tool__subtitle">{{ .Params.subtitle }}</div>
               {{ end }}
               {{ if .Params.title }}
-              <h3 class="tool__title"><a href="{{ .Params.landing_page_url }}" class="tool__link">{{ .Params.title }}</a></h3>
+              {{/*<h3 class="tool__title"><a href="{{ .Params.landing_page_url }}" class="tool__link">{{ .Params.title }}</a></h3>*/}}
+              <h3 class="tool__title"><a href="{{ .RelPermalink }}" class="tool__link">{{ .Params.title }}</a></h3>
               {{ end }}
               {{ if .Params.summary }}
               <p class="tool__excerpt">{{ .Params.summary }}</p>
