@@ -15,6 +15,7 @@ tools:
   - Mapbox
   - Camtrap DP
 status: fundraising
+github_repo: https://github.com/earthtoolsmaker/biowatch
 pinned: true
 date: 2025-02-20
 image: /images/projects/observation_visualisations_app/cover.jpg
