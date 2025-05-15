@@ -9,3 +9,11 @@ landing_page_url: https://pyronear.org/en/
 project: /projects/early_forest_fire_detection
 date: 2025-05-01
 ---
+
+<div class="tool-container-button-cta">
+  <a class="link-no-decoration" href="https://pyronear.org/en" target="_blank">
+    <button class="button tool-button-cta">
+    Get in Touch
+    </button>
+  </a>
+</div>
