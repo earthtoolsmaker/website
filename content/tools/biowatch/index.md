@@ -62,7 +62,7 @@ window.addEventListener("load", () => {
   const { os, url, text } = getOsInfo();
   const container = document.getElementById("container-button-download-biowatch");
   container.querySelector("a").href = url;
-  container.querySelector("button").textContent = text;
+  container.querySelector("button").innerHTML = `<i class='fa-solid fa-download'></i> &nbsp; ${text}`;
 });
 </script>
 
