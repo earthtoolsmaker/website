@@ -17,3 +17,20 @@ date: 2025-05-01
     </button>
   </a>
 </div>
+
+## Wildfire Early Real Time Detection System
+
+Pyronear is a complete fire risk management solution. It consists of an early
+wildfire detection algorithm, implemented on a microcomputer, connected to
+cameras positioned on high spots with a view on the forest. The detectors
+communicate fire alerts to a database that is connected to a supervision
+platform for fire departments.
+
+## Key Features
+
+- 🧠 __Cutting-Edge AI Model__: Advanced computer vision models are designed to
+detect wildfires in real time. These models continuously improve their accuracy
+through regular retraining with incoming data.
+- 🔥 __Web Fire Management Platform__: An intuitive web application that
+showcases recent fire alerts and enhances fire management efficiency for fire
+departments.
