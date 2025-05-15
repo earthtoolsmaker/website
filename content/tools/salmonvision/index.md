@@ -9,6 +9,14 @@ project: /projects/wild_salmon_migration_monitoring
 date: 2024-10-01
 ---
 
+<div class="tool-container-button-cta">
+  <a class="link-no-decoration" href="https://salmonvision.org" target="_blank">
+    <button class="button tool-button-cta">
+    Sign up to SalmonVision
+    </button>
+  </a>
+</div>
+
 # Automate Salmon Monitoring
 
 In this collaborative project, we are developing advanced hardware and software

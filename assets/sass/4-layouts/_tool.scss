@@ -67,6 +67,27 @@
   }
 }
 
+.tool-container-button-cta {
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+
+  .tool-button-cta {
+    background-color: #16a34a;
+    color: white;
+    padding-top: 1.125rem;
+    padding-bottom: 1.125rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 6px;
+  }
+  .tool-button-cta:hover {
+    background-color: #15803d;
+
+  }
+}
+
+
 .tool-info {
   margin-bottom: 25px;
   text-align: center;
@@ -83,26 +104,6 @@
     -webkit-text-fill-color: transparent;
   }
 
-
-  .tool-info__download {
-    margin-top: 5em;
-    margin-bottom: 5em;
-
-    .button-cta {
-      background-color: #16a34a;
-      color: white;
-      padding-top: 1.125rem;
-      padding-bottom: 1.125rem;
-      padding-left: 2rem;
-      padding-right: 2rem;
-      border-radius: 6px;
-    }
-    .button-cta:hover {
-      background-color: #15803d;
-
-    }
-
-  }
 
   .tool-info__title {
     font-size: 62px;

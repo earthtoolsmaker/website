@@ -8,7 +8,16 @@ github_repo: https://github.com/earthtoolsmaker/biowatch
 landing_page_url: https://v0-biowatch-landing-page.vercel.app/
 project: /projects/observation_visualisations_app
 date: 2025-05-01
+js: /js/utils.js
 ---
+
+<div class="tool-container-button-cta" id="container-button-download-biowatch">
+  <a class="link-no-decoration" href="/">
+    <button class="button tool-button-cta">
+    Download Biowatch
+    </button>
+  </a>
+</div>
 
 # Explore Camera Trap Datasets with Biowatch
 
@@ -45,4 +54,15 @@ provide tools that make wildlife monitoring more accessible and insightful.
 Whether you're tracking endangered species, studying animal behavior, or
 monitoring biodiversity, Biowatch provides the tools you need to turn your
 camera trap data into actionable insights.
+
+<script>
+window.addEventListener("load", () => {
+  console.log("hello");
+  console.log(getOsInfo());
+  const { os, url, text } = getOsInfo();
+  const container = document.getElementById("container-button-download-biowatch");
+  container.querySelector("a").href = url;
+  container.querySelector("button").innerHTML = `<i class='fa-solid fa-download'></i> &nbsp; ${text}`;
+});
+</script>
 

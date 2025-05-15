@@ -11,6 +11,14 @@
   {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end }}
 
+  {{ if .Params.js }}
+  <script src="{{ .Params.js }}"></script>
+  {{ end }}
+
+  {{ if .Params.css }}
+  <link rel="stylesheet" href="{{ .Params.css }}">
+  {{ end }}
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ if not .IsHome }}{{ .Title }}{{ .Params.name }} | {{ end }}{{ .Site.Title }}">
