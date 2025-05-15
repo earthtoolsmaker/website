@@ -5,10 +5,10 @@ button_cta: Download and Install
 icon: /images/logos/biowatch-icon.png
 summary: Biowatch is a powerful tool for wildlife researchers and conservationists to analyze, visualize, and explore CamtrapDP datasets with ease.
 github_repo: https://github.com/earthtoolsmaker/biowatch
-landing_page_url: https://v0-biowatch-landing-page.vercel.app/
 project: /projects/observation_visualisations_app
 date: 2025-05-01
 js: /js/utils.js
+all_downloads_url: https://github.com/earthtoolsmaker/biowatch/releases/tag/v1.0.11
 ---
 
 <div class="tool-container-button-cta" id="container-button-download-biowatch">

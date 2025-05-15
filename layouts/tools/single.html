@@ -48,6 +48,11 @@
           🚀 The application can be found <a target="_blank" href="{{ .Params.landing_page_url }}">here</a>.
         </li>
       {{ end }}
+      {{ if .Params.all_downloads_url }}
+        <li>
+          🚀 <a target="_blank" href="{{ .Params.all_downloads_url }}">All downloads</a>
+        </li>
+      {{ end }}
     </ul>
   </div>
 </div>
