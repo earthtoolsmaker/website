@@ -7,7 +7,7 @@ summary: Biowatch is a powerful tool for wildlife researchers and conservationis
 github_repo: https://github.com/earthtoolsmaker/biowatch
 project: /projects/observation_visualisations_app
 date: 2025-05-01
-js: /js/utils.js
+js: /js/biowatch.js
 all_downloads_url: https://github.com/earthtoolsmaker/biowatch/releases/tag/v1.0.11
 ---
 
