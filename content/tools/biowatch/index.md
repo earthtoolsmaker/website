@@ -57,7 +57,6 @@ camera trap data into actionable insights.
 
 <script>
 window.addEventListener("load", () => {
-  console.log("hello");
   console.log(getOsInfo());
   const { os, url, text } = getOsInfo();
   const container = document.getElementById("container-button-download-biowatch");
