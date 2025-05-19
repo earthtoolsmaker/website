@@ -65,4 +65,3 @@ window.addEventListener("load", () => {
   container.querySelector("button").innerHTML = `<i class='fa-solid fa-download'></i> &nbsp; ${text}`;
 });
 </script>
-
