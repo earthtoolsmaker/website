@@ -7,6 +7,7 @@ summary: Democratizing open and low-tech solutions for fighting wildfires. An ea
 github_repo: https://github.com/earthtoolsmaker/pyronear-mlops
 landing_page_url: https://pyronear.org/en/
 project: /projects/early_forest_fire_detection
+js: /js/biowatch.js
 date: 2025-05-01
 ---
 
@@ -25,6 +26,15 @@ wildfire detection algorithm, implemented on a microcomputer, connected to
 cameras positioned on high spots with a view on the forest. The detectors
 communicate fire alerts to a database that is connected to a supervision
 platform for fire departments.
+
+<div class="gallery-box">
+  <div class="gallery">
+      <img src="./images/platform1.png" loading="lazy" alt="Platform: Alert triggered" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);border-radius:2px;"/>
+      <img src="./images/platform2.png" loading="lazy" alt="Platform: Alert triggered" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);border-radius:2px;"/>
+  </div>
+</div>
+<br />
+<br />
 
 ## Key Features
 
