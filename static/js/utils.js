@@ -31,3 +31,12 @@ const getOsInfo = () => {
     };
   }
 };
+
+window.addEventListener(
+  "load",
+  function() {
+    // Need to be loaded
+    Lightense("img", {});
+  },
+  false,
+);
