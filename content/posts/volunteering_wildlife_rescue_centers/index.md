@@ -1,37 +1,64 @@
 ---
 title: "Volunteering at Wildlife Rescue Centers"
-description: Our experience of spending time in different Wildlife Rescue Centers
+description: Our experiences at various Wildlife Rescue Centers
 date: 2025-05-20
-image: /images/posts/tracking-the-journey-how-to-monitor-wild-salmon-migrations/cover.png
+image: /images/posts/volunteering_wildlife_rescue_centers/cover.jpg
 tags: ["wildlife", "illegal wildlife trade", "volunteering"]
 ---
 
 
-TODO:
+In this blog, we will share our experiences volunteering at various wildlife
+rescue centers.
 
-- [ ] Add links to NGOs
-- [ ] Add links to donation pages
-- [ ] Section on elephant exploitation (elephant riding)
 
-In this blog, we will share our experience staying and volunteering at some Wildlife Rescue Centers.
+<div style="margin-top: 30px;">
+  <div>
+    <a class="link-no-decoration" href="https://www.wfft.org/donate/">
+      <button class="button button--cta">
+        Make a donation to WFFT 🐘
+    </button>
+    </a>
+    <a class="link-no-decoration" href="https://arcasguatemala.org/donors/" style="padding-left: 10px;">
+      <button  class="button button--cta"/>
+        Make a donation to ARCAS 🐒
+      </button>
+    </a>
+  </div>
+</div>
+<br/>
+<br/>
+
 
 ## Introduction
 
-A Wildlife Rescue Center is primarily focused on the rehabiliation of injured, sick or orphaned animals. The goal is to treat these animals and eventually release them back into their natural habitats.
+A wildlife rescue center primarily focuses on the rehabilitation of injured,
+sick, or orphaned animals. The goal is to treat these animals and eventually
+release them back into their natural habitats.
 
-Rescue centers often provide medical care, rehabilitation, and sometimes temporary housing for animals. They may also engage in rescue operations and work closely with local authorities to respond to wildlife emergencies.
+Rescue centers typically provide medical care, rehabilitation, and temporary
+housing for animals. They often engage in rescue operations and collaborate
+closely with local authorities to respond to wildlife emergencies.
 
-They usually work in tandem with Wildlife Sanctuaries whose purpose is to provide a permanent, safe haven for animals that cannot be released back into the wild due to injure, habituation to humans or other reasons.
+These centers usually work in conjunction with wildlife sanctuaries, which
+serve as permanent safe havens for animals that cannot be released back into
+the wild due to injuries, habituation to humans, or other reasons.
 
-Sanctuaries often educate the public about wildlife conservation and may engage in breeding programs for endangered species. They prioritize the well-being of the animals and may offer tours or educational programs to raise awareness.
-
+Sanctuaries prioritize the well-being of the animals and often educate the
+public about wildlife conservation. They may also participate in breeding
+programs for endangered species and offer tours or educational programs to
+raise awareness.
 
 ## Wildlife Friend Foundation Thailand - WFFT
 
 ![WFFT Logo](./images/WFFT-Logo-2025.webp)
 
-WFFT is an NGO in Thailand, founded in 2001. The foundation has several different projects including animal rescue, rehabiliation and veterinary assistance to wild animals in Thailand. It promotes the protection of wildlife through educational initiatives for localt Thai people as well as tourists.
-Many of the rescued animals are kepts as pets illegally or are found injured.
+
+WFFT is a non-governmental organization (NGO) in Thailand, founded in 2001. The
+foundation undertakes various projects, including animal rescue,
+rehabilitation, and veterinary assistance for wild animals in Thailand. It
+promotes wildlife protection through educational initiatives aimed at both
+local Thai communities and tourists. Many of the rescued animals are either
+kept as illegal pets or found injured in the wild.
 
 <p>
   <iframe src="https://www.youtube.com/embed/akGPiurjjCo" loading="lazy" frameborder="0" allowfullscreen>
@@ -40,7 +67,12 @@ Many of the rescued animals are kepts as pets illegally or are found injured.
 <em style="font-size:14px;line-height:1.4em;display:block;">WFFT Volunteer Introduction Video</em>
 <br/>
 
-Spending a couple of weeks there as a volunteer focusing on animal care. The daily routine is designed by wildlife experts and vets: From the food they should be given, to their feeding schedule, enclosure cleaning times, etc. Working from very early in the morning under humid and hot weather can be physically exhausting. Our first week, we worked in the Elephant Refuge Sanctuary.
+Spending a couple of weeks volunteering in animal care involves following a
+daily routine designed by wildlife experts and veterinarians. This schedule
+outlines everything from the type of food the animals should receive to their
+feeding times and enclosure cleaning. Working in the humid and hot weather from
+early morning can be physically exhausting. During our first week, we focused
+our efforts at the Elephant Refuge Sanctuary.
 
 ### Elephant Refuge Sanctuary
 
@@ -64,9 +96,13 @@ no elephant is ever chained, day or night.
   <em>Gallery / Eating, cooling down, and resting</em>
 </div>
 
-Elephant are given fresh food every day, two times a day. Volunteers hide the food inside tires or hang them in trees which forces the animals to forage for their food. This is more stimulating for them as they never get to find their food twice in the same spot.
+Elephant are given fresh food every day, two times a day. Volunteers hide the
+food inside tires or hang them in trees which forces the animals to forage for
+their food. This is more stimulating for them as they never get to find their
+food twice in the same spot.
 
-Fruits and branches are prepared daily for them. To stock up for the upcoming weeks, volunteers often need to go and chop down some banana trees nearby.
+Fruits and branches are prepared daily for them. To stock up for the upcoming
+weeks, volunteers often need to go and chop down some banana trees nearby.
 
 <div class="gallery-box">
   <div class="gallery">
@@ -180,15 +216,61 @@ lives in a safe haven before being released back into the wild.
 
 ![ARCAS Logo](./images/arcas_logo.png)
 
-ARCAS is a non-profit Guatemalan Civil Association formed in 1989 by a group of Guatemalan citizens who became concerned as they saw their precious natural heritage - especially their wildlife - rapidly disappearing before their eyes.
+ARCAS is a non-profit civil association in Guatemala, founded in 1989 by a
+group of concerned citizens who witnessed the rapid decline of their precious
+natural heritage, particularly wildlife.
 
-Since its establishment, the ARCAS Rescue Center has grown into one of the largest and most complex rescue centers in the world, receiving between 300 and 600 animals of more than 40 species per year.
+Since its inception, the ARCAS Rescue Center has evolved into one of the
+largest and most comprehensive rescue centers in the world, receiving between
+300 and 600 animals from over 40 species each year.
 
-Volunteering at the Wildlife Rescue Center is a very great experience. Scarlet Macaws and Howler Monkeys start early and will wake you up around 6am as they need to be fed. 
+### Life at ARCAS Guatemala
+
+Volunteering at the Wildlife Rescue Center is an incredible experience. Scarlet
+macaws and howler monkeys begin their day early, often waking volunteers around
+6 a.m. as they require feeding.
+
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="./images/arcas_jaguar.jpg" loading="lazy" alt="Jaguar" />
+    <img src="./images/arcas_toucan.jpg" loading="lazy" alt="Toucan" />
+    <img src="./images/arcas_scarlet_macaw.jpg" loading="lazy" alt="Scarlet Macaws" />
+    <img src="./images/arcas_caimans.jpg" loading="lazy" alt="Caimans" />
+    <img src="./images/arcas_spider_monkeys.jpg" loading="lazy" alt="Spider Monkeys" />
+    <img src="./images/arcas_parrots_feeding.jpg" loading="lazy" alt="Parrots" />
+  </div>
+  <em>Gallery / Jaguar, Toucan, Scarlet Macaw, Caimans, Spider Monkeys, Parrots - from top to bottom and left to right</em>
+</div>
+
+The volunteer day begins with preparing food for assigned animals and cleaning
+their enclosures. It is essential to wear face masks at all times to prevent
+the transmission of diseases to the animals, which can be particularly
+exhausting in a hot and humid climate.
+
+During our stay, a small team of veterinarians was implementing a release
+protocol for a group of spider monkeys that had been rewilded for approximately
+eight years to teach them essential survival skills. This marked the first time
+they were able to release such a large group, and the team monitored the
+well-being of the monkeys using GPS collars for several weeks. These release
+protocols are often refined over time through trial and error and could serve
+as a foundation for successfully reintroducing spider monkeys into the wild.
+
+Each day, there is an opportunity to engage with veterinarians and gain
+insights into their work. We also heard deeply moving stories about some of the
+animals that arrived at ARCAS.
 
 ## Conclusion
 
-There are numerous ways you can support organizations like [WFFT](https://www.wfft.org/) and [ARCAS](https://arcasguatemala.org/) or other wildlife rescue centers. If you have the time, consider volunteering at one of these facilities. This experience will provide you with valuable insights into the challenges of rehabilitating wildlife and the complexities of reintroducing them into their natural habitats. Additionally, you will gain a deeper understanding of the illegal wildlife trade, which threatens many species with extinction. If volunteering isn’t an option, you can also make a meaningful impact by donating to these organizations, helping them continue their vital work in wildlife conservation.
+There are numerous ways you can support organizations like
+[](https://www.wfft.org/) and [ARCAS](https://arcasguatemala.org/) or other
+wildlife rescue centers. If you have the time, consider volunteering at one of
+these facilities. This experience will provide you with valuable insights into
+the challenges of rehabilitating wildlife and the complexities of reintroducing
+them into their natural habitats. Additionally, you will gain a deeper
+understanding of the illegal wildlife trade, which threatens many species with
+extinction. If volunteering isn’t an option, you can also make a meaningful
+impact by donating to these organizations, helping them continue their vital
+work in wildlife conservation.
 
 <div style="margin-top: 30px;">
   <div>
