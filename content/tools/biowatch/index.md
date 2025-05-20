@@ -27,9 +27,9 @@ datasets](https://camtrap-dp.tdwg.org/) with ease.
 
 <div class="gallery-box">
   <div class="gallery">
-      <img src="./images/medias.png" loading="lazy" alt="Biowatch Medias" />
-      <img src="./images/activity.png" loading="lazy" alt="Biowatch Activity" />
-      <img src="./images/overview.png" loading="lazy" alt="Biowatch Overview" />
+      <img src="./images/medias.png" loading="lazy" alt="Biowatch Medias" class="lightense-enabled" />
+      <img src="./images/activity.png" loading="lazy" alt="Biowatch Activity" class="lightense-enabled" />
+      <img src="./images/overview.png" loading="lazy" alt="Biowatch Overview" class="lightense-enabled" />
   </div>
 </div>
 <br />

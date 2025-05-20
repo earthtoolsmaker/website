@@ -36,7 +36,7 @@ window.addEventListener(
   "load",
   function() {
     // Need to be loaded
-    Lightense("img", {});
+    Lightense(".lightense-enabled", {});
   },
   false,
 );
