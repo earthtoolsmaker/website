@@ -262,7 +262,7 @@ animals that arrived at ARCAS.
 ## Conclusion
 
 There are numerous ways you can support organizations like
-[](https://www.wfft.org/) and [ARCAS](https://arcasguatemala.org/) or other
+[WFFT](https://www.wfft.org/) and [ARCAS](https://arcasguatemala.org/) or other
 wildlife rescue centers. If you have the time, consider volunteering at one of
 these facilities. This experience will provide you with valuable insights into
 the challenges of rehabilitating wildlife and the complexities of reintroducing
