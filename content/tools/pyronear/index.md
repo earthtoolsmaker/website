@@ -29,8 +29,8 @@ platform for fire departments.
 
 <div class="gallery-box">
   <div class="gallery">
-      <img src="./images/platform1.png" loading="lazy" alt="Platform: Alert triggered" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);border-radius:2px;"/>
-      <img src="./images/platform2.png" loading="lazy" alt="Platform: Alert triggered" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);border-radius:2px;"/>
+      <img src="./images/platform1.png" loading="lazy" alt="Platform: Alert triggered" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);border-radius:2px;" class="lightense-enabled" />
+      <img src="./images/platform2.png" loading="lazy" alt="Platform: Alert triggered" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);border-radius:2px;" class="lightense-enabled" />
   </div>
 </div>
 <br />
