@@ -58,6 +58,19 @@
   }
 }
 
+.button--cta-container {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  margin-top: 20px; /* Optional: Adjust margin as needed */
+
+  .button {
+    margin: 10px 10px;
+
+  }
+
+}
+
 .link-no-decoration {
   border-bottom: none !important;
   text-decoration:none;

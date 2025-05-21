@@ -10,20 +10,17 @@ tags: ["wildlife", "illegal wildlife trade", "volunteering"]
 In this blog, we will share our experiences volunteering at various wildlife
 rescue centers.
 
-
-<div style="margin-top: 30px;">
-  <div>
-    <a class="link-no-decoration" href="https://www.wfft.org/donate/">
-      <button class="button button--cta">
-        Make a donation to WFFT 🐘
+<div class="button--cta-container">
+  <a class="link-no-decoration" href="https://www.wfft.org/donate/">
+    <button class="button button--cta">
+      Make a donation to WFFT 🐘
+  </button>
+  </a>
+  <a class="link-no-decoration" href="https://arcasguatemala.org/donors/" style="padding-left: 10px;">
+    <button  class="button button--cta"/>
+      Make a donation to ARCAS 🐒
     </button>
-    </a>
-    <a class="link-no-decoration" href="https://arcasguatemala.org/donors/" style="padding-left: 10px;">
-      <button  class="button button--cta"/>
-        Make a donation to ARCAS 🐒
-      </button>
-    </a>
-  </div>
+  </a>
 </div>
 <br/>
 <br/>
@@ -50,15 +47,17 @@ raise awareness.
 
 ## Wildlife Friend Foundation Thailand - WFFT
 
-![WFFT Logo](./images/WFFT-Logo-2025.webp)
+<p style="text-align:center">
+  <img src="./images/WFFT-Logo-2025.webp" title="WFFT Logo" />
+</p>
 
 
-WFFT is a non-governmental organization (NGO) in Thailand, founded in 2001. The
-foundation undertakes various projects, including animal rescue,
-rehabilitation, and veterinary assistance for wild animals in Thailand. It
-promotes wildlife protection through educational initiatives aimed at both
-local Thai communities and tourists. Many of the rescued animals are either
-kept as illegal pets or found injured in the wild.
+[WFFT](https://www.wfft.org/) is a non-governmental organization (NGO) in
+Thailand, founded in 2001. The foundation undertakes various projects,
+including animal rescue, rehabilitation, and veterinary assistance for wild
+animals in Thailand. It promotes wildlife protection through educational
+initiatives aimed at both local Thai communities and tourists. Many of the
+rescued animals are either kept as illegal pets or found injured in the wild.
 
 <p>
   <iframe src="https://www.youtube.com/embed/akGPiurjjCo" loading="lazy" frameborder="0" allowfullscreen>
@@ -149,6 +148,9 @@ muscles. Elephants are highly social animals, and the training process often
 involves isolating them from their herds, which can result in loneliness and
 depression, as they thrive on social interactions.
 
+![Side By Side comparison: elephant trauma](./images/Side-by-side-example-768x301.webp)
+*Left: Elephant with a damaged back due to tourist riding - Right: Regular bumpy back of an elephant*
+
 Moreover, the training and subsequent life as a riding elephant can prevent
 them from engaging in natural behaviors, such as foraging, roaming, and
 socializing, which are essential for their well-being. The combination of
@@ -214,11 +216,13 @@ lives in a safe haven before being released back into the wild.
 
 ## ARCAS
 
-![ARCAS Logo](./images/arcas_logo.png)
+<p style="text-align:center">
+  <img src="./images/arcas_logo.png" title="ARCAS Logo" />
+</p>
 
-ARCAS is a non-profit civil association in Guatemala, founded in 1989 by a
-group of concerned citizens who witnessed the rapid decline of their precious
-natural heritage, particularly wildlife.
+[ARCAS](https://arcasguatemala.org) is a non-profit civil association in
+Guatemala, founded in 1989 by a group of concerned citizens who witnessed the
+rapid decline of their precious natural heritage, particularly wildlife.
 
 Since its inception, the ARCAS Rescue Center has evolved into one of the
 largest and most comprehensive rescue centers in the world, receiving between
@@ -272,17 +276,15 @@ extinction. If volunteering isn’t an option, you can also make a meaningful
 impact by donating to these organizations, helping them continue their vital
 work in wildlife conservation.
 
-<div style="margin-top: 30px;">
-  <div>
-    <a class="link-no-decoration" href="https://www.wfft.org/donate/">
-      <button class="button button--cta">
-        Make a donation to WFFT 🐘
+<div class="button--cta-container">
+  <a class="link-no-decoration" href="https://www.wfft.org/donate/">
+    <button class="button button--cta">
+      Make a donation to WFFT 🐘
+  </button>
+  </a>
+  <a class="link-no-decoration" href="https://arcasguatemala.org/donors/">
+    <button  class="button button--cta"/>
+      Make a donation to ARCAS 🐒
     </button>
     </a>
-    <a class="link-no-decoration" href="https://arcasguatemala.org/donors/" style="padding-left: 10px;">
-      <button  class="button button--cta"/>
-        Make a donation to ARCAS 🐒
-      </button>
-    </a>
-  </div>
 </div>
