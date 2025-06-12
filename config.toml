@@ -207,10 +207,10 @@ pagerSize = 6
     testimonial_title = "🙂 What Partners Say"
 
   [[params.testimonial_item]]
-    name = "Matéo Lostanlen"
+    name = "Mateo Lostanlen"
     image = "/images/testimonials/mateo_pyronear.png"
     logo = "/images/clients/pyronear/logo.png"
-    designation = "CTO - Pyronear"
+    designation = "Co-founder and CEO - Pyronear"
     link = "https://www.pyronear.org"
     content = "We absolutely love working with you. You are incredibly professional. They trained our latest model and achieved outstanding performance, setting a new benchmark. They also implemented the MLOps pipeline!"
 
