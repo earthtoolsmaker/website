@@ -109,7 +109,8 @@
     font-size: 62px;
 
     .tool-info__title-icon {
-      height: 80px;
+      max-height: 128px;
+      max-width: 300px;
     }
   }
 
