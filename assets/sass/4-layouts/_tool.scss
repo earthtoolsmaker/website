@@ -68,22 +68,29 @@
 }
 
 .tool-container-button-cta {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
   margin-top: 4rem;
   margin-bottom: 4rem;
 
-  .tool-button-cta {
-    background-color: #16a34a;
-    color: white;
+  .button {
     padding-top: 1.125rem;
     padding-bottom: 1.125rem;
     padding-left: 2rem;
     padding-right: 2rem;
     border-radius: 6px;
   }
+
+  .tool-button-cta {
+    background-color: #16a34a;
+    color: white;
+  }
+
   .tool-button-cta:hover {
     background-color: #15803d;
-
   }
 }
 
