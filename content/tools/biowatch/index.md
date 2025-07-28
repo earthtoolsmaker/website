@@ -12,9 +12,19 @@ all_downloads_url: https://github.com/earthtoolsmaker/biowatch/releases/tag/v1.0
 ---
 
 <div class="tool-container-button-cta" id="container-button-download-biowatch">
-  <a class="link-no-decoration" href="/">
-    <button class="button tool-button-cta">
-    Download Biowatch
+  <a class="link-no-decoration" href="https://github.com/earthtoolsmaker/biowatch/releases/latest/download/biowatch-setup.exe" id="download-windows">
+    <button class="button">
+      Biowatch for Windows
+    </button>
+  </a>
+  <a class="link-no-decoration" href="https://github.com/earthtoolsmaker/biowatch/releases/latest/download/biowatch.dmg" id="download-mac">
+    <button class="button">
+      Biowatch for Mac
+    </button>
+  </a>
+  <a class="link-no-decoration" href="https://github.com/earthtoolsmaker/biowatch/releases/latest/download/biowatch.AppImage" id="download-linux">
+    <button class="button">
+      Biowatch for Linux
     </button>
   </a>
 </div>
@@ -60,7 +70,6 @@ window.addEventListener("load", () => {
   console.log(getOsInfo());
   const { os, url, text } = getOsInfo();
   const container = document.getElementById("container-button-download-biowatch");
-  container.querySelector("a").href = url;
-  container.querySelector("button").innerHTML = `<i class='fa-solid fa-download'></i> &nbsp; ${text}`;
+  container.querySelector(`#download-${os} button`).classList.add("tool-button-cta")
 });
 </script>
