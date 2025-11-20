@@ -191,6 +191,73 @@ pagerSize = 6
 
 
   #-------------------------------
+  # Partners Section
+  [params.partners]
+    enable = true
+    partners_title = "🤝 Our Partners"
+
+  [[params.partner_item]]
+    name = "Pyronear"
+    logo = "/images/clients/pyronear/logo.png"
+    link = "https://www.pyronear.org"
+
+  [[params.partner_item]]
+    name = "Wild Salmon Center"
+    logo = "/images/clients/wild_salmon_centre/logo.png"
+    link = "https://wildsalmoncenter.org/"
+
+  [[params.partner_item]]
+    name = "ReefSupport"
+    logo = "/images/clients/reefsupport/logo.png"
+    link = "https://reef.support"
+
+  [[params.partner_item]]
+    name = "HackThePlanet"
+    logo = "/images/clients/hacktheplanet/logo.png"
+    link = "https://www.hack-the-planet.io/"
+
+  [[params.partner_item]]
+    name = "BearID Project"
+    logo = "/images/clients/bearid/logo.png"
+    link = "https://bearresearch.org/"
+
+  [[params.partner_item]]
+    name = "Citibats Cambodia"
+    logo = "/images/clients/citibats_cambodia/logo.png"
+    link = "https://www.inaturalist.org/projects/citibats-cambodia"
+
+  [[params.partner_item]]
+    name = "Cornell Lab of Ornithology"
+    logo = "/images/clients/cornell_lab/logo.svg"
+    link = "https://www.birds.cornell.edu/"
+
+  [[params.partner_item]]
+    name = "Python Software Foundation"
+    logo = "/images/clients/psf/logo.png"
+    link = "https://www.python.org/psf/"
+
+  [[params.partner_item]]
+    name = "Simon Fraser University"
+    logo = "/images/clients/sfu/logo.png"
+    link = "https://www.sfu.ca/"
+
+  [[params.partner_item]]
+    name = "OSI"
+    logo = "/images/clients/osi/logo.png"
+    link = "https://www.osi-panthera.org/"
+
+  [[params.partner_item]]
+    name = "Elephant Listening Project"
+    logo = "/images/clients/elephantlistening/logo.png"
+    link = "https://elephantlisteningproject.org/"
+
+  [[params.partner_item]]
+    name = "Aeria"
+    logo = "/images/clients/aeria/logo.png"
+    link = "https://aeria.earth/"
+
+
+  #-------------------------------
   # Testimonials Section
   [params.testimonials]
     enable = true

@@ -6,8 +6,45 @@
       <div class="col col-12">
         <div class="container__inner">
 
-          {{ if .Site.Params.testimonials.testimonial_title }}
+          {{ if .Site.Params.partners.enable }}
+          <!-- begin partners grid -->
+          {{ if .Site.Params.partners.partners_title }}
           <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">{{ .Site.Params.partners.partners_title | safeHTML }}</h2>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+          </div>
+          {{ end }}
+
+          <div class="partners__grid">
+            <div class="row">
+              {{ with .Site.Params.partner_item }}
+                {{ range . }}
+                  <div class="partner-item col col-3 col-t-4 col-m-6">
+                    {{ if .link }}
+                      <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" class="partner-logo-container">
+                        {{ if .logo }}
+                          <img class="partner-logo" src="{{ .logo }}" alt="{{ .name }}" loading="lazy">
+                        {{ end }}
+                      </a>
+                    {{ else }}
+                      <div class="partner-logo-container">
+                        {{ if .logo }}
+                          <img class="partner-logo" src="{{ .logo }}" alt="{{ .name }}" loading="lazy">
+                        {{ end }}
+                      </div>
+                    {{ end }}
+                  </div>
+                {{ end }}
+              {{ end }}
+            </div>
+          </div>
+          <!-- end partners grid -->
+          {{ end }}
+
+          {{ if .Site.Params.testimonials.testimonial_title }}
+          <div class="section__info testimonials__info">
             <div class="section__head">
               <h2 class="section__title">{{ .Site.Params.testimonials.testimonial_title | safeHTML }}</h2>
               <ul class="controls list-reset" id="customize-controls" aria-label="Slider Navigation" tabindex="0">

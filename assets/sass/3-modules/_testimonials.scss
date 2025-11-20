@@ -7,6 +7,10 @@
     color: var(--white);
   }
 
+  .testimonials__info {
+    margin-top: 0;
+  }
+
   @media (max-width: $tablet) {
     padding: 80px 0 96px;
   }
