@@ -251,6 +251,7 @@ pagerSize = 6
   [params.blog]
     enable = true
     blog_title = "📚 Read Latest Posts"
+    limit = 3
 
 
   #-------------------------------

@@ -9,14 +9,14 @@
         <div class="section__info">
           <div class="section__head">
             <h2 class="section__title">{{ .Site.Params.blog.blog_title | safeHTML }}</h2>
+            <a class="section__link" href="/posts">View all</a>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
         </div>
         {{ end }}
 
         <div class="row grid">
-          {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
-          {{ range $paginator.Pages }}
+          {{ range first (.Site.Params.blog.limit | default 6) (where .Site.RegularPages "Type" "posts") }}
             {{ partial "article.html" . }}
           {{ end }}
         </div>
@@ -24,8 +24,6 @@
       </div>
     </div>
   </div>
-
-  {{ partial "pagination.html" . }}
 </section>
 <!-- end blog -->
 {{ end }}
