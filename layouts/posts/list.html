@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+{{ if .Params.Image }}
+<!-- begin hero image -->
+<div class="hero__image">
+  <div class="hero__image__inner">
+    <img class="lazy" data-src="{{ .Params.Image }}" alt="{{ .Title }}">
+  </div>
+</div>
+<!-- end hero image -->
+{{ end }}
+
+<!-- begin page-wrapper -->
+<div class="page-wrapper">
+
+  <div class="container">
+    <div class="page-wrapper__info">
+      {{ if .Title }}
+      <h1 class="page-info__title">{{ .Title }}</h1>
+      {{ end }}
+      {{ if .Description }}
+      <p class="page-info__description">{{ .Description }}</p>
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="container animate">
+    <div class="row">
+      {{ range where .Site.RegularPages "Type" "posts" }}
+        {{ partial "article.html" . }}
+      {{ end }}
+    </div>
+  </div>
+
+</div>
+<!-- end page-wrapper -->
+
+{{ end }}
