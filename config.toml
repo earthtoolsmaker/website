@@ -66,11 +66,6 @@ pagerSize = 6
     weight = 6
 
   [[menu.main]]
-    name = "Donate"
-    url = "/donate/"
-    weight = 7
-
-  [[menu.main]]
     name = "Contact"
     url = "/contact/"
     weight = 8
@@ -118,11 +113,6 @@ pagerSize = 6
       name = "Blog"
       url = "/posts/"
       weight = 6
-
-      [[menu.footer]]
-      name = "Donate"
-      url = "/donate/"
-      weight = 7
 
       [[menu.footer]]
       name = "Sponsor"

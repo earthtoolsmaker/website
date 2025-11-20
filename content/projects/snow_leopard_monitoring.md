@@ -20,12 +20,6 @@ date: 2025-02-04
 image: /images/projects/snow_leopard_monitoring/cover.png
 ---
 
-## 😇 Looking for Funding
-
-{{< donate_sponsor_cta >}}
-
-<br/>
-
 ## Context
 
 Snow leopards are an endangered species found in the high mountain ranges of

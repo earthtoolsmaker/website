@@ -15,13 +15,6 @@ date: 2024-04-23
 image: /images/projects/bat_calls_classification/cover.png
 ---
 
-## 😇 Looking for Funding
-
-{{< donate_sponsor_cta >}}
-
-<br/>
-<br/>
-
 ## Context
 
 Bats are common throughout Cambodia, and are highly visible features of various

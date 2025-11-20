@@ -16,12 +16,6 @@ date: 2024-06-23
 image: /images/projects/bird_flu_monitoring/cover.png
 ---
 
-## 😇 Looking for Funding
-
-{{< donate_sponsor_cta >}}
-
-<br/>
-
 ## Context
 
 Many seabirds breed on low lying sandbanks and beaches, concentrated in
