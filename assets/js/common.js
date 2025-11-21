@@ -119,6 +119,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
   /* ============================
+  // Partners Slider
+  ============================ */
+  if (document.querySelector(".partners-slider")) {
+    var partnersSlider = tns({
+      container: ".partners-slider",
+      items: 1,
+      slideBy: 1,
+      gutter: 0,
+      nav: true,
+      mouseDrag: true,
+      autoplay: false,
+      speed: 500,
+      controlsContainer: "#partners-controls"
+    });
+  }
+
+  /* ============================
   // Testimonials Slider
   ============================ */
   if (document.querySelector(".my-slider")) {

@@ -1,4 +1,80 @@
 /* Partners */
+.partners__info {
+  .section__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .prev,
+    .next {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+.partners__carousel {
+  margin-top: 32px;
+  margin-bottom: 64px;
+  overflow: hidden;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 56px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 24px;
+    margin-bottom: 48px;
+  }
+
+  .tns-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+
+    button {
+      width: 20px;
+      height: 4px;
+      padding: 0;
+      border: none;
+      border-radius: 2px;
+      background: var(--white);
+      opacity: 0.2;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+
+      &.tns-nav-active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.partners-page {
+  padding-top: 8px;
+
+  .row {
+    margin-bottom: 0;
+  }
+}
+
 .partners__grid {
   margin-top: 32px;
   margin-bottom: 64px;
