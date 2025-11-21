@@ -34,7 +34,7 @@ We build custom conservation tools adapted to your specific needs and datasets, 
 
 - **Custom AI/ML Model Development**: We design and train machine learning models tailored to your conservation challenges, whether it's species identification, behavior detection, or environmental monitoring.
 
-- **Data Pipeline & Processing**: We build efficient systems to process large-scale datasets—terabytes of audio, video, or sensor data—turning raw information into meaningful insights.
+- **Data Pipeline & Processing**: We build efficient systems to process large-scale datasets — terabytes of audio, video, or sensor data — turning raw information into meaningful insights.
 
 - **Deployment & Integration**: We deliver production-ready solutions that integrate with your existing infrastructure, from edge devices in the field to cloud-based platforms.
 
