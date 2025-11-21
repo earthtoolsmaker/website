@@ -1,0 +1,14 @@
+members:
+  - name: "Arthur Caillau"
+    role: "Founder & Lead Conservation Technologist"
+    bio: "Combining 15 years of software expertise with cutting-edge AI/ML to build open-source tools that empower conservationists worldwide. Passionate about making technology accessible to protect biodiversity."
+    image: "/images/team/team-member-1.jpg"
+    github: "https://github.com/earthtoolsmaker"
+    linkedin: "https://www.linkedin.com/in/acaillau/"
+
+  - name: "Jeremy Vuillermet"
+    role: "Lead Frontend Engineer"
+    bio: "Specializes in computer vision and deep learning for wildlife monitoring. Previously worked on satellite imagery analysis for environmental NGOs. Advocates for reproducible research and open science."
+    image: "/images/team/team-member-2.jpg"
+    github: "https://github.com/ioRekz"
+    linkedin: "https://www.linkedin.com/in/jeremy-vuillermet-57a68590/"

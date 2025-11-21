@@ -241,6 +241,11 @@ pagerSize = 6
   [[params.partner_item]]
     name = "OSI"
     logo = "/images/clients/osi/logo.png"
+    link = "https://www.osi.org/"
+
+  [[params.partner_item]]
+    name = "OSI Panthera"
+    logo = "/images/clients/osi-panthera/logo.jpg"
     link = "https://www.osi-panthera.org/"
 
   [[params.partner_item]]

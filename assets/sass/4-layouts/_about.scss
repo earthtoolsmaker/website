@@ -1,0 +1,132 @@
+/* About Page Layout */
+
+.container-wide {
+  max-width: 1400px;
+  padding-left: $base-spacing-unit;
+  padding-right: $base-spacing-unit;
+  margin: 0 auto;
+
+  @media (max-width: $desktop) {
+    max-width: 1200px;
+  }
+
+  @media (max-width: $tablet) {
+    max-width: 100%;
+  }
+
+  @media (max-width: $mobile) {
+    max-width: 480px;
+    padding-left: calc(#{$base-spacing-unit} + 4px);
+    padding-right: calc(#{$base-spacing-unit} + 4px);
+  }
+}
+
+/* Team Members */
+.team-members {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+
+  @media (max-width: $tablet) {
+    gap: 48px;
+  }
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.team-member--reverse {
+  flex-direction: row-reverse;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+  }
+}
+
+.team-member__image {
+  flex-shrink: 0;
+  width: 280px;
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: $tablet) {
+    width: 240px;
+    height: 240px;
+  }
+
+  @media (max-width: $mobile) {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.team-member__content {
+  flex: 1;
+}
+
+.team-member__name {
+  margin-bottom: 8px;
+  font-size: 32px;
+  line-height: 1.2;
+
+  @media (max-width: $mobile) {
+    font-size: 26px;
+  }
+}
+
+.team-member__role {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.team-member__bio {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+.team-member__socials {
+  display: flex;
+  gap: 12px;
+
+  @media (max-width: $tablet) {
+    justify-content: center;
+  }
+}
+
+.page__content .team-member__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--heading-font-color);
+  transition: all 0.25s ease;
+
+  &:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+}

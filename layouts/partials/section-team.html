@@ -1,0 +1,63 @@
+{{ with .Site.Data.team }}
+<!-- begin team -->
+<section class="section team animate">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="section__info">
+          <div class="section__head">
+            <h2 class="section__title">Meet the Team</h2>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none">
+            <path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+              d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8" />
+          </svg>
+        </div>
+
+        <div class="team-members">
+          {{ range $index, $member := .members }}
+          <article class="team-member{{ if mod $index 2 }} team-member--reverse{{ end }}">
+            {{ if $member.image }}
+            <div class="team-member__image">
+              <img class="lazy" data-src="{{ $member.image }}" alt="{{ $member.name }}">
+            </div>
+            {{ end }}
+            <div class="team-member__content">
+              {{ if $member.name }}
+              <h3 class="team-member__name">{{ $member.name }}</h3>
+              {{ end }}
+              {{ if $member.role }}
+              <div class="team-member__role">{{ $member.role }}</div>
+              {{ end }}
+              {{ if $member.bio }}
+              <p class="team-member__bio">{{ $member.bio }}</p>
+              {{ end }}
+              <div class="team-member__socials">
+                {{ if $member.github }}
+                <a href="{{ $member.github }}" class="team-member__social" target="_blank" rel="noopener" aria-label="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                {{ end }}
+                {{ if $member.linkedin }}
+                <a href="{{ $member.linkedin }}" class="team-member__social" target="_blank" rel="noopener" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                {{ end }}
+                {{ if $member.website }}
+                <a href="{{ $member.website }}" class="team-member__social" target="_blank" rel="noopener" aria-label="Website">
+                  <i class="fa-solid fa-globe"></i>
+                </a>
+                {{ end }}
+              </div>
+            </div>
+          </article>
+          {{ end }}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end team -->
+{{ end }}

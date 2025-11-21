@@ -1,5 +1,5 @@
 ---
-layout: contact
+layout: about
 title: About
 image: /images/pages/about/hero.jpg
 ---
@@ -42,3 +42,5 @@ cooperation that transcends borders and disciplines.
 > Together, let's embark on a journey to better conserve, monitor, and
 > protect our beautiful planet and to safeguard the
 > natural world for future generations.
+
+{{< team >}}

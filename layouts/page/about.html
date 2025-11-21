@@ -1,0 +1,28 @@
+{{ define "main" }}
+
+<div class="container-wide">
+  <div class="page-head">
+
+    <div class="page-info">
+      {{ if .Title }}
+      <h1 class="page-title">{{ .Title }}</h1>
+      {{ end }}
+      {{ if .Description }}
+      <p class="page-description">{{.Description }}</p>
+      {{ end }}
+    </div>
+
+  </div>
+</div>
+
+<!-- begin page -->
+<div class="container-wide">
+  <article class="page">
+    <div class="page__content">
+      {{ .Content }}
+    </div>
+  </article>
+</div>
+<!-- end page -->
+
+{{ end }}
