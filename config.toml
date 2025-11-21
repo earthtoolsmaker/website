@@ -207,44 +207,26 @@ pagerSize = 6
     link = "https://wildsalmoncenter.org/"
 
   [[params.partner_item]]
+    name = "Pacific Salmon Foundation"
+    logo = "/images/clients/psf/logo.png"
+    link = "https://www.psf.ca"
+    bg = "inverted"
+
+  [[params.partner_item]]
+    name = "Ai2"
+    logo = "/images/clients/ai2/logo.png"
+    link = "https://allenai.org/earthranger"
+
+  [[params.partner_item]]
     name = "ReefSupport"
     logo = "/images/clients/reefsupport/logo.png"
     link = "https://reef.support"
 
   [[params.partner_item]]
-    name = "HackThePlanet"
-    logo = "/images/clients/hacktheplanet/logo.png"
-    link = "https://www.hack-the-planet.io/"
-
-  [[params.partner_item]]
     name = "BearID Project"
     logo = "/images/clients/bearid/logo.png"
     link = "https://bearresearch.org/"
-
-  [[params.partner_item]]
-    name = "Citibats Cambodia"
-    logo = "/images/clients/citibats_cambodia/logo.png"
-    link = "https://www.inaturalist.org/projects/citibats-cambodia"
-
-  [[params.partner_item]]
-    name = "Cornell Lab of Ornithology"
-    logo = "/images/clients/cornell_lab/logo.svg"
-    link = "https://www.birds.cornell.edu/"
-
-  [[params.partner_item]]
-    name = "Python Software Foundation"
-    logo = "/images/clients/psf/logo.png"
-    link = "https://www.python.org/psf/"
-
-  [[params.partner_item]]
-    name = "Simon Fraser University"
-    logo = "/images/clients/sfu/logo.png"
-    link = "https://www.sfu.ca/"
-
-  [[params.partner_item]]
-    name = "OSI"
-    logo = "/images/clients/osi/logo.png"
-    link = "https://www.osi-panthera.org/"
+    bg = "inverted"
 
   [[params.partner_item]]
     name = "Elephant Listening Project"
@@ -252,16 +234,40 @@ pagerSize = 6
     link = "https://elephantlisteningproject.org/"
 
   [[params.partner_item]]
+    name = "Cornell Lab of Ornithology"
+    logo = "/images/clients/cornell_lab/logo.svg"
+    link = "https://www.birds.cornell.edu/"
+
+  [[params.partner_item]]
+    name = "OSI"
+    logo = "/images/clients/osi/logo.png"
+    link = "https://www.osi-panthera.org/"
+
+  [[params.partner_item]]
+    name = "Simon Fraser University"
+    logo = "/images/clients/sfu/logo.png"
+    link = "https://www.sfu.ca/"
+
+  [[params.partner_item]]
+    name = "Citibats Cambodia"
+    logo = "/images/clients/citibats_cambodia/logo.png"
+    link = "https://www.inaturalist.org/projects/citibats-cambodia"
+
+  [[params.partner_item]]
+    name = "HackThePlanet"
+    logo = "/images/clients/hacktheplanet/logo.png"
+    link = "https://www.hack-the-planet.io/"
+
+  [[params.partner_item]]
     name = "Aeria"
     logo = "/images/clients/aeria/logo.png"
     link = "https://aeria.earth/"
-
 
   #-------------------------------
   # Testimonials Section
   [params.testimonials]
     enable = true
-    testimonial_title = "🙂 What Partners Say"
+    testimonial_title = "🙂 What They Say"
 
   [[params.testimonial_item]]
     name = "Mateo Lostanlen"

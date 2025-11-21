@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
       container: ".partners-slider",
       items: 1,
       slideBy: 1,
-      gutter: 0,
+      gutter: 32,
       nav: true,
       mouseDrag: true,
       autoplay: false,

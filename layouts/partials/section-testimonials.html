@@ -28,7 +28,7 @@
           <div class="partners__carousel">
             <div class="partners-slider">
               {{ $partners := .Site.Params.partner_item }}
-              {{ $perPageDesktop := 8 }}
+              {{ $perPageDesktop := 4 }}
               {{ $totalPartners := len $partners }}
               {{ $totalPages := int (math.Ceil (div (float $totalPartners) (float $perPageDesktop))) }}
               {{ range $pageIndex := seq $totalPages }}
@@ -40,13 +40,13 @@
                     {{ range $pagePartners }}
                       <div class="partner-item col col-3 col-t-4 col-m-6">
                         {{ if .link }}
-                          <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" class="partner-logo-container">
+                          <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" class="partner-logo-container{{ with .bg }} partner-bg-{{ . }}{{ end }}">
                             {{ if .logo }}
                               <img class="partner-logo" src="{{ .logo }}" alt="{{ .name }}" loading="lazy">
                             {{ end }}
                           </a>
                         {{ else }}
-                          <div class="partner-logo-container">
+                          <div class="partner-logo-container{{ with .bg }} partner-bg-{{ . }}{{ end }}">
                             {{ if .logo }}
                               <img class="partner-logo" src="{{ .logo }}" alt="{{ .name }}" loading="lazy">
                             {{ end }}
