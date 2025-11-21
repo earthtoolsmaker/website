@@ -114,8 +114,9 @@
   }
 
   @media (max-width: $mobile) {
-    width: 200px;
-    height: 176px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 }
 
@@ -331,8 +332,9 @@
   }
 
   @media (max-width: $mobile) {
-    width: 200px;
-    height: 176px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 }
 
