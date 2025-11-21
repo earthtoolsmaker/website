@@ -27,7 +27,7 @@ cooperation that transcends borders and disciplines.
 > natural world for future generations.
 
 <div style="text-align: center; margin: 40px 0;">
-  <img src="/images/logos/etm-logo.png" alt="EarthToolsMaker Logo" style="max-height: 120px;">
+  <img src="/images/logos/etm-logo.png" alt="EarthToolsMaker Logo" class="etm-logo" style="max-height: 120px;">
 </div>
 
 {{< services >}}

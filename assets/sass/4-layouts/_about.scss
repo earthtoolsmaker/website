@@ -4,6 +4,14 @@
   font-size: 22px;
 }
 
+.etm-logo {
+  transition: transform 0.6s ease;
+
+  &:hover {
+    transform: rotate(360deg);
+  }
+}
+
 .container-wide {
   max-width: 1400px;
   padding-left: $base-spacing-unit;
