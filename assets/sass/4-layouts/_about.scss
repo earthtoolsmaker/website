@@ -1,5 +1,16 @@
 /* About Page Layout */
 
+.layout-about .page,
+.layout-about .page-head {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.layout-about .page-title {
+  text-align: center;
+}
+
 .page__content blockquote {
   font-size: 22px;
 }
@@ -47,7 +58,7 @@
 .team-member {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 32px;
 
   @media (max-width: $tablet) {
     flex-direction: column;
@@ -82,7 +93,7 @@
 .team-member__image {
   flex-shrink: 0;
   width: 280px;
-  height: 280px;
+  height: 242px;
   border-radius: 12px;
   overflow: hidden;
 
@@ -99,12 +110,12 @@
 
   @media (max-width: $tablet) {
     width: 240px;
-    height: 240px;
+    height: 209px;
   }
 
   @media (max-width: $mobile) {
     width: 200px;
-    height: 200px;
+    height: 176px;
   }
 }
 
@@ -124,14 +135,14 @@
 
 .team-member__role {
   margin-bottom: 16px;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 600;
   color: var(--primary-color);
 }
 
 .team-member__bio {
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 19px;
   line-height: 1.7;
   color: var(--text-color);
 }
@@ -224,7 +235,7 @@
 .case-studies {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 80px;
   margin-bottom: 48px;
 
   @media (max-width: $tablet) {
@@ -235,7 +246,7 @@
 .case-study {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 32px;
 
   @media (max-width: $tablet) {
     flex-direction: column;
