@@ -35,78 +35,41 @@
 
         <h3 class="services__subtitle">Concrete Examples</h3>
 
-        <div class="services__examples">
-          <table class="services__table">
-            <thead>
-              <tr>
-                <th>Challenge</th>
-                <th>Solution</th>
-                <th>Impact</th>
-                <th>Partners</th>
-              </tr>
-            </thead>
-            <tbody>
-              {{ range .examples }}
-              <tr>
-                <td>
-                  {{ .emoji }} <a href="{{ .challenge_link }}"><strong>{{ .challenge }}</strong></a>{{ with
-                  .challenge_detail }} {{ . }}{{ end }}
-                </td>
-                <td>
-                  {{ .solution }}
-                </td>
-                <td>
-                  {{ .impact }}
-                </td>
-                <td class="services__partners">
-                  {{ range .partners }}
-                  <a href="{{ .link }}" target="_blank" rel="noopener" title="{{ .name }}">
-                    <img src="{{ .logo }}" alt="{{ .name }}">
-                  </a>
-                  {{ end }}
-                </td>
-              </tr>
-              {{ end }}
-            </tbody>
-          </table>
+        <div class="case-studies">
+          {{ range $index, $example := .examples }}
+          <article class="case-study{{ if mod $index 2 }} case-study--reverse{{ end }}">
+            <div class="case-study__image">
+              <a href="{{ $example.challenge_link }}">
+                <img src="{{ $example.image }}" alt="{{ $example.challenge }}">
+              </a>
+            </div>
+            <div class="case-study__content">
+              <h3 class="case-study__title">{{ $example.challenge }}</h3>
+              <p class="case-study__impact">{{ $example.impact }}</p>
+              <p class="case-study__solution">{{ $example.solution }}</p>
+              <div class="case-study__partners">
+                {{ range $example.partners }}
+                <a href="{{ .link }}" target="_blank" rel="noopener" title="{{ .name }}"
+                  class="case-study__partner{{ if .inverted }} case-study__partner--inverted{{ end }}">
+                  <img src="{{ .logo }}" alt="{{ .name }}">
+                </a>
+                {{ end }}
+              </div>
+            </div>
+          </article>
+          {{ end }}
         </div>
 
         <p class="services__more">
           Explore more of our work on our <a href="/projects/">projects page</a>.
         </p>
 
-        <div class="gallery-box">
-          <div class="gallery">
-            <a class="animate-translate-upwards" target="_blank" href="/projects/bear_identification/"
-              title="Bear Identification">
-              <img src="/images/pages/about/solutions/bear_identification.jpg" loading="lazy"
-                alt="Bear Identification Project" />
-            </a>
-            <a class="animate-translate-upwards" target="_blank" href="/projects/coral_reef_health_monitoring/"
-              title="Coral Reef Health Monitoring">
-              <img src="/images/pages/about/solutions/coral_reef_segmentation.jpg" loading="lazy"
-                alt="Coral Reef Segmentation and Analysis" />
-            </a>
-            <a class="animate-translate-upwards" target="_blank" href="/projects/elephants_passive_acoustic_monitoring/"
-              title="Elephant Rumbles Detection">
-              <img src="/images/pages/about/solutions/elephant_rumbles.jpg" loading="lazy" alt="Elephant Rumbles" />
-            </a>
-            <a class="animate-translate-upwards" target="_blank" href="/projects/early_forest_fire_detection/"
-              title="Early Forest Fire Detection">
-              <img src="/images/pages/about/solutions/fire_detection.jpg" loading="lazy"
-                alt="Early Forest Fire Detection" />
-            </a>
-          </div>
-          <em>Gallery / Examples of projects: <b>Bear Identification</b>, <b>Coral Reefs Health Monitoring</b>,
-            <b>Elephant Rumbles detection</b> and <b>Early Forest Fire Detection</b></em>
-        </div>
-
         <p class="services__cta">
-          Have a conservation challenge? 🌱 <a href="/contact/">Get in touch</a>, we'd love to explore how we can help.
+          Have a conservation challenge? 🌱 Get in touch, we'd love to explore how we can help.
         </p>
 
         <div class="services__cta-button">
-          <a href="/contact/" class="button button--middle">Contact Us</a>
+          <a href="/contact/" class="button button--middle">Get in Touch</a>
         </div>
 
       </div>
