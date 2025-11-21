@@ -1,5 +1,13 @@
 {{ define "main" }}
 
+{{ if .Params.hero_image }}
+<div class="hero__image">
+  <div class="hero__image__inner">
+    <img class="lazy" data-src="{{ .Params.hero_image }}" alt="{{ .Title }}">
+  </div>
+</div>
+{{ end }}
+
 <div class="container-wide">
   <div class="page-head">
 
