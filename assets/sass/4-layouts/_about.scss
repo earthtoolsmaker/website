@@ -82,6 +82,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform .3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
   }
 
   @media (max-width: $tablet) {
@@ -329,14 +334,14 @@
 
 .case-study__solution {
   margin-bottom: 1em;
-  font-size: 16px;
+  font-size: 19px;
   font-weight:600;
   color: var(--text-color);
 }
 
 .case-study__impact {
-  margin-bottom: 20px;
-  font-size: 16px;
+  margin-bottom: 10px;
+  font-size: 19px;
   line-height: 1.7;
   color: var(--primary-color);
 }
