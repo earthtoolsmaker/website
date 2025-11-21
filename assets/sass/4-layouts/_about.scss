@@ -46,8 +46,24 @@
 .team-member--reverse {
   flex-direction: row-reverse;
 
+  .team-member__content {
+    text-align: right;
+  }
+
+  .team-member__socials {
+    justify-content: flex-end;
+  }
+
   @media (max-width: $tablet) {
     flex-direction: column;
+
+    .team-member__content {
+      text-align: center;
+    }
+
+    .team-member__socials {
+      justify-content: center;
+    }
   }
 }
 
