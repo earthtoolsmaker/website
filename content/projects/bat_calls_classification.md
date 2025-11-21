@@ -1,6 +1,5 @@
 ---
 title: "Tropical Bat Call Detection and Classification"
-subtitle: Conservation
 summary: Transforming bat population monitoring in Cambodia through advanced bio-acoustic analysis driven by Machine Learning algorithms.
 clients: 
   - name: Citibats Cambodia

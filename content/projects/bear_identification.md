@@ -1,6 +1,5 @@
 ---
 title: Bear Identification
-subtitle: Conservation
 summary: Noninvasive technologies to identify and monitor bears, facilitating their conservation.
 clients:
   - name: BearID

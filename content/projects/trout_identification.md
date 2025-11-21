@@ -1,6 +1,5 @@
 ---
 title: Trout Identification
-subtitle: Conservation
 summary: Non-invasive technology for monitoring trout populations using computer vision to accurately identify individual fish.
 clients:
   - name: Aeria

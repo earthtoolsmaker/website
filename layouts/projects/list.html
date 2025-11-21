@@ -38,9 +38,6 @@
           {{ end }}
           <div class="project__inner">
             <div class="project__info">
-              {{ if .Params.subtitle }}
-              <div class="project__subtitle">{{ .Params.subtitle }}</div>
-              {{ end }}
               {{ if .Params.title }}
               <h3 class="project__title"><a href="{{ .RelPermalink }}" class="project__link">{{ .Params.title }}</a></h3>
               {{ end }}

@@ -1,6 +1,5 @@
 ---
 title: Snow Leopard Monitoring
-subtitle: Conservation
 summary: Non-invasive snow leopard monitoring using computer vision analysis of camera trap photos to identify individual animals.
 clients:
   - name: OSI Panthera

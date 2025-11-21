@@ -1,6 +1,5 @@
 ---
 title: Forest Elephants Passive Acoustic Monitoring
-subtitle: Conservation
 summary: Conservation efforts struggle to monitor forest elephants in dense rainforests, with acoustic monitoring providing a promising solution via accurate, user-friendly detection systems that aid in population monitoring and anti-poaching efforts while mitigating human-elephant conflicts.
 clients:
   - name: Elephant Listening Project

@@ -1,6 +1,5 @@
 ---
 title: Interactive desktop application for visualizing camera trap data
-subtitle: Conservation
 summary: An open-source desktop application for visualizing camera trap data to support conservation efforts.
 clients:
   - name: OSI Panthera

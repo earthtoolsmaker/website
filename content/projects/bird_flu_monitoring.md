@@ -1,6 +1,5 @@
 ---
 title: Bird Flu Monitoring
-subtitle: Conservation
 summary: Utilize drones for precise monitoring of breeding seabird colonies by detection of live and dead adults and chicks to determine survival and reproduction and asses the impact of avian influenza.
 clients:
   - name: Aeria

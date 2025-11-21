@@ -1,6 +1,5 @@
 ---
 title: Human-Wildlife Conflict
-subtitle: Appeasing human-bear conflict
 summary: Utilizing low-power technology to detect and deter bears from encroaching on Romanian farms.
 clients:
   - name: HackThePlanet

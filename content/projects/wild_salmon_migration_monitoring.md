@@ -1,6 +1,5 @@
 ---
 title: Wild Salmon Migration Monitoring
-subtitle: Conservation
 summary: The project monitors wild salmon migration to ensure the number passing through meets state regulations, addressing threats from human activities like fisheries and dams.
 github_repo: https://github.com/Salmon-Computer-Vision/salmon-computer-vision/tree/master
 space: /spaces/wild_salmon_migration_monitoring/

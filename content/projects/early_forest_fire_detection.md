@@ -1,6 +1,5 @@
 ---
 title: Early Forest Fire Detection
-subtitle: Protection
 summary: Democratize open and low-tech solutions for fighting wildfires, for the benefit of the ecosystems and the citizens.
 clients:
   - name: Pyronear
