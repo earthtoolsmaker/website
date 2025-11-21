@@ -1,0 +1,117 @@
+{{ with .Site.Data.services }}
+<!-- begin services -->
+<section class="section services animate">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="section__info">
+          <div class="section__head">
+            <h2 class="section__title">🛠️ What We Offer</h2>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none">
+            <path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+              d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8" />
+          </svg>
+        </div>
+
+        <p class="services__intro">
+          We build custom conservation tools adapted to your specific needs and datasets, empowering organizations with
+          actionable environmental insights. Our expertise spans the full development lifecycle—from data collection and
+          model training to deployment and maintenance.
+        </p>
+
+        <div class="services__list">
+          {{ range .services }}
+          <div class="services__item">
+            <span class="services__emoji">{{ .emoji }}</span>
+            <div class="services__content">
+              <h4 class="services__item-title">{{ .title }}</h4>
+              <p class="services__item-description">{{ .description }}</p>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+
+        <h3 class="services__subtitle">Concrete Examples</h3>
+
+        <div class="services__examples">
+          <table class="services__table">
+            <thead>
+              <tr>
+                <th>Challenge</th>
+                <th>Solution</th>
+                <th>Impact</th>
+                <th>Partners</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{ range .examples }}
+              <tr>
+                <td>
+                  {{ .emoji }} <a href="{{ .challenge_link }}"><strong>{{ .challenge }}</strong></a>{{ with
+                  .challenge_detail }} {{ . }}{{ end }}
+                </td>
+                <td>
+                  {{ .solution }}
+                </td>
+                <td>
+                  {{ .impact }}
+                </td>
+                <td class="services__partners">
+                  {{ range .partners }}
+                  <a href="{{ .link }}" target="_blank" rel="noopener" title="{{ .name }}">
+                    <img src="{{ .logo }}" alt="{{ .name }}">
+                  </a>
+                  {{ end }}
+                </td>
+              </tr>
+              {{ end }}
+            </tbody>
+          </table>
+        </div>
+
+        <p class="services__more">
+          Explore more of our work on our <a href="/projects/">projects page</a>.
+        </p>
+
+        <div class="gallery-box">
+          <div class="gallery">
+            <a class="animate-translate-upwards" target="_blank" href="/projects/bear_identification/"
+              title="Bear Identification">
+              <img src="/images/pages/about/solutions/bear_identification.jpg" loading="lazy"
+                alt="Bear Identification Project" />
+            </a>
+            <a class="animate-translate-upwards" target="_blank" href="/projects/coral_reef_health_monitoring/"
+              title="Coral Reef Health Monitoring">
+              <img src="/images/pages/about/solutions/coral_reef_segmentation.jpg" loading="lazy"
+                alt="Coral Reef Segmentation and Analysis" />
+            </a>
+            <a class="animate-translate-upwards" target="_blank" href="/projects/elephants_passive_acoustic_monitoring/"
+              title="Elephant Rumbles Detection">
+              <img src="/images/pages/about/solutions/elephant_rumbles.jpg" loading="lazy" alt="Elephant Rumbles" />
+            </a>
+            <a class="animate-translate-upwards" target="_blank" href="/projects/early_forest_fire_detection/"
+              title="Early Forest Fire Detection">
+              <img src="/images/pages/about/solutions/fire_detection.jpg" loading="lazy"
+                alt="Early Forest Fire Detection" />
+            </a>
+          </div>
+          <em>Gallery / Examples of projects: <b>Bear Identification</b>, <b>Coral Reefs Health Monitoring</b>,
+            <b>Elephant Rumbles detection</b> and <b>Early Forest Fire Detection</b></em>
+        </div>
+
+        <p class="services__cta">
+          Have a conservation challenge? 🌱 <a href="/contact/">Get in touch</a>, we'd love to explore how we can help.
+        </p>
+
+        <div class="services__cta-button">
+          <a href="/contact/" class="button button--middle">Contact Us</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end services -->
+{{ end }}

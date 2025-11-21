@@ -1,0 +1,59 @@
+services:
+  - emoji: "🤖"
+    title: "Custom AI/ML Model Development"
+    description: "We design and train machine learning models tailored to your conservation challenges, whether it's species identification, behavior detection, or environmental monitoring."
+
+  - emoji: "📊"
+    title: "Data Pipeline & Processing"
+    description: "We build efficient systems to process large-scale datasets — terabytes of audio, video, or sensor data — turning raw information into meaningful insights."
+
+  - emoji: "🚀"
+    title: "Deployment & Integration"
+    description: "We deliver production-ready solutions that integrate with your existing infrastructure, from edge devices in the field to cloud-based platforms."
+
+  - emoji: "🌍"
+    title: "Open-Source Tools"
+    description: "Most of our work is open-source, ensuring transparency, reproducibility, and long-term sustainability for your organization."
+
+examples:
+  - emoji: "🐘"
+    challenge: "Tracking forest elephants"
+    challenge_detail: "in dense rainforests"
+    challenge_link: "/projects/elephants_passive_acoustic_monitoring/"
+    solution: "Developed an acoustic analyzer that processes audio data at scale"
+    solution_link: "/projects/elephants_passive_acoustic_monitoring/"
+    impact: "Enables monitoring of populations and detection of poaching threats"
+    partners:
+      - name: "Elephant Listening Project"
+        logo: "/images/clients/elephantlistening/logo.png"
+        link: "https://www.elephantlisteningproject.org/"
+      - name: "Cornell Lab"
+        logo: "/images/clients/cornell_lab/logo.svg"
+        link: "https://www.birds.cornell.edu/"
+
+  - emoji: "🐟"
+    challenge: "Monitoring salmon migration"
+    challenge_detail: "across rivers"
+    challenge_link: "/projects/wild_salmon_migration_monitoring/"
+    solution: "Built SalmonVision — a computer vision system using underwater cameras, sonar, and drones to automatically count and classify salmon species"
+    solution_link: "/projects/wild_salmon_migration_monitoring/"
+    impact: "Enables precise population tracking"
+    partners:
+      - name: "Pacific Salmon Foundation"
+        logo: "/images/clients/psf/logo.png"
+        link: "https://psf.ca/"
+      - name: "Wild Salmon Center"
+        logo: "/images/clients/wild_salmon_centre/logo.png"
+        link: "https://wildsalmoncenter.org/"
+
+  - emoji: "🔥"
+    challenge: "Detecting forest fires early"
+    challenge_detail: ""
+    challenge_link: "/projects/early_forest_fire_detection/"
+    solution: "Enhanced Pyronear's ML model for real-time fire detection from tower-mounted cameras, minimizing false alarms"
+    solution_link: "/projects/early_forest_fire_detection/"
+    impact: "Detecting fires from 35km away, protecting forests in Europe"
+    partners:
+      - name: "Pyronear"
+        logo: "/images/clients/pyronear/logo.png"
+        link: "https://pyronear.org"

@@ -151,12 +151,140 @@
   }
 }
 
-/* Services Table */
-.services-table {
+/* Services Section */
+.services {
+  .section__info {
+    margin-bottom: 32px;
+  }
+}
+
+.services__intro {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  margin-bottom: 32px;
+  color: var(--text-color);
+}
+
+.services__subtitle {
+  font-size: $font-size-h3;
+  margin-bottom: 24px;
+  color: var(--heading-font-color);
+}
+
+.services__list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.services__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.services__emoji {
+  font-size: $base-font-size;
+  line-height: 0.9;
+}
+
+.services__content {
+  flex: 1;
+}
+
+.services__item-title {
+  font-size: $font-size-h5;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--heading-font-color);
+}
+
+.services__item-description {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: var(--text-color);
+}
+
+.services__examples {
+  margin-bottom: 32px;
+  overflow-x: auto;
+}
+
+.services__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $base-font-size;
+
+  th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: top;
+    line-height: $base-line-height;
+  }
+
+  th {
+    font-weight: 600;
+    color: var(--heading-font-color);
+    background: var(--background-alt-color);
+  }
+
+  td {
+    color: var(--text-color);
+  }
+
+  a {
+    color: var(--link-color);
+
+    &:hover {
+      color: var(--link-color-hover);
+    }
+  }
+}
+
+.services__partners {
+  a {
+    border: none;
+    text-decoration: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+
   img {
     height: 40px;
     width: auto;
     vertical-align: middle;
     margin: 4px;
+  }
+}
+
+.services__more {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  margin-bottom: 16px;
+}
+
+.services__cta {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: 500;
+}
+
+.services__cta-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+
+  .button {
+    background-color: var(--background-alt-color);
+    color: var(--heading-font-color);
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: var(--dark);
+    }
   }
 }
