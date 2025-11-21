@@ -186,7 +186,7 @@
 
 .services__emoji {
   font-size: $base-font-size;
-  line-height: 0.9;
+  line-height: 1.2;
 }
 
 .services__content {
@@ -194,8 +194,9 @@
 }
 
 .services__item-title {
+  font-family: $base-font-family;
   font-size: $font-size-h5;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 8px;
   color: var(--heading-font-color);
 }
