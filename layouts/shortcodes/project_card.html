@@ -1,0 +1,17 @@
+<article class="project col col-4 col-w-6 col-t-12">
+  <div class="project__content">
+    <div class="project__head">
+      <div class="project__image">
+        <img class="lazy" data-src="{{ .Get "image" }}" alt="{{ .Get "title" }}">
+      </div>
+    </div>
+    <div class="project__inner">
+      <div class="project__info">
+        <h3 class="project__title">
+          <a href="{{ .Get "link" }}" class="project__link" style="border-bottom: none;">{{ .Get "title" }}</a>
+        </h3>
+        <p class="project__excerpt">{{ .Get "excerpt" }}</p>
+      </div>
+    </div>
+  </div>
+</article>

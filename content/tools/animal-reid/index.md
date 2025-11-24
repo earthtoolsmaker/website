@@ -102,9 +102,17 @@ Animal reID technology enables researchers to:
 
 Each implementation is open-source with detailed documentation:
 
-- **Bear Identification**: [GitHub Repository](https://github.com/earthtoolsmaker/bear-conservation) | [Project Details](/projects/bear_identification/)
-- **Trout Identification**: [GitHub Repository](https://github.com/earthtoolsmaker/trout-reid) | [Project Details](/projects/trout_identification/)
-- **Snow Leopard Monitoring**: [Project Details](/projects/snow_leopard_monitoring/)
+<div class="container">
+  <div class="row">
+
+{{< project_card title="Bear Identification" link="/projects/bear_identification/" image="/images/projects/bear_identification/cover.png" excerpt="Noninvasive technologies to identify and monitor bears, facilitating their conservation." >}}
+
+{{< project_card title="Trout Identification" link="/projects/trout_identification/" image="/images/projects/trout_identification/cover.png" excerpt="Non-invasive technology for monitoring trout populations using computer vision to accurately identify individual fish." >}}
+
+{{< project_card title="Snow Leopard Monitoring" link="/projects/snow_leopard_monitoring/" image="/images/projects/snow_leopard_monitoring/cover.png" excerpt="Non-invasive snow leopard monitoring using computer vision analysis of camera trap photos to identify individual animals." >}}
+
+  </div>
+</div>
 
 ### Related Guides
 
