@@ -60,10 +60,6 @@
   transform: translate(0);
   background: var(--background-alt-color);
 
-  &:hover {
-    transform: translateY(-2px);
-  }
-
   .client-avatar {
     position: absolute;
     top: 0;
@@ -72,6 +68,11 @@
     height: 100%;
     user-select: none;
     object-fit: cover;
+    transition: transform .3s ease;
+  }
+
+  &:hover .client-avatar {
+    transform: scale(1.05);
   }
 
   @media (max-width: $mobile) {
@@ -90,12 +91,20 @@
     top: -16px; /* Distance from the top of its normal position */
     right: -16px; /* Distance from the right of its normal position */
     height: 30px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
 
     @media (max-width: $mobile) {
       height: 20px;
       top: -10px; /* Distance from the top of its normal position */
       right: -10px; /* Distance from the right of its normal position */
     }
+  }
+
+  &:hover .client-logo-image {
+    filter: grayscale(0%);
+    opacity: 1;
   }
 }
 

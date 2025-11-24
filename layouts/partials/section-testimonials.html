@@ -88,12 +88,13 @@
                     {{ if .logo }}
                       <div class="client-logo">
                         <a href="{{ .link }}" target="_blank">
-                          <img class="client-logo-image" src="{{ .logo }}" />
+                          {{ $orgName := index (split .designation " - ") 1 }}
+                          <img class="client-logo-image" src="{{ .logo }}" title="{{ $orgName }}" alt="{{ $orgName }}" />
                         </a>
                       </div>
                     {{ end }}
                     {{ if .image }}
-                    <a href="{{ .link }}" class="image-container" target="_blank" rel="noopener">
+                    <a href="{{ .link }}" class="image-container" target="_blank" rel="noopener" title="Visit {{ index (split .designation " - ") 1 }}">
                       <img class="client-avatar" src="{{ .image }}" alt="{{ .name }}" loading="lazy">
                     </a>
                     {{ end }}
