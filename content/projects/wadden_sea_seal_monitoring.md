@@ -18,6 +18,12 @@ image: /images/projects/wadden_sea_seal_monitoring/cover.jpg
 
 The Wadden Sea, a UNESCO World Heritage Site stretching between the Netherlands and Denmark, hosts critical breeding colonies of grey seals and harbour seals. Understanding the health and dynamics of these populations is essential for marine conservation efforts in the region. Research teams at Wageningen Marine Research conduct aerial surveys multiple times annually, photographing seal colonies from aircraft to monitor population trends, age structure, and reproductive success.
 
+![Aerial view of the Wadden Sea](/images/projects/wadden_sea_seal_monitoring/wadden-sea.jpg)
+*The Wadden Sea, a UNESCO World Heritage Site, features extensive tidal flats and sandbanks that serve as critical haul-out sites for seal colonies*
+
+![Map of the Wadden Sea](/images/projects/wadden_sea_seal_monitoring/wadden-sea-map.png)
+*The Wadden Sea stretches along the coasts of the Netherlands, Germany, and Denmark*
+
 However, analyzing these aerial images has traditionally been an enormously time-consuming task. Researchers spend hundreds of hours manually counting and classifying individual seals across thousands of photographs, identifying species, life stages, positions, and vital status. This tedious work leaves limited time for the higher-level biological analysis and statistical modeling that drives conservation decisions.
 
 We partnered with Wageningen Marine Research to develop an end-to-end AI-powered system that automates the detection, counting, and classification of seals from aerial imagery. The system employs advanced computer vision models to handle five distinct classification tasks, coupled with a seal re-identification capability that enables long-term tracking of individual animals. Researchers now use an intuitive web application to review and refine AI predictions, dramatically reducing manual workload while maintaining scientific rigor.
