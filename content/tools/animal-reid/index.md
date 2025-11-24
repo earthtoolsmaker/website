@@ -116,10 +116,19 @@ Each implementation is open-source with detailed documentation:
 
 ### Related Guides
 
-- [Bear Face Segmentation Guide](/posts/bear-face-segmentation-guide/)
-- [Bear Identification with Metric Learning](/posts/bear-identification-with-metric-learning-guide/)
-- [How to Prepare Data for Identification](/posts/how-to-prepare-data-for-identification/)
-- [Local Feature Matching with LightGLUE](/posts/local-feature-matching-lightglue/)
+<div class="container">
+  <div class="row">
+
+{{< article_card title="A guide to designing a bear face segmentation system" link="/posts/bear-face-segmentation-guide/" image="/images/posts/bear-face-segmentation-guide/cover.png" description="Detecting bears in real time using low-power technology." date="11 Apr, 2024" reading_time="8" tags="AI, vision, camera traps" >}}
+
+{{< article_card title="A guide to designing a bear face recognition system" link="/posts/bear-identification-with-metric-learning-guide/" image="/images/posts/bear-identification-with-metric-learning-guide/cover.png" description="Identify bears with Metric Learning." date="12 Apr, 2024" reading_time="13" tags="AI, vision, metric learning, identification" >}}
+
+{{< article_card title="How to prepare data for IDentification?" link="/posts/how-to-prepare-data-for-identification/" image="/images/posts/how-to-prepare-data-for-identification/cover.png" description="An in-depth look at the common preprocessing stages required to perform identification using computer vision." date="8 Dec, 2024" reading_time="11" tags="AI, vision, identification" >}}
+
+{{< article_card title="Identify individuals with Local Feature Matching" link="/posts/local-feature-matching-lightglue/" image="/images/posts/local-feature-matching-lightglue/cover.png" description="A comprehensive examination of using local feature matching for individual identification." date="9 Dec, 2024" reading_time="14" tags="AI, vision, identification, local feature" >}}
+
+  </div>
+</div>
 
 <br/>
 <br/>
