@@ -15,6 +15,13 @@
     .article__title a {
       text-decoration-color: var(--primary-color);
     }
+
+    @media (min-width: $tablet + 1) {
+      .article__image img {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+      }
+    }
   }
 }
 
@@ -72,6 +79,12 @@
     height: 100%;
     object-fit: cover;
     pointer-events: none;
+
+    @media (min-width: $tablet + 1) {
+      -webkit-filter: grayscale(50%);
+      filter: grayscale(50%);
+      transition: filter 0.3s ease;
+    }
   }
 }
 
