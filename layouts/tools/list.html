@@ -33,7 +33,13 @@
             <div class="tool__image-container">
               <div class="tool__image">
                 <div class="tool__icon">
+                  {{ if .Params.logo_container }}
+                  <div class="tool__icon-container">
+                    <img src="{{ .Params.icon }}" />
+                  </div>
+                  {{ else }}
                   <img src="{{ .Params.icon }}" />
+                  {{ end }}
                 </div>
               </div>
               {{/*<img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Params.Title }}">*/}}
