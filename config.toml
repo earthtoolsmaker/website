@@ -342,7 +342,7 @@ pagerSize = 6
   #-------------------------------
   # Newsletter Settings
   [params.mailchimp]
-    enable = true
+    enable = false
     mailchimp_title = "Get interesting news"
     # FIXME:
     mailchimp_identifier = "caillau.us22.list-manage.com/subscribe/post?u=d8421822b19ca15ee7e4b0a6d&amp;id=8f6a5abb56&amp;f_id=007ac1e1f0"
