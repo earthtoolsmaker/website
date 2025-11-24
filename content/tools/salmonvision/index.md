@@ -36,3 +36,10 @@ drones works in unison to provide precise tracking of salmon populations.
 location and species of fish, enhancing real-time monitoring capabilities.
 - 📊 **Data Analysis**: Comprehensive population count reports are generated and
 can be easily exported for further analysis and decision-making.
+
+## See SalmonVision in Action
+
+<p><iframe src="https://www.youtube.com/embed/V-rZSeM5YtY" loading="lazy" frameborder="0" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9;"></iframe></p>
+<em style="font-size:14px;line-height:1.4em;display:block;">Underwater Camera Activated at Bear Creek River: Monitoring System Now Live
+</em>
+<br/>
