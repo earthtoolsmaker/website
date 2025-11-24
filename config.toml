@@ -205,6 +205,7 @@ pagerSize = 6
     name = "Wild Salmon Center"
     logo = "/images/clients/wild_salmon_centre/logo.png"
     link = "https://wildsalmoncenter.org/"
+    show_name = true
 
   [[params.partner_item]]
     name = "Pacific Salmon Foundation"
@@ -239,9 +240,10 @@ pagerSize = 6
     link = "https://www.birds.cornell.edu/"
 
   [[params.partner_item]]
-    name = "OSI"
+    name = "Objective Science International"
     logo = "/images/clients/osi/logo.png"
-    link = "https://www.osi.org/"
+    link = "https://www.osi-ngo.org/"
+    show_name = true
 
   [[params.partner_item]]
     name = "OSI Panthera"

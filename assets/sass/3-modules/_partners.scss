@@ -88,6 +88,7 @@
   background: var(--background-color);
   transition: all 0.3s ease;
   text-decoration: none;
+  position: relative;
 
   &.partner-bg-inverted {
     background: var(--background-color);
@@ -108,6 +109,25 @@
 
   &[href] {
     cursor: pointer;
+  }
+
+  &[data-name]::after {
+    content: attr(data-name);
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &[data-name]:hover::after {
+    opacity: 1;
   }
 
   &:hover {

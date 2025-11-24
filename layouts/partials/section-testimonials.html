@@ -40,13 +40,13 @@
                     {{ range $pagePartners }}
                       <div class="partner-item col col-3 col-t-4 col-m-6">
                         {{ if .link }}
-                          <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" class="partner-logo-container{{ with .bg }} partner-bg-{{ . }}{{ end }}">
+                          <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" class="partner-logo-container{{ with .bg }} partner-bg-{{ . }}{{ end }}"{{ if .show_name }} data-name="{{ .name }}"{{ end }}>
                             {{ if .logo }}
                               <img class="partner-logo" src="{{ .logo }}" alt="{{ .name }}" loading="lazy">
                             {{ end }}
                           </a>
                         {{ else }}
-                          <div class="partner-logo-container{{ with .bg }} partner-bg-{{ . }}{{ end }}">
+                          <div class="partner-logo-container{{ with .bg }} partner-bg-{{ . }}{{ end }}"{{ if .show_name }} data-name="{{ .name }}"{{ end }}>
                             {{ if .logo }}
                               <img class="partner-logo" src="{{ .logo }}" alt="{{ .name }}" loading="lazy">
                             {{ end }}
