@@ -497,11 +497,11 @@
   margin-top: 24px;
 
   .button {
-    background-color: var(--primary-color);
-    color: var(--dark);
+    background-color: var(--dark);
+    color: var(--white);
 
     &:hover {
-      background-color: var(--secondary-color);
+      background-color: var(--primary-color);
       color: var(--white);
     }
   }
