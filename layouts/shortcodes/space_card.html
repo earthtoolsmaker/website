@@ -1,0 +1,22 @@
+<article class="space col col-4 col-w-6 col-t-12">
+  <div class="space__content">
+    <div class="space__head">
+      <div class="space__image-container">
+        <div class="space__image">
+          <div class="space__image-emoji">{{ .Get "emoji" }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="space__inner">
+      <div class="space__info">
+        {{ if .Get "subtitle" }}
+        <div class="space__subtitle">{{ .Get "subtitle" }}</div>
+        {{ end }}
+        <h3 class="space__title">
+          <a href="{{ .Get "link" }}" class="space__link" style="border-bottom: none; font-weight: 700;">{{ .Get "title" }}</a>
+        </h3>
+        <p class="space__excerpt">{{ .Get "summary" }}</p>
+      </div>
+    </div>
+  </div>
+</article>

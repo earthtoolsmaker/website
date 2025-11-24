@@ -66,6 +66,23 @@ See local feature matching in action as the system analyzes spot patterns to ide
 <br/>
 <br/>
 
+## Try the Technology
+
+Experience Animal reID systems in action through our interactive demonstration spaces. Each space provides hands-on access to production-grade identification models.
+
+<div class="container">
+  <div class="row">
+
+{{< space_card title="Bear Identification" link="/spaces/bear_identification/" emoji="🐻" summary="A computer vision system utilizes facial recognition technology to analyze bear photographs and identify individual bears. This innovative system aims to monitor the population size of bears in British Columbia over time, ultimately supporting and enhancing conservation efforts in the region." >}}
+
+{{< space_card title="Trout Identification" link="/spaces/trout_identification/" emoji="🕵️" summary="A computer vision system analyzes the spot patterns of trout to identify individual fish. This innovative, non-invasive approach aims to monitor trout populations in British Columbia over time, ultimately supporting and enhancing conservation efforts in the region." >}}
+
+  </div>
+</div>
+
+<br/>
+<br/>
+
 ## Conservation Impact
 
 Animal reID technology enables researchers to:
