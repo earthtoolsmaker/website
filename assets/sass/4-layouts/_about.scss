@@ -147,6 +147,10 @@
   font-size: 19px;
   font-weight: 600;
   color: var(--primary-color);
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
 }
 
 .team-member__bio {
@@ -154,6 +158,10 @@
   font-size: 19px;
   line-height: 1.7;
   color: var(--text-color);
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
 }
 
 .team-member__socials {
@@ -196,6 +204,10 @@
   line-height: $base-line-height;
   margin-bottom: 32px;
   color: var(--text-color);
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
 }
 
 .services__subtitle {
@@ -238,6 +250,10 @@
   font-size: $base-font-size;
   line-height: $base-line-height;
   color: var(--text-color);
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
 }
 
 /* Case Studies (Team-member style layout) */
@@ -365,6 +381,10 @@
   margin-bottom: 1em;
   font-size: 19px;
   color: var(--text-color);
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
 }
 
 .case-study__impact {
@@ -373,6 +393,10 @@
   font-weight:600;
   line-height: 1.7;
   color: var(--primary-color);
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
 }
 
 .case-study__partners {
@@ -447,12 +471,20 @@
   font-size: $base-font-size;
   line-height: $base-line-height;
   margin-bottom: 16px;
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
 }
 
 .services__cta {
   font-size: $base-font-size;
   line-height: $base-line-height;
   font-weight: 500;
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
 }
 
 .services__cta-button {
