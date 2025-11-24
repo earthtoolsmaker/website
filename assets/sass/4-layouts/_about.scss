@@ -1,10 +1,18 @@
 /* About Page Layout */
 
 .layout-about .page,
-.layout-about .page-head {
+.layout-about .page-head,
+.layout-about .services .container-wide,
+.layout-about .team .container-wide {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.layout-about .services .container-wide,
+.layout-about .team .container-wide {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .layout-about .page-title {
