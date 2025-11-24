@@ -11,7 +11,7 @@ tools:
   - Machine Learning
   - Deep Learning
 status: completed
-date: 2025-01-24
+date: 2025-11-24
 pinned: true
 image: /images/projects/wadden_sea_seal_monitoring/cover.jpg
 ---
