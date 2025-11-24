@@ -7,6 +7,7 @@ summary: A modular computer vision framework for individual animal identificatio
 github_repo: https://github.com/earthtoolsmaker/bear-conservation
 project: /projects/trout_identification/
 date: 2025-11-24
+js: /js/animal-reid.js
 ---
 
 <div class="tool-container-button-cta">
@@ -23,8 +24,15 @@ Animal reID is a modular framework that enables precise identification of indivi
 
 From monitoring bear populations in British Columbia to tracking individual trout in river systems, and extending to snow leopards in Central Asia and seals in coastal waters, Animal reID provides researchers with powerful, non-invasive tools for wildlife monitoring and conservation.
 
-<br/>
-<br/>
+<div class="gallery-box">
+  <div class="gallery">
+      <img src="./images/animal_reid_leopard_1.png" loading="lazy" alt="Snow Leopard Identification" class="lightense-enabled" />
+      <img src="./images/animal_reid_leopard_2.png" loading="lazy" alt="Leopard Spot Analysis" class="lightense-enabled" />
+      <img src="./images/animal_reid_seal_1.png" loading="lazy" alt="Seal Pattern Matching" class="lightense-enabled" />
+  </div>
+</div>
+<br />
+<br />
 
 ## Key Features
 
@@ -33,33 +41,6 @@ From monitoring bear populations in British Columbia to tracking individual trou
 - 🔬 **Research-Grade Accuracy**: Built on peer-reviewed techniques including Instance Segmentation + Metric Learning and LightGLUE local feature matching
 - 🌍 **Conservation Focused**: Designed for real-world field applications with non-invasive monitoring capabilities
 - 📊 **Database Integration**: Compare new observations against historical databases to track population dynamics over time
-
-<br/>
-<br/>
-
-## Identification Techniques
-
-### Metric Learning for Facial Recognition
-
-Used successfully for **bear identification**, this approach combines instance segmentation to isolate animal faces with deep metric learning to create unique embeddings for each individual. The system learns to recognize subtle facial features and marking patterns that distinguish one animal from another.
-
-**Key advantages:**
-- Highly accurate for species with distinctive facial features
-- Robust to pose variations and lighting conditions
-- Proven in production for British Columbia bear monitoring
-
-**Applications**: Bears, primates, big cats, and other species with distinctive facial characteristics
-
-### Local Feature Matching for Spot Patterns
-
-Pioneered in our **trout identification** work, this technique uses advanced local feature matching (LightGLUE) to analyze unique spot patterns on fish bodies. The system standardizes fish orientations and matches keypoint patterns against a reference database.
-
-**Key advantages:**
-- Non-invasive identification from natural markings
-- Works with partial views and occlusions
-- Effective for species with complex, unique pattern distributions
-
-**Applications**: Trout, leopards, cheetahs, whale sharks, and other spot-patterned species
 
 <br/>
 <br/>
@@ -94,6 +75,33 @@ Animal reID technology enables researchers to:
 - **Assess conservation effectiveness** by quantifying population trends with individual-level precision
 - **Reduce field costs** by automating identification from camera trap and observation images
 - **Scale monitoring efforts** to cover larger geographic areas with existing observation networks
+
+<br/>
+<br/>
+
+## Identification Techniques
+
+### Metric Learning for Facial Recognition
+
+Used successfully for **bear identification**, this approach combines instance segmentation to isolate animal faces with deep metric learning to create unique embeddings for each individual. The system learns to recognize subtle facial features and marking patterns that distinguish one animal from another.
+
+**Key advantages:**
+- Highly accurate for species with distinctive facial features
+- Robust to pose variations and lighting conditions
+- Proven in production for British Columbia bear monitoring
+
+**Applications**: Bears, primates, big cats, and other species with distinctive facial characteristics
+
+### Local Feature Matching for Spot Patterns
+
+Pioneered in our **trout identification** work, this technique uses advanced local feature matching (LightGLUE) to analyze unique spot patterns on fish bodies. The system standardizes fish orientations and matches keypoint patterns against a reference database.
+
+**Key advantages:**
+- Non-invasive identification from natural markings
+- Works with partial views and occlusions
+- Effective for species with complex, unique pattern distributions
+
+**Applications**: Trout, leopards, cheetahs, whale sharks, and other spot-patterned species
 
 <br/>
 <br/>
@@ -135,7 +143,7 @@ Each implementation is open-source with detailed documentation:
 
 ## Get Started
 
-Interested in applying Animal reID to your conservation project? We offer consultation on selecting the right identification approach, custom development for new species, training workshops, and collaborative research opportunities.
+Interested in applying Animal reID to your conservation project? We offer consultation on selecting the right identification approach, custom development for new species, and collaborative research opportunities.
 
 <style>
 .animal-reid-cta-button:hover {
