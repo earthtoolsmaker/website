@@ -3,80 +3,78 @@
 <section class="section services animate">
   <div class="container-wide">
 
-        <div class="section__info">
-          <div class="section__head">
-            <h2 class="section__title">🛠️ What We Offer</h2>
+    <div class="section__info">
+      <div class="section__head">
+        <h2 class="section__title">🛠️ What We Offer</h2>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none">
+        <path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+          d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8" />
+      </svg>
+    </div>
+
+    <p class="services__intro">
+      We build custom conservation tools adapted to your specific needs and datasets, empowering organizations with
+      actionable environmental insights. Our expertise spans the full development lifecycle—from data collection and
+      model training to deployment and maintenance.
+    </p>
+
+    <div class="services__list">
+      {{ range .services }}
+      <div class="services__item">
+        <span class="services__emoji">{{ .emoji }}</span>
+        <div class="services__content">
+          <h4 class="services__item-title">{{ .title }}</h4>
+          <p class="services__item-description">{{ .description }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="section__info">
+      <div class="section__head">
+        <h2 class="section__title">🔍 Concrete Examples</h2>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none">
+        <path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+          d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8" />
+      </svg>
+    </div>
+
+    <div class="case-studies">
+      {{ range $index, $example := .examples }}
+      <article class="case-study{{ if mod $index 2 }} case-study--reverse{{ end }}">
+        <div class="case-study__image">
+          <a href="{{ $example.challenge_link }}">
+            <img src="{{ $example.image }}" alt="{{ $example.challenge }}">
+          </a>
+        </div>
+        <div class="case-study__content">
+          <h3 class="case-study__title">{{ $example.challenge }}</h3>
+          <p class="case-study__impact">{{ $example.impact }}</p>
+          <p class="case-study__solution">{{ $example.solution }}</p>
+          <div class="case-study__partners">
+            {{ range $example.partners }}
+            <a href="{{ .link }}" target="_blank" rel="noopener" title="{{ .name }}"
+              class="case-study__partner{{ if .inverted }} case-study__partner--inverted{{ end }}">
+              <img src="{{ .logo }}" alt="{{ .name }}">
+            </a>
+            {{ end }}
           </div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none">
-            <path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-              d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8" />
-          </svg>
         </div>
+      </article>
+      {{ end }}
+    </div>
 
-        <p class="services__intro">
-          We build custom conservation tools adapted to your specific needs and datasets, empowering organizations with
-          actionable environmental insights. Our expertise spans the full development lifecycle—from data collection and
-          model training to deployment and maintenance.
-        </p>
+    <p class="services__more">
+      Explore more of our work on our <a href="/projects/">projects page</a>.
+      <br />
+      Have a conservation challenge? Get in touch, we'd love to explore how we can help.
+    </p>
 
-        <div class="services__list">
-          {{ range .services }}
-          <div class="services__item">
-            <span class="services__emoji">{{ .emoji }}</span>
-            <div class="services__content">
-              <h4 class="services__item-title">{{ .title }}</h4>
-              <p class="services__item-description">{{ .description }}</p>
-            </div>
-          </div>
-          {{ end }}
-        </div>
-
-        <div class="section__info">
-          <div class="section__head">
-            <h2 class="section__title">🔍 Concrete Examples</h2>
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none">
-            <path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-              d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8" />
-          </svg>
-        </div>
-
-        <div class="case-studies">
-          {{ range $index, $example := .examples }}
-          <article class="case-study{{ if mod $index 2 }} case-study--reverse{{ end }}">
-            <div class="case-study__image">
-              <a href="{{ $example.challenge_link }}">
-                <img src="{{ $example.image }}" alt="{{ $example.challenge }}">
-              </a>
-            </div>
-            <div class="case-study__content">
-              <h3 class="case-study__title">{{ $example.challenge }}</h3>
-              <p class="case-study__impact">{{ $example.impact }}</p>
-              <p class="case-study__solution">{{ $example.solution }}</p>
-              <div class="case-study__partners">
-                {{ range $example.partners }}
-                <a href="{{ .link }}" target="_blank" rel="noopener" title="{{ .name }}"
-                  class="case-study__partner{{ if .inverted }} case-study__partner--inverted{{ end }}">
-                  <img src="{{ .logo }}" alt="{{ .name }}">
-                </a>
-                {{ end }}
-              </div>
-            </div>
-          </article>
-          {{ end }}
-        </div>
-
-        <p class="services__more">
-          Explore more of our work on our <a href="/projects/">projects page</a>.
-        </p>
-
-        <p class="services__cta">
-          Have a conservation challenge? 🌱 Get in touch, we'd love to explore how we can help.
-        </p>
-
-        <div class="services__cta-button">
-          <a href="/contact/" class="link-no-decoration button button--middle">Get in Touch</a>
-        </div>
+    <div class="services__cta-button">
+      <a href="/contact/" class="link-no-decoration button button--middle">Get in Touch</a>
+    </div>
 
   </div>
 </section>

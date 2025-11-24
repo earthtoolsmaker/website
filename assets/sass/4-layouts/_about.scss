@@ -474,7 +474,8 @@
 .services__more {
   font-size: $base-font-size;
   line-height: $base-line-height;
-  margin-bottom: 16px;
+  margin-bottom: 40px;
+  margin-top: 40px;
 
   @media (max-width: $mobile) {
     font-size: 16px;
