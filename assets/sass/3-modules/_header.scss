@@ -37,6 +37,18 @@
 .logo__image,
 .logo__image__dark {
   max-height: 120px;
+
+  @media (max-width: $desktop) {
+    max-height: 100px;
+  }
+
+  @media (max-width: $tablet) {
+    max-height: 90px;
+  }
+
+  @media (max-width: $mobile) {
+    max-height: 80px;
+  }
 }
 
 .logo__image__dark {
@@ -320,6 +332,7 @@
   @media (max-width: $desktop) {
     display: flex;
     align-items: center;
+    padding-top: 32px;
   }
 }
 
