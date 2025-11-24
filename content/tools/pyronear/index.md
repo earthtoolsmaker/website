@@ -45,3 +45,14 @@ through regular retraining with incoming data.
 - 🔥 __Web Fire Management Platform__: An intuitive web application that
 showcases recent fire alerts and enhances fire management efficiency for fire
 departments.
+
+## See Pyronear in Action
+
+The computer vision model detected a forest fire in Fontainebleau from a
+distance of 35 kilometers in real time, setting a new record for the Pyronear
+system. The video below shows a thin black smoke rising in the distance.
+
+<p><iframe src="https://www.youtube.com/embed/i9Qy-zY16Ew" loading="lazy" frameborder="0" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9;"></iframe></p>
+<em style="font-size:14px;line-height:1.4em;display:block;">Real-time forest fire detection from 35 kilometers away in Fontainebleau
+</em>
+<br/>
