@@ -17,12 +17,31 @@ document.addEventListener("DOMContentLoaded", function() {
     menu();
   });
 
+  // Close menu when clicking outside
+  document.addEventListener("click", (event) => {
+    const isMenuOpen = menuList.classList.contains("is-visible");
+    const clickedInsideMenu = menuList.contains(event.target);
+    const clickedHamburger = menuToggle.contains(event.target);
+
+    if (isMenuOpen && !clickedInsideMenu && !clickedHamburger) {
+      menuClose();
+    }
+  });
+
+  // Close menu when pressing Escape key
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menuList.classList.contains("is-visible")) {
+      menuClose();
+    }
+  });
+
   function menuOpen() {
     menuList.classList.add("is-open");
   }
 
   function menuClose() {
-    menuList.classList.remove("is-open");
+    menuToggle.classList.remove("is-open");
+    menuList.classList.remove("is-visible");
   }
 
   if (toggleTheme) {
