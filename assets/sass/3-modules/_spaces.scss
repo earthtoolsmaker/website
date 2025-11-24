@@ -15,6 +15,13 @@
     .space__title a {
       text-decoration-color: var(--primary-color);
     }
+
+    @media (min-width: $tablet + 1) {
+      .space__image-container {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+      }
+    }
   }
 }
 
@@ -43,6 +50,12 @@
   overflow: hidden;
   box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.1);
   background-color: var(--background-color);
+
+  @media (min-width: $tablet + 1) {
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
+    transition: filter 0.3s ease;
+  }
 
   &::after {
     content: "";
