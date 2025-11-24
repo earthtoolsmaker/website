@@ -137,12 +137,13 @@
 .project-meta {
   position: relative;
 
-  color: var(--white);
-  background: var(--secondary-color);
+  color: var(--text-color);
+  background: #fff5ed;
+  border: 1px solid #ede0d4;
 
   .widget-sidebar__title,
   .project-meta__name {
-    color: var(--white);
+    color: var(--text-color);
   }
 
   .widget-sidebar__title {
@@ -158,7 +159,7 @@
     right: 65px;
 
     &:hover {
-      color: white;
+      color: var(--secondary-color);
     }
   }
 
@@ -195,7 +196,7 @@
 
   .project-meta__text-container {
     font-size: 16px;
-    color: var(--white);
+    color: var(--text-color);
     display: flex;
     flex-direction: row; /* This is the default, so it can be omitted */
     // justify-content: space-between; /* Adjusts the space between items */
@@ -218,7 +219,7 @@
   .project-meta__text {
     display: block;
     font-size: 16px;
-    color: var(--white);
+    color: var(--text-color);
     // opacity: 1;
 
     img {
