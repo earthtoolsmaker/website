@@ -219,15 +219,15 @@ pagerSize = 6
     link = "https://allenai.org/earthranger"
 
   [[params.partner_item]]
-    name = "ReefSupport"
-    logo = "/images/clients/reefsupport/logo.png"
-    link = "https://reef.support"
-
-  [[params.partner_item]]
     name = "BearID Project"
     logo = "/images/clients/bearid/logo.png"
     link = "https://bearresearch.org/"
     bg = "inverted"
+
+  [[params.partner_item]]
+    name = "Wageningen Marine Research"
+    logo = "/images/clients/wageningen-marine-research/logo.svg"
+    link = "https://www.wur.nl/en.htm"
 
   [[params.partner_item]]
     name = "Elephant Listening Project"
@@ -254,6 +254,11 @@ pagerSize = 6
     name = "Simon Fraser University"
     logo = "/images/clients/sfu/logo.png"
     link = "https://www.sfu.ca/"
+
+  [[params.partner_item]]
+    name = "ReefSupport"
+    logo = "/images/clients/reefsupport/logo.png"
+    link = "https://reef.support"
 
   [[params.partner_item]]
     name = "Citibats Cambodia"
