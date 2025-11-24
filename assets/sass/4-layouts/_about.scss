@@ -206,7 +206,7 @@
 .services__intro {
   font-size: $base-font-size;
   line-height: $base-line-height;
-  margin-bottom: 32px;
+  margin-bottom: 45px;
   color: var(--text-color);
 
   @media (max-width: $mobile) {
@@ -230,7 +230,7 @@
 .services__item {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 0;
 }
 
 .services__emoji {

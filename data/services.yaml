@@ -1,18 +1,14 @@
 services:
-  - emoji: "🤖"
-    title: "Custom AI/ML Model Development"
+  - title: "Custom AI/ML Model Development"
     description: "We design and train machine learning models tailored to your conservation challenges, whether it's species identification, behavior detection, or environmental monitoring."
 
-  - emoji: "📊"
-    title: "Data Pipeline & Processing"
+  - title: "Data Pipeline & Processing"
     description: "We build efficient systems to process large-scale datasets — terabytes of audio, video, or sensor data — turning raw information into meaningful insights."
 
-  - emoji: "🚀"
-    title: "Deployment & Integration"
+  - title: "Deployment & Integration"
     description: "We deliver production-ready solutions that integrate with your existing infrastructure, from edge devices in the field to cloud-based platforms."
 
-  - emoji: "🌍"
-    title: "Open-Source Tools"
+  - title: "Open-Source Tools"
     description: "Most of our work is open-source, ensuring transparency, reproducibility, and long-term sustainability for your organization."
 
 examples:
