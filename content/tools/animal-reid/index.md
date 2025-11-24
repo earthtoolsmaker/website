@@ -26,9 +26,9 @@ From monitoring bear populations in British Columbia to tracking individual trou
 
 <div class="gallery-box">
   <div class="gallery">
-      <img src="./images/animal_reid_leopard_1.png" loading="lazy" alt="Snow Leopard Identification" class="lightense-enabled" />
-      <img src="./images/animal_reid_leopard_2.png" loading="lazy" alt="Leopard Spot Analysis" class="lightense-enabled" />
-      <img src="./images/animal_reid_seal_1.png" loading="lazy" alt="Seal Pattern Matching" class="lightense-enabled" />
+      <img src="./images/animal_reid_leopard_1.png" loading="lazy" alt="Snow Leopard Identification" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);border-radius:2px;" class="lightense-enabled" />
+      <img src="./images/animal_reid_leopard_2.png" loading="lazy" alt="Leopard Spot Analysis" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);border-radius:2px;" class="lightense-enabled" />
+      <img src="./images/animal_reid_seal_1.png" loading="lazy" alt="Seal Pattern Matching" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);border-radius:2px;" class="lightense-enabled" />
   </div>
 </div>
 <br />
