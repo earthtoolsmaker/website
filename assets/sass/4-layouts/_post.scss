@@ -301,10 +301,10 @@
     }
 
     &.share__twitter {
-      background: #55acee;
+      background: #000000;
 
       &:hover {
-        background: darken(#55acee, 8%);
+        background: #1a1a1a;
       }
     }
 
@@ -313,14 +313,6 @@
 
       &:hover {
         background: darken(#0077b5, 8%);
-      }
-    }
-
-    &.share__pinterest {
-      background: #bd081c;
-
-      &:hover {
-        background: darken(#bd081c, 8%);
       }
     }
   }
