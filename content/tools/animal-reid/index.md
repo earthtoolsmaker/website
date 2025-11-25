@@ -155,6 +155,8 @@ Pioneered in our **trout identification** work, this technique uses advanced loc
 
 {{< project_card title="Snow Leopard Monitoring" link="/projects/snow_leopard_monitoring/" image="/images/projects/snow_leopard_monitoring/cover.png" excerpt="Non-invasive snow leopard monitoring using computer vision analysis of camera trap photos to identify individual animals." >}}
 
+{{< project_card title="Wadden Sea Seal Monitoring" link="/projects/wadden_sea_seal_monitoring/" image="/images/projects/wadden_sea_seal_monitoring/cover.jpg" excerpt="Automated seal population monitoring using AI to count, classify, and identify individual seals from aerial imagery in the Wadden Sea." >}}
+
   </div>
 </div>
 
