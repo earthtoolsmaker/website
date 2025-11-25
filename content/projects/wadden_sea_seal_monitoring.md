@@ -123,7 +123,7 @@ Seals possess stable, distinctive whisker patterns and facial features that rema
 
 ### Re-Identification Pipeline
 
-![Re-Identification Pipeline](/images/projects/wadden_sea_seal_monitoring/pipeline_reid.png)
+![Re-Identification Pipeline](/images/projects/wadden_sea_seal_monitoring/reid/pipeline.png)
 *Two-stage re-identification pipeline: feature extraction followed by similarity matching against database*
 
 The seal re-identification system operates in two stages:
@@ -136,14 +136,13 @@ The seal re-identification system operates in two stages:
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/projects/wadden_sea_seal_monitoring/reid/match_example_1.png" loading="lazy" alt="Same seal photographed in different seasons">
-    <img src="/images/projects/wadden_sea_seal_monitoring/reid/match_example_2.png" loading="lazy" alt="Matching whisker patterns between sightings">
+    <img src="/images/projects/wadden_sea_seal_monitoring/reid/match_different_seasons.png" loading="lazy" alt="Same seal photographed in different seasons">
+    <img src="/images/projects/wadden_sea_seal_monitoring/reid/match_whisker_patterns.png" loading="lazy" alt="Matching whisker patterns between sightings">
+    <img src="/images/projects/wadden_sea_seal_monitoring/reid/match_spot_patterns.png" loading="lazy" alt="Matching spot patterns between sightings">
+    <img src="/images/projects/wadden_sea_seal_monitoring/reid/match_facial_patterns.png" loading="lazy" alt="Matching facials patterns between sightings">
   </div>
-  <em>Examples of successful re-identification matches showing the same individual across different aerial surveys</em>
+  <em>Examples of successful re-identification matches showing the same individual across different surveys</em>
 </div>
-
-![Whisker Pattern Visualization](/images/projects/wadden_sea_seal_monitoring/reid/whisker_patterns.png)
-*Visualization of distinctive whisker patterns and facial features used for individual identification*
 
 ### Conservation Insights from Re-Identification
 
