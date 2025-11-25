@@ -85,12 +85,13 @@
   }
 
   .tool-button-cta {
-    background-color: #16a34a;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--white);
   }
 
   .tool-button-cta:hover {
-    background-color: #15803d;
+    background-color: var(--primary-color);
+    color: var(--dark);
   }
 }
 
@@ -137,6 +138,11 @@
     .tool-info__title {
       margin-bottom: 20px;
       font-size: 36px;
+
+      .tool-info__title-icon {
+        display: block;
+        margin: 0 auto;
+      }
     }
   }
 }
