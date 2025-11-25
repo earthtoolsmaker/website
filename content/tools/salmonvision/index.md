@@ -1,7 +1,7 @@
 ---
 title: SalmonVision
 show_title: false
-button_cta: Sign up to SalmonVision
+button_cta: Get in touch
 icon: /images/logos/salmon-vision-logo.svg
 logo_container: true
 summary: Underwater cameras, sonar and drones combined with innovative AI technology to enable precise and automated salmon counting in rivers.
@@ -11,9 +11,9 @@ date: 2024-10-01
 ---
 
 <div class="tool-container-button-cta">
-  <a class="link-no-decoration" href="https://salmonvision.org" target="_blank">
+  <a class="link-no-decoration" href="/contact/">
     <button class="button tool-button-cta">
-    Sign up to SalmonVision
+    Get in touch
     </button>
   </a>
 </div>
