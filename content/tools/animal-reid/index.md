@@ -4,10 +4,10 @@ show_title: true
 button_cta: Try Demo
 icon: /images/logos/reid-icon.png
 summary: A modular computer vision framework for individual animal identification using state-of-the-art techniques including metric learning, local feature matching, and spot pattern analysis across multiple species.
-github_repo: https://github.com/earthtoolsmaker/bear-conservation
-project: /projects/trout_identification/
 date: 2025-11-24
-js: /js/animal-reid.js
+js:
+  - /js/animal-reid.js
+  - /js/tabs.js
 ---
 
 <div class="tool-container-button-cta">
@@ -43,45 +43,6 @@ From monitoring bear populations in British Columbia to tracking individual trou
 - 📊 **Database Integration**: Compare new observations against historical databases to track population dynamics over time
 
 <br/>
-<br/>
-
-## Interactive Demos {#demos}
-
-Experience Animal reID in action with our live demonstrations. These systems are currently monitoring real wildlife populations in British Columbia.
-
-### Bear Face Recognition
-
-Upload bear photographs and watch as the system segments facial features and matches them against our database of known individuals from British Columbia.
-
-{{< hf_space "earthtoolsmaker-bear-face-recognition" >}}
-
-<br/>
-
-### Trout Pattern Matching
-
-See local feature matching in action as the system analyzes spot patterns to identify individual trout from river monitoring programs.
-
-{{< hf_space "earthtoolsmaker-trout-reid" >}}
-
-<br/>
-<br/>
-
-## Try the Technology
-
-Experience Animal reID systems in action through our interactive demonstration spaces. Each space provides hands-on access to production-grade identification models.
-
-<div class="container">
-  <div class="row">
-
-{{< space_card title="Bear Identification" link="/spaces/bear_identification/" emoji="🐻" summary="A computer vision system utilizes facial recognition technology to analyze bear photographs and identify individual bears. This innovative system aims to monitor the population size of bears in British Columbia over time, ultimately supporting and enhancing conservation efforts in the region." >}}
-
-{{< space_card title="Trout Identification" link="/spaces/trout_identification/" emoji="🕵️" summary="A computer vision system analyzes the spot patterns of trout to identify individual fish. This innovative, non-invasive approach aims to monitor trout populations in British Columbia over time, ultimately supporting and enhancing conservation efforts in the region." >}}
-
-  </div>
-</div>
-
-<br/>
-<br/>
 
 ## Conservation Impact
 
@@ -96,7 +57,58 @@ Animal reID technology enables researchers to:
 <br/>
 <br/>
 
-## Identification Techniques
+## Interactive Demos {#demos}
+
+Experience Animal reID in action with our live demonstrations. These systems are currently monitoring real wildlife populations.
+
+{{< tabs labels="🐻 Bear Face Recognition|🐟 Trout Pattern Matching|🦭 Seal Identification" id="animal-reid-demos" >}}
+{{< tab index="0" >}}
+
+Upload bear photographs and watch as the system segments facial features and matches them against our database of known individuals from British Columbia.
+
+{{< hf_space "earthtoolsmaker-bear-face-recognition" >}}
+
+{{< /tab >}}
+{{< tab index="1" >}}
+
+See local feature matching in action as the system analyzes spot patterns to identify individual trout from river monitoring programs.
+
+{{< hf_space "earthtoolsmaker-trout-reid" >}}
+
+{{< /tab >}}
+{{< tab index="2" >}}
+
+Upload seal photographs and see how the system identifies individual seals through their unique whisker patterns and facial features from the Wadden Sea monitoring program.
+
+{{< hf_space "earthtoolsmaker-seal-identification" >}}
+
+{{< /tab >}}
+{{< /tabs >}}
+
+<br/>
+<br/>
+
+## Resources & Documentation
+
+{{< tabs labels="🚀 Try the Technology|🔬 Techniques|📁 Projects|📖 Guides" id="resources-tabs" >}}
+{{< tab index="0" >}}
+
+<p class="tabs__intro">Experience Animal reID systems in action through our interactive demonstration spaces. Each space provides hands-on access to production-grade identification models.</p>
+
+<div class="container">
+  <div class="row">
+
+{{< space_card title="Bear Identification" link="/spaces/bear_identification/" emoji="🐻" summary="A computer vision system utilizes facial recognition technology to analyze bear photographs and identify individual bears. This innovative system aims to monitor the population size of bears in British Columbia over time, ultimately supporting and enhancing conservation efforts in the region." >}}
+
+{{< space_card title="Trout Identification" link="/spaces/trout_identification/" emoji="🕵️" summary="A computer vision system analyzes the spot patterns of trout to identify individual fish. This innovative, non-invasive approach aims to monitor trout populations in British Columbia over time, ultimately supporting and enhancing conservation efforts in the region." >}}
+
+{{< space_card title="Seal Identification" link="/spaces/seal_identification/" emoji="🦭" summary="Non-invasive seal re-identification using computer vision to track individual animals across seasons through unique whisker patterns and facial features in the Wadden Sea." >}}
+
+  </div>
+</div>
+
+{{< /tab >}}
+{{< tab index="1" markdown="true" >}}
 
 ### Metric Learning for Facial Recognition
 
@@ -120,12 +132,10 @@ Pioneered in our **trout identification** work, this technique uses advanced loc
 
 **Applications**: Trout, leopards, cheetahs, whale sharks, and other spot-patterned species
 
-<br/>
-<br/>
+{{< /tab >}}
+{{< tab index="2" >}}
 
-## Technical Resources
-
-Each implementation is open-source with detailed documentation:
+<p class="tabs__intro">Each implementation is open-source with detailed documentation:</p>
 
 <div class="container">
   <div class="row">
@@ -139,7 +149,10 @@ Each implementation is open-source with detailed documentation:
   </div>
 </div>
 
-### Related Guides
+{{< /tab >}}
+{{< tab index="3" >}}
+
+<p class="tabs__intro">In-depth technical guides covering the design and implementation of animal identification systems:</p>
 
 <div class="container">
   <div class="row">
@@ -155,19 +168,15 @@ Each implementation is open-source with detailed documentation:
   </div>
 </div>
 
-<br/>
+{{< /tab >}}
+{{< /tabs >}}
+
 <br/>
 
 ## Get Started
 
 Interested in applying Animal reID to your conservation project? We offer consultation on selecting the right identification approach, custom development for new species, and collaborative research opportunities.
 
-<style>
-.animal-reid-cta-button:hover {
-  font-weight: 900 !important;
-}
-</style>
-
 <div style="text-align: center; margin: 40px 0;">
-  <a href="/contact/" class="link-no-decoration button button--middle animal-reid-cta-button">Get in Touch</a>
+  <a href="/contact/" class="button">Get in Touch</a>
 </div>

@@ -1,0 +1,10 @@
+{{- $index := .Get "index" | default "0" -}}
+{{- $parentId := .Parent.Get "id" | default (printf "tabs-%d" now.UnixNano) -}}
+{{- $markdown := .Get "markdown" | default "false" -}}
+<div class="tabs__panel{{ if eq $index "0" }} tabs__panel--active{{ end }}"
+     role="tabpanel"
+     id="{{ $parentId }}-panel-{{ $index }}"
+     data-panel="{{ $index }}"
+     {{ if ne $index "0" }}hidden{{ end }}>
+  {{ if eq $markdown "true" }}{{ .Inner | markdownify }}{{ else }}{{ .Inner }}{{ end }}
+</div>
