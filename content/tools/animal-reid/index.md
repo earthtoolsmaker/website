@@ -61,7 +61,7 @@ Animal reID technology enables researchers to:
 
 Experience Animal reID in action with our live demonstrations. These systems are currently monitoring real wildlife populations.
 
-{{< tabs labels="🐻 Bear Face Recognition|🐟 Trout Pattern Matching|🦭 Seal Identification" id="animal-reid-demos" >}}
+{{< tabs labels="🐻 Bear Face Recognition|🐠 Trout Pattern Matching|🦭 Seal Identification|🐆 Snow Leopard" id="animal-reid-demos" >}}
 {{< tab index="0" >}}
 
 Upload bear photographs and watch as the system segments facial features and matches them against our database of known individuals from British Columbia.
@@ -83,6 +83,13 @@ Upload seal photographs and see how the system identifies individual seals throu
 {{< hf_space "earthtoolsmaker-seal-identification" >}}
 
 {{< /tab >}}
+{{< tab index="3" >}}
+
+Upload snow leopard photographs and watch as the system analyzes unique coat patterns to identify individuals from Central Asian mountain ranges.
+
+{{< hf_space "earthtoolsmaker-snowleopard-reid" >}}
+
+{{< /tab >}}
 {{< /tabs >}}
 
 <br/>
@@ -100,9 +107,11 @@ Upload seal photographs and see how the system identifies individual seals throu
 
 {{< space_card title="Bear Identification" link="/spaces/bear_identification/" emoji="🐻" summary="A computer vision system utilizes facial recognition technology to analyze bear photographs and identify individual bears. This innovative system aims to monitor the population size of bears in British Columbia over time, ultimately supporting and enhancing conservation efforts in the region." >}}
 
-{{< space_card title="Trout Identification" link="/spaces/trout_identification/" emoji="🕵️" summary="A computer vision system analyzes the spot patterns of trout to identify individual fish. This innovative, non-invasive approach aims to monitor trout populations in British Columbia over time, ultimately supporting and enhancing conservation efforts in the region." >}}
+{{< space_card title="Trout Identification" link="/spaces/trout_identification/" emoji="🐠" summary="A computer vision system analyzes the spot patterns of trout to identify individual fish. This innovative, non-invasive approach aims to monitor trout populations in British Columbia over time, ultimately supporting and enhancing conservation efforts in the region." >}}
 
 {{< space_card title="Seal Identification" link="/spaces/seal_identification/" emoji="🦭" summary="Non-invasive seal re-identification using computer vision to track individual animals across seasons through unique whisker patterns and facial features in the Wadden Sea." >}}
+
+{{< space_card title="Snow Leopard Identification" link="/spaces/snowleopard_identification/" emoji="🐆" summary="Computer vision system for identifying individual snow leopards using feature matching and machine learning, supporting conservation efforts in Central Asia." >}}
 
   </div>
 </div>
@@ -177,6 +186,7 @@ Pioneered in our **trout identification** work, this technique uses advanced loc
 
 Interested in applying Animal reID to your conservation project? We offer consultation on selecting the right identification approach, custom development for new species, and collaborative research opportunities.
 
-<div style="text-align: center; margin: 40px 0;">
+<br/>
+<div style="text-align: center;">
   <a href="/contact/" class="button">Get in Touch</a>
 </div>

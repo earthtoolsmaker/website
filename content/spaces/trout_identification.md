@@ -1,6 +1,6 @@
 ---
 title: Trout Identification
-emoji: 🕵️
+emoji: 🐠
 summary: A computer vision system analyzes the spot patterns of trout to identify individual fish. This innovative, non-invasive approach aims to monitor trout populations in British Columbia over time, ultimately supporting and enhancing conservation efforts in the region.
 github_repo: https://github.com/earthtoolsmaker/trout-reid
 date: 2024-12-08
