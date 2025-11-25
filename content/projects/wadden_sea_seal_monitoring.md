@@ -80,7 +80,7 @@ Both systems integrate into a web application where researchers review AI predic
 
 ### Detection and Classification Pipeline
 
-![Detection Pipeline](/images/projects/wadden_sea_seal_monitoring/pipeline_detection.png)
+![Detection Pipeline](/images/projects/wadden_sea_seal_monitoring/seals/pipeline-detection-classification.png)
 *Overview of the multi-classifier detection pipeline from aerial imagery to classified seal counts*
 
 The detection system operates in multiple stages:
@@ -90,19 +90,20 @@ The detection system operates in multiple stages:
 **2. Multi-Attribute Classification**: Once detected, each seal is processed through five specialized classification heads:
 
 - **Species Classifier**: Distinguishes grey seals from harbour seals based on body size, head shape, and coloration patterns. Grey seals are larger with more elongated snouts, while harbour seals have rounder heads and spotted coats.
-
 - **Life Stage Classifier**: Identifies adults versus pups based on size ratios and, during breeding season, proximity to larger adults. Pup counts are critical for calculating birth rates and population growth.
-
 - **Location Classifier**: Determines whether seals are hauled out on land/sandbanks or swimming in shallow water. This helps understand habitat use and behavior patterns.
-
 - **Vitality Classifier**: Detects deceased individuals, which is important for mortality monitoring and understanding causes of death during breeding season.
-
 - **Sex Classifier**: Differentiates males from females based on size dimorphism and, when visible, secondary sexual characteristics. Sex ratios inform breeding biology and population structure analyses.
 
 ### Web Application for Review and Validation
 
-![Web Application Review Interface](/images/projects/wadden_sea_seal_monitoring/webapp_review.png)
-*Researchers review and validate AI predictions through an intuitive web interface*
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/projects/wadden_sea_seal_monitoring/seals/webapp-screen-1.png" loading="lazy" alt="Web Application Review Interface">
+    <img src="/images/projects/wadden_sea_seal_monitoring/seals/webapp-detour-screen1.png" loading="lazy" alt="Web Application Review detouring tools">
+  </div>
+  <em>Researchers review and validate AI predictions through an intuitive web interface</em>
+</div>
 
 The web application provides researchers with powerful tools to interact with AI predictions:
 
@@ -111,11 +112,6 @@ The web application provides researchers with powerful tools to interact with AI
 - **One-Click Corrections**: Simple interface to update any classification attribute or add missed seals that the model failed to detect
 - **Confidence Scoring**: Model displays confidence levels for each prediction, helping researchers prioritize quality control efforts
 - **Export Functionality**: Validated data exports to spreadsheets and databases for integration with existing research workflows
-
-![Correction Workflow](/images/projects/wadden_sea_seal_monitoring/webapp_corrections.png)
-*Example of researcher correcting species classification and adding life stage information*
-
-This human-in-the-loop approach ensures scientific accuracy while capturing the efficiency gains of automation. Researchers report that review and correction takes approximately 10-15% of the time previously required for manual counting from scratch.
 
 ## Developed Tools: Seal Re-Identification System
 
