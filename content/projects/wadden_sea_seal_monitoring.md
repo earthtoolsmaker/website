@@ -174,4 +174,4 @@ By combining cutting-edge computer vision with ecological expertise, this projec
 
 Experience the re-identification model in action through our interactive demonstration. Upload images of seal faces to see how the system extracts unique features and matches individuals:
 
-{{< hf_space "earthtoolsmaker-seal-identification" >}}
+{{< hf_space "earthtoolsmaker-seal-reid" >}}

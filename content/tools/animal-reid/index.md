@@ -80,7 +80,7 @@ See local feature matching in action as the system analyzes spot patterns to ide
 
 Upload seal photographs and see how the system identifies individual seals through their unique whisker patterns and facial features from the Wadden Sea monitoring program.
 
-{{< hf_space "earthtoolsmaker-seal-identification" >}}
+{{< hf_space "earthtoolsmaker-seal-reid" >}}
 
 {{< /tab >}}
 {{< tab index="3" >}}

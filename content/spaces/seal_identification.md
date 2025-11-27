@@ -5,8 +5,8 @@ summary: Non-invasive seal re-identification using computer vision to track indi
 date: 2025-01-24
 hero_image: /images/pages/spaces/seal_identification/hero.png
 project: /projects/wadden_sea_seal_monitoring/
-hf_space: earthtoolsmaker-seal-identification
-hf_space_code: https://huggingface.co/spaces/earthtoolsmaker/seal-identification/tree/main
+hf_space: earthtoolsmaker-seal-reid
+hf_space_code: https://huggingface.co/spaces/earthtoolsmaker/seal-reid/tree/main
 manual_steps:
   - step_name: Upload Seal Image
     description: Select a clear image of a seal's face showing whisker patterns and facial features. The image should ideally show the seal from a frontal or slight angle for best results.
