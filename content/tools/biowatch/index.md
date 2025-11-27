@@ -53,6 +53,10 @@ datasets](https://camtrap-dp.tdwg.org/) with ease.
 <br />
 <br />
 
+<p><iframe src="https://www.youtube.com/embed/Ei9zOd_5Qkc" loading="lazy" frameborder="0" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9;"></iframe></p>
+<em style="font-size:14px;line-height:1.4em;display:block;">Biowatch video demo and updates</em>
+<br/>
+
 
 ## About
 
