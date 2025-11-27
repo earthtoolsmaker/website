@@ -133,15 +133,21 @@
   }
 
   @media (max-width: $mobile) {
-    text-align: left;
+    text-align: center;
 
     .tool-info__title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
       margin-bottom: 20px;
-      font-size: 36px;
+      font-size: 32px;
 
       .tool-info__title-icon {
-        display: block;
-        margin: 0 auto;
+        max-height: 70px;
+        max-width: 160px;
+        flex-shrink: 0;
       }
     }
   }
