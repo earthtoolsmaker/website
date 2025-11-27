@@ -4,27 +4,11 @@ title: About
 hero_image: /images/pages/about/hero.jpg
 ---
 
-Welcome to EarthToolsMaker, a pioneering European-based organization
-dedicated to leveraging and developing open-source technology for
-global conservation efforts. At EarthToolsMaker, we are committed to
-advancing the common good through innovative research and development
-initiatives.
+Conservation needs better technology. Most organizations can't build it themselves.
 
-Our mission is clear: to develop open and impact-driven conservation
-technologies tailored to the needs of conservation organizations
-worldwide. By harnessing the power of open solutions, we strive to
-provide accessible, cost-effective, and dependable tools that empower
-the global conservation community.
+We build it for them. Open-source machine learning tools for counting fish, detecting fires, identifying animals, and monitoring ecosystems. Free to use. Free to modify. Built with the people who use them.
 
-
-Collaboration and transparency are essential for achieving our shared
-goal of preserving our planet's biodiversity. Through our dedication to
-open-source principles, we aim to foster a culture of innovation and
-cooperation that transcends borders and disciplines.
-
-> Together, let's embark on a journey to better conserve, monitor, and
-> protect our beautiful planet and to safeguard the
-> natural world for future generations.
+> Better tools. Better data. Better outcomes.
 
 <div style="text-align: center; margin: 40px 0;">
   <img src="/images/logos/etm-logo.png" alt="EarthToolsMaker Logo" class="etm-logo no-lightense" style="max-height: 120px;">
