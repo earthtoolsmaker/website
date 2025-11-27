@@ -284,7 +284,7 @@ pagerSize = 6
   [[params.testimonial_item]]
     name = "Mateo Lostanlen"
     image = "/images/testimonials/mateo_pyronear.png"
-    logo = "/images/clients/pyronear/logo.png"
+    logo = "/images/clients/pyronear/logo_bare.png"
     designation = "Co-founder and CEO - Pyronear"
     link = "https://www.pyronear.org"
     content = "We absolutely love working with you. You are incredibly professional. They trained our latest model and achieved outstanding performance, setting a new benchmark. They also implemented the MLOps pipeline!"
