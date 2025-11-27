@@ -5,10 +5,18 @@
 
 .tabs__nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 32px;
   border-bottom: 1px solid var(--border-color);
   margin-bottom: 24px;
+
+  @media (max-width: $tablet) {
+    gap: 16px;
+  }
+
+  @media (max-width: $mobile) {
+    gap: 8px;
+  }
 }
 
 .tabs__tab {
@@ -56,12 +64,12 @@
   }
 
   @media (max-width: $tablet) {
-    padding: 10px 16px;
-    font-size: 16px;
+    padding: 8px 12px;
+    font-size: 24px;
   }
 
   @media (max-width: $mobile) {
-    padding: 12px 16px;
+    padding: 8px 12px;
     font-size: 24px;
   }
 }
@@ -69,13 +77,13 @@
 .tabs__tab-icon {
   margin-right: 8px;
 
-  @media (max-width: $mobile) {
+  @media (max-width: $tablet) {
     margin-right: 0;
   }
 }
 
 .tabs__tab-text {
-  @media (max-width: $mobile) {
+  @media (max-width: $tablet) {
     display: none;
   }
 }

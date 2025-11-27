@@ -61,7 +61,7 @@ Animal reID technology enables researchers to:
 
 Experience Animal reID in action with our live demonstrations. These systems are currently monitoring real wildlife populations.
 
-{{< tabs labels="🐻 Bear Face Recognition|🐠 Trout Pattern Matching|🦭 Seal Identification|🐆 Snow Leopard" id="animal-reid-demos" >}}
+{{< tabs labels="🐻 Bear |🐠 Trout |🦭 Seal |🐆 Snow Leopard" id="animal-reid-demos" >}}
 {{< tab index="0" >}}
 
 Upload bear photographs and watch as the system segments facial features and matches them against our database of known individuals from British Columbia.
@@ -97,7 +97,7 @@ Upload snow leopard photographs and watch as the system analyzes unique coat pat
 
 ## Resources & Documentation
 
-{{< tabs labels="🚀 Try the Technology|🔬 Techniques|📁 Projects|📖 Guides" id="resources-tabs" >}}
+{{< tabs labels="🚀 Try |🔬 Techniques|📁 Projects|📖 Guides" id="resources-tabs" >}}
 {{< tab index="0" >}}
 
 <p class="tabs__intro">Experience Animal reID systems in action through our interactive demonstration spaces. Each space provides hands-on access to production-grade identification models.</p>
