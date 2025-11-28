@@ -13,59 +13,7 @@
   margin-top: 1.8em;
 }
 
-.hf-tool__gradio {
-
-  img {
-    overflow: hidden;
-    border-radius: 0;
-  }
-
-  .gallery {
-    display: flex;
-    justify-content: left;
-    grid-template-columns: none !important;
-
-    .container {
-      padding: 0;
-    }
-
-  }
-
-  .image-container {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-height: 100%;
-    border-radius: 0 !important;
-
-  }
-  .gradio-container {
-    overflow: visible;
-
-    * {
-      &:hover {
-        transform: translateY(0px);
-      }
-
-    }
-
-    .row {
-      margin: 0;
-    }
-
-
-
-    img {
-
-      &:hover {
-        transform: translateY(0px);
-      }
-    }
-  }
-}
+// .hf-tool__gradio styles moved to 3-modules/_gradio-reset.scss
 
 .tool-container-button-cta {
   display: flex;
@@ -188,29 +136,7 @@
   color: var(--text-color);
   margin-bottom: 80px;
 
-  .gradio-container {
-    overflow: visible;
-
-    * {
-      &:hover {
-        transform: translateY(0px);
-      }
-
-    }
-
-    .row {
-      margin: 0;
-    }
-
-
-
-    img {
-
-      &:hover {
-        transform: translateY(0px);
-      }
-    }
-  }
+  // Gradio container styles moved to 3-modules/_gradio-reset.scss
 
   a:not(.button) {
     font-weight: 500;
@@ -244,32 +170,9 @@
     margin-bottom: 2.6em;
   }
 
-  .gallery {
-    display: flex;
-    justify-content: left;
-    grid-template-columns: none !important;
-
-    .container {
-      padding: 0;
-    }
-
-  }
-
-  .image-container {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-height: 100%;
-    border-radius: 0 !important;
-
-  }
-
+  // Gallery and image-container styles for Gradio moved to _gradio-reset.scss
 
   img, .js-reframe {
-    // border-radius: 12px;
     overflow: hidden;
 
     &.lightense-open {

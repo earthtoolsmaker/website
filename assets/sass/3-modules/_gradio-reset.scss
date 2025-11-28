@@ -1,0 +1,179 @@
+// Gradio CSS Reset
+// Prevents site styles from bleeding into embedded Gradio apps
+
+// Mixin for reusable reset block
+@mixin gradio-reset {
+  // 1. Reset inherited typography
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+
+  // 2. Reset all typography elements
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: normal;
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  a {
+    font-weight: normal;
+    text-decoration: underline;
+    border-bottom: none;
+  }
+
+  // 3. Reset lists
+  ul, ol {
+    margin-left: 1.5em;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 0.25em;
+    }
+  }
+
+  // 4. Reset tables
+  table {
+    font-size: inherit;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 8px 12px;
+      border: 1px solid #e5e7eb;
+      font-size: inherit;
+      background-color: transparent;
+    }
+
+    th {
+      font-weight: 600;
+      background-color: #f9fafb;
+    }
+
+    tr {
+      background-color: transparent;
+
+      &:nth-child(odd) {
+        background-color: transparent;
+      }
+    }
+
+    tbody {
+      .container {
+        padding: 0;
+      }
+    }
+  }
+
+  // 5. Block ALL hover transforms and reset border-radius
+  * {
+    &:hover {
+      transform: none !important;
+    }
+  }
+
+  // 6. Aggressive image border-radius reset
+  img {
+    border-radius: 0 !important;
+    overflow: hidden;
+
+    &:hover {
+      transform: none !important;
+    }
+  }
+
+  // 7. Reset buttons to Gradio defaults
+  button {
+    transform: none;
+
+    &:hover {
+      transform: none !important;
+    }
+  }
+
+  // 8. Override container and layout
+  .gradio-container {
+    overflow: visible;
+
+    .row {
+      margin: 0;
+    }
+
+    // Reset all images inside gradio-container
+    img {
+      border-radius: 0 !important;
+    }
+  }
+
+  // 9. Gallery and image container fixes
+  .gallery {
+    display: flex;
+    justify-content: flex-start;
+    grid-template-columns: none !important;
+
+    .container {
+      padding: 0;
+    }
+
+    img {
+      border-radius: 0 !important;
+    }
+  }
+
+  .image-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+    border-radius: 0 !important;
+
+    img {
+      border-radius: 0 !important;
+    }
+  }
+
+  // 10. Gradio-specific output containers
+  [class*="output"],
+  [class*="image"],
+  [class*="gallery"],
+  [class*="preview"] {
+    border-radius: 0 !important;
+
+    img {
+      border-radius: 0 !important;
+    }
+  }
+
+  // 11. Any div that might wrap images
+  div {
+    img {
+      border-radius: 0 !important;
+    }
+  }
+
+  // 12. Reset .container padding globally within Gradio
+  .container {
+    padding: 0;
+  }
+}
+
+// Apply to shortcode wrapper
+.hf-space__gradio {
+  @include gradio-reset;
+}
+
+// Apply to space page wrapper
+.space-content__hf_space {
+  @include gradio-reset;
+}
+
+// Apply to tool page wrapper
+.hf-tool__gradio {
+  @include gradio-reset;
+}
