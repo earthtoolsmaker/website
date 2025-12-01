@@ -14,7 +14,7 @@
 
   &__controls {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 25px); // Offset upward to account for nav dots below (centers on images, not full wrapper)
     left: 0;
     right: 0;
     transform: translateY(-50%);
@@ -327,11 +327,11 @@
   }
 
   &__prev {
-    left: 20px;
+    left: 20px; // Inside image bounds, always visible
   }
 
   &__next {
-    right: 20px;
+    right: 20px; // Inside image bounds, always visible
   }
 
   &__content {
@@ -423,6 +423,7 @@
       font-size: 18px;
     }
 
+    // On mobile, arrows overlap image edges since content is nearly full width
     &__prev {
       left: 8px;
     }
