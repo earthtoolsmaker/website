@@ -4,7 +4,7 @@ emoji: 🏃
 summary: A computer vision system detects and deters bears from encroaching on Romanian farms, contributing to the harmonious coexistence of farmers and wildlife, including predators like bears.
 github_repo: https://github.com/earthtoolsmaker/bear-conservation
 date: 2024-04-03
-hero_image: /images/pages/spaces/human_wildlife_conflict_bear/hero.png
+hero_image: /images/projects/human_wildlife_conflict_bear/cover.png
 project: /projects/human_wildlife_bear_conflict/
 hf_space: earthtoolsmaker-bear-detection
 hf_space_code: https://huggingface.co/spaces/earthtoolsmaker/bear-detection/tree/main

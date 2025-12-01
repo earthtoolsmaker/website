@@ -13,7 +13,16 @@
 
   {{ if .Params.image }}
   <div class="project-info-image">
-    <img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Title }}">
+    {{ $imgPath := strings.TrimPrefix "/" .Params.image }}
+    {{ partial "responsive-image.html" (dict
+      "src" $imgPath
+      "alt" .Title
+      "class" "project-cover"
+      "sizes" "(max-width: 900px) 100vw, 900px"
+      "widths" (slice 600 900 1200)
+      "lazy" true
+      "lqip" true
+    ) }}
   </div>
   {{ end }}
 

@@ -4,7 +4,7 @@ emoji: 🐻
 summary: A computer vision system utilizes facial recognition technology to analyze bear photographs and identify individual bears. This innovative system aims to monitor the population size of bears in British Columbia over time, ultimately supporting and enhancing conservation efforts in the region.
 github_repo: https://github.com/earthtoolsmaker/bear-conservation
 date: 2024-04-03
-hero_image: /images/pages/spaces/bear_identification/hero.png
+hero_image: /images/projects/bear_identification/cover.png
 project: /projects/bear_identification/
 hf_space: earthtoolsmaker-bear-face-recognition
 hf_space_code: https://huggingface.co/spaces/earthtoolsmaker/bear-face-recognition/tree/main
