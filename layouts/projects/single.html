@@ -45,8 +45,8 @@
             {{ partial "responsive-image.html" (dict
               "src" $imgPath
               "alt" .PrevInSection.Title
-              "sizes" "(max-width: 600px) 100vw, 300px"
-              "widths" (slice 300 400 600)
+              "sizes" "(max-width: 600px) 100vw, (max-width: 900px) 100vw, 900px"
+              "widths" (slice 600 900 1200)
               "lazy" true
               "lqip" true
             ) }}
