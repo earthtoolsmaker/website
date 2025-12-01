@@ -18,11 +18,11 @@ image: /images/projects/wadden_sea_seal_monitoring/cover.jpg
 
 The Wadden Sea, a UNESCO World Heritage Site stretching between the Netherlands and Denmark, hosts critical breeding colonies of grey seals and harbour seals. Understanding the health and dynamics of these populations is essential for marine conservation efforts in the region. Research teams at Wageningen Marine Research conduct aerial surveys multiple times annually, photographing seal colonies from aircraft to monitor population trends, age structure, and reproductive success.
 
-![Aerial view of the Wadden Sea](/images/projects/wadden_sea_seal_monitoring/wadden-sea.jpg)
-*The Wadden Sea, a UNESCO World Heritage Site, features extensive tidal flats and sandbanks that serve as critical haul-out sites for seal colonies*
-
-![Map of the Wadden Sea](/images/projects/wadden_sea_seal_monitoring/wadden-sea-map.png)
-*The Wadden Sea stretches along the coasts of the Netherlands, Germany, and Denmark*
+{{< image_carousel id="wadden-sea-intro" >}}
+  {{< carousel_image src="/images/projects/wadden_sea_seal_monitoring/wadden-sea.jpg" alt="Aerial view of the Wadden Sea" caption="The Wadden Sea, a UNESCO World Heritage Site, features extensive tidal flats and sandbanks that serve as critical haul-out sites for seal colonies." >}}
+  {{< carousel_image src="/images/projects/wadden_sea_seal_monitoring/cover.jpg" alt="Seals on a sandbank in the Wadden Sea" caption="Grey seals and harbour seals hauled out on a sandbank in the Wadden Sea, the focus of our automated monitoring system." >}}
+  {{< carousel_image src="/images/projects/wadden_sea_seal_monitoring/wadden-sea-map.png" alt="Map of the Wadden Sea" caption="The Wadden Sea stretches along the coasts of the Netherlands, Germany, and Denmark." >}}
+{{< /image_carousel >}}
 
 However, analyzing these aerial images has traditionally been an enormously time-consuming task. Researchers spend hundreds of hours manually counting and classifying individual seals across thousands of photographs, identifying species, life stages, positions, and vital status. This tedious work leaves limited time for the higher-level biological analysis and statistical modeling that drives conservation decisions.
 
