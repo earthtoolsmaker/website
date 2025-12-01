@@ -9,6 +9,9 @@ googleAnalytics = "" # Add your identifier. For example UA-99631805-1.
 [pagination]
 pagerSize = 6
 
+# Increase timeout for image processing during build
+timeout = "60s"
+
 [params]
   math = true
   logo = "/images/logos/etm-logo-text.png" # You can add own logo. For example "/images/logo.png".
