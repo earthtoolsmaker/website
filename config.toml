@@ -168,7 +168,7 @@ pagerSize = 6
   [params.hero]
     enable = true
     hero_title = "Open Technology for <span><i>wildlife + planet</i></span>" # Add the "span" tag to highlight text.
-    hero_description = "Developing Open Source technology to address conservation and environmental challenges for wildlife and the planet."
+    hero_description = "Building open source AI tools that help conservation scientists monitor wildlife, detect threats, and protect ecosystems."
     hero_image = "/images/pages/home/hero.jpg"
     hero_button_contact = "Get In Touch"
     hero_button_about = "About"
