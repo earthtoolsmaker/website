@@ -135,7 +135,7 @@
 
     .tns-nav-active {
       opacity: 1;
-      background: var(--accent-color);
+      background: var(--secondary-color);
       transform: scale(1.2);
     }
   }
@@ -282,7 +282,8 @@
     justify-content: center;
     font-size: 24px;
     color: var(--white);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -290,7 +291,7 @@
     z-index: 10;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(0, 0, 0, 0.7);
       transform: scale(1.1);
     }
   }
@@ -307,7 +308,8 @@
     justify-content: center;
     font-size: 24px;
     color: var(--white);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -315,7 +317,7 @@
     z-index: 10;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(0, 0, 0, 0.7);
       transform: translateY(-50%) scale(1.1);
     }
 
