@@ -18,7 +18,16 @@
           <article class="team-member{{ if mod $index 2 }} team-member--reverse{{ end }}">
             {{ if $member.image }}
             <div class="team-member__image">
-              <img class="lazy" data-src="{{ $member.image }}" alt="{{ $member.name }}">
+              {{ $imgPath := strings.TrimPrefix "/" $member.image }}
+              {{ partial "responsive-image.html" (dict
+                "src" $imgPath
+                "alt" $member.name
+                "class" "no-lightense"
+                "sizes" "(max-width: 768px) 100vw, 300px"
+                "widths" (slice 200 300 400)
+                "lazy" true
+                "lqip" true
+              ) }}
             </div>
             {{ end }}
             <div class="team-member__content">

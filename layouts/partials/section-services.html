@@ -46,7 +46,16 @@
       <article class="case-study{{ if mod $index 2 }} case-study--reverse{{ end }}">
         <div class="case-study__image">
           <a href="{{ $example.challenge_link }}">
-            <img src="{{ $example.image }}" alt="{{ $example.challenge }}">
+            {{ $imgPath := strings.TrimPrefix "/" $example.image }}
+            {{ partial "responsive-image.html" (dict
+              "src" $imgPath
+              "alt" $example.challenge
+              "class" "no-lightense"
+              "sizes" "(max-width: 768px) 100vw, 50vw"
+              "widths" (slice 400 600 800)
+              "lazy" true
+              "lqip" true
+            ) }}
           </a>
         </div>
         <div class="case-study__content">

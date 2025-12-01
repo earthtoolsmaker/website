@@ -94,3 +94,48 @@ picture img[width][height] {
     height: auto;
   }
 }
+
+// Case study images - ensure picture fills the link container
+.case-study__image {
+  a {
+    picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Team member images - ensure picture fills container
+.team-member__image {
+  picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Hero image - ensure full width
+.hero__image__inner {
+  picture {
+    display: block;
+    width: 100%;
+  }
+
+  picture img {
+    width: 100%;
+    height: auto;
+  }
+}
