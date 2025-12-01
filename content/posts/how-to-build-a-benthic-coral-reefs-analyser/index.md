@@ -62,19 +62,14 @@ provided for hard and soft corals.
   datasets, ensuring comprehensive coverage of coral reefs spanning
   various global regions.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="./images/eda/samples/1.jpg" loading="lazy" alt="sample 1" \>
-    <img src="./images/eda/samples/2.jpg" loading="lazy" alt="sample 2" \>
-    <img src="./images/eda/samples/3.jpg" loading="lazy" alt="sample 3" \>
-    <img src="./images/eda/samples/4.jpg" loading="lazy" alt="sample 4" \>
-    <!-- <img src="./images/eda/samples/5.jpg" loading="lazy" alt="sample 5" \> -->
-    <!-- <img src="./images/eda/samples/6.jpg" loading="lazy" alt="sample 6" \> -->
-    <img src="./images/eda/samples/7.jpg" loading="lazy" alt="sample 7" \>
-    <img src="./images/eda/samples/8.jpg" loading="lazy" alt="sample 8" \>
-  </div>
-  <em>Gallery / Random samples from the <b>ReefSupport</b> dataset</em>
-</div>
+{{< image_carousel id="reefsupport-samples-gallery" >}}
+  {{< carousel_image src="./images/eda/samples/1.jpg" alt="Coral reef sample 1" caption="Underwater benthic imagery showing coral reef ecosystem from the ReefSupport dataset" >}}
+  {{< carousel_image src="./images/eda/samples/2.jpg" alt="Coral reef sample 2" caption="Benthic imagery sample featuring hard and soft coral formations" >}}
+  {{< carousel_image src="./images/eda/samples/3.jpg" alt="Coral reef sample 3" caption="Diverse coral reef community captured for segmentation analysis" >}}
+  {{< carousel_image src="./images/eda/samples/4.jpg" alt="Coral reef sample 4" caption="High-resolution underwater image used for training the segmentation model" >}}
+  {{< carousel_image src="./images/eda/samples/7.jpg" alt="Coral reef sample 7" caption="Sample benthic image with dense coral coverage" >}}
+  {{< carousel_image src="./images/eda/samples/8.jpg" alt="Coral reef sample 8" caption="Coral reef imagery from the ReefSupport global dataset" >}}
+{{< /image_carousel >}}
 
 Each image is associated with a dense stitched mask made
 of all the individual coral instances.
