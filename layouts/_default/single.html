@@ -35,7 +35,16 @@
 
     {{ if .Params.Image }}
     <div class="post-image">
-      <img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Title }}">
+      {{ $imgPath := strings.TrimPrefix "/" .Params.Image }}
+      {{ partial "responsive-image.html" (dict
+        "src" $imgPath
+        "alt" .Title
+        "class" "no-lightense"
+        "sizes" "100vw"
+        "widths" (slice 600 900 1200)
+        "lazy" true
+        "lqip" true
+      ) }}
     </div>
     {{ if .Params.image_caption }}
     <div class="post-image-caption">{{ .Params.image_caption | markdownify }}</div>
@@ -85,7 +94,16 @@
 
     {{ if .Params.Image }}
     <div class="page-image">
-      <img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Title }}">
+      {{ $imgPath := strings.TrimPrefix "/" .Params.Image }}
+      {{ partial "responsive-image.html" (dict
+        "src" $imgPath
+        "alt" .Title
+        "class" "no-lightense"
+        "sizes" "100vw"
+        "widths" (slice 600 900 1200)
+        "lazy" true
+        "lqip" true
+      ) }}
     </div>
     {{ if .Params.image_caption }}
     <div class="page-image-caption">{{ .Params.image_caption | markdownify }}</div>

@@ -139,3 +139,18 @@ picture img[width][height] {
     height: auto;
   }
 }
+
+// Post cover images
+.post-image,
+.page-image {
+  picture {
+    display: block;
+    width: 100%;
+  }
+
+  picture img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+}
