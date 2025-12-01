@@ -6,11 +6,11 @@ title = "EarthToolsMaker"
 googleAnalytics = "" # Add your identifier. For example UA-99631805-1.
 # paginate = 6
 
-[pagination]
-pagerSize = 6
-
 # Increase timeout for image processing during build
 timeout = "60s"
+
+[pagination]
+pagerSize = 6
 
 [params]
   math = true
