@@ -124,15 +124,12 @@ efforts, as it not only helps to maintain the ecological balance of these
 high-altitude ecosystems, but also mitigates the tensions between the big cats
 and the human communities that share their habitat.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/snow_leopard_monitoring/pika.png" loading="lazy" alt="Pika" title="Pika" \>
-    <img src="/images/projects/snow_leopard_monitoring/grey_marmot.png" loading="lazy" alt="Grey Marmot" title="Grey Marmot" \>
-    <img src="/images/projects/snow_leopard_monitoring/tetraogallus_himalayensis.png" loading="lazy" alt="Tetraogallus Himalayensis" title="Tetraogallus Himalayensis" \>
-    <img src="/images/projects/snow_leopard_monitoring/ibex_female.png" loading="lazy" alt="Ibex" title="Ibex" \>
-  </div>
-  <em>Gallery / Sample of prey species</em>
-</div>
+{{< image_carousel id="prey-species-gallery" contained="true" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/pika.png" alt="Pika" caption="Pika - a small mountain-dwelling mammal that serves as prey for snow leopards" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/grey_marmot.png" alt="Grey Marmot" caption="Grey Marmot - common prey species in the high-altitude Himalayan ecosystems" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/tetraogallus_himalayensis.png" alt="Tetraogallus Himalayensis" caption="Himalayan Snowcock (Tetraogallus himalayensis) - a game bird found in the region" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/ibex_female.png" alt="Ibex" caption="Female Ibex - one of the primary prey species for snow leopards" >}}
+{{< /image_carousel >}}
 
 ### Habitat fragmentation and degradation
 
@@ -169,15 +166,12 @@ in Central Asia. OSI Panthera's primary goal is to study and protect the
 wildlife in Central Asia, with a particular focus on the snow leopard (Panthera
 uncia), which serves as an umbrella species for the region's ecosystems.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/snow_leopard_monitoring/snow_leopards/1.png" loading="lazy" alt="Snow Leopard" title="Snow Leopard" \>
-    <img src="/images/projects/snow_leopard_monitoring/snow_leopards/2.png" loading="lazy" alt="Snow Leopard" title="Snow Leopard" \>
-    <img src="/images/projects/snow_leopard_monitoring/snow_leopards/3.png" loading="lazy" alt="Snow Leopard" title="Snow Leopard" \>
-    <img src="/images/projects/snow_leopard_monitoring/snow_leopards/4.png" loading="lazy" alt="Snow Leopard" title="Snow Leopard" \>
-  </div>
-  <em>Gallery / Sample of Snow Leopards recorded by OSI Panthera camera traps</em>
-</div>
+{{< image_carousel id="snow-leopards-gallery" contained="true" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/snow_leopards/1.png" alt="Snow Leopard" caption="Snow leopard captured by OSI Panthera camera trap in Kyrgyzstan" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/snow_leopards/2.png" alt="Snow Leopard" caption="Individual snow leopard with distinctive spot patterns for identification" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/snow_leopards/3.png" alt="Snow Leopard" caption="Snow leopard traversing rocky terrain in the Naryn State Reserve" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/snow_leopards/4.png" alt="Snow Leopard" caption="Camera trap image used for population monitoring and individual identification" >}}
+{{< /image_carousel >}}
 
 ### OSI Panthera
 
@@ -187,17 +181,14 @@ biodiversity conservation. These expeditions involve the collection of evidence
 of the presence of sensitive species, such as snow leopards, as well as other
 carnivores, ungulates, and birds.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/snow_leopard_monitoring/brown_bear_isabelle.jpg" loading="lazy" alt="Isabelle Brown Bear" title="Isabelle Brown Bear" \>
-    <img src="/images/projects/snow_leopard_monitoring/ibex_male.png" loading="lazy" alt="Siberian Ibex" title="Siberian Ibex" \>
-    <img src="/images/projects/snow_leopard_monitoring/tetraogallus_himalayensis.png" loading="lazy" alt="Tetraogallus Himalayensis" title="Tetraogallus Himalayensis" \>
-    <img src="/images/projects/snow_leopard_monitoring/pallas_cat.png" loading="lazy" alt="Pallas Cat" title="Pallas Cat" \>
-    <img src="/images/projects/snow_leopard_monitoring/lynx.png" loading="lazy" alt="Lynx Isabellinus" title="Lynx Isabellinus" \>
-    <img src="/images/projects/snow_leopard_monitoring/grey_wolf.png" loading="lazy" alt="Grey Wolf" title="Grey Wolf" \>
-  </div>
-  <em>Gallery / Sample of endemic species captured by OSI Panthera: Brown Bears, Ibexes, Pallas Cats, Lynxes, Wolves, etc.</em>
-</div>
+{{< image_carousel id="endemic-species-gallery" contained="true" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/brown_bear_isabelle.jpg" alt="Isabelle Brown Bear" caption="Isabelle Brown Bear - one of the large carnivores sharing habitat with snow leopards" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/ibex_male.png" alt="Siberian Ibex" caption="Male Siberian Ibex - a primary prey species for snow leopards in Central Asia" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/tetraogallus_himalayensis.png" alt="Tetraogallus Himalayensis" caption="Himalayan Snowcock - a ground-dwelling bird native to the high mountains" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/pallas_cat.png" alt="Pallas Cat" caption="Pallas's Cat (Otocolobus manul) - a small wild cat found in Central Asian grasslands" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/lynx.png" alt="Lynx Isabellinus" caption="Turkestan Lynx (Lynx lynx isabellinus) - a subspecies found in the mountains of Central Asia" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/grey_wolf.png" alt="Grey Wolf" caption="Grey Wolf - an apex predator that shares territory with snow leopards" >}}
+{{< /image_carousel >}}
 
 All the data collected in and around the Shamshy and Chon Jarguilchak valleys
 are then analyzed to better understand the local ecosystems and their
@@ -249,15 +240,12 @@ benefit the broader conservation community, as it will work with any camera
 trap dataset and allow users to visualize species detections on an interactive
 map.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/snow_leopard_monitoring/cocomap/1.png" loading="lazy" alt="Cocomap 1" title="Cocomap 1" \>
-    <img src="/images/projects/snow_leopard_monitoring/cocomap/3.png" loading="lazy" alt="Cocomap 3" title="Cocomap 3" \>
-    <img src="/images/projects/snow_leopard_monitoring/cocomap/4.png" loading="lazy" alt="Cocomap 4" title="Cocomap 4" \>
-    <img src="/images/projects/snow_leopard_monitoring/cocomap/2.png" loading="lazy" alt="Cocomap 2" title="Cocomap 2" \>
-  </div>
-  <em>Gallery / Current Prototype for visualizing camera trap data on an interactive map</em>
-</div>
+{{< image_carousel id="cocomap-gallery" contained="true" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/cocomap/1.png" alt="Cocomap Overview" caption="Interactive map showing camera trap locations and species detections" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/cocomap/3.png" alt="Cocomap Detection View" caption="Detailed view of individual detection events with metadata" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/cocomap/4.png" alt="Cocomap Analysis" caption="Temporal analysis of species activity patterns across locations" >}}
+  {{< carousel_image src="/images/projects/snow_leopard_monitoring/cocomap/2.png" alt="Cocomap Data" caption="Data visualization prototype for camera trap dataset exploration" >}}
+{{< /image_carousel >}}
 
 #### Identification of Snow Leopards
 

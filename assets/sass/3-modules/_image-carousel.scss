@@ -154,6 +154,23 @@
     display: none;
   }
 
+  // Contained mode - keeps images within bounds (for pages with sidebars)
+  &--contained {
+    .image-carousel__wrapper {
+      margin: 0;
+
+      .tns-ovh,
+      .tns-outer,
+      .tns-inner {
+        overflow: hidden;
+      }
+    }
+
+    .image-carousel__slide {
+      padding: 8px;
+    }
+  }
+
   @media (max-width: $tablet) {
     &__controls {
       .prev,

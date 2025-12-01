@@ -22,8 +22,9 @@
 {{ $items_mobile := .Get "items_mobile" | default "1" }}
 {{ $gutter := .Get "gutter" | default "20" }}
 {{ $loop := .Get "loop" | default "true" }}
+{{ $contained := .Get "contained" | default "false" }}
 
-<div class="image-carousel" data-carousel-id="{{ $id }}">
+<div class="image-carousel{{ if eq $contained "true" }} image-carousel--contained{{ end }}" data-carousel-id="{{ $id }}">
   <div class="image-carousel__wrapper">
     <ul class="image-carousel__controls controls list-reset" id="{{ $id }}-controls" aria-label="Carousel Navigation" tabindex="0">
       <li class="prev" data-controls="prev" aria-controls="{{ $id }}" tabindex="-1">

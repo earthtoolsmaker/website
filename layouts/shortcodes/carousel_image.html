@@ -19,5 +19,5 @@
 {{ $rounded := .Get "rounded" | default "true" }}
 
 <div class="image-carousel__slide">
-  <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" {{ with $caption }}data-caption="{{ . }}"{{ end }} data-shadow="{{ $shadow }}" data-rounded="{{ $rounded }}" />
+  <img src="{{ $src }}" alt="{{ $alt }}" class="no-lightense" loading="lazy" {{ with $caption }}data-caption="{{ . }}"{{ end }} data-shadow="{{ $shadow }}" data-rounded="{{ $rounded }}" />
 </div>
