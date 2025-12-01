@@ -87,8 +87,8 @@
       decoding="async">
   </picture>
 {{ else }}
-  {{/* Fallback for images not in assets (e.g., still in /static/) */}}
-  {{/* Convert /images/... path to absolute URL */}}
+  {{/* Fallback for images not found by resources.Get */}}
+  {{/* This serves the image as-is without processing */}}
   {{ $fallbackSrc := $src }}
   {{ if hasPrefix $src "images/" }}
     {{ $fallbackSrc = printf "/%s" $src }}

@@ -13,20 +13,24 @@ The site uses Hugo's built-in image processing to automatically generate:
 
 ### 1. Image Location
 
-For Hugo to process images, they must be in the `/assets/` directory (not `/static/`):
+**All images live in `/assets/images/`** - this is the single source of truth.
 
 ```
 assets/
   images/
-    projects/
-      project-name/
-        cover.jpg       # Original image
-    posts/
-      post-name/
-        cover.png
+    clients/           # Partner logos
+    logos/             # Site logos
+    pages/             # Page-specific images
+    posts/             # Blog post images
+    projects/          # Project images
+    social/            # Social media icons
+    spaces/            # Space images
+    subscribe/         # Subscribe section
+    team/              # Team photos
+    testimonials/      # Testimonial avatars
 ```
 
-Images in `/static/images/` are served as-is without optimization.
+Hugo serves all images at the `/images/` URL path. Images used with the `responsive-image.html` partial get processed (WebP, multiple sizes, LQIP), while others are served as-is.
 
 ### 2. The Responsive Image Partial
 
@@ -152,17 +156,20 @@ layouts/
     responsive-image.html    # Core image processing partial
 
 assets/
-  images/                    # SOURCE images (processed by Hugo)
-    projects/
-    posts/
+  images/                    # ALL images (single source of truth)
+    clients/                 # Partner logos
+    logos/                   # Site logos
+    pages/                   # Page-specific images
+    posts/                   # Blog post images
+    projects/                # Project images
+    social/                  # Social media icons
+    spaces/                  # Space images
+    subscribe/               # Subscribe section
+    team/                    # Team photos
+    testimonials/            # Testimonial avatars
   sass/
     3-modules/
       _lazy-images.scss      # LQIP blur CSS + grayscale effects
-
-static/
-  images/                    # STATIC images (served as-is, NOT processed)
-    clients/
-    testimonials/
 
 resources/
   _gen/
@@ -196,13 +203,16 @@ Hugo imaging settings in `config.toml`:
 
 ### Image not being processed
 
-1. Check the image is in `/assets/images/`, not `/static/images/`
+1. Check the image is in `/assets/images/`
 2. Verify the path in the partial matches the file location
 3. Run `hugo --gc` to clear cache and regenerate
 
-### Fallback to original image
+### Image not found
 
-If the partial can't find the image in `/assets/`, it falls back to serving from `/static/` with a simple `<img>` tag. Check the browser's Network tab to see which version is being served.
+If an image path is incorrect, check:
+- The file exists in `/assets/images/`
+- The path in front matter matches (e.g., `image: /images/projects/foo/cover.jpg`)
+- Check browser's Network tab for 404 errors
 
 ### Build errors
 
