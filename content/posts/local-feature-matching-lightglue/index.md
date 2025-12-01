@@ -17,15 +17,12 @@ and
 all possess unique spot or scale patterns that lend themselves well to this
 computer vision approach. 
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="./images/species/turtle2.png" loading="lazy" title="Turtle">
-    <img src="./images/species/seal.jpg" loading="lazy" title="Seal">
-    <img src="./images/species/trout.jpg" loading="lazy" title="Trout">
-    <img src="./images/species/whale-shark2.png" loading="lazy" title="Whale Shark">
-  </div>
-  <em>Gallery / Unique and stable markings for different animal species</em>
-</div>
+{{< image_carousel id="species-markings-gallery" >}}
+  {{< carousel_image src="./images/species/turtle2.png" alt="Turtle" caption="Sea turtle with unique shell patterns used for individual identification" >}}
+  {{< carousel_image src="./images/species/seal.jpg" alt="Seal" caption="Seal with distinctive spot patterns on its fur" >}}
+  {{< carousel_image src="./images/species/trout.jpg" alt="Trout" caption="Trout displaying unique spot patterns along its body" >}}
+  {{< carousel_image src="./images/species/whale-shark2.png" alt="Whale Shark" caption="Whale shark with distinctive spot patterns that remain stable throughout its lifetime" >}}
+{{< /image_carousel >}}
 
 By harnessing these identifiable features,
 researchers and conservationists can track and monitor individual animals,
@@ -122,15 +119,12 @@ Local feature matching is widely used in various applications, including:
 - __Object Recognition__: Identifying and classifying objects within images.
 - __3D Reconstruction__: Creating 3D models from multiple 2D images.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="./images/matching/match_1.webp" loading="lazy">
-    <img src="./images/matching/match_2.webp" loading="lazy">
-    <img src="./images/matching/match_3.webp" loading="lazy">
-    <img src="./images/matching/match_4.webp" loading="lazy">
-  </div>
-  <em>Local Feature Matching to identify trout individuals</em>
-</div>
+{{< image_carousel id="trout-matching-gallery" >}}
+  {{< carousel_image src="./images/matching/match_1.webp" alt="Trout matching example 1" caption="Local feature matching identifying keypoints between two images of the same trout" >}}
+  {{< carousel_image src="./images/matching/match_2.webp" alt="Trout matching example 2" caption="Matched keypoints showing correspondence between spot patterns" >}}
+  {{< carousel_image src="./images/matching/match_3.webp" alt="Trout matching example 3" caption="Feature matching visualization with connecting lines between matched points" >}}
+  {{< carousel_image src="./images/matching/match_4.webp" alt="Trout matching example 4" caption="Successful individual identification through local feature matching" >}}
+{{< /image_carousel >}}
 
 ## LightGlue
 
