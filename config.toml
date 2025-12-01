@@ -47,12 +47,6 @@ pagerSize = 6
     weight = 3
     hasChildren = true
 
-  # [[menu.main]]
-  #   parent = "tools"
-  #   name = "BioWatch"
-  #   # url = "/tools/biowatch"
-  #   url = "https://v0-biowatch-landing-page.vercel.app/"
-
   [[menu.main]]
     name = "Projects"
     url = "/projects/"
@@ -72,18 +66,6 @@ pagerSize = 6
     name = "Contact"
     url = "/contact/"
     weight = 8
-
-      # [[menu.main]]
-      # parent = "Pages"
-      # name = "Contact"
-      # url = "/contact/"
-      # weight = 1
-
-      # [[menu.main]]
-      # parent = "Pages"
-      # name = "Elements"
-      # url = "/elements/"
-      # weight = 2
 
       # Footer Menu
       [[menu.footer]]
@@ -141,27 +123,6 @@ pagerSize = 6
     image = "/images/social/hf.svg"
     name = "HuggingFace"
     link = "https://huggingface.co/earthtoolsmaker"
-
-  # [[params.social]]
-  #   icon = "fa-brands fa-twitter"
-  #   name = "Twitter"
-  #   link = "https://twitter.com"
-
-  # [[params.social]]
-  #   icon = "fa-brands fa-facebook"
-  #   name = "Facebook"
-  #   link = "https://facebook.com"
-
-  # [[params.social]]
-  #   icon = "fa-brands fa-pinterest"
-  #   name = "Pinterest"
-  #   link = "https://pinterest.com"
-
-  # Example of adding a new link to the header and footer:
-  # [[params.social]]
-  #  icon = "fa-brands fa-youtube"
-  #  name = "Youtube"
-  #  link = "https://youtube.com"
 
   # Other icons can be found at https://fontawesome.com/icons
 
@@ -324,15 +285,6 @@ pagerSize = 6
     designation = "Director & Conservation Scientist - The BearID Project"
     link = "https://bearresearch.org/"
     content = "There is definitely a want and need from the conservation community to work with people like you, with your expertise, as the technical side to this type of development is often the barrier. "
-
-
-  # [[params.testimonial_item]]
-  #   name = "Hanna Franci"
-  #   image = "https://via.placeholder.com/200x200"
-  #   designation = "Product Designer"
-  #   link = "https://facebook.com/"
-  #   content = "Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus"
-
 
   #-------------------------------
   # Blog Section
