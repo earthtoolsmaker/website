@@ -85,15 +85,12 @@ and lakes, with the largest elephant enclosure spanning 20 hectares. The
 sanctuary takes pride in being Asia’s first chain-free facility, ensuring that
 no elephant is ever chained, day or night.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="./images/elephant_eat.jpg" loading="lazy" alt="Elephant eating" />
-    <img src="./images/elephant_cooling_dust.jpg" loading="lazy" alt="Elephant cooling with dust" />
-    <img src="./images/elephant_resting.jpg" loading="lazy" alt="Elephant resting" />
-    <img src="./images/elephant_eat_2.jpg" loading="lazy" alt="Elephant eating" />
-  </div>
-  <em>Gallery / Eating, cooling down, and resting</em>
-</div>
+{{< image_carousel id="elephant-gallery" >}}
+  {{< carousel_image src="./images/elephant_eat.jpg" alt="Elephant eating" caption="Rescued elephant enjoying fresh food at the sanctuary" >}}
+  {{< carousel_image src="./images/elephant_cooling_dust.jpg" alt="Elephant cooling with dust" caption="Elephant cooling down with a dust bath - a natural behavior" >}}
+  {{< carousel_image src="./images/elephant_resting.jpg" alt="Elephant resting" caption="Elephant resting peacefully in the chain-free sanctuary" >}}
+  {{< carousel_image src="./images/elephant_eat_2.jpg" alt="Elephant eating" caption="Elephants forage for food hidden by volunteers to stimulate natural behavior" >}}
+{{< /image_carousel >}}
 
 Elephant are given fresh food every day, two times a day. Volunteers hide the
 food inside tires or hang them in trees which forces the animals to forage for
@@ -180,17 +177,14 @@ to a significant number of wild animals, some for a short duration, while
 others will remain there for the rest of their lives.
 
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="./images/gibbon.jpg" loading="lazy" alt="Gibbon" />
-    <img src="./images/reptile_1.jpg" loading="lazy" alt="Iguana" />
-    <img src="./images/parrot.jpg" loading="lazy" alt="Macaw" />
-    <img src="./images/tiger1.jpg" loading="lazy" alt="Tiger" />
-    <img src="./images/otter.jpg" loading="lazy" alt="Otters" />
-    <img src="./images/turtle_1.jpg" loading="lazy" alt="Turtle" />
-  </div>
-  <em>Gallery / Gibbon, Iguana, Macaw, Tiger, Otters, Turtle - from top to bottom, left to righ</em>
-</div>
+{{< image_carousel id="wrc-animals-gallery" >}}
+  {{< carousel_image src="./images/gibbon.jpg" alt="Gibbon" caption="Gibbon rescued from the illegal pet trade, now living at the Wildlife Rescue Center" >}}
+  {{< carousel_image src="./images/reptile_1.jpg" alt="Iguana" caption="Iguana receiving care at WFFT's Wildlife Rescue Center" >}}
+  {{< carousel_image src="./images/parrot.jpg" alt="Macaw" caption="Macaw - one of many exotic birds rescued from illegal trade" >}}
+  {{< carousel_image src="./images/tiger1.jpg" alt="Tiger" caption="Rescued tiger at the sanctuary - victims of the entertainment industry" >}}
+  {{< carousel_image src="./images/otter.jpg" alt="Otters" caption="Otters playing in their enclosure at the rescue center" >}}
+  {{< carousel_image src="./images/turtle_1.jpg" alt="Turtle" caption="Turtle receiving rehabilitation before potential release" >}}
+{{< /image_carousel >}}
 
 Depending on the species assigned, specific food portions tailored by
 veterinarians must be prepared.
@@ -234,17 +228,14 @@ Volunteering at the Wildlife Rescue Center is an incredible experience. Scarlet
 macaws and howler monkeys begin their day early, often waking volunteers around
 6 a.m. as they require feeding.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="./images/arcas_jaguar.jpg" loading="lazy" alt="Jaguar" />
-    <img src="./images/arcas_toucan.jpg" loading="lazy" alt="Toucan" />
-    <img src="./images/arcas_scarlet_macaw.jpg" loading="lazy" alt="Scarlet Macaws" />
-    <img src="./images/arcas_caimans.jpg" loading="lazy" alt="Caimans" />
-    <img src="./images/arcas_spider_monkeys.jpg" loading="lazy" alt="Spider Monkeys" />
-    <img src="./images/arcas_parrots_feeding.jpg" loading="lazy" alt="Parrots" />
-  </div>
-  <em>Gallery / Jaguar, Toucan, Scarlet Macaw, Caimans, Spider Monkeys, Parrots - from top to bottom and left to right</em>
-</div>
+{{< image_carousel id="arcas-animals-gallery" >}}
+  {{< carousel_image src="./images/arcas_jaguar.jpg" alt="Jaguar" caption="Jaguar at ARCAS - one of Central America's most iconic predators" >}}
+  {{< carousel_image src="./images/arcas_toucan.jpg" alt="Toucan" caption="Toucan receiving care at the rescue center in Guatemala" >}}
+  {{< carousel_image src="./images/arcas_scarlet_macaw.jpg" alt="Scarlet Macaws" caption="Scarlet Macaws - highly trafficked for the illegal pet trade" >}}
+  {{< carousel_image src="./images/arcas_caimans.jpg" alt="Caimans" caption="Caimans in rehabilitation at ARCAS" >}}
+  {{< carousel_image src="./images/arcas_spider_monkeys.jpg" alt="Spider Monkeys" caption="Spider monkeys being rewilded for eventual release into the wild" >}}
+  {{< carousel_image src="./images/arcas_parrots_feeding.jpg" alt="Parrots" caption="Parrots during feeding time at the rescue center" >}}
+{{< /image_carousel >}}
 
 The volunteer day begins with preparing food for assigned animals and cleaning
 their enclosures. It is essential to wear face masks at all times to prevent

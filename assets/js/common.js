@@ -248,8 +248,10 @@ document.addEventListener("DOMContentLoaded", function() {
     var lightboxCurrent = lightbox.querySelector('.image-lightbox__current');
     var lightboxTotal = lightbox.querySelector('.image-lightbox__total');
 
-    // Collect only original images (exclude Tiny Slider clones)
+    // Collect only original images (exclude Tiny Slider clones) for lightbox navigation
     var images = Array.from(carouselContainer.querySelectorAll('.image-carousel__slide:not(.tns-slide-cloned) img'));
+    // Collect ALL images (including clones) for click handlers
+    var allImages = Array.from(carouselContainer.querySelectorAll('.image-carousel__slide img'));
     var currentIndex = 0;
 
     // Update lightbox total count
@@ -300,10 +302,16 @@ document.addEventListener("DOMContentLoaded", function() {
       updateLightboxImage();
     }
 
-    // Click on image to open lightbox
-    images.forEach(function(img, index) {
+    // Click on ANY image (including clones) to open lightbox
+    allImages.forEach(function(img) {
       img.addEventListener('click', function() {
-        openLightbox(index);
+        // Find the matching original image by src
+        var originalIndex = images.findIndex(function(origImg) {
+          return origImg.src === img.src;
+        });
+        if (originalIndex !== -1) {
+          openLightbox(originalIndex);
+        }
       });
     });
 
