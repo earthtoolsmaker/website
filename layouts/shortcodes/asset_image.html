@@ -1,0 +1,20 @@
+{{/*
+  Asset Image Shortcode - renders images from assets/ directory
+
+  Usage:
+  {{< asset_image src="/images/logos/etm-logo.png" alt="Logo" class="my-class" maxheight="120px" >}}
+*/}}
+
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" | default "" }}
+{{ $class := .Get "class" | default "" }}
+{{ $maxheight := .Get "maxheight" | default "" }}
+
+{{ $imgPath := strings.TrimPrefix "/" $src }}
+{{ $image := resources.Get $imgPath }}
+
+{{ if $image }}
+  <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}"{{ if $class }} class="{{ $class }}"{{ end }}{{ if $maxheight }} style="max-height: {{ $maxheight }};"{{ end }} loading="lazy" />
+{{ else }}
+  <img src="{{ $src }}" alt="{{ $alt }}"{{ if $class }} class="{{ $class }}"{{ end }}{{ if $maxheight }} style="max-height: {{ $maxheight }};"{{ end }} loading="lazy" />
+{{ end }}

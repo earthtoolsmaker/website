@@ -11,7 +11,7 @@ We build it for them. Open-source machine learning tools for counting fish, dete
 > Better tools. Better data. Better outcomes.
 
 <div style="text-align: center; margin: 40px 0;">
-  <img src="/images/logos/etm-logo.png" alt="EarthToolsMaker Logo" class="etm-logo no-lightense" style="max-height: 120px;">
+  {{< asset_image src="/images/logos/etm-logo.png" alt="EarthToolsMaker Logo" class="etm-logo no-lightense" maxheight="120px" >}}
 </div>
 
 {{< services >}}
