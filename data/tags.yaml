@@ -1,0 +1,39 @@
+# Tag icon/emoji configuration for Explore Topics section
+# Priority: SVG icon > Custom emoji > Default emoji
+
+default_emoji: "\U0001F3F7\uFE0F"  # Label emoji
+
+tags:
+  ai:
+    emoji: "\U0001F916"  # Robot - represents AI/ML
+    # icon: "/images/icons/ai.svg"  # Optional SVG override
+
+  vision:
+    emoji: "\U0001F441\uFE0F"  # Eye - computer vision
+
+  camera traps:
+    emoji: "\U0001F4F7"  # Camera
+
+  audio:
+    emoji: "\U0001F3A7"  # Headphones - audio processing
+
+  identification:
+    emoji: "\U0001F50D"  # Magnifying glass - finding/identifying
+
+  local feature:
+    emoji: "\U0001F4CD"  # Pin - localization
+
+  metric learning:
+    emoji: "\U0001F4CA"  # Chart - metrics/learning
+
+  low power:
+    emoji: "\U0001F50B"  # Battery - power efficiency
+
+  wildlife:
+    emoji: "\U0001F43E"  # Paw prints - animals
+
+  illegal wildlife trade:
+    emoji: "\U0001F6A8"  # Police light - law enforcement
+
+  volunteering:
+    emoji: "\U0001F91D"  # Handshake - community

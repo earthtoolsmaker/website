@@ -17,16 +17,29 @@
   
           {{ $.Scratch.Set "myLimit" 0 }}
           {{ $tags := .Site.Taxonomies.tags }}
-  
+          {{ $tagsData := site.Data.tags }}
+          {{ $defaultEmoji := $tagsData.default_emoji | default "\U0001F3F7\uFE0F" }}
+
           <div class="row">
           {{ range $name, $taxonomy := $tags }}
             {{ $.Scratch.Set "myLimit" (add ($.Scratch.Get "myLimit") 1) }}
             {{ if le ($.Scratch.Get "myLimit") 6 }}
               {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+              {{ $tagConfig := index $tagsData.tags $name }}
               <div class="col col-2 col-w-3 col-d-4 col-t-6 col-m-12">
-                <a href="{{ .RelPermalink }}" class="tag-container">
+                <a href="{{ .RelPermalink }}" class="tag-container" title="{{ .Title }}">
                   <div class="tag-image">
-                    <img class="lazy" {{ range first 1 .Data.Pages }}data-src="{{ .Params.Image | absURL }}"{{ end }} alt="{{ .Title }}">
+                    {{ if and $tagConfig $tagConfig.icon }}
+                    <img src="{{ $tagConfig.icon | absURL }}" alt="{{ .Title }}">
+                    {{ else }}
+                    <span class="tag-emoji">
+                      {{ if and $tagConfig $tagConfig.emoji }}
+                        {{ $tagConfig.emoji }}
+                      {{ else }}
+                        {{ $defaultEmoji }}
+                      {{ end }}
+                    </span>
+                    {{ end }}
                   </div>
                   <div class="tag-meta">
                     {{ if .Title }}
