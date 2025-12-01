@@ -134,15 +134,12 @@ The seal re-identification system operates in two stages:
 
 ### Example Matches and Unique Features
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/wadden_sea_seal_monitoring/reid/match_different_seasons.png" loading="lazy" alt="Same seal photographed in different seasons">
-    <img src="/images/projects/wadden_sea_seal_monitoring/reid/match_whisker_patterns.png" loading="lazy" alt="Matching whisker patterns between sightings">
-    <img src="/images/projects/wadden_sea_seal_monitoring/reid/match_spot_patterns.png" loading="lazy" alt="Matching spot patterns between sightings">
-    <img src="/images/projects/wadden_sea_seal_monitoring/reid/match_facial_patterns.png" loading="lazy" alt="Matching facials patterns between sightings">
-  </div>
-  <em>Examples of successful re-identification matches showing the same individual across different surveys</em>
-</div>
+{{< image_carousel id="seal-reid-matches" >}}
+  {{< carousel_image src="/images/projects/wadden_sea_seal_monitoring/reid/match_different_seasons.png" alt="Same seal photographed in different seasons" caption="The same individual seal successfully re-identified across different survey seasons, demonstrating the system's ability to track seals over time." shadow="false" rounded="false" >}}
+  {{< carousel_image src="/images/projects/wadden_sea_seal_monitoring/reid/match_whisker_patterns.png" alt="Matching whisker patterns between sightings" caption="Re-identification based on unique whisker spot patterns that remain stable throughout a seal's lifetime." shadow="false" rounded="false" >}}
+  {{< carousel_image src="/images/projects/wadden_sea_seal_monitoring/reid/match_spot_patterns.png" alt="Matching spot patterns between sightings" caption="Distinctive spot patterns on the seal's coat provide reliable identification markers across different photographs." shadow="false" rounded="false" >}}
+  {{< carousel_image src="/images/projects/wadden_sea_seal_monitoring/reid/match_facial_patterns.png" alt="Matching facial patterns between sightings" caption="Facial feature matching identifies the same individual seal using unique head shape and marking patterns." shadow="false" rounded="false" >}}
+{{< /image_carousel >}}
 
 ### Conservation Insights from Re-Identification
 
