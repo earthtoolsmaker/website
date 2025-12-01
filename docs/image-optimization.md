@@ -211,6 +211,54 @@ If the partial can't find the image in `/assets/`, it falls back to serving from
 hugo --gc --minify
 ```
 
+## Development Setup
+
+### Install Git Hooks
+
+To automatically optimize large images before each commit, install the pre-commit hook:
+
+```bash
+./scripts/install-hooks.sh
+```
+
+This installs a pre-commit hook that:
+- Runs `scripts/optimize-images.sh` when committing images in `content/posts/`
+- Resizes images larger than 1200px wide
+- Creates WebP versions for better compression
+- Automatically stages the optimized files
+
+### Requirements
+
+The optimization scripts require:
+- **ImageMagick** - for image resizing
+  ```bash
+  # Ubuntu/Debian
+  sudo apt install imagemagick
+
+  # macOS
+  brew install imagemagick
+  ```
+- **WebP tools** - for WebP conversion
+  ```bash
+  # Ubuntu/Debian
+  sudo apt install webp
+
+  # macOS
+  brew install webp
+  ```
+
+### Manual Optimization
+
+To optimize images manually (e.g., before a large batch commit):
+
+```bash
+# Dry run - see what would be optimized
+./scripts/optimize-images.sh --dry-run
+
+# Actually optimize
+./scripts/optimize-images.sh
+```
+
 ## CSS Effects
 
 The grayscale hover effect on project/article cards is preserved by combining filters in `_lazy-images.scss`:
