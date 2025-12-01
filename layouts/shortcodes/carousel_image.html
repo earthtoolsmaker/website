@@ -8,12 +8,16 @@
   - src: Image source path (required)
   - alt: Alt text for accessibility (required)
   - caption: Optional caption displayed in fullscreen lightbox view
+  - shadow: Enable box-shadow (default: "true", set to "false" to disable)
+  - rounded: Enable border-radius (default: "true", set to "false" to disable)
 */}}
 
 {{ $src := .Get "src" }}
 {{ $alt := .Get "alt" | default "" }}
 {{ $caption := .Get "caption" | default "" }}
+{{ $shadow := .Get "shadow" | default "true" }}
+{{ $rounded := .Get "rounded" | default "true" }}
 
 <div class="image-carousel__slide">
-  <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" {{ with $caption }}data-caption="{{ . }}"{{ end }} />
+  <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" {{ with $caption }}data-caption="{{ . }}"{{ end }} data-shadow="{{ $shadow }}" data-rounded="{{ $rounded }}" />
 </div>

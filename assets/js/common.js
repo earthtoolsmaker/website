@@ -204,6 +204,7 @@ document.addEventListener("DOMContentLoaded", function() {
       slideBy: 1,
       gutter: gutter,
       nav: true,
+      navPosition: 'bottom',
       mouseDrag: true,
       autoplay: false,
       loop: loop,

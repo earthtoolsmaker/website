@@ -5,6 +5,20 @@
 
   &__wrapper {
     position: relative;
+    margin: 0 -16px; // Compensate for increased slide padding
+
+    // Override Tiny Slider's overflow:hidden to allow shadows to show
+    .tns-ovh {
+      overflow: visible;
+    }
+
+    .tns-outer {
+      overflow: visible;
+    }
+
+    .tns-inner {
+      overflow: visible;
+    }
   }
 
   &__controls {
@@ -69,7 +83,7 @@
   }
 
   &__slide {
-    padding: 8px;
+    padding: 16px; // Enough room for shadow spread and hover scale
 
     img {
       display: block;
@@ -84,16 +98,31 @@
         transform: scale(1.02);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
       }
+
+      // Optional: disable shadow
+      &[data-shadow="false"] {
+        box-shadow: none;
+
+        &:hover {
+          box-shadow: none;
+        }
+      }
+
+      // Optional: disable rounded corners
+      &[data-rounded="false"] {
+        border-radius: 0;
+      }
     }
   }
 
   // Dot navigation - positioned below the carousel
   .tns-nav {
     position: relative;
+    z-index: 5;
     display: flex;
     justify-content: center;
-    margin-top: 24px;
-    padding: 0;
+    margin-top: 8px;
+    padding: 16px 0;
 
     button {
       width: 10px;
@@ -151,7 +180,7 @@
     }
 
     &__slide {
-      padding: 4px;
+      padding: 12px; // Still need room for shadows on mobile
     }
 
     .tns-nav {
@@ -230,7 +259,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    background: #000; // Fully opaque to prevent page content bleeding through
     cursor: pointer;
   }
 

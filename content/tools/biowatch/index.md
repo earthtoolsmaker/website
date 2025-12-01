@@ -35,15 +35,11 @@ Biowatch is a powerful tool for wildlife researchers and conservationists to
 analyze, visualize, and explore [CamtrapDP
 datasets](https://camtrap-dp.tdwg.org/) with ease.
 
-<div class="gallery-box">
-  <div class="gallery">
-      <img src="./images/medias.png" loading="lazy" alt="Biowatch Medias" class="lightense-enabled" />
-      <img src="./images/activity.png" loading="lazy" alt="Biowatch Activity" class="lightense-enabled" />
-      <img src="./images/overview.png" loading="lazy" alt="Biowatch Overview" class="lightense-enabled" />
-  </div>
-</div>
-<br />
-<br />
+{{< image_carousel id="biowatch-gallery" >}}
+  {{< carousel_image src="./images/medias.png" alt="Biowatch Medias" caption="Browse and manage thousands of camera trap images and videos with powerful search and filtering capabilities." shadow="false" rounded="false" >}}
+  {{< carousel_image src="./images/activity.png" alt="Biowatch Activity" caption="Analyze temporal activity patterns to understand when and how wildlife uses different areas." shadow="false" rounded="false" >}}
+  {{< carousel_image src="./images/overview.png" alt="Biowatch Overview" caption="Get a comprehensive overview of your camera trap deployment with interactive maps and statistics." shadow="false" rounded="false" >}}
+{{< /image_carousel >}}
 
 ## Key Features
 
