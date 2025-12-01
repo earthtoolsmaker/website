@@ -1,0 +1,107 @@
+{{/*
+  Responsive Image Partial with WebP support and LQIP
+
+  Parameters:
+  - src: Image path (relative to assets/, e.g., "images/projects/foo/cover.jpg")
+  - alt: Alt text
+  - class: Additional CSS classes
+  - sizes: Sizes attribute (default: "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 400px")
+  - widths: Slice of widths to generate (default: [400, 600, 800])
+  - lazy: Enable lazy loading (default: true)
+  - lqip: Enable blur-up placeholder (default: true)
+
+  Usage:
+  {{ partial "responsive-image.html" (dict
+    "src" "images/projects/myproject/cover.jpg"
+    "alt" "Project cover"
+    "class" "project-image"
+    "sizes" "(max-width: 600px) 100vw, 400px"
+    "widths" (slice 400 600 800)
+    "lazy" true
+    "lqip" true
+  ) }}
+*/}}
+
+{{ $src := .src }}
+{{ $alt := .alt | default "" }}
+{{ $class := .class | default "" }}
+{{ $sizes := .sizes | default "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 400px" }}
+{{ $widths := .widths | default (slice 400 600 800) }}
+{{ $lazy := .lazy | default true }}
+{{ $lqip := .lqip | default true }}
+
+{{/* Try to get image from assets */}}
+{{ $image := resources.Get $src }}
+
+{{ if $image }}
+  {{/* Generate LQIP - tiny 20px wide blurred placeholder */}}
+  {{ $lqipImg := "" }}
+  {{ $lqipDataUri := "" }}
+  {{ if $lqip }}
+    {{ $lqipImg = $image.Resize "20x webp q20" }}
+    {{ $lqipDataUri = $lqipImg.RelPermalink }}
+  {{ end }}
+
+  {{/* Generate WebP srcset */}}
+  {{ $webpSrcset := slice }}
+  {{ range $widths }}
+    {{ $resized := $image.Resize (printf "%dx webp q80" .) }}
+    {{ $webpSrcset = $webpSrcset | append (printf "%s %dw" $resized.RelPermalink .) }}
+  {{ end }}
+
+  {{/* Generate fallback srcset (original format) */}}
+  {{ $fallbackSrcset := slice }}
+  {{ range $widths }}
+    {{ $resized := $image.Resize (printf "%dx q85" .) }}
+    {{ $fallbackSrcset = $fallbackSrcset | append (printf "%s %dw" $resized.RelPermalink .) }}
+  {{ end }}
+
+  {{/* Default fallback image (middle size) */}}
+  {{ $defaultWidth := index $widths (div (len $widths) 2) }}
+  {{ $default := $image.Resize (printf "%dx q85" $defaultWidth) }}
+
+  <picture>
+    {{/* WebP source */}}
+    <source
+      type="image/webp"
+      {{ if $lazy }}data-srcset="{{ delimit $webpSrcset ", " }}"{{ else }}srcset="{{ delimit $webpSrcset ", " }}"{{ end }}
+      sizes="{{ $sizes }}">
+    {{/* Fallback source (original format) */}}
+    <source
+      {{ if $lazy }}data-srcset="{{ delimit $fallbackSrcset ", " }}"{{ else }}srcset="{{ delimit $fallbackSrcset ", " }}"{{ end }}
+      sizes="{{ $sizes }}">
+    {{/* Fallback img */}}
+    <img
+      {{ if $lazy }}
+        class="{{ $class }}{{ if $class }} {{ end }}lazy"
+        src="{{ if $lqip }}{{ $lqipDataUri }}{{ else }}data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=={{ end }}"
+        data-src="{{ $default.RelPermalink }}"
+      {{ else }}
+        class="{{ $class }}"
+        src="{{ $default.RelPermalink }}"
+      {{ end }}
+      alt="{{ $alt }}"
+      width="{{ $default.Width }}"
+      height="{{ $default.Height }}"
+      loading="{{ if $lazy }}lazy{{ else }}eager{{ end }}"
+      decoding="async">
+  </picture>
+{{ else }}
+  {{/* Fallback for images not in assets (e.g., still in /static/) */}}
+  {{/* Convert /images/... path to absolute URL */}}
+  {{ $fallbackSrc := $src }}
+  {{ if hasPrefix $src "images/" }}
+    {{ $fallbackSrc = printf "/%s" $src }}
+  {{ end }}
+  <img
+    class="{{ $class }}{{ if and $lazy $class }} {{ end }}{{ if $lazy }}lazy{{ end }}"
+    {{ if $lazy }}
+      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+      data-src="{{ $fallbackSrc | absURL }}"
+    {{ else }}
+      src="{{ $fallbackSrc | absURL }}"
+    {{ end }}
+    alt="{{ $alt }}"
+    loading="{{ if $lazy }}lazy{{ else }}eager{{ end }}"
+    decoding="async">
+{{ end }}

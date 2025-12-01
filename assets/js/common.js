@@ -114,7 +114,20 @@ document.addEventListener("DOMContentLoaded", function() {
   // LazyLoad Images
   ======================= */
   var lazyLoadInstance = new LazyLoad({
-    elements_selector: ".lazy"
+    elements_selector: ".lazy",
+    // Handle <picture> elements with data-srcset on source elements
+    callback_loaded: function(el) {
+      // When an image loads, also activate srcset on sibling sources
+      var picture = el.closest('picture');
+      if (picture) {
+        picture.querySelectorAll('source[data-srcset]').forEach(function(source) {
+          source.srcset = source.dataset.srcset;
+          source.removeAttribute('data-srcset');
+        });
+      }
+      // Add loaded class for LQIP blur transition
+      el.classList.add('loaded');
+    }
   })
 
 

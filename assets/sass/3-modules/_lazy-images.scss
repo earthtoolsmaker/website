@@ -1,0 +1,96 @@
+/* ======================
+   Lazy Loading Images
+   LQIP (Low Quality Image Placeholder) blur-up effect
+   ====================== */
+
+// Blur effect for lazy loading images with LQIP
+.lazy {
+  filter: blur(10px);
+  transition: filter 0.3s ease-out;
+
+  &.loaded,
+  &[data-ll-status="loaded"] {
+    filter: blur(0);
+  }
+}
+
+// Ensure picture elements don't break layout
+picture {
+  display: block;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+// Prevent layout shift by using aspect-ratio when dimensions are known
+picture img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+// Project card images - ensure proper sizing within container
+.project__image picture,
+.article__image picture {
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Preserve grayscale effect for project and article images
+// Combines LQIP blur with grayscale aesthetic (defined in _projects.scss and _article.scss)
+.project__image .lazy,
+.article__image .lazy {
+  @media (min-width: $tablet + 1) {
+    filter: blur(10px) grayscale(50%);
+
+    &.loaded,
+    &[data-ll-status="loaded"] {
+      filter: grayscale(50%);
+    }
+  }
+}
+
+// On hover, remove grayscale (keep in sync with _projects.scss and _article.scss)
+.project__content:hover .project__image .lazy.loaded,
+.project__content:hover .project__image .lazy[data-ll-status="loaded"],
+.article__content:hover .article__image .lazy.loaded,
+.article__content:hover .article__image .lazy[data-ll-status="loaded"] {
+  @media (min-width: $tablet + 1) {
+    filter: grayscale(0%);
+  }
+}
+
+// Partner logos - maintain proper sizing
+.partner-logo-container picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img.partner-logo {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+// Client testimonial images
+.client-logo picture,
+.image-container picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

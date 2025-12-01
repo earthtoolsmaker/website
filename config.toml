@@ -398,3 +398,14 @@ pagerSize = 6
   codeFences = true
   guessSyntax = true
   noClasses = false
+
+
+#-------------------------------
+# Image Processing
+[imaging]
+  quality = 80
+  resampleFilter = "Lanczos"
+
+  [imaging.exif]
+    disableDate = true
+    disableLatLong = true
