@@ -28,6 +28,7 @@ From monitoring bear populations in British Columbia to tracking individual trou
   {{< carousel_image src="./images/animal_reid_leopard_1.png" alt="Snow Leopard Identification" caption="Local feature matching identifies individual snow leopards by analyzing their unique spot patterns across camera trap images." >}}
   {{< carousel_image src="./images/animal_reid_leopard_2.png" alt="Leopard Spot Analysis" caption="LightGLUE matches keypoints between a query image and database entries to find the same individual across different sightings." >}}
   {{< carousel_image src="./images/animal_reid_seal_1.png" alt="Seal Pattern Matching" caption="Seal identification uses facial features and whisker patterns to track individuals in the Wadden Sea monitoring program." >}}
+  {{< carousel_image src="./images/animal_reid_trout_1.png" alt="Trout Identification" caption="LightGLUE local feature matching identifies individual trout by analyzing their unique spot patterns along the body." >}}
 {{< /image_carousel >}}
 
 ## Key Features
