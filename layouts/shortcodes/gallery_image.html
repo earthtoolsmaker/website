@@ -1,0 +1,20 @@
+{{/*
+  Gallery Image Shortcode (inner shortcode for gallery)
+
+  Parameters:
+  - src: Image source path (required) - paths starting with /images/ are looked up in assets/
+  - alt: Alt text for accessibility
+*/}}
+
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" | default "" }}
+
+{{ $imgPath := strings.TrimPrefix "/" $src }}
+{{ $image := resources.Get $imgPath }}
+
+{{ if $image }}
+  {{ $optimized := $image.Resize "800x webp q85" }}
+  <img src="{{ $optimized.RelPermalink }}" alt="{{ $alt }}" loading="lazy" width="{{ $optimized.Width }}" height="{{ $optimized.Height }}" />
+{{ else }}
+  <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" />
+{{ end }}

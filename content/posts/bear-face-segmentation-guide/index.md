@@ -54,15 +54,12 @@ of approximately 3400 bear images, showcasing their facial features,
 captured over recent years in forests across British Columbia and Brooks
 Falls.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/bear_identification/bears/bear1.jpg" loading="lazy">
-    <img src="/images/projects/bear_identification/bears/bear2.jpg" loading="lazy">
-    <img src="/images/projects/bear_identification/bears/bear3.jpg" loading="lazy">
-    <img src="/images/projects/bear_identification/bears/bear4.jpg" loading="lazy">
-  </div>
-  <em>Gallery / Different individuals from the <a href="https://bearresearch.org" target="_blank">BearID Project</a></em>
-</div>
+{{< gallery caption="Gallery / Different individuals from the <a href=\"https://bearresearch.org\" target=\"_blank\">BearID Project</a>" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bear1.jpg" alt="Bear 1" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bear2.jpg" alt="Bear 2" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bear3.jpg" alt="Bear 3" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bear4.jpg" alt="Bear 4" >}}
+{{< /gallery >}}
 
 ### Exploratory Data Analysis
 

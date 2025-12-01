@@ -1,0 +1,20 @@
+{{/*
+  Gallery Shortcode - wrapper for gallery images
+
+  Usage:
+  {{< gallery caption="Optional caption" >}}
+    {{< gallery_image src="/images/projects/foo/bar.jpg" alt="Description" >}}
+    {{< gallery_image src="/images/projects/foo/baz.jpg" alt="Description" >}}
+  {{< /gallery >}}
+
+  Note: HTML in captions is supported (e.g., links)
+*/}}
+
+{{ $caption := .Get "caption" | default "" }}
+
+<div class="gallery-box">
+  <div class="gallery">
+    {{ .Inner }}
+  </div>
+  {{ with $caption }}<em>{{ . | safeHTML }}</em>{{ end }}
+</div>

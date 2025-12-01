@@ -70,15 +70,12 @@ environment. Protecting and conserving bear populations is not only essential
 for their survival but also for the integrity and resilience of the ecosystems
 they inhabit.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/bear_identification/bears/bear1.jpg" loading="lazy">
-    <img src="/images/projects/bear_identification/bears/bear2.jpg" loading="lazy">
-    <img src="/images/projects/bear_identification/bears/bear3.jpg" loading="lazy">
-    <img src="/images/projects/bear_identification/bears/bear4.jpg" loading="lazy">
-  </div>
-  <em>Gallery / Different individuals from the <a href="https://bearresearch.org" target="_blank">BearID Project</a></em>
-</div>
+{{< gallery caption="Gallery / Different individuals from the <a href=\"https://bearresearch.org\" target=\"_blank\">BearID Project</a>" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bear1.jpg" alt="Bear 1" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bear2.jpg" alt="Bear 2" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bear3.jpg" alt="Bear 3" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bear4.jpg" alt="Bear 4" >}}
+{{< /gallery >}}
 
 ## Conservation concerns
 
@@ -155,15 +152,12 @@ adjust their behavior to minimize encounters, potentially increasing
 activity during nighttime. While opportunistic feeders, their activity
 can occur at any time of day or night, depending on food availability.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/human_wildlife_conflict_bear/bears/bear4.jpg" loading="lazy" alt="camera trap bear picture 4" \>
-    <img src="/images/projects/human_wildlife_conflict_bear/bears/bear1.jpg" loading="lazy" alt="camera trap bear picture 1" \>
-    <img src="/images/projects/human_wildlife_conflict_bear/bears/bear2.jpg" loading="lazy" alt="camera trap bear picture 2" \>
-    <img src="/images/projects/human_wildlife_conflict_bear/bears/bear3.jpg" loading="lazy" alt="camera trap bear picture 3" \>
-  </div>
-  <em>Gallery / Camera trap pictures of bears in Romania, near the farms where the system is deployed</em>
-</div>
+{{< gallery caption="Gallery / Camera trap pictures of bears in Romania, near the farms where the system is deployed" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear4.jpg" alt="Camera trap bear picture 4" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear1.jpg" alt="Camera trap bear picture 1" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear2.jpg" alt="Camera trap bear picture 2" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear3.jpg" alt="Camera trap bear picture 3" >}}
+{{< /gallery >}}
 
 - __System Requirements:__ The detection system must prioritize low
 power consumption, require minimal maintenance, and operate effectively
@@ -183,13 +177,10 @@ replaceability. However, it remains uncertain whether bears can learn to
 disregard the deterrent over time, necessitating iterative improvements to the
 system as required in the future.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube1.gif" loading="lazy" alt="Inflatable Tube Man 1" \>
-    <img src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube2.gif" loading="lazy" alt="Inflatable Tube Man 2" \>
-  </div>
-  <em>Inflatable Tube Man - Small (left) and large (right) tube men</em>
-</div>
+{{< gallery caption="Inflatable Tube Man - Small (left) and large (right) tube men" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube1.gif" alt="Inflatable Tube Man 1" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube2.gif" alt="Inflatable Tube Man 2" >}}
+{{< /gallery >}}
 
 ## Conclusion
 

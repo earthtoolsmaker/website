@@ -175,15 +175,12 @@ techniques. Different cameras, lighting setups, and environmental conditions
 can lead to a wide range of image characteristics, complicating the development
 of universally applicable models.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/coral_reef_segmentation/reefs/reef1.jpg" loading="lazy" alt="Reef 1 sample" \>
-    <img src="/images/projects/coral_reef_segmentation/reefs/reef2.jpg" loading="lazy" alt="Reef 1 sample" \>
-    <img src="/images/projects/coral_reef_segmentation/reefs/reef3.jpg" loading="lazy" alt="Reef 1 sample" \>
-    <img src="/images/projects/coral_reef_segmentation/reefs/reef4.jpg" loading="lazy" alt="Reef 1 sample" \>
-  </div>
-  <em>Gallery / Pictures of coral reefs in different regions across the world</em>
-</div>
+{{< gallery caption="Gallery / Pictures of coral reefs in different regions across the world" >}}
+  {{< gallery_image src="/images/projects/coral_reef_segmentation/reefs/reef1.jpg" alt="Reef 1 sample" >}}
+  {{< gallery_image src="/images/projects/coral_reef_segmentation/reefs/reef2.jpg" alt="Reef 2 sample" >}}
+  {{< gallery_image src="/images/projects/coral_reef_segmentation/reefs/reef3.jpg" alt="Reef 3 sample" >}}
+  {{< gallery_image src="/images/projects/coral_reef_segmentation/reefs/reef4.jpg" alt="Reef 4 sample" >}}
+{{< /gallery >}}
 
 Addressing these challenges in underwater computer vision requires specialized
 techniques, data augmentation strategies, and innovative algorithms tailored to

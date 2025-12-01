@@ -73,15 +73,12 @@ environment. Protecting and conserving bear populations is not only essential
 for their survival but also for the integrity and resilience of the ecosystems
 they inhabit.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/bear_identification/bears/bear1.jpg" loading="lazy">
-    <img src="/images/projects/bear_identification/bears/bear2.jpg" loading="lazy">
-    <img src="/images/projects/bear_identification/bears/bear3.jpg" loading="lazy">
-    <img src="/images/projects/bear_identification/bears/bear4.jpg" loading="lazy">
-  </div>
-  <em>Gallery / Different individuals from the <a href="https://bearresearch.org" target="_blank">BearID Project</a></em>
-</div>
+{{< gallery caption="Gallery / Different individuals from the <a href=\"https://bearresearch.org\" target=\"_blank\">BearID Project</a>" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bear1.jpg" alt="Bear 1" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bear2.jpg" alt="Bear 2" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bear3.jpg" alt="Bear 3" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bear4.jpg" alt="Bear 4" >}}
+{{< /gallery >}}
 
 ## Conservation concerns
 
@@ -171,15 +168,12 @@ a universally applicable recognition system.
 adaptive algorithms capable of accounting for these variations in facial
 appearance.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/bear_identification/bears/bf32_3.jpg" loading="lazy" alt="bf32 picture 1" \>
-    <img src="/images/projects/bear_identification/bears/bf32_1.jpg" loading="lazy" alt="bf32 picture 2" \>
-    <img src="/images/projects/bear_identification/bears/bf32_2.jpg" loading="lazy" alt="bf32 picture 3" \>
-    <img src="/images/projects/bear_identification/bears/bf32_4.jpg" loading="lazy" alt="bf32 picture 4" \>
-  </div>
-  <em>Gallery / Same individual at different times and locations from the <a href="https://bearresearch.org" target="_blank">BearID Project</a></em>
-</div>
+{{< gallery caption="Gallery / Same individual at different times and locations from the <a href=\"https://bearresearch.org\" target=\"_blank\">BearID Project</a>" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bf32_3.jpg" alt="bf32 picture 1" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bf32_1.jpg" alt="bf32 picture 2" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bf32_2.jpg" alt="bf32 picture 3" >}}
+  {{< gallery_image src="/images/projects/bear_identification/bears/bf32_4.jpg" alt="bf32 picture 4" >}}
+{{< /gallery >}}
 
 ## Camera Traps
 
@@ -193,13 +187,10 @@ species. Initially designed for game scouting, camera traps have evolved
 significantly to become indispensable tools for wildlife research, driving
 advancements in design, functionality, and affordability.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/bear_identification/camera_traps/camera1.png" loading="lazy" alt="Camera Trap" />
-    <img src="/images/projects/bear_identification/camera_traps/camera3.jpg" loading="lazy" alt="Camera Trap" />
-  </div>
-  <em>Gallery / Camera Traps</em>
-</div>
+{{< gallery caption="Gallery / Camera Traps" >}}
+  {{< gallery_image src="/images/projects/bear_identification/camera_traps/camera1.png" alt="Camera Trap 1" >}}
+  {{< gallery_image src="/images/projects/bear_identification/camera_traps/camera3.jpg" alt="Camera Trap 2" >}}
+{{< /gallery >}}
 
 ## Developed Tools
 

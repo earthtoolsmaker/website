@@ -106,25 +106,19 @@ away.
 
 The image below shows the antenna where the Pyronear system is installed.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/tower_antenna_1.jpg" loading="lazy">
-    <img src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/tower_antenna_3.jpg" loading="lazy">
-  </div>
-  <em>Setting up the system on the antenna tower</em>
-</div>
+{{< gallery caption="Setting up the system on the antenna tower" >}}
+  {{< gallery_image src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/tower_antenna_1.jpg" alt="Tower antenna setup 1" >}}
+  {{< gallery_image src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/tower_antenna_3.jpg" alt="Tower antenna setup 2" >}}
+{{< /gallery >}}
 
 Two cameras are mounted on top of the antenna tower, providing 360-degree
 coverage of the area. These cameras can be programmed to capture images at
 specific angles.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/camera_1.jpg" loading="lazy">
-    <img src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/camera_2.jpg" loading="lazy">
-  </div>
-  <em>Covering 360 degrees with two Reolink RLC-823A 16X cameras</em>
-</div>
+{{< gallery caption="Covering 360 degrees with two Reolink RLC-823A 16X cameras" >}}
+  {{< gallery_image src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/camera_1.jpg" alt="Reolink camera 1" >}}
+  {{< gallery_image src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/camera_2.jpg" alt="Reolink camera 2" >}}
+{{< /gallery >}}
 
 The map below illustrates how the chosen set of angles enables complete
 360-degree coverage.
@@ -137,13 +131,10 @@ allowing a single Pyronear system to effectively monitor and protect a large
 area. In practice, antennas are often positioned on hills, enabling the
 detection of forest fires from 30 to 60 kilometers away.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/view_1.jpg" loading="lazy">
-    <img src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/view_2.jpg" loading="lazy">
-  </div>
-  <em>Forest views from the antena tower</em>
-</div>
+{{< gallery caption="Forest views from the antenna tower" >}}
+  {{< gallery_image src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/view_1.jpg" alt="Forest view 1" >}}
+  {{< gallery_image src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/view_2.jpg" alt="Forest view 2" >}}
+{{< /gallery >}}
 
 Shown below is the installed Pyronear system, housed in a secure enclosure. The
 Pyronear team developed a plug-and-play setup featuring a central processing
@@ -151,12 +142,9 @@ unit built around a Raspberry Pi, connected to four cameras that provide
 360-degree coverage. This system processes images continuously, around the
 clock.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/pyronear_hardware.jpg" loading="lazy">
-  </div>
-  <em>Pyronear hardware system case - Raspberry Pi, power chords, RJ45, and SIM card</em>
-</div>
+{{< gallery caption="Pyronear hardware system case - Raspberry Pi, power chords, RJ45, and SIM card" >}}
+  {{< gallery_image src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/pyronear_hardware.jpg" alt="Pyronear hardware system" >}}
+{{< /gallery >}}
 
 The computer vision model detected a forest fire in Fontainebleau from a
 distance of 35 kilometers in real time, setting a new record for the Pyronear

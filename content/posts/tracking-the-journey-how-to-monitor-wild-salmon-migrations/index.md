@@ -91,13 +91,10 @@ coordinates the system by making use of the motion detectors, the underwater
 cameras and the starlink connectors. It is the brain of the setup and it
 controls how the different hardware pieces function together.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="./images/hardware/deployed_river.png" loading="lazy" alt="" \>
-    <img src="/images/projects/wild_salmon_migration_monitoring/sonar/haida-sonar.jpg" loading="lazy" alt="" \>
-  </div>
-  <em>Gallery / Setting up sonars and underwater cameras at Haida site</em>
-</div>
+{{< gallery caption="Gallery / Setting up sonars and underwater cameras at Haida site" >}}
+  {{< gallery_image src="./images/hardware/deployed_river.png" alt="Deployed river hardware" >}}
+  {{< gallery_image src="/images/projects/wild_salmon_migration_monitoring/sonar/haida-sonar.jpg" alt="Haida sonar setup" >}}
+{{< /gallery >}}
 
 ## Web Application
 

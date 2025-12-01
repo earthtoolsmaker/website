@@ -51,15 +51,12 @@ component, false positives must be minimized.
 We have amassed a collection of camera trap images captured over the
 past years from forests near the farms in Romania.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/human_wildlife_conflict_bear/bears/bear4.jpg" loading="lazy" alt="camera trap bear picture 4" \>
-    <img src="/images/projects/human_wildlife_conflict_bear/bears/bear1.jpg" loading="lazy" alt="camera trap bear picture 1" \>
-    <img src="/images/projects/human_wildlife_conflict_bear/bears/bear2.jpg" loading="lazy" alt="camera trap bear picture 2" \>
-    <img src="/images/projects/human_wildlife_conflict_bear/bears/bear3.jpg" loading="lazy" alt="camera trap bear picture 3" \>
-  </div>
-  <em>Gallery / Camera trap pictures of bears in Romania, near the farms where the system is deployed</em>
-</div>
+{{< gallery caption="Gallery / Camera trap pictures of bears in Romania, near the farms where the system is deployed" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear4.jpg" alt="Camera trap bear picture 4" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear1.jpg" alt="Camera trap bear picture 1" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear2.jpg" alt="Camera trap bear picture 2" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear3.jpg" alt="Camera trap bear picture 3" >}}
+{{< /gallery >}}
 
 ### Camera Traps
 
@@ -73,13 +70,10 @@ species. Initially designed for game scouting, camera traps have evolved
 significantly to become indispensable tools for wildlife research, driving
 advancements in design, functionality, and affordability.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/bear_identification/camera_traps/camera1.png" loading="lazy" alt="Camera Trap" />
-    <img src="/images/projects/bear_identification/camera_traps/camera3.jpg" loading="lazy" alt="Camera Trap" />
-  </div>
-  <em>Gallery / Camera Traps</em>
-</div>
+{{< gallery caption="Gallery / Camera Traps" >}}
+  {{< gallery_image src="/images/projects/bear_identification/camera_traps/camera1.png" alt="Camera Trap 1" >}}
+  {{< gallery_image src="/images/projects/bear_identification/camera_traps/camera3.jpg" alt="Camera Trap 2" >}}
+{{< /gallery >}}
 
 ### Exploratory Data Analysis
 

@@ -49,14 +49,11 @@ Our application will provide a suite of visualization tools designed to enhance 
 - Daily and seasonal activity patterns: Charts displaying animal activity fluctuations at different times of the day and across seasons.
 - Advanced analytics: Population estimation models, multi-species interaction analysis, and individual animal tracking.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/observation_visualisations_app/map.png" loading="lazy" alt="Inteactive map showing camera trap locations" title="Map" \>
-    <img src="/images/projects/observation_visualisations_app/bounding_boxes.png" loading="lazy" alt="Grid of wildlife pictures with bounding boxes" title="Bounding Boxes" \>
-    <img src="/images/projects/observation_visualisations_app/seasonal_daily_activity.png" loading="lazy" alt="4 circular charts showing daily activity over the year" title="Seasonal Activity" \>
-  </div>
-  <em>Gallery / Current Prototype for visualizing camera trap data on an interactive map</em>
-</div>
+{{< gallery caption="Gallery / Current Prototype for visualizing camera trap data on an interactive map" >}}
+  {{< gallery_image src="/images/projects/observation_visualisations_app/map.png" alt="Interactive map showing camera trap locations" >}}
+  {{< gallery_image src="/images/projects/observation_visualisations_app/bounding_boxes.png" alt="Grid of wildlife pictures with bounding boxes" >}}
+  {{< gallery_image src="/images/projects/observation_visualisations_app/seasonal_daily_activity.png" alt="4 circular charts showing daily activity over the year" >}}
+{{< /gallery >}}
 
 ## Technical Approach
 
