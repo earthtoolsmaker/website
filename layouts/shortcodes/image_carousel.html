@@ -1,0 +1,71 @@
+{{/*
+  Image Carousel Shortcode
+
+  Usage:
+  {{< image_carousel id="unique-id" >}}
+    {{< carousel_image src="./images/image1.jpg" alt="Image 1 description" >}}
+    {{< carousel_image src="./images/image2.jpg" alt="Image 2 description" >}}
+  {{< /image_carousel >}}
+
+  Parameters:
+  - id: Unique identifier for the carousel (required for multiple carousels on same page)
+  - items: Number of items to show on desktop (default: 3)
+  - items_tablet: Number of items on tablet (default: 2)
+  - items_mobile: Number of items on mobile (default: 1)
+  - gutter: Gap between items in pixels (default: 20)
+  - loop: Enable infinite loop (default: true)
+*/}}
+
+{{ $id := .Get "id" | default (printf "carousel-%d" now.UnixNano) }}
+{{ $items := .Get "items" | default "3" }}
+{{ $items_tablet := .Get "items_tablet" | default "2" }}
+{{ $items_mobile := .Get "items_mobile" | default "1" }}
+{{ $gutter := .Get "gutter" | default "20" }}
+{{ $loop := .Get "loop" | default "true" }}
+
+<div class="image-carousel" data-carousel-id="{{ $id }}">
+  <div class="image-carousel__wrapper">
+    <ul class="image-carousel__controls controls list-reset" id="{{ $id }}-controls" aria-label="Carousel Navigation" tabindex="0">
+      <li class="prev" data-controls="prev" aria-controls="{{ $id }}" tabindex="-1">
+        <i class="fa-solid fa-arrow-left-long"></i>
+      </li>
+      <li class="next" data-controls="next" aria-controls="{{ $id }}" tabindex="-1">
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </li>
+    </ul>
+
+    <div class="image-carousel__slider"
+         id="{{ $id }}"
+         data-items="{{ $items }}"
+         data-items-tablet="{{ $items_tablet }}"
+         data-items-mobile="{{ $items_mobile }}"
+         data-gutter="{{ $gutter }}"
+         data-loop="{{ $loop }}"
+         tabindex="0">
+      {{ .Inner }}
+    </div>
+  </div>
+</div>
+
+<!-- Fullscreen Lightbox for this carousel -->
+<div class="image-lightbox" id="{{ $id }}-lightbox" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Image gallery">
+  <div class="image-lightbox__overlay"></div>
+  <button class="image-lightbox__close" aria-label="Close lightbox">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <button class="image-lightbox__prev" aria-label="Previous image">
+    <i class="fa-solid fa-arrow-left-long"></i>
+  </button>
+  <button class="image-lightbox__next" aria-label="Next image">
+    <i class="fa-solid fa-arrow-right-long"></i>
+  </button>
+  <div class="image-lightbox__content">
+    <img class="image-lightbox__image" src="" alt="" />
+    <p class="image-lightbox__caption"></p>
+  </div>
+  <div class="image-lightbox__counter">
+    <span class="image-lightbox__current">1</span>
+    <span class="image-lightbox__separator">/</span>
+    <span class="image-lightbox__total">3</span>
+  </div>
+</div>

@@ -183,6 +183,165 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 
+  /* ============================
+  // Image Carousel with Lightbox
+  ============================ */
+  document.querySelectorAll('.image-carousel').forEach(function(carouselContainer) {
+    var slider = carouselContainer.querySelector('.image-carousel__slider');
+    if (!slider) return;
+
+    var id = slider.id;
+    var items = parseInt(slider.dataset.items) || 3;
+    var itemsTablet = parseInt(slider.dataset.itemsTablet) || 2;
+    var itemsMobile = parseInt(slider.dataset.itemsMobile) || 1;
+    var gutter = parseInt(slider.dataset.gutter) || 20;
+    var loop = slider.dataset.loop !== 'false';
+
+    // Initialize Tiny Slider carousel
+    var carousel = tns({
+      container: '#' + id,
+      items: items,
+      slideBy: 1,
+      gutter: gutter,
+      nav: true,
+      mouseDrag: true,
+      autoplay: false,
+      loop: loop,
+      speed: 500,
+      controlsContainer: '#' + id + '-controls',
+      responsive: {
+        1024: {
+          items: items,
+        },
+        768: {
+          items: itemsTablet,
+        },
+        0: {
+          items: itemsMobile,
+        }
+      }
+    });
+
+    // Keyboard navigation for carousel when focused
+    slider.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowLeft') {
+        carousel.goTo('prev');
+        e.preventDefault();
+      }
+      if (e.key === 'ArrowRight') {
+        carousel.goTo('next');
+        e.preventDefault();
+      }
+    });
+
+    // Lightbox functionality
+    var lightbox = document.getElementById(id + '-lightbox');
+    if (!lightbox) return;
+
+    var lightboxImage = lightbox.querySelector('.image-lightbox__image');
+    var lightboxCaption = lightbox.querySelector('.image-lightbox__caption');
+    var lightboxClose = lightbox.querySelector('.image-lightbox__close');
+    var lightboxOverlay = lightbox.querySelector('.image-lightbox__overlay');
+    var lightboxPrev = lightbox.querySelector('.image-lightbox__prev');
+    var lightboxNext = lightbox.querySelector('.image-lightbox__next');
+    var lightboxCurrent = lightbox.querySelector('.image-lightbox__current');
+    var lightboxTotal = lightbox.querySelector('.image-lightbox__total');
+
+    // Collect only original images (exclude Tiny Slider clones)
+    var images = Array.from(carouselContainer.querySelectorAll('.image-carousel__slide:not(.tns-slide-cloned) img'));
+    var currentIndex = 0;
+
+    // Update lightbox total count
+    if (lightboxTotal) {
+      lightboxTotal.textContent = images.length;
+    }
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightboxImage();
+      lightbox.classList.add('is-active');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lightbox-open');
+      // Focus the close button for accessibility
+      if (lightboxClose) {
+        lightboxClose.focus();
+      }
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lightbox-open');
+    }
+
+    function updateLightboxImage() {
+      var img = images[currentIndex];
+      if (img) {
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        if (lightboxCurrent) {
+          lightboxCurrent.textContent = currentIndex + 1;
+        }
+        // Update caption (empty string hides it via CSS :empty)
+        if (lightboxCaption) {
+          lightboxCaption.textContent = img.dataset.caption || '';
+        }
+      }
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateLightboxImage();
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateLightboxImage();
+    }
+
+    // Click on image to open lightbox
+    images.forEach(function(img, index) {
+      img.addEventListener('click', function() {
+        openLightbox(index);
+      });
+    });
+
+    // Close lightbox
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', closeLightbox);
+    }
+    if (lightboxOverlay) {
+      lightboxOverlay.addEventListener('click', closeLightbox);
+    }
+
+    // Navigate lightbox
+    if (lightboxNext) {
+      lightboxNext.addEventListener('click', nextImage);
+    }
+    if (lightboxPrev) {
+      lightboxPrev.addEventListener('click', prevImage);
+    }
+
+    // Keyboard navigation for lightbox
+    document.addEventListener('keydown', function(e) {
+      if (!lightbox.classList.contains('is-active')) return;
+
+      if (e.key === 'Escape') {
+        closeLightbox();
+        e.preventDefault();
+      }
+      if (e.key === 'ArrowRight') {
+        nextImage();
+        e.preventDefault();
+      }
+      if (e.key === 'ArrowLeft') {
+        prevImage();
+        e.preventDefault();
+      }
+    });
+  });
+
+
   // =====================
   // Load More Posts
   // =====================

@@ -1,0 +1,19 @@
+{{/*
+  Carousel Image Shortcode (inner shortcode for image_carousel)
+
+  Usage (inside image_carousel):
+  {{< carousel_image src="./images/image.jpg" alt="Image description" caption="Caption shown in lightbox" >}}
+
+  Parameters:
+  - src: Image source path (required)
+  - alt: Alt text for accessibility (required)
+  - caption: Optional caption displayed in fullscreen lightbox view
+*/}}
+
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" | default "" }}
+{{ $caption := .Get "caption" | default "" }}
+
+<div class="image-carousel__slide">
+  <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" {{ with $caption }}data-caption="{{ . }}"{{ end }} />
+</div>

@@ -24,15 +24,11 @@ Animal reID is a modular framework that enables precise identification of indivi
 
 From monitoring bear populations in British Columbia to tracking individual trout in river systems, and extending to snow leopards in Central Asia and seals in coastal waters, Animal reID provides researchers with powerful, non-invasive tools for wildlife monitoring and conservation.
 
-<div class="gallery-box">
-  <div class="gallery">
-      <img src="./images/animal_reid_leopard_1.png" loading="lazy" alt="Snow Leopard Identification" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);border-radius:2px;" class="lightense-enabled" />
-      <img src="./images/animal_reid_leopard_2.png" loading="lazy" alt="Leopard Spot Analysis" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);border-radius:2px;" class="lightense-enabled" />
-      <img src="./images/animal_reid_seal_1.png" loading="lazy" alt="Seal Pattern Matching" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);border-radius:2px;" class="lightense-enabled" />
-  </div>
-</div>
-<br />
-<br />
+{{< image_carousel id="animal-reid-gallery" >}}
+  {{< carousel_image src="./images/animal_reid_leopard_1.png" alt="Snow Leopard Identification" caption="Local feature matching identifies individual snow leopards by analyzing their unique spot patterns across camera trap images." >}}
+  {{< carousel_image src="./images/animal_reid_leopard_2.png" alt="Leopard Spot Analysis" caption="LightGLUE matches keypoints between a query image and database entries to find the same individual across different sightings." >}}
+  {{< carousel_image src="./images/animal_reid_seal_1.png" alt="Seal Pattern Matching" caption="Seal identification uses facial features and whisker patterns to track individuals in the Wadden Sea monitoring program." >}}
+{{< /image_carousel >}}
 
 ## Key Features
 
