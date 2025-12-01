@@ -41,12 +41,22 @@
             <div class="tool__image-container">
               <div class="tool__image">
                 <div class="tool__icon">
+                  {{ $iconPath := strings.TrimPrefix "/" .Params.icon }}
+                  {{ $icon := resources.Get $iconPath }}
                   {{ if .Params.logo_container }}
                   <div class="tool__icon-container">
-                    <img src="{{ .Params.icon }}" />
+                    {{ if $icon }}
+                    <img src="{{ $icon.RelPermalink }}" alt="{{ .Title }} logo" />
+                    {{ else }}
+                    <img src="{{ .Params.icon }}" alt="{{ .Title }} logo" />
+                    {{ end }}
                   </div>
                   {{ else }}
-                  <img src="{{ .Params.icon }}" />
+                    {{ if $icon }}
+                    <img src="{{ $icon.RelPermalink }}" alt="{{ .Title }} logo" />
+                    {{ else }}
+                    <img src="{{ .Params.icon }}" alt="{{ .Title }} logo" />
+                    {{ end }}
                   {{ end }}
                 </div>
               </div>
