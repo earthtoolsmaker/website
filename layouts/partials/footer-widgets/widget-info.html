@@ -4,8 +4,20 @@
     <div class="logo-footer">
       <a class="logo-footer__link" href="{{ .Site.BaseURL }}">
         {{ if or (.Site.Params.logo) (.Site.Params.logo_dark) }}
-        <img class="logo-footer__image" src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Site.Title }}">
-        <img class="logo-footer__image__dark" src="{{ .Site.BaseURL }}{{ .Site.Params.logo_dark }}" alt="{{ .Site.Title }}">
+        {{ with .Site.Params.logo }}
+          {{ $imgPath := strings.TrimPrefix "/" . }}
+          {{ $img := resources.Get $imgPath }}
+          {{ if $img }}
+        <img class="logo-footer__image" src="{{ $img.RelPermalink }}" alt="{{ site.Title }}">
+          {{ end }}
+        {{ end }}
+        {{ with .Site.Params.logo_dark }}
+          {{ $imgPath := strings.TrimPrefix "/" . }}
+          {{ $img := resources.Get $imgPath }}
+          {{ if $img }}
+        <img class="logo-footer__image__dark" src="{{ $img.RelPermalink }}" alt="{{ site.Title }}">
+          {{ end }}
+        {{ end }}
         {{ else }}
         {{ .Site.Title }}
         {{ end }}

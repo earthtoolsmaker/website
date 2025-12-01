@@ -1,0 +1,57 @@
+{{/*
+  Markdown Image Render Hook
+
+  Processes ![alt](src "title") markdown images through Hugo's asset pipeline.
+  Images with paths starting with /images/ are looked up in assets/.
+*/}}
+
+{{ $src := .Destination }}
+{{ $alt := .Text }}
+{{ $title := .Title }}
+
+{{/* Convert /images/... to images/... for assets lookup */}}
+{{ $imgPath := strings.TrimPrefix "/" $src }}
+{{ $image := resources.Get $imgPath }}
+
+{{ if $image }}
+  {{/* Generate responsive image with WebP */}}
+  {{ $widths := slice 400 600 800 1200 }}
+
+  {{/* Generate WebP srcset */}}
+  {{ $webpSrcset := slice }}
+  {{ range $widths }}
+    {{ $resized := $image.Resize (printf "%dx webp q80" .) }}
+    {{ $webpSrcset = $webpSrcset | append (printf "%s %dw" $resized.RelPermalink .) }}
+  {{ end }}
+
+  {{/* Generate fallback srcset */}}
+  {{ $fallbackSrcset := slice }}
+  {{ range $widths }}
+    {{ $resized := $image.Resize (printf "%dx q85" .) }}
+    {{ $fallbackSrcset = $fallbackSrcset | append (printf "%s %dw" $resized.RelPermalink .) }}
+  {{ end }}
+
+  {{/* Default image (800px) */}}
+  {{ $default := $image.Resize "800x q85" }}
+
+  <picture>
+    <source
+      type="image/webp"
+      srcset="{{ delimit $webpSrcset ", " }}"
+      sizes="(max-width: 600px) 100vw, (max-width: 900px) 80vw, 800px">
+    <source
+      srcset="{{ delimit $fallbackSrcset ", " }}"
+      sizes="(max-width: 600px) 100vw, (max-width: 900px) 80vw, 800px">
+    <img
+      src="{{ $default.RelPermalink }}"
+      alt="{{ $alt }}"
+      {{ with $title }}title="{{ . }}"{{ end }}
+      width="{{ $default.Width }}"
+      height="{{ $default.Height }}"
+      loading="lazy"
+      decoding="async">
+  </picture>
+{{ else }}
+  {{/* Fallback for external images or images not in assets */}}
+  <img src="{{ $src }}" alt="{{ $alt }}" {{ with $title }}title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+{{ end }}

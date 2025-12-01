@@ -18,7 +18,15 @@
             {{ if .Params.Image }}
             <div class="article__head">
               <div class="article__image">
-                <img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Title }}">
+                {{ $imgPath := strings.TrimPrefix "/" .Params.Image }}
+                {{ partial "responsive-image.html" (dict
+                  "src" $imgPath
+                  "alt" .Title
+                  "sizes" "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 400px"
+                  "widths" (slice 400 600 800)
+                  "lazy" true
+                  "lqip" true
+                ) }}
               </div>
               {{ if .Params.tags }}
               <div class="article-tags__box">

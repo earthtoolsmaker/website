@@ -11,7 +11,15 @@
     <!-- begin hero image -->
     <div class="hero__image">
       <div class="hero__image__inner">
-        <img class="lazy" data-src="{{.Site.Params.hero.hero_image}}" alt="{{.Title}}">
+        {{ $imgPath := strings.TrimPrefix "/" .Site.Params.hero.hero_image }}
+        {{ partial "responsive-image.html" (dict
+          "src" $imgPath
+          "alt" .Title
+          "sizes" "100vw"
+          "widths" (slice 600 900 1200)
+          "lazy" true
+          "lqip" true
+        ) }}
       </div>
     </div>
     <!-- end hero image -->

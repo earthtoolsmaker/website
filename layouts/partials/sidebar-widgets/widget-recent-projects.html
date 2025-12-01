@@ -5,7 +5,15 @@
   <div class="recent-project">
     {{ if .Params.Image }}
     <a href="{{ .RelPermalink }}" class="recent-project__image">
-      <img class="lazy" data-src="{{.Params.Image | absURL }}" alt="{{ .Title }}">
+      {{ $imgPath := strings.TrimPrefix "/" .Params.Image }}
+      {{ partial "responsive-image.html" (dict
+        "src" $imgPath
+        "alt" .Title
+        "sizes" "(max-width: 600px) 100vw, 200px"
+        "widths" (slice 200 300 400)
+        "lazy" true
+        "lqip" true
+      ) }}
     </a>
     {{ end }}
   

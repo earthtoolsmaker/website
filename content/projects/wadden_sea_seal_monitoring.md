@@ -97,13 +97,10 @@ The detection system operates in multiple stages:
 
 ### Web Application for Review and Validation
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/projects/wadden_sea_seal_monitoring/seals/webapp-screen-1.png" loading="lazy" alt="Web Application Review Interface">
-    <img src="/images/projects/wadden_sea_seal_monitoring/seals/webapp-detour-screen1.png" loading="lazy" alt="Web Application Review detouring tools">
-  </div>
-  <em>Researchers review and validate AI predictions through an intuitive web interface</em>
-</div>
+{{< image_carousel id="webapp-review" items="2" >}}
+  {{< carousel_image src="/images/projects/wadden_sea_seal_monitoring/seals/webapp-screen-1.png" alt="Web Application Review Interface" caption="Researchers review and validate AI predictions through an intuitive web interface" >}}
+  {{< carousel_image src="/images/projects/wadden_sea_seal_monitoring/seals/webapp-detour-screen1.png" alt="Web Application Review detouring tools" caption="Web application tools for reviewing and adjusting AI predictions" >}}
+{{< /image_carousel >}}
 
 The web application provides researchers with powerful tools to interact with AI predictions:
 

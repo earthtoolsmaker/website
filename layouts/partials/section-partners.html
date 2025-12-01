@@ -23,13 +23,21 @@
                     {{ if .link }}
                       <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" class="partner-logo-container"{{ if .show_name }} data-name="{{ .name }}"{{ end }}>
                         {{ if .logo }}
-                          <img class="partner-logo" src="{{ .logo }}" alt="{{ .name }}" loading="lazy">
+                          {{ $imgPath := strings.TrimPrefix "/" .logo }}
+                          {{ $img := resources.Get $imgPath }}
+                          {{ if $img }}
+                          <img class="partner-logo" src="{{ $img.RelPermalink }}" alt="{{ .name }}" loading="lazy">
+                          {{ end }}
                         {{ end }}
                       </a>
                     {{ else }}
                       <div class="partner-logo-container"{{ if .show_name }} data-name="{{ .name }}"{{ end }}>
                         {{ if .logo }}
-                          <img class="partner-logo" src="{{ .logo }}" alt="{{ .name }}" loading="lazy">
+                          {{ $imgPath := strings.TrimPrefix "/" .logo }}
+                          {{ $img := resources.Get $imgPath }}
+                          {{ if $img }}
+                          <img class="partner-logo" src="{{ $img.RelPermalink }}" alt="{{ .name }}" loading="lazy">
+                          {{ end }}
                         {{ end }}
                       </div>
                     {{ end }}

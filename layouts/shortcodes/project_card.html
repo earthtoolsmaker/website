@@ -2,7 +2,15 @@
   <div class="project__content">
     <div class="project__head">
       <div class="project__image">
-        <img class="lazy" data-src="{{ .Get "image" }}" alt="{{ .Get "title" }}">
+        {{ $imgPath := strings.TrimPrefix "/" (.Get "image") }}
+        {{ partial "responsive-image.html" (dict
+          "src" $imgPath
+          "alt" (.Get "title")
+          "sizes" "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 400px"
+          "widths" (slice 400 600 800)
+          "lazy" true
+          "lqip" true
+        ) }}
       </div>
     </div>
     <div class="project__inner">

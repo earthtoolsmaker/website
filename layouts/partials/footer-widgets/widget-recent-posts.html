@@ -8,7 +8,15 @@
 
       {{ if .Params.Image }}
       <a href="{{ .RelPermalink }}" class="recent-posts__image">
-        <img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Title }}">
+        {{ $imgPath := strings.TrimPrefix "/" .Params.Image }}
+        {{ partial "responsive-image.html" (dict
+          "src" $imgPath
+          "alt" .Title
+          "sizes" "(max-width: 600px) 100vw, 150px"
+          "widths" (slice 150 200 300)
+          "lazy" true
+          "lqip" true
+        ) }}
       </a>
       {{ end }}
 

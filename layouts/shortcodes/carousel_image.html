@@ -2,10 +2,10 @@
   Carousel Image Shortcode (inner shortcode for image_carousel)
 
   Usage (inside image_carousel):
-  {{< carousel_image src="./images/image.jpg" alt="Image description" caption="Caption shown in lightbox" >}}
+  {{< carousel_image src="/images/image.jpg" alt="Image description" caption="Caption shown in lightbox" >}}
 
   Parameters:
-  - src: Image source path (required)
+  - src: Image source path (required) - paths starting with /images/ are looked up in assets/
   - alt: Alt text for accessibility (required)
   - caption: Optional caption displayed in fullscreen lightbox view
   - shadow: Enable box-shadow (default: "true", set to "false" to disable)
@@ -18,6 +18,17 @@
 {{ $shadow := .Get "shadow" | default "true" }}
 {{ $rounded := .Get "rounded" | default "true" }}
 
+{{/* Convert /images/... to images/... for assets lookup */}}
+{{ $imgPath := strings.TrimPrefix "/" $src }}
+{{ $image := resources.Get $imgPath }}
+
 <div class="image-carousel__slide">
-  <img src="{{ $src }}" alt="{{ $alt }}" class="no-lightense" loading="lazy" {{ with $caption }}data-caption="{{ . }}"{{ end }} data-shadow="{{ $shadow }}" data-rounded="{{ $rounded }}" />
+  {{ if $image }}
+    {{/* Generate optimized WebP version */}}
+    {{ $optimized := $image.Resize "1200x webp q85" }}
+    <img src="{{ $optimized.RelPermalink }}" alt="{{ $alt }}" class="no-lightense" loading="lazy" {{ with $caption }}data-caption="{{ . }}"{{ end }} data-shadow="{{ $shadow }}" data-rounded="{{ $rounded }}" width="{{ $optimized.Width }}" height="{{ $optimized.Height }}" />
+  {{ else }}
+    {{/* Fallback for images not in assets */}}
+    <img src="{{ $src }}" alt="{{ $alt }}" class="no-lightense" loading="lazy" {{ with $caption }}data-caption="{{ . }}"{{ end }} data-shadow="{{ $shadow }}" data-rounded="{{ $rounded }}" />
+  {{ end }}
 </div>

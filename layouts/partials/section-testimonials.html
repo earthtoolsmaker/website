@@ -42,13 +42,21 @@
                         {{ if .link }}
                           <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" class="partner-logo-container{{ with .bg }} partner-bg-{{ . }}{{ end }}"{{ if .show_name }} data-name="{{ .name }}"{{ end }}>
                             {{ if .logo }}
-                              <img class="partner-logo" src="{{ .logo }}" alt="{{ .name }}" loading="lazy">
+                              {{ $imgPath := strings.TrimPrefix "/" .logo }}
+                              {{ $img := resources.Get $imgPath }}
+                              {{ if $img }}
+                              <img class="partner-logo" src="{{ $img.RelPermalink }}" alt="{{ .name }}" loading="lazy">
+                              {{ end }}
                             {{ end }}
                           </a>
                         {{ else }}
                           <div class="partner-logo-container{{ with .bg }} partner-bg-{{ . }}{{ end }}"{{ if .show_name }} data-name="{{ .name }}"{{ end }}>
                             {{ if .logo }}
-                              <img class="partner-logo" src="{{ .logo }}" alt="{{ .name }}" loading="lazy">
+                              {{ $imgPath := strings.TrimPrefix "/" .logo }}
+                              {{ $img := resources.Get $imgPath }}
+                              {{ if $img }}
+                              <img class="partner-logo" src="{{ $img.RelPermalink }}" alt="{{ .name }}" loading="lazy">
+                              {{ end }}
                             {{ end }}
                           </div>
                         {{ end }}
@@ -89,13 +97,21 @@
                       <div class="client-logo">
                         <a href="{{ .link }}" target="_blank">
                           {{ $orgName := index (split .designation " - ") 1 }}
-                          <img class="client-logo-image" src="{{ .logo }}" title="{{ $orgName }}" alt="{{ $orgName }}" />
+                          {{ $imgPath := strings.TrimPrefix "/" .logo }}
+                          {{ $img := resources.Get $imgPath }}
+                          {{ if $img }}
+                          <img class="client-logo-image" src="{{ $img.RelPermalink }}" title="{{ $orgName }}" alt="{{ $orgName }}" />
+                          {{ end }}
                         </a>
                       </div>
                     {{ end }}
                     {{ if .image }}
                     <a href="{{ .link }}" class="image-container" target="_blank" rel="noopener" title="Visit {{ index (split .designation " - ") 1 }}">
-                      <img class="client-avatar" src="{{ .image }}" alt="{{ .name }}" loading="lazy">
+                      {{ $imgPath := strings.TrimPrefix "/" .image }}
+                      {{ $img := resources.Get $imgPath }}
+                      {{ if $img }}
+                      <img class="client-avatar" src="{{ $img.RelPermalink }}" alt="{{ .name }}" loading="lazy">
+                      {{ end }}
                     </a>
                     {{ end }}
                     <div class="client-info">

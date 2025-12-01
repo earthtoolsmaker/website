@@ -8,7 +8,11 @@
         <i class="{{ .icon }}"></i>
       {{ end }}
       {{ if .image }}
-      <img src="{{ .image }}" height="26" width="26"/>
+        {{ $imgPath := strings.TrimPrefix "/" .image }}
+        {{ $img := resources.Get $imgPath }}
+        {{ if $img }}
+      <img src="{{ $img.RelPermalink }}" height="26" width="26"/>
+        {{ end }}
       {{ end}}
     </a>
   </li>

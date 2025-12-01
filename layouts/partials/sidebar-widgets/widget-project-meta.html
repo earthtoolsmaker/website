@@ -6,7 +6,10 @@
   {{ end }}
   {{ if .Params.space }}
     <a target="_blank" class="project-meta__space" href="{{ .Params.space }}">
-      <img src="/images/social/hf.svg" title="ML Space Demo" />
+      {{ $img := resources.Get "images/social/hf.svg" }}
+      {{ if $img }}
+      <img src="{{ $img.RelPermalink }}" title="ML Space Demo" />
+      {{ end }}
     </a>
   {{ end }}
   <h2 class="widget-sidebar__title">Project Details</h2>
@@ -26,7 +29,11 @@
         <div class="project-meta__text-container">
           {{ range .Params.clients }}
             <a target="_blank" href="{{ .link }}" title="{{ .name }}">
-              <img src="{{ .logo }}" alt="{{ .name }}"/>
+              {{ $imgPath := strings.TrimPrefix "/" .logo }}
+              {{ $img := resources.Get $imgPath }}
+              {{ if $img }}
+              <img src="{{ $img.RelPermalink }}" alt="{{ .name }}"/>
+              {{ end }}
             </a>
           {{ end }}
         </div>

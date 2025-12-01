@@ -5,7 +5,15 @@
   <div class="prev">
     {{ if .PrevInSection.Params.Image }}
     <a href="{{ .PrevInSection.Permalink }}" class="prev__image">
-      <img class="lazy" data-src="{{ .PrevInSection.Params.Image }}" alt="{{ .PrevInSection.Title }}">
+      {{ $imgPath := strings.TrimPrefix "/" .PrevInSection.Params.Image }}
+      {{ partial "responsive-image.html" (dict
+        "src" $imgPath
+        "alt" .PrevInSection.Title
+        "sizes" "(max-width: 600px) 100vw, 200px"
+        "widths" (slice 200 300 400)
+        "lazy" true
+        "lqip" true
+      ) }}
     </a>
     {{ end }}
     <div class="prev__box">
@@ -23,7 +31,15 @@
     </div>
     {{ if .NextInSection.Params.Image }}
     <a href="{{ .NextInSection.Permalink }}" class="next__image">
-      <img class="lazy" data-src="{{ .NextInSection.Params.Image }}" alt="{{ .NextInSection.Title }}">
+      {{ $imgPath := strings.TrimPrefix "/" .NextInSection.Params.Image }}
+      {{ partial "responsive-image.html" (dict
+        "src" $imgPath
+        "alt" .NextInSection.Title
+        "sizes" "(max-width: 600px) 100vw, 200px"
+        "widths" (slice 200 300 400)
+        "lazy" true
+        "lqip" true
+      ) }}
     </a>
     {{ end }}
   </div>
