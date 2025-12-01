@@ -5,20 +5,6 @@
 
   &__wrapper {
     position: relative;
-    margin: 0 -16px; // Compensate for increased slide padding
-
-    // Override Tiny Slider's overflow:hidden to allow shadows to show
-    .tns-ovh {
-      overflow: visible;
-    }
-
-    .tns-outer {
-      overflow: visible;
-    }
-
-    .tns-inner {
-      overflow: visible;
-    }
 
     // Vertically center items of different heights
     .tns-horizontal.tns-subpixel > .tns-item {
@@ -202,7 +188,7 @@
     }
 
     &__slide {
-      padding: 12px; // Still need room for shadows on mobile
+      padding: 12px;
     }
 
     .tns-nav {
