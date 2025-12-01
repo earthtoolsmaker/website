@@ -28,7 +28,7 @@ cameras positioned on high spots with a view on the forest. The detectors
 communicate fire alerts to a database that is connected to a supervision
 platform for fire departments.
 
-{{< image_carousel id="pyronear-gallery" >}}
+{{< image_carousel id="pyronear-gallery" items="2" >}}
   {{< carousel_image src="./images/platform1.png" alt="Pyronear Platform Alert" caption="Fire alert triggered on the Pyronear web platform, showing detected wildfire location and camera feed." >}}
   {{< carousel_image src="./images/platform2.png" alt="Pyronear Platform Overview" caption="Fire management platform interface for fire departments to monitor and respond to alerts." >}}
 {{< /image_carousel >}}

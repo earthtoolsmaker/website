@@ -57,15 +57,13 @@ tall antennas, the system is capable of detecting fires from distances of 30 to
 60 kilometers. Below is the Brison site, where four cameras work in unison to
 achieve complete 360-degree coverage.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="./images/cameras/setup/brison/pyronear_brison_1_2023_07_24T16_51_07.jpg" loading="lazy">
-    <img src="./images/cameras/setup/brison/pyronear_brison_2_2023_07_09T05_50_16.jpg" loading="lazy">
-    <img src="./images/cameras/setup/brison/pyronear_brison_3_2023_07_04T06_22_26.jpg" loading="lazy">
-    <img src="./images/cameras/setup/brison/pyronear_brison_4_2023_07_09T12_07_07.jpg" loading="lazy">
-  </div>
-  <em>360 view of the <b>Brison site</b> - 4 cameras are placed on an antenna tower</em>
-</div>
+{{< image_carousel id="brison-360" items="2" items_tablet="2" items_mobile="1" >}}
+  {{< carousel_image src="./images/cameras/setup/brison/pyronear_brison_1_2023_07_24T16_51_07.jpg" alt="Brison site camera 1 - North view" caption="Camera 1 - North view of Brison site" >}}
+  {{< carousel_image src="./images/cameras/setup/brison/pyronear_brison_2_2023_07_09T05_50_16.jpg" alt="Brison site camera 2 - East view" caption="Camera 2 - East view of Brison site" >}}
+  {{< carousel_image src="./images/cameras/setup/brison/pyronear_brison_3_2023_07_04T06_22_26.jpg" alt="Brison site camera 3 - South view" caption="Camera 3 - South view of Brison site" >}}
+  {{< carousel_image src="./images/cameras/setup/brison/pyronear_brison_4_2023_07_09T12_07_07.jpg" alt="Brison site camera 4 - West view" caption="Camera 4 - West view of Brison site" >}}
+{{< /image_carousel >}}
+*360 view of the **Brison site** - 4 cameras are placed on an antenna tower*
 
 ## Datasets
 
