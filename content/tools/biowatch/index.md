@@ -14,17 +14,17 @@ all_downloads_url: https://github.com/earthtoolsmaker/biowatch/releases/tag/v1.0
 <div class="tool-container-button-cta" id="container-button-download-biowatch">
   <a class="link-no-decoration" href="https://github.com/earthtoolsmaker/biowatch/releases/latest/download/biowatch-setup.exe" id="download-windows">
     <button class="button">
-      Biowatch for Windows
+      <i class="fa-brands fa-windows" style="margin-right: 0.5em;"></i>Biowatch for Windows
     </button>
   </a>
   <a class="link-no-decoration" href="https://github.com/earthtoolsmaker/biowatch/releases/latest/download/biowatch.dmg" id="download-mac">
     <button class="button">
-      Biowatch for Mac
+      <i class="fa-brands fa-apple" style="margin-right: 0.5em;"></i>Biowatch for Mac
     </button>
   </a>
   <a class="link-no-decoration" href="https://github.com/earthtoolsmaker/biowatch/releases/latest/download/biowatch.AppImage" id="download-linux">
     <button class="button">
-      Biowatch for Linux
+      <i class="fa-brands fa-linux" style="margin-right: 0.5em;"></i>Biowatch for Linux
     </button>
   </a>
 </div>
