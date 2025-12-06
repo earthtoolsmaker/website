@@ -3,7 +3,7 @@ title: Biowatch
 show_title: true
 button_cta: Download and Install
 icon: /images/logos/biowatch-icon.png
-summary: Biowatch is a powerful tool for wildlife researchers and conservationists to analyze, visualize, and explore CamtrapDP datasets with ease.
+summary: Open-source desktop app for analyzing camera trap data. Runs 100% locally — your sensitive wildlife data never leaves your computer.
 github_repo: https://github.com/earthtoolsmaker/biowatch
 project: /projects/observation_visualisations_app
 date: 2025-05-01
@@ -29,11 +29,9 @@ all_downloads_url: https://github.com/earthtoolsmaker/biowatch/releases/tag/v1.0
   </a>
 </div>
 
-# Explore Camera Trap Datasets with Biowatch
+# Analyze Camera Trap Data — Privately, On Your Machine
 
-Biowatch is a powerful tool for wildlife researchers and conservationists to
-analyze, visualize, and explore [CamtrapDP
-datasets](https://camtrap-dp.tdwg.org/) with ease.
+Biowatch is a free, open-source desktop application that lets you analyze, visualize, and explore camera trap datasets entirely offline. Your sensitive wildlife data never gets uploaded to any server — everything runs locally on your computer.
 
 {{< image_carousel id="biowatch-gallery" >}}
   {{< carousel_image src="./images/medias.png" alt="Biowatch Medias" caption="Browse and manage thousands of camera trap images and videos with powerful search and filtering capabilities." shadow="false" rounded="false" >}}
@@ -41,11 +39,20 @@ datasets](https://camtrap-dp.tdwg.org/) with ease.
   {{< carousel_image src="./images/overview.png" alt="Biowatch Overview" caption="Get a comprehensive overview of your camera trap deployment with interactive maps and statistics." shadow="false" rounded="false" >}}
 {{< /image_carousel >}}
 
+## Why Biowatch?
+
+- __100% Offline & Private__: Your research data stays on your machine. No cloud uploads, no accounts, no tracking. Perfect for sensitive location data of endangered species.
+- __Open Source__: Inspect the code, contribute improvements, or adapt it for your needs. Built transparently by the conservation community, for the conservation community.
+- __On-Device AI__: Run powerful species identification models directly on your computer — no internet required after setup.
+
 ## Key Features
 
 - 🗺️ __Interactive Maps__: Visualize camera trap locations and wildlife sightings with interactive maps and spatial analysis tools.
-- 📊 __Data Analysis__: Generate insights with powerful analytics tools, species identification, and temporal activity patterns.
-- 🗃️ __Media Management__: Organize, tag, and search through thousands of camera trap images and videos with ease.
+- 📊 __Data Analysis__: Generate insights with temporal activity patterns, species distributions, and deployment statistics.
+- 🗃️ __Media Management__: Browse, filter, and search through thousands of camera trap images and videos.
+- 🤖 __AI Species Identification__: Automatically classify wildlife using state-of-the-art models.
+- 📦 __CamtrapDP Compatible__: Import and export using the [Camera Trap Data Package](https://camtrap-dp.tdwg.org/) standard for seamless data sharing with GBIF and biodiversity platforms.
+- 📁 __Flexible Export__: Export images organized by species or as standardized CamtrapDP packages ready for publication.
 <br />
 <br />
 
@@ -56,14 +63,9 @@ datasets](https://camtrap-dp.tdwg.org/) with ease.
 
 ## About
 
+Biowatch was developed to help researchers, conservationists, and wildlife enthusiasts analyze camera trap data more effectively — without compromising on data privacy or requiring expensive cloud services.
 
-Biowatch was developed to help researchers, conservationists, and wildlife
-enthusiasts analyze camera trap data more effectively. Our mission is to
-provide tools that make wildlife monitoring more accessible and insightful.
-
-Whether you're tracking endangered species, studying animal behavior, or
-monitoring biodiversity, Biowatch provides the tools you need to turn your
-camera trap data into actionable insights.
+Whether you're tracking endangered species in remote locations, studying animal behavior, or monitoring biodiversity, Biowatch provides the tools you need to turn your camera trap data into actionable insights while keeping full control of your data.
 
 <script>
 window.addEventListener("load", () => {
