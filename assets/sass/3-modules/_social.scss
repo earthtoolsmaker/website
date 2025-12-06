@@ -36,6 +36,18 @@
     color: var(--primary-color);
   }
 
+  // GitHub icon inversion on hover
+  &[aria-label="Github link"] {
+    border-radius: 50%;
+    padding: 2px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background-color: var(--heading-font-color);
+      color: var(--background-color);
+    }
+  }
+
   img {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
