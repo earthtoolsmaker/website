@@ -4,14 +4,22 @@
   <div class="tabs__nav" role="tablist">
     {{- range $index, $label := $labels }}
     {{- $label = trim $label " " -}}
-    {{- $icon := substr $label 0 2 -}}
-    {{- $text := trim (substr $label 2) " " -}}
+    {{- $icon := "" -}}
+    {{- $text := "" -}}
+    {{- if in $label "::" -}}
+      {{- $parts := split $label "::" -}}
+      {{- $icon = index $parts 0 -}}
+      {{- $text = trim (index $parts 1) " " -}}
+    {{- else -}}
+      {{- $icon = substr $label 0 2 -}}
+      {{- $text = trim (substr $label 2) " " -}}
+    {{- end -}}
     <button class="tabs__tab{{ if eq $index 0 }} tabs__tab--active{{ end }}"
             role="tab"
             aria-selected="{{ if eq $index 0 }}true{{ else }}false{{ end }}"
             aria-controls="{{ $id }}-panel-{{ $index }}"
             data-tab="{{ $index }}">
-      <span class="tabs__tab-icon">{{ $icon }}</span>
+      <span class="tabs__tab-icon">{{ $icon | safeHTML }}</span>
       <span class="tabs__tab-text">{{ $text }}</span>
     </button>
     {{- end }}
