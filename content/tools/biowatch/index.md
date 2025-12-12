@@ -98,9 +98,25 @@ Whether you're tracking endangered species in remote locations, studying animal 
 
 <script>
 window.addEventListener("load", () => {
-  console.log(getOsInfo());
-  const { os, url, text } = getOsInfo();
-  const container = document.getElementById("container-button-download-biowatch");
-  container.querySelector(`#download-${os} button`).classList.add("tool-button-cta")
+  const { os } = getOsInfo();
+
+  // Highlight the appropriate download button
+  if (os) {
+    const container = document.getElementById("container-button-download-biowatch");
+    container.querySelector(`#download-${os} button`).classList.add("tool-button-cta");
+  }
+
+  // Auto-select the tab matching the user's OS
+  const osToTabIndex = { "windows": 0, "mac": 1, "linux": 2 };
+  const tabIndex = osToTabIndex[os];
+  if (tabIndex !== undefined) {
+    const tabsContainer = document.querySelector('.tabs[data-tabs]');
+    if (tabsContainer) {
+      const targetTab = tabsContainer.querySelector(`[data-tab="${tabIndex}"]`);
+      if (targetTab) {
+        targetTab.click();
+      }
+    }
+  }
 });
 </script>
