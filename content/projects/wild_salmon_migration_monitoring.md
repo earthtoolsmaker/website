@@ -7,6 +7,7 @@ clients:
   - name: Pacific Salmon Foundation
     link: https://psf.ca/
     logo: /images/clients/psf/logo.png
+    bg: inverted
   - name: Wild Salmon Centre
     link: https://wildsalmoncenter.org/
     logo: /images/clients/wild_salmon_centre/logo.png

@@ -5,6 +5,7 @@ clients:
   - name: BearID
     link: https://bearresearch.org
     logo: /images/clients/bearid/logo.png
+    bg: inverted
 related_posts:
   - bear-face-segmentation-guide
   - bear-identification-with-metric-learning-guide

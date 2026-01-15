@@ -28,7 +28,7 @@
         </h3>
         <div class="project-meta__text-container">
           {{ range .Params.clients }}
-            <a target="_blank" href="{{ .link }}" title="{{ .name }}">
+            <a target="_blank" href="{{ .link }}" title="{{ .name }}" class="project-meta__partner-logo{{ with .bg }} partner-bg-{{ . }}{{ end }}">
               {{ $imgPath := strings.TrimPrefix "/" .logo }}
               {{ $img := resources.Get $imgPath }}
               {{ if $img }}
