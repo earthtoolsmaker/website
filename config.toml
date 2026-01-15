@@ -220,6 +220,11 @@ pagerSize = 6
     link = "https://www.sfu.ca/"
 
   [[params.partner_item]]
+    name = "BC Hydro"
+    logo = "/images/clients/bc-hydro/logo.png"
+    link = "https://www.bchydro.com/"
+
+  [[params.partner_item]]
     name = "ReefSupport"
     logo = "/images/clients/reefsupport/logo.png"
     link = "https://reef.support"
