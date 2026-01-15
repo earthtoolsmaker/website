@@ -21,7 +21,7 @@ The [__SalmonVision__](https://salmonvision.org) project is a
 collaborative effort involving the [Pacific Salmon
 Foundation](https://psf.ca/), the [Wild Salmon
 Center](https://wildsalmoncenter.org/),
-[Aeria](https://aeria.ai/), and [Simon Fraser
+[Lumax AI](https://lumax.ai/), and [Simon Fraser
 University](https://www.sfu.ca/). Together, we are developing an
 advanced monitoring system that serves as a centralized hub for
 generating and collecting crucial data. This data is essential

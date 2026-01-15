@@ -10,9 +10,9 @@ clients:
   - name: Wild Salmon Centre
     link: https://wildsalmoncenter.org/
     logo: /images/clients/wild_salmon_centre/logo.png
-  - name: Aeria
-    link: https://aeria.ai/
-    logo: /images/clients/aeria/logo.png
+  - name: Lumax AI
+    link: https://lumax.ai/
+    logo: /images/clients/lumax-ai/logo.png
   - name: Simon Fraser University
     link: https://sfu.ca/
     logo: /images/clients/sfu/logo.png
@@ -48,7 +48,7 @@ effective conservation and management.
 Through a collaborative partnership with the [Pacific Salmon Foundation
 (PSF)](https://psf.ca/),
 the [Wild Salmon Center](https://wildsalmoncenter.org/),
-[Aeria](https://aeria.ai/), and [Simon Fraser University](https://sfu.ca/), we
+[Lumax AI](https://lumax.ai/), and [Simon Fraser University](https://sfu.ca/), we
 developed an automated tracking and counting system -
 [__SalmonVision__](https://salmonvision.org/) - designed to monitor a wide
 range of salmon species returning to their natal streams.
@@ -162,7 +162,7 @@ more likely to support and participate in conservation initiatives.
 This project involves a close collaboration with the [Pacific Salmon
 Foundation](https://psf.ca/), the [Wild Salmon
 Center](https://wildsalmoncenter.org/),
-[Aeria](https://aeria.ai/), and [Simon Fraser
+[Lumax AI](https://lumax.ai/), and [Simon Fraser
 University](https://www.sfu.ca/) to develop an advanced monitoring
 system. The system automatically counts different fish species
 migrating back to their natal streams, utilizing underwater cameras,
@@ -239,7 +239,7 @@ movement patterns.
 
 ![Drone Imagery](/images/projects/wild_salmon_migration_monitoring/drone/drone_imagery.webp)
 *Gallery / Photogrammetry of a fresh water stream where salmon migrate -
-Courtesy to [Aeria.ai](https://aeria.ai) for the picture*
+Courtesy to [Lumax AI](https://lumax.ai) for the picture*
 
 ## Conclusion
 

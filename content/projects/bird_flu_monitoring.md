@@ -2,9 +2,9 @@
 title: Bird Flu Monitoring
 summary: Utilize drones for precise monitoring of breeding seabird colonies by detection of live and dead adults and chicks to determine survival and reproduction and asses the impact of avian influenza.
 clients:
-  - name: Aeria
-    link: https://aeria.ai/
-    logo: /images/clients/aeria/logo.png
+  - name: Lumax AI
+    link: https://lumax.ai/
+    logo: /images/clients/lumax-ai/logo.png
 tools:
   - Computer Vision
   - Machine Learning

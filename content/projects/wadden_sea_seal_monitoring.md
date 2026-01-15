@@ -5,6 +5,9 @@ clients:
   - name: Wageningen Marine Research
     link: https://www.wur.nl/en/Research-Results/Research-Institutes/marine-research.htm
     logo: /images/clients/wageningen-marine-research/logo.png
+  - name: Lumax AI
+    link: https://lumax.ai/
+    logo: /images/clients/lumax-ai/logo.png
 space: /spaces/seal_identification/
 tools:
   - Computer Vision

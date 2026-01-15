@@ -240,9 +240,9 @@ pagerSize = 6
     link = "https://www.hack-the-planet.io/"
 
   [[params.partner_item]]
-    name = "Aeria"
-    logo = "/images/clients/aeria/logo.png"
-    link = "https://aeria.earth/"
+    name = "Lumax AI"
+    logo = "/images/clients/lumax-ai/logo.png"
+    link = "https://lumax.ai/"
 
   #-------------------------------
   # Testimonials Section

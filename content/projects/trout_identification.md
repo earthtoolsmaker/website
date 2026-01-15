@@ -2,9 +2,9 @@
 title: Trout Identification
 summary: Non-invasive technology for monitoring trout populations using computer vision to accurately identify individual fish.
 clients:
-  - name: Aeria
-    link: https://aeria.ai/
-    logo: /images/clients/aeria/logo.png
+  - name: Lumax AI
+    link: https://lumax.ai/
+    logo: /images/clients/lumax-ai/logo.png
 space: /spaces/trout_identification/
 related_posts:
   - how-to-prepare-data-for-identification
