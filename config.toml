@@ -204,6 +204,11 @@ pagerSize = 6
     link = "https://www.birds.cornell.edu/"
 
   [[params.partner_item]]
+    name = "Sovon"
+    logo = "/images/clients/sovon/logo.svg"
+    link = "https://www.sovon.nl/"
+
+  [[params.partner_item]]
     name = "Objective Science International"
     logo = "/images/clients/osi/logo.png"
     link = "https://www.osi-ngo.org/"
