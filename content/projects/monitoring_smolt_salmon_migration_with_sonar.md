@@ -13,6 +13,8 @@ tools:
   - Computer Vision
   - Sonar
 date: 2026-01-10
+status: completed
+pinned: true
 image: /images/projects/monitoring_smolt_salmon_migration_with_sonar/cover.png
 ---
 
@@ -54,6 +56,7 @@ Traditional smolt counting relies on manual review of sonar footage, which is ti
 ARIS sonar creates acoustic images using sound reflections, enabling fish detection in conditions where optical cameras fail: turbid water, zero visibility, and nighttime. It produces high-resolution, video-like acoustic image sequences that are well suited for detecting and counting small fish like smolt.
 
 ![Sonar Aris Frame](/images/projects/monitoring_smolt_salmon_migration_with_sonar/sonar_aris_frame.png)
+*Example ARIS sonar frame — acoustic image showing fish targets in the sonar beam.*
 
 ## Our Approach
 
@@ -73,10 +76,11 @@ Some key technical achievements of this project include:
 - Automated conversion and preprocessing of proprietary .aris format with motion-enhanced noise reduction
 - Detection and tracking of individual smolt using deep learning
 - Length estimation of the detected smolt
+- Directional counting of smolt migrating past a virtual trigger segment
 
 ### Study site
 
-The [Alouette River](https://en.wikipedia.org/wiki/Alouette_River) is the target site for deployment of sonar smolt enumeration. For the first year we used smolt data from the outflow of Jansen Lake, as data collection at the Alouette River was not possible in 2025. In the second and third year of the project we will apply the workflow to the Alouette River.
+The [Alouette River](https://en.wikipedia.org/wiki/Alouette_River) is the target site for deployment of sonar smolt enumeration. For the first year we used smolt data from the outflow of Jansen Lake, as data collection at the Alouette River was not possible in 2025.
 
 ## Preprocessing
 
@@ -98,8 +102,8 @@ We fine-tuned a pretrained [YOLOv11](https://github.com/ultralytics/ultralytics)
 
 To follow individual smolt across consecutive frames we use [BoTSort](https://github.com/NirAharon/BoT-SORT) (Robust Associations Multi-Pedestrian Tracking). Unlike simpler tracking approaches such as SORT that rely solely on bounding-box overlap, BoTSort combines motion prediction with visual appearance features and camera-motion compensation. This makes it far more robust when fish cross paths or temporarily disappear behind noise, providing continuous trajectories that allow us to count each smolt exactly once as it migrates past the sonar.
 
-<p><iframe src="https://www.youtube.com/embed/Tg-gyDn8zfk" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
-<em style="font-size:14px;line-height:1.4em;display:block;">Automated smolt detection, tracking, counting, and size estimation in action on preprocessed ARIS sonar footage.</em>
+<p><iframe src="https://www.youtube.com/embed/UY08mjPBHbc" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
+<em style="font-size:14px;line-height:1.4em;display:block;">Automated smolt detection and tracking in action on preprocessed ARIS sonar footage.</em>
 
 ## Size Estimation
 
@@ -118,8 +122,6 @@ The counting step translates the tracked fish trajectories into actual migration
 
 Rather than spanning the trigger segment across the entire sonar range, this project uses a regional trigger segment focused on the area of interest — specifically the weir box exit. This focused approach brings several advantages: it eliminates false detections from outside the migration corridor, and it allows more targeted optimization of the detection and tracking models. This matters because sonar imagery characteristics change with distance from the transducer, so a model tuned for one region performs better than one stretched across the full range.
 
-For the Alouette River deployment, we anticipate focusing on a 3–4 metre region where fish migrate through, with the trigger segment placed within that zone.
-
 ![Counting trigger](/images/projects/monitoring_smolt_salmon_migration_with_sonar/counting_trigger.png)
 *Regional trigger segment — a fish is counted when its track crosses the segment placed at the weir box exit.*
 
@@ -134,3 +136,6 @@ Experience the smolt detection and counting model in action. Upload preprocessed
 This project demonstrates that automated smolt enumeration from ARIS sonar imagery is feasible and effective. By combining deep learning-based detection with robust tracking, size estimation, and directional counting, the pipeline transforms hours of manual sonar review into an automated workflow that delivers reliable migration data.
 
 The system developed in partnership with [BC Hydro](https://www.bchydro.com/) and [Lumax AI](https://lumax.ai/) handles the full analysis chain — from raw sonar files through to individual fish counts with length estimates and migration direction. By making smolt monitoring faster and more consistent, this approach supports the data-driven conservation decisions that are essential for protecting salmon populations.
+
+<p><iframe src="https://www.youtube.com/embed/Tg-gyDn8zfk" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
+<em style="font-size:14px;line-height:1.4em;display:block;">Full pipeline demo — detection, tracking, counting, and size estimation on ARIS sonar footage.</em>
