@@ -98,8 +98,39 @@ We fine-tuned a pretrained [YOLOv11](https://github.com/ultralytics/ultralytics)
 
 To follow individual smolt across consecutive frames we use [BoTSort](https://github.com/NirAharon/BoT-SORT) (Robust Associations Multi-Pedestrian Tracking). Unlike simpler tracking approaches such as SORT that rely solely on bounding-box overlap, BoTSort combines motion prediction with visual appearance features and camera-motion compensation. This makes it far more robust when fish cross paths or temporarily disappear behind noise, providing continuous trajectories that allow us to count each smolt exactly once as it migrates past the sonar.
 
+<p><iframe src="https://www.youtube.com/embed/Tg-gyDn8zfk" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
+<em style="font-size:14px;line-height:1.4em;display:block;">Automated smolt detection, tracking, counting, and size estimation in action on preprocessed ARIS sonar footage.</em>
+
+## Size Estimation
+
+Estimating the length of each detected smolt is an important step in the pipeline because fish length is one of the key characteristics used to distinguish species and life stages. Our approach uses the dimensions of the bounding boxes drawn around each detection to estimate fish length.
+
+For each detection the algorithm determines whether the fish is swimming roughly horizontally or vertically and selects the bounding-box dimension that best represents its body length. Because individual detections can vary, the system collects multiple measurements across a fish's tracked trajectory and filters out extreme values as outliers, keeping the estimates reliable. Each final length estimate is assigned a confidence rating based on how many consistent measurements were available — more observations mean higher confidence.
+
+This method provides length estimates for the vast majority of tracked fish. As a final step, pixel measurements are converted to real-world centimetres using a known-size reference object placed in the sonar's field of view during installation.
+
+![Length estimation process](/images/projects/monitoring_smolt_salmon_migration_with_sonar/length_estimation.png)
+*Length estimation — multiple detections across frames are collected, filtered for outliers, and combined into a single length estimate in pixels.*
+
+## Counting
+
+The counting step translates the tracked fish trajectories into actual migration counts. A fish is counted when its track crosses a defined trigger segment — a virtual line drawn across the sonar image. To avoid double-counting, the system only registers a crossing when the track has crossed the segment an odd number of times, and it records the direction of travel (upstream or downstream) based on the sonar's orientation.
+
+Rather than spanning the trigger segment across the entire sonar range, this project uses a regional trigger segment focused on the area of interest — specifically the weir box exit. This focused approach brings several advantages: it eliminates false detections from outside the migration corridor, and it allows more targeted optimization of the detection and tracking models. This matters because sonar imagery characteristics change with distance from the transducer, so a model tuned for one region performs better than one stretched across the full range.
+
+For the Alouette River deployment, we anticipate focusing on a 3–4 metre region where fish migrate through, with the trigger segment placed within that zone.
+
+![Counting trigger](/images/projects/monitoring_smolt_salmon_migration_with_sonar/counting_trigger.png)
+*Regional trigger segment — a fish is counted when its track crosses the segment placed at the weir box exit.*
+
 ## Interactive Demo
 
 Experience the smolt detection and counting model in action. Upload preprocessed sonar footage or use the provided examples to see automated detection and tracking:
 
 {{< hf_space "Lumax-eco-sonar-smolt" >}}
+
+## Conclusion
+
+This project demonstrates that automated smolt enumeration from ARIS sonar imagery is feasible and effective. By combining deep learning-based detection with robust tracking, size estimation, and directional counting, the pipeline transforms hours of manual sonar review into an automated workflow that delivers reliable migration data.
+
+The system developed in partnership with [BC Hydro](https://www.bchydro.com/) and [Lumax AI](https://lumax.ai/) handles the full analysis chain — from raw sonar files through to individual fish counts with length estimates and migration direction. By making smolt monitoring faster and more consistent, this approach supports the data-driven conservation decisions that are essential for protecting salmon populations.
