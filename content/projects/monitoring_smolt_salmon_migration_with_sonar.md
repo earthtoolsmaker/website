@@ -77,3 +77,29 @@ Some key technical achievements of this project include:
 ### Study site
 
 The [Alouette River](https://en.wikipedia.org/wiki/Alouette_River) is the target site for deployment of sonar smolt enumeration. For the first year we used smolt data from the outflow of Jansen Lake, as data collection at the Alouette River was not possible in 2025. In the second and third year of the project we will apply the workflow to the Alouette River.
+
+## Preprocessing
+
+Raw ARIS sonar files go through a five-step preprocessing pipeline before analysis: file conversion from the proprietary `.aris` format to `.mp4`, frame stabilization, noise reduction, colour channel adjustment, and chunking into manageable segments. Together these steps transform noisy acoustic recordings into clean, analysis-ready video.
+
+The preprocessed output is visualized as an RGB image where each colour channel encodes a different layer of information. The blue background represents the original raw sonar input, while fish appear as bright red regions that stand out clearly against it, making them easy to distinguish from the static sonar information.
+
+![Preprocessing before and after](/images/projects/monitoring_smolt_salmon_migration_with_sonar/preprocess.png)
+*Before and after preprocessing — the RGB encoding makes fish (red) clearly distinguishable from the static sonar information (blue).*
+
+Large sonar files are split into smaller chunks so the downstream detection and tracking steps can process them efficiently.
+
+## Detection and Tracking
+
+We fine-tuned a pretrained [YOLOv11](https://github.com/ultralytics/ultralytics) model for smolt detection in preprocessed sonar frames. YOLO (You Only Look Once) is a family of real-time object detection models known for their excellent balance of speed and accuracy — critical when processing thousands of sonar frames per recording session. The model learns to locate smolt in each frame and output bounding boxes with confidence scores.
+
+![YOLO tasks](/images/projects/monitoring_smolt_salmon_migration_with_sonar/yolo_tasks.png)
+*Overview of YOLO tasks — detection, segmentation, classification, pose estimation, and oriented bounding boxes (courtesy of [Ultralytics](https://github.com/ultralytics/ultralytics)).*
+
+To follow individual smolt across consecutive frames we use [BoTSort](https://github.com/NirAharon/BoT-SORT) (Robust Associations Multi-Pedestrian Tracking). Unlike simpler tracking approaches such as SORT that rely solely on bounding-box overlap, BoTSort combines motion prediction with visual appearance features and camera-motion compensation. This makes it far more robust when fish cross paths or temporarily disappear behind noise, providing continuous trajectories that allow us to count each smolt exactly once as it migrates past the sonar.
+
+## Interactive Demo
+
+Experience the smolt detection and counting model in action. Upload preprocessed sonar footage or use the provided examples to see automated detection and tracking:
+
+{{< hf_space "Lumax-eco-sonar-smolt" >}}
