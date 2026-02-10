@@ -13,6 +13,7 @@ tools:
   - Computer Vision
   - Sonar
 date: 2026-01-10
+space: /spaces/smolt_sonar_monitoring/
 status: completed
 pinned: true
 image: /images/projects/monitoring_smolt_salmon_migration_with_sonar/cover.png
