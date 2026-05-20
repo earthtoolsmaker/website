@@ -199,6 +199,11 @@ pagerSize = 6
     link = "https://elephantlisteningproject.org/"
 
   [[params.partner_item]]
+    name = "INBO"
+    logo = "/images/clients/inbo/logo.jpg"
+    link = "https://www.vlaanderen.be/inbo/en-gb/homepage/"
+
+  [[params.partner_item]]
     name = "Cornell Lab of Ornithology"
     logo = "/images/clients/cornell_lab/logo.svg"
     link = "https://www.birds.cornell.edu/"
@@ -213,6 +218,11 @@ pagerSize = 6
     logo = "/images/clients/osi/logo.png"
     link = "https://www.osi-ngo.org/"
     show_name = true
+
+  [[params.partner_item]]
+    name = "Lumax AI"
+    logo = "/images/clients/lumax-ai/logo.png"
+    link = "https://lumax.ai/"
 
   [[params.partner_item]]
     name = "OSI Panthera"
@@ -243,11 +253,6 @@ pagerSize = 6
     name = "HackThePlanet"
     logo = "/images/clients/hacktheplanet/logo.png"
     link = "https://www.hack-the-planet.io/"
-
-  [[params.partner_item]]
-    name = "Lumax AI"
-    logo = "/images/clients/lumax-ai/logo.png"
-    link = "https://lumax.ai/"
 
   #-------------------------------
   # Testimonials Section
