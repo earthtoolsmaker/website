@@ -52,12 +52,12 @@ Biowatch is a free, open-source desktop application that lets you analyze, visua
 
 ## Key Features
 
-- 🗂️ __Import from anywhere__: Start from your own image folders, a [Camtrap DP](https://camtrap-dp.tdwg.org/) package, or curated public datasets from [GBIF](https://www.gbif.org/) and [LILA](https://lila.science/) — or try the one-click demo dataset.
-- 🤖 __On-device species ID__: Detect and identify animals with local AI models — SpeciesNet, MegaDetector, DeepFaune, and Manas — and pick the best fit for your region from a coverage map.
-- 🗺️ __Interactive maps__: See camera locations as species pie-charts, abundance markers, or density heatmaps, and filter everything to an area you draw.
-- 📊 __Activity & trends__: Compare species with daily-activity clocks, seasonal timelines, and per-deployment activity charts.
-- 🗃️ __Media management__: Browse, filter, and search thousands of images and videos, review AI detections, and correct bounding boxes.
-- 📦 __Standards-based export__: Publish to GBIF as a Camtrap DP package, or export your media organized into one folder per species.
+- __Import from anywhere__: Start from your own image folders, a [Camtrap DP](https://camtrap-dp.tdwg.org/) package, or curated public datasets from [GBIF](https://www.gbif.org/) and [LILA](https://lila.science/) — or try the one-click demo dataset.
+- __On-device species ID__: Detect and identify animals with local AI models — SpeciesNet, MegaDetector, DeepFaune, and Manas — and pick the best fit for your region from a coverage map.
+- __Interactive maps__: See camera locations as species pie-charts, abundance markers, or density heatmaps, and filter everything to an area you draw.
+- __Activity & trends__: Compare species with daily-activity clocks, seasonal timelines, and per-deployment activity charts.
+- __Media management__: Browse, filter, and search thousands of images and videos, review AI detections, and correct bounding boxes.
+- __Standards-based export__: Publish to GBIF as a Camtrap DP package, or export your media organized into one folder per species.
 
 ## Installation
 
