@@ -61,7 +61,7 @@ A curated list of fundraising projects rendered as the same photo cards, listed 
 
 (Curated rather than a dynamic `status: fundraising` query — the user wants editorial control over which fundraising projects the page features; the intro copy carries no hardcoded count.)
 
-Section CTA: **Sponsor a project** → `/contact/`.
+Below the cards, the same CTA-band component as the partner section: "See a project you'd back?" with one button — **Sponsor a project** → `/contact/`.
 
 ### 5. More ways to help
 
