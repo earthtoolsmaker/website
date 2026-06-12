@@ -47,10 +47,10 @@
   <rect width="1920" height="620" fill="url(#sky)"/>
   <rect y="560" width="1920" height="400" fill="#ffddd2"/>
 
-  <!-- sun -->
-  <circle cx="1430" cy="360" r="240" fill="url(#sunGlow)"/>
-  <circle cx="1430" cy="360" r="86" fill="#f5b699"/>
-  <circle cx="1430" cy="360" r="74" fill="#e29578" opacity="0.9"/>
+  <!-- sun, low on the horizon, clipped by the far ridge -->
+  <circle cx="1430" cy="430" r="150" fill="url(#sunGlow)" opacity="0.6"/>
+  <circle cx="1430" cy="430" r="58" fill="#f8c9b2"/>
+  <circle cx="1430" cy="430" r="48" fill="#efad8f" opacity="0.85"/>
 
   <!-- birds -->
   <g fill="#5b8a87">
