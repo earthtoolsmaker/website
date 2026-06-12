@@ -577,7 +577,25 @@
     color: var(--heading-font-color);
   }
 
+  // Full-bleed: break the carousel strip out of the page container
   .partners__carousel {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
     margin-bottom: 0;
+  }
+
+  // Logos in color by default (sitewide style greys them out until hover)
+  .partner-logo {
+    filter: none;
+    opacity: 1;
+  }
+
+  // White/light logos need a dark chip to stay visible in color mode
+  .partner-bg-inverted {
+    background: #91867b;
+
+    .partner-logo {
+      filter: none;
+    }
   }
 }
