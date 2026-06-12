@@ -36,36 +36,43 @@ pagerSize = 6
     weight = 1
 
   [[menu.main]]
-    name = "About"
-    url = "/about/"
+    identifier = "work"
+    name = "Work"
     weight = 2
 
   [[menu.main]]
+    parent = "work"
+    name = "Projects"
+    url = "/projects/"
+    weight = 1
+
+  [[menu.main]]
+    parent = "work"
     identifier = "tools"
     name = "Tools"
     url = "/tools/"
-    weight = 3
-    hasChildren = true
+    weight = 2
 
   [[menu.main]]
-    name = "Projects"
-    url = "/projects/"
-    weight = 4
-
-  [[menu.main]]
+    parent = "work"
     name = "Spaces"
     url = "/spaces/"
-    weight = 5
+    weight = 3
 
   [[menu.main]]
     name = "Blog"
     url = "/posts/"
-    weight = 6
+    weight = 3
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
 
   [[menu.main]]
     name = "Contact"
     url = "/contact/"
-    weight = 8
+    weight = 5
 
       # Footer Menu
       [[menu.footer]]
@@ -74,8 +81,8 @@ pagerSize = 6
       weight = 1
 
       [[menu.footer]]
-      name = "About"
-      url = "/about/"
+      name = "Projects"
+      url = "/projects/"
       weight = 2
 
       [[menu.footer]]
@@ -85,29 +92,29 @@ pagerSize = 6
       weight = 3
 
       [[menu.footer]]
-      name = "Projects"
-      url = "/projects/"
-      weight = 4
-
-      [[menu.footer]]
       name = "Spaces"
       url = "/spaces/"
-      weight = 5
+      weight = 4
 
       [[menu.footer]]
       name = "Blog"
       url = "/posts/"
+      weight = 5
+
+      [[menu.footer]]
+      name = "About"
+      url = "/about/"
       weight = 6
 
       [[menu.footer]]
       name = "Sponsor"
       url = "/sponsor/"
-      weight = 8
+      weight = 7
 
       [[menu.footer]]
       name = "Contact"
       url = "/contact/"
-      weight = 9
+      weight = 8
 
 
   #-------------------------------
