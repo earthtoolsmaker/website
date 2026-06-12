@@ -1,23 +1,22 @@
 {{ define "main" }}
 
 {{ if .Params.hero_image }}
-<!-- begin hero -->
-<div class="hero__image hero__image--overlay">
-  <div class="hero__image__inner">
-    {{ $imgPath := strings.TrimPrefix "/" .Params.hero_image }}
-    {{ partial "responsive-image.html" (dict
-      "src" $imgPath
-      "alt" .Title
-      "sizes" "100vw"
-      "widths" (slice 600 900 1200 1600)
-      "lazy" true
-      "lqip" true
-    ) }}
-    <div class="hero__overlay">
-      <div class="container-wide">
-        {{ with .Params.hero_headline }}<h1 class="hero__overlay-title">{{ . }}</h1>{{ end }}
-        {{ with .Params.hero_subline }}<p class="hero__overlay-description">{{ . }}</p>{{ end }}
-      </div>
+<!-- begin hero (same component as the about page) -->
+<div class="about-hero">
+  {{ $imgPath := strings.TrimPrefix "/" .Params.hero_image }}
+  {{ partial "responsive-image.html" (dict
+    "src" $imgPath
+    "alt" .Title
+    "sizes" "100vw"
+    "widths" (slice 600 900 1200 1500)
+    "lazy" false
+    "fetchpriority" "high"
+    "lqip" false
+  ) }}
+  <div class="about-hero__overlay">
+    <div class="container-wide">
+      <h1 class="about-hero__title">{{ .Params.hero_title | default .Title }}</h1>
+      {{ with .Params.hero_description }}<p class="about-hero__description">{{ . }}</p>{{ end }}
     </div>
   </div>
 </div>

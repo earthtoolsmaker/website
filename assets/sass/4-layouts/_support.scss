@@ -1,24 +1,10 @@
 /* Support Page Layout */
 
+/* Same content column as the about page */
 .layout-support .page {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.layout-support .page__content {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 16px 0;
-  text-align: center;
-  font-size: 20px;
-  line-height: 1.6;
-
-  @media (max-width: $mobile) {
-    padding: 0;
-    text-align: left;
-    font-size: $base-font-size;
-  }
 }
 
 .support__section-intro {

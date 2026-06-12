@@ -78,7 +78,7 @@ Compact 3-card grid (clickable cards with icon chips), in this order:
 ## Implementation shape
 
 - **Content & URL:** `content/sponsor.md` → `content/support.md` with `aliases: ["/sponsor/"]`. Front matter stays thin (title, hero image + overlay text, layout). Partner tracks and ways-to-help cards live in a small `data/support.yaml`, following the about revamp's data-file pattern.
-- **Layout:** new `layouts/page/support.html`, following the `layouts/page/about.html` pattern: hero with text-overlay variant, then sections. Built self-contained — the about revamp branch specs the same hero overlay variant, but neither branch depends on the other; whichever lands second reconciles the shared partial.
+- **Layout:** new `layouts/page/support.html`, following the `layouts/page/about.html` pattern: hero, then sections. The hero reuses the `.about-hero` component shipped by the about revamp (PR #34) — same markup, classes (`_about.scss`), and front matter vocabulary (`hero_title`, `hero_description`) — and the intro paragraph gets the same 1000px content column, so the two pages stay visually consistent.
 - **Fundraising cards:** reuse the card markup from `section-projects.html`; extract a small card partial if it doesn't reuse cleanly, so homepage and support page render from one source.
 - **Form:** none on this page; the `contact-form.html` partial extraction remains (used by the `contact_form` shortcode on `/contact/`).
 - **Navigation:** `config.toml` — add main-menu "Support" at weight 5, bump Contact to 6; add footer entry.
