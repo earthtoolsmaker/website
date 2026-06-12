@@ -8,13 +8,22 @@
     "alt" .Title
     "sizes" "100vw"
     "widths" (slice 600 900 1200 1500)
-    "lazy" true
-    "lqip" true
+    "lazy" false
+    "fetchpriority" "high"
+    "lqip" false
   ) }}
   <div class="about-hero__overlay">
     <div class="container-wide">
-      {{ with .Params.hero_title }}<h1 class="about-hero__title">{{ . }}</h1>{{ end }}
+      <h1 class="about-hero__title">{{ .Params.hero_title | default .Title }}</h1>
       {{ with .Params.hero_description }}<p class="about-hero__description">{{ . }}</p>{{ end }}
+    </div>
+  </div>
+</div>
+{{ else }}
+<div class="container-wide layout-about">
+  <div class="page-head">
+    <div class="page-info">
+      <h1 class="page-title">{{ .Title }}</h1>
     </div>
   </div>
 </div>

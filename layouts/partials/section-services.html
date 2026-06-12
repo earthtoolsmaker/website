@@ -20,7 +20,7 @@
     <div class="services__list">
       {{ range $index, $service := .services }}
       <div class="services__item">
-        <span class="services__number">{{ printf "%02d" (add $index 1) }}</span>
+        <span class="services__number" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span>
         <h4 class="services__item-title">{{ $service.title }}</h4>
         <p class="services__item-description">{{ $service.description }}</p>
       </div>
@@ -58,10 +58,12 @@
           <h3 class="case-study__title">{{ $example.title }}</h3>
           <p class="case-study__solution">{{ $example.description }}</p>
           <div class="case-study__partners">
-            {{ range $example.partners }}
-            <a href="{{ .link }}" target="_blank" rel="noopener" title="{{ .name }}"
-              class="case-study__partner{{ if .inverted }} case-study__partner--inverted{{ end }}">
-              <img src="{{ .logo }}" alt="{{ .name }}">
+            {{ range $p := $example.partners }}
+            <a href="{{ $p.link }}" target="_blank" rel="noopener" title="{{ $p.name }}"
+              class="case-study__partner">
+              {{ with resources.Get (strings.TrimPrefix "/" $p.logo) }}
+              <img src="{{ .RelPermalink }}" alt="{{ $p.name }}">
+              {{ end }}
             </a>
             {{ end }}
           </div>

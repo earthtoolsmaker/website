@@ -27,7 +27,10 @@
 {{ $class := .class | default "" }}
 {{ $sizes := .sizes | default "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 400px" }}
 {{ $widths := .widths | default (slice 400 600 800) }}
-{{ $lazy := .lazy | default true }}
+{{/* `false | default true` evaluates to true in Hugo, so honor an explicit false via isset */}}
+{{ $lazy := true }}
+{{ if isset . "lazy" }}{{ $lazy = .lazy }}{{ end }}
+{{ $fetchpriority := .fetchpriority | default "" }}
 {{ $lqip := .lqip | default true }}
 
 {{/* Try to get image from assets */}}
@@ -84,6 +87,7 @@
       width="{{ $default.Width }}"
       height="{{ $default.Height }}"
       loading="{{ if $lazy }}lazy{{ else }}eager{{ end }}"
+      {{ with $fetchpriority }}fetchpriority="{{ . }}"{{ end }}
       decoding="async">
   </picture>
 {{ else }}

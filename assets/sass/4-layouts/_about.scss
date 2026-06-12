@@ -151,7 +151,7 @@
 }
 
 .team-card--open .team-card__bio {
-  max-height: 300px;
+  max-height: 600px;
   opacity: 1;
   margin-top: 14px;
 }
@@ -245,7 +245,7 @@
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0.04em;
-  color: var(--accent-color);
+  color: var(--tertiary-color);
 }
 
 .services__item-title {

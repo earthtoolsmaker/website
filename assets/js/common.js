@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
   /* ============================
   // Partners Slider
   ============================ */
-  if (document.querySelector(".about-partners-slider")) {
+  if (document.querySelector(".about-partners-slider") && document.querySelector("#about-partners-controls")) {
     var aboutPartnersSlider = tns({
       container: ".about-partners-slider",
       items: 2,
