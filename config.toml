@@ -70,9 +70,14 @@ pagerSize = 6
     weight = 4
 
   [[menu.main]]
+    name = "Support"
+    url = "/support/"
+    weight = 5
+
+  [[menu.main]]
     name = "Contact"
     url = "/contact/"
-    weight = 5
+    weight = 6
 
       # Footer Menu
       [[menu.footer]]
@@ -107,8 +112,8 @@ pagerSize = 6
       weight = 6
 
       [[menu.footer]]
-      name = "Sponsor"
-      url = "/sponsor/"
+      name = "Support"
+      url = "/support/"
       weight = 7
 
       [[menu.footer]]

@@ -30,6 +30,9 @@
     <div class="project-left col col-7 col-d-12">
       <div class="project-content">
         {{ .Content }}
+        {{ if eq .Params.status "fundraising" }}
+        {{ partial "support-cta.html" . }}
+        {{ end }}
         {{ if .PrevInSection }}
         <div class="project__nav">
           <div class="project__prev">
