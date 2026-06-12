@@ -47,7 +47,7 @@ examples:
         inverted: false
 
   - emoji: "🔥"
-    image: "/images/projects/early_forest_fire_detection/cover.png"
+    image: "/images/projects/early_forest_fire_detection/cover.jpg"
     challenge: "Detecting forest fires early"
     challenge_detail: ""
     challenge_link: "/projects/early_forest_fire_detection/"
