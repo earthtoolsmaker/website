@@ -16,7 +16,7 @@ tracks:
   - label: "For NGOs & researchers"
     title: "Build it with us"
     description: "You know the field problem; we know the models. Together we turn camera traps, hydrophones, and drone surveys into systems that run every day."
-    proof: "That's how every tool on this site got made — with partners like the **Cornell Lab**, the **Pacific Salmon Foundation**, and **Conservation Carpathia**."
+    proof: "That's how every tool on this site got made — with partners like the **Cornell Lab** and the **Pacific Salmon Foundation**."
     offers:
       - "Field deployments designed together"
       - "Grant applications with us as technical partner"
@@ -34,7 +34,7 @@ tracks:
   - label: "For companies"
     title: "Lend your expertise"
     description: "Your engineers, your hardware, or your cloud budget — pointed at a conservation problem, they ship tools this year, not someday."
-    proof: "Companies like **Hack the Planet**, **Reef Support**, and **Lumax AI** already work with us where tech meets the field."
+    proof: "Our wildfire work with **Pyronear** shows what that buys: detection that spots smoke minutes after ignition, running across European forests today."
     offers:
       - "Sponsor a deployment end to end"
       - "Engineering time on real field problems"

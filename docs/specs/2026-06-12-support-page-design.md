@@ -55,9 +55,9 @@ Proof that funded projects keep running: ongoing high-impact projects rendered a
 
 Card structure inspired by hack-the-planet's partner pillars (user reference), but copy, ordering, and framing are deliberately our own — audience eyebrows instead of "Way 01" numbering, action-led card titles, and reversed order leading with co-development (our core):
 
-1. **For NGOs & researchers — "Build it with us"** — co-design framing; proof names the Cornell Lab, Pacific Salmon Foundation, Conservation Carpathia.
+1. **For NGOs & researchers — "Build it with us"** — co-design framing; proof names the Cornell Lab and the Pacific Salmon Foundation.
 2. **For foundations & philanthropy — "Fund the long game"** — maintenance/longevity framing; no named backers.
-3. **For companies — "Lend your expertise"** — engineers/hardware/cloud framing; proof names Hack the Planet, Reef Support, Lumax AI.
+3. **For companies — "Lend your expertise"** — engineers/hardware/cloud framing; proof centers on the Pyronear wildfire-detection work.
 
 Each card: eyebrow label → action title → one-line description → divider → proof paragraph (bold partner names) → bulleted list of concrete offerings (accent-colored bullets). All card copy lives in `data/support.yaml` (`tracks`: label, title, description, proof, offers).
 
