@@ -45,7 +45,7 @@
 /* Ways-to-help cards: whole card is a link; icon chip + aligned rows */
 .support__way {
   display: grid;
-  grid-row: span 4;
+  grid-row: span 3;
   grid-template-rows: subgrid;
   row-gap: 0;
   align-content: start;
@@ -70,17 +70,28 @@
   }
 }
 
+.support__way-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+
+  .support__card-title {
+    margin-bottom: 0;
+  }
+}
+
 .support__way-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  margin-bottom: 16px;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: var(--accent-color);
   color: var(--secondary-color);
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .support__track-label {
