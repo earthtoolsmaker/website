@@ -1,0 +1,20 @@
+{{ with .Site.Data.about }}
+<!-- begin about stats -->
+<section class="section about-stats animate">
+  <div class="container-wide">
+    <div class="about-stats__grid">
+      <div class="about-stats__item">
+        <div class="about-stats__value">{{ len (where site.RegularPages "Section" "projects") }}</div>
+        <div class="about-stats__label">conservation projects</div>
+      </div>
+      {{ range .stats }}
+      <div class="about-stats__item">
+        <div class="about-stats__value">{{ .value }}</div>
+        <div class="about-stats__label">{{ .label }}</div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<!-- end about stats -->
+{{ end }}

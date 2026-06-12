@@ -3,14 +3,18 @@
 .layout-about .page,
 .layout-about .page-head,
 .layout-about .services .container-wide,
-.layout-about .team .container-wide {
+.layout-about .team .container-wide,
+.layout-about .about-stats .container-wide,
+.layout-about .about-timeline .container-wide {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .layout-about .services .container-wide,
-.layout-about .team .container-wide {
+.layout-about .team .container-wide,
+.layout-about .about-stats .container-wide,
+.layout-about .about-timeline .container-wide {
   padding-left: 0;
   padding-right: 0;
 }
@@ -505,5 +509,39 @@
       background-color: var(--primary-color);
       color: var(--white);
     }
+  }
+}
+
+/* About Stats Strip */
+.about-stats {
+  .about-stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    text-align: center;
+    padding: 28px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px 16px;
+    }
+  }
+
+  .about-stats__value {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--heading-font-color);
+
+    @media (max-width: $mobile) {
+      font-size: 32px;
+    }
+  }
+
+  .about-stats__label {
+    font-size: 16px;
+    color: var(--text-color);
   }
 }
