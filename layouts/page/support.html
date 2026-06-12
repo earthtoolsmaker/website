@@ -54,8 +54,10 @@
           {{ end }}
 
           <div class="row">
-            {{ range (where (where .Site.RegularPages "Section" "projects") ".Params.status" "fundraising") }}
-              {{ partial "project-card.html" . }}
+            {{ range .Site.Data.support.fundraising_projects }}
+              {{ with $.Site.GetPage . }}
+                {{ partial "project-card.html" . }}
+              {{ end }}
             {{ end }}
           </div>
 

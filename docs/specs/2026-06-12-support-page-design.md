@@ -37,11 +37,11 @@ Two or three sentences: we're a small team of engineers and ecologists; sponsors
 
 ### 3. Fund a project (centerpiece)
 
-The `status: fundraising` projects pulled dynamically as photo cards (currently: Tropical Bat Call Detection and Classification, Bird Flu Monitoring, Snow Leopard Monitoring), reusing the homepage fundraising-card markup from `section-projects.html`. Each card links to its project page. Section intro:
+A curated list of fundraising projects rendered as photo cards, listed by page path in `data/support.yaml` (currently Snow Leopard Monitoring and Bird Flu Monitoring), reusing the homepage fundraising-card markup from `section-projects.html`. Each card links to its project page. Section intro:
 
-> Three projects are designed, scoped, and waiting on funding.
+> These projects are designed, scoped, and waiting on funding.
 
-(The card list is dynamic; the intro line lives in editable copy — keep the count in one obvious place so it's trivial to update when the fundraising set changes.)
+(Curated rather than a dynamic `status: fundraising` query — the user wants editorial control over which fundraising projects the page features; the intro copy carries no hardcoded count.)
 
 Section CTA: **Sponsor this project** → scrolls to `#get-in-touch`.
 
@@ -86,7 +86,7 @@ Existing Formspree contact form, anchored `id="get-in-touch"`, headed: *Tell us 
 
 ## To verify at implementation
 
-- Fundraising project set at build time (query is dynamic; intro copy must not hardcode a stale count).
+- Fundraising card list in `data/support.yaml` stays in sync with which projects actually seek funding (it is curated, not queried).
 - Snow leopard cover resolution is sufficient for a full-bleed hero.
 - All inbound links to `/sponsor/` (shortcode, about spec CTA, any content links) resolve after the rename.
 

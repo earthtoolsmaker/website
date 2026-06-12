@@ -1,5 +1,9 @@
 fundraising_intro: "These projects are designed, scoped, and waiting on funding. Sponsor one and we'll build it in the open."
 
+fundraising_projects:
+  - /projects/snow_leopard_monitoring
+  - /projects/bird_flu_monitoring
+
 ongoing_intro: "Support doesn't stop at launch. These systems run in the field every day — spotting wildfire smoke minutes after ignition and counting wild salmon as they migrate upriver."
 
 ongoing_projects:
