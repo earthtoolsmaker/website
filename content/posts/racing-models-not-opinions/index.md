@@ -8,8 +8,10 @@ tags: ["AI", "vision", "MLOps", "temporal models"]
 
 In 2024, we wrote about [building an early forest fire detector]({{< ref
 "/posts/protecting-the-forest-early-forest-fire-detector" >}}) with the NGO
-[Pyronear](https://pyronear.org): cameras on antenna towers, a YOLO model on a
-Raspberry Pi, and real fires detected from 35 kilometers away. This post is
+[Pyronear](https://pyronear.org): cameras on antenna towers, a YOLO object
+detector (a fast model that draws boxes around what it finds in a single
+image) running on a Raspberry Pi, and real fires detected from 35 kilometers
+away. This post is
 the next chapter — and it is less about a model than about a **method**.
 
 Over the past months we helped Pyronear answer one question: *can a model that
@@ -130,7 +132,9 @@ pyro-dataset v3.0.0, half wildfires and half confirmed false positives:
 | 4 | Production baseline (pyro-detector) | 0.858 | 0.960 | 0.906 | 0.159 | 1.3 |
 | 5 | MTB Change Detection | 0.712 | 0.934 | 0.808 | 0.378 | 3.0 |
 
-TTD is *time to detection*: how many frames pass before the alarm fires, at
+Two of the columns deserve a word. FPR is the *false positive rate* — the
+fraction of smoke-free sequences that would have raised a false alarm. TTD
+is *time to detection*: how many frames pass before the alarm fires, at
 roughly 30 seconds per frame. A perfect verifier would have zero false
 positives, perfect recall, and fire on the first frame — the leaderboard
 makes the trade-offs between those three explicit.
@@ -139,16 +143,19 @@ makes the trade-offs between those three explicit.
 
 Two results are worth dwelling on:
 
-**The rule-based baseline finished second.** The FSM tracker — YOLO boxes
-plus an IoU tracker plus a persistence rule, *no ML training at all* — beat
-a trained GRU-ConvNeXt model and crushed pixel-wise change detection. If we
+**The rule-based baseline finished second.** The finite-state-machine (FSM)
+tracker — YOLO boxes, a simple box-overlap tracker, and a "must persist for
+several frames" rule, *no ML training at all* — beat a trained neural
+model (the GRU-ConvNeXt table entry) and crushed change detection. If we
 had skipped baselines and only built the fancy models, we would have had no
 idea how much of their performance came from temporal reasoning and how much
 from the YOLO detector underneath. Baselines aren't a formality; they are
 the measuring stick.
 
 **The winner moved the trade-off, not just the threshold.** The bbox-tube
-temporal model with a DINOv2 ViT backbone cut the false positive rate from
+temporal model — *bbox* for the bounding boxes the detector draws, *tube*
+for the way they are linked across frames — scored by a DINOv2 Vision
+Transformer (the "ViT" in the table) cut the false positive rate from
 0.159 to 0.040 — **4× fewer false alarms** — while *also* improving recall
 from 0.960 to 0.974. That is not a threshold slid along the same curve;
 it is a better curve. The cost: a mean detection delay of 3.4 frames
