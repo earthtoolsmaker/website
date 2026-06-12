@@ -33,6 +33,62 @@
 </div>
 <!-- end intro -->
 
+<!-- begin partner with us -->
+<section class="section support-tracks animate">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+
+          <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">🤝 Partner With Us</h2>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+          </div>
+
+          {{ with .Site.Data.support.tracks_intro }}
+          <p class="support__section-intro">{{ . }}</p>
+          {{ end }}
+
+          <div class="support__grid">
+            {{ range .Site.Data.support.tracks }}
+            <div class="support__card support__track">
+              <span class="support__track-label">{{ .label }}</span>
+              <h3 class="support__card-title">{{ .title }}</h3>
+              <p class="support__card-description">{{ .description }}</p>
+              <div class="support__track-proof">{{ .proof | markdownify }}</div>
+              <ul class="support__track-offers">
+                {{ range .offers }}
+                <li>{{ . }}</li>
+                {{ end }}
+              </ul>
+            </div>
+            {{ end }}
+          </div>
+
+          <div class="support__cta-band">
+            <div class="support__cta-band-text">
+              <h3 class="support__cta-band-title">Have something in mind?</h3>
+              <p class="support__cta-band-description">A scoped project, a long-term programme, or just an idea — tell us what you're thinking and we'll tell you what it could become.</p>
+            </div>
+            <div class="support__cta-band-buttons">
+              <a class="link-no-decoration" href="/contact/">
+                <button class="button">Talk to us</button>
+              </a>
+              <a class="link-no-decoration" href="/projects/">
+                <button class="button button--ghost">See our work</button>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end partner with us -->
+
 <!-- begin proven in the field -->
 <section class="section projects animate">
   <div class="container">
@@ -106,62 +162,6 @@
   </div>
 </section>
 <!-- end fund a project -->
-
-<!-- begin partner with us -->
-<section class="section support-tracks animate">
-  <div class="container">
-    <div class="row">
-      <div class="col col-12">
-        <div class="container__inner">
-
-          <div class="section__info">
-            <div class="section__head">
-              <h2 class="section__title">🤝 Partner With Us</h2>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
-          </div>
-
-          {{ with .Site.Data.support.tracks_intro }}
-          <p class="support__section-intro">{{ . }}</p>
-          {{ end }}
-
-          <div class="support__grid">
-            {{ range .Site.Data.support.tracks }}
-            <div class="support__card support__track">
-              <span class="support__track-label">{{ .label }}</span>
-              <h3 class="support__card-title">{{ .title }}</h3>
-              <p class="support__card-description">{{ .description }}</p>
-              <div class="support__track-proof">{{ .proof | markdownify }}</div>
-              <ul class="support__track-offers">
-                {{ range .offers }}
-                <li>{{ . }}</li>
-                {{ end }}
-              </ul>
-            </div>
-            {{ end }}
-          </div>
-
-          <div class="support__cta-band">
-            <div class="support__cta-band-text">
-              <h3 class="support__cta-band-title">Have something in mind?</h3>
-              <p class="support__cta-band-description">A scoped project, a long-term programme, or just an idea — tell us what you're thinking and we'll tell you what it could become.</p>
-            </div>
-            <div class="support__cta-band-buttons">
-              <a class="link-no-decoration" href="/contact/">
-                <button class="button">Talk to us</button>
-              </a>
-              <a class="link-no-decoration" href="/projects/">
-                <button class="button button--ghost">See our work</button>
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- end partner with us -->
 
 <!-- begin more ways to help -->
 <section class="section support-ways animate">

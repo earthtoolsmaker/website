@@ -35,23 +35,7 @@ Full-bleed photo with text overlaid on a bottom gradient — same overlay style 
 
 Two or three sentences: we're a small team of engineers and ecologists; sponsorships and partnerships are what turn scoped project ideas into deployed tools; here's how to be part of that.
 
-### 3. Proven in the field
-
-Proof first: ongoing high-impact projects rendered as photo cards, listed by page path in `data/support.yaml` (currently Early Forest Fire Detection, Wild Salmon Migration Monitoring, and Wadden Sea Seal Monitoring). Intro:
-
-> Support doesn't stop at launch. These systems run in the field every day — spotting wildfire smoke minutes after ignition, counting wild salmon as they migrate upriver, and surveying seal colonies from the air.
-
-### 3b. Fund a project
-
-A curated list of fundraising projects rendered as the same photo cards, listed by page path in `data/support.yaml` (currently Snow Leopard Monitoring and Bird Flu Monitoring), reusing the homepage fundraising-card markup from `section-projects.html`. Each card links to its project page. Section intro:
-
-> These projects are designed, scoped, and waiting on funding.
-
-(Curated rather than a dynamic `status: fundraising` query — the user wants editorial control over which fundraising projects the page features; the intro copy carries no hardcoded count.)
-
-Section CTA: **Sponsor a project** → `/contact/`.
-
-### 4. Partner with us (three partner tracks)
+### 3. Partner with us (three partner tracks)
 
 Card structure inspired by hack-the-planet's partner pillars (user reference), but copy, ordering, and framing are deliberately our own — audience eyebrows instead of "Way 01" numbering, action-led card titles, and reversed order leading with co-development (our core):
 
@@ -62,6 +46,22 @@ Card structure inspired by hack-the-planet's partner pillars (user reference), b
 Each card: eyebrow label → action title → one-line description → divider → proof paragraph (bold partner names) → bulleted list of concrete offerings (accent-colored bullets). All card copy lives in `data/support.yaml` (`tracks`: label, title, description, proof, offers).
 
 Below the cards, a full-width "Have something in mind?" CTA band (secondary-color background): one line of copy plus two buttons — **Talk to us** → `/contact/` and **See our work** → `/projects/`.
+
+### 4. Proven in the field
+
+Proof first: ongoing high-impact projects rendered as photo cards, listed by page path in `data/support.yaml` (currently Early Forest Fire Detection, Wild Salmon Migration Monitoring, and Wadden Sea Seal Monitoring). Intro:
+
+> Support doesn't stop at launch. These systems run in the field every day — spotting wildfire smoke minutes after ignition, counting wild salmon as they migrate upriver, and surveying seal colonies from the air.
+
+### 4b. Fund a project
+
+A curated list of fundraising projects rendered as the same photo cards, listed by page path in `data/support.yaml` (currently Snow Leopard Monitoring and Bird Flu Monitoring), reusing the homepage fundraising-card markup from `section-projects.html`. Each card links to its project page. Section intro:
+
+> These projects are designed, scoped, and waiting on funding.
+
+(Curated rather than a dynamic `status: fundraising` query — the user wants editorial control over which fundraising projects the page features; the intro copy carries no hardcoded count.)
+
+Section CTA: **Sponsor a project** → `/contact/`.
 
 ### 5. More ways to help
 
