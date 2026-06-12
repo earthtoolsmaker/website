@@ -41,14 +41,9 @@ tracks:
       - "Hardware and cloud credits in kind"
       - "Impact your team can point to"
 
-ways_intro: "No budget required — code, connections, skills, and data all move this work forward."
+ways_intro: "No budget required — connections, skills, and data all move this work forward."
 
 ways:
-  - title: "Contribute code"
-    icon: "fa-brands fa-github"
-    description: "All our tools are open source. Pick an issue, test a release, or improve the docs."
-    link: "https://github.com/earthtoolsmaker"
-    link_text: "View on GitHub"
   - title: "Spread the word"
     icon: "fa-solid fa-bullhorn"
     description: "Share our projects and introduce us to teams that need better tools."

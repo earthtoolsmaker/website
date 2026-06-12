@@ -65,12 +65,13 @@ Below the cards, a full-width "Have something in mind?" CTA band (secondary-colo
 
 ### 5. More ways to help
 
-Compact 4-card grid:
+Compact 3-card grid (clickable cards with icon chips), in this order:
 
-- **Contribute code** → direct link to https://github.com/earthtoolsmaker
-- **Spread the word** — share projects, follow on social, introduce us to conservation orgs that need tools.
-- **Volunteer your expertise** — ML engineers, designers, ecologists → `/contact/`
-- **Share data or hardware** — labeled datasets, camera-trap archives, field equipment → `/contact/`
+1. **Spread the word** — share projects, introduce us to teams that need tools → `/projects/`
+2. **Volunteer your expertise** — ML engineers, designers, ecologists → `/contact/`
+3. **Share data or hardware** — labeled datasets, camera-trap archives, field equipment → `/contact/`
+
+(A "Contribute code" GitHub card was cut by user decision.)
 
 (No contact form on this page — see Decisions.)
 

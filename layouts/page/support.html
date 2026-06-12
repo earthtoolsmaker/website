@@ -182,7 +182,7 @@
           <p class="support__section-intro">{{ . }}</p>
           {{ end }}
 
-          <div class="support__grid support__grid--4">
+          <div class="support__grid">
             {{ range .Site.Data.support.ways }}
             <a class="support__card support__way" href="{{ .link }}"{{ if hasPrefix .link "http" }} target="_blank" rel="noopener"{{ end }}>
               <span class="support__way-head">

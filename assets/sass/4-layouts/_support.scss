@@ -210,24 +210,12 @@
   gap: 24px;
   margin-bottom: 48px;
 
-  &--4 {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
   @media (max-width: $desktop) {
     grid-template-columns: repeat(2, 1fr);
-
-    &--4 {
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
 
   @media (max-width: $mobile) {
     grid-template-columns: 1fr;
-
-    &--4 {
-      grid-template-columns: 1fr;
-    }
   }
 }
 
