@@ -18,7 +18,7 @@ timeline:
     description: "Sonar counts smolt runs no camera could see. Fire detection spots smoke at 35 km, minutes after ignition."
 
 support_cta:
-  title: "Help us build the next tool"
-  description: "Three projects are waiting on funding — bat call classification, bird flu monitoring, snow leopard tracking."
+  title: "Help us keep these tools in the field"
+  description: "Your support sustains our ongoing projects — keeping tools maintained, models improving, and everything free for the people who rely on them."
   button_text: "Support our work"
   button_link: "/sponsor/"
