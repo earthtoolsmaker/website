@@ -6,7 +6,7 @@ github_repo: https://github.com/earthtoolsmaker/bear-conservation
 date: 2024-04-03
 hero_image: /images/projects/human_wildlife_conflict_bear/cover.png
 project: /projects/human_wildlife_bear_conflict/
-hf_space: earthtoolsmaker-bear-detection
+hf_space: achouffe-bear-detection
 hf_space_code: https://huggingface.co/spaces/earthtoolsmaker/bear-detection/tree/main
 manual_steps:
   - step_name: Image Selection
