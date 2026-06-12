@@ -17,7 +17,7 @@ tools:
   - MLOps
 status: completed
 pinned: true
-date: 2024-04-23
+date: 2026-06-12
 image: /images/projects/early_forest_fire_detection/cover.png
 ---
 
@@ -154,6 +154,34 @@ system. The video below shows a thin black smoke rising in the distance.
 
 {{< youtube id=i9Qy-zY16Ew >}}
 <br/>
+
+## Second Stage: Temporal Verification
+
+Single-frame detection has a false-alarm ceiling: early wildfire smoke is a
+faint grey wisp easily confused with clouds, fog, or dust, and every false
+alarm sent to a fire department erodes trust in the system. The second phase
+of our collaboration added a server-side **temporal verifier** that judges
+the *sequence* of frames rather than each frame alone — real smoke appears at
+a fixed point on the terrain, grows, and drifts, and that behavior is the
+signal look-alikes cannot fake.
+
+The work ran as a structured R&D effort: a literature survey of 28 papers, a
+shortlist of candidate approaches, and five models raced on a shared
+leaderboard against a frozen test set. The winning model cuts false alarms
+by **4×** while improving recall, at the cost of roughly 1.7 minutes of
+mean detection delay:
+
+![Leaderboard of the five candidate temporal verifiers: F1 score versus false positive rate](/images/projects/early_forest_fire_detection/temporal_leaderboard.png)
+*Five candidate verifiers on the same frozen test set — the winner reduces
+the false positive rate from 0.159 to 0.040.*
+
+The winner is now packaged as a versioned, self-contained model [released on
+HuggingFace](https://huggingface.co/pyronear/temporal-model) and served
+through a FastAPI service from the
+[pyronear/temporal-model](https://github.com/pyronear/temporal-model)
+monorepo. Two blog posts cover this phase in depth: [how the R&D was run]({{<
+ref "/posts/racing-models-not-opinions" >}}) and [how the temporal model
+works]({{< ref "/posts/smoke-is-a-behavior" >}}).
 
 ## Conclusion
 
