@@ -1,0 +1,62 @@
+fundraising_intro: "These projects are designed, scoped, and waiting on funding. Sponsor one and we'll build it in the open."
+
+fundraising_projects:
+  - /projects/snow_leopard_monitoring
+  - /projects/bird_flu_monitoring
+
+ongoing_intro: "Support doesn't stop at launch. These systems run in the field every day — spotting wildfire smoke minutes after ignition, counting wild salmon as they migrate upriver, and surveying seal colonies from the air."
+
+ongoing_projects:
+  - /projects/early_forest_fire_detection
+  - /projects/wild_salmon_migration_monitoring
+  - /projects/wadden_sea_seal_monitoring
+
+tracks_intro: "Three kinds of partners keep this work going. Pick the one that sounds like you."
+
+tracks:
+  - label: "For NGOs & researchers"
+    title: "Build it with us"
+    description: "You know the field problem; we know the models. Together we turn camera traps, hydrophones, and drone surveys into systems that run every day."
+    proof: "That's how every tool on this site got made — with partners like the **Cornell Lab** and the **Pacific Salmon Foundation**."
+    offers:
+      - "Field deployments designed together"
+      - "Grant applications with us as technical partner"
+      - "Pilots before you commit"
+      - "Open source, yours to run"
+  - label: "For foundations & philanthropy"
+    title: "Fund the long game"
+    description: "A model is cheap to train and expensive to keep useful. Long-horizon funding covers what project budgets rarely do."
+    proof: "Maintenance, retraining, support for the people using the tools — and the freedom to start the projects still waiting on a backer."
+    offers:
+      - "Back a project waiting on funding"
+      - "Keep fielded tools maintained for years"
+      - "Capacity building with field teams"
+      - "Shared infrastructure for the whole sector"
+  - label: "For companies"
+    title: "Lend your expertise"
+    description: "Your engineers, your hardware, or your cloud budget — pointed at a conservation problem, they ship tools this year, not someday."
+    proof: "Our wildfire work with **Pyronear** shows what that buys: detection that spots smoke minutes after ignition, running across European forests today."
+    offers:
+      - "Sponsor a deployment end to end"
+      - "Engineering time on real field problems"
+      - "Hardware and cloud credits in kind"
+      - "Impact your team can point to"
+
+ways_intro: "No budget required — connections, skills, and data all move this work forward."
+
+ways:
+  - title: "Spread the word"
+    icon: "fa-solid fa-bullhorn"
+    description: "Share our projects and introduce us to teams that need better tools."
+    link: "/projects/"
+    link_text: "Browse the projects"
+  - title: "Volunteer your expertise"
+    icon: "fa-solid fa-handshake-angle"
+    description: "ML engineers, designers, ecologists — skilled hours move projects forward."
+    link: "/contact/"
+    link_text: "Tell us your skills"
+  - title: "Share data or hardware"
+    icon: "fa-solid fa-database"
+    description: "Labeled datasets, camera-trap archives, or field equipment we can build on."
+    link: "/contact/"
+    link_text: "Get in touch"
