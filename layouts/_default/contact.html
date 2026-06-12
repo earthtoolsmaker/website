@@ -26,7 +26,7 @@
       <h1 class="page-title">{{ .Title }}</h1>
       {{ end }}
       {{ if .Description }}
-      <p class="page-description">{{.Description }}</p>
+      <p class="page-description">{{ .Description }}</p>
       {{ end }}
     </div>
 
@@ -38,12 +38,40 @@
   <article class="page">
     <div class="page__content">
 
-      <div class="form-box">
-        <div class="contact-head">
+      <div class="contact-grid">
+
+        <div class="contact-info">
           {{ if .Content }}
           <div class="contact-description">{{ .Content }}</div>
           {{ end }}
+
+          {{ with .Site.Params.social }}
+          <ul class="contact-channels list-reset">
+            {{ range . }}
+            <li class="contact-channels__item">
+              <a class="contact-channels__link" href="{{ .link }}" target="_blank" rel="noopener">
+                {{ if .icon }}
+                <i class="{{ .icon }}"></i>
+                {{ end }}
+                {{ if .image }}
+                  {{ $imgPath := strings.TrimPrefix "/" .image }}
+                  {{ $img := resources.Get $imgPath }}
+                  {{ if $img }}
+                <img src="{{ $img.RelPermalink }}" height="22" width="22" alt="{{ .name }} icon"/>
+                  {{ end }}
+                {{ end }}
+                <span>{{ .name }}</span>
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+          {{ end }}
         </div>
+
+        <div class="form-card">
+          {{ partial "contact-form.html" . }}
+        </div>
+
       </div>
 
     </div>
