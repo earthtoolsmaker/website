@@ -10,13 +10,33 @@ ongoing_projects:
   - /projects/early_forest_fire_detection
   - /projects/wild_salmon_migration_monitoring
 
+tracks_intro: "Every contribution and partner-hour goes toward hardware, deployment, and maintenance in the field."
+
 tracks:
   - title: "Companies"
-    description: "Sponsor engineering time on a project and put your company behind shipped, open-source conservation tools."
+    description: "Tech and impact-driven companies committing engineering time, sponsoring a deployment, or aligning CSR with measurable conservation impact."
+    proof: "We build alongside companies like **Hack the Planet**, **Reef Support**, and **Lumax AI** — engineering time and sponsorship that turn directly into tools in the field."
+    offers:
+      - "Sponsor a scoped project"
+      - "Pro-bono engineering time"
+      - "In-kind hardware & cloud credits"
+      - "CSR with measurable impact"
   - title: "Foundations & philanthropy"
-    description: "Multi-year support lets us start the projects no single client funds — and keep maintaining the tools already running in the field."
+    description: "Foundations and philanthropic funds providing the patient backing that real field innovation requires."
+    proof: "Patient backing keeps tools alive past the pilot — it pays for the maintenance, retraining, and field support that make systems last."
+    offers:
+      - "Multi-year programme support"
+      - "Fund a project waiting on funding"
+      - "Maintenance & capacity building"
+      - "Co-funding with other backers"
   - title: "NGOs & researchers"
-    description: "Bring us your field problem and co-develop a tool you'll own and run — as the Cornell Lab, the Pacific Salmon Foundation, and Pyronear have."
+    description: "NGOs, rangers, researchers, and agencies who want our technology working alongside theirs in the field."
+    proof: "The best deployments come from co-design with people on the ground — like the **Cornell Lab**, the **Pacific Salmon Foundation**, **Conservation Carpathia**, and **Pyronear**."
+    offers:
+      - "Co-developed field deployments"
+      - "Joint grant applications"
+      - "Pilot & proof-of-concept programmes"
+      - "Open-source knowledge sharing"
 
 ways:
   - title: "Contribute code"
@@ -29,9 +49,9 @@ ways:
     link_text: "Browse the projects"
   - title: "Volunteer your expertise"
     description: "ML engineers, designers, ecologists — skilled hours move projects forward."
-    link: "#get-in-touch"
+    link: "/contact/"
     link_text: "Tell us your skills"
   - title: "Share data or hardware"
     description: "Labeled datasets, camera-trap archives, field equipment — the raw material conservation tools are built from."
-    link: "#get-in-touch"
+    link: "/contact/"
     link_text: "Get in touch"

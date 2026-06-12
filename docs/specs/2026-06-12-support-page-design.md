@@ -14,7 +14,7 @@ This page is the landing target for the about-page revamp's "Support our work" C
 - **Channels:** fund a specific project, partner/hire us, non-monetary support. **No direct donations** — no Stripe/GitHub Sponsors/Open Collective widget.
 - **URL:** `/support/`, with a Hugo alias from `/sponsor/` so existing links redirect.
 - **Navigation:** top-level "Support" main-menu item between About and Contact; footer entry too.
-- **CTA mechanism:** one embedded Formspree contact form at the bottom of the page; section CTAs scroll to it. GitHub and social cards link out directly.
+- **CTA mechanism:** no inlined contact form (user decision) — all conversation CTAs route to the existing `/contact/` page. GitHub and projects cards link out directly.
 - **Structure:** action-led (organized by what the visitor can do), not audience tracks.
 
 ## Audience and voice
@@ -43,7 +43,7 @@ A curated list of fundraising projects rendered as photo cards, listed by page p
 
 (Curated rather than a dynamic `status: fundraising` query — the user wants editorial control over which fundraising projects the page features; the intro copy carries no hardcoded count.)
 
-Section CTA: **Sponsor this project** → scrolls to `#get-in-touch`.
+Section CTA: **Sponsor a project** → `/contact/`.
 
 ### 3b. Proven in the field
 
@@ -51,15 +51,18 @@ Proof that funded projects keep running: ongoing high-impact projects rendered a
 
 > Support doesn't stop at launch. These systems run in the field every day — spotting wildfire smoke minutes after ignition and counting wild salmon as they migrate upriver.
 
-### 4. Partner with us
+### 4. Three ways to back what we do
 
-A band for organizations — three compact tracks, each a bold title + one-liner:
+Modeled on hack-the-planet's "Three ways to back what we do" pillars (user reference). Three rich cards — **Companies**, **Foundations & philanthropy**, **NGOs & researchers** — each with:
 
-- **Companies** — Sponsor engineering time on a project and align your CSR with shipped conservation tools.
-- **Foundations & philanthropy** — Multi-year support that lets us start the projects no single client funds.
-- **NGOs & researchers** — Bring us your field problem and co-develop a tool you'll own and run.
+- a "Way 01/02/03" eyebrow label,
+- a one-line description of who the track is for,
+- a divider, then a proof paragraph naming real partners in bold (Hack the Planet, Reef Support, Lumax AI; Cornell Lab, Pacific Salmon Foundation, Conservation Carpathia, Pyronear),
+- a bulleted list of concrete offerings (accent-colored bullets).
 
-Named real partners as proof points (drawn from existing client/partner logos), like the about page does. CTA scrolls to the form.
+All card copy lives in `data/support.yaml` (`tracks`: title, description, proof, offers).
+
+Below the cards, a full-width "Ready to talk?" CTA band (secondary-color background): one line of copy plus two buttons — **Set up a call** → `/contact/` and **See our work** → `/projects/`.
 
 ### 5. More ways to help
 
@@ -67,19 +70,17 @@ Compact 4-card grid:
 
 - **Contribute code** → direct link to https://github.com/earthtoolsmaker
 - **Spread the word** — share projects, follow on social, introduce us to conservation orgs that need tools.
-- **Volunteer your expertise** — ML engineers, designers, ecologists → form
-- **Share data or hardware** — labeled datasets, camera-trap archives, field equipment → form
+- **Volunteer your expertise** — ML engineers, designers, ecologists → `/contact/`
+- **Share data or hardware** — labeled datasets, camera-trap archives, field equipment → `/contact/`
 
-### 6. Get in touch
-
-Existing Formspree contact form, anchored `id="get-in-touch"`, headed: *Tell us how you'd like to help.*
+(No contact form on this page — see Decisions.)
 
 ## Implementation shape
 
 - **Content & URL:** `content/sponsor.md` → `content/support.md` with `aliases: ["/sponsor/"]`. Front matter stays thin (title, hero image + overlay text, layout). Partner tracks and ways-to-help cards live in a small `data/support.yaml`, following the about revamp's data-file pattern.
 - **Layout:** new `layouts/page/support.html`, following the `layouts/page/about.html` pattern: hero with text-overlay variant, then sections. Built self-contained — the about revamp branch specs the same hero overlay variant, but neither branch depends on the other; whichever lands second reconciles the shared partial.
 - **Fundraising cards:** reuse the card markup from `section-projects.html`; extract a small card partial if it doesn't reuse cleanly, so homepage and support page render from one source.
-- **Form:** reuse the `contact_form` shortcode/partial with the `#get-in-touch` anchor.
+- **Form:** none on this page; the `contact-form.html` partial extraction remains (used by the `contact_form` shortcode on `/contact/`).
 - **Navigation:** `config.toml` — add main-menu "Support" at weight 5, bump Contact to 6; add footer entry.
 - **Shortcode:** `donate_sponsor_cta.html` button → `/support/`, reworded to "Support our work 🌍".
 - **Styling:** additions to existing SASS under `assets/`, matching current section patterns (`section__info`, dividers, `animate` classes); lean on existing card/grid styles for the tracks band and ways-to-help grid.

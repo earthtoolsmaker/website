@@ -62,7 +62,7 @@
           </div>
 
           <div class="button--cta-container">
-            <a class="link-no-decoration" href="#get-in-touch">
+            <a class="link-no-decoration" href="/contact/">
               <button class="button button--cta">Sponsor a project</button>
             </a>
           </div>
@@ -117,24 +117,44 @@
 
           <div class="section__info">
             <div class="section__head">
-              <h2 class="section__title">Partner With Us</h2>
+              <h2 class="section__title">Three Ways to Back What We Do</h2>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
           </div>
 
+          {{ with .Site.Data.support.tracks_intro }}
+          <p class="support__section-intro">{{ . }}</p>
+          {{ end }}
+
           <div class="support__grid">
-            {{ range .Site.Data.support.tracks }}
-            <div class="support__card">
-              <h3 class="support__card-title">{{ .title }}</h3>
-              <p class="support__card-description">{{ .description }}</p>
+            {{ range $i, $track := .Site.Data.support.tracks }}
+            <div class="support__card support__track">
+              <span class="support__track-label">Way {{ printf "%02d" (add $i 1) }}</span>
+              <h3 class="support__card-title">{{ $track.title }}</h3>
+              <p class="support__card-description">{{ $track.description }}</p>
+              <div class="support__track-proof">{{ $track.proof | markdownify }}</div>
+              <ul class="support__track-offers">
+                {{ range $track.offers }}
+                <li>{{ . }}</li>
+                {{ end }}
+              </ul>
             </div>
             {{ end }}
           </div>
 
-          <div class="button--cta-container">
-            <a class="link-no-decoration" href="#get-in-touch">
-              <button class="button button--cta">Start the conversation</button>
-            </a>
+          <div class="support__cta-band">
+            <div class="support__cta-band-text">
+              <h3 class="support__cta-band-title">Ready to talk?</h3>
+              <p class="support__cta-band-description">Whether you want to fund a single project, back us for the long run, or co-develop technology in the field — we'd love to find the fit.</p>
+            </div>
+            <div class="support__cta-band-buttons">
+              <a class="link-no-decoration" href="/contact/">
+                <button class="button">Set up a call</button>
+              </a>
+              <a class="link-no-decoration" href="/projects/">
+                <button class="button button--ghost">See our work</button>
+              </a>
+            </div>
           </div>
 
         </div>
@@ -176,30 +196,5 @@
   </div>
 </section>
 <!-- end more ways to help -->
-
-<!-- begin get in touch -->
-<section class="section support-contact animate" id="get-in-touch">
-  <div class="container">
-    <div class="row">
-      <div class="col col-12">
-        <div class="container__inner">
-
-          <div class="section__info">
-            <div class="section__head">
-              <h2 class="section__title">Tell us how you'd like to help</h2>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
-          </div>
-
-          <div class="form-box">
-            {{ partial "contact-form.html" . }}
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- end get in touch -->
 
 {{ end }}
