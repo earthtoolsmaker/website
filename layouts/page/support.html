@@ -34,6 +34,44 @@
 </div>
 <!-- end intro -->
 
+<!-- begin fund a project -->
+<section class="section projects animate">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+
+          <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">💡 Fund a Project</h2>
+              <a class="section__link" href="/projects/">View all</a>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+          </div>
+
+          {{ with .Site.Data.support }}
+          <p class="support__section-intro">{{ .fundraising_intro }}</p>
+          {{ end }}
+
+          <div class="row">
+            {{ range (where (where .Site.RegularPages "Section" "projects") ".Params.status" "fundraising") }}
+              {{ partial "project-card.html" . }}
+            {{ end }}
+          </div>
+
+          <div class="button--cta-container">
+            <a class="link-no-decoration" href="#get-in-touch">
+              <button class="button button--cta">Sponsor a project 🌱</button>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end fund a project -->
+
 <!-- begin get in touch -->
 <section class="section support-contact animate" id="get-in-touch">
   <div class="container">
