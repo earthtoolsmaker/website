@@ -10,33 +10,36 @@ ongoing_projects:
   - /projects/early_forest_fire_detection
   - /projects/wild_salmon_migration_monitoring
 
-tracks_intro: "Every contribution and partner-hour goes toward hardware, deployment, and maintenance in the field."
+tracks_intro: "Three kinds of partners keep this work going. Pick the one that sounds like you."
 
 tracks:
-  - title: "Companies"
-    description: "Tech and impact-driven companies committing engineering time, sponsoring a deployment, or aligning CSR with measurable conservation impact."
-    proof: "We build alongside companies like **Hack the Planet**, **Reef Support**, and **Lumax AI** — engineering time and sponsorship that turn directly into tools in the field."
+  - label: "For NGOs & researchers"
+    title: "Build it with us"
+    description: "You know the field problem; we know the models. Together we turn camera traps, hydrophones, and drone surveys into systems that run every day."
+    proof: "That's how every tool on this site got made — with partners like the **Cornell Lab**, the **Pacific Salmon Foundation**, and **Conservation Carpathia**."
     offers:
-      - "Sponsor a scoped project"
-      - "Pro-bono engineering time"
-      - "In-kind hardware & cloud credits"
-      - "CSR with measurable impact"
-  - title: "Foundations & philanthropy"
-    description: "Foundations and philanthropic funds providing the patient backing that real field innovation requires."
-    proof: "Patient backing keeps tools alive past the pilot — it pays for the maintenance, retraining, and field support that make systems last."
+      - "Field deployments designed together"
+      - "Grant applications with us as technical partner"
+      - "Pilots before you commit"
+      - "Open source, yours to run"
+  - label: "For foundations & philanthropy"
+    title: "Fund the long game"
+    description: "A model is cheap to train and expensive to keep useful. Long-horizon funding covers what project budgets rarely do."
+    proof: "Maintenance, retraining, support for the people using the tools — and the freedom to start the projects still waiting on a backer."
     offers:
-      - "Multi-year programme support"
-      - "Fund a project waiting on funding"
-      - "Maintenance & capacity building"
-      - "Co-funding with other backers"
-  - title: "NGOs & researchers"
-    description: "NGOs, rangers, researchers, and agencies who want our technology working alongside theirs in the field."
-    proof: "The best deployments come from co-design with people on the ground — like the **Cornell Lab**, the **Pacific Salmon Foundation**, **Conservation Carpathia**, and **Pyronear**."
+      - "Back a project waiting on funding"
+      - "Keep fielded tools maintained for years"
+      - "Capacity building with field teams"
+      - "Shared infrastructure for the whole sector"
+  - label: "For companies"
+    title: "Lend your expertise"
+    description: "Your engineers, your hardware, or your cloud budget — pointed at a conservation problem, they ship tools this year, not someday."
+    proof: "Companies like **Hack the Planet**, **Reef Support**, and **Lumax AI** already work with us where tech meets the field."
     offers:
-      - "Co-developed field deployments"
-      - "Joint grant applications"
-      - "Pilot & proof-of-concept programmes"
-      - "Open-source knowledge sharing"
+      - "Sponsor a deployment end to end"
+      - "Engineering time on real field problems"
+      - "Hardware and cloud credits in kind"
+      - "Impact your team can point to"
 
 ways:
   - title: "Contribute code"

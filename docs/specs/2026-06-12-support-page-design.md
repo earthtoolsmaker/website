@@ -51,18 +51,17 @@ Proof that funded projects keep running: ongoing high-impact projects rendered a
 
 > Support doesn't stop at launch. These systems run in the field every day — spotting wildfire smoke minutes after ignition and counting wild salmon as they migrate upriver.
 
-### 4. Three ways to back what we do
+### 4. Partner with us (three partner tracks)
 
-Modeled on hack-the-planet's "Three ways to back what we do" pillars (user reference). Three rich cards — **Companies**, **Foundations & philanthropy**, **NGOs & researchers** — each with:
+Card structure inspired by hack-the-planet's partner pillars (user reference), but copy, ordering, and framing are deliberately our own — audience eyebrows instead of "Way 01" numbering, action-led card titles, and reversed order leading with co-development (our core):
 
-- a "Way 01/02/03" eyebrow label,
-- a one-line description of who the track is for,
-- a divider, then a proof paragraph naming real partners in bold (Hack the Planet, Reef Support, Lumax AI; Cornell Lab, Pacific Salmon Foundation, Conservation Carpathia, Pyronear),
-- a bulleted list of concrete offerings (accent-colored bullets).
+1. **For NGOs & researchers — "Build it with us"** — co-design framing; proof names the Cornell Lab, Pacific Salmon Foundation, Conservation Carpathia.
+2. **For foundations & philanthropy — "Fund the long game"** — maintenance/longevity framing; no named backers.
+3. **For companies — "Lend your expertise"** — engineers/hardware/cloud framing; proof names Hack the Planet, Reef Support, Lumax AI.
 
-All card copy lives in `data/support.yaml` (`tracks`: title, description, proof, offers).
+Each card: eyebrow label → action title → one-line description → divider → proof paragraph (bold partner names) → bulleted list of concrete offerings (accent-colored bullets). All card copy lives in `data/support.yaml` (`tracks`: label, title, description, proof, offers).
 
-Below the cards, a full-width "Ready to talk?" CTA band (secondary-color background): one line of copy plus two buttons — **Set up a call** → `/contact/` and **See our work** → `/projects/`.
+Below the cards, a full-width "Have something in mind?" CTA band (secondary-color background): one line of copy plus two buttons — **Talk to us** → `/contact/` and **See our work** → `/projects/`.
 
 ### 5. More ways to help
 

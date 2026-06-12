@@ -117,7 +117,7 @@
 
           <div class="section__info">
             <div class="section__head">
-              <h2 class="section__title">Three Ways to Back What We Do</h2>
+              <h2 class="section__title">Partner With Us</h2>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
           </div>
@@ -127,14 +127,14 @@
           {{ end }}
 
           <div class="support__grid">
-            {{ range $i, $track := .Site.Data.support.tracks }}
+            {{ range .Site.Data.support.tracks }}
             <div class="support__card support__track">
-              <span class="support__track-label">Way {{ printf "%02d" (add $i 1) }}</span>
-              <h3 class="support__card-title">{{ $track.title }}</h3>
-              <p class="support__card-description">{{ $track.description }}</p>
-              <div class="support__track-proof">{{ $track.proof | markdownify }}</div>
+              <span class="support__track-label">{{ .label }}</span>
+              <h3 class="support__card-title">{{ .title }}</h3>
+              <p class="support__card-description">{{ .description }}</p>
+              <div class="support__track-proof">{{ .proof | markdownify }}</div>
               <ul class="support__track-offers">
-                {{ range $track.offers }}
+                {{ range .offers }}
                 <li>{{ . }}</li>
                 {{ end }}
               </ul>
@@ -144,12 +144,12 @@
 
           <div class="support__cta-band">
             <div class="support__cta-band-text">
-              <h3 class="support__cta-band-title">Ready to talk?</h3>
-              <p class="support__cta-band-description">Whether you want to fund a single project, back us for the long run, or co-develop technology in the field — we'd love to find the fit.</p>
+              <h3 class="support__cta-band-title">Have something in mind?</h3>
+              <p class="support__cta-band-description">A scoped project, a long-term programme, or just an idea — tell us what you're thinking and we'll tell you what it could become.</p>
             </div>
             <div class="support__cta-band-buttons">
               <a class="link-no-decoration" href="/contact/">
-                <button class="button">Set up a call</button>
+                <button class="button">Talk to us</button>
               </a>
               <a class="link-no-decoration" href="/projects/">
                 <button class="button button--ghost">See our work</button>
