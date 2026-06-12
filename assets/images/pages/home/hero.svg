@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="960" viewBox="0 0 1920 960">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2f9fa"/>
+      <stop offset="0.45" stop-color="#edf6f9"/>
+      <stop offset="0.62" stop-color="#fdeee6"/>
+      <stop offset="0.78" stop-color="#ffddd2"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffddd2" stop-opacity="0.95"/>
+      <stop offset="0.55" stop-color="#ffddd2" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#ffddd2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="riverFlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9fd0d4"/>
+      <stop offset="1" stop-color="#d4ebed"/>
+    </linearGradient>
+    <linearGradient id="mistBottom" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="mistBand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- conifer silhouette, base at (0,0), tip at (0,-64) -->
+    <path id="fir" d="M0,-64 L13,-38 L6,-38 L20,-16 L10,-16 L27,6 L3,6 L3,14 L-3,14 L-3,6 L-27,6 L-10,-16 L-20,-16 L-6,-38 L-13,-38 Z"/>
+
+    <!-- bird chevron -->
+    <path id="bird" d="M0,0 C4,-6 10,-6 13,-1 C16,-6 22,-6 26,0 C21,-3 16,-3 13,1 C10,-3 5,-3 0,0 Z"/>
+
+    <!-- leaping salmon, nose at origin pointing left, forked tail at right -->
+    <path id="salmon" d="M0,0 C20,-10 44,-7 58,8 C61,12 63,18 64,23 L82,14 C84,26 80,34 86,44 L60,34 C44,40 18,30 6,12 C2,8 0,4 0,0 Z"/>
+
+    <!-- elephant silhouette, feet baseline at y=0, trunk at left -->
+    <path id="elephant" d="M4,-6 C-3,-26 2,-48 14,-64 C22,-78 36,-88 54,-90 C84,-99 118,-97 138,-86 C154,-78 162,-62 162,-44 L162,0 L148,0 L148,-22 C144,-24 140,-24 136,-22 L136,0 L122,0 L122,-26 C112,-30 102,-30 92,-28 L92,0 L78,0 L78,-26 C74,-27 70,-27 66,-26 L66,0 L52,0 L52,-30 C42,-36 34,-48 30,-58 C24,-56 18,-42 14,-26 C12,-16 9,-9 4,-6 Z"/>
+  </defs>
+
+  <!-- sky -->
+  <rect width="1920" height="620" fill="url(#sky)"/>
+  <rect y="560" width="1920" height="400" fill="#ffddd2"/>
+
+  <!-- sun -->
+  <circle cx="1430" cy="360" r="240" fill="url(#sunGlow)"/>
+  <circle cx="1430" cy="360" r="86" fill="#f5b699"/>
+  <circle cx="1430" cy="360" r="74" fill="#e29578" opacity="0.9"/>
+
+  <!-- birds -->
+  <g fill="#5b8a87">
+    <use href="#bird" transform="translate(560,330) scale(1.4)"/>
+    <use href="#bird" transform="translate(640,300) scale(1.0)"/>
+    <use href="#bird" transform="translate(710,350) scale(0.8)"/>
+    <use href="#bird" transform="translate(1180,290) scale(1.1)"/>
+    <use href="#bird" transform="translate(1260,320) scale(0.7)"/>
+  </g>
+
+  <!-- far ridge -->
+  <path fill="#dcecea" d="M0,520 C200,468 380,502 560,506 C760,512 900,466 1080,478 C1260,490 1400,452 1560,468 C1700,482 1820,462 1920,474 L1920,960 L0,960 Z"/>
+
+  <!-- second ridge -->
+  <path fill="#bcdcd8" d="M0,586 C180,552 340,576 520,568 C720,558 860,538 1040,552 C1240,566 1380,532 1540,548 C1700,562 1830,544 1920,556 L1920,960 L0,960 Z"/>
+  <rect y="540" width="1920" height="56" fill="url(#mistBand)"/>
+
+  <!-- mid ridge with tree fringe and elephant -->
+  <g>
+    <path fill="#83c5be" d="M0,652 C160,610 320,642 480,634 C660,624 800,594 980,610 C1180,628 1320,598 1500,614 C1660,628 1800,608 1920,620 L1920,960 L0,960 Z"/>
+    <g fill="#4f9893">
+      <use href="#fir" transform="translate(70,640) scale(0.55)"/>
+      <use href="#fir" transform="translate(120,636) scale(0.7)"/>
+      <use href="#fir" transform="translate(170,634) scale(0.5)"/>
+      <use href="#fir" transform="translate(360,636) scale(0.62)"/>
+      <use href="#fir" transform="translate(410,634) scale(0.48)"/>
+      <use href="#fir" transform="translate(640,618) scale(0.6)"/>
+      <use href="#fir" transform="translate(690,614) scale(0.72)"/>
+      <use href="#fir" transform="translate(742,612) scale(0.5)"/>
+      <use href="#fir" transform="translate(1130,616) scale(0.58)"/>
+      <use href="#fir" transform="translate(1180,612) scale(0.7)"/>
+      <use href="#fir" transform="translate(1640,618) scale(0.6)"/>
+      <use href="#fir" transform="translate(1688,615) scale(0.5)"/>
+      <use href="#fir" transform="translate(1850,612) scale(0.66)"/>
+    </g>
+    <use href="#elephant" transform="translate(1320,610) scale(0.92)" fill="#2e7e7e"/>
+    <path d="M1468,-47 C1474,-41 1475,-31 1472,-21" transform="translate(0,610) scale(1,1)" fill="none" stroke="#2e7e7e" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- foreground ridge -->
+  <g>
+    <path fill="#4fa3a0" d="M0,732 C200,690 420,712 640,706 C860,700 1000,678 1200,692 C1420,706 1600,684 1920,706 L1920,960 L0,960 Z"/>
+    <g fill="#2e7e7e">
+      <use href="#fir" transform="translate(250,712) scale(0.9)"/>
+      <use href="#fir" transform="translate(318,708) scale(1.1)"/>
+      <use href="#fir" transform="translate(388,710) scale(0.8)"/>
+      <use href="#fir" transform="translate(1430,694) scale(0.95)"/>
+      <use href="#fir" transform="translate(1500,690) scale(1.15)"/>
+      <use href="#fir" transform="translate(1570,694) scale(0.85)"/>
+    </g>
+  </g>
+
+  <!-- front dark band with tall tree clusters -->
+  <g>
+    <path fill="#006d77" d="M0,802 C240,764 480,792 760,784 C1040,776 1300,758 1560,772 C1720,780 1840,768 1920,778 L1920,960 L0,960 Z"/>
+    <g fill="#005a63">
+      <use href="#fir" transform="translate(60,790) scale(1.5)"/>
+      <use href="#fir" transform="translate(150,782) scale(1.9)"/>
+      <use href="#fir" transform="translate(240,788) scale(1.35)"/>
+      <use href="#fir" transform="translate(1700,772) scale(1.6)"/>
+      <use href="#fir" transform="translate(1800,766) scale(2.0)"/>
+      <use href="#fir" transform="translate(1885,774) scale(1.4)"/>
+    </g>
+  </g>
+
+  <!-- river winding from the mid-ridge gap down through the foreground -->
+  <path fill="url(#riverFlow)" d="M965,612 C940,650 900,680 860,710 C820,740 850,770 800,805 C750,845 690,880 600,915 C575,932 560,946 548,960 L900,960 C935,915 925,865 958,825 C995,782 968,748 1008,714 C1040,686 1018,645 1000,612 Z"/>
+  <path fill="none" stroke="#ffffff" stroke-width="3" opacity="0.5" d="M972,640 C950,672 915,696 880,724 C845,752 870,778 825,812"/>
+
+  <!-- leaping salmon -->
+  <g fill="#0f6b72">
+    <use href="#salmon" transform="translate(872,662) rotate(-32) scale(1.0)"/>
+    <use href="#salmon" transform="translate(992,688) scale(-0.75,0.75) rotate(-24)"/>
+  </g>
+  <!-- splash hints -->
+  <g fill="#ffffff" opacity="0.85">
+    <circle cx="918" cy="700" r="5"/>
+    <circle cx="934" cy="708" r="3.4"/>
+    <circle cx="906" cy="712" r="2.8"/>
+    <circle cx="960" cy="716" r="4"/>
+  </g>
+
+  <!-- bottom mist dissolve -->
+  <rect y="700" width="1920" height="260" fill="url(#mistBottom)"/>
+</svg>
