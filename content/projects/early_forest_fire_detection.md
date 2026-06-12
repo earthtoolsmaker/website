@@ -19,7 +19,7 @@ status: completed
 pinned: true
 weight: 1
 date: 2026-06-12
-image: /images/projects/early_forest_fire_detection/cover.png
+image: /images/projects/early_forest_fire_detection/cover.jpg
 ---
 
 ## Context
