@@ -5,7 +5,7 @@ button_cta: Download and Install
 icon: /images/logos/biowatch-icon.png
 summary: Open-source desktop app for analyzing camera trap data. Runs 100% locally — your sensitive wildlife data never leaves your computer.
 github_repo: https://github.com/earthtoolsmaker/biowatch
-project: /projects/observation_visualisations_app
+project: /projects/biowatch-app
 date: 2025-05-01
 js:
   - /js/biowatch.js
@@ -33,12 +33,15 @@ all_downloads_url: https://github.com/earthtoolsmaker/biowatch/releases/tag/v1.0
 
 # Analyze Camera Trap Data — Privately, On Your Machine
 
-Biowatch is a free, open-source desktop application that lets you analyze, visualize, and explore camera trap datasets entirely offline. Your sensitive wildlife data never gets uploaded to any server — everything runs locally on your computer.
+Biowatch is a free, open-source desktop application that lets you analyze, visualize, and explore camera trap datasets entirely offline. Your sensitive wildlife data never gets uploaded to any server — everything runs locally on your computer. New to it? The [online manual](https://biowatch.earthtoolsmaker.org/) walks you through every feature, step by step.
 
 {{< image_carousel id="biowatch-gallery" >}}
-  {{< carousel_image src="./images/medias.png" alt="Biowatch Medias" caption="Browse and manage thousands of camera trap images and videos with powerful search and filtering capabilities." shadow="false" rounded="false" >}}
-  {{< carousel_image src="./images/activity.png" alt="Biowatch Activity" caption="Analyze temporal activity patterns to understand when and how wildlife uses different areas." shadow="false" rounded="false" >}}
-  {{< carousel_image src="./images/overview.png" alt="Biowatch Overview" caption="Get a comprehensive overview of your camera trap deployment with interactive maps and statistics." shadow="false" rounded="false" >}}
+  {{< carousel_image src="./images/overview.png" alt="Biowatch study overview" caption="Overview: every study opens with an interactive map, key metrics, the best captures, and the full species distribution with IUCN status." shadow="false" rounded="false" >}}
+  {{< carousel_image src="./images/explore.png" alt="Biowatch Explore tab" caption="Explore: map camera locations as species pie-charts, abundance, or density heatmaps, with daily-activity and seasonal charts alongside." shadow="false" rounded="false" >}}
+  {{< carousel_image src="./images/media.png" alt="Biowatch media library" caption="Media: browse, filter, and search thousands of camera trap images and videos by species, deployment, and detection." shadow="false" rounded="false" >}}
+  {{< carousel_image src="./images/annotation.png" alt="Reviewing AI detections with bounding boxes" caption="Annotate: step through images, adjust bounding boxes, and correct AI predictions before they become observations." shadow="false" rounded="false" >}}
+  {{< carousel_image src="./images/ai-models.png" alt="On-device AI model settings" caption="On-device AI: download SpeciesNet, MegaDetector, DeepFaune, or Manas and pick the right model for your region from the coverage map." shadow="false" rounded="false" >}}
+  {{< carousel_image src="./images/export.png" alt="Camtrap DP export dialog" caption="Export: publish to GBIF as a Camtrap DP package, or export your media organized into one folder per species." shadow="false" rounded="false" >}}
 {{< /image_carousel >}}
 
 ## Why Biowatch?
@@ -49,12 +52,12 @@ Biowatch is a free, open-source desktop application that lets you analyze, visua
 
 ## Key Features
 
-- 🗺️ __Interactive Maps__: Visualize camera trap locations and wildlife sightings with interactive maps and spatial analysis tools.
-- 📊 __Data Analysis__: Generate insights with temporal activity patterns, species distributions, and deployment statistics.
-- 🗃️ __Media Management__: Browse, filter, and search through thousands of camera trap images and videos.
-- 🤖 __AI Species Identification__: Automatically classify wildlife using state-of-the-art models.
-- 📦 __CamtrapDP Compatible__: Import and export using the [Camera Trap Data Package](https://camtrap-dp.tdwg.org/) standard for seamless data sharing with GBIF and biodiversity platforms.
-- 📁 __Flexible Export__: Export images organized by species or as standardized CamtrapDP packages ready for publication.
+- __Import from anywhere__: Start from your own image folders, a [Camtrap DP](https://camtrap-dp.tdwg.org/) package, or curated public datasets from [GBIF](https://www.gbif.org/) and [LILA](https://lila.science/) — or try the one-click demo dataset.
+- __On-device species ID__: Detect and identify animals with local AI models — SpeciesNet, MegaDetector, DeepFaune, and Manas — and pick the best fit for your region from a coverage map.
+- __Interactive maps__: See camera locations as species pie-charts, abundance markers, or density heatmaps, and filter everything to an area you draw.
+- __Activity & trends__: Compare species with daily-activity clocks, seasonal timelines, and per-deployment activity charts.
+- __Media management__: Browse, filter, and search thousands of images and videos, review AI detections, and correct bounding boxes.
+- __Standards-based export__: Publish to GBIF as a Camtrap DP package, or export your media organized into one folder per species.
 
 ## Installation
 
@@ -82,6 +85,16 @@ Biowatch is a free, open-source desktop application that lets you analyze, visua
 2. Install: `sudo dpkg -i Biowatch_*.deb`
 {{< /tab >}}
 {{< /tabs >}}
+
+## Documentation
+
+The full [online manual](https://biowatch.earthtoolsmaker.org/) covers everything — importing data, exploring studies, annotating images, running AI models, and exporting — with step-by-step guides and screenshots.
+
+<div style="margin: 1.5em 0;">
+  <a class="link-no-decoration" href="https://biowatch.earthtoolsmaker.org/" target="_blank">
+    <button class="button button--cta"><i class="fa-solid fa-book" style="margin-right: 0.5em;"></i>Read the Manual</button>
+  </a>
+</div>
 
 <br />
 
