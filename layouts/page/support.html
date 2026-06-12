@@ -53,7 +53,7 @@
           <p class="support__section-intro">{{ . }}</p>
           {{ end }}
 
-          <div class="row support__cards-row">
+          <div class="row">
             {{ range .Site.Data.support.ongoing_projects }}
               {{ with $.Site.GetPage . }}
                 {{ partial "project-card.html" . }}
@@ -87,7 +87,7 @@
           <p class="support__section-intro">{{ .fundraising_intro }}</p>
           {{ end }}
 
-          <div class="row support__cards-row">
+          <div class="row">
             {{ range .Site.Data.support.fundraising_projects }}
               {{ with $.Site.GetPage . }}
                 {{ partial "project-card.html" . }}
