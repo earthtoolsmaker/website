@@ -34,8 +34,13 @@
     <!-- leaping salmon, nose at origin pointing left, forked tail at right -->
     <path id="salmon" d="M0,0 C20,-10 44,-7 58,8 C61,12 63,18 64,23 L82,14 C84,26 80,34 86,44 L60,34 C44,40 18,30 6,12 C2,8 0,4 0,0 Z"/>
 
-    <!-- elephant silhouette, feet baseline at y=0, trunk at left -->
-    <path id="elephant" d="M4,-6 C-3,-26 2,-48 14,-64 C22,-78 36,-88 54,-90 C84,-99 118,-97 138,-86 C154,-78 162,-62 162,-44 L162,0 L148,0 L148,-22 C144,-24 140,-24 136,-22 L136,0 L122,0 L122,-26 C112,-30 102,-30 92,-28 L92,0 L78,0 L78,-26 C74,-27 70,-27 66,-26 L66,0 L52,0 L52,-30 C42,-36 34,-48 30,-58 C24,-56 18,-42 14,-26 C12,-16 9,-9 4,-6 Z"/>
+    <!-- elephant, feet baseline at y=0, trunk at left -->
+    <g id="elephant">
+      <path fill="#2e7e7e" d="M0,-4 C-3,-14 0,-26 4,-38 C8,-50 12,-60 14,-68 C16,-76 24,-84 34,-88 C42,-91 52,-92 58,-90 C64,-88 68,-86 72,-85 C90,-95 120,-95 140,-85 C152,-79 158,-66 158,-52 C158,-44 156,-36 152,-30 L154,0 L140,0 L140,-24 C136,-26 132,-26 128,-24 L128,0 L114,0 L114,-27 C100,-30 86,-30 70,-28 L70,0 L56,0 L56,-30 C52,-31 48,-31 44,-30 L44,0 L30,0 L30,-34 C26,-44 24,-54 22,-60 C16,-48 12,-36 10,-26 C9,-16 8,-8 10,-2 C6,1 2,0 0,-4 Z"/>
+      <path fill="#256b6b" d="M46,-84 C60,-87 70,-78 68,-63 C66,-50 55,-42 44,-47 C38,-60 40,-76 46,-84 Z"/>
+      <path fill="none" stroke="#edf6f9" stroke-width="3" stroke-linecap="round" d="M24,-54 C20,-48 15,-44 9,-42"/>
+      <path fill="none" stroke="#2e7e7e" stroke-width="3.5" stroke-linecap="round" d="M156,-48 C162,-38 162,-26 158,-16"/>
+    </g>
   </defs>
 
   <!-- sky -->
@@ -81,8 +86,7 @@
       <use href="#fir" transform="translate(1688,615) scale(0.5)"/>
       <use href="#fir" transform="translate(1850,612) scale(0.66)"/>
     </g>
-    <use href="#elephant" transform="translate(1320,610) scale(0.92)" fill="#2e7e7e"/>
-    <path d="M1468,-47 C1474,-41 1475,-31 1472,-21" transform="translate(0,610) scale(1,1)" fill="none" stroke="#2e7e7e" stroke-width="4" stroke-linecap="round"/>
+    <use href="#elephant" transform="translate(1320,610) scale(0.92)"/>
   </g>
 
   <!-- foreground ridge -->
