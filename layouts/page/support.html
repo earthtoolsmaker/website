@@ -138,8 +138,8 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
           </div>
 
-          {{ with .Site.Data.support }}
-          <p class="support__section-intro">{{ .fundraising_intro }}</p>
+          {{ with .Site.Data.support.fundraising_intro }}
+          <p class="support__section-intro">{{ . }}</p>
           {{ end }}
 
           <div class="row">
