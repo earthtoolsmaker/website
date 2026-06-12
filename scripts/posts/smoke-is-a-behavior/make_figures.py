@@ -70,10 +70,10 @@ def bare_axes(fig_w, fig_h, xlim=(0, 100), ylim=(0, 100)):
 def make_pipeline(path):
     stages = [
         ("1 · Sequence", "up to 20 frames,\n~30 s apart", FAINT, INK),
-        ("2 · Detect", "YOLO proposes boxes\non every frame", FAINT, INK),
+        ("2 · Detect", "a detector proposes\nboxes on every frame", FAINT, INK),
         ("3 · Link", "boxes chained into\ntubes across frames", FAINT, INK),
         ("4 · Crop", "one stabilized window\nper tube, 224×224", ORANGE, "white"),
-        ("5 · Score", "ViT per patch +\ntransformer over time", FAINT, INK),
+        ("5 · Score", "image model per patch +\ntransformer over time", FAINT, INK),
         ("6 · Decide", "calibrated probability\nvs threshold", FAINT, INK),
     ]
     fig, ax = bare_axes(13.6, 3.4)
@@ -141,7 +141,7 @@ def make_classifier(path):
     arrow(ax, (50, 64.5), (50, 60.5))
     stage(52, 8, "20 embeddings · 384-dim each", "", "#f1f5f9", FAINT)
     arrow(ax, (50, 51.5), (50, 47.5))
-    stage(32, 15, "Temporal transformer · 2 layers", "learnable [CLS] + positional slots,\npadded frames masked out of attention", "#fff7ed", ORANGE, ORANGE)
+    stage(32, 15, "Temporal transformer · 2 layers", "a learned summary token attends over time,\npadded frames masked out of attention", "#fff7ed", ORANGE, ORANGE)
     arrow(ax, (50, 31.5), (50, 27.5))
     stage(19, 8, "one logit per tube", "", "#f1f5f9", FAINT)
     arrow(ax, (50, 18.5), (50, 13.5))

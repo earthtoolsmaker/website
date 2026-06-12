@@ -1,6 +1,6 @@
 ---
 title: "Smoke Is a Behavior: Inside Pyronear's Temporal Wildfire Detection Model"
-description: How the temporal smoke verifier works, step by step — YOLO boxes become tubes, stabilized crops make motion legible, and a ViT plus a tiny transformer learn that smoke grows and drifts.
+description: How the temporal smoke verifier works, step by step — detection boxes become tubes, stabilized crops make motion legible, and a vision transformer plus a tiny temporal head learn that smoke grows and drifts.
 date: 2026-06-12
 image: /images/posts/smoke-is-a-behavior/cover.png
 tags: ["AI", "vision", "temporal models", "transformers"]
@@ -10,7 +10,9 @@ In [the previous post]({{< ref "/posts/racing-models-not-opinions" >}}) we
 told the story of *how* the new smoke verifier for
 [Pyronear](https://pyronear.org) was selected: a literature survey, five
 candidate models, one leaderboard, one winner with 4× fewer false alarms.
-This post opens up the winner itself — the **bbox-tube temporal model** now
+This post opens up the winner itself — the **bbox-tube temporal model**
+(*bbox* for the bounding boxes a detector draws around candidate smoke,
+*tube* for the way those boxes are linked across frames) now
 [released as a versioned package](https://huggingface.co/pyronear/temporal-model)
 — and walks through how it judges a sequence of camera frames, stage by
 stage, with figures computed from real wildfire sequences.
@@ -45,8 +47,10 @@ pipeline, then each stage in turn:
 
 ## Detect: propose first, judge later
 
-A YOLO detector — bundled inside the released model package, its weights
-hash-stamped in the manifest — runs over every frame of the sequence with
+A YOLO detector — "You Only Look Once", a family of fast object detectors
+that draw bounding boxes around what they find in a single image — is
+bundled inside the released model package, its weights hash-stamped in the
+manifest. It runs over every frame of the sequence with
 deliberately *permissive* settings: a low confidence threshold and a high
 inference resolution, because distant plumes need both sensitivity and
 pixels.
@@ -137,8 +141,9 @@ best suited for it:
 ![Architecture diagram: patches go through a DINOv2 ViT backbone per frame, then a two-layer temporal transformer reduces the sequence to one logit](./images/classifier.png)
 
 Each patch independently goes through a
-[DINOv2](https://arxiv.org/abs/2304.07193) vision transformer — a backbone
-pre-trained by self-supervision on 142 million images, frozen during
+[DINOv2](https://arxiv.org/abs/2304.07193) Vision Transformer (the "ViT" in
+the diagram) — a backbone pre-trained by self-supervision on 142 million
+images, frozen during
 training except its last block, just enough to adapt its general visual
 features to smoke textures without overfitting a small dataset. Each patch
 becomes a single 384-dimensional embedding. The whole tube — megabytes of
@@ -154,7 +159,8 @@ dimensions encoding the static scene stay nearly constant down each column,
 so whatever *varies* along the time axis is the plume. A small two-layer
 transformer attends over exactly that variation (padded slots for short
 sequences are masked out of attention) and reduces the tube to **one
-logit**. For this tube it answers +10.4 — unambiguously smoke.
+logit** — a single raw, unbounded score, positive for smoke. For this tube
+it answers +10.4 — unambiguously smoke.
 
 ## Decide: a logit is not a verdict
 
