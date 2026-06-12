@@ -10,9 +10,9 @@ EarthToolsMaker is a static website. We do not collect or store personal data ou
 
 This website is served by [Netlify](https://www.netlify.com/). Like any web host, Netlify processes the IP address of your device in standard server logs in order to deliver the site. See [Netlify's privacy policy](https://www.netlify.com/privacy/) for details.
 
-## Contact and sponsor forms
+## Contact form
 
-When you submit the form on our [contact](/contact/) or [sponsor](/sponsor/) page, your name, email address, and message are processed by [Formspree](https://formspree.io/) and delivered to us by email. We use this information only to reply to you — never for marketing — and we do not share it with anyone else. See [Formspree's privacy policy](https://formspree.io/legal/privacy-policy/) for details.
+When you submit the form on our [contact](/contact/) page, your name, email address, and message are processed by [Formspree](https://formspree.io/) and delivered to us by email. We use this information only to reply to you — never for marketing — and we do not share it with anyone else. See [Formspree's privacy policy](https://formspree.io/legal/privacy-policy/) for details.
 
 ## Embedded content and third-party resources
 
