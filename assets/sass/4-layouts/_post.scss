@@ -224,13 +224,7 @@
   }
 
   .button {
-    border: none;
     text-decoration: none;
-
-    &:hover {
-      color: var(--button-color-hover);
-      background: var(--button-background-hover);
-    }
   }
 }
 
