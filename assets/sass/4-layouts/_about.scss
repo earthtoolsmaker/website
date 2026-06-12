@@ -555,15 +555,16 @@
     margin-bottom: 0;
   }
 
-  // Plain logos, no card chrome: transparent, unrounded, no hover lift,
-  // no .page__content link underline
+  // Plain logos, no card chrome: transparent, unrounded,
+  // no .page__content link underline; same hover lift as the
+  // case-study partner chips (minus the shadow — no card surface)
   .partner-logo-container {
     background: transparent;
     border-radius: 0;
     border: none !important;
 
     &:hover {
-      transform: none;
+      transform: translateY(-4px);
       box-shadow: none;
     }
   }
