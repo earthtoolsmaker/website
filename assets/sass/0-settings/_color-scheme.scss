@@ -22,7 +22,7 @@
   --dark-blue: #1e2740;
   --rgb-image-color: 255, 255, 255;
 
-  --image-gradient: linear-gradient(180deg, rgba(var(--rgb-image-color), 0.8), rgba(var(--rgb-image-color), 1));
+  --image-gradient: linear-gradient(180deg, rgba(var(--rgb-image-color), 0.55), rgba(var(--rgb-image-color), 1));
 
   --text-gradient: linear-gradient(90deg, rgba(182, 107, 229, 1) -50%, rgba(248, 93, 112, 1) 51%, rgba(252, 140, 92, 1) 103%); // To change the color of the gradient, add an RGB color code. For example - "182, 107, 229", "248, 93, 112" and "252, 140, 92" (You can generate any color here - https://htmlcolorcodes.com).
   // Greenish colors
@@ -69,7 +69,7 @@
   --dark: #111016;
   --rgb-image-color: 17, 16, 22;
 
-  --image-gradient: linear-gradient(180deg, rgba(var(--rgb-image-color), 0.8), rgba(var(--rgb-image-color), 1));
+  --image-gradient: linear-gradient(180deg, rgba(var(--rgb-image-color), 0.55), rgba(var(--rgb-image-color), 1));
 
   --gradient-color: linear-gradient(90deg, rgba(182, 107, 229, 1) 42%, rgba(248, 93, 112, 1) 73%, rgba(252, 140, 92, 1) 103%);
 
