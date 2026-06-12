@@ -8,11 +8,6 @@ clients:
   - name: INBO
     link: https://www.inbo.be/
     logo: /images/clients/inbo/logo.jpg
-tools:
-  - React
-  - Electron
-  - Mapbox
-  - Camtrap DP
 status: completed
 github_repo: https://github.com/earthtoolsmaker/biowatch
 pinned: true
