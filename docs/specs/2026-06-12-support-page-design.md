@@ -47,9 +47,9 @@ Section CTA: **Sponsor a project** → `/contact/`.
 
 ### 3b. Proven in the field
 
-Proof that funded projects keep running: ongoing high-impact projects rendered as the same photo cards, listed by page path in `data/support.yaml` (currently Early Forest Fire Detection and Wild Salmon Migration Monitoring). Intro:
+Proof that funded projects keep running: ongoing high-impact projects rendered as the same photo cards, listed by page path in `data/support.yaml` (currently Early Forest Fire Detection, Wild Salmon Migration Monitoring, and Wadden Sea Seal Monitoring). Intro:
 
-> Support doesn't stop at launch. These systems run in the field every day — spotting wildfire smoke minutes after ignition and counting wild salmon as they migrate upriver.
+> Support doesn't stop at launch. These systems run in the field every day — spotting wildfire smoke minutes after ignition, counting wild salmon as they migrate upriver, and surveying seal colonies from the air.
 
 ### 4. Partner with us (three partner tracks)
 

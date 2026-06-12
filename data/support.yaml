@@ -4,11 +4,12 @@ fundraising_projects:
   - /projects/snow_leopard_monitoring
   - /projects/bird_flu_monitoring
 
-ongoing_intro: "Support doesn't stop at launch. These systems run in the field every day — spotting wildfire smoke minutes after ignition and counting wild salmon as they migrate upriver."
+ongoing_intro: "Support doesn't stop at launch. These systems run in the field every day — spotting wildfire smoke minutes after ignition, counting wild salmon as they migrate upriver, and surveying seal colonies from the air."
 
 ongoing_projects:
   - /projects/early_forest_fire_detection
   - /projects/wild_salmon_migration_monitoring
+  - /projects/wadden_sea_seal_monitoring
 
 tracks_intro: "Three kinds of partners keep this work going. Pick the one that sounds like you."
 
