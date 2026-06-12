@@ -1,14 +1,16 @@
 /* Support Page Layout */
 
-/* Intro paragraph: left-aligned with the section titles below,
-   capped for line-length readability */
+/* Intro paragraph: aligned with the section content below */
 .support__intro {
-  max-width: 760px;
   color: var(--text-color);
 }
 
+/* Pull the first section up closer to the intro */
+.section.support-tracks {
+  margin-top: 32px;
+}
+
 .support__section-intro {
-  max-width: 760px;
   margin-bottom: 40px;
   font-size: $base-font-size;
 }
@@ -126,6 +128,7 @@
 }
 
 .support__cta-band {
+  margin: 48px 0 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
