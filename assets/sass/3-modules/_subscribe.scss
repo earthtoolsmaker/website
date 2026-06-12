@@ -89,11 +89,11 @@
       height: 50px;
       font-size: 0;
       border-radius: 50%;
-      border: 2px solid var(--button-border-color);
-      box-shadow: 2px 2px 0 var(--button-border-color);
+      border: none;
+      box-shadow: 2px 2px 0 var(--button-shadow-color);
       color: var(--button-color);
       background: var(--button-background-color);
-      transition: box-shadow .12s ease, transform .12s ease;
+      transition: box-shadow .12s ease, transform .12s ease, background .12s ease;
       cursor: pointer;
 
       i {
@@ -102,7 +102,8 @@
 
       &:hover {
         transform: translate(2px, 2px);
-        box-shadow: 0 0 0 var(--button-border-color);
+        box-shadow: 0 0 0 var(--button-shadow-color);
+        background: var(--button-background-hover);
       }
 
       &:focus-visible {
