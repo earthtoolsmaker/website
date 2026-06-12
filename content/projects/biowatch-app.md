@@ -17,7 +17,9 @@ status: completed
 github_repo: https://github.com/earthtoolsmaker/biowatch
 pinned: true
 date: 2025-02-20
-image: /images/projects/observation_visualisations_app/cover.png
+image: /images/projects/biowatch-app/cover.png
+aliases:
+  - /projects/observation_visualisations_app/
 ---
 
 ## 🦊 Biowatch is Here
@@ -54,12 +56,12 @@ Biowatch turns a folder of raw camera trap images, or a published dataset, into 
 Everything runs locally. No cloud uploads, no accounts, no tracking—ideal for the sensitive location data of endangered species.
 
 {{< image_carousel id="biowatch-project-gallery" items="1" items_tablet="1" items_mobile="1" >}}
-  {{< carousel_image src="/images/projects/observation_visualisations_app/overview.png" alt="Biowatch study overview" caption="Overview: each study opens with an interactive map, key metrics, the best captures, and the full species distribution with IUCN status." >}}
-  {{< carousel_image src="/images/projects/observation_visualisations_app/explore-map.png" alt="Explore tab density heatmap" caption="Explore: switch the map between species pie-charts, abundance, a density heatmap, or a hex grid, alongside activity charts." >}}
-  {{< carousel_image src="/images/projects/observation_visualisations_app/annotation.png" alt="Gallery viewer with bounding boxes" caption="Annotate: step through images, adjust bounding boxes, and correct AI predictions before they become observations." >}}
-  {{< carousel_image src="/images/projects/observation_visualisations_app/ai-models.png" alt="On-device AI model settings with coverage map" caption="On-device AI: download SpeciesNet, MegaDetector, DeepFaune, or Manas and pick the right model for your region from the coverage map." >}}
-  {{< carousel_image src="/images/projects/observation_visualisations_app/deployments.png" alt="Per-deployment activity timeline" caption="Deployments: per-camera activity timelines, heatmaps, and editable metadata you can export and re-import as CSV." >}}
-  {{< carousel_image src="/images/projects/observation_visualisations_app/export.png" alt="Camtrap DP export dialog" caption="Export: publish to GBIF as a Camtrap DP package, or export media organized into one folder per species." >}}
+  {{< carousel_image src="/images/projects/biowatch-app/overview.png" alt="Biowatch study overview" caption="Overview: each study opens with an interactive map, key metrics, the best captures, and the full species distribution with IUCN status." >}}
+  {{< carousel_image src="/images/projects/biowatch-app/explore-map.png" alt="Explore tab density heatmap" caption="Explore: switch the map between species pie-charts, abundance, a density heatmap, or a hex grid, alongside activity charts." >}}
+  {{< carousel_image src="/images/projects/biowatch-app/annotation.png" alt="Gallery viewer with bounding boxes" caption="Annotate: step through images, adjust bounding boxes, and correct AI predictions before they become observations." >}}
+  {{< carousel_image src="/images/projects/biowatch-app/ai-models.png" alt="On-device AI model settings with coverage map" caption="On-device AI: download SpeciesNet, MegaDetector, DeepFaune, or Manas and pick the right model for your region from the coverage map." >}}
+  {{< carousel_image src="/images/projects/biowatch-app/deployments.png" alt="Per-deployment activity timeline" caption="Deployments: per-camera activity timelines, heatmaps, and editable metadata you can export and re-import as CSV." >}}
+  {{< carousel_image src="/images/projects/biowatch-app/export.png" alt="Camtrap DP export dialog" caption="Export: publish to GBIF as a Camtrap DP package, or export media organized into one folder per species." >}}
 {{< /image_carousel >}}
 
 <p style="text-align:center;"><em>A glimpse of Biowatch in action — explore the full <a href="https://biowatch.earthtoolsmaker.org/">online manual</a> for guided walkthroughs.</em></p>
