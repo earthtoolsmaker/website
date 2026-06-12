@@ -1,35 +1,24 @@
 {{ define "main" }}
 
 {{ if .Params.hero_image }}
-<div class="hero__image">
-  <div class="hero__image__inner">
-    {{ $imgPath := strings.TrimPrefix "/" .Params.hero_image }}
-    {{ partial "responsive-image.html" (dict
-      "src" $imgPath
-      "alt" .Title
-      "sizes" "100vw"
-      "widths" (slice 600 900 1200 1600)
-      "lazy" true
-      "lqip" true
-    ) }}
+<div class="about-hero">
+  {{ $imgPath := strings.TrimPrefix "/" .Params.hero_image }}
+  {{ partial "responsive-image.html" (dict
+    "src" $imgPath
+    "alt" .Title
+    "sizes" "100vw"
+    "widths" (slice 600 900 1200 1500)
+    "lazy" true
+    "lqip" true
+  ) }}
+  <div class="about-hero__overlay">
+    <div class="container-wide">
+      {{ with .Params.hero_title }}<h1 class="about-hero__title">{{ . }}</h1>{{ end }}
+      {{ with .Params.hero_description }}<p class="about-hero__description">{{ . }}</p>{{ end }}
+    </div>
   </div>
 </div>
 {{ end }}
-
-<div class="container-wide layout-about">
-  <div class="page-head">
-
-    <div class="page-info">
-      {{ if .Title }}
-      <h1 class="page-title">{{ .Title }}</h1>
-      {{ end }}
-      {{ if .Description }}
-      <p class="page-description">{{.Description }}</p>
-      {{ end }}
-    </div>
-
-  </div>
-</div>
 
 <!-- begin page -->
 <div class="container-wide layout-about">
