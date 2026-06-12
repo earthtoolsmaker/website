@@ -83,6 +83,41 @@ def bare_axes(fig_w, fig_h, xlim, ylim):
     return fig, ax
 
 
+# ------------------------------------------------------- cover: vertical funnel
+# The site shows covers in a 10:7 box with object-fit: cover (post header and
+# blog cards both use padding-top: 70%), and cards overlay dark gradients at
+# the top and bottom — so the cover is text-free with generous safe margins.
+def make_cover(path):
+    stages = [
+        ("28", "papers surveyed", "#fde68a", INK),
+        ("7", "approaches shortlisted", "#fcd34d", INK),
+        ("5", "models built & raced", "#fbbf24", INK),
+        ("1", "winner promoted", "#f59e0b", "white"),
+        ("v0.1.0", "packaged & released", ORANGE, "white"),
+    ]
+    fig, ax = bare_axes(10, 7, (0, 100), (0, 100))
+
+    n = len(stages)
+    band_h, gap = 12.4, 3.0
+    total = n * band_h + (n - 1) * gap
+    y_top = 50 + total / 2
+    widths = [88, 71, 54, 37, 26]
+    for i, (num, label, color, tc) in enumerate(stages):
+        w_t = widths[i]
+        w_b = widths[i + 1] if i + 1 < n else widths[i] - 6
+        yt = y_top - i * (band_h + gap)
+        yb = yt - band_h
+        pts = [(50 - w_t / 2, yt), (50 + w_t / 2, yt), (50 + w_b / 2, yb), (50 - w_b / 2, yb)]
+        ax.add_patch(Polygon(pts, closed=True, fc=color, ec="white", lw=2.0, zorder=2))
+        cy = (yt + yb) / 2
+        num_size = 23 if len(num) <= 2 else 16
+        ax.text(50, cy + 2.2, num, ha="center", va="center", fontsize=num_size, fontweight="bold", color=tc, zorder=3)
+        ax.text(50, cy - 3.6, label, ha="center", va="center", fontsize=10 - i * 0.4, color=tc, zorder=3)
+
+    fig.savefig(path, pad_inches=0)
+    plt.close(fig)
+
+
 # ---------------------------------------------------------------- figure 1: funnel
 def make_funnel(path, cover=False):
     stages = [
@@ -407,7 +442,7 @@ if __name__ == "__main__":
     BUNDLE.mkdir(parents=True, exist_ok=True)
     COVER_DIR.mkdir(parents=True, exist_ok=True)
     make_funnel(BUNDLE / "funnel.png")
-    make_funnel(COVER_DIR / "cover.png", cover=True)
+    make_cover(COVER_DIR / "cover.png")
     make_system_context(BUNDLE / "system_context.png")
     make_experiment_anatomy(BUNDLE / "experiment_anatomy.png")
     make_leaderboard(BUNDLE / "leaderboard.png")
