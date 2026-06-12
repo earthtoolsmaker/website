@@ -333,8 +333,13 @@
   padding-top: 40px;
 
   .button {
-    padding: 12px 24px;
-    font-size: 16px;
+    color: var(--dark);
+    background: var(--tertiary-color);
+
+    &:hover {
+      color: var(--dark);
+      background: #c97a5c;
+    }
   }
 
   @media (max-width: $desktop) {
