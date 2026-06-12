@@ -1,4 +1,6 @@
 public/
 resources/_gen/
+node_modules/
+.netlify/
 TODO.md
 .DS_Store
