@@ -328,12 +328,19 @@
   }
 }
 
-.social-nav {
+.header__cta {
   justify-self: end;
   padding-top: 40px;
 
+  .button {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
   @media (max-width: $desktop) {
-    display: none;
+    margin-left: auto;
+    margin-right: 16px;
+    padding-top: 32px;
   }
 }
 
@@ -350,6 +357,7 @@
     display: flex;
     align-items: center;
     padding-top: 32px;
+    order: 1;
   }
 }
 
