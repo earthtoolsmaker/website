@@ -259,4 +259,4 @@ diverse species.
 
 One can try out the model from the [ML Space]({{< ref "/spaces/human_wildlife_bear_conflict" >}}) or directly from the snippet below:
 
-{{< hf_space "earthtoolsmaker-bear-detection" >}}
+{{< hf_space "achouffe-bear-detection" >}}
