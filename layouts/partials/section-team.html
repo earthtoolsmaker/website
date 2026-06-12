@@ -36,9 +36,6 @@
         {{ if .role }}
         <div class="team-card__role">{{ .role }}</div>
         {{ end }}
-        {{ if .bio }}
-        <p class="team-card__bio">{{ .bio }}</p>
-        {{ end }}
         <div class="team-card__socials">
           {{ if .github }}
           <a href="{{ .github }}" class="team-card__social" target="_blank" rel="noopener" aria-label="GitHub">
@@ -56,6 +53,9 @@
           </a>
           {{ end }}
         </div>
+        {{ if .bio }}
+        <p class="team-card__bio">{{ .bio }}</p>
+        {{ end }}
       </article>
       {{ end }}
     </div>
