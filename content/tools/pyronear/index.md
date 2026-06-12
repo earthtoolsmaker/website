@@ -46,6 +46,16 @@ departments.
 
 ## See Pyronear in Action
 
+The video below, filmed in the Forest of Fontainebleau, shows how the system
+works end to end: a firefighter walks through the full pipeline, from the
+cameras spotting the first signs of smoke to the alert reaching the fire
+department.
+
+<p><iframe src="https://www.youtube.com/embed/W3DxacGsdks" loading="lazy" frameborder="0" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9;"></iframe></p>
+<em style="font-size:14px;line-height:1.4em;display:block;">End-to-end demonstration of the Pyronear system in the Forest of Fontainebleau
+</em>
+<br/>
+
 The computer vision model detected a forest fire in Fontainebleau from a
 distance of 35 kilometers in real time, setting a new record for the Pyronear
 system. The video below shows a thin black smoke rising in the distance.
