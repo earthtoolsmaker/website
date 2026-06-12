@@ -70,6 +70,7 @@
 }
 
 .team-card__image {
+  position: relative;
   display: block;
   width: 140px;
   height: 140px;
@@ -90,9 +91,36 @@
     transition: transform .3s ease;
   }
 
+  // Same affordance as the case-study "View Project" pill
+  &::after {
+    content: "Read bio";
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity .3s ease;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
   &:hover img {
     transform: scale(1.05);
   }
+}
+
+.team-card--open .team-card__image::after {
+  content: "Close";
 }
 
 .team-card__name {
