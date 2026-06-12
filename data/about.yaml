@@ -1,0 +1,24 @@
+stats:
+  - value: "19"
+    label: "partner organizations"
+  - value: "9+"
+    label: "species monitored"
+  - value: "100%"
+    label: "open source"
+
+timeline:
+  - year: "2024"
+    title: "First field deployments"
+    description: "EarthToolsMaker starts shipping: coral reef health monitoring, forest elephant acoustics with Cornell, bear identification, and SalmonVision counting fish on British Columbia rivers."
+  - year: "2025"
+    title: "Tools others can run"
+    description: "BioWatch turns camera-trap archives into maps and insights. Seal surveys take off over the Wadden Sea. Snow leopard monitoring begins in the mountains of Central Asia."
+  - year: "2026"
+    title: "Earlier, faster, further"
+    description: "Sonar counts smolt runs no camera could see. Fire detection spots smoke at 35 km, minutes after ignition."
+
+support_cta:
+  title: "Help us keep these tools in the field"
+  description: "Your support sustains our ongoing projects — keeping tools maintained, models improving, and everything free for the people who rely on them."
+  button_text: "Support our work"
+  button_link: "/sponsor/"

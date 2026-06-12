@@ -1,19 +1,21 @@
 ---
 layout: about
 title: About
-hero_image: /images/pages/about/hero.jpg
+hero_image: /images/projects/wild_salmon_migration_monitoring/cover.png
+hero_title: Technology for the people protecting wild places
+hero_description: We build open-source AI for conservation — listening for elephants in rainforest audio, counting salmon as they swim upriver, spotting wildfire smoke from 35 km away.
 ---
 
-Conservation needs better technology. Most organizations can't build it themselves.
+Conservation teams collect more data than they can ever look at: years of audio, millions of camera-trap photos, endless hours of underwater video. The bottleneck isn't passion or knowledge — it's tooling. We're a small team of engineers and ecologists who close that gap, building machine learning tools side by side with the researchers and rangers who use them.
 
-We build it for them. Open-source machine learning tools for counting fish, detecting fires, identifying animals, and monitoring ecosystems. Free to use. Free to modify. Built with the people who use them.
+**Free to use. Free to modify. Open source, end to end.**
 
-> Better tools. Better data. Better outcomes.
-
-<div style="text-align: center; margin: 40px 0;">
-  {{< asset_image src="/images/logos/etm-logo.png" alt="EarthToolsMaker Logo" class="etm-logo no-lightense" maxheight="120px" >}}
-</div>
+{{< about_stats >}}
 
 {{< services >}}
+
+{{< about_partners >}}
+
+{{< about_timeline >}}
 
 {{< team >}}

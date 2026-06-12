@@ -4,3 +4,5 @@ node_modules/
 .netlify/
 TODO.md
 .DS_Store
+.superpowers/
+docs/plans/

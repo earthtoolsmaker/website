@@ -1,0 +1,36 @@
+{{ with .Site.Data.about }}
+<!-- begin about timeline -->
+<section class="section about-timeline animate">
+  <div class="container-wide">
+
+    <div class="section__info">
+      <div class="section__head">
+        <h2 class="section__title">🧭 The Journey</h2>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none">
+        <path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+          d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8" />
+      </svg>
+    </div>
+
+    <div class="timeline">
+      {{ range .timeline }}
+      <div class="timeline__item">
+        <h3 class="timeline__year">{{ .year }} — {{ .title }}</h3>
+        <p class="timeline__description">{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+
+    {{ with .support_cta }}
+    <div class="about-cta">
+      <h3 class="about-cta__title">{{ .title }}</h3>
+      <p class="about-cta__description">{{ .description }}</p>
+      <a href="{{ .button_link }}" class="link-no-decoration button button--middle">{{ .button_text }}</a>
+    </div>
+    {{ end }}
+
+  </div>
+</section>
+<!-- end about timeline -->
+{{ end }}

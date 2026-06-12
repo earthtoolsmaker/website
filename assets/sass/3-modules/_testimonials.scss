@@ -1,10 +1,15 @@
 /* Testimonials */
 .testimonials {
   padding: 96px 0;
-  background: var(--secondary-color);
+  background: var(--background-color);
 
   .section__title {
-    color: var(--white);
+    color: var(--dark);
+  }
+
+  .controls .prev,
+  .controls .next {
+    color: var(--tertiary-color);
   }
 
   .testimonials__info {
@@ -32,7 +37,7 @@
 .testimonial-content {
   padding: 32px;
   border-radius: 22px;
-  background: var(--background-color);
+  background: #fff5ed; // footer cream — keeps cards visible on the white section
 
   @media (max-width: $mobile) {
     padding: 20px;
@@ -139,6 +144,8 @@
 .controls {
   display: flex;
   align-items: center;
+  // Keeps arrows pinned right when the section has no title
+  margin-left: auto;
   outline: none;
 
   .prev,
@@ -190,11 +197,11 @@
     border-radius: 2px;
     cursor: pointer;
     opacity: .2;
-    background: var(--white);
+    background: var(--dark);
   }
 
   .tns-nav-active {
     opacity: 1;
-    background: var(--white);
+    background: var(--dark);
   }
 }

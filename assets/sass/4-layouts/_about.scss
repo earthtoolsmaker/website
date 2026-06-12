@@ -3,14 +3,18 @@
 .layout-about .page,
 .layout-about .page-head,
 .layout-about .services .container-wide,
-.layout-about .team .container-wide {
+.layout-about .team .container-wide,
+.layout-about .about-stats .container-wide,
+.layout-about .about-timeline .container-wide {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .layout-about .services .container-wide,
-.layout-about .team .container-wide {
+.layout-about .team .container-wide,
+.layout-about .about-stats .container-wide,
+.layout-about .about-timeline .container-wide {
   padding-left: 0;
   padding-right: 0;
 }
@@ -23,16 +27,12 @@
   }
 }
 
-.page__content blockquote {
-  font-size: 22px;
+.layout-about .section {
+  margin: 56px 0;
 }
 
-.etm-logo {
-  transition: transform 0.6s ease;
-
-  &:hover {
-    transform: rotate(360deg);
-  }
+.page__content blockquote {
+  font-size: 22px;
 }
 
 .container-wide {
@@ -56,136 +56,121 @@
   }
 }
 
-/* Team Members */
-.team-members {
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-
-  @media (max-width: $tablet) {
-    gap: 48px;
-  }
-}
-
-.team-member {
-  display: flex;
-  align-items: center;
+/* Team Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
+  text-align: center;
 
   @media (max-width: $tablet) {
-    flex-direction: column;
-    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
   }
 }
 
-.team-member--reverse {
-  flex-direction: row-reverse;
-
-  .team-member__content {
-    text-align: right;
-  }
-
-  .team-member__socials {
-    justify-content: flex-end;
-  }
-
-  @media (max-width: $tablet) {
-    flex-direction: column;
-
-    .team-member__content {
-      text-align: center;
-    }
-
-    .team-member__socials {
-      justify-content: center;
-    }
-  }
-}
-
-.team-member__image {
-  flex-shrink: 0;
-  width: 280px;
-  height: 242px;
-  border-radius: 12px;
+.team-card__image {
+  position: relative;
+  display: block;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 16px;
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 50%;
   overflow: hidden;
+  cursor: pointer;
 
+  picture,
   img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform .3s ease;
   }
 
+  // Same affordance as the case-study "View Project" pill
+  &::after {
+    content: "Read bio";
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity .3s ease;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
   &:hover img {
     transform: scale(1.05);
   }
-
-  @media (max-width: $tablet) {
-    width: 240px;
-    height: 209px;
-  }
-
-  @media (max-width: $mobile) {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-  }
 }
 
-.team-member__content {
-  flex: 1;
+.team-card--open .team-card__image::after {
+  content: "Close";
 }
 
-.team-member__name {
-  margin-bottom: 8px;
-  font-size: 32px;
+.team-card__name {
+  margin-bottom: 4px;
+  font-size: 22px;
   line-height: 1.2;
-
-  @media (max-width: $mobile) {
-    font-size: 26px;
-  }
 }
 
-.team-member__role {
-  margin-bottom: 16px;
-  font-size: 19px;
+.team-card__role {
+  // Reserve two lines so social icons align across the row
+  min-height: 2.6em;
+  margin-bottom: 14px;
+  font-size: 16px;
+  line-height: 1.3;
   font-weight: 600;
-  color: var(--primary-color);
-
-  @media (max-width: $mobile) {
-    font-size: 16px;
-  }
+  color: var(--heading-font-color);
 }
 
-.team-member__bio {
-  margin-bottom: 20px;
-  font-size: 19px;
-  line-height: 1.7;
+.team-card__bio {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--text-color);
-
-  @media (max-width: $mobile) {
-    font-size: 16px;
-  }
+  transition: max-height 0.35s ease, opacity 0.35s ease, margin 0.35s ease;
 }
 
-.team-member__socials {
+.team-card--open .team-card__bio {
+  max-height: 600px;
+  opacity: 1;
+  margin-top: 14px;
+}
+
+.team-card__socials {
   display: flex;
-  gap: 12px;
-
-  @media (max-width: $tablet) {
-    justify-content: center;
-  }
+  justify-content: center;
+  gap: 10px;
 }
 
-.page__content .team-member__social {
+.page__content .team-card__social {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
   border: 1px solid var(--border-color);
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--heading-font-color);
   transition: all 0.25s ease;
@@ -221,50 +206,68 @@
 }
 
 .services__list {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
   margin-bottom: 48px;
+
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
 
 .services__item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0;
+  padding-left: 20px;
+  border-left: 2px solid var(--border-color);
+
+  // Reserve two title lines so descriptions align across columns
+  .services__item-title {
+    min-height: 2.4em;
+  }
+
+  @media (max-width: $mobile) {
+    .services__item-title {
+      min-height: 0;
+    }
+  }
 }
 
-.services__emoji {
-  font-size: $base-font-size;
-  line-height: 1.2;
-}
-
-.services__content {
-  flex: 1;
+.services__number {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--tertiary-color);
 }
 
 .services__item-title {
   font-family: $base-font-family;
-  font-size: $font-size-h5;
+  font-size: 18px;
+  line-height: 1.2;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: var(--heading-font-color);
 }
 
 .services__item-description {
-  font-size: $base-font-size;
-  line-height: $base-line-height;
+  font-size: 16px;
+  line-height: 1.6;
   color: var(--text-color);
-
-  @media (max-width: $mobile) {
-    font-size: 16px;
-  }
 }
 
 /* Case Studies (Team-member style layout) */
 .case-studies {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 64px;
   margin-bottom: 48px;
 
   @media (max-width: $tablet) {
@@ -275,10 +278,11 @@
 .case-study {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 48px;
 
   @media (max-width: $tablet) {
     flex-direction: column;
+    gap: 32px;
     text-align: center;
   }
 }
@@ -286,31 +290,15 @@
 .case-study--reverse {
   flex-direction: row-reverse;
 
-  .case-study__content {
-    text-align: right;
-  }
-
-  .case-study__partners {
-    justify-content: flex-end;
-  }
-
   @media (max-width: $tablet) {
     flex-direction: column;
-
-    .case-study__content {
-      text-align: center;
-    }
-
-    .case-study__partners {
-      justify-content: center;
-    }
   }
 }
 
 .case-study__image {
   flex-shrink: 0;
-  width: 280px;
-  height: 242px;
+  width: 400px;
+  height: 300px;
   border-radius: 12px;
   overflow: hidden;
 
@@ -391,18 +379,6 @@
   }
 }
 
-.case-study__impact {
-  margin-bottom: 10px;
-  font-size: 19px;
-  font-weight:600;
-  line-height: 1.7;
-  color: var(--primary-color);
-
-  @media (max-width: $mobile) {
-    font-size: 16px;
-  }
-}
-
 .case-study__partners {
   display: flex;
   gap: 12px;
@@ -430,34 +406,12 @@
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.7;
     transition: all 0.3s ease;
   }
 
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-
-    img {
-      filter: grayscale(0%);
-      opacity: 1;
-    }
-  }
-
-  &--inverted {
-    img {
-      filter: grayscale(100%) invert(40%);
-    }
-
-    &:hover {
-      background: #91867b;
-
-      img {
-        filter: grayscale(0%) invert(0%);
-        opacity: 1;
-      }
-    }
   }
 
   @media (max-width: $tablet) {
@@ -482,28 +436,244 @@
   }
 }
 
-.services__cta {
-  font-size: $base-font-size;
-  line-height: $base-line-height;
-  font-weight: 500;
+/* About Stats Strip */
+.about-stats {
+  .about-stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    text-align: center;
+    padding: 28px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 
-  @media (max-width: $mobile) {
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px 16px;
+    }
+  }
+
+  .about-stats__value {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--heading-font-color);
+
+    @media (max-width: $mobile) {
+      font-size: 32px;
+    }
+  }
+
+  .about-stats__label {
     font-size: 16px;
+    color: var(--text-color);
   }
 }
 
-.services__cta-button {
-  display: flex;
-  justify-content: center;
-  margin-top: 24px;
+/* About Timeline */
+.about-timeline {
+  .timeline {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
 
-  .button {
-    background-color: var(--dark);
-    color: var(--white);
+  .timeline__year {
+    margin-bottom: 8px;
+    font-size: 24px;
+    line-height: 1.2;
+    color: var(--heading-font-color);
+
+    @media (max-width: $mobile) {
+      font-size: 20px;
+    }
+  }
+
+  .timeline__description {
+    margin-bottom: 0;
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--text-color);
+
+    @media (max-width: $mobile) {
+      font-size: 16px;
+    }
+  }
+}
+
+/* Shared About CTA band */
+.about-cta {
+  margin: 48px 0 0;
+  padding: 40px 24px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  background: var(--background-color);
+}
+
+.about-cta__title {
+  margin-bottom: 8px;
+  font-size: 26px;
+  color: var(--heading-font-color);
+
+  @media (max-width: $mobile) {
+    font-size: 22px;
+  }
+}
+
+.about-cta__description {
+  max-width: 560px;
+  margin: 0 auto 24px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* About Hero (full-bleed photo with text overlay) */
+.about-hero {
+  position: relative;
+  height: 460px;
+  overflow: hidden;
+  // Cancel the sitewide header margin so the hero sits flush under the nav
+  margin-top: -64px;
+  margin-bottom: 56px;
+
+  @media (max-width: $desktop) {
+    margin-top: -48px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-top: -28px;
+  }
+
+  picture,
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 48px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 45%, rgba(0, 0, 0, 0) 90%);
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    font-size: 48px;
+    line-height: 1.15;
+    color: #fff;
+  }
+
+  &__description {
+    max-width: 760px;
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  @media (max-width: $tablet) {
+    &__title {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    height: 340px;
+    margin-top: -16px;
+
+    &__overlay {
+      padding-bottom: 28px;
+    }
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__description {
+      font-size: 16px;
+    }
+  }
+}
+
+/* Partners logo strip — shared by the about page section and the
+   homepage testimonials band */
+.about-partners {
+  .controls .prev,
+  .controls .next {
+    color: var(--tertiary-color);
+  }
+
+  .partners__carousel {
+    margin-bottom: 0;
+  }
+}
+
+// Break the carousel strip out of the page container (about page and
+// homepage testimonials band): full-bleed on normal screens, capped and
+// centered on very wide ones
+.about-partners .partners__carousel,
+.testimonials .partners__carousel {
+  width: #{"min(100vw, 1500px)"};
+  margin-left: calc(50% - #{"min(100vw, 1500px)"} / 2);
+}
+
+.partners__carousel {
+  // Plain logos, no card chrome: transparent, unrounded,
+  // no .page__content link underline; same hover lift as the
+  // case-study partner chips (minus the shadow — no card surface)
+  .partner-logo-container {
+    background: transparent;
+    border-radius: 0;
+    border: none !important;
 
     &:hover {
-      background-color: var(--primary-color);
-      color: var(--white);
+      transform: translateY(-4px);
+      box-shadow: none;
+    }
+  }
+
+  // Logos in color by default (sitewide style greys them out until hover),
+  // normalized to a uniform bounding box so visual sizes match
+  .partner-logo {
+    filter: none;
+    opacity: 1;
+    width: 100%;
+    height: 64px;
+    max-width: 190px;
+    object-fit: contain;
+  }
+
+  // Smaller logos on small screens
+  @media (max-width: $tablet) {
+    .partner-logo-container {
+      height: 90px;
+      padding: 14px;
+    }
+
+    .partner-logo {
+      height: 52px;
+      max-width: 160px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    .partner-logo-container {
+      height: 72px;
+      padding: 12px;
+    }
+
+    .partner-logo {
+      height: 44px;
+      max-width: 140px;
     }
   }
 }

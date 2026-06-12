@@ -1,73 +1,55 @@
 services:
-  - title: "Custom AI/ML Model Development"
-    description: "We design and train machine learning models tailored to your conservation challenges, whether it's species identification, behavior detection, or environmental monitoring."
+  - title: "Data pipelines"
+    description: "Terabytes of audio, video, and sensor data turned into usable signals."
 
-  - title: "Data Pipeline & Processing"
-    description: "We build efficient systems to process large-scale datasets — terabytes of audio, video, or sensor data — turning raw information into meaningful insights."
+  - title: "Custom ML models"
+    description: "Species ID, behavior detection, environmental monitoring — trained on your data."
 
-  - title: "Deployment & Integration"
-    description: "We deliver production-ready solutions that integrate with your existing infrastructure, from edge devices in the field to cloud-based platforms."
+  - title: "Apps & deployment"
+    description: "Web apps and dashboards your team actually uses, running on anything from edge devices to the cloud."
 
-  - title: "Open-Source Tools"
-    description: "Most of our work is open-source, ensuring transparency, reproducibility, and long-term sustainability for your organization."
+  - title: "Open source by default"
+    description: "Transparent, reproducible, and yours to keep — no vendor lock-in."
 
 examples:
-  - emoji: "🐘"
-    image: "/images/projects/forest_elephants_passive_acoustic_monitoring/cover.png"
-    challenge: "Tracking forest elephants"
-    challenge_detail: "in dense rainforests"
-    challenge_link: "/projects/elephants_passive_acoustic_monitoring/"
-    solution: "Developed an acoustic analyzer that processes years of audio recordings at scale, automatically detecting elephant rumbles and gunshots in continuous soundscapes."
-    impact: "Enables monitoring of populations and detection of poaching threats"
-    partners:
-      - name: "Elephant Listening Project"
-        logo: "/images/clients/elephantlistening/logo.png"
-        link: "https://www.elephantlisteningproject.org/"
-        inverted: false
-      - name: "Cornell Lab"
-        logo: "/images/clients/cornell_lab/logo.svg"
-        link: "https://www.birds.cornell.edu/"
-        inverted: false
-
-  - emoji: "🐟"
-    image: "/images/projects/wild_salmon_migration_monitoring/cover.png"
-    challenge: "Monitoring salmon migration"
-    challenge_detail: "across rivers"
-    challenge_link: "/projects/wild_salmon_migration_monitoring/"
-    solution: "Built SalmonVision — a computer vision system using underwater cameras, sonar, and drones to automatically count and classify salmon species in real-time across multiple river sites."
-    impact: "Enables precise population tracking"
-    partners:
-      - name: "Pacific Salmon Foundation"
-        logo: "/images/clients/psf/logo.png"
-        link: "https://psf.ca/"
-        inverted: true
-      - name: "Wild Salmon Center"
-        logo: "/images/clients/wild_salmon_centre/logo.png"
-        link: "https://wildsalmoncenter.org/"
-        inverted: false
-
-  - emoji: "🔥"
-    image: "/images/projects/early_forest_fire_detection/cover.jpg"
-    challenge: "Detecting forest fires early"
-    challenge_detail: ""
+  - image: "/images/projects/early_forest_fire_detection/cover.jpg"
+    title: "Seeing smoke 35 km away"
+    description: "Early wildfire detection from tower-mounted cameras across European forests. With Pyronear."
     challenge_link: "/projects/early_forest_fire_detection/"
-    solution: "Enhanced Pyronear's ML model for real-time fire detection from tower-mounted cameras, minimizing false alarms while maintaining high sensitivity to early smoke signatures."
-    impact: "Detecting fires from 35km away, protecting forests in Europe"
     partners:
       - name: "Pyronear"
         logo: "/images/clients/pyronear/logo.png"
         link: "https://pyronear.org"
-        inverted: false
 
-  - emoji: "🐻"
-    image: "/images/projects/bear_identification/cover.png"
-    challenge: "Identifying individual bears"
-    challenge_detail: "from camera trap images"
+  - image: "/images/projects/wild_salmon_migration_monitoring/cover.png"
+    title: "Counting every salmon, every river"
+    description: "SalmonVision counts and classifies migrating salmon in real time from underwater cameras and sonar. With the Pacific Salmon Foundation."
+    challenge_link: "/projects/wild_salmon_migration_monitoring/"
+    partners:
+      - name: "Pacific Salmon Foundation"
+        logo: "/images/clients/psf/logo_dark.png"
+        link: "https://psf.ca/"
+      - name: "Wild Salmon Center"
+        logo: "/images/clients/wild_salmon_centre/logo.png"
+        link: "https://wildsalmoncenter.org/"
+
+  - image: "/images/projects/forest_elephants_passive_acoustic_monitoring/cover.png"
+    title: "Hearing elephants through the noise"
+    description: "Years of Congo-basin rainforest audio, scanned automatically for elephant rumbles — and gunshots. With Cornell's Elephant Listening Project."
+    challenge_link: "/projects/elephants_passive_acoustic_monitoring/"
+    partners:
+      - name: "Elephant Listening Project"
+        logo: "/images/clients/elephantlistening/logo.png"
+        link: "https://www.elephantlisteningproject.org/"
+      - name: "Cornell Lab"
+        logo: "/images/clients/cornell_lab/logo.svg"
+        link: "https://www.birds.cornell.edu/"
+
+  - image: "/images/projects/bear_identification/cover.png"
+    title: "Knowing one bear from another"
+    description: "Facial recognition for grizzlies — population monitoring without tags or tranquilizers. With the BearID Project."
     challenge_link: "/projects/bear_identification/"
-    solution: "Built a non-invasive facial recognition system using instance segmentation and metric learning to identify individual bears from camera trap photos without physical tagging."
-    impact: "Enables population monitoring, and behavioral research"
     partners:
       - name: "BearID Project"
-        logo: "/images/clients/bearid/logo.png"
+        logo: "/images/clients/bearid/logo_dark.png"
         link: "https://bearresearch.org"
-        inverted: true

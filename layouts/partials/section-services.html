@@ -5,7 +5,7 @@
 
     <div class="section__info">
       <div class="section__head">
-        <h2 class="section__title">🛠️ What We Offer</h2>
+        <h2 class="section__title">🛠️ What We Do</h2>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none">
         <path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
@@ -14,26 +14,22 @@
     </div>
 
     <p class="services__intro">
-      We build custom conservation tools adapted to your specific needs and datasets, empowering organizations with
-      actionable environmental insights. Our expertise spans the full development lifecycle—from data collection and
-      model training to deployment and maintenance.
+      We take conservation research into production — covering the full lifecycle from raw field data to systems running in the field.
     </p>
 
     <div class="services__list">
-      {{ range .services }}
+      {{ range $index, $service := .services }}
       <div class="services__item">
-        <span class="services__emoji">{{ .emoji }}</span>
-        <div class="services__content">
-          <h4 class="services__item-title">{{ .title }}</h4>
-          <p class="services__item-description">{{ .description }}</p>
-        </div>
+        <span class="services__number" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span>
+        <h4 class="services__item-title">{{ $service.title }}</h4>
+        <p class="services__item-description">{{ $service.description }}</p>
       </div>
       {{ end }}
     </div>
 
     <div class="section__info">
       <div class="section__head">
-        <h2 class="section__title">🔍 Concrete Examples</h2>
+        <h2 class="section__title">🐾 Work in the Field</h2>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none">
         <path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
@@ -49,7 +45,7 @@
             {{ $imgPath := strings.TrimPrefix "/" $example.image }}
             {{ partial "responsive-image.html" (dict
               "src" $imgPath
-              "alt" $example.challenge
+              "alt" $example.title
               "class" "no-lightense"
               "sizes" "(max-width: 768px) 100vw, 50vw"
               "widths" (slice 400 600 800)
@@ -59,14 +55,15 @@
           </a>
         </div>
         <div class="case-study__content">
-          <h3 class="case-study__title">{{ $example.challenge }}</h3>
-          <p class="case-study__impact">{{ $example.impact }}</p>
-          <p class="case-study__solution">{{ $example.solution }}</p>
+          <h3 class="case-study__title">{{ $example.title }}</h3>
+          <p class="case-study__solution">{{ $example.description }}</p>
           <div class="case-study__partners">
-            {{ range $example.partners }}
-            <a href="{{ .link }}" target="_blank" rel="noopener" title="{{ .name }}"
-              class="case-study__partner{{ if .inverted }} case-study__partner--inverted{{ end }}">
-              <img src="{{ .logo }}" alt="{{ .name }}">
+            {{ range $p := $example.partners }}
+            <a href="{{ $p.link }}" target="_blank" rel="noopener" title="{{ $p.name }}"
+              class="case-study__partner">
+              {{ with resources.Get (strings.TrimPrefix "/" $p.logo) }}
+              <img src="{{ .RelPermalink }}" alt="{{ $p.name }}">
+              {{ end }}
             </a>
             {{ end }}
           </div>
@@ -76,13 +73,13 @@
     </div>
 
     <p class="services__more">
-      Explore more of our work on our <a href="/projects/">projects page</a>.
-      <br />
-      Have a conservation challenge? Get in touch, we'd love to explore how we can help.
+      Explore all {{ len (where site.RegularPages "Section" "projects") }} projects on our <a href="/projects/">projects page</a> — or grab the <a href="/tools/">open-source tools</a> behind them.
     </p>
 
-    <div class="services__cta-button">
-      <a href="/contact/" class="link-no-decoration button button--middle">Get in Touch</a>
+    <div class="about-cta">
+      <h3 class="about-cta__title">Have a conservation challenge?</h3>
+      <p class="about-cta__description">Tell us about your data and your field problem — we'll give you an honest read on what's possible and what it would take.</p>
+      <a href="/contact/" class="link-no-decoration button button--middle">Start a project</a>
     </div>
 
   </div>

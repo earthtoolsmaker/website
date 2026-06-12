@@ -153,19 +153,42 @@ document.addEventListener("DOMContentLoaded", function() {
   /* ============================
   // Partners Slider
   ============================ */
-  if (document.querySelector(".partners-slider")) {
-    var partnersSlider = tns({
-      container: ".partners-slider",
-      items: 1,
+  if (document.querySelector(".about-partners-slider") && document.querySelector("#about-partners-controls")) {
+    var aboutPartnersSlider = tns({
+      container: ".about-partners-slider",
+      items: 2,
       slideBy: 1,
-      gutter: 32,
-      nav: true,
+      gutter: 24,
+      nav: false,
       mouseDrag: true,
-      autoplay: false,
+      autoplay: true,
+      autoplayButtonOutput: false,
+      autoplayTimeout: 3000,
       speed: 500,
-      controlsContainer: "#partners-controls"
+      controlsContainer: "#about-partners-controls",
+      responsive: {
+        768: {
+          items: 3,
+        },
+        1024: {
+          items: 5,
+        }
+      }
     });
   }
+
+  /* ============================
+  // Team Bio Toggle
+  ============================ */
+  document.querySelectorAll(".team-card__image").forEach(function (toggle) {
+    toggle.addEventListener("click", function () {
+      var card = toggle.closest(".team-card");
+      if (card) {
+        card.classList.toggle("team-card--open");
+        toggle.setAttribute("aria-expanded", card.classList.contains("team-card--open"));
+      }
+    });
+  });
 
   /* ============================
   // Testimonials Slider
