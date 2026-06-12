@@ -156,14 +156,24 @@ document.addEventListener("DOMContentLoaded", function() {
   if (document.querySelector(".partners-slider")) {
     var partnersSlider = tns({
       container: ".partners-slider",
-      items: 1,
+      items: 2,
       slideBy: 1,
-      gutter: 32,
-      nav: true,
+      gutter: 24,
+      nav: false,
       mouseDrag: true,
-      autoplay: false,
+      autoplay: true,
+      autoplayButtonOutput: false,
+      autoplayTimeout: 3000,
       speed: 500,
-      controlsContainer: "#partners-controls"
+      controlsContainer: "#partners-controls",
+      responsive: {
+        768: {
+          items: 3,
+        },
+        1024: {
+          items: 5,
+        }
+      }
     });
   }
 

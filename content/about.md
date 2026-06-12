@@ -12,6 +12,8 @@ Conservation teams collect more data than they can ever look at: years of audio,
 
 {{< about_stats >}}
 
+{{< about_partners >}}
+
 {{< services >}}
 
 {{< about_timeline >}}

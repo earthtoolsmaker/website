@@ -1,0 +1,58 @@
+{{ with .Site.Params.partner_item }}
+<!-- begin about partners -->
+<section class="section partners about-partners animate">
+  <div class="container-wide">
+
+    <div class="section__info partners__info">
+      <div class="section__head">
+        <h2 class="section__title">{{ $.Site.Params.partners.partners_title | default "🤝 Our Partners" | safeHTML }}</h2>
+        <ul class="controls list-reset" id="partners-controls" aria-label="Partners Slider Navigation" tabindex="0">
+          <li class="prev" data-controls="prev" aria-controls="partners" tabindex="-1">
+            <i class="fa-solid fa-arrow-left-long"></i>
+          </li>
+          <li class="next" data-controls="next" aria-controls="partners" tabindex="-1">
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </li>
+        </ul>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none">
+        <path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+          d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8" />
+      </svg>
+    </div>
+
+    <div class="partners__carousel">
+      <div class="partners-slider">
+        {{ range . }}
+        <div class="partners-slide">
+          {{ if .link }}
+          <a href="{{ .link }}" target="_blank" rel="noopener noreferrer"
+            class="partner-logo-container{{ if eq .bg "inverted" }} partner-bg-inverted{{ end }}"{{ if .show_name }} data-name="{{ .name }}"{{ end }}>
+            {{ if .logo }}
+            {{ $imgPath := strings.TrimPrefix "/" .logo }}
+            {{ $img := resources.Get $imgPath }}
+            {{ if $img }}
+            <img class="partner-logo" src="{{ $img.RelPermalink }}" alt="{{ .name }}" loading="lazy">
+            {{ end }}
+            {{ end }}
+          </a>
+          {{ else }}
+          <div class="partner-logo-container{{ if eq .bg "inverted" }} partner-bg-inverted{{ end }}"{{ if .show_name }} data-name="{{ .name }}"{{ end }}>
+            {{ if .logo }}
+            {{ $imgPath := strings.TrimPrefix "/" .logo }}
+            {{ $img := resources.Get $imgPath }}
+            {{ if $img }}
+            <img class="partner-logo" src="{{ $img.RelPermalink }}" alt="{{ .name }}" loading="lazy">
+            {{ end }}
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- end about partners -->
+{{ end }}
