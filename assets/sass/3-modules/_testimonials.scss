@@ -1,7 +1,7 @@
 /* Testimonials */
 .testimonials {
   padding: 96px 0;
-  background: #fff5ed; // match the footer
+  background: var(--background-color);
 
   .section__title {
     color: var(--dark);
@@ -37,7 +37,7 @@
 .testimonial-content {
   padding: 32px;
   border-radius: 22px;
-  background: var(--background-color);
+  background: #fff5ed; // footer cream — keeps cards visible on the white section
 
   @media (max-width: $mobile) {
     padding: 20px;
