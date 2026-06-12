@@ -4,3 +4,11 @@
 
 [build.environment]
   HUGO_VERSION = "0.145.0"
+
+# Persist Hugo's image-processing cache between builds so image variants
+# are not regenerated on every deploy (resources/_gen is gitignored).
+[[plugins]]
+  package = "netlify-plugin-cache"
+
+  [plugins.inputs]
+    paths = ["resources"]
