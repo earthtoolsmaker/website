@@ -52,60 +52,29 @@
   }
 }
 
-/* Team Members */
-.team-members {
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-
-  @media (max-width: $tablet) {
-    gap: 48px;
-  }
-}
-
-.team-member {
-  display: flex;
-  align-items: center;
+/* Team Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
+  text-align: center;
 
   @media (max-width: $tablet) {
-    flex-direction: column;
-    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
   }
 }
 
-.team-member--reverse {
-  flex-direction: row-reverse;
-
-  .team-member__content {
-    text-align: right;
-  }
-
-  .team-member__socials {
-    justify-content: flex-end;
-  }
-
-  @media (max-width: $tablet) {
-    flex-direction: column;
-
-    .team-member__content {
-      text-align: center;
-    }
-
-    .team-member__socials {
-      justify-content: center;
-    }
-  }
-}
-
-.team-member__image {
-  flex-shrink: 0;
-  width: 280px;
-  height: 242px;
-  border-radius: 12px;
+.team-card__image {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
   overflow: hidden;
 
+  picture,
   img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -115,73 +84,36 @@
   &:hover img {
     transform: scale(1.05);
   }
-
-  @media (max-width: $tablet) {
-    width: 240px;
-    height: 209px;
-  }
-
-  @media (max-width: $mobile) {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-  }
 }
 
-.team-member__content {
-  flex: 1;
-}
-
-.team-member__name {
-  margin-bottom: 8px;
-  font-size: 32px;
+.team-card__name {
+  margin-bottom: 4px;
+  font-size: 22px;
   line-height: 1.2;
-
-  @media (max-width: $mobile) {
-    font-size: 26px;
-  }
 }
 
-.team-member__role {
-  margin-bottom: 16px;
-  font-size: 19px;
+.team-card__role {
+  margin-bottom: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--primary-color);
-
-  @media (max-width: $mobile) {
-    font-size: 16px;
-  }
 }
 
-.team-member__bio {
-  margin-bottom: 20px;
-  font-size: 19px;
-  line-height: 1.7;
-  color: var(--text-color);
-
-  @media (max-width: $mobile) {
-    font-size: 16px;
-  }
-}
-
-.team-member__socials {
+.team-card__socials {
   display: flex;
-  gap: 12px;
-
-  @media (max-width: $tablet) {
-    justify-content: center;
-  }
+  justify-content: center;
+  gap: 10px;
 }
 
-.page__content .team-member__social {
+.page__content .team-card__social {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
   border: 1px solid var(--border-color);
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--heading-font-color);
   transition: all 0.25s ease;
