@@ -70,11 +70,6 @@ pagerSize = 6
     weight = 4
 
   [[menu.main]]
-    name = "Support"
-    url = "/support/"
-    weight = 5
-
-  [[menu.main]]
     name = "Contact"
     url = "/contact/"
     weight = 6

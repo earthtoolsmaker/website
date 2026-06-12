@@ -65,11 +65,9 @@
           </div>
         </nav>
 
-        {{ if .Site.Params.social }}
-        <div class="social-nav">
-          {{ partial "social-links.html" . }}
+        <div class="header__cta">
+          <a class="button" href="{{ "/support/" | relLangURL }}">Support</a>
         </div>
-        {{ end }}
 
       </div>
     </div>

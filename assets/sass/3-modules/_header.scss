@@ -328,12 +328,24 @@
   }
 }
 
-.social-nav {
+.header__cta {
   justify-self: end;
   padding-top: 40px;
 
+  .button {
+    color: var(--dark);
+    background: var(--tertiary-color);
+
+    &:hover {
+      color: var(--dark);
+      background: #c97a5c;
+    }
+  }
+
   @media (max-width: $desktop) {
-    display: none;
+    margin-left: auto;
+    margin-right: 16px;
+    padding-top: 32px;
   }
 }
 
@@ -350,6 +362,7 @@
     display: flex;
     align-items: center;
     padding-top: 32px;
+    order: 1;
   }
 }
 
