@@ -5,6 +5,9 @@ clients:
   - name: HackThePlanet
     link: https://www.hack-the-planet.io
     logo: /images/clients/hacktheplanet/logo.png
+  - name: Foundation Conservation Carpathia
+    link: https://www.carpathia.org/
+    logo: /images/clients/carpathia/logo.svg
 related_posts:
   - how-to-build-a-real-time-bear-detection-system
 github_repo: https://gitlab.com/fruitpunch/projects/ai-for-bears/face-detection-and-segmentation/albear
@@ -18,6 +21,15 @@ pinned: true
 image: /images/projects/human_wildlife_conflict_bear/cover.png
 ---
 
+The Carpathian Mountains of Romania are home to the largest brown bear
+population in Europe. Bears and people have shared these valleys for
+centuries, but as villages expand and bears learn that farms mean easy
+calories, encounters are becoming more frequent — and more dangerous for
+both sides.
+
+![Carpathian village](/images/projects/human_wildlife_conflict_bear/skydancer/carpathian_village.webp)
+*A village in the Carpathian Mountains, Romania, where bears regularly venture close to farms and homes*
+
 Brown bears serve as pivotal indicators and umbrella species, playing a
 crucial role in ecological balance. Managing Human-Wildlife Conflict in
 regions inhabited by these apex predators is paramount for safeguarding
@@ -25,16 +37,28 @@ the overall health of ecosystems.
 
 Implementing non-invasive methods to deter bears from approaching farms
 and livestock holds promise in fostering harmonious relations between
-humans and bears.
+humans and bears. Together with
+[HackThePlanet](https://www.hack-the-planet.io) and [Foundation
+Conservation Carpathia](https://www.carpathia.org/), we develop and
+field-test smart detection and deterrent systems that keep bears out of
+villages — without harming them.
 
-![Pipeline Overview](/images/projects/human_wildlife_conflict_bear/pipeline_overview.png)
-*Bear Scare System Overview*
+![Brown bear in the Carpathians](/images/projects/human_wildlife_conflict_bear/skydancer/brown_bear_meadow.webp)
+*A brown bear near the deployment area in the Carpathian Mountains — photo courtesy of <a href="https://www.hack-the-planet.io" target="_blank">HackThePlanet</a>*
 
 Our ongoing research and development of a software tool aim to offer a
 cost-effective, scalable, and versatile solution applicable not only to
 bears but also to other species. This initiative has the potential to
 significantly contribute to resolving human-wildlife conflicts on a
 global scale.
+
+<iframe src="https://www.youtube-nocookie.com/embed/aoro5FeN8hE" loading="lazy" frameborder="0" allowfullscreen></iframe>
+
+<span class="gallery-box">
+  <span class="gallery"></span>
+  <em>Living With Bears — Technology, Coexistence & Conservation, by <a target="_blank" href="https://hack-the-planet.io">HackThePlanet</a></em>
+</span>
+<br/>
 
 ## Bears are vital for healthy ecosystems
 
@@ -123,7 +147,10 @@ Our collaboration aims to lead the development of innovative,
 non-invasive solutions for detecting bears in real-time environments.
 The primary focus of our efforts lies in pioneering software tools for
 bear detection, while our partner, [HackThePlanet](https://hack-the-planet.io),
-specializes in the electronic packaging aspect.
+specializes in the electronic packaging aspect. [Foundation Conservation
+Carpathia](https://www.carpathia.org/) supports the field deployments in
+the Carpathian Mountains, where the systems are tested under real-world
+conditions.
 
 Our system integrates a motion sensor and a CCTV night vision camera,
 both of which are controlled by a microcontroller. The microcontroller
@@ -139,6 +166,9 @@ the farms.
 
 ![Pipeline Overview](/images/projects/human_wildlife_conflict_bear/pipeline_overview.png)
 *Bear Scare System Overview*
+
+![Installing the AI camera](/images/projects/human_wildlife_conflict_bear/skydancer/installing_ai_camera.webp)
+*Installing the AI camera at the edge of a farm in the Carpathian Mountains — photo courtesy of <a href="https://www.hack-the-planet.io" target="_blank">HackThePlanet</a>*
 
 ## Addressing Challenges in Brown Bear Detection
 
@@ -181,6 +211,35 @@ system as required in the future.
   {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube1.gif" alt="Inflatable Tube Man 1" >}}
   {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube2.gif" alt="Inflatable Tube Man 2" >}}
 {{< /gallery >}}
+
+## Field Testing the Sky-Dancer in the Carpathians
+
+In 2023, [HackThePlanet](https://www.hack-the-planet.io) deployed AI
+cameras and Smart Deterrents across the Carpathian Mountains to keep
+brown bears out of villages. The system worked — for most bears. But
+some repeat-offender "problem bears" eventually figure out that the
+light and sound from a deterrent, however unpredictable, isn't actually
+dangerous. They learn, they adapt, and they come back.
+
+This is where the sky-dancer comes in. Motion is fundamentally different
+from light and sound: a sky-dancer moves erratically, changes shape, and
+looms unpredictably, making it much harder for a bear to dismiss as
+background noise. In 2024, the team returned to the same area in
+partnership with [Foundation Conservation
+Carpathia](https://www.carpathia.org/) to field-test the prototype: an
+inflatable sky-dancer wired into the Smart Deterrent system, activating
+the moment the AI camera detects an approaching bear.
+
+{{< gallery caption="Gallery / Field-testing the sky-dancer prototype in the Carpathian Mountains — photos courtesy of <a href=\"https://www.hack-the-planet.io/projects/carpathia-skydancer-prototype/\" target=\"_blank\">HackThePlanet</a>" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/skydancer/skydancer_carpathia.webp" alt="The sky-dancer deterrent deployed in a Carpathian meadow" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/skydancer/installing_blower.webp" alt="The HackThePlanet team installing the sky-dancer blower unit" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/skydancer/deterrent_station_aerial.webp" alt="Aerial view of the deterrent station with the sky-dancer activated" >}}
+{{< /gallery >}}
+
+Field testing is ongoing. Early observations from the partner team
+suggest that the addition of dynamic motion does change bear behaviour
+at the deterrent station — particularly for individuals that had begun
+to ignore audio-only systems.
 
 ## Conclusion
 
