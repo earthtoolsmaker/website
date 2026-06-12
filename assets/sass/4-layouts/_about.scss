@@ -154,9 +154,13 @@
 
 .services__list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
   margin-bottom: 48px;
+
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
 
   @media (max-width: $mobile) {
     grid-template-columns: 1fr;
@@ -164,13 +168,18 @@
 }
 
 .services__item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0;
+  padding-left: 16px;
+  border-left: 2px solid var(--border-color);
 }
 
-.services__content {
-  flex: 1;
+.services__number {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--accent-color);
 }
 
 .services__item-title {

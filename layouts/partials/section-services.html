@@ -18,12 +18,11 @@
     </p>
 
     <div class="services__list">
-      {{ range .services }}
+      {{ range $index, $service := .services }}
       <div class="services__item">
-        <div class="services__content">
-          <h4 class="services__item-title">{{ .title }}</h4>
-          <p class="services__item-description">{{ .description }}</p>
-        </div>
+        <span class="services__number">{{ printf "%02d" (add $index 1) }}</span>
+        <h4 class="services__item-title">{{ $service.title }}</h4>
+        <p class="services__item-description">{{ $service.description }}</p>
       </div>
       {{ end }}
     </div>

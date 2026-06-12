@@ -1,9 +1,9 @@
 services:
-  - title: "Custom ML models"
-    description: "Species ID, behavior detection, environmental monitoring — trained on your data."
-
   - title: "Data pipelines"
     description: "Terabytes of audio, video, and sensor data turned into usable signals."
+
+  - title: "Custom ML models"
+    description: "Species ID, behavior detection, environmental monitoring — trained on your data."
 
   - title: "Deployment & integration"
     description: "From edge devices in the field to cloud platforms — production-ready, maintained."
