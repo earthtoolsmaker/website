@@ -598,10 +598,15 @@
     }
   }
 
-  // Logos in color by default (sitewide style greys them out until hover)
+  // Logos in color by default (sitewide style greys them out until hover),
+  // normalized to a uniform bounding box so visual sizes match
   .partner-logo {
     filter: none;
     opacity: 1;
+    width: 100%;
+    height: 64px;
+    max-width: 190px;
+    object-fit: contain;
   }
 
   // Smaller logos on small screens
@@ -610,12 +615,22 @@
       height: 90px;
       padding: 14px;
     }
+
+    .partner-logo {
+      height: 52px;
+      max-width: 160px;
+    }
   }
 
   @media (max-width: $mobile) {
     .partner-logo-container {
       height: 72px;
       padding: 12px;
+    }
+
+    .partner-logo {
+      height: 44px;
+      max-width: 140px;
     }
   }
 }
