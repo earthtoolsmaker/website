@@ -577,10 +577,11 @@
     color: var(--heading-font-color);
   }
 
-  // Full-bleed: break the carousel strip out of the page container
+  // Break the carousel strip out of the page container: full-bleed on
+  // normal screens, capped and centered on very wide ones
   .partners__carousel {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+    width: #{"min(100vw, 1500px)"};
+    margin-left: calc(50% - #{"min(100vw, 1500px)"} / 2);
     margin-bottom: 0;
   }
 
@@ -601,5 +602,20 @@
   .partner-logo {
     filter: none;
     opacity: 1;
+  }
+
+  // Smaller logos on small screens
+  @media (max-width: $tablet) {
+    .partner-logo-container {
+      height: 90px;
+      padding: 14px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    .partner-logo-container {
+      height: 72px;
+      padding: 12px;
+    }
   }
 }
