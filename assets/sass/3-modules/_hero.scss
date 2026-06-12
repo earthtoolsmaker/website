@@ -147,3 +147,62 @@
     }
   }
 }
+
+/* Hero overlay variant: image in normal flow, text over a bottom gradient */
+.hero__image--overlay {
+  position: relative;
+  z-index: 0;
+
+  .hero__image__inner::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0) 55%);
+  }
+
+  .hero__overlay {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    .hero__overlay-title {
+      margin-bottom: 12px;
+      font-size: 56px;
+      line-height: 1.1;
+      color: #fff;
+    }
+
+    .hero__overlay-description {
+      margin-bottom: 0;
+      max-width: 680px;
+      font-size: 20px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.92);
+    }
+  }
+
+  @media (max-width: $desktop) {
+    .hero__overlay .hero__overlay-title {
+      font-size: 44px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    .hero__overlay {
+      bottom: 20px;
+
+      .hero__overlay-title {
+        margin-bottom: 8px;
+        font-size: 28px;
+      }
+
+      .hero__overlay-description {
+        font-size: 16px;
+      }
+    }
+  }
+}

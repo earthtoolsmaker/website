@@ -1,0 +1,62 @@
+{{ define "main" }}
+
+{{ if .Params.hero_image }}
+<!-- begin hero -->
+<div class="hero__image hero__image--overlay">
+  <div class="hero__image__inner">
+    {{ $imgPath := strings.TrimPrefix "/" .Params.hero_image }}
+    {{ partial "responsive-image.html" (dict
+      "src" $imgPath
+      "alt" .Title
+      "sizes" "100vw"
+      "widths" (slice 600 900 1200 1600)
+      "lazy" true
+      "lqip" true
+    ) }}
+    <div class="hero__overlay">
+      <div class="container-wide">
+        {{ with .Params.hero_headline }}<h1 class="hero__overlay-title">{{ . }}</h1>{{ end }}
+        {{ with .Params.hero_subline }}<p class="hero__overlay-description">{{ . }}</p>{{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end hero -->
+{{ end }}
+
+<!-- begin intro -->
+<div class="container-wide layout-support">
+  <article class="page">
+    <div class="page__content">
+      {{ .Content }}
+    </div>
+  </article>
+</div>
+<!-- end intro -->
+
+<!-- begin get in touch -->
+<section class="section support-contact animate" id="get-in-touch">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+
+          <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">✉️ Tell us how you'd like to help</h2>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+          </div>
+
+          <div class="form-box">
+            {{ partial "contact-form.html" . }}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end get in touch -->
+
+{{ end }}
