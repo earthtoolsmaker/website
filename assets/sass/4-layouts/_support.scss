@@ -1,10 +1,10 @@
 /* Support Page Layout */
 
-/* Same content column as the about page */
-.layout-support .page {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+/* Intro paragraph: left-aligned with the section titles below,
+   capped for line-length readability */
+.support__intro {
+  max-width: 760px;
+  color: var(--text-color);
 }
 
 .support__section-intro {
