@@ -5,8 +5,8 @@ services:
   - title: "Custom ML models"
     description: "Species ID, behavior detection, environmental monitoring — trained on your data."
 
-  - title: "Deployment & integration"
-    description: "From edge devices in the field to cloud platforms — production-ready, maintained."
+  - title: "Apps & deployment"
+    description: "Web apps and dashboards your team actually uses, running on anything from edge devices to the cloud."
 
   - title: "Open source by default"
     description: "Transparent, reproducible, and yours to keep — no vendor lock-in."
