@@ -32,9 +32,8 @@ examples:
     challenge_link: "/projects/wild_salmon_migration_monitoring/"
     partners:
       - name: "Pacific Salmon Foundation"
-        logo: "/images/clients/psf/logo.png"
+        logo: "/images/clients/psf/logo_dark.png"
         link: "https://psf.ca/"
-        inverted: true
       - name: "Wild Salmon Center"
         logo: "/images/clients/wild_salmon_centre/logo.png"
         link: "https://wildsalmoncenter.org/"
@@ -56,6 +55,5 @@ examples:
     challenge_link: "/projects/bear_identification/"
     partners:
       - name: "BearID Project"
-        logo: "/images/clients/bearid/logo.png"
+        logo: "/images/clients/bearid/logo_dark.png"
         link: "https://bearresearch.org"
-        inverted: true
