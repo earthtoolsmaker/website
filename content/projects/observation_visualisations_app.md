@@ -1,6 +1,6 @@
 ---
 title: Interactive desktop application for visualizing camera trap data
-summary: An open-source desktop application for visualizing camera trap data to support conservation efforts.
+summary: A free, open-source desktop application for visualizing camera trap data to support conservation efforts.
 clients:
   - name: OSI Panthera
     link: https://www.osi-panthera.org/
@@ -13,52 +13,65 @@ tools:
   - Electron
   - Mapbox
   - Camtrap DP
-status: fundraising
+status: completed
 github_repo: https://github.com/earthtoolsmaker/biowatch
 pinned: true
 date: 2025-02-20
 image: /images/projects/observation_visualisations_app/cover.jpg
 ---
 
-## 😇 Looking for Funding
+## 🦊 Biowatch is Here
 
-{{< donate_sponsor_cta >}}
+What started as a prototype is now **Biowatch** — a free, open-source desktop application that lets conservationists analyze, visualize, and explore camera trap datasets entirely offline. It runs on Windows, macOS, and Linux, and your sensitive wildlife data never leaves your computer.
 
-<br/>
+<div style="display: flex; gap: 1em; flex-wrap: wrap; margin: 1.5em 0;">
+  <a class="link-no-decoration" href="/tools/biowatch/">
+    <button class="button button--cta">Download Biowatch</button>
+  </a>
+  <a class="link-no-decoration" href="https://biowatch.earthtoolsmaker.org/" target="_blank">
+    <button class="button">Read the Manual</button>
+  </a>
+</div>
 
 ## The Growing Role of Recording Devices in Conservation
 
-In recent years, conservation efforts have increasingly relied on various recording devices such as camera traps and acoustic sensors. Their growing popularity is driven by technological advancements, reduced costs, and the ability to collect extensive data non-invasively. These tools have revolutionized wildlife monitoring, providing researchers with invaluable data on animal behavior, population dynamics, and ecosystem changes.  However, as the volume of recorded data grows, so does the challenge of managing, analyzing, and effectively utilizing it.
-
-## Advancements in Machine Learning for Camera Trap Data
-
-Machine learning (ML) has played a pivotal role in addressing data processing challenges, leading to the development of numerous tools designed to automate species identification and behavior analysis. Surveys such as the [Camera Trap Data Management Survey on Wildlabs](https://wildlabs.net/discussion/camera-trap-data-management-survey-results) and catalogs like the [Camera Trap ML Survey showcase](https://agentmorris.github.io/camera-trap-ml-survey/) the growing ecosystem of ML-based solutions. However, while AI-driven classification has made data processing more efficient, the focus has largely remained on the automation aspect rather than on how conservationists can explore and interpret the processed results.
+In recent years, conservation efforts have increasingly relied on various recording devices such as camera traps and acoustic sensors. Their growing popularity is driven by technological advancements, reduced costs, and the ability to collect extensive data non-invasively. These tools have revolutionized wildlife monitoring, providing researchers with invaluable data on animal behavior, population dynamics, and ecosystem changes. However, as the volume of recorded data grows, so does the challenge of managing, analyzing, and effectively utilizing it.
 
 ## Bridging the Gap: Making Data Accessible to Conservationists
 
 Despite advancements in AI, conservationists often struggle to make use of processed data due to a lack of technical skills or funding for specialized analytics. Simply classifying species in images is not enough—researchers need user-friendly tools to interactively explore trends, spatial patterns, and ecological insights derived from their datasets.
 
-To address this challenge, we are developing a cross-platform desktop application that will enable conservationists to locally import classified observations and visualize the data through interactive tools. Unlike web-based platforms like [Wildlife Insights](https://www.wildlifeinsights.org/), a desktop app ensures data privacy, supports large datasets without the need for extensive uploads, and remains accessible in remote field locations. Our goal is to create an application that is easy to install and use—requiring no technical expertise beyond a simple double-click installation.
+Biowatch addresses this challenge. Unlike web-based platforms like [Wildlife Insights](https://www.wildlifeinsights.org/), this desktop app keeps your data private, handles large datasets without lengthy uploads, and stays usable in remote field locations. Installation is a simple double-click—no technical expertise required.
 
-## Features
+## What Biowatch Does
 
-Our application will provide a suite of visualization tools designed to enhance data exploration:
+Biowatch turns a folder of raw camera trap images, or a published dataset, into an interactive study you can explore:
 
-- Spatio-temporal analysis: An interactive map displaying camera trap locations, heatmaps, and species distribution over time.
-- Species filtering: Users can filter observations by species to analyze trends and behavioral patterns.
-- Daily and seasonal activity patterns: Charts displaying animal activity fluctuations at different times of the day and across seasons.
-- Advanced analytics: Population estimation models, multi-species interaction analysis, and individual animal tracking.
+- **Import from anywhere** — scan a folder of your own images, open a [Camtrap DP](https://camtrap-dp.tdwg.org/) package, or pull curated datasets straight from [GBIF](https://www.gbif.org/) and [LILA BC](https://lila.science/). Wildlife Insights and DeepFaune CSV exports are supported too.
+- **On-device species identification** — run AI models locally to detect and identify animals as a study is built. SpeciesNet (Google, 2,000+ species worldwide), MegaDetector (Microsoft), DeepFaune (CNRS, Europe), and Manas (snow leopards in the Himalayas) are available, with a coverage map to pick the right one for your region.
+- **Interactive spatio-temporal analysis** — an Explore tab with camera locations rendered as species pie charts, abundance markers, density heatmaps, or hex grids, alongside daily-activity clocks and seasonal timelines.
+- **Species filtering** — select species to compare their distributions and activity patterns, with consistent colors across maps and charts.
+- **Review and correct** — step through images in a gallery viewer, adjust bounding boxes, and fix AI predictions before they become observations.
+- **Deployment insights** — per-deployment activity timelines, heatmaps, and editable metadata you can export and re-import as CSV.
+- **Standards-based export** — publish to GBIF as a Camtrap DP package, or export media organized into one folder per species.
 
-{{< gallery caption="Gallery / Current Prototype for visualizing camera trap data on an interactive map" >}}
-  {{< gallery_image src="/images/projects/observation_visualisations_app/map.png" alt="Interactive map showing camera trap locations" >}}
-  {{< gallery_image src="/images/projects/observation_visualisations_app/bounding_boxes.png" alt="Grid of wildlife pictures with bounding boxes" >}}
-  {{< gallery_image src="/images/projects/observation_visualisations_app/seasonal_daily_activity.png" alt="4 circular charts showing daily activity over the year" >}}
+Everything runs locally. No cloud uploads, no accounts, no tracking—ideal for the sensitive location data of endangered species.
+
+{{< gallery caption="A glimpse of Biowatch in action — explore the full <a href='https://biowatch.earthtoolsmaker.org/'>online manual</a> for guided walkthroughs" >}}
+  {{< gallery_image src="/images/projects/observation_visualisations_app/overview.png" alt="Study overview with an interactive map, key metrics, best captures, and species distribution" >}}
+  {{< gallery_image src="/images/projects/observation_visualisations_app/explore-map.png" alt="Explore tab showing a density heatmap of where species concentrate" >}}
+  {{< gallery_image src="/images/projects/observation_visualisations_app/annotation.png" alt="Gallery viewer with bounding boxes for reviewing and correcting AI predictions" >}}
+  {{< gallery_image src="/images/projects/observation_visualisations_app/deployments.png" alt="Per-deployment activity timeline" >}}
+  {{< gallery_image src="/images/projects/observation_visualisations_app/ai-models.png" alt="On-device AI model settings with a regional coverage map" >}}
+  {{< gallery_image src="/images/projects/observation_visualisations_app/export.png" alt="Camtrap DP export dialog for publishing to GBIF" >}}
 {{< /gallery >}}
 
 ## Technical Approach
 
-We are building our application using [Electron](https://www.electronjs.org/) and [React](https://react.dev/), leveraging their popularity and strong ecosystems to encourage contributions and maximise longevity. [Mapbox](https://www.mapbox.com/) will be used for interactive mapping, and the project will be open-source on GitHub to encourage community collaboration and contributions.
+Biowatch is built with [Electron](https://www.electronjs.org/) and [React](https://react.dev/), chosen for their strong ecosystems to encourage contributions and maximise longevity. [Mapbox](https://www.mapbox.com/) powers the interactive mapping, and the project is fully open-source on GitHub to encourage community collaboration. AI models run on device, so identification works without an internet connection once a model is downloaded.
 
 ## Conclusion
 
-With this interactive data exploration tool, we aim to bridge the gap between AI-powered classification and practical conservation insights. By empowering researchers and conservationists with intuitive visualizations, we hope to make wildlife monitoring more effective and accessible, ultimately contributing to better conservation outcomes.
+Biowatch bridges the gap between AI-powered classification and practical conservation insights. By giving researchers and conservationists intuitive, private, and offline visualizations, we hope to make wildlife monitoring more effective and accessible—ultimately contributing to better conservation outcomes.
+
+The app is free to download and the code is open for anyone to inspect, use, and improve.
