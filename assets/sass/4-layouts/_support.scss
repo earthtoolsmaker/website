@@ -53,6 +53,12 @@
   text-decoration: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 
+  /* match the body text size of the partner cards (proof/offers) */
+  .support__card-description,
+  .support__card-link {
+    font-size: 16px;
+  }
+
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
