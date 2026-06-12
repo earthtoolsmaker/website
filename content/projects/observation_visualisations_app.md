@@ -22,7 +22,7 @@ image: /images/projects/observation_visualisations_app/cover.png
 
 ## 🦊 Biowatch is Here
 
-What started as a prototype is now **Biowatch** — a free, open-source desktop application that lets conservationists analyze, visualize, and explore camera trap datasets entirely offline. It runs on Windows, macOS, and Linux, and your sensitive wildlife data never leaves your computer.
+What started as a prototype is now **[Biowatch](/tools/biowatch/)** — a free, open-source desktop application that lets conservationists analyze, visualize, and explore camera trap datasets entirely offline. It runs on Windows, macOS, and Linux, and your sensitive wildlife data never leaves your computer.
 
 <div style="display: flex; gap: 1em; flex-wrap: wrap; margin: 1.5em 0;">
   <a class="link-no-decoration" href="/tools/biowatch/">
@@ -33,15 +33,11 @@ What started as a prototype is now **Biowatch** — a free, open-source desktop 
   </a>
 </div>
 
-## The Growing Role of Recording Devices in Conservation
+## From Raw Footage to Real Insight
 
-In recent years, conservation efforts have increasingly relied on various recording devices such as camera traps and acoustic sensors. Their growing popularity is driven by technological advancements, reduced costs, and the ability to collect extensive data non-invasively. These tools have revolutionized wildlife monitoring, providing researchers with invaluable data on animal behavior, population dynamics, and ecosystem changes. However, as the volume of recorded data grows, so does the challenge of managing, analyzing, and effectively utilizing it.
+Camera traps have transformed wildlife monitoring: they gather huge volumes of data non-invasively and at low cost. But AI that classifies the species in those images only solves half the problem. Conservationists still have to make sense of the results—spot spatial patterns, track activity over time, and turn millions of detections into ecological insight—often without specialist software or a dedicated data team.
 
-## Bridging the Gap: Making Data Accessible to Conservationists
-
-Despite advancements in AI, conservationists often struggle to make use of processed data due to a lack of technical skills or funding for specialized analytics. Simply classifying species in images is not enough—researchers need user-friendly tools to interactively explore trends, spatial patterns, and ecological insights derived from their datasets.
-
-Biowatch addresses this challenge. Unlike web-based platforms like [Wildlife Insights](https://www.wildlifeinsights.org/), this desktop app keeps your data private, handles large datasets without lengthy uploads, and stays usable in remote field locations. Installation is a simple double-click—no technical expertise required.
+Most tools stop at classification, or live on the web behind accounts and uploads. Biowatch is different. It's a desktop app that keeps your data private, handles large datasets without lengthy uploads, and works in remote field locations. Installation is a simple double-click—no technical expertise required—and unlike web platforms such as [Wildlife Insights](https://www.wildlifeinsights.org/), nothing ever leaves your machine.
 
 ## What Biowatch Does
 
@@ -68,12 +64,15 @@ Everything runs locally. No cloud uploads, no accounts, no tracking—ideal for 
 
 <p style="text-align:center;"><em>A glimpse of Biowatch in action — explore the full <a href="https://biowatch.earthtoolsmaker.org/">online manual</a> for guided walkthroughs.</em></p>
 
-## Technical Approach
+## Free, Open Source, and Built in the Open
 
-Biowatch is built with [Electron](https://www.electronjs.org/) and [React](https://react.dev/), chosen for their strong ecosystems to encourage contributions and maximise longevity. [Mapbox](https://www.mapbox.com/) powers the interactive mapping, and the project is fully open-source on GitHub to encourage community collaboration. AI models run on device, so identification works without an internet connection once a model is downloaded.
+Biowatch is free to download for Windows, macOS, and Linux, and the full source is on [GitHub](https://github.com/earthtoolsmaker/biowatch) for anyone to inspect, use, or improve. Built together with conservation partners, it closes the gap between AI classification and practical insight—making wildlife monitoring more effective, more private, and more accessible.
 
-## Conclusion
-
-Biowatch bridges the gap between AI-powered classification and practical conservation insights. By giving researchers and conservationists intuitive, private, and offline visualizations, we hope to make wildlife monitoring more effective and accessible—ultimately contributing to better conservation outcomes.
-
-The app is free to download and the code is open for anyone to inspect, use, and improve.
+<div style="display: flex; gap: 1em; flex-wrap: wrap; margin: 1.5em 0;">
+  <a class="link-no-decoration" href="/tools/biowatch/">
+    <button class="button button--cta">Download Biowatch</button>
+  </a>
+  <a class="link-no-decoration" href="https://biowatch.earthtoolsmaker.org/" target="_blank">
+    <button class="button">Read the Manual</button>
+  </a>
+</div>

@@ -36,9 +36,12 @@ all_downloads_url: https://github.com/earthtoolsmaker/biowatch/releases/tag/v1.0
 Biowatch is a free, open-source desktop application that lets you analyze, visualize, and explore camera trap datasets entirely offline. Your sensitive wildlife data never gets uploaded to any server — everything runs locally on your computer.
 
 {{< image_carousel id="biowatch-gallery" >}}
-  {{< carousel_image src="./images/medias.png" alt="Biowatch Medias" caption="Browse and manage thousands of camera trap images and videos with powerful search and filtering capabilities." shadow="false" rounded="false" >}}
-  {{< carousel_image src="./images/activity.png" alt="Biowatch Activity" caption="Analyze temporal activity patterns to understand when and how wildlife uses different areas." shadow="false" rounded="false" >}}
-  {{< carousel_image src="./images/overview.png" alt="Biowatch Overview" caption="Get a comprehensive overview of your camera trap deployment with interactive maps and statistics." shadow="false" rounded="false" >}}
+  {{< carousel_image src="./images/overview.png" alt="Biowatch study overview" caption="Overview: every study opens with an interactive map, key metrics, the best captures, and the full species distribution with IUCN status." shadow="false" rounded="false" >}}
+  {{< carousel_image src="./images/explore.png" alt="Biowatch Explore tab" caption="Explore: map camera locations as species pie-charts, abundance, or density heatmaps, with daily-activity and seasonal charts alongside." shadow="false" rounded="false" >}}
+  {{< carousel_image src="./images/media.png" alt="Biowatch media library" caption="Media: browse, filter, and search thousands of camera trap images and videos by species, deployment, and detection." shadow="false" rounded="false" >}}
+  {{< carousel_image src="./images/annotation.png" alt="Reviewing AI detections with bounding boxes" caption="Annotate: step through images, adjust bounding boxes, and correct AI predictions before they become observations." shadow="false" rounded="false" >}}
+  {{< carousel_image src="./images/ai-models.png" alt="On-device AI model settings" caption="On-device AI: download SpeciesNet, MegaDetector, DeepFaune, or Manas and pick the right model for your region from the coverage map." shadow="false" rounded="false" >}}
+  {{< carousel_image src="./images/export.png" alt="Camtrap DP export dialog" caption="Export: publish to GBIF as a Camtrap DP package, or export your media organized into one folder per species." shadow="false" rounded="false" >}}
 {{< /image_carousel >}}
 
 ## Why Biowatch?
