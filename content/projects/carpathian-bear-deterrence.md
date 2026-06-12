@@ -202,16 +202,18 @@ farming community that will utilize the system.
 
 ## Deterrent
 
-The chosen deterrent system consists of an inflatable tube man, capable of
-rapid inflation upon bear detection in a video frame. This solution offers
+The chosen deterrent system consists of an inflatable tube man — a
+sky-dancer — capable of rapid inflation upon bear detection in a video
+frame. This solution offers
 affordability, low power consumption, and harmlessness, with easy
 replaceability. However, it remains uncertain whether bears can learn to
 disregard the deterrent over time, necessitating iterative improvements to the
 system as required in the future.
 
-{{< gallery caption="Inflatable Tube Man - Small (left) and large (right) tube men" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube1.gif" alt="Inflatable Tube Man 1" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/inflatable_tube_man/tube2.gif" alt="Inflatable Tube Man 2" >}}
+{{< gallery caption="Gallery / The inflatable sky-dancer deterrent in the field — photos courtesy of <a href=\"https://www.hack-the-planet.io/projects/carpathia-skydancer-prototype/\" target=\"_blank\">HackThePlanet</a>" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/skydancer/skydancer_carpathia.webp" alt="The sky-dancer deterrent deployed in a Carpathian meadow" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/skydancer/installing_blower.webp" alt="The HackThePlanet team installing the sky-dancer blower unit" >}}
+  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/skydancer/deterrent_station_aerial.webp" alt="Aerial view of the deterrent station with the sky-dancer activated" >}}
 {{< /gallery >}}
 
 ## Field Testing the Sky-Dancer in the Carpathians
@@ -231,12 +233,6 @@ partnership with [Foundation Conservation
 Carpathia](https://www.carpathia.org/) to field-test the prototype: an
 inflatable sky-dancer wired into the Smart Deterrent system, activating
 the moment the AI camera detects an approaching bear.
-
-{{< gallery caption="Gallery / Field-testing the sky-dancer prototype in the Carpathian Mountains — photos courtesy of <a href=\"https://www.hack-the-planet.io/projects/carpathia-skydancer-prototype/\" target=\"_blank\">HackThePlanet</a>" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/skydancer/skydancer_carpathia.webp" alt="The sky-dancer deterrent deployed in a Carpathian meadow" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/skydancer/installing_blower.webp" alt="The HackThePlanet team installing the sky-dancer blower unit" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/skydancer/deterrent_station_aerial.webp" alt="Aerial view of the deterrent station with the sky-dancer activated" >}}
-{{< /gallery >}}
 
 Field testing is ongoing. Early observations from the partner team
 suggest that the addition of dynamic motion does change bear behaviour
