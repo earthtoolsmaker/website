@@ -23,27 +23,24 @@
 
     <div class="partners__carousel">
       <div class="partners-slider">
-        {{ range . }}
+        {{ range $partner := . }}
+        {{ $img := "" }}
+        {{ with $partner.logo }}
+          {{ $imgPath := strings.TrimPrefix "/" . }}
+          {{/* Prefer a dark-text variant (for white-on-transparent logos) when one exists */}}
+          {{ $img = or (resources.Get (replace $imgPath "logo.png" "logo_dark.png")) (resources.Get $imgPath) }}
+        {{ end }}
         <div class="partners-slide">
-          {{ if .link }}
-          <a href="{{ .link }}" target="_blank" rel="noopener noreferrer"
-            class="partner-logo-container{{ if eq .bg "inverted" }} partner-bg-inverted{{ end }}"{{ if .show_name }} data-name="{{ .name }}"{{ end }}>
-            {{ if .logo }}
-            {{ $imgPath := strings.TrimPrefix "/" .logo }}
-            {{ $img := resources.Get $imgPath }}
-            {{ if $img }}
-            <img class="partner-logo" src="{{ $img.RelPermalink }}" alt="{{ .name }}" loading="lazy">
-            {{ end }}
+          {{ if $partner.link }}
+          <a href="{{ $partner.link }}" target="_blank" rel="noopener noreferrer" class="partner-logo-container"{{ if $partner.show_name }} data-name="{{ $partner.name }}"{{ end }}>
+            {{ with $img }}
+            <img class="partner-logo" src="{{ .RelPermalink }}" alt="{{ $partner.name }}" loading="lazy">
             {{ end }}
           </a>
           {{ else }}
-          <div class="partner-logo-container{{ if eq .bg "inverted" }} partner-bg-inverted{{ end }}"{{ if .show_name }} data-name="{{ .name }}"{{ end }}>
-            {{ if .logo }}
-            {{ $imgPath := strings.TrimPrefix "/" .logo }}
-            {{ $img := resources.Get $imgPath }}
-            {{ if $img }}
-            <img class="partner-logo" src="{{ $img.RelPermalink }}" alt="{{ .name }}" loading="lazy">
-            {{ end }}
+          <div class="partner-logo-container"{{ if $partner.show_name }} data-name="{{ $partner.name }}"{{ end }}>
+            {{ with $img }}
+            <img class="partner-logo" src="{{ .RelPermalink }}" alt="{{ $partner.name }}" loading="lazy">
             {{ end }}
           </div>
           {{ end }}

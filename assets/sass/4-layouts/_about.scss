@@ -584,10 +584,12 @@
     margin-bottom: 0;
   }
 
-  // Plain logos, no card chrome: transparent, unrounded, no hover lift
+  // Plain logos, no card chrome: transparent, unrounded, no hover lift,
+  // no .page__content link underline
   .partner-logo-container {
     background: transparent;
     border-radius: 0;
+    border: none !important;
 
     &:hover {
       transform: none;
@@ -599,15 +601,5 @@
   .partner-logo {
     filter: none;
     opacity: 1;
-  }
-
-  // White/light logos need a dark chip to stay visible in color mode
-  .partner-bg-inverted {
-    background: #91867b;
-    border-radius: 8px;
-
-    .partner-logo {
-      filter: none;
-    }
   }
 }
