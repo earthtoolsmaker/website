@@ -92,7 +92,7 @@
 
   // Gradio container styles moved to 3-modules/_gradio-reset.scss
 
-  a {
+  a:not(.button) {
     font-weight: 500;
     border-bottom: 1px solid var(--border-color);
 

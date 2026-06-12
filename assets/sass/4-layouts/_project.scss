@@ -70,7 +70,7 @@
   color: var(--text-color);
   margin-bottom: 80px;
 
-  a {
+  a:not(.button) {
     font-weight: 500;
     border-bottom: 1px solid var(--border-color);
 

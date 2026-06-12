@@ -193,7 +193,7 @@
 .page__content {
   color: var(--text-color);
 
-  a {
+  a:not(.button) {
     font-weight: 700;
     border-bottom: 1px solid var(--border-color);
 
