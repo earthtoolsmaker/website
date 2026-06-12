@@ -5,9 +5,9 @@ clients:
   - name: OSI Panthera
     link: https://www.osi-panthera.org/
     logo: /images/clients/osi-panthera/logo.jpg
-  - name: OSI
-    link: https://www.science-camps.com/
-    logo: /images/clients/osi/logo.png
+  - name: INBO
+    link: https://www.inbo.be/
+    logo: /images/clients/inbo/logo.jpg
 tools:
   - React
   - Electron
