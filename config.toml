@@ -254,6 +254,11 @@ pagerSize = 6
     logo = "/images/clients/hacktheplanet/logo.png"
     link = "https://www.hack-the-planet.io/"
 
+  [[params.partner_item]]
+    name = "Foundation Conservation Carpathia"
+    logo = "/images/clients/carpathia/logo.svg"
+    link = "https://www.carpathia.org/"
+
   #-------------------------------
   # Testimonials Section
   [params.testimonials]
