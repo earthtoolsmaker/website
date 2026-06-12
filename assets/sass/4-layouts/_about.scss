@@ -604,7 +604,8 @@
   }
 }
 
-/* About Partners Carousel */
+/* Partners logo strip — shared by the about page section and the
+   homepage testimonials band */
 .about-partners {
   .controls .prev,
   .controls .next {
@@ -618,7 +619,9 @@
     margin-left: calc(50% - #{"min(100vw, 1500px)"} / 2);
     margin-bottom: 0;
   }
+}
 
+.partners__carousel {
   // Plain logos, no card chrome: transparent, unrounded,
   // no .page__content link underline; same hover lift as the
   // case-study partner chips (minus the shadow — no card surface)

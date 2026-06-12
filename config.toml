@@ -182,7 +182,6 @@ pagerSize = 6
     name = "Pacific Salmon Foundation"
     logo = "/images/clients/psf/logo.png"
     link = "https://www.psf.ca"
-    bg = "inverted"
 
   [[params.partner_item]]
     name = "Ai2"
@@ -193,7 +192,6 @@ pagerSize = 6
     name = "BearID Project"
     logo = "/images/clients/bearid/logo.png"
     link = "https://bearresearch.org/"
-    bg = "inverted"
 
   [[params.partner_item]]
     name = "Wageningen Marine Research"
@@ -270,7 +268,7 @@ pagerSize = 6
   # Testimonials Section
   [params.testimonials]
     enable = true
-    testimonial_title = "🙂 What They Say"
+    testimonial_title = "🙂 What Our Partners Say"
 
   [[params.testimonial_item]]
     name = "Mateo Lostanlen"

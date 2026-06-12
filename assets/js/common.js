@@ -153,9 +153,9 @@ document.addEventListener("DOMContentLoaded", function() {
   /* ============================
   // Partners Slider
   ============================ */
-  if (document.querySelector(".partners-slider")) {
-    var partnersSlider = tns({
-      container: ".partners-slider",
+  if (document.querySelector(".about-partners-slider")) {
+    var aboutPartnersSlider = tns({
+      container: ".about-partners-slider",
       items: 2,
       slideBy: 1,
       gutter: 24,
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function() {
       autoplayButtonOutput: false,
       autoplayTimeout: 3000,
       speed: 500,
-      controlsContainer: "#partners-controls",
+      controlsContainer: "#about-partners-controls",
       responsive: {
         768: {
           items: 3,

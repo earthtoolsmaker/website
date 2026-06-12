@@ -1,10 +1,15 @@
 /* Testimonials */
 .testimonials {
   padding: 96px 0;
-  background: var(--secondary-color);
+  background: #fff5ed; // match the footer
 
   .section__title {
-    color: var(--white);
+    color: var(--dark);
+  }
+
+  .controls .prev,
+  .controls .next {
+    color: var(--tertiary-color);
   }
 
   .testimonials__info {
@@ -190,11 +195,11 @@
     border-radius: 2px;
     cursor: pointer;
     opacity: .2;
-    background: var(--white);
+    background: var(--dark);
   }
 
   .tns-nav-active {
     opacity: 1;
-    background: var(--white);
+    background: var(--dark);
   }
 }
