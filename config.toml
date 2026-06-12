@@ -116,6 +116,11 @@ pagerSize = 6
       url = "/contact/"
       weight = 8
 
+      [[menu.footer]]
+      name = "Privacy Policy"
+      url = "/privacy-policy/"
+      weight = 9
+
 
   #-------------------------------
   # Social Settings
