@@ -64,3 +64,20 @@ system. The video below shows a thin black smoke rising in the distance.
 <em style="font-size:14px;line-height:1.4em;display:block;">Real-time forest fire detection from 35 kilometers away in Fontainebleau
 </em>
 <br/>
+
+## Try the Models in Your Browser
+
+Two interactive demos let you run the Pyronear models on real data, right
+from this website:
+
+- 🔥 [__Single-frame detection__]({{< ref "/spaces/early_forest_fire_detection" >}}) —
+  upload a camera image and watch the detector draw boxes around smoke.
+- 🕐 [__Temporal smoke verification__]({{< ref "/spaces/temporal_smoke_verification" >}}) —
+  the second-stage model that watches whole *sequences*: real wildfires get
+  caught within minutes while clouds, fog, and haze look-alikes are rejected.
+  This is the model that cuts false alarms by 4× in production.
+
+Below, the temporal verifier judging real camera sequences — pick one and
+watch it play:
+
+{{< hf_space "achouffe-temporal-smoke-pyronear" "6.18.0" >}}
