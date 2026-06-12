@@ -1,0 +1,17 @@
+<form class="form" action="{{ if .Site.Params.contact.contact_email }}https://formspree.io/f/{{ .Site.Params.contact.contact_email }}{{ else }}#{{ end }}" method="POST">
+  <div class="form__group">
+    <label class="form__label" for="form-name">Name</label>
+    <input class="form__input" id="form-name" type="text" name="name" placeholder="Your name" required>
+  </div>
+  <div class="form__group">
+    <label class="form__label" for="form-email">Email</label>
+    <input class="form__input" id="form-email" type="email" name="_replyto" placeholder="you@example.com" required>
+  </div>
+  <div class="form__group">
+    <label class="form__label" for="form-text">Message</label>
+    <textarea class="form__input" id="form-text" name="text" rows="8" placeholder="How can we help?" required></textarea>
+  </div>
+  <div class="form__group">
+    <button class="button" type="submit">Send Message</button>
+  </div>
+</form>
