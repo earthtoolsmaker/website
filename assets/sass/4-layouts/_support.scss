@@ -6,10 +6,29 @@
   margin-right: auto;
 }
 
+.layout-support .page__content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px 0;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.6;
+
+  @media (max-width: $mobile) {
+    padding: 0;
+    text-align: left;
+    font-size: $base-font-size;
+  }
+}
+
 .support__section-intro {
   max-width: 760px;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
   font-size: $base-font-size;
+}
+
+.support__cards-row {
+  justify-content: center;
 }
 
 .support-contact .form-box {
@@ -20,7 +39,7 @@
 .support__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 24px;
   margin-bottom: 48px;
 
   &--4 {
@@ -45,23 +64,20 @@
 }
 
 .support__card {
-  .support__card-emoji {
-    display: block;
-    margin-bottom: 12px;
-    font-size: 28px;
-    line-height: 1.2;
-  }
+  padding: 28px;
+  background-color: var(--background-alt-color);
+  border-radius: 22px;
 
   .support__card-title {
     font-family: $base-font-family;
     font-size: $font-size-h5;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     color: var(--heading-font-color);
   }
 
   .support__card-description {
-    margin-bottom: 8px;
+    margin-bottom: 0;
     font-size: $base-font-size;
     line-height: $base-line-height;
     color: var(--text-color);
@@ -72,6 +88,8 @@
   }
 
   .support__card-link {
+    display: inline-block;
+    margin-top: 12px;
     font-weight: 600;
   }
 }

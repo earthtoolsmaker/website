@@ -43,7 +43,7 @@
 
           <div class="section__info">
             <div class="section__head">
-              <h2 class="section__title">💡 Fund a Project</h2>
+              <h2 class="section__title">Fund a Project</h2>
               <a class="section__link" href="/projects/">View all</a>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
@@ -53,7 +53,7 @@
           <p class="support__section-intro">{{ .fundraising_intro }}</p>
           {{ end }}
 
-          <div class="row">
+          <div class="row support__cards-row">
             {{ range .Site.Data.support.fundraising_projects }}
               {{ with $.Site.GetPage . }}
                 {{ partial "project-card.html" . }}
@@ -63,7 +63,7 @@
 
           <div class="button--cta-container">
             <a class="link-no-decoration" href="#get-in-touch">
-              <button class="button button--cta">Sponsor a project 🌱</button>
+              <button class="button button--cta">Sponsor a project</button>
             </a>
           </div>
 
@@ -83,7 +83,7 @@
 
           <div class="section__info">
             <div class="section__head">
-              <h2 class="section__title">🌲 Proven in the Field</h2>
+              <h2 class="section__title">Proven in the Field</h2>
               <a class="section__link" href="/projects/">View all</a>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
@@ -93,7 +93,7 @@
           <p class="support__section-intro">{{ . }}</p>
           {{ end }}
 
-          <div class="row">
+          <div class="row support__cards-row">
             {{ range .Site.Data.support.ongoing_projects }}
               {{ with $.Site.GetPage . }}
                 {{ partial "project-card.html" . }}
@@ -117,7 +117,7 @@
 
           <div class="section__info">
             <div class="section__head">
-              <h2 class="section__title">🤝 Partner With Us</h2>
+              <h2 class="section__title">Partner With Us</h2>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
           </div>
@@ -125,7 +125,6 @@
           <div class="support__grid">
             {{ range .Site.Data.support.tracks }}
             <div class="support__card">
-              <span class="support__card-emoji">{{ .emoji }}</span>
               <h3 class="support__card-title">{{ .title }}</h3>
               <p class="support__card-description">{{ .description }}</p>
             </div>
@@ -154,7 +153,7 @@
 
           <div class="section__info">
             <div class="section__head">
-              <h2 class="section__title">🌍 More Ways to Help</h2>
+              <h2 class="section__title">More Ways to Help</h2>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
           </div>
@@ -162,11 +161,10 @@
           <div class="support__grid support__grid--4">
             {{ range .Site.Data.support.ways }}
             <div class="support__card">
-              <span class="support__card-emoji">{{ .emoji }}</span>
               <h3 class="support__card-title">{{ .title }}</h3>
               <p class="support__card-description">{{ .description }}</p>
               {{ if .link }}
-              <a class="support__card-link" href="{{ .link }}"{{ if hasPrefix .link "http" }} target="_blank" rel="noopener"{{ end }}>{{ .link_text }} →</a>
+              <a class="support__card-link" href="{{ .link }}"{{ if hasPrefix .link "http" }} target="_blank" rel="noopener"{{ end }}>{{ .link_text }}&nbsp;→</a>
               {{ end }}
             </div>
             {{ end }}
@@ -188,7 +186,7 @@
 
           <div class="section__info">
             <div class="section__head">
-              <h2 class="section__title">✉️ Tell us how you'd like to help</h2>
+              <h2 class="section__title">Tell us how you'd like to help</h2>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
           </div>
