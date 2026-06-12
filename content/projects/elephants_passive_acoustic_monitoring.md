@@ -18,6 +18,7 @@ tools:
   - Machine Learning
 status: completed
 pinned: true
+weight: 3
 date: 2024-06-26
 image: /images/projects/forest_elephants_passive_acoustic_monitoring/cover.png
 ---

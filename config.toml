@@ -145,7 +145,7 @@ pagerSize = 6
 
   [params.projects.completed]
     enable = true
-    projects_title= "👨🏻‍💻 Completed Projects"
+    projects_title= "👨🏻‍💻 Featured Projects"
     limit = 6
 
   [params.projects.fundraising]

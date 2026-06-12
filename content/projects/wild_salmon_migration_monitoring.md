@@ -26,6 +26,7 @@ tools:
   - Drones
 status: completed
 pinned: true
+weight: 2
 date: 2024-08-20
 image: /images/projects/wild_salmon_migration_monitoring/cover.png
 ---
