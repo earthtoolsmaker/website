@@ -39,6 +39,14 @@ form a resilient and proactive strategy for wildfire prevention and management.
 ![System Overview](/images/projects/early_forest_fire_detection/overview_system.png)
 *Overview of the Pyronear system to monitor forests around the clock*
 
+The video below, filmed in the Forest of Fontainebleau, shows how the system
+works end to end: a firefighter walks through the full pipeline, from the
+cameras spotting the first signs of smoke to the alert reaching the fire
+department.
+
+{{< youtube id=W3DxacGsdks >}}
+<br/>
+
 ## Forests Protection
 
 Protecting forests from fire is crucial for several reasons:
