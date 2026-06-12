@@ -45,6 +45,12 @@ The `status: fundraising` projects pulled dynamically as photo cards (currently:
 
 Section CTA: **Sponsor this project** → scrolls to `#get-in-touch`.
 
+### 3b. Proven in the field
+
+Proof that funded projects keep running: ongoing high-impact projects rendered as the same photo cards, listed by page path in `data/support.yaml` (currently Early Forest Fire Detection and Wild Salmon Migration Monitoring). Intro:
+
+> Support doesn't stop at launch. These systems run in the field every day — spotting wildfire smoke minutes after ignition and counting wild salmon as they migrate upriver.
+
 ### 4. Partner with us
 
 A band for organizations — three compact tracks, each a bold title + one-liner:

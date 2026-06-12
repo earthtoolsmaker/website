@@ -1,5 +1,11 @@
 fundraising_intro: "These projects are designed, scoped, and waiting on funding. Sponsor one and we'll build it in the open."
 
+ongoing_intro: "Support doesn't stop at launch. These systems run in the field every day — spotting wildfire smoke minutes after ignition and counting wild salmon as they migrate upriver."
+
+ongoing_projects:
+  - /projects/early_forest_fire_detection
+  - /projects/wild_salmon_migration_monitoring
+
 tracks:
   - emoji: "🏢"
     title: "Companies"
