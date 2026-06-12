@@ -31,6 +31,17 @@
   justify-content: center;
 }
 
+/* Align label/title/description/proof/offers rows across the three track
+   cards via subgrid; without subgrid support this falls back to independent
+   per-card stacking. */
+.support__track {
+  display: grid;
+  grid-row: span 5;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  align-content: start;
+}
+
 .support__track-label {
   display: block;
   margin-bottom: 8px;
