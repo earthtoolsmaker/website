@@ -612,13 +612,18 @@
     color: var(--tertiary-color);
   }
 
-  // Break the carousel strip out of the page container: full-bleed on
-  // normal screens, capped and centered on very wide ones
   .partners__carousel {
-    width: #{"min(100vw, 1500px)"};
-    margin-left: calc(50% - #{"min(100vw, 1500px)"} / 2);
     margin-bottom: 0;
   }
+}
+
+// Break the carousel strip out of the page container (about page and
+// homepage testimonials band): full-bleed on normal screens, capped and
+// centered on very wide ones
+.about-partners .partners__carousel,
+.testimonials .partners__carousel {
+  width: #{"min(100vw, 1500px)"};
+  margin-left: calc(50% - #{"min(100vw, 1500px)"} / 2);
 }
 
 .partners__carousel {
