@@ -19,16 +19,18 @@
 
 .contact-channels {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
 }
 
-.contact-channels__link {
+.page__content .contact-channels__link {
   display: inline-flex;
   align-items: center;
   gap: 12px;
   font-weight: 600;
   color: var(--heading-font-color);
+  border-bottom: none;
 
   i,
   img {
