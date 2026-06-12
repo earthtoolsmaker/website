@@ -50,15 +50,14 @@
             {{ range . }}
             <li class="contact-channels__item">
               <a class="contact-channels__link" href="{{ .link }}" target="_blank" rel="noopener">
-                {{ if .icon }}
-                <i class="{{ .icon }}"></i>
-                {{ end }}
                 {{ if .image }}
                   {{ $imgPath := strings.TrimPrefix "/" .image }}
                   {{ $img := resources.Get $imgPath }}
                   {{ if $img }}
                 <img src="{{ $img.RelPermalink }}" height="22" width="22" alt="{{ .name }} icon"/>
                   {{ end }}
+                {{ else if .icon }}
+                <i class="{{ .icon }}"></i>
                 {{ end }}
                 <span>{{ .name }}</span>
               </a>
