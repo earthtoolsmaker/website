@@ -274,6 +274,11 @@ pagerSize = 6
     logo = "/images/clients/carpathia/logo.svg"
     link = "https://www.carpathia.org/"
 
+  [[params.partner_item]]
+    name = "RBC"
+    logo = "/images/clients/rbc/logo.svg"
+    link = "https://www.rbc.com/our-impact/index.html"
+
   #-------------------------------
   # Testimonials Section
   [params.testimonials]
