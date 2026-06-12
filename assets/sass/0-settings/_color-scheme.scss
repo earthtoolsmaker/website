@@ -45,9 +45,8 @@
   --link-color-hover: var(--dark);
 
   --button-color: var(--white);
-  --button-color-hover: var(--white);
-  --button-background-color: var(--dark);
-  --button-background-hover: var(--primary-color);
+  --button-background-color: var(--secondary-color);
+  --button-border-color: var(--dark);
 
   // --border-color: var(--light-gray);
   --border-color: #ede0d4;
@@ -86,7 +85,7 @@
 
   --button-color: var(--dark);
   --button-background-color: var(--light-gray);
-  --button-background-hover: var(--primary-color);
+  --button-border-color: var(--light-gray);
 
   --border-color: #252629;
   --border-color-alt: #080b12;
