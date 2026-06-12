@@ -42,6 +42,41 @@
   align-content: start;
 }
 
+/* Ways-to-help cards: whole card is a link; icon chip + aligned rows */
+.support__way {
+  display: grid;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  align-content: start;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    color: inherit;
+
+    .support__card-link {
+      color: var(--secondary-color);
+    }
+  }
+}
+
+.support__way-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  font-size: 18px;
+}
+
 .support__track-label {
   display: block;
   margin-bottom: 8px;

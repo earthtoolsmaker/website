@@ -178,15 +178,18 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
           </div>
 
+          {{ with .Site.Data.support.ways_intro }}
+          <p class="support__section-intro">{{ . }}</p>
+          {{ end }}
+
           <div class="support__grid support__grid--4">
             {{ range .Site.Data.support.ways }}
-            <div class="support__card">
+            <a class="support__card support__way" href="{{ .link }}"{{ if hasPrefix .link "http" }} target="_blank" rel="noopener"{{ end }}>
+              <span class="support__way-icon"><i class="{{ .icon }}"></i></span>
               <h3 class="support__card-title">{{ .title }}</h3>
               <p class="support__card-description">{{ .description }}</p>
-              {{ if .link }}
-              <a class="support__card-link" href="{{ .link }}"{{ if hasPrefix .link "http" }} target="_blank" rel="noopener"{{ end }}>{{ .link_text }}&nbsp;→</a>
-              {{ end }}
-            </div>
+              <span class="support__card-link">{{ .link_text }}&nbsp;→</span>
+            </a>
             {{ end }}
           </div>
 
