@@ -18,7 +18,7 @@ safeguard Romanian farms by deterring bear encroachments.
 For a comprehensive understanding of this project, please click on the pipeline
 overview below:
 
-<a href='{{< ref "/projects/human_wildlife_bear_conflict.md" >}}' title="Project Details">
+<a href='{{< ref "/projects/carpathian-bear-deterrence.md" >}}' title="Project Details">
   <img src="./images/pipeline_overview.png" />
 </a>
 

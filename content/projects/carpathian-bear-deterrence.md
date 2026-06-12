@@ -1,6 +1,8 @@
 ---
-title: Human-Wildlife Conflict
+title: Bear Deterrence in the Carpathians
 summary: Utilizing low-power technology to detect and deter bears from encroaching on Romanian farms.
+aliases:
+  - /projects/human_wildlife_bear_conflict/
 clients:
   - name: HackThePlanet
     link: https://www.hack-the-planet.io
