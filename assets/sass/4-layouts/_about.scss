@@ -155,26 +155,39 @@
 .services__list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  gap: 40px;
   margin-bottom: 48px;
 
   @media (max-width: $tablet) {
     grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
 
   @media (max-width: $mobile) {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
 
 .services__item {
-  padding-left: 16px;
+  padding-left: 20px;
   border-left: 2px solid var(--border-color);
+
+  // Reserve two title lines so descriptions align across columns
+  .services__item-title {
+    min-height: 2.4em;
+  }
+
+  @media (max-width: $mobile) {
+    .services__item-title {
+      min-height: 0;
+    }
+  }
 }
 
 .services__number {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   font-size: 30px;
   font-weight: 700;
   line-height: 1;
@@ -184,20 +197,17 @@
 
 .services__item-title {
   font-family: $base-font-family;
-  font-size: $font-size-h5;
+  font-size: 18px;
+  line-height: 1.2;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: var(--heading-font-color);
 }
 
 .services__item-description {
-  font-size: $base-font-size;
-  line-height: $base-line-height;
+  font-size: 16px;
+  line-height: 1.6;
   color: var(--text-color);
-
-  @media (max-width: $mobile) {
-    font-size: 16px;
-  }
 }
 
 /* Case Studies (Team-member style layout) */
