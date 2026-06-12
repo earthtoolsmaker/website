@@ -31,10 +31,11 @@
           <!-- end partners carousel -->
           {{ end }}
 
-          {{ if .Site.Params.testimonials.testimonial_title }}
           <div class="section__info testimonials__info">
             <div class="section__head">
-              <h2 class="section__title">{{ .Site.Params.testimonials.testimonial_title | safeHTML }}</h2>
+              {{ with .Site.Params.testimonials.testimonial_title }}
+              <h2 class="section__title">{{ . | safeHTML }}</h2>
+              {{ end }}
               <ul class="controls list-reset" id="customize-controls" aria-label="Slider Navigation" tabindex="0">
                 <li class="prev" data-controls="prev" aria-controls="customize" tabindex="-1">
                   <i class="fa-solid fa-arrow-left-long"></i>
@@ -44,9 +45,10 @@
                 </li>
               </ul>
             </div>
+            {{ with .Site.Params.testimonials.testimonial_title }}
             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+            {{ end }}
           </div>
-          {{ end }}
 
           <div class="testimonials__slider my-slider">
           {{ with .Site.Params.testimonial_item }}

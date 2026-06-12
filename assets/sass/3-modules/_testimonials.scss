@@ -144,6 +144,8 @@
 .controls {
   display: flex;
   align-items: center;
+  // Keeps arrows pinned right when the section has no title
+  margin-left: auto;
   outline: none;
 
   .prev,
