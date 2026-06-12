@@ -178,6 +178,19 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   /* ============================
+  // Team Bio Toggle
+  ============================ */
+  document.querySelectorAll(".team-card__image").forEach(function (toggle) {
+    toggle.addEventListener("click", function () {
+      var card = toggle.closest(".team-card");
+      if (card) {
+        card.classList.toggle("team-card--open");
+        toggle.setAttribute("aria-expanded", card.classList.contains("team-card--open"));
+      }
+    });
+  });
+
+  /* ============================
   // Testimonials Slider
   ============================ */
   if (document.querySelector(".my-slider")) {
