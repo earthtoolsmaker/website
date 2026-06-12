@@ -89,11 +89,11 @@
       height: 50px;
       font-size: 0;
       border-radius: 50%;
-      border: none;
-      outline: none;
+      border: 2px solid var(--button-border-color);
+      box-shadow: 2px 2px 0 var(--button-border-color);
       color: var(--button-color);
       background: var(--button-background-color);
-      transition: all .2s;
+      transition: box-shadow .12s ease, transform .12s ease;
       cursor: pointer;
 
       i {
@@ -101,8 +101,13 @@
       }
 
       &:hover {
-        color: var(--button-color-hover);
-        background: var(--button-background-hover);
+        transform: translate(2px, 2px);
+        box-shadow: 0 0 0 var(--button-border-color);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--secondary-color);
+        outline-offset: 2px;
       }
     }
   }
