@@ -23,24 +23,6 @@
   flex-wrap: wrap;
   margin-top: 4rem;
   margin-bottom: 4rem;
-
-  .button {
-    padding-top: 1.125rem;
-    padding-bottom: 1.125rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    border-radius: 6px;
-  }
-
-  .tool-button-cta {
-    background-color: var(--secondary-color);
-    color: var(--white);
-  }
-
-  .tool-button-cta:hover {
-    background-color: var(--primary-color);
-    color: var(--dark);
-  }
 }
 
 

@@ -1,40 +1,48 @@
 /* Buttons */
 .button {
   display: inline-block;
-  padding: 20px;
-  font-size: 18px;
+  padding: 12px 24px;
+  font-size: 15px;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.4;
   text-decoration: none;
-  border-radius: 60px;
-  border: 1px solid transparent;
-  outline: none;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 4px 4px 0 var(--button-shadow-color);
   cursor: pointer;
-  will-change: transform;
-  transition: all .2s;
+  transition: box-shadow .12s ease, transform .12s ease, background .12s ease, color .12s ease;
   color: var(--button-color);
   background: var(--button-background-color);
 
   &:hover {
-    transform: scale(1.05);
-    color: var(--button-color-hover);
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 var(--button-shadow-color);
     background: var(--button-background-hover);
+    color: var(--button-color);
+  }
+
+  &:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 var(--button-shadow-color);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
   }
 
   &--secondary {
-    border: 1px solid var(--button-background-color);
-    color: var(--button-background-color);
-    background: transparent;
+    color: var(--secondary-color);
+    background: var(--white);
 
     &:hover {
-      border-color: var(--button-background-hover);
-      color: var(--button-background-hover);
-      background: transparent;
+      background: #f0f0f0;
+      color: var(--secondary-color);
     }
   }
 
   &--middle {
-    padding: 20px 40px;
+    padding: 12px 40px;
   }
 
   &--big {
@@ -43,18 +51,13 @@
   }
 
   &--cta {
-    color: var(--white);
-    background-color: var(--secondary-color);
-    border-radius: 20px;
+    color: var(--dark);
+    background-color: var(--tertiary-color);
 
     &:hover {
+      background-color: #d77f5e;
       color: var(--dark);
-      background-color: var(--primary-color);
     }
-  }
-
-  @media (max-width: $tablet) {
-    font-size: 16px;
   }
 }
 

@@ -193,7 +193,7 @@
 .page__content {
   color: var(--text-color);
 
-  a {
+  a:not(.button) {
     font-weight: 700;
     border-bottom: 1px solid var(--border-color);
 
@@ -223,15 +223,6 @@
     user-select: none;
   }
 
-  .button {
-    border: none;
-    text-decoration: none;
-
-    &:hover {
-      color: var(--button-color-hover);
-      background: var(--button-background-hover);
-    }
-  }
 }
 
 /* Post Share */

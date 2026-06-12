@@ -90,10 +90,10 @@
       font-size: 0;
       border-radius: 50%;
       border: none;
-      outline: none;
+      box-shadow: 2px 2px 0 var(--button-shadow-color);
       color: var(--button-color);
       background: var(--button-background-color);
-      transition: all .2s;
+      transition: box-shadow .12s ease, transform .12s ease, background .12s ease;
       cursor: pointer;
 
       i {
@@ -101,8 +101,14 @@
       }
 
       &:hover {
-        color: var(--button-color-hover);
+        transform: translate(2px, 2px);
+        box-shadow: 0 0 0 var(--button-shadow-color);
         background: var(--button-background-hover);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--secondary-color);
+        outline-offset: 2px;
       }
     }
   }
