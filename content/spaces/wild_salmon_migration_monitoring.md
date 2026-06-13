@@ -1,7 +1,7 @@
 ---
 title: Wild Salmon Migration Monitoring
-emoji: 🐟
-summary: A computer vision system specifically designed to process underwater camera streams for the automatic classification and counting of wild salmon as they migrate back to their natal streams. Utilizing a robust machine learning pipeline, the system efficiently analyzes video footage, facilitating the enforcement of conservation regulations and supporting sustainable wildlife management.
+card_image: /images/pages/spaces/wild_salmon_migration_monitoring/card.svg
+summary: Classifying and counting wild salmon from underwater camera streams as they migrate back to spawn.
 github_repo: https://github.com/Salmon-Computer-Vision/salmon-computer-vision/tree/master
 date: 2024-08-20
 hero_image: /images/pages/spaces/wild_salmon_migration_monitoring/hero.png
