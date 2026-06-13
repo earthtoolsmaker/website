@@ -28,52 +28,59 @@ Shared across every lockup:
   lockup shares the exact same baseline and pangolin position — essential for
   the header crossfade (below) to not make the word jump.
 
-Two lockups are used on the site:
-
-- **etm** — pangolin + `etm` (compact abbreviation). File: `etm-logo-etm.*`.
-- **earthtoolsmaker** — pangolin + full `earthtoolsmaker`. File:
-  `etm-logo-text.*`.
-
+Two word lockups appear on the site: compact `etm` and full `earthtoolsmaker`.
 (During design we also explored pangolin-as-"e" variants — `arthtoolsmaker`
-and `tm` — but they are not used on the site.)
+and `tm` — but they are not used.)
 
 ## Behavior
 
 The header logo is responsive to page and hover:
 
-- **Home page header:** full `earthtoolsmaker`, static.
-- **Every other page header:** compact `etm` by default, **crossfading** to the
-  full `earthtoolsmaker` on hover/focus (~0.35s ease). Both images are stacked
-  in one CSS grid cell so the cell reserves the wider full-word width and the
-  nav never shifts; only opacity animates.
+- **Home page header:** full `earthtoolsmaker`, static (baked lockup
+  `etm-logo-text.png`).
+- **Every other page header:** compact `etm` by default, **staggered-fading**
+  to the full `earthtoolsmaker` on hover/focus. The pangolin is a *separate
+  static layer* that never animates; only the word swaps. The word fade is
+  staggered (etm fades out over ~0.18s, then earthtoolsmaker fades in over the
+  next ~0.18s) so the two words never overlap — at the midpoint only the
+  pangolin shows. The three layers (pangolin + two words) share identical image
+  dimensions and stack absolutely; the full-width pangolin layer reserves the
+  wide full-word width so the nav never shifts.
 - **Footer (all pages):** full `earthtoolsmaker`, static.
 
 The header logo was also reduced in size (max-height 120px → 60px desktop,
-scaling down on smaller breakpoints).
+scaling down on smaller breakpoints). The leftover `padding-top: 40px` on
+`.main-nav` and `.header__cta` — which had vertically centered them against the
+old 120px logo — was removed so the grid's `align-items: center` aligns the
+nav and Support button with the new, smaller logo.
 
 ## Deliverables
 
-Two asset pairs under `assets/images/logos/`:
+Asset files under `assets/images/logos/` (each as SVG + PNG):
 
-| Lockup | SVG | PNG |
-|---|---|---|
-| Full `earthtoolsmaker` | `etm-logo-text.svg` | `etm-logo-text.png` |
-| Compact `etm` | `etm-logo-etm.svg` | `etm-logo-etm.png` |
+| Asset | Purpose |
+|---|---|
+| `etm-logo-text` | Full `earthtoolsmaker` lockup — home header + footer |
+| `logo-pangolin` | Static pangolin layer — non-home header swap |
+| `logo-word-etm` | `etm` word layer — non-home header swap |
+| `logo-word-full` | `earthtoolsmaker` word layer — non-home header swap |
 
 Each SVG embeds the pangolin as a base64 PNG and carries the Fraunces text as
 vector outlines (paths), so it renders without the font installed. Each PNG is
-rasterized from its matching SVG (transparent background, 8× device scale,
-cropped to a constant canvas height) so PNG and SVG match and both lockups
-share identical vertical geometry.
+rasterized from its matching SVG (transparent background, 8× device scale). The
+three swap layers share ONE canvas (the full-word lockup geometry) so they are
+identical-size and stack pixel-perfectly.
 
 Site wiring:
 
-- `config.toml` — `params.logo` = `etm-logo-text.png` (full; footer + home +
-  hover state), new `params.logo_etm` = `etm-logo-etm.png` (interior default).
-- `layouts/partials/header.html` — conditional lockup: home → static full;
-  other pages → `etm`/full crossfade `<span class="logo__swap">`.
+- `config.toml` — `params.logo` = `etm-logo-text.png` (full; footer + home).
+- `layouts/partials/header.html` — home → static full lockup; other pages →
+  `<span class="logo__swap">` with three layered `<img>`s (pangolin +
+  word-etm + word-full). Word layers are `aria-hidden`; the pangolin carries
+  the alt text.
 - `assets/sass/3-modules/_header.scss` — smaller `max-height`; `.logo__swap`
-  grid-stack + opacity crossfade on `:hover`/`:focus-visible`.
+  static pangolin + absolutely-stacked word layers with staggered opacity on
+  `:hover`/`:focus-visible`; removed the stale 40px nav/CTA top padding.
 
 ## Production approach
 
@@ -87,8 +94,13 @@ gitignored build dir `.superpowers/logobuild/gen_logo.py`:
    width + −0.015em tracking; embed the pangolin as a base64 `<image>`; place
    the word with the variant's −4px / +5px offsets; vertical metrics from the
    font's x-height/ascender/descender (constant across words). Fill `#1f2937`.
-3. Rasterize the SVG with Chromium at 8× on a transparent background; crop the
-   left/right transparent columns and to the constant canvas height.
+3. Rasterize the SVG with Chromium at 8× on a transparent background; crop to
+   the constant canvas height.
+
+`build_layers()` emits the three swap layers (`logo-pangolin`,
+`logo-word-etm`, `logo-word-full`) from one shared canvas — the pangolin
+`<image>` alone, and each word's paths alone — so all three rasterize to
+identical dimensions and overlay exactly.
 
 ## Out of scope
 
@@ -98,9 +110,13 @@ gitignored build dir `.superpowers/logobuild/gen_logo.py`:
 
 ## Verification
 
-- The two asset pairs exist, transparent, with identical pangolin position and
-  text baseline (verified: both PNGs 560px tall, baseline at row 396).
+- All assets exist and are transparent. The three swap layers are identical
+  dimensions (2892×560) with matching baseline (row 396) and word start-x
+  (col 505).
 - `hugo` builds cleanly. Home header shows full `earthtoolsmaker`; interior
-  pages show `etm`; the swap crossfades to the full word on hover with the
-  pangolin static and baselines aligned (verified via a replica render).
+  pages show `etm`. The staggered fade (verified via a replica render) shows
+  etm → pangolin-only → earthtoolsmaker with the pangolin solid throughout and
+  no word overlap.
+- Nav links and Support button align with the new smaller logo (home + interior
+  screenshots).
 - Footer shows the full wordmark at its 50px max-height.

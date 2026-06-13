@@ -7,15 +7,18 @@
         <div class="logo">
           <a class="logo__link" href="{{ .Site.BaseURL }}">
             {{ $full := and .Site.Params.logo (resources.Get (strings.TrimPrefix "/" .Site.Params.logo)) }}
-            {{ $etm := and .Site.Params.logo_etm (resources.Get (strings.TrimPrefix "/" .Site.Params.logo_etm)) }}
-            {{ if and $full $etm (not .IsHome) }}
-              {{/* Non-home: compact "etm" by default, crossfades to the full wordmark on hover */}}
+            {{ $pangolin := resources.Get "images/logos/logo-pangolin.png" }}
+            {{ $wordEtm := resources.Get "images/logos/logo-word-etm.png" }}
+            {{ $wordFull := resources.Get "images/logos/logo-word-full.png" }}
+            {{ if and (not .IsHome) $pangolin $wordEtm $wordFull }}
+              {{/* Non-home: static pangolin; the word staggers from "etm" to the full wordmark on hover */}}
             <span class="logo__swap">
-              <img class="logo__image logo__image--etm" src="{{ $etm.RelPermalink }}" alt="{{ site.Title }}">
-              <img class="logo__image logo__image--full" src="{{ $full.RelPermalink }}" alt="{{ site.Title }}">
+              <img class="logo__layer logo__pangolin" src="{{ $pangolin.RelPermalink }}" alt="{{ site.Title }}">
+              <img class="logo__layer logo__word logo__word--etm" src="{{ $wordEtm.RelPermalink }}" alt="" aria-hidden="true">
+              <img class="logo__layer logo__word logo__word--full" src="{{ $wordFull.RelPermalink }}" alt="" aria-hidden="true">
             </span>
             {{ else if $full }}
-              {{/* Home (or no etm mark): full wordmark, static */}}
+              {{/* Home (or missing swap assets): full wordmark, static */}}
             <img class="logo__image" src="{{ $full.RelPermalink }}" alt="{{ site.Title }}">
             {{ else }}
               {{ .Site.Title }}
