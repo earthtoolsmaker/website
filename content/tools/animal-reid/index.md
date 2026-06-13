@@ -11,19 +11,11 @@ js:
   - /js/tabs.js
 ---
 
-<div class="tool-container-button-cta">
-  <a class="link-no-decoration" href="#demos" >
-    <button class="button tool-button-cta">
-      Try Interactive Demos
-    </button>
-  </a>
-</div>
-
 # Individual Animal Identification Across Species
 
-Animal reID is a modular framework that enables precise identification of individual animals using computer vision. Built on years of conservation technology research, our approach adapts to different species by employing the most appropriate identification technique—whether that's facial recognition, spot pattern matching, or local feature analysis.
+Animal reID is a modular computer vision framework for identifying individual animals. It adapts to each species by choosing the right technique — facial recognition, spot-pattern matching, or local feature analysis.
 
-From monitoring bear populations in British Columbia to tracking individual trout in river systems, and extending to snow leopards in Central Asia and seals in coastal waters, Animal reID provides researchers with powerful, non-invasive tools for wildlife monitoring and conservation.
+From bears in British Columbia and trout in river systems to snow leopards in Central Asia and seals in coastal waters, it gives researchers non-invasive tools for wildlife monitoring and conservation.
 
 {{< image_carousel id="animal-reid-gallery" >}}
   {{< carousel_image src="./images/animal_reid_leopard_1.png" alt="Snow Leopard Identification" caption="Local feature matching identifies individual snow leopards by analyzing their unique spot patterns across camera trap images." >}}
@@ -32,25 +24,52 @@ From monitoring bear populations in British Columbia to tracking individual trou
   {{< carousel_image src="./images/animal_reid_trout_1.png" alt="Trout Identification" caption="LightGLUE local feature matching identifies individual trout by analyzing their unique spot patterns along the body." >}}
 {{< /image_carousel >}}
 
-## Key Features
-
-- 🧬 **Multi-Species Support**: Proven techniques for bears, trout, seals, and snow leopards, with extensibility for other species
-- 🎯 **Modular Architecture**: Choose from metric learning, local feature matching, or hybrid approaches based on your species and data
-- 🔬 **Research-Grade Accuracy**: Built on peer-reviewed techniques including Instance Segmentation + Metric Learning and LightGLUE local feature matching
-- 🌍 **Conservation Focused**: Designed for real-world field applications with non-invasive monitoring capabilities
-- 📊 **Database Integration**: Compare new observations against historical databases to track population dynamics over time
+<div class="about-cta">
+  <h3 class="about-cta__title">See it in action</h3>
+  <p class="about-cta__description">Upload a photo to the live demos and watch Animal reID pick out the individual — bear, trout, seal, or snow leopard.</p>
+  <a href="#demos" class="link-no-decoration button button--middle">Try the demos</a>
+</div>
 
 <br/>
+<br/>
 
-## Conservation Impact
+## Why Animal reID
 
-Animal reID technology enables researchers to:
+Animal reID combines proven techniques into one adaptable system for individual identification.
 
-- **Monitor population dynamics** without invasive tagging or marking
-- **Track individual animals** across seasons and years to understand behavior, migration, and survival
-- **Assess conservation effectiveness** by quantifying population trends with individual-level precision
-- **Reduce field costs** by automating identification from camera trap and observation images
-- **Scale monitoring efforts** to cover larger geographic areas with existing observation networks
+<div class="support__grid">
+
+  <div class="support__card">
+    <h3 class="support__card-title">One framework, many species</h3>
+    <p class="support__card-description">Proven on bears, trout, seals, and snow leopards, and extensible to new species.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">The right technique for your data</h3>
+    <p class="support__card-description">Metric learning, local feature matching, or a hybrid, matched to your species and imagery.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Non-invasive by design</h3>
+    <p class="support__card-description">Identify individuals from camera-trap and observation images, with no tagging or marking.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Population trends over time</h3>
+    <p class="support__card-description">Match new sightings against historical databases to track survival, movement, and behavior.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Built to scale in the field</h3>
+    <p class="support__card-description">Automate identification to cut field costs and cover larger areas with existing networks.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Research-grade and open source</h3>
+    <p class="support__card-description">Built on peer-reviewed methods, with open-source implementations you can run and adapt.</p>
+  </div>
+
+</div>
 
 <br/>
 <br/>
@@ -59,7 +78,7 @@ Animal reID technology enables researchers to:
 
 Experience Animal reID in action with our live demonstrations. These systems are currently monitoring real wildlife populations.
 
-{{< tabs labels="🐻 Bear |🐠 Trout |🦭 Seal |🐆 Snow Leopard" id="animal-reid-demos" >}}
+{{< tabs labels="::Bear|::Trout|::Seal|::Snow Leopard" id="animal-reid-demos" >}}
 {{< tab index="0" >}}
 
 Upload bear photographs and watch as the system segments facial features and matches them against our database of known individuals from British Columbia.
@@ -93,54 +112,47 @@ Upload snow leopard photographs and watch as the system analyzes unique coat pat
 <br/>
 <br/>
 
-## Resources & Documentation
+## How It Works
 
-{{< tabs labels="🚀 Try |🔬 Techniques|📁 Projects|📖 Guides" id="resources-tabs" >}}
-{{< tab index="0" >}}
+Animal reID matches the identification technique to the species. Two approaches cover most cases:
 
-<p class="tabs__intro">Experience Animal reID systems in action through our interactive demonstration spaces. Each space provides hands-on access to production-grade identification models.</p>
+<div class="support__grid support__grid--two">
 
-<div class="container">
-  <div class="row">
-
-{{< space_card title="Bear Identification" link="/spaces/bear_identification/" emoji="🐻" summary="A computer vision system utilizes facial recognition technology to analyze bear photographs and identify individual bears. This innovative system aims to monitor the population size of bears in British Columbia over time, ultimately supporting and enhancing conservation efforts in the region." >}}
-
-{{< space_card title="Trout Identification" link="/spaces/trout_identification/" emoji="🐠" summary="A computer vision system analyzes the spot patterns of trout to identify individual fish. This innovative, non-invasive approach aims to monitor trout populations in British Columbia over time, ultimately supporting and enhancing conservation efforts in the region." >}}
-
-{{< space_card title="Seal Identification" link="/spaces/seal_identification/" emoji="🦭" summary="Non-invasive seal re-identification using computer vision to track individual animals across seasons through unique whisker patterns and facial features in the Wadden Sea." >}}
-
-{{< space_card title="Snow Leopard Identification" link="/spaces/snowleopard_identification/" emoji="🐆" summary="Computer vision system for identifying individual snow leopards using feature matching and machine learning, supporting conservation efforts in Central Asia." >}}
-
+  <div class="support__card support__track">
+    <span class="support__track-label">Facial recognition</span>
+    <h3 class="support__card-title">Metric Learning</h3>
+    <p class="support__card-description">Used successfully for bear identification, this approach combines instance segmentation to isolate animal faces with deep metric learning to create unique embeddings for each individual. The system learns to recognize subtle facial features and marking patterns that distinguish one animal from another.</p>
+    <div class="support__track-proof">Applications: bears, primates, big cats, and other species with distinctive facial characteristics.</div>
+    <ul class="support__track-offers">
+      <li>Highly accurate for species with distinctive facial features</li>
+      <li>Robust to pose variations and lighting conditions</li>
+      <li>Proven in production for British Columbia bear monitoring</li>
+    </ul>
   </div>
+
+  <div class="support__card support__track">
+    <span class="support__track-label">Spot patterns</span>
+    <h3 class="support__card-title">Local Feature Matching</h3>
+    <p class="support__card-description">Pioneered in our trout identification work, this technique uses advanced local feature matching (LightGLUE) to analyze unique spot patterns on fish bodies. The system standardizes fish orientations and matches keypoint patterns against a reference database.</p>
+    <div class="support__track-proof">Applications: trout, leopards, cheetahs, whale sharks, and other spot-patterned species.</div>
+    <ul class="support__track-offers">
+      <li>Non-invasive identification from natural markings</li>
+      <li>Works with partial views and occlusions</li>
+      <li>Effective for species with complex, unique pattern distributions</li>
+    </ul>
+  </div>
+
 </div>
 
-{{< /tab >}}
-{{< tab index="1" markdown="true" >}}
+<br/>
+<br/>
 
-### Metric Learning for Facial Recognition
+## Resources & Documentation
 
-Used successfully for **bear identification**, this approach combines instance segmentation to isolate animal faces with deep metric learning to create unique embeddings for each individual. The system learns to recognize subtle facial features and marking patterns that distinguish one animal from another.
+Explore the open-source projects and technical guides behind Animal reID.
 
-**Key advantages:**
-- Highly accurate for species with distinctive facial features
-- Robust to pose variations and lighting conditions
-- Proven in production for British Columbia bear monitoring
-
-**Applications**: Bears, primates, big cats, and other species with distinctive facial characteristics
-
-### Local Feature Matching for Spot Patterns
-
-Pioneered in our **trout identification** work, this technique uses advanced local feature matching (LightGLUE) to analyze unique spot patterns on fish bodies. The system standardizes fish orientations and matches keypoint patterns against a reference database.
-
-**Key advantages:**
-- Non-invasive identification from natural markings
-- Works with partial views and occlusions
-- Effective for species with complex, unique pattern distributions
-
-**Applications**: Trout, leopards, cheetahs, whale sharks, and other spot-patterned species
-
-{{< /tab >}}
-{{< tab index="2" >}}
+{{< tabs labels="::Projects|::Guides" id="resources-tabs" >}}
+{{< tab index="0" >}}
 
 <p class="tabs__intro">Each implementation is open-source with detailed documentation:</p>
 
@@ -159,7 +171,7 @@ Pioneered in our **trout identification** work, this technique uses advanced loc
 </div>
 
 {{< /tab >}}
-{{< tab index="3" >}}
+{{< tab index="1" >}}
 
 <p class="tabs__intro">In-depth technical guides covering the design and implementation of animal identification systems:</p>
 
@@ -180,13 +192,8 @@ Pioneered in our **trout identification** work, this technique uses advanced loc
 {{< /tab >}}
 {{< /tabs >}}
 
-<br/>
-
-## Get Started
-
-Interested in applying Animal reID to your conservation project? We offer consultation on selecting the right identification approach, custom development for new species, and collaborative research opportunities.
-
-<br/>
-<div style="text-align: center;">
-  <a href="/contact/" class="button">Get in Touch</a>
+<div class="about-cta">
+  <h3 class="about-cta__title">Have a species to identify?</h3>
+  <p class="about-cta__description">Tell us about your animals and your image data — we'll give you an honest read on which identification approach fits and what it would take.</p>
+  <a href="/contact/" class="link-no-decoration button button--middle">Start a project</a>
 </div>
