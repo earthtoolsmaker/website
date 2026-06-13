@@ -121,7 +121,6 @@
   }
 }
 
-.post-title,
 .page-title {
   font-size: 62px;
   margin-bottom: 12px;
@@ -132,6 +131,19 @@
 
   @media (max-width: $mobile) {
     font-size: 40px;
+  }
+}
+
+.post-title {
+  font-size: 46px;
+  margin-bottom: 12px;
+
+  @media (max-width: $tablet) {
+    font-size: 40px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 32px;
   }
 }
 
@@ -421,121 +433,6 @@ html {
 
       &:hover {
         background: darken(#0077b5, 8%);
-      }
-    }
-  }
-}
-
-/* Post Navigation */
-.post__navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 48px 0 16px;
-  border-bottom: 1px solid var(--border-color);
-
-  .prev,
-  .next {
-    display: flex;
-    align-items: center;
-    width: 48%;
-    margin-bottom: 32px;
-
-    .prev__image,
-    .next__image {
-      position: relative;
-      display: block;
-      min-width: 100px;
-      height: 90px;
-      border-radius: 12px;
-      overflow: hidden;
-      background: var(--background-alt-color);
-
-      &:hover {
-        transform: translateY(-2px);
-      }
-
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-
-    .prev__image {
-      margin-right: 20px;
-    }
-
-    .next__image {
-      margin-left: 20px;
-    }
-
-    .post__nav {
-      display: inline-block;
-      margin-bottom: 4px;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--primary-color);
-    }
-
-    .post__nav__title {
-      margin-bottom: 0;
-      font-size: 18px;
-
-      a {
-        text-decoration: underline;
-        text-decoration-color: transparent;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 2px;
-        color: var(--heading-font-color);
-        
-        &:hover {
-          text-decoration-color: var(--heading-font-color);
-        }
-      }
-    }
-  }
-
-  .next {
-    text-align: right;
-    margin-left: auto;
-  }
-
-  @media (max-width: $tablet) {
-    flex-wrap: wrap;
-
-    .prev,
-    .next {
-      width: 100%;
-    }
-
-    .next__box {
-      margin-left: auto;
-    }
-  }
-
-  @media (max-width: $mobile) {
-    padding: 40px 0 20px;
-
-    .prev,
-    .next {
-      margin-bottom: 20px;
-
-      .prev__image {
-        margin-right: 12px;
-      }
-    
-      .next__image {
-        margin-left: 12px;
-      }
-
-      .post__nav__title {
-        font-size: 16px;
       }
     }
   }
