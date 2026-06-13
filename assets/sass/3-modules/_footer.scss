@@ -1,8 +1,7 @@
 /* Footer */
 .footer {
-  border-top: 1px solid #ede0d4;
-  // background: #ede0d4;
-  background: #fff5ed;
+  border-top: 1px solid var(--border-color);
+  background: var(--background-alt-color);
 
   .footer__inner {
     padding: 40px 0;
