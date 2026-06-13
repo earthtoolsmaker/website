@@ -41,6 +41,7 @@
     {{ $resources := slice }}
     {{ with .Params.project }}{{ $resources = $resources | append (dict "icon" "fa-solid fa-circle-info" "label" "Project overview" "url" .) }}{{ end }}
     {{ with .Params.github_repo }}{{ $resources = $resources | append (dict "icon" "fa-brands fa-github" "label" "Source code" "url" .) }}{{ end }}
+    {{ with .Params.manual_url }}{{ $resources = $resources | append (dict "icon" "fa-solid fa-book" "label" "User guide" "url" .) }}{{ end }}
     {{ with .Params.landing_page_url }}{{ $resources = $resources | append (dict "icon" "fa-solid fa-arrow-up-right-from-square" "label" "Live platform" "url" .) }}{{ end }}
     {{ with .Params.all_downloads_url }}{{ $resources = $resources | append (dict "icon" "fa-solid fa-download" "label" "All downloads" "url" .) }}{{ end }}
     {{ if $resources }}

@@ -235,3 +235,21 @@ primary salmon-vision space as `{{< hf_space "earthtoolsmaker-salmon-vision" >}}
 (default 5.4.0 runtime, as it mounts on the spaces page) and embed the sonar space
 via an isolated `<iframe src="https://lumax-eco-sonar-smolt.hf.space" ...>`. Only
 one gradio runtime remains on the page, so the salmon counter mounts correctly.
+
+### 5. Manual footage + "User guide" footer link
+
+Footage pulled from the official user guide (`https://salmonvision.org/user-guide/`):
+
+- **Tracking video** (`SV tracking vid.mp4` from the *Incorrect detection* page) hosted
+  locally at `static/videos/salmonvision-tracking.mp4` (1.1 MB) and featured in
+  *See SalmonVision in Action* as a looping review-session clip.
+- **Review-interface screenshot** — a frame extracted from that video showing a
+  bounding-boxed fish, species labels (Pink, Sockeye…), and the counting timeline —
+  saved to `assets/images/tools/salmonvision/review-interface.png` and added as the
+  lead carousel slide (optimized to webp by the carousel shortcode).
+
+A **"User guide" link** was added to the shared resource footer: a new
+`manual_url` param + a `fa-solid fa-book` "User guide" entry in
+`layouts/tools/single.html` (guarded with `with`, so other tool pages are
+unaffected). SalmonVision sets `manual_url: https://salmonvision.org/user-guide/`,
+giving a footer of **Project overview · Source code · User guide**.

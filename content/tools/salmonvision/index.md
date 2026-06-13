@@ -8,6 +8,7 @@ logo_container: true
 card_tint: "#dceef1"
 summary: Underwater cameras, sonar and drones combined with innovative AI technology to enable precise and automated salmon counting in rivers.
 github_repo: https://github.com/Salmon-Computer-Vision/salmon-computer-vision
+manual_url: https://salmonvision.org/user-guide/
 project: /projects/wild_salmon_migration_monitoring
 js:
   - /js/biowatch.js
@@ -47,6 +48,7 @@ Built with the Pacific Salmon Foundation, the Wild Salmon Center, Lumax AI, and 
 </section>
 
 {{< image_carousel id="salmonvision-gallery" items="2" >}}
+  {{< carousel_image src="/images/tools/salmonvision/review-interface.png" alt="Reviewing salmon detections in the SalmonVision web app" caption="Review interface: the model boxes each fish, classifies the species (Pink, Sockeye…), and tallies counts along a timeline for a reviewer to confirm." >}}
   {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/system_overview.png" alt="SalmonVision system overview" caption="System overview: cameras, sonar, and drones feed a computer-vision pipeline that counts and classifies migrating salmon." >}}
   {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/webapp_overview.png" alt="SalmonVision web application" caption="Web application: count reports and video clips from every site, centralized in one dashboard." >}}
   {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/sonar/haida-sonar.jpg" alt="Sonar setup at the Haida site" caption="Sonar in the field: an acoustic counter deployed at the Haida site for low-visibility water." >}}
@@ -148,7 +150,13 @@ Run the sonar pipeline on ARIS footage to detect, track, and count juvenile smol
 
 ## See SalmonVision in Action
 
-The video below, filmed at Bear Creek River, shows the underwater monitoring system going live: as fish swim past, the camera activates and the system counts them in real time.
+Inside the web app, the model tracks each fish across frames and proposes a species and count for a reviewer to confirm. The short clip below — from the SalmonVision user guide — shows a review session in progress.
+
+<p><video controls muted loop playsinline preload="metadata" style="width:100%;border-radius:12px;"><source src="/videos/salmonvision-tracking.mp4" type="video/mp4"></video></p>
+<em style="font-size:14px;line-height:1.4em;display:block;">Reviewing detections in the SalmonVision web app — bounding boxes, species labels, and counts on a timeline.</em>
+<br/>
+
+And in the field, the video below — filmed at Bear Creek River — shows the underwater monitoring system going live: as fish swim past, the camera activates and the system counts them in real time.
 
 <p><iframe src="https://www.youtube.com/embed/V-rZSeM5YtY" loading="lazy" frameborder="0" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9;"></iframe></p>
 <em style="font-size:14px;line-height:1.4em;display:block;">Underwater Camera Activated at Bear Creek River: Monitoring System Now Live</em>
