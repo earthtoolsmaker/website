@@ -97,9 +97,9 @@
       {{ if .PrevInSection }}
       <div class="prev">
         <a href="{{ .PrevInSection.Permalink }}" class="prev__image">
-          <div class="space__nav__next_img" class="lazy" alt="{{ .PrevInSection.Title }}">
-            <div class="space__nav__next_emoji">{{ .PrevInSection.Params.emoji }}</div>
-          </div>
+          {{ with resources.Get (strings.TrimPrefix "/" .PrevInSection.Params.card_image) }}
+          <img class="space__nav__next_img" src="{{ .RelPermalink }}" alt="{{ $.PrevInSection.Title }}" loading="lazy">
+          {{ end }}
         </a>
         <div class="prev__box">
           <span class="space__nav space__nav__prev">Prev Space</span>
@@ -131,9 +131,9 @@
           <h4 class="space__nav__title"><a href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }}</a></h4>
         </div>
         <a href="{{ .NextInSection.Permalink }}" class="next__image">
-          <div class="space__nav__next_img" class="lazy" alt="{{ .NextInSection.Title }}">
-            <div class="space__nav__next_emoji">{{ .NextInSection.Params.emoji }}</div>
-          </div>
+          {{ with resources.Get (strings.TrimPrefix "/" .NextInSection.Params.card_image) }}
+          <img class="space__nav__next_img" src="{{ .RelPermalink }}" alt="{{ $.NextInSection.Title }}" loading="lazy">
+          {{ end }}
         </a>
         {{/*{{ end }}*/}}
       </div>
