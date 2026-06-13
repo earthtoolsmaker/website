@@ -208,6 +208,15 @@
   }
 }
 
+/* Two-up variant (e.g. the two reID technique cards) */
+.support__grid--two {
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
 .support__card {
   padding: 28px;
   background-color: var(--background-alt-color);
