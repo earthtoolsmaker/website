@@ -141,3 +141,18 @@
 .tools-stats {
   margin: 36px 0 44px;
 }
+
+.tools-cta {
+  margin: 8px 0 0;
+}
+
+.tools-cta--bottom {
+  margin: 16px 0 8px;
+}
+
+.tools-cta__buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
