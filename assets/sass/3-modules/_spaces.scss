@@ -1,6 +1,17 @@
 /* spaces */
+.spaces-cta {
+  margin: 8px 0 0;
+}
+
+.spaces-cta__buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .spaces-stats {
-  margin: 4px 0 44px;
+  margin: 36px 0 44px;
 }
 
 .space {
