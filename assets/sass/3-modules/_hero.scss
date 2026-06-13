@@ -67,13 +67,8 @@
     color: var(--heading-font-color);
   
     span {
-      padding-top: 0.15em;
-      margin-top: -0.15em;
-      padding-left: 0.1em;
-      margin-left: -0.1em;
-      background: var(--text-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-style: italic;
+      color: var(--secondary-color); // solid deep teal #006d77 in light; swaps per theme in dark
     }
   }
 
