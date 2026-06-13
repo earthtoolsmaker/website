@@ -13,14 +13,7 @@
               {{ with .Site.Params.partners.partners_title }}
               <h2 class="section__title">{{ . | safeHTML }}</h2>
               {{ end }}
-              <ul class="controls list-reset" id="about-partners-controls" aria-label="Partners Navigation" tabindex="0">
-                <li class="prev" data-controls="prev" aria-controls="about-partners-slider" tabindex="-1">
-                  <i class="fa-solid fa-arrow-left-long"></i>
-                </li>
-                <li class="next" data-controls="next" aria-controls="about-partners-slider" tabindex="-1">
-                  <i class="fa-solid fa-arrow-right-long"></i>
-                </li>
-              </ul>
+              <a class="button button--cta" href="/partners/">View all <i class="fa-solid fa-chevron-right"></i></a>
             </div>
             {{ with .Site.Params.partners.partners_title }}
             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
