@@ -1,0 +1,96 @@
+/* =======================
+:: Partners Page
+======================= */
+
+/* Trim the gap between the hero image and the content */
+.partners-hero {
+  margin-bottom: 28px;
+}
+
+/* Match the About page's centered content column */
+.layout-about .partners-stats .container-wide,
+.layout-about .partners-section .container-wide,
+.layout-about .partners-cta .container-wide {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.partners-page__intro {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.partners-section__title {
+  font-size: 1.5rem;
+  margin-bottom: 28px;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--background-color);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Uniform logo area — trimmed logos sit in a fixed box so visual weight is even */
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 44px;
+    margin-bottom: 18px;
+
+    /* Definite height keeps SVGs (which only carry a viewBox) from collapsing */
+    img {
+      height: 40px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__name {
+    font-size: 1.1rem;
+    margin: 0 0 10px;
+  }
+
+  &__blurb {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin: 0;
+    opacity: 0.85;
+  }
+}
+
+.partners-cta {
+  text-align: center;
+
+  p {
+    max-width: 640px;
+    margin: 0 auto 24px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}

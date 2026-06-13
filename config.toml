@@ -107,19 +107,24 @@ pagerSize = 6
       weight = 6
 
       [[menu.footer]]
+      name = "Partners"
+      url = "/partners/"
+      weight = 7
+
+      [[menu.footer]]
       name = "Support"
       url = "/support/"
-      weight = 7
+      weight = 8
 
       [[menu.footer]]
       name = "Contact"
       url = "/contact/"
-      weight = 8
+      weight = 9
 
       [[menu.footer]]
       name = "Privacy Policy"
       url = "/privacy-policy/"
-      weight = 9
+      weight = 10
 
 
   #-------------------------------
@@ -184,52 +189,72 @@ pagerSize = 6
     name = "Pyronear"
     logo = "/images/clients/pyronear/logo.png"
     link = "https://www.pyronear.org"
+    category = "technology"
+    blurb = "Open-source association detecting wildfires early from camera towers. We trained their detection models and built the MLOps pipeline."
 
   [[params.partner_item]]
     name = "Wild Salmon Center"
     logo = "/images/clients/wild_salmon_centre/logo.png"
     link = "https://wildsalmoncenter.org/"
     show_name = true
+    category = "conservation"
+    blurb = "International organization protecting wild salmon strongholds across the Pacific Rim, and a SalmonVision collaborator."
 
   [[params.partner_item]]
     name = "Pacific Salmon Foundation"
     logo = "/images/clients/psf/logo.png"
     link = "https://www.psf.ca"
+    category = "conservation"
+    blurb = "Canadian foundation investing in the science and stewardship of Pacific salmon."
 
   [[params.partner_item]]
     name = "Ai2"
     logo = "/images/clients/ai2/logo.png"
     link = "https://allenai.org/earthranger"
+    category = "technology"
+    blurb = "The Allen Institute for AI, whose EarthRanger platform supports protected-area management worldwide."
 
   [[params.partner_item]]
     name = "BearID Project"
     logo = "/images/clients/bearid/logo.png"
     link = "https://bearresearch.org/"
+    category = "research"
+    blurb = "Research initiative developing facial recognition to identify individual brown bears non-invasively."
 
   [[params.partner_item]]
     name = "Wageningen Marine Research"
     logo = "/images/clients/wageningen-marine-research/logo.svg"
     link = "https://www.wur.nl/en.htm"
+    category = "research"
+    blurb = "Dutch marine research institute. We automate seal detection and counting from their Wadden Sea aerial surveys."
 
   [[params.partner_item]]
     name = "Elephant Listening Project"
     logo = "/images/clients/elephantlistening/logo.png"
     link = "https://elephantlisteningproject.org/"
+    category = "conservation"
+    blurb = "Forest-elephant bioacoustics pioneers. We built tooling to analyze their rainforest audio at scale."
 
   [[params.partner_item]]
     name = "INBO"
     logo = "/images/clients/inbo/logo.jpg"
     link = "https://www.vlaanderen.be/inbo/en-gb/homepage/"
+    category = "research"
+    blurb = "Belgium's Research Institute for Nature and Forest, a partner on the BioWatch camera-trap platform."
 
   [[params.partner_item]]
     name = "Cornell Lab of Ornithology"
     logo = "/images/clients/cornell_lab/logo.svg"
     link = "https://www.birds.cornell.edu/"
+    category = "research"
+    blurb = "World-leading center for bird and bioacoustics research, home to the Elephant Listening Project."
 
   [[params.partner_item]]
     name = "Sovon"
     logo = "/images/clients/sovon/logo.svg"
     link = "https://www.sovon.nl/"
+    category = "research"
+    blurb = "The Dutch Centre for Field Ornithology, monitoring bird populations across the Netherlands."
 
   [[params.partner_item]]
     name = "Objective Science International"
@@ -241,46 +266,64 @@ pagerSize = 6
     name = "Lumax AI"
     logo = "/images/clients/lumax-ai/logo.png"
     link = "https://lumax.ai/"
+    category = "technology"
+    blurb = "AI engineering partner collaborating on computer-vision systems for conservation."
 
   [[params.partner_item]]
     name = "OSI Panthera"
     logo = "/images/clients/osi-panthera/logo.jpg"
     link = "https://www.osi-panthera.org/"
+    category = "conservation"
+    blurb = "French NGO running citizen-science expeditions to monitor snow leopards and their high-mountain ecosystems."
 
   [[params.partner_item]]
     name = "Simon Fraser University"
     logo = "/images/clients/sfu/logo.png"
     link = "https://www.sfu.ca/"
+    category = "research"
+    blurb = "Canadian university collaborating on wild salmon migration monitoring research."
 
   [[params.partner_item]]
     name = "BC Hydro"
     logo = "/images/clients/bc-hydro/logo.png"
     link = "https://www.bchydro.com/"
+    category = "funders"
+    blurb = "British Columbia's public power utility, supporting salmon monitoring in the watersheds where it operates."
 
   [[params.partner_item]]
     name = "ReefSupport"
     logo = "/images/clients/reefsupport/logo.png"
     link = "https://reef.support"
+    category = "technology"
+    blurb = "Marine-tech company mapping and monitoring coral reef health with AI."
 
   [[params.partner_item]]
     name = "Citibats Cambodia"
     logo = "/images/clients/citibats_cambodia/logo.png"
     link = "https://www.inaturalist.org/projects/citibats-cambodia"
+    category = "conservation"
+    blurb = "Community project monitoring urban bat populations in Cambodia as indicators of ecosystem health."
 
   [[params.partner_item]]
     name = "HackThePlanet"
     logo = "/images/clients/hacktheplanet/logo.png"
     link = "https://www.hack-the-planet.io/"
+    category = "technology"
+    blurb = "Conservation-tech builders. We trained detection models for their human–wildlife conflict prevention systems."
 
   [[params.partner_item]]
     name = "Foundation Conservation Carpathia"
     logo = "/images/clients/carpathia/logo.svg"
     link = "https://www.carpathia.org/"
+    category = "conservation"
+    blurb = "Building Europe's largest forested national park in Romania's Carpathian Mountains, where we help reduce human–bear conflict."
 
   [[params.partner_item]]
     name = "RBC"
     logo = "/images/clients/rbc/logo.svg"
     link = "https://www.rbc.com/our-impact/index.html"
+    category = "funders"
+    blurb = "Through its impact initiatives, supports freshwater and wild-salmon conservation in Canada."
 
   #-------------------------------
   # Testimonials Section
