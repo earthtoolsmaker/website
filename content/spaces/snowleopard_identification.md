@@ -1,7 +1,7 @@
 ---
 title: Snow Leopard Identification
-emoji: 🐆
-summary: Computer vision system for identifying individual snow leopards using feature matching and machine learning, supporting conservation efforts in Central Asia.
+card_image: /images/pages/spaces/snowleopard_identification/card.svg
+summary: Identifying individual snow leopards by their coat patterns to support conservation across Central Asia.
 date: 2025-11-25
 github_repo: https://github.com/earthtoolsmaker/snowleopard-reid
 project: /projects/snow_leopard_monitoring/
