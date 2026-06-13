@@ -28,12 +28,6 @@
 .contact-channels__item {
   display: inline-flex;
   align-items: center;
-
-  &:not(:last-child)::after {
-    content: "·";
-    margin-left: 16px;
-    color: var(--text-alt-color);
-  }
 }
 
 .page__content a.contact-channels__link:not(.button) {
@@ -49,8 +43,8 @@
 
   i,
   img {
-    font-size: 16px;
-    width: 18px;
+    font-size: 20px;
+    width: 22px;
     text-align: center;
   }
 
@@ -59,8 +53,9 @@
   }
 }
 
-/* Custom tooltip on the social channel links */
-.page__content .contact-channels__link[data-tooltip] {
+/* Custom tooltip on the social channel links (contact page + footer) */
+.contact-channels__link[data-tooltip],
+.social__link[data-tooltip] {
 
   &::before,
   &::after {
