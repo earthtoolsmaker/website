@@ -15,5 +15,6 @@ PhyloPic CC0 silhouettes require no attribution; this is a record for provenance
 | early_forest_fire_detection | Fire, smoke, forest, detection viewfinder (hand-drawn) | — | n/a |
 | temporal_smoke_verification | Lookout tower, smoke, viewfinder (hand-drawn) | — | n/a |
 | human_wildlife_bear_conflict | *Ursus arctos* (brown bear) + hand-drawn farm/fence/barn | [PhyloPic 5629fae2](https://www.phylopic.org/images/5629fae2-1da6-479d-bfeb-08a59a58121a) | CC0 1.0 |
+| smolt_sonar_monitoring | Hand-drawn ARIS sonar scan + smolt returns | — | n/a |
 
 Note: each card SVG doubles as the hero image on its space's own page (`layouts/spaces/single.html`).
