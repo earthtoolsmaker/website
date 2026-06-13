@@ -4,6 +4,7 @@ weight: 30
 show_title: true
 button_cta: Download and Install
 icon: /images/logos/biowatch-icon.png
+card_tint: "#e0efec"
 summary: Open-source desktop app for analyzing camera trap data. Runs 100% locally — your sensitive wildlife data never leaves your computer.
 github_repo: https://github.com/earthtoolsmaker/biowatch
 project: /projects/biowatch-app
