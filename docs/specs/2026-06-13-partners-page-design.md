@@ -15,7 +15,8 @@ funnel like the Hack The Planet reference.
 ## Decisions (locked)
 
 - **Purpose:** Showcase of collaborators (logos + short descriptions, grouped by type).
-- **Data source:** A curated data file (full editorial control), not auto-derived from project front matter.
+- **Data source:** A single curated list (full editorial control), not auto-derived from project front matter.
+  - **Implementation note (revised after exploration):** `config.toml` *already* contains a curated roster of 20 partners under `[[params.partner_item]]`, used by the homepage "Our Partners" logo slider. Rather than duplicate this into a new `data/partners.toml` (two lists to keep in sync), the partners page extends each existing `partner_item` with two optional fields — `category` and `blurb` — and renders from `.Site.Params.partner_item`. Single source of truth; the homepage slider simply ignores the new fields. This honors the "curated, not auto-derived" decision while staying DRY.
 - **Grouping:** By partner type (categories).
 - **Navigation:** Linked from the **footer menu** only (alongside About, Support, Contact). Not added to the main header nav.
 
@@ -27,7 +28,7 @@ Follows the existing custom-page convention used by `about` and `support`:
 |------|------|
 | `content/partners.md` | Front matter (`layout: partners`, `title`, hero fields) + short markdown intro body. |
 | `layouts/page/partners.html` | Template: hero → intro → grouped partner sections → CTA. |
-| `data/partners.toml` | Curated source of truth. One entry per partner. |
+| `config.toml` (`[[params.partner_item]]`) | Existing curated roster, extended with `category` + `blurb`. Single source of truth (also feeds homepage slider). |
 | `assets/scss/_partners.scss` (or project's SCSS convention) | Page styling, imported into the main stylesheet. |
 
 Logos reference existing files under `assets/images/clients/<org>/...` and are
