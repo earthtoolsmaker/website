@@ -549,6 +549,15 @@ html {
   @media (max-width: $mobile) {
     margin: 0 auto 28px;
   }
+
+  // Scoped tweaks only — shared .article__ classes live in _article.scss
+  .section__title {
+    font-size: 22px;
+  }
+
+  .article__title a:hover {
+    color: var(--primary-color);
+  }
 }
 
 /* Disqus */
