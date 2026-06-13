@@ -5,9 +5,7 @@
       {{ $related_space := site.GetPage .Params.space }}
       <div class="recent-project">
         <a href="{{ $related_space.RelPermalink }}" class="recent-project__image">
-            <div class="space__image">
-              <div class="space__image-emoji">{{ $related_space.Params.emoji }}</div>
-            </div>
+          {{ partial "space-image.html" (dict "path" $related_space.Params.card_image "alt" $related_space.Title) }}
         </a>
 
         <div class="recent-project__content">

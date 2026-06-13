@@ -1,7 +1,7 @@
 ---
 title: Seal Identification
-emoji: 🦭
-summary: Non-invasive seal re-identification using computer vision to track individual animals across seasons through unique whisker patterns and facial features.
+card_image: /images/pages/spaces/seal_identification/card.svg
+summary: Re-identifying individual seals by their whisker and face patterns — non-invasive, across seasons.
 date: 2025-01-24
 hero_image: /images/pages/spaces/seal_identification/hero.png
 project: /projects/wadden_sea_seal_monitoring/

@@ -1,6 +1,14 @@
 {{ define "main" }}
 
-{{ if .Params.hero_image }}
+{{ if .Params.card_image }}
+<!-- begin hero image (SVG illustration, served directly) -->
+<div class="hero__image hero__image--illustration">
+  <div class="hero__image__inner">
+    {{ partial "space-image.html" (dict "path" .Params.card_image "alt" .Title "class" "hero-cover" "loading" "eager") }}
+  </div>
+</div>
+<!-- end hero image -->
+{{ else if .Params.hero_image }}
 <!-- begin hero image -->
 <div class="hero__image">
   <div class="hero__image__inner">
@@ -87,9 +95,7 @@
       {{ if .PrevInSection }}
       <div class="prev">
         <a href="{{ .PrevInSection.Permalink }}" class="prev__image">
-          <div class="space__nav__next_img" class="lazy" alt="{{ .PrevInSection.Title }}">
-            <div class="space__nav__next_emoji">{{ .PrevInSection.Params.emoji }}</div>
-          </div>
+          {{ partial "space-image.html" (dict "path" .PrevInSection.Params.card_image "alt" .PrevInSection.Title "class" "space__nav__next_img") }}
         </a>
         <div class="prev__box">
           <span class="space__nav space__nav__prev">Prev Space</span>
@@ -121,9 +127,7 @@
           <h4 class="space__nav__title"><a href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }}</a></h4>
         </div>
         <a href="{{ .NextInSection.Permalink }}" class="next__image">
-          <div class="space__nav__next_img" class="lazy" alt="{{ .NextInSection.Title }}">
-            <div class="space__nav__next_emoji">{{ .NextInSection.Params.emoji }}</div>
-          </div>
+          {{ partial "space-image.html" (dict "path" .NextInSection.Params.card_image "alt" .NextInSection.Title "class" "space__nav__next_img") }}
         </a>
         {{/*{{ end }}*/}}
       </div>

@@ -1,0 +1,7 @@
+{{/* Render a space card_image (SVG) via the assets pipeline.
+     Params: path (e.g. /images/pages/spaces/<slug>/card.svg), alt, optional class.
+     Note: deliberately NOT class="lazy" — that class is hidden (opacity:0) until the
+     lazy-load JS swaps a data-src; these images use native loading="lazy" instead. */}}
+{{ with resources.Get (strings.TrimPrefix "/" .path) }}
+<img {{ with $.class }}class="{{ . }}" {{ end }}src="{{ .RelPermalink }}" alt="{{ $.alt }}" loading="{{ $.loading | default "lazy" }}">
+{{ end }}

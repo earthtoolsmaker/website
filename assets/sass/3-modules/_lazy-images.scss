@@ -30,8 +30,7 @@ picture img[width][height] {
   aspect-ratio: attr(width) / attr(height);
 }
 
-// Project card images - ensure proper sizing within container
-.project__image picture,
+// Article card images - ensure proper sizing within container
 .article__image picture {
   width: 100%;
   height: 100%;
@@ -43,9 +42,8 @@ picture img[width][height] {
   }
 }
 
-// Preserve grayscale effect for project and article images
-// Combines LQIP blur with grayscale aesthetic (defined in _projects.scss and _article.scss)
-.project__image .lazy,
+// Preserve grayscale effect for article images
+// Combines LQIP blur with grayscale aesthetic (defined in _article.scss)
 .article__image .lazy {
   @media (min-width: $tablet + 1) {
     filter: blur(10px) grayscale(50%);
@@ -57,9 +55,7 @@ picture img[width][height] {
   }
 }
 
-// On hover, remove grayscale (keep in sync with _projects.scss and _article.scss)
-.project__content:hover .project__image .lazy.loaded,
-.project__content:hover .project__image .lazy[data-ll-status="loaded"],
+// On hover, remove grayscale (keep in sync with _article.scss)
 .article__content:hover .article__image .lazy.loaded,
 .article__content:hover .article__image .lazy[data-ll-status="loaded"] {
   @media (min-width: $tablet + 1) {

@@ -1,7 +1,7 @@
 ---
 title: Smolt Sonar Monitoring
-emoji: 🔊
-summary: A computer vision system that processes ARIS sonar imagery to automatically detect, track, and count juvenile salmon (smolt) during their downstream migration. The system leverages a YOLOv11 detection model combined with BoTSort tracking to monitor smolt populations, supporting conservation efforts and sustainable fisheries management.
+card_image: /images/pages/spaces/smolt_sonar_monitoring/card.svg
+summary: Detecting, tracking and counting juvenile salmon in ARIS sonar as they migrate downstream.
 date: 2026-01-10
 project: /projects/monitoring_smolt_salmon_migration_with_sonar/
 hf_space: Lumax-eco-sonar-smolt

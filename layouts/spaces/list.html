@@ -32,19 +32,43 @@
     </div>
   </div>
 
+  {{ partial "spaces-cta.html" (dict "class" "") }}
+
+  <!-- begin spaces stats -->
+  <section class="section about-stats spaces-stats animate">
+    <div class="container">
+      <div class="about-stats__grid">
+        <div class="about-stats__item">
+          <div class="about-stats__value">{{ len (where .Site.RegularPages "Section" "spaces") }}</div>
+          <div class="about-stats__label">interactive demos</div>
+        </div>
+        <div class="about-stats__item">
+          <div class="about-stats__value">9+</div>
+          <div class="about-stats__label">species monitored</div>
+        </div>
+        <div class="about-stats__item">
+          <div class="about-stats__value">6</div>
+          <div class="about-stats__label">ecosystems</div>
+        </div>
+        <div class="about-stats__item">
+          <div class="about-stats__value">100%</div>
+          <div class="about-stats__label">free &amp; open source</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end spaces stats -->
+
   <div class="container animate">
     <div class="row">
       {{ range (where .Site.RegularPages "Section" "spaces" ) }}
       <article class="space col col-4 col-w-6 col-t-12">
         <div class="space__content">
-          <div class="space__head">
-            <div class="space__image-container">
-              <div class="space__image">
-                <div class="space__image-emoji">{{ .Params.emoji }}</div>
-              </div>
-              {{/*<img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Params.Title }}">*/}}
-            </div>
+          {{ if .Params.card_image }}
+          <div class="space__image">
+            {{ partial "space-image.html" (dict "path" .Params.card_image "alt" .Params.title) }}
           </div>
+          {{ end }}
           <div class="space__inner">
             <div class="space__info">
               {{ if .Params.subtitle }}
@@ -63,6 +87,8 @@
       {{ end }}
     </div>
   </div>
+
+  {{ partial "spaces-cta.html" (dict "class" "spaces-cta--bottom") }}
 
 </div>
 <!-- end page-wrapper -->

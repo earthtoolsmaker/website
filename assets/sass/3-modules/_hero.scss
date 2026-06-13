@@ -37,6 +37,16 @@
   }
 }
 
+/* Illustration heroes (SVG card art): keep the artwork visible, only fade the
+   bottom edge so the banner blends into the page instead of a hard cut. */
+.hero__image--illustration .hero__image__inner::after {
+  background: linear-gradient(
+    180deg,
+    rgba(var(--rgb-image-color), 0) 22%,
+    rgba(var(--rgb-image-color), 1) 100%
+  );
+}
+
 .hero__inner {
   position: relative;
   text-align: center;

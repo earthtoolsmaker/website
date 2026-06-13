@@ -37,6 +37,7 @@
   <div class="tool-content">
     {{ .Content }}
 
+    {{ if not .Params.hide_meta_links }}
     {{ $resources := slice }}
     {{ with .Params.project }}{{ $resources = $resources | append (dict "icon" "fa-solid fa-circle-info" "label" "Project overview" "url" .) }}{{ end }}
     {{ with .Params.github_repo }}{{ $resources = $resources | append (dict "icon" "fa-brands fa-github" "label" "Source code" "url" .) }}{{ end }}
@@ -54,6 +55,7 @@
         {{ end }}
       </div>
     </div>
+    {{ end }}
     {{ end }}
   </div>
 </div>

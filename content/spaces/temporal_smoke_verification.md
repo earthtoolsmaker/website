@@ -1,7 +1,7 @@
 ---
 title: Temporal Smoke Verification
-emoji: 🕐
-summary: The Pyronear temporal verifier judging real camera sequences — a detector proposes candidate regions, they are tracked over time, and a temporal classifier decides whether they behave like smoke. Watch real wildfires get caught and look-alikes get rejected.
+card_image: /images/pages/spaces/temporal_smoke_verification/card.svg
+summary: Watching camera sequences over time to tell genuine wildfire smoke from look-alikes.
 github_repo: https://github.com/pyronear/temporal-model
 date: 2026-06-12
 project: /projects/early_forest_fire_detection/
