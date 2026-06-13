@@ -225,3 +225,30 @@ Append as the page's closer:
   no emojis remain in body copy this file controls (template footer emojis excepted,
   per Out of scope).
 - Image-zoom (Lightense) still initializes (biowatch.js retained).
+
+---
+
+## Addendum (post-implementation): resource footer removed
+
+After the page was implemented, the auto-generated resource footer was **removed**
+at the maintainer's request — superseding the "No template changes / keep the footer"
+decision in the *Out of scope* section above.
+
+- **What changed:** the `github_repo`, `landing_page_url`, and `project` front-matter
+  keys were deleted from `content/tools/pyronear/index.md`. `layouts/tools/single.html`
+  renders the footer `<li>` items only when those keys are set, so with them gone the
+  footer (🛠️ project / GitHub / 🚀 application) no longer renders. **No template
+  change** was needed — the removal is page-scoped.
+- **Net effect:** the page is now fully emoji-free (the two footer emojis are gone),
+  ending cleanly on the "Visit Pyronear" CTA. This makes Pyronear stricter than
+  Biowatch (which keeps its footer) and matches Animal reID's emoji-free result.
+- **Known trade-off:** the page no longer surfaces a link to the `pyronear-mlops`
+  GitHub repo or the `/projects/early_forest_fire_detection` project page. The repo
+  link still lives on the project page. The maintainer accepted this when approving
+  the PR. If a code/project link is wanted back without the emoji footer, add a
+  body-level link (e.g., in the closing CTA) rather than restoring the front-matter
+  keys.
+- **No other consumers:** grep of `layouts/` confirms these params are read only by
+  the tool footer for this page (the `list.html` `landing_page_url` reference is
+  commented out; the `github_repo` sidebar widget is for project pages). No backlinks
+  break.
