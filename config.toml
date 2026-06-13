@@ -332,7 +332,7 @@ pagerSize = 6
   #-------------------------------
   # Tags Section
   [params.tags]
-    enable = true
+    enable = false
     tags_title = "✌️ Explore Topics"
 
 
