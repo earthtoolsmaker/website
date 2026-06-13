@@ -49,7 +49,7 @@ Biowatch is a free, open-source desktop application that lets you analyze, visua
 <div class="about-cta" style="margin-bottom: 64px;">
   <h3 class="about-cta__title">New to Biowatch?</h3>
   <p class="about-cta__description">The full online manual walks you through every feature — importing data, exploring studies, annotating images, running AI models, and exporting — with step-by-step guides and screenshots.</p>
-  <a href="https://biowatch.earthtoolsmaker.org/" target="_blank" class="link-no-decoration button button--cta">Read the Manual</a>
+  <a href="https://biowatch.earthtoolsmaker.org/" target="_blank" class="link-no-decoration button button--middle">Read the Manual</a>
 </div>
 
 ## Why Biowatch?
@@ -83,7 +83,7 @@ Everything from raw captures to published data:
 
   <div class="support__card">
     <h3 class="support__card-title">Import from anywhere</h3>
-    <p class="support__card-description">Start from your own image folders, a <a href="https://camtrap-dp.tdwg.org/">Camtrap DP</a> package, or curated public datasets from <a href="https://www.gbif.org/">GBIF</a> and <a href="https://lila.science/">LILA</a> — or try the one-click demo dataset.</p>
+    <p class="support__card-description">Start from your own image folders, a <a href="https://camtrap-dp.tdwg.org/" target="_blank" rel="noopener">Camtrap DP</a> package, or curated public datasets from <a href="https://www.gbif.org/" target="_blank" rel="noopener">GBIF</a> and <a href="https://lila.science/" target="_blank" rel="noopener">LILA</a> — or try the one-click demo dataset.</p>
   </div>
 
   <div class="support__card">
