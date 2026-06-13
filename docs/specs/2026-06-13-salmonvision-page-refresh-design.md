@@ -176,3 +176,51 @@ The tool footer (`layouts/tools/single.html`) reads `project`, `github_repo`,
   duplicate).
 - The carousel renders the reused project images (resolved from `assets/`).
 - Image-zoom (Lightense) still initializes (biowatch.js retained).
+
+---
+
+## Addendum (post-approval): hero video, stats band, FAQ
+
+Three additions requested by the maintainer after the initial refresh shipped.
+These extend the original "single content file, no SCSS" scope — deliberately.
+
+### 1. Hero video banner
+
+The looping background video from the official SalmonVision site
+(`https://salmonvision.org/images/hero-banner.mp4`, 1280×720, ~6 s, 6.1 MB) is
+**hosted locally** at `static/videos/salmonvision-hero.mp4` (not hotlinked — avoids
+a runtime dependency on their server). It is presented as a full-width, rounded,
+autoplay/muted/loop hero banner at the top of the content, with the page title and
+a tagline ("Empowering wild salmon conservation through collaborative, AI-powered
+monitoring.") overlaid on a bottom dark-gradient scrim for legibility. The plain
+`# Automate Salmon Monitoring` markdown H1 is replaced by the hero's
+`h1.tool-hero__title`. New `.tool-hero*` styles live in `assets/sass/3-modules/_tools.scss`.
+
+### 2. Stats band
+
+A three-stat band reusing the `.about-stats` component (as the projects/spaces
+pages do), placed right after the intro: **24/7 automated monitoring · 20
+monitoring projects · 1M+ salmon counted** (values supplied by the maintainer).
+Because the shared `.about-stats__grid` is hardcoded to four columns — and the
+tools *list* page already uses `.tools-stats` with four items — a new
+`.about-stats--three` modifier was added to `assets/sass/4-layouts/_about.scss`
+(placed after the base `.about-stats` rule so it wins the cascade; 3 columns
+desktop, 1 column mobile). The band reuses `.tools-stats` only for its margin.
+
+### 3. FAQ section
+
+A `## Frequently Asked Questions` section (six `support__card`s in a
+`support__grid`) was added before the closing CTA, with copy adapted from the
+official FAQ at `https://salmonvision.org/contact/`: accuracy (>95% detection,
+90–95% species), supported footage, species coverage, open-source licensing
+(MIT models / CC BY-NC-SA datasets), cost (free for education/research; subsidized
+for conservation groups and Indigenous communities), and custom-model development.
+
+### SCSS touched (departure from original "no SCSS" scope)
+
+- `assets/sass/4-layouts/_about.scss` — `.about-stats--three` modifier.
+- `assets/sass/3-modules/_tools.scss` — `.tool-hero*` hero-video styles.
+
+### New asset
+
+- `static/videos/salmonvision-hero.mp4` (6.1 MB) — copied from salmonvision.org.

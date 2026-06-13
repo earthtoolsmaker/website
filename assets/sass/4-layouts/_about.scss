@@ -472,6 +472,15 @@
   }
 }
 
+/* Three-up variant for pages with three stats (e.g. a single tool page) */
+.about-stats--three .about-stats__grid {
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* About Timeline */
 .about-timeline {
   .timeline {

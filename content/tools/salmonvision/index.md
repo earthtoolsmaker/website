@@ -15,11 +15,36 @@ js:
 date: 2024-10-01
 ---
 
-# Automate Salmon Monitoring
+<div class="tool-hero">
+  <video class="tool-hero__video" autoplay muted loop playsinline preload="auto" aria-label="Underwater footage of salmon migrating upstream">
+    <source src="/videos/salmonvision-hero.mp4" type="video/mp4">
+  </video>
+  <div class="tool-hero__overlay">
+    <h1 class="tool-hero__title">Automate Salmon Monitoring</h1>
+    <p class="tool-hero__tagline">Empowering wild salmon conservation through collaborative, AI-powered monitoring.</p>
+  </div>
+</div>
 
 SalmonVision is a collaborative system for counting wild salmon as they return to their natal streams. It combines underwater cameras, sonar, and drones with computer-vision models that detect, classify, and count fish in real time — turning a labour-intensive manual task into precise, automated reports.
 
 Built with the Pacific Salmon Foundation, the Wild Salmon Center, Lumax AI, and Simon Fraser University, it gives conservationists the reliable population data they need to manage fisheries, protect habitat, and meet regulatory targets.
+
+<section class="about-stats about-stats--three tools-stats">
+  <div class="about-stats__grid">
+    <div class="about-stats__item">
+      <div class="about-stats__value">24/7</div>
+      <div class="about-stats__label">automated monitoring</div>
+    </div>
+    <div class="about-stats__item">
+      <div class="about-stats__value">20</div>
+      <div class="about-stats__label">monitoring projects</div>
+    </div>
+    <div class="about-stats__item">
+      <div class="about-stats__value">1M+</div>
+      <div class="about-stats__label">salmon counted</div>
+    </div>
+  </div>
+</section>
 
 {{< image_carousel id="salmonvision-gallery" items="2" >}}
   {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/system_overview.png" alt="SalmonVision system overview" caption="System overview: cameras, sonar, and drones feed a computer-vision pipeline that counts and classifies migrating salmon." >}}
@@ -127,6 +152,45 @@ The video below, filmed at Bear Creek River, shows the underwater monitoring sys
 
 <p><iframe src="https://www.youtube.com/embed/V-rZSeM5YtY" loading="lazy" frameborder="0" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9;"></iframe></p>
 <em style="font-size:14px;line-height:1.4em;display:block;">Underwater Camera Activated at Bear Creek River: Monitoring System Now Live</em>
+<br/>
+
+## Frequently Asked Questions
+
+<div class="support__grid">
+
+  <div class="support__card">
+    <h3 class="support__card-title">How accurate is it?</h3>
+    <p class="support__card-description">Models reach over 95% accuracy for salmon detection and counting in good conditions, with 90–95% species classification. Accuracy depends on water clarity, lighting, and camera placement.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">What footage does it work with?</h3>
+    <p class="support__card-description">Video from underwater cameras, weirs, fish ladders, and drones, in standard formats and across a wide range of field conditions.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Which species can it identify?</h3>
+    <p class="support__card-description">The main Pacific salmon species — Steelhead, Sockeye, Pink, Coho, Chum, and Chinook — plus other fish such as trout, whitefish, and lamprey.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Is it open source?</h3>
+    <p class="support__card-description">The computer-vision models are released under the MIT license, and the training datasets under CC BY-NC-SA 4.0, to support conservation worldwide.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">What does it cost?</h3>
+    <p class="support__card-description">The web application is free for educational and research use. Conservation groups and Indigenous communities may qualify for subsidized or complimentary access.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Can you build a custom model?</h3>
+    <p class="support__card-description">Yes — models can be fine-tuned or built from scratch for your specific watershed, camera setup, or target species.</p>
+  </div>
+
+</div>
+
+<br/>
 <br/>
 
 <div class="about-cta">
