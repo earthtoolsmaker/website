@@ -92,7 +92,7 @@ gained the same support/collaborate framing that `spaces/` received on
   (`projects-cta--bottom`).
 - **Stats band** — reuses the `.about-stats` component inside a `.container` (so
   it lines up with the cards, unlike the about page's `.container-wide`). Four
-  tailored stats: live project count, `1M+` salmon tracked, `9+` species
+  tailored stats: live project count, `19` partner organizations, `9+` species
   monitored, `100%` open source.
 - **`_projects.scss` re-created** — now holds only the projects-page spacing
   modifiers (`.projects-cta`, `.projects-cta--bottom`, `.projects-cta__buttons`,
