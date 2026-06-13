@@ -1,6 +1,16 @@
 {{ define "main" }}
 
-{{ if .Params.hero_image }}
+{{ if .Params.card_image }}
+<!-- begin hero image (SVG illustration, served directly) -->
+<div class="hero__image hero__image--illustration">
+  <div class="hero__image__inner">
+    {{ with resources.Get (strings.TrimPrefix "/" .Params.card_image) }}
+    <img class="hero-cover" src="{{ .RelPermalink }}" alt="{{ $.Title }}">
+    {{ end }}
+  </div>
+</div>
+<!-- end hero image -->
+{{ else if .Params.hero_image }}
 <!-- begin hero image -->
 <div class="hero__image">
   <div class="hero__image__inner">

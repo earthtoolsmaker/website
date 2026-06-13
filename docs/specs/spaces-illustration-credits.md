@@ -6,3 +6,6 @@ PhyloPic CC0 silhouettes require no attribution; this is a record for provenance
 | Card | Subject | Source | License |
 |---|---|---|---|
 | bear_identification | *Ursus americanus* (black bear, mother + cubs) | [PhyloPic 363a5d99](https://www.phylopic.org/images/363a5d99-bb3a-413a-b3b5-9fac03d5e972) | CC0 1.0 |
+| coral_reef_health_monitoring | Corals (hand-drawn); tiger shark *Galeocerdo cuvier* | [PhyloPic f9d9e345](https://www.phylopic.org/images/f9d9e345-5d79-4df0-b259-e7ab88e48854) | CC0 1.0 |
+
+Note: each card SVG doubles as the hero image on its space's own page (`layouts/spaces/single.html`).

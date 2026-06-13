@@ -1,7 +1,7 @@
 ---
 title: Coral Reef Health Monitoring
-emoji: 🪸
-summary: A computer vision system analyzes benthic imagery data to detect and identify various coral species. Utilizing advanced image processing techniques, the system is designed to monitor the health of coral reefs over time, thereby supporting and enhancing conservation efforts.
+card_image: /images/pages/spaces/coral_reef_health_monitoring/card.svg
+summary: Detecting and identifying coral species in benthic imagery to track reef health over time.
 github_repo: https://github.com/earthtoolsmaker/coralreef-conservation
 date: 2024-01-30
 hero_image: /images/pages/spaces/coral_reef_health_monitoring/hero.jpg
