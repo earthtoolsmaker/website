@@ -55,16 +55,74 @@
     );
 }
 
+/* Living Canvas scene: full-bleed band behind the hero text. Top veil keeps the
+   header legible; bottom fades to the page background so the hero dissolves into
+   the next section instead of ending in a hard edge. */
+.hero {
+  position: relative;
+  // give the scene a vertical floor so the panorama has room, and so the hero box
+  // contains the scene (the scene fills 100% height below) instead of letting it
+  // overflow into the next section.
+  min-height: 480px;
+
+  @media (max-width: $mobile) {
+    min-height: 420px;
+  }
+}
+
+.hero__scene {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; // fill the hero box exactly — never bleed into the projects section
+  overflow: hidden;
+  opacity: 0.8; // soften the whole scene into a backdrop (keeps text dominant)
+
+  .hero__scene-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        72% 46% at 50% 50%,
+        rgba(var(--rgb-image-color), 0.8) 0%,
+        rgba(var(--rgb-image-color), 0.45) 46%,
+        rgba(var(--rgb-image-color), 0) 78%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(var(--rgb-image-color), 0.85) 0,
+        rgba(var(--rgb-image-color), 0) 150px
+      ),
+      linear-gradient(
+        180deg,
+        rgba(var(--rgb-image-color), 0) 86%,
+        rgba(var(--rgb-image-color), 1) 100%
+      );
+  }
+}
+
 .hero__inner {
   position: relative;
   text-align: center;
+  padding-top: 40px;
 
   .hero__title {
     margin-bottom: 32px;
-    font-size: 93px;
+    font-size: 68px;
     line-height: 1.1;
     font-weight: 400;
     color: var(--heading-font-color);
+    // soft light halo keeps the headline crisp where it crosses the scene
+    text-shadow: 0 1px 16px var(--background-color), 0 0 6px var(--background-color);
   
     span {
       font-style: italic;
@@ -75,6 +133,8 @@
   .hero__description {
     margin-bottom: 0;
     font-size: 32px;
+    // halo for legibility where the tagline crosses the treeline / animals
+    text-shadow: 0 1px 12px var(--background-color), 0 0 6px var(--background-color);
   }
 
   .hero__buttons {
@@ -104,7 +164,7 @@
 
   @media (max-width: $wide) {
     .hero__title {
-      font-size: 88px;
+      font-size: 64px;
     }
   }
 
@@ -159,4 +219,31 @@
       }
     }
   }
+}
+
+/* Subtle independent drift on the silhouettes. Disabled for reduced-motion. */
+@keyframes hero-drift-1 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(14px, -10px); } }
+@keyframes hero-drift-2 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-16px, 8px); } }
+@keyframes hero-drift-3 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(9px, 12px); } }
+
+@keyframes hero-cloud { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(26px, 0); } }
+
+.hero__crit { will-change: transform; }
+.hero__crit--clouds  { animation: hero-cloud 40s ease-in-out infinite; } // slow horizontal drift
+.hero__crit--birds   { animation: hero-drift-2 16s ease-in-out infinite; } // gulls drifting
+.hero__crit--salmon  { animation: hero-drift-1 9s  ease-in-out infinite; } // swimming
+.hero__crit--salmon2 { animation: hero-drift-2 13s ease-in-out infinite; } // deeper, slower
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__crit { animation: none; }
+}
+
+/* Dark mode: graceful degradation only (no bespoke dark scene). The scene uses the
+   light site palette, so on a dark page we drop it to a faint backdrop. The bottom
+   fade already resolves to the dark page color via --rgb-image-color, and the title
+   highlight uses --secondary-color, which swaps per theme. */
+:root[dark] .hero__scene,
+.dark-mode .hero__scene,
+html.dark-mode .hero__scene {
+  opacity: 0.3;
 }
