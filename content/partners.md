@@ -1,8 +1,8 @@
 ---
 layout: partners
 title: Partners
-hero_image: /images/projects/early_forest_fire_detection/cover.jpg
-hero_title: The people protecting wild places
+hero_image: /images/pages/partners/hero.jpg
+hero_title: The People Protecting Wild Places
 hero_description: We build conservation technology hand in hand with the researchers, rangers, and organizations doing the work in the field.
 ---
 

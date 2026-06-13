@@ -8,7 +8,7 @@
     "src" $imgPath
     "alt" .Title
     "sizes" "100vw"
-    "widths" (slice 600 900 1200 1500)
+    "widths" (slice 600 900 1200 1500 2000)
     "lazy" false
     "fetchpriority" "high"
     "lqip" false
@@ -28,11 +28,34 @@
 </div>
 {{ end }}
 
-{{/* ---- Intro ---- */}}
-<div class="container-wide partners-page">
-  <div class="partners-page__intro">
-    {{ .Content }}
-  </div>
+<div class="container-wide layout-about partners-page">
+
+  {{/* ---- Intro ---- */}}
+  <article class="page">
+    <div class="page__content partners-page__intro">
+      {{ .Content }}
+    </div>
+  </article>
+
+  {{/* ---- Stats band (reuses about-stats styling) ---- */}}
+  <section class="section about-stats partners-stats animate">
+    <div class="container-wide">
+      <div class="about-stats__grid">
+        <div class="about-stats__item">
+          <div class="about-stats__value">{{ len .Site.Params.partner_item }}</div>
+          <div class="about-stats__label">partner organizations</div>
+        </div>
+        <div class="about-stats__item">
+          <div class="about-stats__value">{{ len (where site.RegularPages "Section" "projects") }}</div>
+          <div class="about-stats__label">conservation projects</div>
+        </div>
+        <div class="about-stats__item">
+          <div class="about-stats__value">{{ len (where site.RegularPages "Section" "tools") }}</div>
+          <div class="about-stats__label">open-source tools</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   {{/* ---- Grouped partner sections ---- */}}
   {{ $partners := .Site.Params.partner_item }}
@@ -46,38 +69,46 @@
   {{ range $cat := $categories }}
     {{ $items := where $partners "category" $cat.key }}
     {{ with $items }}
-    <section class="partners-page__section">
-      <h2 class="partners-page__title">{{ $cat.title | safeHTML }}</h2>
-      <div class="partners-page__grid">
-        {{ range $p := . }}
-          {{ $img := "" }}
-          {{ with $p.logo }}
-            {{ $lp := strings.TrimPrefix "/" . }}
-            {{ $img = or (resources.Get (replace $lp "logo.png" "logo_dark.png")) (resources.Get $lp) }}
-            {{ if and $img (not (strings.HasSuffix $lp ".svg")) (gt $img.Width 380) }}
-              {{ $img = $img.Resize "380x" }}
+    <section class="section partners-section animate">
+      <div class="container-wide">
+        <h2 class="partners-section__title">{{ $cat.title | safeHTML }}</h2>
+        <div class="partners-grid">
+          {{ range $p := . }}
+            {{ $img := "" }}
+            {{ with $p.logo }}
+              {{ $lp := strings.TrimPrefix "/" . }}
+              {{/* prefer a dark-text variant when one exists (matches homepage slider) */}}
+              {{ $resolved := $lp }}
+              {{ $dark := replace $lp "logo.png" "logo_dark.png" }}
+              {{ if and (ne $dark $lp) (resources.Get $dark) }}{{ $resolved = $dark }}{{ end }}
+              {{/* prefer a whitespace-trimmed copy generated for this page, fall back to the shared logo */}}
+              {{ $trimmed := replace $resolved "images/clients/" "images/partners-logos/" }}
+              {{ $img = or (resources.Get $trimmed) (resources.Get $resolved) }}
+              {{ if and $img (not (strings.HasSuffix $resolved ".svg")) (gt $img.Width 380) }}
+                {{ $img = $img.Resize "380x" }}
+              {{ end }}
             {{ end }}
+            <a class="partner-card" href="{{ $p.link }}" target="_blank" rel="noopener noreferrer">
+              <div class="partner-card__logo">
+                {{ with $img }}<img src="{{ .RelPermalink }}" alt="{{ $p.name }}" loading="lazy">{{ end }}
+              </div>
+              <h3 class="partner-card__name">{{ $p.name }}</h3>
+              {{ with $p.blurb }}<p class="partner-card__blurb">{{ . }}</p>{{ end }}
+            </a>
           {{ end }}
-          <a class="partner-card" href="{{ $p.link }}" target="_blank" rel="noopener noreferrer">
-            <div class="partner-card__logo">
-              {{ with $img }}<img src="{{ .RelPermalink }}" alt="{{ $p.name }}" loading="lazy">{{ end }}
-            </div>
-            <h3 class="partner-card__name">{{ $p.name }}</h3>
-            {{ with $p.blurb }}<p class="partner-card__blurb">{{ . }}</p>{{ end }}
-          </a>
-        {{ end }}
+        </div>
       </div>
     </section>
     {{ end }}
   {{ end }}
 
-  {{/* ---- CTA ---- */}}
-  <div class="partners-page__cta">
-    <p>Building conservation technology and want to collaborate? We'd love to hear from you.</p>
-    <a class="link-no-decoration" href="/contact/">
-      <button class="button button--cta">Get in touch 🌍</button>
-    </a>
-  </div>
+  {{/* ---- Support CTA ---- */}}
+  <section class="section partners-cta animate">
+    <div class="container-wide">
+      {{ partial "support-cta.html" . }}
+    </div>
+  </section>
+
 </div>
 
 {{ end }}
