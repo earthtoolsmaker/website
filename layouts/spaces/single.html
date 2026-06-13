@@ -43,9 +43,13 @@
     {{ if .Params.manual_steps }}
     <div class="space-content__manual">
       <b class="space-content__manual-title">📖 Manual</b>
-      <ol class="space-content__manual_steps_list">
-        {{ range $manual_steps }}
-          <li class="space-content__manual_step_item"><b>{{ .step_name }}:</b> {{ .description }}</li>
+      <ol class="space-manual__list">
+        {{ range $index, $step := $manual_steps }}
+          <li class="space-manual__item">
+            <span class="space-manual__number" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span>
+            <h4 class="space-manual__step-title">{{ $step.step_name }}</h4>
+            <p class="space-manual__step-description">{{ $step.description }}</p>
+          </li>
         {{ end }}
       </ol>
     </div>

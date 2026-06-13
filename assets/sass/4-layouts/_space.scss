@@ -119,6 +119,55 @@
     margin-bottom: 2em;
   }
 
+  .space-manual__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media (max-width: $tablet) {
+      gap: 32px;
+    }
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+
+  .space-manual__item {
+    padding-left: 20px;
+    border-left: 2px solid var(--border-color);
+  }
+
+  .space-manual__number {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    color: var(--tertiary-color);
+  }
+
+  .space-manual__step-title {
+    font-family: $base-font-family;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--heading-font-color);
+  }
+
+  .space-manual__step-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+  }
+
   .space-content__hf_space {
     margin-top: 1.8em;
     margin-bottom: 2.6em;
