@@ -1,12 +1,12 @@
 {{/*
-  Partner logo carousel for the SalmonVision tool page.
+  Partner logo row for the SalmonVision tool page.
 
-  Reuses the site's partner slider markup (.about-partners-slider +
-  #about-partners-controls) so the global tiny-slider init in common.js picks it
-  up, and the existing .partner-logo-container styling applies. Partners are
-  defined inline since this list is specific to this page. Logo lookup mirrors
-  partials/partners-logo-slider.html (prefers a logo_dark variant, downscales
-  large rasters).
+  A clean, equal-height, vertically-centered strip of partner logos (reusing the
+  site's .partner-logo-container styling). A sliding carousel is pointless for a
+  handful of logos and leaves them unaligned, so this is a static flex row that
+  wraps on small screens. Partners are defined inline since the list is specific
+  to this page; logo lookup prefers a logo_dark variant and downscales large
+  rasters (mirroring partials/partners-logo-slider.html).
 */}}
 
 {{ $partners := slice
@@ -17,37 +17,20 @@
 }}
 
 <div class="tool-partners">
-  <div class="tool-partners__controls">
-    <ul class="controls list-reset" id="about-partners-controls" aria-label="Partners Slider Navigation" tabindex="0">
-      <li class="prev" data-controls="prev" aria-controls="about-partners-slider" tabindex="-1">
-        <i class="fa-solid fa-arrow-left-long"></i>
-      </li>
-      <li class="next" data-controls="next" aria-controls="about-partners-slider" tabindex="-1">
-        <i class="fa-solid fa-arrow-right-long"></i>
-      </li>
-    </ul>
-  </div>
-
-  <div class="partners__carousel">
-    <div class="about-partners-slider" id="about-partners-slider">
-      {{ range $partners }}
-      {{ $p := . }}
-      {{ $img := "" }}
-      {{ with $p.logo }}
-        {{ $imgPath := strings.TrimPrefix "/" . }}
-        {{ $img = or (resources.Get (replace $imgPath "logo.png" "logo_dark.png")) (resources.Get $imgPath) }}
-        {{ if and $img (not (strings.HasSuffix $imgPath ".svg")) (gt $img.Width 380) }}
-          {{ $img = $img.Resize "380x" }}
-        {{ end }}
-      {{ end }}
-      <div class="partners-slide">
-        <a href="{{ $p.link }}" target="_blank" rel="noopener noreferrer" class="partner-logo-container">
-          {{ with $img }}
-          <img class="partner-logo" src="{{ .RelPermalink }}" alt="{{ $p.name }}" loading="lazy">
-          {{ end }}
-        </a>
-      </div>
-      {{ end }}
-    </div>
-  </div>
+  {{ range $partners }}
+  {{ $p := . }}
+  {{ $img := "" }}
+  {{ with $p.logo }}
+    {{ $imgPath := strings.TrimPrefix "/" . }}
+    {{ $img = or (resources.Get (replace $imgPath "logo.png" "logo_dark.png")) (resources.Get $imgPath) }}
+    {{ if and $img (not (strings.HasSuffix $imgPath ".svg")) (gt $img.Width 380) }}
+      {{ $img = $img.Resize "380x" }}
+    {{ end }}
+  {{ end }}
+  <a href="{{ $p.link }}" target="_blank" rel="noopener noreferrer" class="partner-logo-container" aria-label="{{ $p.name }}">
+    {{ with $img }}
+    <img class="partner-logo" src="{{ .RelPermalink }}" alt="{{ $p.name }}" loading="lazy">
+    {{ end }}
+  </a>
+  {{ end }}
 </div>

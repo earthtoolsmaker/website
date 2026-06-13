@@ -275,14 +275,18 @@ giving a footer of **Project overview · Source code · User guide**.
   Stewardship Authority, Nuxalk Stewardship, Skeena Fisheries Commission, Taku
   River Tlingit, and Wuikinuxv Fishery Program.
 
-### 7. Partner logo carousel
+### 7. Partner logo row
 
-An "Our Partners" carousel was added before the FAQ via a new `partner_logos`
-shortcode that reuses the site's partner slider markup (`.about-partners-slider`
-+ `#about-partners-controls`, picked up by the global tiny-slider init in
-`common.js`) and the existing `.partner-logo-container` styling. Four partners,
-defined inline in the shortcode with logos from `assets/images/clients/`:
-Wild Salmon Center, Pacific Salmon Foundation, Lumax AI, and BC Hydro (PSF uses
-its `logo_dark` variant). Small `.tool-partners__controls` style in `_tools.scss`
-right-aligns the prev/next arrows. ("Pacific Salmon Center" in the request was
-read as the Pacific Salmon Foundation — the project's actual partner.)
+An "Our Partners" section was added before the FAQ via a new `partner_logos`
+shortcode listing four partners (logos from `assets/images/clients/`): Wild Salmon
+Center, Pacific Salmon Foundation, Lumax AI, and BC Hydro (PSF uses its `logo_dark`
+variant). ("Pacific Salmon Center" in the request was read as the Pacific Salmon
+Foundation — the project's actual partner.)
+
+A tiny-slider carousel was tried first but a sliding carousel is pointless for four
+logos and left them ragged/misaligned (only 4 slides vs. the slider's 5-up desktop
+layout). It was replaced with a **static, equal-height flex row** (`.tool-partners`
+in `_tools.scss`) reusing the site's `.partner-logo-container` styling. Logos are
+shown in full colour and normalized to a uniform 64-px bounding box
+(`object-fit: contain`) so their sizes and baselines match — mirroring the About
+page's partner treatment. The row wraps to two-up on mobile.
