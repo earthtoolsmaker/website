@@ -14,7 +14,8 @@ pagerSize = 6
 
 [params]
   math = true
-  logo = "/images/logos/etm-logo-text.png" # You can add own logo. For example "/images/logo.png".
+  logo = "/images/logos/etm-logo-text.png" # Full "earthtoolsmaker" wordmark (footer + home header + header hover state).
+  logo_etm = "/images/logos/etm-logo-etm.png" # Compact "etm" mark; default header logo on non-home pages.
   # logo_dark = "/images/logo.png"
   description = "Open Technology for Wildlife and the Planet"
   # color_scheme = "auto" # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.

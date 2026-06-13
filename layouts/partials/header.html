@@ -6,21 +6,17 @@
 
         <div class="logo">
           <a class="logo__link" href="{{ .Site.BaseURL }}">
-            {{ if or (.Site.Params.logo) (.Site.Params.logo_dark) }}
-            {{ with .Site.Params.logo }}
-              {{ $imgPath := strings.TrimPrefix "/" . }}
-              {{ $img := resources.Get $imgPath }}
-              {{ if $img }}
-            <img class="logo__image" src="{{ $img.RelPermalink }}" alt="{{ site.Title }}">
-              {{ end }}
-            {{ end }}
-            {{ with .Site.Params.logo_dark }}
-              {{ $imgPath := strings.TrimPrefix "/" . }}
-              {{ $img := resources.Get $imgPath }}
-              {{ if $img }}
-            <img class="logo__image__dark" src="{{ $img.RelPermalink }}" alt="{{ site.Title }}">
-              {{ end }}
-            {{ end }}
+            {{ $full := and .Site.Params.logo (resources.Get (strings.TrimPrefix "/" .Site.Params.logo)) }}
+            {{ $etm := and .Site.Params.logo_etm (resources.Get (strings.TrimPrefix "/" .Site.Params.logo_etm)) }}
+            {{ if and $full $etm (not .IsHome) }}
+              {{/* Non-home: compact "etm" by default, crossfades to the full wordmark on hover */}}
+            <span class="logo__swap">
+              <img class="logo__image logo__image--etm" src="{{ $etm.RelPermalink }}" alt="{{ site.Title }}">
+              <img class="logo__image logo__image--full" src="{{ $full.RelPermalink }}" alt="{{ site.Title }}">
+            </span>
+            {{ else if $full }}
+              {{/* Home (or no etm mark): full wordmark, static */}}
+            <img class="logo__image" src="{{ $full.RelPermalink }}" alt="{{ site.Title }}">
             {{ else }}
               {{ .Site.Title }}
             {{ end }}

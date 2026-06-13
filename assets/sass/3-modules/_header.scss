@@ -49,19 +49,47 @@
 .logo__image,
 .logo__image__dark {
   max-width: 100%;
-  max-height: 120px;
+  max-height: 60px;
 
   @media (max-width: $desktop) {
-    max-height: 100px;
+    max-height: 54px;
   }
 
   @media (max-width: $tablet) {
-    max-height: 90px;
+    max-height: 48px;
   }
 
   @media (max-width: $mobile) {
-    max-height: 80px;
+    max-height: 44px;
   }
+}
+
+// Header logo swap: compact "etm" by default, crossfades to the full
+// wordmark on hover/focus. Both images stack in one grid cell so the cell
+// reserves the wider (full) width and the nav never shifts.
+.logo__swap {
+  display: inline-grid;
+  justify-items: start;
+  align-items: center;
+}
+
+.logo__swap .logo__image {
+  grid-area: 1 / 1;
+  transition: opacity .35s ease;
+}
+
+.logo__image--full {
+  opacity: 0;
+}
+
+.logo:hover .logo__image--etm,
+.logo__link:focus-visible .logo__image--etm {
+  opacity: 0;
+}
+
+.logo:hover .logo__image--full,
+.logo__link:focus-visible .logo__image--full {
+  opacity: 1;
 }
 
 .logo__image__dark {
