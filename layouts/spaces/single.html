@@ -4,9 +4,7 @@
 <!-- begin hero image (SVG illustration, served directly) -->
 <div class="hero__image hero__image--illustration">
   <div class="hero__image__inner">
-    {{ with resources.Get (strings.TrimPrefix "/" .Params.card_image) }}
-    <img class="hero-cover" src="{{ .RelPermalink }}" alt="{{ $.Title }}">
-    {{ end }}
+    {{ partial "space-image.html" (dict "path" .Params.card_image "alt" .Title "class" "hero-cover" "loading" "eager") }}
   </div>
 </div>
 <!-- end hero image -->
@@ -97,9 +95,7 @@
       {{ if .PrevInSection }}
       <div class="prev">
         <a href="{{ .PrevInSection.Permalink }}" class="prev__image">
-          {{ with resources.Get (strings.TrimPrefix "/" .PrevInSection.Params.card_image) }}
-          <img class="space__nav__next_img" src="{{ .RelPermalink }}" alt="{{ $.PrevInSection.Title }}" loading="lazy">
-          {{ end }}
+          {{ partial "space-image.html" (dict "path" .PrevInSection.Params.card_image "alt" .PrevInSection.Title "class" "space__nav__next_img") }}
         </a>
         <div class="prev__box">
           <span class="space__nav space__nav__prev">Prev Space</span>
@@ -131,9 +127,7 @@
           <h4 class="space__nav__title"><a href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }}</a></h4>
         </div>
         <a href="{{ .NextInSection.Permalink }}" class="next__image">
-          {{ with resources.Get (strings.TrimPrefix "/" .NextInSection.Params.card_image) }}
-          <img class="space__nav__next_img" src="{{ .RelPermalink }}" alt="{{ $.NextInSection.Title }}" loading="lazy">
-          {{ end }}
+          {{ partial "space-image.html" (dict "path" .NextInSection.Params.card_image "alt" .NextInSection.Title "class" "space__nav__next_img") }}
         </a>
         {{/*{{ end }}*/}}
       </div>

@@ -64,10 +64,9 @@
       {{ range (where .Site.RegularPages "Section" "spaces" ) }}
       <article class="space col col-4 col-w-6 col-t-12">
         <div class="space__content">
-          {{ $alt := .Params.title }}
-          {{ with resources.Get (strings.TrimPrefix "/" .Params.card_image) }}
+          {{ if .Params.card_image }}
           <div class="space__image">
-            <img src="{{ .RelPermalink }}" alt="{{ $alt }}" loading="lazy">
+            {{ partial "space-image.html" (dict "path" .Params.card_image "alt" .Params.title) }}
           </div>
           {{ end }}
           <div class="space__inner">
