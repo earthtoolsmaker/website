@@ -27,7 +27,7 @@
       {{ $img = $img.Resize "380x" }}
     {{ end }}
   {{ end }}
-  <a href="{{ $p.link }}" target="_blank" rel="noopener noreferrer" class="partner-logo-container" aria-label="{{ $p.name }}">
+  <a href="{{ $p.link }}" target="_blank" rel="noopener noreferrer" class="link-no-decoration partner-logo-container" aria-label="{{ $p.name }}">
     {{ with $img }}
     <img class="partner-logo" src="{{ .RelPermalink }}" alt="{{ $p.name }}" loading="lazy">
     {{ end }}
