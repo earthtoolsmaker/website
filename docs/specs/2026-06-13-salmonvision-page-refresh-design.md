@@ -253,3 +253,24 @@ A **"User guide" link** was added to the shared resource footer: a new
 `layouts/tools/single.html` (guarded with `with`, so other tool pages are
 unaffected). SalmonVision sets `manual_url: https://salmonvision.org/user-guide/`,
 giving a footer of **Project overview · Source code · User guide**.
+
+### 6. Species showcase + First Nations partners + image crop
+
+- **Carousel screenshot reselected and cropped.** The first chosen review frame
+  caught the fish mid-exit (only a fin) and had a 2-px black strip on the right
+  edge. Replaced with a centered whole-fish frame, cropped to 1100×654 to drop the
+  black border.
+- **"Species We Recognize" section.** A new `salmon_species` shortcode
+  (`layouts/shortcodes/salmon_species.html`) renders a grid of the six main Pacific
+  salmon (Chinook, Sockeye, Coho, Chum, Pink, Steelhead) using the species
+  illustrations from the wild-salmon project bundle (resolved from `assets/`,
+  resized to WebP), each with a short size descriptor from the project page's
+  species table; followed by a line listing the other recognized fish (Bull Trout,
+  Rainbow Trout, Whitefish, Shiner, Pikeminnow, Jack Chinook, Lamprey, Cutthroat
+  Trout). New `.species-grid` / `.species-card` styles in `_tools.scss`.
+- **"In Partnership with First Nations" section.** A `support__grid` listing the
+  First Nations / Indigenous stewardship partners named on
+  `https://salmonvision.org/partners/`: Gitanyow Fishery Authority, Haida Fishery
+  Program, Heiltsuk Integrated Resource Management Department, Kitasoo Xai'xais
+  Stewardship Authority, Nuxalk Stewardship, Skeena Fisheries Commission, Taku
+  River Tlingit, and Wuikinuxv Fishery Program.

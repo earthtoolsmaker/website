@@ -122,6 +122,17 @@ Three sensing modalities feed the same computer-vision pipeline, each suited to 
 <br/>
 <br/>
 
+## Species We Recognize
+
+SalmonVision identifies the main Pacific salmon species as they pass the camera — not just a single overall fish count.
+
+{{< salmon_species >}}
+
+Beyond the salmon above, the system also recognizes Bull Trout, Rainbow Trout, Whitefish, Shiner, Pikeminnow, Jack Chinook, Lamprey, and Cutthroat Trout.
+
+<br/>
+<br/>
+
 ## Interactive Demos {#demos}
 
 Two interactive demos let you run the SalmonVision models on real data, right from this website.
@@ -158,6 +169,57 @@ And in the field, the video below — filmed at Bear Creek River — shows the u
 
 <p><iframe src="https://www.youtube.com/embed/V-rZSeM5YtY" loading="lazy" frameborder="0" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9;"></iframe></p>
 <em style="font-size:14px;line-height:1.4em;display:block;">Underwater Camera Activated at Bear Creek River: Monitoring System Now Live</em>
+<br/>
+
+## In Partnership with First Nations
+
+First Nations across the North and Central Coast of British Columbia are at the heart of SalmonVision — contributing data and expertise to train the models, and leading their use for salmon stewardship within their own territories.
+
+<div class="support__grid">
+
+  <div class="support__card">
+    <h3 class="support__card-title">Gitanyow Fishery Authority</h3>
+    <p class="support__card-description">Salmon stewardship in Gitanyow territory.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Haida Fishery Program</h3>
+    <p class="support__card-description">Salmon monitoring across the watersheds of Haida Gwaii.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Heiltsuk Integrated Resource Management Department</h3>
+    <p class="support__card-description">Stewardship and monitoring in Heiltsuk Territory.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Kitasoo Xai'xais Stewardship Authority</h3>
+    <p class="support__card-description">Stewardship in Kitasoo Xai'xais Territory.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Nuxalk Stewardship</h3>
+    <p class="support__card-description">Conservation and monitoring in Nuxalk Nation territory.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Skeena Fisheries Commission</h3>
+    <p class="support__card-description">Co-management of salmon across the Skeena watershed.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Taku River Tlingit</h3>
+    <p class="support__card-description">Salmon stewardship in the Taku River watershed.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Wuikinuxv Fishery Program</h3>
+    <p class="support__card-description">Community-based salmon monitoring and management.</p>
+  </div>
+
+</div>
+
+<br/>
 <br/>
 
 ## Frequently Asked Questions
