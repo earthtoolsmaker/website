@@ -5,6 +5,7 @@ show_title: false
 button_cta: Visit SalmonVision
 icon: /images/logos/salmon-vision-logo.svg
 logo_container: true
+card_tint: "#dceef1"
 summary: Underwater cameras, sonar and drones combined with innovative AI technology to enable precise and automated salmon counting in rivers.
 landing_page_url: https://salmonvision.org
 project: /projects/wild_salmon_migration_monitoring

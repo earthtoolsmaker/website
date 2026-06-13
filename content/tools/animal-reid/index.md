@@ -4,6 +4,7 @@ weight: 40
 show_title: true
 button_cta: Try Demo
 icon: /images/logos/reid-icon.png
+card_tint: "#ffe8df"
 summary: A modular computer vision framework for individual animal identification using state-of-the-art techniques including metric learning, local feature matching, and spot pattern analysis across multiple species.
 date: 2025-11-24
 js:

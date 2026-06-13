@@ -5,6 +5,7 @@ show_title: false
 button_cta: Visit Pyronear
 icon: /images/logos/pyronear_logo_letters.png
 logo_container: true
+card_tint: "#fce3d8"
 summary: Democratizing open and low-tech solutions for fighting wildfires. An early detection solution that is open source, efficient, automatic, energy-efficient, economical and modular.
 github_repo: https://github.com/earthtoolsmaker/pyronear-mlops
 landing_page_url: https://pyronear.org/en/
