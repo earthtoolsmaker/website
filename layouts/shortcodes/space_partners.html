@@ -1,0 +1,38 @@
+{{/*
+  space_partners — static partner logo strip for a space page.
+  Sources partners from the page's linked project (.Params.project) so the
+  partner data lives in one place. Optional title override: {{< space_partners title="Built with" >}}
+*/}}
+{{ $title := .Get "title" | default "In partnership with" }}
+{{/* Prefer the page's own clients; otherwise source them from the linked project. */}}
+{{ $clients := .Page.Params.clients | default slice }}
+{{ if not $clients }}
+  {{ with .Page.Params.project }}
+    {{ with site.GetPage . }}
+      {{ $clients = .Params.clients | default slice }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if $clients }}
+<div class="space-partners">
+  <div class="space-partners__label">{{ $title }}</div>
+  <div class="space-partners__logos">
+    {{ range $partner := $clients }}
+    {{ $img := "" }}
+    {{ with $partner.logo }}
+      {{ $imgPath := strings.TrimPrefix "/" . }}
+      {{/* Prefer a dark-text variant (for white-on-transparent logos) when one exists */}}
+      {{ $img = or (resources.Get (replace $imgPath "logo.png" "logo_dark.png")) (resources.Get $imgPath) }}
+      {{ if and $img (not (strings.HasSuffix $imgPath ".svg")) (gt $img.Width 380) }}
+        {{ $img = $img.Resize "380x" }}
+      {{ end }}
+    {{ end }}
+    {{ with $img }}
+    <a class="space-partners__item" href="{{ $partner.link }}" target="_blank" rel="noopener noreferrer" title="{{ $partner.name }}">
+      <img class="space-partners__logo" src="{{ .RelPermalink }}" alt="{{ $partner.name }}" loading="lazy">
+    </a>
+    {{ end }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}

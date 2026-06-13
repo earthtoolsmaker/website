@@ -37,14 +37,22 @@
   }
 }
 
-/* Illustration heroes (SVG card art): keep the artwork visible, only fade the
-   bottom edge so the banner blends into the page instead of a hard cut. */
+/* Illustration heroes (SVG card art): keep the artwork visible, but veil the top
+   band so the header stays readable over any artwork, and fade the bottom edge so
+   the banner blends into the page instead of a hard cut. The veil uses the page
+   background color, so it works in both light and dark mode. */
 .hero__image--illustration .hero__image__inner::after {
-  background: linear-gradient(
-    180deg,
-    rgba(var(--rgb-image-color), 0) 22%,
-    rgba(var(--rgb-image-color), 1) 100%
-  );
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--rgb-image-color), 0.78) 0,
+      rgba(var(--rgb-image-color), 0) 160px
+    ),
+    linear-gradient(
+      180deg,
+      rgba(var(--rgb-image-color), 0) 22%,
+      rgba(var(--rgb-image-color), 1) 100%
+    );
 }
 
 .hero__inner {

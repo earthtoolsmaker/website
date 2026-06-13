@@ -18,26 +18,72 @@ manual_steps:
 
 ## Overview
 
-The Seal Identification system enables researchers to track individual seals over time without physical tagging or invasive procedures. By analyzing unique whisker patterns, facial markings, and head shape characteristics, the model creates distinctive "fingerprints" for each seal that remain stable across seasons and years.
+Seal Identification lets researchers track individual seals over time without tagging or any invasive procedure. By reading the unique whisker patterns, facial markings, and head shape of each animal, the model builds a distinctive "fingerprint" that stays stable across seasons and years. Developed with [Wageningen Marine Research](https://www.wur.nl/en/Research-Results/Research-Institutes/marine-research.htm), it supports the grey and harbour seal colonies of the Wadden Sea — a UNESCO World Heritage Site.
 
-This technology supports critical conservation research by revealing:
-- Individual movement patterns between haul-out sites
-- Site fidelity and habitat preferences
-- Long-term survival rates
-- Reproductive success of individual females
-- Social structure within seal colonies
+## Key Features
+
+What the re-identification system brings:
+
+<div class="support__grid">
+
+  <div class="support__card">
+    <h3 class="support__card-title">Whisker &amp; face fingerprints</h3>
+    <p class="support__card-description">Combines whisker patterns, facial markings, and head shape into a signature unique to each individual.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Top-k matching</h3>
+    <p class="support__card-description">Searches a database of known seals and returns the most similar individuals for review, not just a single guess.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Confidence scores</h3>
+    <p class="support__card-description">Each match comes with a confidence score, so a high-confidence hit signals the same seal seen again across sightings.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Non-invasive, across seasons</h3>
+    <p class="support__card-description">Identification from photographs alone means individuals can be followed year after year without ever handling them.</p>
+  </div>
+
+</div>
 
 ## Use Cases
 
-- **Long-Term Population Studies**: Track individual seals across multiple survey years to estimate survival rates and population dynamics. By re-identifying individuals annually, researchers can build complete life histories without invasive tagging.
-- **Movement Ecology**: Map how individual seals move between different haul-out sites within the Wadden Sea. Understanding connectivity between colonies informs conservation planning and marine protected area design.
-- **Reproductive Monitoring**: Identify individual females and track their reproductive success over time. This provides insights into breeding frequency, pup survival, and factors affecting population growth.
-- **Behavioral Research**: Link individual identification with behavioral observations to study personality, social networks, and learning behaviors within seal colonies.
+Where it supports seal conservation:
 
-## Applications Beyond the Wadden Sea
+<div class="support__grid">
 
-While developed for Wadden Sea seal monitoring, this re-identification approach is transferable to other seal populations and marine mammal species worldwide. The same computer vision techniques can enable non-invasive individual tracking in diverse conservation contexts, from Arctic ice seals to Antarctic fur seals.
+  <div class="support__card">
+    <h3 class="support__card-title">Long-term population studies</h3>
+    <p class="support__card-description">Re-identify individuals across survey years to estimate survival rates and build complete life histories without invasive tagging.</p>
+  </div>
 
-## Learn More
+  <div class="support__card">
+    <h3 class="support__card-title">Movement ecology</h3>
+    <p class="support__card-description">Map how seals move between haul-out sites across the Wadden Sea, informing conservation planning and protected-area design.</p>
+  </div>
 
-For complete details on the broader Wadden Sea seal monitoring project, including the multi-classifier detection system and web application for researchers, visit the [project page]({{< ref "/projects/wadden_sea_seal_monitoring" >}}).
+  <div class="support__card">
+    <h3 class="support__card-title">Reproductive monitoring</h3>
+    <p class="support__card-description">Track individual females and their reproductive success to understand breeding frequency, pup survival, and population growth.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Behavioral research</h3>
+    <p class="support__card-description">Link identities to observations to study social networks, site fidelity, and behavior within colonies.</p>
+  </div>
+
+</div>
+
+## Beyond the Wadden Sea
+
+Though built for the Wadden Sea, the same re-identification approach transfers to other seal populations and marine mammals worldwide — from Arctic ice seals to Antarctic fur seals — wherever non-invasive individual tracking can support conservation.
+
+{{< space_partners >}}
+
+<div class="about-cta">
+  <h3 class="about-cta__title">Learn more about the project</h3>
+  <p class="about-cta__description">See the full Wadden Sea seal monitoring project and our work with Wageningen Marine Research — including the detection system and researcher web app.</p>
+  <a href="/projects/wadden_sea_seal_monitoring/" class="link-no-decoration button button--middle">View the project</a>
+</div>

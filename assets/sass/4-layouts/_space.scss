@@ -16,7 +16,7 @@
 // .hf-space__gradio styles moved to 3-modules/_gradio-reset.scss
 
 .space-info {
-  margin-bottom: 25px;
+  margin-bottom: 56px;
   text-align: center;
   line-height: 1;
 
@@ -119,6 +119,55 @@
     margin-bottom: 2em;
   }
 
+  .space-manual__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media (max-width: $tablet) {
+      gap: 32px;
+    }
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+
+  .space-manual__item {
+    padding-left: 20px;
+    border-left: 2px solid var(--border-color);
+  }
+
+  .space-manual__number {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    color: var(--tertiary-color);
+  }
+
+  .space-manual__step-title {
+    font-family: $base-font-family;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--heading-font-color);
+  }
+
+  .space-manual__step-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+  }
+
   .space-content__hf_space {
     margin-top: 1.8em;
     margin-bottom: 2.6em;
@@ -140,6 +189,61 @@
 
   @media (max-width: $mobile) {
     margin-bottom: 60px;
+  }
+}
+
+/* Partner logo strip (sourced from the linked project's clients) */
+.space-partners {
+  margin: 56px 0;
+  text-align: center;
+
+  .space-partners__label {
+    margin-bottom: 20px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-alt-color);
+  }
+
+  .space-partners__logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 28px 56px;
+  }
+
+  .space-partners__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+  }
+
+  .space-partners__logo {
+    height: 44px;            // fixed height keeps the strip uniform and forces
+    width: auto;             // SVGs with only a viewBox (no intrinsic size) to render
+    max-width: 210px;
+    object-fit: contain;
+    opacity: 0.75;
+    filter: grayscale(100%);
+    transition: opacity .25s ease, filter .25s ease;
+  }
+
+  .space-partners__item:hover .space-partners__logo {
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+}
+
+// Partner logos are links inside .space-content — kill the content link underline
+// (needs the element selector to outweigh `.space-content a:not(.button)`).
+.space-content a.space-partners__item {
+  border: none;
+  font-weight: inherit;
+
+  &:hover {
+    border: none;
   }
 }
 
