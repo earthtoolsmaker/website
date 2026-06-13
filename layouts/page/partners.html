@@ -1,0 +1,83 @@
+{{ define "main" }}
+
+{{/* ---- Hero (about-style) ---- */}}
+{{ if .Params.hero_image }}
+<div class="about-hero">
+  {{ $imgPath := strings.TrimPrefix "/" .Params.hero_image }}
+  {{ partial "responsive-image.html" (dict
+    "src" $imgPath
+    "alt" .Title
+    "sizes" "100vw"
+    "widths" (slice 600 900 1200 1500)
+    "lazy" false
+    "fetchpriority" "high"
+    "lqip" false
+  ) }}
+  <div class="about-hero__overlay">
+    <div class="container-wide">
+      <h1 class="about-hero__title">{{ .Params.hero_title | default .Title }}</h1>
+      {{ with .Params.hero_description }}<p class="about-hero__description">{{ . }}</p>{{ end }}
+    </div>
+  </div>
+</div>
+{{ else }}
+<div class="container-wide layout-about">
+  <div class="page-head">
+    <div class="page-info"><h1 class="page-title">{{ .Title }}</h1></div>
+  </div>
+</div>
+{{ end }}
+
+{{/* ---- Intro ---- */}}
+<div class="container-wide partners-page">
+  <div class="partners-page__intro">
+    {{ .Content }}
+  </div>
+
+  {{/* ---- Grouped partner sections ---- */}}
+  {{ $partners := .Site.Params.partner_item }}
+  {{ $categories := slice
+    (dict "key" "conservation" "title" "🌿 Conservation Organizations")
+    (dict "key" "research"     "title" "🔬 Research Institutions")
+    (dict "key" "technology"   "title" "⚙️ Technology Partners")
+    (dict "key" "funders"      "title" "💛 Funders &amp; Supporters")
+  }}
+
+  {{ range $cat := $categories }}
+    {{ $items := where $partners "category" $cat.key }}
+    {{ with $items }}
+    <section class="partners-page__section">
+      <h2 class="partners-page__title">{{ $cat.title | safeHTML }}</h2>
+      <div class="partners-page__grid">
+        {{ range $p := . }}
+          {{ $img := "" }}
+          {{ with $p.logo }}
+            {{ $lp := strings.TrimPrefix "/" . }}
+            {{ $img = or (resources.Get (replace $lp "logo.png" "logo_dark.png")) (resources.Get $lp) }}
+            {{ if and $img (not (strings.HasSuffix $lp ".svg")) (gt $img.Width 380) }}
+              {{ $img = $img.Resize "380x" }}
+            {{ end }}
+          {{ end }}
+          <a class="partner-card" href="{{ $p.link }}" target="_blank" rel="noopener noreferrer">
+            <div class="partner-card__logo">
+              {{ with $img }}<img src="{{ .RelPermalink }}" alt="{{ $p.name }}" loading="lazy">{{ end }}
+            </div>
+            <h3 class="partner-card__name">{{ $p.name }}</h3>
+            {{ with $p.blurb }}<p class="partner-card__blurb">{{ . }}</p>{{ end }}
+          </a>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+  {{ end }}
+
+  {{/* ---- CTA ---- */}}
+  <div class="partners-page__cta">
+    <p>Building conservation technology and want to collaborate? We'd love to hear from you.</p>
+    <a class="link-no-decoration" href="/contact/">
+      <button class="button button--cta">Get in touch 🌍</button>
+    </a>
+  </div>
+</div>
+
+{{ end }}
