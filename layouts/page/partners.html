@@ -40,7 +40,7 @@
     <div class="container-wide">
       <div class="about-stats__grid">
         <div class="about-stats__item">
-          <div class="about-stats__value">{{ len .Site.Params.partner_item }}</div>
+          <div class="about-stats__value">{{ len (where .Site.Params.partner_item "category" "in" (slice "conservation" "research" "technology" "funders")) }}</div>
           <div class="about-stats__label">partner organizations</div>
         </div>
         <div class="about-stats__item">
