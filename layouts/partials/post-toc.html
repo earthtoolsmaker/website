@@ -1,0 +1,17 @@
+{{/* Inline collapsible "On this page" outline. Renders only when the post has >=2 headings.
+     Uses Hugo's native .TableOfContents (defaults emit h2-h3). Open on desktop, collapsed on mobile. */}}
+{{ if ge (len .Fragments.Identifiers) 2 }}
+<details class="post-toc" open>
+  <summary class="post-toc__summary">
+    <span class="post-toc__label">On this page</span>
+    <span class="post-toc__chevron" aria-hidden="true">⌄</span>
+  </summary>
+  {{ .TableOfContents }}
+</details>
+<script>
+  if (window.matchMedia('(max-width: 576px)').matches) {
+    var t = document.querySelector('.post-toc');
+    if (t) { t.removeAttribute('open'); }
+  }
+</script>
+{{ end }}
