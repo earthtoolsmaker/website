@@ -224,3 +224,14 @@ for conservation groups and Indigenous communities), and custom-model developmen
 ### New asset
 
 - `static/videos/salmonvision-hero.mp4` (6.1 MB) — copied from salmonvision.org.
+
+### 4. Gradio runtime collision fix (mirrors the Pyronear fix on main)
+
+The two demo embeds required different gradio runtimes (salmon-vision 5.5.0 served
+by the default 5.4.0 loader; sonar 5.49.1). The `<gradio-app>` custom element
+registers once per document, so two loaders collide and the **salmon RGB counter
+fails to mount** — the same bug fixed for Pyronear in `0704cfd`. Fix: keep the
+primary salmon-vision space as `{{< hf_space "earthtoolsmaker-salmon-vision" >}}`
+(default 5.4.0 runtime, as it mounts on the spaces page) and embed the sonar space
+via an isolated `<iframe src="https://lumax-eco-sonar-smolt.hf.space" ...>`. Only
+one gradio runtime remains on the page, so the salmon counter mounts correctly.

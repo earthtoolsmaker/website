@@ -138,7 +138,7 @@ Choose an underwater-camera clip and watch the model draw boxes around salmon, c
 
 Run the sonar pipeline on ARIS footage to detect, track, and count juvenile smolt as they migrate downstream.
 
-{{< hf_space "Lumax-eco-sonar-smolt" "5.49.1" >}}
+<p><iframe src="https://lumax-eco-sonar-smolt.hf.space" loading="lazy" frameborder="0" style="width:100%;height:1000px;border:0;"></iframe></p>
 
 {{< /tab >}}
 {{< /tabs >}}
