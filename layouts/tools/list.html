@@ -32,48 +32,52 @@
     </div>
   </div>
 
+  <!-- begin tools stats -->
+  <!-- STATS COPY IS A PLACEHOLDER — final values/labels to be provided by the user before merge -->
+  <section class="section about-stats tools-stats animate">
+    <div class="container">
+      <div class="about-stats__grid">
+        <div class="about-stats__item">
+          <div class="about-stats__value">{{ len (where .Site.RegularPages "Section" "tools") }}</div>
+          <div class="about-stats__label">tools</div>
+        </div>
+        <div class="about-stats__item">
+          <div class="about-stats__value">100%</div>
+          <div class="about-stats__label">free &amp; open source</div>
+        </div>
+        <div class="about-stats__item">
+          <div class="about-stats__value">local</div>
+          <div class="about-stats__label">runs on your machine</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end tools stats -->
+
   <div class="container animate">
     <div class="row">
       {{ range (where .Site.RegularPages "Section" "tools" ) }}
       <article class="tool col col-4 col-w-6 col-t-12">
         <div class="tool__content">
-          <div class="tool__head">
-            <div class="tool__image-container">
-              <div class="tool__image">
-                <div class="tool__icon">
-                  {{ $iconPath := strings.TrimPrefix "/" .Params.icon }}
-                  {{ $icon := resources.Get $iconPath }}
-                  {{ if .Params.logo_container }}
-                  <div class="tool__icon-container">
-                    {{ if $icon }}
-                    <img src="{{ $icon.RelPermalink }}" alt="{{ .Title }} logo" />
-                    {{ else }}
-                    <img src="{{ .Params.icon }}" alt="{{ .Title }} logo" />
-                    {{ end }}
-                  </div>
-                  {{ else }}
-                    {{ if $icon }}
-                    <img src="{{ $icon.RelPermalink }}" alt="{{ .Title }} logo" />
-                    {{ else }}
-                    <img src="{{ .Params.icon }}" alt="{{ .Title }} logo" />
-                    {{ end }}
-                  {{ end }}
-                </div>
-              </div>
-              {{/*<img class="lazy" data-src="{{ .Params.Image | absURL }}" alt="{{ .Params.Title }}">*/}}
+          <div class="tool__image"{{ with .Params.card_tint }} style="--tool-tint: {{ . }}"{{ end }}>
+            <div class="tool__logo{{ if .Params.logo_container }} tool__logo--chip{{ end }}">
+              {{ $iconPath := strings.TrimPrefix "/" .Params.icon }}
+              {{ $icon := resources.Get $iconPath }}
+              {{ if $icon }}
+              <img src="{{ $icon.RelPermalink }}" alt="{{ .Title }} logo" />
+              {{ else }}
+              <img src="{{ .Params.icon }}" alt="{{ .Title }} logo" />
+              {{ end }}
             </div>
           </div>
           <div class="tool__inner">
             <div class="tool__info">
-              {{ if .Params.subtitle }}
-              <div class="tool__subtitle">{{ .Params.subtitle }}</div>
+              {{ with .Params.subtitle }}
+              <div class="tool__subtitle">{{ . }}</div>
               {{ end }}
-              {{ if .Params.title }}
-              {{/*<h3 class="tool__title"><a href="{{ .Params.landing_page_url }}" class="tool__link">{{ .Params.title }}</a></h3>*/}}
-              <h3 class="tool__title"><a href="{{ .RelPermalink }}" class="tool__link">{{ .Params.title }}</a></h3>
-              {{ end }}
-              {{ if .Params.summary }}
-              <p class="tool__excerpt">{{ .Params.summary }}</p>
+              <h3 class="tool__title"><a href="{{ .RelPermalink }}" class="tool__link">{{ .Title }}</a></h3>
+              {{ with .Params.summary }}
+              <p class="tool__excerpt">{{ . }}</p>
               {{ end }}
             </div>
           </div>
