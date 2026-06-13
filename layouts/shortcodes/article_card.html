@@ -15,7 +15,10 @@
     {{ end }}
     <div class="article__inner">
       <div class="article__info">
-        <h3 class="article__title"><a href="{{ .Get "link" }}" class="article__link">{{ .Get "title" }}</a></h3>
+        {{/* Inline reset: this card renders inside tool/prose content, whose
+             `a:not(.button)` rule adds a border-bottom underline and font-weight
+             override. Reset both so the card matches the blog-card titles. */}}
+        <h3 class="article__title"><a href="{{ .Get "link" }}" class="article__link" style="border-bottom: none; font-weight: inherit;">{{ .Get "title" }}</a></h3>
         {{ if .Get "description" }}
         <p class="article__excerpt">{{ .Get "description" }}</p>
         {{ end }}
