@@ -32,6 +32,33 @@
     </div>
   </div>
 
+  {{ partial "projects-cta.html" (dict "class" "") }}
+
+  {{/* Stats band — reuses the .about-stats component (like spaces), wrapped in
+       .container so it aligns with the cards. */}}
+  <section class="section about-stats projects-stats animate">
+    <div class="container">
+      <div class="about-stats__grid">
+        <div class="about-stats__item">
+          <div class="about-stats__value">{{ len (where .Site.RegularPages "Section" "projects") }}</div>
+          <div class="about-stats__label">conservation projects</div>
+        </div>
+        <div class="about-stats__item">
+          <div class="about-stats__value">1M+</div>
+          <div class="about-stats__label">salmon tracked</div>
+        </div>
+        <div class="about-stats__item">
+          <div class="about-stats__value">9+</div>
+          <div class="about-stats__label">species monitored</div>
+        </div>
+        <div class="about-stats__item">
+          <div class="about-stats__value">100%</div>
+          <div class="about-stats__label">open source</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="container animate">
     <div class="row">
       {{ range (where .Site.RegularPages "Section" "projects" ) }}
@@ -39,6 +66,8 @@
       {{ end }}
     </div>
   </div>
+
+  {{ partial "projects-cta.html" (dict "class" "projects-cta--bottom") }}
 
 </div>
 <!-- end page-wrapper -->

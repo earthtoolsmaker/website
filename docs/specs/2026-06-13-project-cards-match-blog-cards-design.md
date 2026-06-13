@@ -78,3 +78,27 @@ project cards become the fourth consumer.
 2. Chromium screenshot of the homepage projects section and the support page,
    confirming cards match the blog cards (static build is ground truth per the
    local-preview workflow).
+
+## Follow-up: `/projects` page enhancements (mirrors the `spaces/` page)
+
+After the card revamp, the `/projects` index page (`layouts/projects/list.html`)
+gained the same support/collaborate framing that `spaces/` received on
+`origin/main`, for consistency between the two listing pages:
+
+- **Collaboration CTA band** — new `layouts/partials/projects-cta.html` partial,
+  mirroring `spaces-cta.html`: the shared `.about-cta` band (centered, bordered)
+  with two buttons, "Support our work" (`/support/`) and "Get in touch"
+  (`/contact/`). Rendered twice — once after the intro, once after the cards
+  (`projects-cta--bottom`).
+- **Stats band** — reuses the `.about-stats` component inside a `.container` (so
+  it lines up with the cards, unlike the about page's `.container-wide`). Four
+  tailored stats: live project count, `1M+` salmon tracked, `9+` species
+  monitored, `100%` open source.
+- **`_projects.scss` re-created** — now holds only the projects-page spacing
+  modifiers (`.projects-cta`, `.projects-cta--bottom`, `.projects-cta__buttons`,
+  `.projects-stats`), parallel to `_spaces.scss`; its `@import` is restored.
+- **Copy** — warmer, more concrete intro copy for `content/projects/_index.md`
+  and `content/tools/_index.md` (the latter drops the body emoji per the site's
+  restrained-emoji convention).
+
+Page order matches `spaces/`: intro → CTA → stats → cards → CTA.
