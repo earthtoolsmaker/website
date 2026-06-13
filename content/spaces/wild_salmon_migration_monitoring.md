@@ -14,7 +14,7 @@ manual_steps:
   - step_name: Run the ML model
     description: Click the 'Submit' button to initiate the machine learning model.
   - step_name: Visualize the results
-    description: The system will generate an annotated video with bouding boxes around salmons and will count the number of individuals.
+    description: The system will generate an annotated video with bounding boxes around salmons and will count the number of individuals.
 ---
 
 ## Overview

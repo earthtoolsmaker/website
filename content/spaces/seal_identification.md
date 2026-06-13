@@ -18,7 +18,7 @@ manual_steps:
 
 ## Overview
 
-Seal Identification lets researchers track individual seals over time without tagging or any invasive procedure. By reading the unique whisker patterns, facial markings, and head shape of each animal, the model builds a distinctive "fingerprint" that stays stable across seasons and years. Developed with [Wageningen Marine Research](https://www.wur.nl/en/research-results/research-institutes/marine-research.htm), it supports the grey and harbour seal colonies of the Wadden Sea — a UNESCO World Heritage Site.
+Seal Identification lets researchers track individual seals over time without tagging or any invasive procedure. By reading the unique whisker patterns, facial markings, and head shape of each animal, the model builds a distinctive "fingerprint" that stays stable across seasons and years. Developed with [Wageningen Marine Research](https://www.wur.nl/en/Research-Results/Research-Institutes/marine-research.htm), it supports the grey and harbour seal colonies of the Wadden Sea — a UNESCO World Heritage Site.
 
 ## Key Features
 
