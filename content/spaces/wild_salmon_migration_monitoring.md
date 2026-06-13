@@ -72,6 +72,8 @@ From an underwater clip to a counted run:
 
 </div>
 
+{{< space_partners >}}
+
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
   <p class="about-cta__description">See the full wild salmon migration monitoring project and the SalmonVision partnership behind this tool.</p>

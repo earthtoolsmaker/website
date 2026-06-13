@@ -192,6 +192,55 @@
   }
 }
 
+/* Partner logo strip (sourced from the linked project's clients) */
+.space-partners {
+  margin: 56px 0;
+  text-align: center;
+
+  .space-partners__label {
+    margin-bottom: 20px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-alt-color);
+  }
+
+  .space-partners__logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 24px 44px;
+  }
+
+  .space-partners__item {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .space-partners__logo {
+    max-height: 52px;
+    max-width: 170px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: opacity .2s ease;
+  }
+
+  .space-partners__item:hover .space-partners__logo {
+    opacity: 1;
+  }
+}
+
+// Partner logos are links inside .space-content — drop the content link underline
+.space-content .space-partners__item {
+  border-bottom: none;
+
+  &:hover {
+    border-bottom: none;
+  }
+}
+
 /* Sidebar */
 .sidebar {
   height: 100%;
