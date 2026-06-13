@@ -1,24 +1,27 @@
-<article class="project col col-4 col-w-6 col-t-12">
-  <div class="project__content">
-    <div class="project__head">
-      <div class="project__image">
-        {{ $imgPath := strings.TrimPrefix "/" (.Get "image") }}
-        {{ partial "responsive-image.html" (dict
-          "src" $imgPath
-          "alt" (.Get "title")
-          "sizes" "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 400px"
-          "widths" (slice 400 600 800)
-          "lazy" true
-          "lqip" true
-        ) }}
-      </div>
+<article class="article col col-4 col-w-6 col-t-12">
+  <div class="article__content">
+    {{ if .Get "image" }}
+    <div class="article__image">
+      {{ $imgPath := strings.TrimPrefix "/" (.Get "image") }}
+      {{ partial "responsive-image.html" (dict
+        "src" $imgPath
+        "alt" (.Get "title")
+        "sizes" "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 400px"
+        "widths" (slice 400 600 800)
+        "lazy" true
+        "lqip" true
+      ) }}
     </div>
-    <div class="project__inner">
-      <div class="project__info">
-        <h3 class="project__title">
-          <a href="{{ .Get "link" }}" class="project__link" style="border-bottom: none; font-weight: 700;">{{ .Get "title" }}</a>
-        </h3>
-        <p class="project__excerpt">{{ .Get "excerpt" }}</p>
+    {{ end }}
+    <div class="article__inner">
+      <div class="article__info">
+        {{/* Inline reset: this card renders inside tool/prose content, whose
+             `a:not(.button)` rule adds a border-bottom underline and font-weight
+             override. Reset both so the card matches the blog-card titles. */}}
+        <h3 class="article__title"><a href="{{ .Get "link" }}" class="article__link" style="border-bottom: none; font-weight: inherit;">{{ .Get "title" }}</a></h3>
+        {{ if .Get "excerpt" }}
+        <p class="article__excerpt">{{ .Get "excerpt" }}</p>
+        {{ end }}
       </div>
     </div>
   </div>
