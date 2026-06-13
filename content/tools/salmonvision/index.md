@@ -49,8 +49,6 @@ Built with the Pacific Salmon Foundation, the Wild Salmon Center, Lumax AI, and 
 
 {{< image_carousel id="salmonvision-gallery" items="2" >}}
   {{< carousel_image src="/images/tools/salmonvision/review-interface.png" alt="Reviewing salmon detections in the SalmonVision web app" caption="Review interface: the model boxes each fish, classifies the species (Pink, Sockeye…), and tallies counts along a timeline for a reviewer to confirm." >}}
-  {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/system_overview.png" alt="SalmonVision system overview" caption="System overview: cameras, sonar, and drones feed a computer-vision pipeline that counts and classifies migrating salmon." >}}
-  {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/webapp_overview.png" alt="SalmonVision web application" caption="Web application: count reports and video clips from every site, centralized in one dashboard." >}}
   {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/sonar/haida-sonar.jpg" alt="Sonar setup at the Haida site" caption="Sonar in the field: an acoustic counter deployed at the Haida site for low-visibility water." >}}
   {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/drone/drone_imagery.webp" alt="Drone photogrammetry of a salmon stream" caption="Drone photogrammetry of a freshwater stream where salmon migrate — courtesy of Lumax AI." >}}
 {{< /image_carousel >}}
