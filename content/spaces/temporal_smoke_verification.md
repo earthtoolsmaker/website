@@ -74,6 +74,8 @@ From a flagged candidate to a verdict you can see:
 
 </div>
 
+{{< space_partners >}}
+
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
   <p class="about-cta__description">See the wider early forest fire detection project and Pyronear's work — the detection system this verification step builds on.</p>

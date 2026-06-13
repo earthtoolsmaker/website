@@ -72,6 +72,8 @@ From a photo to a confident match:
 
 </div>
 
+{{< space_partners >}}
+
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
   <p class="about-cta__description">See the full trout identification project and our work with Lumax AI on the Elk River — the research behind this tool.</p>

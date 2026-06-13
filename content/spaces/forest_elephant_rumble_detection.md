@@ -75,6 +75,8 @@ From raw audio to a localized rumble log:
 
 </div>
 
+{{< space_partners >}}
+
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
   <p class="about-cta__description">See the full passive acoustic monitoring project and our work with the Elephant Listening Project and the Cornell Lab.</p>

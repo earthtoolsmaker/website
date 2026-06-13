@@ -70,6 +70,8 @@ From a sonar clip to a directional count:
 
 </div>
 
+{{< space_partners >}}
+
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
   <p class="about-cta__description">See the full smolt sonar monitoring project and our work with BC Hydro and Lumax AI — the ARIS pipeline behind this tool.</p>

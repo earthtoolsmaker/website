@@ -72,6 +72,8 @@ From a camera frame to an actionable alert:
 
 </div>
 
+{{< space_partners >}}
+
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
   <p class="about-cta__description">See the full early forest fire detection project and our work with Pyronear — the end-to-end system from camera to fire department.</p>

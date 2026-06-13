@@ -80,6 +80,8 @@ Where it supports seal conservation:
 
 Though built for the Wadden Sea, the same re-identification approach transfers to other seal populations and marine mammals worldwide — from Arctic ice seals to Antarctic fur seals — wherever non-invasive individual tracking can support conservation.
 
+{{< space_partners >}}
+
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
   <p class="about-cta__description">See the full Wadden Sea seal monitoring project and our work with Wageningen Marine Research — including the detection system and researcher web app.</p>

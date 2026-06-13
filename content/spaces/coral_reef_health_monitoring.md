@@ -72,6 +72,8 @@ From a single benthic image to quantified reef cover:
 
 </div>
 
+{{< space_partners >}}
+
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
   <p class="about-cta__description">See the full coral reef health monitoring project and our collaboration with ReefSupport — the pipeline and research behind this tool.</p>

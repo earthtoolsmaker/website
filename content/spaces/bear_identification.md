@@ -79,6 +79,8 @@ Where it supports bear conservation:
 
 </div>
 
+{{< space_partners >}}
+
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
   <p class="about-cta__description">See the full bear identification project and our collaboration with the BearID Project — the field context and research behind this system.</p>

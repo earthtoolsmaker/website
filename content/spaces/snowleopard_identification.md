@@ -78,6 +78,8 @@ Where the system supports conservation work:
 
 </div>
 
+{{< space_partners >}}
+
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
   <p class="about-cta__description">See the full snow leopard monitoring project and our partnership with OSI Panthera — the field context behind this identification system.</p>
