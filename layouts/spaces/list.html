@@ -32,6 +32,31 @@
     </div>
   </div>
 
+  <!-- begin spaces stats -->
+  <section class="section about-stats spaces-stats animate">
+    <div class="container">
+      <div class="about-stats__grid">
+        <div class="about-stats__item">
+          <div class="about-stats__value">{{ len (where .Site.RegularPages "Section" "spaces") }}</div>
+          <div class="about-stats__label">interactive demos</div>
+        </div>
+        <div class="about-stats__item">
+          <div class="about-stats__value">9+</div>
+          <div class="about-stats__label">species monitored</div>
+        </div>
+        <div class="about-stats__item">
+          <div class="about-stats__value">6</div>
+          <div class="about-stats__label">ecosystems</div>
+        </div>
+        <div class="about-stats__item">
+          <div class="about-stats__value">100%</div>
+          <div class="about-stats__label">free &amp; open source</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end spaces stats -->
+
   <div class="container animate">
     <div class="row">
       {{ range (where .Site.RegularPages "Section" "spaces" ) }}
