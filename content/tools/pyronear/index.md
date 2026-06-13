@@ -91,7 +91,7 @@ Upload a camera image and watch the detector draw boxes around smoke.
 
 The second-stage model watches whole sequences: real wildfires get caught within minutes while clouds, fog, and haze look-alikes are rejected. This is the model that cuts false alarms by 4× in production.
 
-{{< hf_space "achouffe-temporal-smoke-pyronear" "6.18.0" >}}
+<p><iframe src="https://achouffe-temporal-smoke-pyronear.hf.space" loading="lazy" frameborder="0" style="width:100%;height:1000px;border:0;"></iframe></p>
 
 {{< /tab >}}
 {{< /tabs >}}
