@@ -37,16 +37,12 @@
       {{ range (where .Site.RegularPages "Section" "spaces" ) }}
       <article class="space col col-4 col-w-6 col-t-12">
         <div class="space__content">
-          <div class="space__head">
-            <div class="space__image-container">
-              <div class="space__image">
-                {{ $alt := .Params.title }}
-                {{ with resources.Get (strings.TrimPrefix "/" .Params.card_image) }}
-                <img class="lazy" src="{{ .RelPermalink }}" alt="{{ $alt }}" loading="lazy">
-                {{ end }}
-              </div>
-            </div>
+          {{ $alt := .Params.title }}
+          {{ with resources.Get (strings.TrimPrefix "/" .Params.card_image) }}
+          <div class="space__image">
+            <img src="{{ .RelPermalink }}" alt="{{ $alt }}" loading="lazy">
           </div>
+          {{ end }}
           <div class="space__inner">
             <div class="space__info">
               {{ if .Params.subtitle }}

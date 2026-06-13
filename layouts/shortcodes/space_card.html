@@ -1,20 +1,16 @@
 <article class="space col col-4 col-w-6 col-t-12">
   <div class="space__content">
-    <div class="space__head">
-      <div class="space__image-container">
-        <div class="space__image">
-          {{ with resources.Get (strings.TrimPrefix "/" (.Get "image")) }}<img class="lazy" src="{{ .RelPermalink }}" alt="{{ $.Get "title" }}" loading="lazy">{{ end }}
-        </div>
-      </div>
+    {{ with resources.Get (strings.TrimPrefix "/" (.Get "image")) }}
+    <div class="space__image">
+      <img src="{{ .RelPermalink }}" alt="{{ $.Get "title" }}" loading="lazy">
     </div>
+    {{ end }}
     <div class="space__inner">
       <div class="space__info">
         {{ if .Get "subtitle" }}
         <div class="space__subtitle">{{ .Get "subtitle" }}</div>
         {{ end }}
-        <h3 class="space__title">
-          <a href="{{ .Get "link" }}" class="space__link" style="border-bottom: none; font-weight: 700;">{{ .Get "title" }}</a>
-        </h3>
+        <h3 class="space__title"><a href="{{ .Get "link" }}" class="space__link" style="border-bottom: none; font-weight: inherit;">{{ .Get "title" }}</a></h3>
         <p class="space__excerpt">{{ .Get "summary" }}</p>
       </div>
     </div>
