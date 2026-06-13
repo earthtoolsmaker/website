@@ -14,7 +14,7 @@
     @media (max-width: $desktop) {
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
   }
 
@@ -34,6 +34,7 @@
 /* Logo */
 .logo {
   margin-right: 24px;
+  min-width: 0;
 }
 
 .logo__link {
@@ -47,6 +48,7 @@
 
 .logo__image,
 .logo__image__dark {
+  max-width: 100%;
   max-height: 120px;
 
   @media (max-width: $desktop) {
@@ -343,9 +345,10 @@
   }
 
   @media (max-width: $desktop) {
+    flex-shrink: 0;
     margin-left: auto;
     margin-right: 16px;
-    padding-top: 32px;
+    padding-top: 0;
   }
 }
 
@@ -361,7 +364,8 @@
     z-index: 101;
     display: flex;
     align-items: center;
-    padding-top: 32px;
+    flex-shrink: 0;
+    padding-top: 0;
     order: 1;
   }
 }
