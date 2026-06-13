@@ -153,19 +153,19 @@ document.addEventListener("DOMContentLoaded", function() {
   /* ============================
   // Partners Slider
   ============================ */
-  if (document.querySelector(".about-partners-slider") && document.querySelector("#about-partners-controls")) {
+  if (document.querySelector(".about-partners-slider")) {
     var aboutPartnersSlider = tns({
       container: ".about-partners-slider",
       items: 2,
       slideBy: 1,
       gutter: 24,
       nav: false,
+      controls: false,
       mouseDrag: true,
       autoplay: true,
       autoplayButtonOutput: false,
       autoplayTimeout: 3000,
       speed: 500,
-      controlsContainer: "#about-partners-controls",
       responsive: {
         768: {
           items: 3,
