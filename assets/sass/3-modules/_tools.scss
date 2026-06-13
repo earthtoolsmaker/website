@@ -20,10 +20,6 @@
 
   &:hover {
     transform: translateY(-8px);
-
-    .tool__title a {
-      text-decoration-color: var(--primary-color);
-    }
   }
 
   @media (max-width: $mobile) {
@@ -117,15 +113,6 @@
     line-height: 1.2;
 
     a {
-      text-decoration: underline;
-      text-decoration-color: transparent;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 3px;
-
-      &:hover {
-        text-decoration-color: var(--primary-color);
-      }
-
       &::after {
         content: "";
         position: absolute;
