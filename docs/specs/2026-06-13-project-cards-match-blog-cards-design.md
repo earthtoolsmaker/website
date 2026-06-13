@@ -34,6 +34,11 @@ project cards become the fourth consumer.
    - excerpt ← `.Params.summary` (blog cards use `.Params.description`)
    - **no date block, no subtitle** — full match drops both, so there is no
      footer line.
+   - Note: the desktop grayscale / color-on-hover image effect is already shared
+     by both card types in `_lazy-images.scss` (it targets `.article__image` and
+     `.project__image` together), so reusing `.article__*` inherits the exact
+     blog-card image treatment — the tan box is dropped, the grayscale stays and
+     matches blog cards.
 
 2. **`layouts/shortcodes/project_card.html`** — rewrite to mirror
    `layouts/shortcodes/article_card.html`, emitting `.article__*`:
@@ -42,11 +47,21 @@ project cards become the fourth consumer.
      since the shortcode renders inside tool/prose content
    - no date.
 
-3. **`assets/sass/3-modules/_projects.scss`** — delete the unused `.project__*`
-   card styles and remove its `@import` from the SASS entrypoint. Confirm via
-   grep that `.project` / `.project__*` are not referenced elsewhere before
-   deleting. The single-project page uses `.project-*` (hyphenated) which is
-   separate and untouched.
+3. **`layouts/projects/list.html`** (the `/projects` index) — this third surface
+   renders cards inline with `.project__*` markup. Replace the inline
+   `<article class="project …">…</article>` block with
+   `{{ partial "project-card.html" . }}` so it shares the same (now blog-styled)
+   card.
+
+4. **`assets/sass/3-modules/_projects.scss`** — delete the unused `.project__*`
+   card styles and remove its `@import` from the SASS entrypoint
+   (`assets/sass/main.scss`). The single-project page uses `.project-*`
+   (hyphenated) which is separate and untouched.
+
+5. **`assets/sass/3-modules/_lazy-images.scss`** — remove the now-dead
+   `.project__image` / `.project__content` selectors (orphaned once no card emits
+   `.project__*`); the parallel `.article__*` selectors remain and cover the
+   converted cards.
 
 ## Out of scope / deliberately unchanged
 

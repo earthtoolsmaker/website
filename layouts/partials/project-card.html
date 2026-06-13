@@ -1,31 +1,26 @@
-<article class="project col col-4 col-w-6 col-t-12">
-  <div class="project__content">
+<article class="article col col-4 col-w-6 col-t-12">
+  <div class="article__content">
     {{ if .Params.Image }}
-    <div class="project__head">
-      <div class="project__image">
-        {{/* Convert /images/... to images/... for assets lookup */}}
-        {{ $imgPath := strings.TrimPrefix "/" .Params.Image }}
-        {{ partial "responsive-image.html" (dict
-          "src" $imgPath
-          "alt" .Params.Title
-          "sizes" "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 400px"
-          "widths" (slice 400 600 800)
-          "lazy" true
-          "lqip" true
-        ) }}
-      </div>
+    <div class="article__image">
+      {{/* Convert /images/... to images/... for assets lookup */}}
+      {{ $imgPath := strings.TrimPrefix "/" .Params.Image }}
+      {{ partial "responsive-image.html" (dict
+        "src" $imgPath
+        "alt" .Title
+        "sizes" "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 400px"
+        "widths" (slice 400 600 800)
+        "lazy" true
+        "lqip" true
+      ) }}
     </div>
     {{ end }}
-    <div class="project__inner">
-      <div class="project__info">
-        {{ if .Params.subtitle }}
-        <div class="project__subtitle">{{ .Params.subtitle }}</div>
-        {{ end }}
-        {{ if .Params.title }}
-        <h3 class="project__title"><a href="{{ .RelPermalink }}" class="project__link">{{ .Params.title }}</a></h3>
+    <div class="article__inner">
+      <div class="article__info">
+        {{ if .Title }}
+        <h3 class="article__title"><a href="{{ .RelPermalink }}" class="article__link">{{ .Title }}</a></h3>
         {{ end }}
         {{ if .Params.summary }}
-        <p class="project__excerpt">{{ .Params.summary }}</p>
+        <p class="article__excerpt">{{ .Params.summary }}</p>
         {{ end }}
       </div>
     </div>
