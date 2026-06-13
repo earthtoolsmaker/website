@@ -4,10 +4,13 @@
   partner data lives in one place. Optional title override: {{< space_partners title="Built with" >}}
 */}}
 {{ $title := .Get "title" | default "In partnership with" }}
-{{ $clients := slice }}
-{{ with .Page.Params.project }}
-  {{ with site.GetPage . }}
-    {{ $clients = .Params.clients | default slice }}
+{{/* Prefer the page's own clients; otherwise source them from the linked project. */}}
+{{ $clients := .Page.Params.clients | default slice }}
+{{ if not $clients }}
+  {{ with .Page.Params.project }}
+    {{ with site.GetPage . }}
+      {{ $clients = .Params.clients | default slice }}
+    {{ end }}
   {{ end }}
 {{ end }}
 {{ if $clients }}

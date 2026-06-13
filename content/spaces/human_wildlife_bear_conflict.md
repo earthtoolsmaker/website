@@ -8,6 +8,13 @@ hero_image: /images/projects/human_wildlife_conflict_bear/cover.png
 project: /projects/human_wildlife_bear_conflict/
 hf_space: achouffe-bear-detection
 hf_space_code: https://huggingface.co/spaces/earthtoolsmaker/bear-detection/tree/main
+clients:
+  - name: HackThePlanet
+    link: https://www.hack-the-planet.io
+    logo: /images/clients/hacktheplanet/logo.png
+  - name: Foundation Conservation Carpathia
+    link: https://www.carpathia.org/
+    logo: /images/clients/carpathia/logo.svg
 manual_steps:
   - step_name: Image Selection
     description: Choose an image from the examples provided below, or upload your own data.
@@ -71,6 +78,8 @@ From a camera-trap frame to a deterrent that fires only when needed:
   </div>
 
 </div>
+
+{{< space_partners >}}
 
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>

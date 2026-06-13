@@ -210,34 +210,40 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 24px 44px;
+    gap: 28px 56px;
   }
 
   .space-partners__item {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    height: 48px;
   }
 
   .space-partners__logo {
-    max-height: 52px;
-    max-width: 170px;
-    width: auto;
+    height: 44px;            // fixed height keeps the strip uniform and forces
+    width: auto;             // SVGs with only a viewBox (no intrinsic size) to render
+    max-width: 210px;
     object-fit: contain;
-    opacity: 0.8;
-    transition: opacity .2s ease;
+    opacity: 0.75;
+    filter: grayscale(100%);
+    transition: opacity .25s ease, filter .25s ease;
   }
 
   .space-partners__item:hover .space-partners__logo {
     opacity: 1;
+    filter: grayscale(0%);
   }
 }
 
-// Partner logos are links inside .space-content — drop the content link underline
-.space-content .space-partners__item {
-  border-bottom: none;
+// Partner logos are links inside .space-content — kill the content link underline
+// (needs the element selector to outweigh `.space-content a:not(.button)`).
+.space-content a.space-partners__item {
+  border: none;
+  font-weight: inherit;
 
   &:hover {
-    border-bottom: none;
+    border: none;
   }
 }
 
