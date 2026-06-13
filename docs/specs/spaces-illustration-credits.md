@@ -16,5 +16,8 @@ PhyloPic CC0 silhouettes require no attribution; this is a record for provenance
 | temporal_smoke_verification | Lookout tower, smoke, viewfinder (hand-drawn) | — | n/a |
 | human_wildlife_bear_conflict | *Ursus arctos* (brown bear) + hand-drawn farm/fence/barn | [PhyloPic 5629fae2](https://www.phylopic.org/images/5629fae2-1da6-479d-bfeb-08a59a58121a) | CC0 1.0 |
 | smolt_sonar_monitoring | Hand-drawn ARIS sonar scan + smolt returns | — | n/a |
+| homepage hero (`layouts/partials/hero-scene.html`) | *Ursus arctos* (grizzly, reused from human_wildlife_bear_conflict) | [PhyloPic 5629fae2](https://www.phylopic.org/images/5629fae2-1da6-479d-bfeb-08a59a58121a) | CC0 1.0 |
+| homepage hero (`layouts/partials/hero-scene.html`) | *Salmo salar* (Atlantic salmon, reused from wild_salmon_migration_monitoring) | [PhyloPic f6c6590d](https://www.phylopic.org/images/f6c6590d-8aa1-4d08-a25f-e6c90727c071) | CC0 1.0 |
+| homepage hero (`layouts/partials/hero-scene.html`) | Mountains, forest hills + conifers, beach, water, clouds, gulls (hand-drawn) | — | n/a |
 
 Note: each card SVG doubles as the hero image on its space's own page (`layouts/spaces/single.html`).
