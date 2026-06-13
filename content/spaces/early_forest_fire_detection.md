@@ -1,7 +1,7 @@
 ---
 title: Early Forest Fire Detection
-emoji: 🔥
-summary: A real-time computer vision system that analyzes camera data to monitor and detect forest fires. By leveraging advanced image processing techniques, the system aims to provide timely alerts and insights, enhancing fire management and response efforts.
+card_image: /images/pages/spaces/early_forest_fire_detection/card.svg
+summary: Real-time camera analysis that spots wildfires early and raises the alarm fast.
 github_repo: https://github.com/earthtoolsmaker/pyronear-mlops
 date: 2024-04-23
 hero_image: /images/pages/spaces/early_forest_fire_detection/hero.jpg
