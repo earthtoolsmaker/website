@@ -2,8 +2,12 @@
 :: Partners Page
 ======================= */
 
+/* Trim the gap between the hero image and the content */
+.partners-hero {
+  margin-bottom: 28px;
+}
+
 /* Match the About page's centered content column */
-.layout-about.partners-page .page,
 .layout-about .partners-stats .container-wide,
 .layout-about .partners-section .container-wide,
 .layout-about .partners-cta .container-wide {
@@ -25,8 +29,6 @@
 .partners-section__title {
   font-size: 1.5rem;
   margin-bottom: 28px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
 }
 
 .partners-grid {
@@ -60,10 +62,11 @@
     height: 44px;
     margin-bottom: 18px;
 
+    /* Definite height keeps SVGs (which only carry a viewBox) from collapsing */
     img {
-      max-height: 40px;
-      max-width: 150px;
+      height: 40px;
       width: auto;
+      max-width: 100%;
       object-fit: contain;
     }
   }

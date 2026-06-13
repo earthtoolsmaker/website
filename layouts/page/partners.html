@@ -2,7 +2,7 @@
 
 {{/* ---- Hero (about-style) ---- */}}
 {{ if .Params.hero_image }}
-<div class="about-hero">
+<div class="about-hero partners-hero">
   {{ $imgPath := strings.TrimPrefix "/" .Params.hero_image }}
   {{ partial "responsive-image.html" (dict
     "src" $imgPath
@@ -31,11 +31,9 @@
 <div class="container-wide layout-about partners-page">
 
   {{/* ---- Intro ---- */}}
-  <article class="page">
-    <div class="page__content partners-page__intro">
-      {{ .Content }}
-    </div>
-  </article>
+  <div class="partners-page__intro">
+    {{ .Content }}
+  </div>
 
   {{/* ---- Stats band (reuses about-stats styling) ---- */}}
   <section class="section about-stats partners-stats animate">
@@ -52,6 +50,10 @@
         <div class="about-stats__item">
           <div class="about-stats__value">{{ len (where site.RegularPages "Section" "tools") }}</div>
           <div class="about-stats__label">open-source tools</div>
+        </div>
+        <div class="about-stats__item">
+          <div class="about-stats__value">{{ len (where site.RegularPages "Section" "spaces") }}</div>
+          <div class="about-stats__label">interactive demos</div>
         </div>
       </div>
     </div>
