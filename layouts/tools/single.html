@@ -37,32 +37,24 @@
   <div class="tool-content">
     {{ .Content }}
 
-    <br/>
-    <br/>
-    <ul>
-      {{ if .Params.project }}
-      <li>
-       🛠️  
-        Learn more about the project <a target="_blank" href="{{ .Params.project }}">here</a>.
-      </li>
-      {{ end }}
-      {{ if .Params.github_repo }}
-      <li>
-        <i class="fa-brands fa-github"></i>
-        The code is available <a target="_blank" href="{{ .Params.github_repo }}">here</a>.
-      </li>
-      {{ end }}
-      {{ if .Params.landing_page_url }}
-        <li>
-          🚀 The application can be found <a target="_blank" href="{{ .Params.landing_page_url }}">here</a>.
-        </li>
-      {{ end }}
-      {{ if .Params.all_downloads_url }}
-        <li>
-          🚀 <a target="_blank" href="{{ .Params.all_downloads_url }}">All downloads</a>
-        </li>
-      {{ end }}
-    </ul>
+    {{ $resources := slice }}
+    {{ with .Params.project }}{{ $resources = $resources | append (dict "icon" "fa-solid fa-circle-info" "label" "Project overview" "url" .) }}{{ end }}
+    {{ with .Params.github_repo }}{{ $resources = $resources | append (dict "icon" "fa-brands fa-github" "label" "Source code" "url" .) }}{{ end }}
+    {{ with .Params.landing_page_url }}{{ $resources = $resources | append (dict "icon" "fa-solid fa-arrow-up-right-from-square" "label" "Live platform" "url" .) }}{{ end }}
+    {{ with .Params.all_downloads_url }}{{ $resources = $resources | append (dict "icon" "fa-solid fa-download" "label" "All downloads" "url" .) }}{{ end }}
+    {{ if $resources }}
+    <div class="tool-resources" style="margin-top:48px;padding-top:24px;border-top:1px solid var(--border-color);text-align:center;">
+      <div style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-alt-color);margin-bottom:14px;">Resources</div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 18px;">
+        {{ range $i, $r := $resources }}
+        {{ if gt $i 0 }}<span aria-hidden="true" style="color:var(--border-color);">·</span>{{ end }}
+        <a class="link-no-decoration" target="_blank" rel="noopener" href="{{ $r.url }}" style="display:inline-flex;align-items:center;gap:0.45em;font-size:15px;color:var(--text-alt-color);">
+          <i class="{{ $r.icon }}"></i>{{ $r.label }}
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
   </div>
 </div>
 

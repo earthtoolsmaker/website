@@ -228,27 +228,33 @@ Append as the page's closer:
 
 ---
 
-## Addendum (post-implementation): resource footer removed
+## Addendum (post-implementation): resource footer redesigned
 
-After the page was implemented, the auto-generated resource footer was **removed**
-at the maintainer's request — superseding the "No template changes / keep the footer"
+The auto-generated resource footer went through two post-implementation changes at
+the maintainer's request, superseding the "No template changes / keep the footer"
 decision in the *Out of scope* section above.
 
-- **What changed:** the `github_repo`, `landing_page_url`, and `project` front-matter
-  keys were deleted from `content/tools/pyronear/index.md`. `layouts/tools/single.html`
-  renders the footer `<li>` items only when those keys are set, so with them gone the
-  footer (🛠️ project / GitHub / 🚀 application) no longer renders. **No template
-  change** was needed — the removal is page-scoped.
-- **Net effect:** the page is now fully emoji-free (the two footer emojis are gone),
-  ending cleanly on the "Visit Pyronear" CTA. This makes Pyronear stricter than
-  Biowatch (which keeps its footer) and matches Animal reID's emoji-free result.
-- **Known trade-off:** the page no longer surfaces a link to the `pyronear-mlops`
-  GitHub repo or the `/projects/early_forest_fire_detection` project page. The repo
-  link still lives on the project page. The maintainer accepted this when approving
-  the PR. If a code/project link is wanted back without the emoji footer, add a
-  body-level link (e.g., in the closing CTA) rather than restoring the front-matter
-  keys.
-- **No other consumers:** grep of `layouts/` confirms these params are read only by
-  the tool footer for this page (the `list.html` `landing_page_url` reference is
-  commented out; the `github_repo` sidebar widget is for project pages). No backlinks
-  break.
+1. **First removed** (page-scoped): the `github_repo`/`landing_page_url`/`project`
+   keys were deleted so the emoji `<ul>` footer (🛠️ / GitHub / 🚀) stopped rendering.
+2. **Then redesigned** (shared template): rather than drop the resource links
+   entirely, the footer in `layouts/tools/single.html` was rewritten as a clean,
+   emoji-free "Resources" row — centered icon + label text-links (FA icons,
+   `var(--text-alt-color)`, `·` separators, a thin `var(--border-color)` top divider),
+   guarded by `{{ if $resources }}` so a tool page with none of the fields renders
+   nothing (no empty `<ul>`). Styling is inline (theme CSS vars) — **no new SCSS**.
+
+**Scope of the template change.** The footer is shared by all tool pages, so
+**Biowatch** and **SalmonVision** also get the cleaner emoji-free footer; **Animal
+reID** (no footer fields) renders nothing, as before. This is the one deliberate
+departure from the original "single content file, no template changes" scope.
+
+**Pyronear front matter.** `github_repo` and `project` were re-added;
+`landing_page_url` was **not** (the closing "Visit Pyronear" CTA already covers
+pyronear.org, so a "Live platform" footer link would duplicate it). `github_repo`
+points to the Pyronear GitHub org (`https://github.com/pyronear`), not the
+`pyronear-mlops` repo. Result: the Pyronear footer shows **Project overview · Source
+code**.
+
+**No other consumers:** grep of `layouts/` confirms these params are read only by the
+tool footer (the `list.html` `landing_page_url` reference is commented out; the
+`github_repo` sidebar widget is for project pages). No backlinks break.
