@@ -128,6 +128,7 @@ pagerSize = 6
     icon = "fa-brands fa-github"
     name = "Github"
     link = "https://github.com/earthtoolsmaker"
+    description = "Browse our open-source conservation code on GitHub"
 
   [[params.social]]
     icon = "fa-brands fa-solid fa-face-smiling-hands"
@@ -135,6 +136,7 @@ pagerSize = 6
     image = "/images/social/hf.svg"
     name = "HuggingFace"
     link = "https://huggingface.co/earthtoolsmaker"
+    description = "Try our ML models & demos on HuggingFace"
 
   # Other icons can be found at https://fontawesome.com/icons
 

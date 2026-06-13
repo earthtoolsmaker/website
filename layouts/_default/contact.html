@@ -18,21 +18,6 @@
 <!-- end hero image -->
 {{ end }}
 
-<div class="container">
-  <div class="page-head">
-
-    <div class="page-info">
-      {{ if .Title }}
-      <h1 class="page-title">{{ .Title }}</h1>
-      {{ end }}
-      {{ if .Description }}
-      <p class="page-description">{{ .Description }}</p>
-      {{ end }}
-    </div>
-
-  </div>
-</div>
-
 <!-- begin page -->
 <div class="container">
   <article class="page">
@@ -41,6 +26,12 @@
       <div class="contact-grid">
 
         <div class="contact-info">
+          {{ if .Title }}
+          <h1 class="page-title">{{ .Title }}</h1>
+          {{ end }}
+          {{ if .Description }}
+          <p class="page-description">{{ .Description }}</p>
+          {{ end }}
           {{ if .Content }}
           <div class="contact-description">{{ .Content }}</div>
           {{ end }}
@@ -49,7 +40,8 @@
           <ul class="contact-channels list-reset">
             {{ range . }}
             <li class="contact-channels__item">
-              <a class="contact-channels__link" href="{{ .link }}" target="_blank" rel="noopener">
+              <a class="contact-channels__link" href="{{ .link }}" target="_blank" rel="noopener"
+                {{- with .description }} data-tooltip="{{ . }}" aria-label="{{ . }}"{{ end }}>
                 {{ if .image }}
                   {{ $imgPath := strings.TrimPrefix "/" .image }}
                   {{ $img := resources.Get $imgPath }}
