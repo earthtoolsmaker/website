@@ -31,7 +31,14 @@ accessibility.
   `:focus-within`, using site colors, with a small arrow and fade-in. Hidden by
   default, no layout shift. Pure CSS — no JS dependency.
 
+### 4. Align the form with the page title (`layouts/_default/contact.html`)
+Move the `Contact` title out of the standalone `.page-head` block and into the
+left column of `.contact-grid`, so the form's top edge aligns with the title
+instead of sitting in a separate block below it. The grid's existing
+`align-items: start` keeps the two columns top-aligned. Mobile still stacks
+title → description → links → form.
+
 ## Scope
 
-Only the contact page's social channel links change. Form, hero, and page
-layout are untouched.
+Only the contact page's social channel links and the contact-page layout
+(title placement) change. Hero and the shared post/page styles are untouched.
