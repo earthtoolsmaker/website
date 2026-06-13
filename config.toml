@@ -198,7 +198,7 @@ pagerSize = 6
     name = "Pacific Salmon Foundation"
     logo = "/images/clients/psf/logo.png"
     link = "https://www.psf.ca"
-    category = "funders"
+    category = "conservation"
     blurb = "Canadian foundation investing in the science and stewardship of Pacific salmon."
 
   [[params.partner_item]]
@@ -255,8 +255,6 @@ pagerSize = 6
     logo = "/images/clients/osi/logo.png"
     link = "https://www.osi-ngo.org/"
     show_name = true
-    category = "conservation"
-    blurb = "Science-driven NGO supporting field biodiversity monitoring and conservation."
 
   [[params.partner_item]]
     name = "Lumax AI"
