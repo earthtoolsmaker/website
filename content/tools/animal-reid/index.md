@@ -103,13 +103,13 @@ Upload snow leopard photographs and watch as the system analyzes unique coat pat
 <div class="container">
   <div class="row">
 
-{{< space_card title="Bear Identification" link="/spaces/bear_identification/" emoji="🐻" summary="A computer vision system utilizes facial recognition technology to analyze bear photographs and identify individual bears. This innovative system aims to monitor the population size of bears in British Columbia over time, ultimately supporting and enhancing conservation efforts in the region." >}}
+{{< space_card title="Bear Identification" link="/spaces/bear_identification/" image="/images/pages/spaces/bear_identification/card.svg" summary="Facial recognition that tells individual bears apart from photos — tracking British Columbia's black bear population over time." >}}
 
-{{< space_card title="Trout Identification" link="/spaces/trout_identification/" emoji="🐠" summary="A computer vision system analyzes the spot patterns of trout to identify individual fish. This innovative, non-invasive approach aims to monitor trout populations in British Columbia over time, ultimately supporting and enhancing conservation efforts in the region." >}}
+{{< space_card title="Trout Identification" link="/spaces/trout_identification/" image="/images/pages/spaces/trout_identification/card.svg" summary="Reading the spot patterns on trout to identify individual fish — a non-invasive way to monitor populations." >}}
 
-{{< space_card title="Seal Identification" link="/spaces/seal_identification/" emoji="🦭" summary="Non-invasive seal re-identification using computer vision to track individual animals across seasons through unique whisker patterns and facial features in the Wadden Sea." >}}
+{{< space_card title="Seal Identification" link="/spaces/seal_identification/" image="/images/pages/spaces/seal_identification/card.svg" summary="Re-identifying individual seals by their whisker and face patterns — non-invasive, across seasons." >}}
 
-{{< space_card title="Snow Leopard Identification" link="/spaces/snowleopard_identification/" emoji="🐆" summary="Computer vision system for identifying individual snow leopards using feature matching and machine learning, supporting conservation efforts in Central Asia." >}}
+{{< space_card title="Snow Leopard Identification" link="/spaces/snowleopard_identification/" image="/images/pages/spaces/snowleopard_identification/card.svg" summary="Identifying individual snow leopards by their coat patterns to support conservation across Central Asia." >}}
 
   </div>
 </div>
