@@ -1,30 +1,17 @@
 <article class="article col col-4 col-w-6 col-t-12">
   <div class="article__content">
     {{ if .Params.Image }}
-    <div class="article__head">
-      <div class="article__image">
-        {{/* Convert /images/... to images/... for assets lookup */}}
-        {{ $imgPath := strings.TrimPrefix "/" .Params.Image }}
-        {{ partial "responsive-image.html" (dict
-          "src" $imgPath
-          "alt" .Title
-          "sizes" "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 400px"
-          "widths" (slice 400 600 800)
-          "lazy" true
-          "lqip" true
-        ) }}
-      </div>
-      {{ if .Params.tags }}
-      <div class="article-tags__box">
-      {{ range ($.GetTerms "tags") }}
-        <a href="{{ .Permalink }}" class="article__tag">{{ .LinkTitle }}</a>
-      {{ end }}
-      </div>
-      {{ end }}
-      <div class="article__meta">
-        <time class="article__date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2 Jan, 2006" }}</time>
-        <span class="article__minutes">· {{ .ReadingTime }} min read</span>
-      </div>
+    <div class="article__image">
+      {{/* Convert /images/... to images/... for assets lookup */}}
+      {{ $imgPath := strings.TrimPrefix "/" .Params.Image }}
+      {{ partial "responsive-image.html" (dict
+        "src" $imgPath
+        "alt" .Title
+        "sizes" "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 400px"
+        "widths" (slice 400 600 800)
+        "lazy" true
+        "lqip" true
+      ) }}
     </div>
     {{ end }}
     <div class="article__inner">
@@ -35,6 +22,7 @@
         {{ if .Params.description }}
         <p class="article__excerpt">{{ .Params.description }}</p>
         {{ end }}
+        <time class="article__date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2 Jan, 2006" }}</time>
       </div>
     </div>
   </div>
