@@ -222,6 +222,14 @@ First Nations across the North and Central Coast of British Columbia are at the 
 <br/>
 <br/>
 
+## Our Partners
+
+SalmonVision is built and sustained through close collaboration with leading conservation organizations, research institutions, and industry partners.
+
+{{< partner_logos >}}
+
+<br/>
+
 ## Frequently Asked Questions
 
 <div class="support__grid">

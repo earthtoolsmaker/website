@@ -274,3 +274,15 @@ giving a footer of **Project overview · Source code · User guide**.
   Program, Heiltsuk Integrated Resource Management Department, Kitasoo Xai'xais
   Stewardship Authority, Nuxalk Stewardship, Skeena Fisheries Commission, Taku
   River Tlingit, and Wuikinuxv Fishery Program.
+
+### 7. Partner logo carousel
+
+An "Our Partners" carousel was added before the FAQ via a new `partner_logos`
+shortcode that reuses the site's partner slider markup (`.about-partners-slider`
++ `#about-partners-controls`, picked up by the global tiny-slider init in
+`common.js`) and the existing `.partner-logo-container` styling. Four partners,
+defined inline in the shortcode with logos from `assets/images/clients/`:
+Wild Salmon Center, Pacific Salmon Foundation, Lumax AI, and BC Hydro (PSF uses
+its `logo_dark` variant). Small `.tool-partners__controls` style in `_tools.scss`
+right-aligns the prev/next arrows. ("Pacific Salmon Center" in the request was
+read as the Pacific Salmon Foundation — the project's actual partner.)
