@@ -19,7 +19,7 @@
             aria-selected="{{ if eq $index 0 }}true{{ else }}false{{ end }}"
             aria-controls="{{ $id }}-panel-{{ $index }}"
             data-tab="{{ $index }}">
-      <span class="tabs__tab-icon">{{ $icon | safeHTML }}</span>
+      {{ if $icon }}<span class="tabs__tab-icon">{{ $icon | safeHTML }}</span>{{ end }}
       <span class="tabs__tab-text">{{ $text }}</span>
     </button>
     {{- end }}

@@ -37,12 +37,13 @@
   <div class="tool-content">
     {{ .Content }}
 
+    {{ if not .Params.hide_meta_links }}
     <br/>
     <br/>
     <ul>
       {{ if .Params.project }}
       <li>
-       🛠️  
+       🛠️
         Learn more about the project <a target="_blank" href="{{ .Params.project }}">here</a>.
       </li>
       {{ end }}
@@ -63,6 +64,7 @@
         </li>
       {{ end }}
     </ul>
+    {{ end }}
   </div>
 </div>
 
