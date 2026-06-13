@@ -1,5 +1,6 @@
 ---
 title: Pyronear
+weight: 10
 show_title: false
 button_cta: Visit Pyronear
 icon: /images/logos/pyronear_logo_letters.png

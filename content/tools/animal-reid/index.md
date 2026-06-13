@@ -1,5 +1,6 @@
 ---
 title: Animal reID
+weight: 40
 show_title: true
 button_cta: Try Demo
 icon: /images/logos/reid-icon.png
