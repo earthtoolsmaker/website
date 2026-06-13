@@ -1,0 +1,33 @@
+{{/*
+  Salmon species grid for the SalmonVision tool page.
+
+  Renders the main Pacific salmon species SalmonVision recognizes, using the
+  species illustrations from the wild-salmon project bundle (looked up in
+  assets/ and resized to optimized WebP). Species data is defined inline below
+  since this grid is specific to this page.
+*/}}
+
+{{ $base := "images/projects/wild_salmon_migration_monitoring/species" }}
+{{ $species := slice
+  (dict "file" "chinook.png"         "name" "Chinook"   "meta" "The largest Pacific salmon — often ~30 lb, up to 100+")
+  (dict "file" "sockeye.png"         "name" "Sockeye"   "meta" "Prized red-fleshed salmon — 5–12 lb")
+  (dict "file" "coho.png"            "name" "Coho"      "meta" "Adaptable “silver” salmon — 8–12 lb")
+  (dict "file" "chum.png"            "name" "Chum"      "meta" "Second-largest salmon — 12–15 lb")
+  (dict "file" "pink_0.png"          "name" "Pink"      "meta" "Smallest and most abundant — 3–11 lb")
+  (dict "file" "steelhead-trout.png" "name" "Steelhead" "meta" "Sea-run rainbow trout — can spawn more than once")
+}}
+
+<div class="species-grid">
+  {{ range $species }}
+  {{ $sp := . }}
+  {{ $img := resources.Get (printf "%s/%s" $base $sp.file) }}
+  <div class="species-card">
+    {{ with $img }}
+    {{ $o := .Resize "560x webp q85" }}
+    <img class="species-card__img" src="{{ $o.RelPermalink }}" alt="{{ $sp.name }} salmon" loading="lazy" width="{{ $o.Width }}" height="{{ $o.Height }}" />
+    {{ end }}
+    <p class="species-card__name">{{ $sp.name }}</p>
+    <p class="species-card__meta">{{ $sp.meta }}</p>
+  </div>
+  {{ end }}
+</div>

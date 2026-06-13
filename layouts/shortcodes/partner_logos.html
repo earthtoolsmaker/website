@@ -1,0 +1,36 @@
+{{/*
+  Partner logo row for the SalmonVision tool page.
+
+  A clean, equal-height, vertically-centered strip of partner logos (reusing the
+  site's .partner-logo-container styling). A sliding carousel is pointless for a
+  handful of logos and leaves them unaligned, so this is a static flex row that
+  wraps on small screens. Partners are defined inline since the list is specific
+  to this page; logo lookup prefers a logo_dark variant and downscales large
+  rasters (mirroring partials/partners-logo-slider.html).
+*/}}
+
+{{ $partners := slice
+  (dict "name" "Wild Salmon Center"        "link" "https://wildsalmoncenter.org/" "logo" "/images/clients/wild_salmon_centre/logo.png")
+  (dict "name" "Pacific Salmon Foundation" "link" "https://psf.ca/"                "logo" "/images/clients/psf/logo.png")
+  (dict "name" "Lumax AI"                  "link" "https://lumax.ai/"              "logo" "/images/clients/lumax-ai/logo.png")
+  (dict "name" "BC Hydro"                  "link" "https://www.bchydro.com/"       "logo" "/images/clients/bc-hydro/logo.png")
+}}
+
+<div class="tool-partners">
+  {{ range $partners }}
+  {{ $p := . }}
+  {{ $img := "" }}
+  {{ with $p.logo }}
+    {{ $imgPath := strings.TrimPrefix "/" . }}
+    {{ $img = or (resources.Get (replace $imgPath "logo.png" "logo_dark.png")) (resources.Get $imgPath) }}
+    {{ if and $img (not (strings.HasSuffix $imgPath ".svg")) (gt $img.Width 380) }}
+      {{ $img = $img.Resize "380x" }}
+    {{ end }}
+  {{ end }}
+  <a href="{{ $p.link }}" target="_blank" rel="noopener noreferrer" class="link-no-decoration partner-logo-container" aria-label="{{ $p.name }}">
+    {{ with $img }}
+    <img class="partner-logo" src="{{ .RelPermalink }}" alt="{{ $p.name }}" loading="lazy">
+    {{ end }}
+  </a>
+  {{ end }}
+</div>
