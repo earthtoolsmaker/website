@@ -1,5 +1,6 @@
 ---
 title: Biowatch
+weight: 30
 show_title: true
 button_cta: Download and Install
 icon: /images/logos/biowatch-icon.png

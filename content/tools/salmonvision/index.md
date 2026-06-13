@@ -1,5 +1,6 @@
 ---
 title: SalmonVision
+weight: 20
 show_title: false
 button_cta: Visit SalmonVision
 icon: /images/logos/salmon-vision-logo.svg
