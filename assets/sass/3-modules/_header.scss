@@ -91,10 +91,10 @@ $nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
   }
 }
 
-// Animated brandmark: the pangolin rolls on hover while the word swaps from
-// "etm" to the full "earthtoolsmaker". Shared by the header (--unroll) and the
-// footer (--slide). The full word sits in-flow so its width is always reserved
-// (nav/footer never shift); "etm" is overlaid on top.
+// Animated brandmark: the pangolin rolls on hover while the word swaps between
+// "etm" and the full "earthtoolsmaker". Shared by the header (--unroll) and the
+// footer (--slide). Which word is in-flow (reserving width) vs. overlaid differs
+// per variant — see the --unroll and --slide blocks below.
 .brandmark {
   --bm-h: 48px;
   display: inline-flex;
