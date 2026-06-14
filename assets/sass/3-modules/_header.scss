@@ -275,21 +275,6 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
             display: block;
             margin-bottom: 0;
             font-size: 16px;
-
-            &:hover {
-              &::before {
-                opacity: 1;
-                visibility: visible;
-              }
-            }
-
-            &.active-link {
-              &::before {
-                opacity: 1;
-                visibility: visible;
-                background-color: var(--primary-color);
-              }
-            }
           }
         }
 
@@ -300,9 +285,8 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
           font-size: 16px;
           line-height: 1.6;
 
-          &::before {
-            top: 0;
-          }
+          // Hamburger panel: color change only, no underline.
+          &::after { content: none; }
 
           .arrow-down {
             display: none;
@@ -432,27 +416,18 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
       padding: 0 0 0 12px;
       font-size: 16px;
       line-height: 1.6;
+      transition: color .2s ease;
 
-      &:hover {
-        &::after {
-          opacity: .3;
-        }
+      // Dropdown items: color change only, no underline.
+      &::after { content: none; }
+
+      &:hover,
+      &.active-link {
+        color: var(--secondary-color);
       }
 
       &:last-child {
         margin-bottom: 0;
-      }
-
-      &.active-link {
-        &::before {
-          opacity: 1;
-          visibility: visible;
-          background-color: var(--primary-color);
-        }
-      }
-
-      &::before {
-        top: 0;
       }
     }
   }
