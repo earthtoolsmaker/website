@@ -194,7 +194,7 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
   display: flex;
   align-items: center;
 
-  @media (max-width: $desktop) {
+  @media (max-width: $nav-collapse) {
     position: absolute;
     top: 80px;
     right: $base-spacing-unit;
@@ -287,7 +287,7 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
 }
 
 .dark-mode {
-  @media (max-width: $desktop) {
+  @media (max-width: $nav-collapse) {
     .main-nav {
       background-color: var(--background-alt-color);
     }
@@ -298,7 +298,7 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
   display: flex;
   align-items: center;
 
-  @media (max-width: $desktop) {
+  @media (max-width: $nav-collapse) {
     display: block;
   }
 }
@@ -435,7 +435,7 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
   .dropdown-menu {
     background-color: var(--background-alt-color);
 
-    @media (max-width: $desktop) {
+    @media (max-width: $nav-collapse) {
       background-color: inherit;
     }
   }
@@ -454,7 +454,7 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
     }
   }
 
-  @media (max-width: $desktop) {
+  @media (max-width: $nav-collapse) {
     flex-shrink: 0;
     margin-left: auto;
     margin-right: 16px;
@@ -469,7 +469,7 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
   display: none;
   cursor: pointer;
 
-  @media (max-width: $desktop) {
+  @media (max-width: $nav-collapse) {
     position: relative;
     z-index: 101;
     display: flex;
