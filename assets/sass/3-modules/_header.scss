@@ -184,6 +184,20 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
   }
 }
 
+// ---- SWAP (home): static responsive logo — compact "etm" below $logo-compact,
+// full "earthtoolsmaker" at/above it. No animation (no word unroll, no pangolin roll).
+.brandmark--swap {
+  .brandmark__word--etm  { position: static; } // in-flow, shown
+  .brandmark__word--full { display: none; }     // hidden below $logo-compact
+}
+
+@media (min-width: $logo-compact) {
+  .brandmark--swap {
+    .brandmark__word--etm  { display: none; }
+    .brandmark__word--full { display: block; position: static; }
+  }
+}
+
 // ---- SLIDE (footer): odometer. etm slides up & out, full rises up into place.
 .brandmark--slide {
   .brandmark__words { height: var(--bm-h); overflow: hidden; }
