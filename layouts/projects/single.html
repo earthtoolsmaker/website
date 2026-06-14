@@ -1,72 +1,151 @@
 {{ define "main" }}
 
-<div class="container">
-
-  <div class="project-info">
-    {{ if .Params.subtitle }}
-    <p class="project-info__subtitle">{{ .Params.subtitle }}</p>
-    {{ end }}
-    {{ if .Title }}
-    <h1 class="project-info__title">{{ .Title }}</h1>
-    {{ end }}
-  </div>
-
+{{/* ---------- 1. HERO ---------- */}}
+{{ $statusLabel := "" }}
+{{ if eq .Params.status "completed" }}{{ $statusLabel = "Completed" }}{{ else if eq .Params.status "fundraising" }}{{ $statusLabel = "Seeking funding" }}{{ end }}
+{{ $kicker := slice }}
+{{ with $statusLabel }}{{ $kicker = $kicker | append . }}{{ end }}
+{{ with .Params.tools }}{{ $kicker = $kicker | append (index . 0) }}{{ end }}
+<div class="about-hero project-hero{{ if not .Params.image }} project-hero--gradient{{ end }}">
   {{ if .Params.image }}
-  <div class="project-info-image">
-    {{ $imgPath := strings.TrimPrefix "/" .Params.image }}
-    {{ partial "responsive-image.html" (dict
-      "src" $imgPath
-      "alt" .Title
-      "class" "project-cover"
-      "sizes" "(max-width: 900px) 100vw, 900px"
-      "widths" (slice 600 900 1200)
-      "lazy" true
-      "lqip" true
-    ) }}
-  </div>
+  {{ $imgPath := strings.TrimPrefix "/" .Params.image }}
+  {{ partial "responsive-image.html" (dict
+    "src" $imgPath
+    "alt" .Title
+    "sizes" "100vw"
+    "widths" (slice 600 900 1200 1500)
+    "lazy" false
+    "fetchpriority" "high"
+    "lqip" false
+  ) }}
   {{ end }}
-
-  <div class="row">
-    <div class="project-left col col-7 col-d-12">
-      <div class="project-content">
-        {{ .Content }}
-        {{ if eq .Params.status "fundraising" }}
-        {{ partial "support-cta.html" . }}
-        {{ end }}
-        {{ if .PrevInSection }}
-        <div class="project__nav">
-          <div class="project__prev">
-            <div class="project__box">
-              <span class="project__nav-info">Next Project</span>
-              <h2 class="project__nav-title">
-                <a href="{{ .PrevInSection.Permalink }}" class="project__nav-link">{{ .PrevInSection.Title }}</a>
-              </h2>
-            </div>
-          </div>
-          <a class="project__nav-image" href="{{ .PrevInSection.Permalink }}">
-            {{ $imgPath := strings.TrimPrefix "/" .PrevInSection.Params.Image }}
-            {{ partial "responsive-image.html" (dict
-              "src" $imgPath
-              "alt" .PrevInSection.Title
-              "sizes" "(max-width: 600px) 100vw, (max-width: 900px) 100vw, 900px"
-              "widths" (slice 600 900 1200)
-              "lazy" true
-              "lqip" true
-            ) }}
-          </a>
+  <div class="about-hero__overlay">
+    <div class="container-wide">
+      {{ if $kicker }}<p class="project-hero__kicker">{{ delimit $kicker " · " }}</p>{{ end }}
+      <h1 class="about-hero__title">{{ .Title }}</h1>
+      {{ $tagline := .Params.tagline | default .Params.summary }}
+      {{ with $tagline }}<p class="about-hero__description">{{ . }}</p>{{ end }}
+      {{ with .Params.stats }}
+      <dl class="project-hero__stats">
+        {{ range . }}
+        <div class="project-hero__stat">
+          <dt class="project-hero__stat-value">{{ .value }}</dt>
+          <dd class="project-hero__stat-label">{{ .label }}</dd>
         </div>
         {{ end }}
-      </div>
-    </div>
-
-    <div class="project-right col col-5 col-d-12">
-      <aside class="sidebar">
-        {{ partial "sidebar-widgets/widget-project-meta" . }}
-        {{ partial "sidebar-widgets/widget-recent-projects-and-related-posts" . }}
-      </aside>
+      </dl>
+      {{ end }}
     </div>
   </div>
-
 </div>
+
+{{/* ---------- 2. FACTS BAR ---------- */}}
+<div class="container">
+  <div class="project-facts">
+    {{ with .Params.github_repo }}
+    <a class="project-facts__link" target="_blank" rel="noopener" href="{{ . }}"><i class="fa-brands fa-github"></i> Source code</a>
+    {{ end }}
+    {{ with .Params.space }}
+    <a class="project-facts__link" href="{{ . }}">
+      {{ $hf := resources.Get "images/social/hf.svg" }}{{ if $hf }}<img src="{{ $hf.RelPermalink }}" alt="">{{ end }} ML Space demo
+    </a>
+    {{ end }}
+    {{ with .Params.tools }}
+    <span class="project-facts__tools">
+      {{ range . }}<span class="project-facts__chip">{{ . }}</span>{{ end }}
+    </span>
+    {{ end }}
+    {{ if not .Date.IsZero }}
+    <time class="project-facts__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January, 2006" }}</time>
+    {{ end }}
+  </div>
+</div>
+
+{{/* ---------- 3. READING COLUMN ---------- */}}
+<div class="project-single__body">
+  <div class="post__content">
+    {{ .Content }}
+  </div>
+</div>
+
+{{/* ---------- 4. PARTNER STRIP ---------- */}}
+{{ with .Params.clients }}
+<section class="section project-partners">
+  <div class="container"><div class="row"><div class="col col-12"><div class="container__inner">
+    <div class="section__info">
+      <div class="section__head"><h2 class="section__title">Partners</h2></div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+    </div>
+    <div class="project-partners__grid">
+      {{ range . }}
+      <a class="partner-logo-container{{ with .bg }} partner-bg-{{ . }}{{ end }}" href="{{ .link }}" target="_blank" rel="noopener" title="{{ .name }}">
+        {{ $imgPath := strings.TrimPrefix "/" .logo }}{{ $img := resources.Get $imgPath }}{{ if $img }}<img class="partner-logo" src="{{ $img.RelPermalink }}" alt="{{ .name }}" loading="lazy">{{ end }}
+      </a>
+      {{ end }}
+    </div>
+  </div></div></div></div>
+</section>
+{{ end }}
+
+{{/* ---------- 5. CTA BAND (status-aware) ---------- */}}
+<div class="container">
+  {{ if eq .Params.status "fundraising" }}
+  <div class="support__cta-band">
+    <div class="support__cta-band-text">
+      <h3 class="support__cta-band-title">Help fund this project</h3>
+      <p class="support__cta-band-description">Tell us this is the work you want to back — we'll share the full scope, the budget, and what your support unlocks.</p>
+    </div>
+    <div class="support__cta-band-buttons">
+      <a class="link-no-decoration" href="/contact/"><button class="button">Sponsor this project</button></a>
+      <a class="link-no-decoration" href="/contact/"><button class="button button--ghost">Talk to us</button></a>
+    </div>
+  </div>
+  {{ else }}
+  <div class="support__cta-band">
+    <div class="support__cta-band-text">
+      <h3 class="support__cta-band-title">Want a system like this?</h3>
+      <p class="support__cta-band-description">We build conservation technology with partners in the field. Tell us what you're monitoring and we'll tell you what's possible.</p>
+    </div>
+    <div class="support__cta-band-buttons">
+      <a class="link-no-decoration" href="/contact/"><button class="button">Talk to us</button></a>
+      <a class="link-no-decoration" href="/projects/"><button class="button button--ghost">See our work</button></a>
+    </div>
+  </div>
+  {{ end }}
+</div>
+
+{{/* ---------- 6. RELATED READING ---------- */}}
+{{ if .Params.related_posts }}
+<section class="section project-related">
+  <div class="container"><div class="row"><div class="col col-12"><div class="container__inner">
+    <div class="section__info">
+      <div class="section__head"><h2 class="section__title">Related reading</h2></div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+    </div>
+    <div class="row">
+      {{ range .Params.related_posts }}
+        {{ with site.GetPage "posts" . }}
+          {{ partial "article.html" . }}
+        {{ end }}
+      {{ end }}
+    </div>
+  </div></div></div></div>
+</section>
+{{ end }}
+
+{{/* ---------- 7. NEXT PROJECT ---------- */}}
+{{ with .PrevInSection }}
+<section class="section project-next">
+  <div class="container"><div class="row"><div class="col col-12"><div class="container__inner">
+    <div class="section__info">
+      <div class="section__head"><h2 class="section__title">Next project</h2></div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+    </div>
+    <div class="row">
+      {{ partial "project-card.html" . }}
+    </div>
+  </div></div></div></div>
+</section>
+{{ end }}
 
 {{ end }}
