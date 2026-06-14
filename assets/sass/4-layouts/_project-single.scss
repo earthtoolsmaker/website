@@ -88,10 +88,23 @@
     color: var(--text-color);
   }
 
-  &__date {
+  &__live {
     margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
     font-size: 14px;
+    font-weight: 600;
     color: var(--text-alt-color);
+  }
+
+  &__live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3fb950;
+    box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.5);
+    animation: project-facts-live-pulse 2s infinite;
   }
 
   @media (max-width: $tablet) {
@@ -101,8 +114,14 @@
 
   @media (max-width: $mobile) {
     margin-top: 8px;
-    &__date { margin-left: 0; }
+    &__live { margin-left: 0; }
   }
+}
+
+@keyframes project-facts-live-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.5); }
+  70%  { box-shadow: 0 0 0 7px rgba(63, 185, 80, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(63, 185, 80, 0); }
 }
 
 // --- Reading column (typography inherited from .post__content) ---
@@ -123,8 +142,6 @@
   margin-top: 64px;
 }
 
-// --- Related / next sections: tighten the gap between the two
-//     adjacent card sections (each is a .section with 80px margins) ---
-.project-next {
-  margin-top: 0;
-}
+// The related-reading and next-project blocks keep the site's standard
+// .section rhythm (80px), so there's comfortable, consistent spacing
+// before "Next project" whether or not a related section precedes it.

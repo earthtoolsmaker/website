@@ -46,17 +46,15 @@
     <a class="project-facts__link" target="_blank" rel="noopener" href="{{ . }}"><i class="fa-brands fa-github"></i> Source code</a>
     {{ end }}
     {{ with .Params.space }}
-    <a class="project-facts__link" href="{{ . }}">
-      {{ $hf := resources.Get "images/social/hf.svg" }}{{ if $hf }}<img src="{{ $hf.RelPermalink }}" alt="">{{ end }} ML Space demo
-    </a>
+    <a class="project-facts__link" href="{{ . }}"><i class="fa-solid fa-circle-play"></i> Try the demo</a>
     {{ end }}
     {{ with .Params.tools }}
     <span class="project-facts__tools">
       {{ range . }}<span class="project-facts__chip">{{ . }}</span>{{ end }}
     </span>
     {{ end }}
-    {{ if not .Date.IsZero }}
-    <time class="project-facts__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January, 2006" }}</time>
+    {{ if eq .Params.status "completed" }}
+    <span class="project-facts__live"><span class="project-facts__live-dot" aria-hidden="true"></span>Live</span>
     {{ end }}
   </div>
 </div>
@@ -68,34 +66,7 @@
   </div>
 </div>
 
-{{/* ---------- 4. PARTNER STRIP (same treatment as the spaces pages) ---------- */}}
-{{ with .Params.clients }}
-<div class="container">
-  <div class="space-partners">
-    <div class="space-partners__label">In partnership with</div>
-    <div class="space-partners__logos">
-      {{ range $partner := . }}
-      {{ $img := "" }}
-      {{ with $partner.logo }}
-        {{ $imgPath := strings.TrimPrefix "/" . }}
-        {{/* Prefer a dark-text variant (for white-on-transparent logos) when one exists */}}
-        {{ $img = or (resources.Get (replace $imgPath "logo.png" "logo_dark.png")) (resources.Get $imgPath) }}
-        {{ if and $img (not (strings.HasSuffix $imgPath ".svg")) (gt $img.Width 380) }}
-          {{ $img = $img.Resize "380x" }}
-        {{ end }}
-      {{ end }}
-      {{ with $img }}
-      <a class="space-partners__item" href="{{ $partner.link }}" target="_blank" rel="noopener noreferrer" title="{{ $partner.name }}">
-        <img class="space-partners__logo" src="{{ .RelPermalink }}" alt="{{ $partner.name }}" loading="lazy">
-      </a>
-      {{ end }}
-      {{ end }}
-    </div>
-  </div>
-</div>
-{{ end }}
-
-{{/* ---------- 5. CTA BAND (status-aware) ---------- */}}
+{{/* ---------- 4. CTA BAND (status-aware) ---------- */}}
 <div class="container">
   {{ if eq .Params.status "fundraising" }}
   <div class="support__cta-band">
@@ -121,6 +92,33 @@
   </div>
   {{ end }}
 </div>
+
+{{/* ---------- 5. PARTNER STRIP (same treatment as the spaces pages) ---------- */}}
+{{ with .Params.clients }}
+<div class="container">
+  <div class="space-partners">
+    <div class="space-partners__label">In partnership with</div>
+    <div class="space-partners__logos">
+      {{ range $partner := . }}
+      {{ $img := "" }}
+      {{ with $partner.logo }}
+        {{ $imgPath := strings.TrimPrefix "/" . }}
+        {{/* Prefer a dark-text variant (for white-on-transparent logos) when one exists */}}
+        {{ $img = or (resources.Get (replace $imgPath "logo.png" "logo_dark.png")) (resources.Get $imgPath) }}
+        {{ if and $img (not (strings.HasSuffix $imgPath ".svg")) (gt $img.Width 380) }}
+          {{ $img = $img.Resize "380x" }}
+        {{ end }}
+      {{ end }}
+      {{ with $img }}
+      <a class="space-partners__item" href="{{ $partner.link }}" target="_blank" rel="noopener noreferrer" title="{{ $partner.name }}">
+        <img class="space-partners__logo" src="{{ .RelPermalink }}" alt="{{ $partner.name }}" loading="lazy">
+      </a>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}
 
 {{/* ---------- 6. RELATED READING ---------- */}}
 {{ if .Params.related_posts }}
