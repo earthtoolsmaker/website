@@ -100,13 +100,13 @@ effectively managing, deploying, and maintaining Machine
 Learning Models, ensuring optimal performance and
 reliability over time.
 
-![Overview 360](/images/projects/early_forest_fire_detection/overview_360.png)
+![Overview 360](/images/projects/early_forest_fire_detection/overview_360.svg)
 *Overview of the camera system that can cover 360 degrees angle*
 
 Our work is centered on enhancing the core of the Pyronear system, which
 analyzes real-time images from cameras mounted on tower antennas.
 
-![Overview ML Model](/images/projects/early_forest_fire_detection/overview_ai_model.png)
+![Overview ML Model](/images/projects/early_forest_fire_detection/overview_ai_model.svg)
 *Overview of the embedded ML system*
 
 ### Setting up the Pyronear system
