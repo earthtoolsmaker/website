@@ -40,7 +40,9 @@ $nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
 .header.is-scrolled {
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: rgba(255, 255, 255, .82);
+  // Near-opaque so the nav stays legible over busy photo heroes (the blur is
+  // just for a hint of depth, not the main contrast).
+  background-color: rgba(255, 255, 255, .95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
@@ -50,7 +52,7 @@ $nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
 }
 
 .dark-mode .header.is-scrolled {
-  background-color: rgba(22, 22, 22, .82);
+  background-color: rgba(22, 22, 22, .95);
   border-bottom-color: rgba(255, 255, 255, .10);
 }
 
