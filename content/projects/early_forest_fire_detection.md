@@ -24,12 +24,12 @@ image: /images/projects/early_forest_fire_detection/cover.jpg
 
 ## Context
 
-Pyronear offers a holistic solution for managing fire risks. Central to its
-capabilities is an innovative early wildfire detection algorithm, seamlessly
-operated on a compact microcomputer. This core system is augmented by a network
-of high-resolution cameras strategically positioned at elevated vantage points,
-providing panoramic coverage of forested regions. Together, these components
-form a resilient and proactive strategy for wildfire prevention and management.
+Pyronear takes a whole-system approach to wildfire risk. At its core is an
+early-detection model that runs on a compact, low-power microcomputer, fed by a
+network of high-resolution cameras mounted at high vantage points for panoramic
+coverage of the forest. Together they form a proactive line of defense against
+wildfires — spotting smoke early and getting the alert to the people who can act
+on it.
 
 > Our detectors communicate fire alerts to a database that is connected
 > to a supervision platform for the fire department.
@@ -55,35 +55,34 @@ Protecting forests from fire is crucial for several reasons:
 
   <div class="support__card">
     <h3 class="support__card-title">Biodiversity Conservation</h3>
-    <p class="support__card-description">Forests are home to a vast array of plant and animal species. Wildfires can devastate habitats, leading to the loss of biodiversity and potentially driving species to extinction.</p>
+    <p class="support__card-description">Forests shelter countless plant and animal species. Wildfire destroys their habitats, eroding biodiversity and pushing vulnerable species toward extinction.</p>
   </div>
 
   <div class="support__card">
     <h3 class="support__card-title">Carbon Sequestration</h3>
-    <p class="support__card-description">Forests act as carbon sinks, absorbing carbon dioxide from the atmosphere and storing it in trees and soil. When forests burn, this stored carbon is released back into the atmosphere, exacerbating climate change.</p>
+    <p class="support__card-description">Forests act as carbon sinks, pulling CO₂ from the air and locking it into trees and soil. When they burn, that stored carbon is released back into the atmosphere, accelerating climate change.</p>
   </div>
 
   <div class="support__card">
     <h3 class="support__card-title">Water Resources</h3>
-    <p class="support__card-description">Healthy forests play a critical role in regulating water cycles. They help maintain soil moisture, reduce erosion, and sustain the flow of rivers and streams. Wildfires can disrupt these processes, leading to soil degradation and affecting water quality and availability.</p>
+    <p class="support__card-description">Healthy forests regulate the water cycle — holding soil moisture, curbing erosion, and feeding rivers and streams. Fire disrupts all of it, degrading soil and harming water quality and supply.</p>
   </div>
 
   <div class="support__card">
     <h3 class="support__card-title">Economic Impact</h3>
-    <p class="support__card-description">Forests provide various ecosystem services, including timber, non-timber forest products, and recreational opportunities. Wildfires can damage these resources, impacting industries such as forestry, tourism, and agriculture, leading to economic losses for communities.</p>
+    <p class="support__card-description">Forests underpin livelihoods — timber, non-timber products, and recreation. Wildfire damages these resources and the forestry, tourism, and agriculture that depend on them, costing local communities dearly.</p>
   </div>
 
   <div class="support__card">
     <h3 class="support__card-title">Human Health</h3>
-    <p class="support__card-description">Wildfires produce smoke and air pollution, which can pose significant health risks, especially to vulnerable populations such as children, the elderly, and individuals with respiratory conditions. Protecting forests from fire helps safeguard public health and well-being.</p>
+    <p class="support__card-description">Wildfire smoke drifts far beyond the fire line, and its air pollution hits the vulnerable hardest — children, the elderly, and people with respiratory conditions. Stopping fires early protects public health.</p>
   </div>
 
 </div>
 
-Overall, preserving forests from fire is essential for
-maintaining ecological balance, mitigating climate
-change, sustaining livelihoods, and safeguarding human
-health and biodiversity.
+Preserving forests from fire is essential — for ecological balance, a stable
+climate, the livelihoods forests support, and the health of people and wildlife
+alike.
 
 ## Project Scope and Objectives
 
@@ -195,13 +194,12 @@ works]({{< ref "/posts/smoke-is-a-behavior" >}}).
 
 ## Conclusion
 
-In summary, an advanced computer vision model for detecting early signs of
-forest fires provides a cost-effective and efficient means of safeguarding our
-forests. This technology facilitates the swift deployment of firefighters,
-greatly improving our capacity to protect forests that are increasingly
-threatened by the impacts of global warming.
+A computer vision model that catches the first signs of forest fire is a
+practical, low-cost way to protect them. It gets firefighters to the scene
+sooner — and as climate change leaves forests increasingly exposed, that head
+start matters more every year.
 
-One can try out the model from the [ML Space]({{< ref
+You can try the model yourself on the [ML Space]({{< ref
 "/spaces/early_forest_fire_detection" >}}).
 
 {{< demo_cta >}}

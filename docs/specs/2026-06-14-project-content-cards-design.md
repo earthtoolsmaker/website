@@ -6,7 +6,11 @@
 
 ## Goal
 
-Make long project articles more scannable by converting discrete, list-shaped passages into the same card grids the spaces pages already use — without rewriting narrative prose or losing technical depth. Done one project at a time.
+Make long project articles more scannable by converting discrete, list-shaped passages into the same card grids the spaces pages already use, **and** by lightly improving the copy as we go — without losing technical depth or accuracy. Done one project at a time.
+
+## Copy polish (in scope)
+
+Alongside the structural carding, give each article a light editorial pass: tighten wordiness, cut marketing buzzwords ("holistic", "innovative", "seamlessly", "cutting-edge"), prefer active voice and concrete nouns, and keep the EarthToolsMaker voice (plain, confident, field-grounded — matching the about/support/spaces pages). Preserve every factual and technical claim; never invent numbers or capabilities. Leave specialized technical passages, quotes, captions, and links intact unless a change is a clear improvement.
 
 ## The card convention ("light" intensity)
 
@@ -54,5 +58,5 @@ Everything else (Context, Project Scope, Setup, Temporal Verification, Conclusio
 
 - No template or CSS changes (`layouts/`, `assets/` untouched).
 - No new front matter.
-- No prose rewriting; no collapsing the project's deep lists to match condensed space cards.
+- No heavy reshaping of structure (still "light"); no collapsing the project's deep lists to match condensed space cards. Copy polish stays editorial — it does not change what the article claims.
 - Not a bulk pass — projects are converted one at a time, each reviewed.
