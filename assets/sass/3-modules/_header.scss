@@ -286,6 +286,8 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
 .nav__list {
   display: flex;
   align-items: center;
+  position: relative;
+  top: -1px; // optical: lift sans nav to match serif logo centerline
 
   .nav__item {
     display: inline-block;
@@ -298,39 +300,34 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
 
     .nav__link {
       position: relative;
-      padding: 12px 0;
+      padding: 10px 0;
       font-size: 16px;
       line-height: 1;
       font-weight: 700;
+      transition: color .2s ease;
 
-      &::before {
+      &::after {
         content: "";
         position: absolute;
-        display: block;
-        width: 6px;
-        top: 9px;
-        right: -6px;
-        height: 6px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all .2s;
-        border-radius: 50%;
-        background-color: var(--text-alt-color);
+        left: 0;
+        right: 100%;
+        bottom: 2px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: var(--secondary-color);
+        transition: right .25s ease;
       }
 
       &:hover {
-        &::before {
-          opacity: 1;
-          visibility: visible;
-        }
+        color: var(--secondary-color);
+
+        &::after { right: 0; }
       }
 
       &.active-link {
-        &::before {
-          opacity: 1;
-          visibility: visible;
-          background-color: var(--primary-color);
-        }
+        color: var(--secondary-color);
+
+        &::after { right: 0; }
       }
 
     }
@@ -347,7 +344,11 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
       }
 
       .arrow-down {
-        font-size: 12px;
+        font-size: 11px;
+        margin-left: 2px;
+        vertical-align: middle;
+        position: relative;
+        top: -1px;
       }
 
       .dropdown-toggle {
