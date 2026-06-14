@@ -1,6 +1,7 @@
 {{ if .Site.Params.hero.enable }}
 <!-- begin hero -->
 <section class="hero">
+  {{ partial "hero-scene.html" . }}
   <div class="container">
     <div class="row">
       <div class="col col-10 push-1 col-w-12 push-w-0">
@@ -11,13 +12,13 @@
           {{ if .Site.Params.hero.hero_description }}
           <p class="hero__description">{{ .Site.Params.hero.hero_description | safeHTML }}</p>
           {{ end }}
-          {{ if or (.Site.Params.hero.hero_button_contact) (.Site.Params.hero.hero_button_about) }}
+          {{ if or (.Site.Params.hero.hero_button_contact) (.Site.Params.hero.hero_button_work) }}
           <div class="hero__buttons">
             {{ if .Site.Params.hero.hero_button_contact }}
             <a href="/contact/" class="button hero__button__left">{{ .Site.Params.hero.hero_button_contact }} <i class="hero__button__arrow fa-solid fa-arrow-right"></i></a>
             {{ end }}
-            {{ if .Site.Params.hero.hero_button_about }}
-            <a href="/about/" class="button button--secondary hero__button__right">{{ .Site.Params.hero.hero_button_about }} <i class="hero__button__arrow fa-solid fa-chevron-right"></i></a>
+            {{ if .Site.Params.hero.hero_button_work }}
+            <a href="/projects/" class="button button--secondary hero__button__right">{{ .Site.Params.hero.hero_button_work }} <i class="hero__button__arrow fa-solid fa-chevron-right"></i></a>
             {{ end }}
           </div>
           {{ end }}
