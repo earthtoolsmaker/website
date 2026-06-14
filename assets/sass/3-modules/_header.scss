@@ -121,9 +121,12 @@ $nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
   transition: transform .7s ease;
 }
 
-// only the animated variants spin; the static home logo never does
+// The pangolin spins on hover for every variant (home --swap included); only the
+// word-swap animation differs (--swap keeps the word static, just breakpoint-driven).
+.brandmark--swap:hover .brandmark__pan img,
 .brandmark--unroll:hover .brandmark__pan img,
 .brandmark--slide:hover .brandmark__pan img,
+a:focus-visible .brandmark--swap .brandmark__pan img,
 a:focus-visible .brandmark--unroll .brandmark__pan img,
 a:focus-visible .brandmark--slide .brandmark__pan img {
   animation: bm-roll .8s ease;
