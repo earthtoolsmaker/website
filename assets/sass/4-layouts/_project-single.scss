@@ -129,23 +129,28 @@
   padding-right: $base-spacing-unit;
 }
 
-// Article-block vertical rhythm (facts bar → article spacing).
+// Article-block vertical rhythm (facts bar → article spacing). No bottom
+// padding so the gap below the article is set solely by the next block's
+// top margin (keeps the stacked-CTA spacing consistent — see below).
 .project-single__body {
-  padding-bottom: 8px;
+  padding-bottom: 0;
 
   .post__content {
     padding-top: 40px;        // space between the facts bar and the article
   }
 }
 
-// Partner strip reuses the spaces pages' .space-partners treatment
-// ("In partnership with" label + uniform 44px grayscale logos); no extra
-// rules needed here.
+// --- Consistent vertical rhythm for the stacked blocks below the article:
+//     demo CTA card → "Want a system" band → partner strip all sit one
+//     $project-cta-gap apart. Each block owns only its TOP gap (bottom
+//     margins are zeroed) so the spacing can't compound. ---
+$project-cta-gap: 56px;
 
-// --- CTA band: keep the reused band, just give it breathing room
-//     consistent with the surrounding sections ---
+// .space-partners ships margin: 56px 0; matches the gap, so the band only
+// needs its top gap and a zeroed bottom.
 .project-single__col > .support__cta-band {
-  margin-top: 64px;
+  margin-top: $project-cta-gap;
+  margin-bottom: 0;
 }
 
 // The related-reading and next-project blocks keep the site's standard
@@ -154,7 +159,8 @@
 
 // --- Inline demo CTA (from the demo_cta shortcode): reuses the .about-cta
 //     card; replaces the old embedded HF widget with a link to the ML Space
-//     page. Only the in-content margin differs from .about-cta. ---
+//     page. Top gap from the article, no bottom margin (the band below
+//     owns the gap). ---
 .about-cta.demo-cta {
-  margin: 40px 0;
+  margin: $project-cta-gap 0 0;
 }
