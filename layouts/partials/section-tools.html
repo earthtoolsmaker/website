@@ -1,0 +1,38 @@
+{{ if .Site.Params.home_tools.enable }}
+<!-- begin home tools -->
+<section class="section tools-section animate">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+
+          <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">{{ .Site.Params.home_tools.title | safeHTML }}</h2>
+              <a class="button button--cta" href="/tools/">View all <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+          </div>
+
+          <p class="services__intro">
+            Free, open-source software we build with field teams — download it and run it yourself.
+          </p>
+
+          <div class="row">
+            {{ range .Site.Params.home_tools.featured }}
+            {{ with site.GetPage (printf "/tools/%s" .) }}
+            {{ partial "tool-card.html" . }}
+            {{ end }}
+            {{ end }}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{ partial "build-cta.html" (dict "class" "build-cta--home") }}
+
+</section>
+<!-- end home tools -->
+{{ end }}
