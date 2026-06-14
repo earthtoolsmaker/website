@@ -97,10 +97,10 @@ $nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
   }
 }
 
-// Animated brandmark: the pangolin rolls on hover while the word swaps between
-// "etm" and the full "earthtoolsmaker". Shared by the header (--unroll) and the
-// footer (--slide). Which word is in-flow (reserving width) vs. overlaid differs
-// per variant — see the --unroll and --slide blocks below.
+// Brandmark: a pangolin beside the "etm" / "earthtoolsmaker" word. The pangolin
+// rolls on hover/click in both variants. The word differs per variant:
+//   --swap  (header): static, breakpoint-driven (etm < $logo-compact, full above).
+//   --slide (footer): odometer that swaps etm -> earthtoolsmaker on hover.
 .brandmark {
   --bm-h: 48px;
   display: inline-flex;
@@ -124,10 +124,8 @@ $nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
 // The pangolin spins on hover for every variant (home --swap included); only the
 // word-swap animation differs (--swap keeps the word static, just breakpoint-driven).
 .brandmark--swap:hover .brandmark__pan img,
-.brandmark--unroll:hover .brandmark__pan img,
 .brandmark--slide:hover .brandmark__pan img,
 a:focus-visible .brandmark--swap .brandmark__pan img,
-a:focus-visible .brandmark--unroll .brandmark__pan img,
 a:focus-visible .brandmark--slide .brandmark__pan img,
 .brandmark.is-spinning .brandmark__pan img { // JS adds this on click, then navigates on animationend
   animation: bm-roll .8s ease;
@@ -148,48 +146,9 @@ a:focus-visible .brandmark--slide .brandmark__pan img,
 
 .brandmark__word--etm { position: absolute; top: 0; left: 0; } // overlay (footer --slide)
 
-// ---- UNROLL (header), DEFAULT (< $logo-compact): "etm" is the resting word,
-// in-flow so the logo footprint stays narrow; the full word overlays absolutely
-// and unrolls left→right on hover. (Overrides the global etm-overlay rule above,
-// which the footer --slide still relies on.)
-.brandmark--unroll {
-  .brandmark__word--etm {
-    position: static;
-    opacity: 1;
-    transition: opacity .25s ease;
-  }
-  .brandmark__word--full {
-    position: absolute;
-    top: 0;
-    left: 0;
-    clip-path: inset(0 100% 0 0); // hidden: clipped from the right
-    transition: clip-path .35s ease;
-  }
-
-  &:hover .brandmark__word--etm,
-  a:focus-visible & .brandmark__word--etm  { opacity: 0; transition-delay: .1s; }
-
-  &:hover .brandmark__word--full,
-  a:focus-visible & .brandmark__word--full { clip-path: inset(0 0 0 0); transition-delay: .1s; }
-}
-
-// ---- WIDE (>= $logo-compact): full wordmark at rest, in-flow; "etm" hidden; no swap.
-@media (min-width: $logo-compact) {
-  .brandmark--unroll {
-    .brandmark__word--full {
-      position: static;
-      clip-path: none;
-      transition: none;
-    }
-    .brandmark__word--etm { display: none; }
-
-    &:hover .brandmark__word--full,
-    a:focus-visible & .brandmark__word--full { clip-path: none; }
-  }
-}
-
-// ---- SWAP (home): static responsive logo — compact "etm" below $logo-compact,
-// full "earthtoolsmaker" at/above it. No animation (no word unroll, no pangolin roll).
+// ---- SWAP (header): static responsive logo — compact "etm" below $logo-compact,
+// full "earthtoolsmaker" at/above it. The word never swaps; only the pangolin spins.
+// (Overrides the global etm-overlay rule above, which the footer --slide still uses.)
 .brandmark--swap {
   .brandmark__word--etm  { position: static; } // in-flow, shown
   .brandmark__word--full { display: none; }     // hidden below $logo-compact

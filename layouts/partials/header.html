@@ -11,12 +11,10 @@
             {{ $wordEtm := resources.Get "images/logos/logo-word-etm.png" }}
             {{ $wordFull := resources.Get "images/logos/logo-word-full.png" }}
             {{ if and $panIcon $wordEtm $wordFull }}
-              {{/* Responsive brandmark. The resting word is viewport-driven via CSS:
-                   full "earthtoolsmaker" >=1100px, compact "etm" below.
-                   - Home (--swap): static, no animation — just swaps by breakpoint.
-                   - Other pages (--unroll): pangolin rolls on hover, and in the etm
-                     band the word unrolls to the full wordmark on hover. */}}
-            <span class="brandmark {{ if .IsHome }}brandmark--swap{{ else }}brandmark--unroll{{ end }}">
+              {{/* Responsive brandmark on every page. The word is viewport-driven via
+                   CSS: full "earthtoolsmaker" >=1100px, compact "etm" below — shown
+                   statically, no etm<->full swap. The pangolin rolls on hover/click. */}}
+            <span class="brandmark brandmark--swap">
               <span class="brandmark__pan"><img src="{{ $panIcon.RelPermalink }}" alt="{{ site.Title }}"></span>
               <span class="brandmark__words">
                 <img class="brandmark__word brandmark__word--full" src="{{ $wordFull.RelPermalink }}" alt="" aria-hidden="true">
