@@ -308,9 +308,20 @@
   flex-wrap: wrap;
 }
 
-/* homepage tools section — the CTA band sits outside .container__inner, so it
-   misses the -32px pull-up the other sections get and leaves an oversized gap
-   before the next section. Pull it back up to match the section rhythm. */
-.tools-section .build-cta {
-  margin-bottom: -32px;
+/* homepage tools section — the CTA band ends the section in its own .container.
+   The following section (the partners/testimonials band) carries 96px of its
+   own top padding, which stacked with the section margins left an oversized gap
+   below the CTA. Drop this section's bottom margin and trim the next section's
+   top spacing for this adjacency so the gap matches the page rhythm. */
+.tools-section {
+  margin-bottom: 0;
+
+  .build-cta {
+    margin-bottom: 0;
+  }
+}
+
+.tools-section + .section {
+  margin-top: 0;
+  padding-top: 48px;
 }
