@@ -295,26 +295,22 @@
       font-size: 16px;
       line-height: 1.6;
 
+      // Dropdown items use a clean colour change. The top-level nav's
+      // floating dot (::before) reads as a stray mark in a vertical list,
+      // so it's removed here in favour of a hover/active colour.
+      &::before { content: none; }
+      &::after { content: none; }
+
       &:hover {
-        &::after {
-          opacity: .3;
-        }
+        color: var(--secondary-color);
+      }
+
+      &.active-link {
+        color: var(--primary-color);
       }
 
       &:last-child {
         margin-bottom: 0;
-      }
-
-      &.active-link {
-        &::before {
-          opacity: 1;
-          visibility: visible;
-          background-color: var(--primary-color);
-        }
-      }
-
-      &::before {
-        top: 0;
       }
     }
   }
