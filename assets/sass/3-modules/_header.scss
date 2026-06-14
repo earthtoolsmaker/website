@@ -296,10 +296,14 @@
       line-height: 1.6;
 
       // Dropdown items use a clean colour change. The top-level nav's
-      // floating dot (::before) reads as a stray mark in a vertical list,
-      // so it's removed here in favour of a hover/active colour.
-      &::before { content: none; }
-      &::after { content: none; }
+      // floating dot (::before) reads as a stray mark in the desktop
+      // floating dropdown, so it's removed there in favour of a hover/
+      // active colour. Gated to desktop so the inline mobile menu — which
+      // shares this selector — keeps its dot indicator.
+      @media (min-width: $desktop + 1) {
+        &::before { content: none; }
+        &::after { content: none; }
+      }
 
       &:hover {
         color: var(--secondary-color);

@@ -227,6 +227,6 @@ conservation. The development of open-source tools in this project signifies a
 valuable contribution, not only facilitating adaptability to various species
 but also holding potential to enhance conservation endeavors on a global scale.
 
-One can try out the model from the [ML Space]({{< ref "/spaces/bear_identification" >}}) or right here:
+One can try out the model from the [ML Space]({{< ref "/spaces/bear_identification" >}}).
 
 {{< demo_cta >}}

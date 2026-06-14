@@ -3,6 +3,9 @@
    .post__content, .article, .section__info from other layouts; only
    project-specific pieces live here. */
 
+// "Live" status accent — no sitewide green exists, so it's defined here.
+$project-live-color: #3fb950;
+
 // --- Hero (extends .about-hero) ---
 .project-hero {
   &.project-hero--gradient {
@@ -30,14 +33,16 @@
   }
 
   .project-hero__stat-value {
+    display: block;
     font-family: $heading-font-family;
     font-weight: 700;
     font-size: 40px;
     line-height: 1;
-    color: #fff;
+    color: var(--white);
   }
 
   .project-hero__stat-label {
+    display: block;
     margin: 8px 0 0;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.8);
@@ -102,8 +107,8 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #3fb950;
-    box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.5);
+    background: $project-live-color;
+    box-shadow: 0 0 0 0 rgba($project-live-color, 0.5);
     animation: project-facts-live-pulse 2s infinite;
   }
 
@@ -114,9 +119,9 @@
 }
 
 @keyframes project-facts-live-pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.5); }
-  70%  { box-shadow: 0 0 0 7px rgba(63, 185, 80, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(63, 185, 80, 0); }
+  0%   { box-shadow: 0 0 0 0 rgba($project-live-color, 0.5); }
+  70%  { box-shadow: 0 0 0 7px rgba($project-live-color, 0); }
+  100% { box-shadow: 0 0 0 0 rgba($project-live-color, 0); }
 }
 
 // --- Shared content column. Everything below the full-bleed hero (facts

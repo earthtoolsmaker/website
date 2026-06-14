@@ -188,6 +188,6 @@ ensuring the long-term survival of trout species and the health of the
 environments they inhabit.
 
 One can try out the model from the [ML Space]({{< ref
-"/spaces/trout_identification" >}}) or right here:
+"/spaces/trout_identification" >}}).
 
 {{< demo_cta >}}

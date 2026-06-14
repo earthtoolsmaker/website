@@ -25,14 +25,14 @@
       {{ $tagline := .Params.tagline | default .Params.summary }}
       {{ with $tagline }}<p class="about-hero__description">{{ . }}</p>{{ end }}
       {{ with .Params.stats }}
-      <dl class="project-hero__stats">
+      <div class="project-hero__stats">
         {{ range . }}
         <div class="project-hero__stat">
-          <dt class="project-hero__stat-value">{{ .value }}</dt>
-          <dd class="project-hero__stat-label">{{ .label }}</dd>
+          <span class="project-hero__stat-value">{{ .value }}</span>
+          <span class="project-hero__stat-label">{{ .label }}</span>
         </div>
         {{ end }}
-      </dl>
+      </div>
       {{ end }}
     </div>
   </div>
@@ -43,7 +43,7 @@
 <div class="project-single__col project-single__body">
   <div class="project-facts">
     {{ with .Params.github_repo }}
-    <a class="project-facts__link" target="_blank" rel="noopener" href="{{ . }}"><i class="fa-brands fa-github"></i> Source code</a>
+    <a class="project-facts__link" target="_blank" rel="noopener noreferrer" href="{{ . }}"><i class="fa-brands fa-github"></i> Source code</a>
     {{ end }}
     {{ with .Params.space }}
     <a class="project-facts__link" href="{{ . }}"><i class="fa-solid fa-circle-play"></i> Try the demo</a>

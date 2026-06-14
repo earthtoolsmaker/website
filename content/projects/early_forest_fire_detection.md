@@ -201,6 +201,6 @@ greatly improving our capacity to protect forests that are increasingly
 threatened by the impacts of global warming.
 
 One can try out the model from the [ML Space]({{< ref
-"/spaces/early_forest_fire_detection" >}}) or right here:
+"/spaces/early_forest_fire_detection" >}}).
 
 {{< demo_cta >}}
