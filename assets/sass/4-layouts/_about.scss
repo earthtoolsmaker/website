@@ -547,17 +547,10 @@
   position: relative;
   height: 460px;
   overflow: hidden;
-  // Cancel the sitewide header margin so the hero sits flush under the nav
-  margin-top: -64px;
+  // Cancel the sitewide header margin so the hero sits flush under the nav.
+  // Uses the header's own value so the two never drift apart.
+  margin-top: calc(-1 * var(--header-mb));
   margin-bottom: 56px;
-
-  @media (max-width: $desktop) {
-    margin-top: -48px;
-  }
-
-  @media (max-width: $tablet) {
-    margin-top: -28px;
-  }
 
   picture,
   img {
@@ -599,7 +592,6 @@
 
   @media (max-width: $mobile) {
     height: 340px;
-    margin-top: -16px;
 
     &__overlay {
       padding-bottom: 28px;

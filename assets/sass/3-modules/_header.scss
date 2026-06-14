@@ -2,13 +2,22 @@
 $logo-compact: 1100px; // <= this width the logo shows compact "etm"
 $nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
 
+// Header bottom margin, exposed as a custom property so full-bleed heroes can
+// cancel it (margin-top: calc(-1 * var(--header-mb))) and stay flush under the
+// nav without hard-coding a matching magic number that drifts when this changes.
+:root {
+  --header-mb: 32px;
+  @media (max-width: $tablet) { --header-mb: 24px; }
+  @media (max-width: $mobile) { --header-mb: 16px; }
+}
+
 /* Header */
 .header {
   position: sticky;
   top: 0;
   z-index: 200;
   padding: 16px 0;
-  margin-bottom: 32px;
+  margin-bottom: var(--header-mb);
   transition: padding .25s ease, background-color .25s ease,
               box-shadow .25s ease, border-color .25s ease;
 
@@ -27,13 +36,8 @@ $nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
     }
   }
 
-  @media (max-width: $tablet) {
-    margin-bottom: 24px;
-  }
-
   @media (max-width: $mobile) {
     padding: 12px 0;
-    margin-bottom: 16px;
   }
 }
 
