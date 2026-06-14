@@ -21,6 +21,8 @@ weight: 1
 date: 2026-06-12
 image: /images/projects/early_forest_fire_detection/cover.jpg
 stats:
+  - value: "24/7"
+    label: monitoring
   - value: "50"
     label: sites monitored
   - value: "500+"
