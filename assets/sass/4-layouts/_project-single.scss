@@ -49,14 +49,14 @@
   }
 }
 
-// --- Facts bar (under hero, aligned to the reading column) ---
+// --- Facts bar — fills the shared .project-single__body column so its
+//     width and underline line up exactly with the article text below ---
 .project-facts {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 12px 22px;
-  max-width: 780px;
-  margin: -28px auto 8px;          // pull up into the hero's bottom margin
+  margin: -28px 0 0;               // pull up into the hero's bottom margin
   padding: 16px 0;
   border-bottom: 1px solid var(--border-color);
 
@@ -107,11 +107,6 @@
     animation: project-facts-live-pulse 2s infinite;
   }
 
-  @media (max-width: $tablet) {
-    padding-left: $base-spacing-unit;
-    padding-right: $base-spacing-unit;
-  }
-
   @media (max-width: $mobile) {
     margin-top: 8px;
     &__live { margin-left: 0; }
@@ -124,11 +119,23 @@
   100% { box-shadow: 0 0 0 0 rgba(63, 185, 80, 0); }
 }
 
-// --- Reading column (typography inherited from .post__content) ---
-.project-single__body {
+// --- Shared content column. Everything below the full-bleed hero (facts
+//     bar, article, CTA band, partner strip) uses this so their widths and
+//     gutters line up at every breakpoint — including mobile. ---
+.project-single__col {
   max-width: 780px;
   margin: 0 auto;
-  padding: 40px $base-spacing-unit 8px;
+  padding-left: $base-spacing-unit;
+  padding-right: $base-spacing-unit;
+}
+
+// Article-block vertical rhythm (facts bar → article spacing).
+.project-single__body {
+  padding-bottom: 8px;
+
+  .post__content {
+    padding-top: 40px;        // space between the facts bar and the article
+  }
 }
 
 // Partner strip reuses the spaces pages' .space-partners treatment
@@ -137,11 +144,17 @@
 
 // --- CTA band: keep the reused band, just give it breathing room
 //     consistent with the surrounding sections ---
-.project-single .support__cta-band,
-.container > .support__cta-band {
+.project-single__col > .support__cta-band {
   margin-top: 64px;
 }
 
 // The related-reading and next-project blocks keep the site's standard
 // .section rhythm (80px), so there's comfortable, consistent spacing
 // before "Next project" whether or not a related section precedes it.
+
+// --- Inline demo CTA (from the demo_cta shortcode): reuses the .about-cta
+//     card; replaces the old embedded HF widget with a link to the ML Space
+//     page. Only the in-content margin differs from .about-cta. ---
+.about-cta.demo-cta {
+  margin: 40px 0;
+}
