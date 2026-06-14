@@ -17,11 +17,20 @@ document.addEventListener("DOMContentLoaded", function() {
     menu();
   });
 
-  // Condense the sticky header after a little scroll
+  // Condense the sticky header after a little scroll. Use hysteresis (turn on
+  // higher than off) so the ~20px height change from condensing — which shortens
+  // the page and can nudge scrollY back across a single threshold on short pages
+  // like /contact/ — can't make the state oscillate.
   var header = document.querySelector(".header");
   if (header) {
+    var CONDENSE_ON = 48, CONDENSE_OFF = 8;
     var onScroll = function () {
-      header.classList.toggle("is-scrolled", window.scrollY > 8);
+      var y = window.scrollY;
+      if (!header.classList.contains("is-scrolled")) {
+        if (y > CONDENSE_ON) header.classList.add("is-scrolled");
+      } else if (y < CONDENSE_OFF) {
+        header.classList.remove("is-scrolled");
+      }
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
