@@ -128,7 +128,8 @@ $nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
 .brandmark--slide:hover .brandmark__pan img,
 a:focus-visible .brandmark--swap .brandmark__pan img,
 a:focus-visible .brandmark--unroll .brandmark__pan img,
-a:focus-visible .brandmark--slide .brandmark__pan img {
+a:focus-visible .brandmark--slide .brandmark__pan img,
+.brandmark.is-spinning .brandmark__pan img { // JS adds this on click, then navigates on animationend
   animation: bm-roll .8s ease;
 }
 
