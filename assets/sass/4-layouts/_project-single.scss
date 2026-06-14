@@ -159,3 +159,16 @@
     .partner-logo-container { height: 44px; }
   }
 }
+
+// --- CTA band: keep the reused band, just give it breathing room
+//     consistent with the surrounding sections ---
+.project-single .support__cta-band,
+.container > .support__cta-band {
+  margin-top: 64px;
+}
+
+// --- Related / next sections: tighten the gap between the two
+//     adjacent card sections (each is a .section with 80px margins) ---
+.project-next {
+  margin-top: 0;
+}
