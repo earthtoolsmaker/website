@@ -29,8 +29,6 @@ stats:
     label: fires detected
 ---
 
-## Context
-
 Pyronear takes a whole-system approach to wildfire risk. At its core is an
 early-detection model that runs on a compact, low-power microcomputer, fed by a
 network of high-resolution cameras mounted at high vantage points for panoramic
@@ -160,6 +158,9 @@ unit built around a Raspberry Pi, connected to four cameras that provide
 360-degree coverage. This system processes images continuously, around the
 clock.
 
+![A Raspberry Pi board next to a credit card of the same size](/images/projects/early_forest_fire_detection/raspberry_pi_credit_card.svg)
+*The brain of the whole system is no bigger than a credit card.*
+
 {{< gallery caption="Pyronear hardware system case - Raspberry Pi, power chords, RJ45, and SIM card" >}}
   {{< gallery_image src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/pyronear_hardware.jpg" alt="Pyronear hardware system" >}}
 {{< /gallery >}}
@@ -171,33 +172,28 @@ system. The video below shows a thin black smoke rising in the distance.
 {{< youtube id=i9Qy-zY16Ew >}}
 <br/>
 
-## Second Stage: Temporal Verification
+## Telling smoke from look-alikes
 
-Single-frame detection has a false-alarm ceiling: early wildfire smoke is a
-faint grey wisp easily confused with clouds, fog, or dust, and every false
-alarm sent to a fire department erodes trust in the system. The second phase
-of our collaboration added a server-side **temporal verifier** that judges
-the *sequence* of frames rather than each frame alone — real smoke appears at
-a fixed point on the terrain, grows, and drifts, and that behavior is the
-signal look-alikes cannot fake.
+A single frame can only tell you so much. Early wildfire smoke is a faint grey
+wisp — easy to confuse with a passing cloud, a bank of fog, or kicked-up dust —
+and every false alarm that reaches a fire crew chips away at their trust in the
+system.
 
-The work ran as a structured R&D effort: a literature survey of 28 papers, a
-shortlist of candidate approaches, and five models raced on a shared
-leaderboard against a frozen test set. The winning model cuts false alarms
-by **4×** while improving recall, at the cost of roughly 1.7 minutes of
-mean detection delay:
+So we taught the system to look at *how a candidate behaves over time*. Real
+smoke does things a cloud doesn't: it stays anchored to one spot on the
+hillside, grows, and slowly drifts. To make that easy to read, the system locks
+onto the candidate and holds the view steady — so the background sits still and
+the smoke becomes the one thing that moves.
 
-![Leaderboard of the five candidate temporal verifiers: F1 score versus false positive rate](/images/projects/early_forest_fire_detection/temporal_leaderboard.png)
-*Five candidate verifiers on the same frozen test set — the winner reduces
-the false positive rate from 0.159 to 0.040.*
+![The same hillside across twenty frames; with the view held steady, a faint plume grows and drifts while everything around it stays put](/images/projects/early_forest_fire_detection/temporal_patches.jpg#noround)
+*The same candidate across twenty frames. Hold the view steady and real smoke
+gives itself away — it's the one thing that grows and drifts.*
 
-The winner is now packaged as a versioned, self-contained model [released on
-HuggingFace](https://huggingface.co/pyronear/temporal-model) and served
-through a FastAPI service from the
-[pyronear/temporal-model](https://github.com/pyronear/temporal-model)
-monorepo. Two blog posts cover this phase in depth: [how the R&D was run]({{<
-ref "/posts/racing-models-not-opinions" >}}) and [how the temporal model
-works]({{< ref "/posts/smoke-is-a-behavior" >}}).
+That extra, time-aware look cuts false alarms by around **4×** while still
+catching the real fires — a far cleaner stream of alerts for the people acting
+on them. If you want the full story, we wrote up [how we built and raced the
+candidate models]({{< ref "/posts/racing-models-not-opinions" >}}) and [how the
+model reads smoke over time]({{< ref "/posts/smoke-is-a-behavior" >}}).
 
 ## Conclusion
 
