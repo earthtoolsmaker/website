@@ -1,0 +1,89 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#88c8b9"/><stop offset="100%" stop-color="#4f9e8e"/></linearGradient>
+  <linearGradient id="smokeg" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#9aa4a7"/><stop offset="55%" stop-color="#bcc3c6"/><stop offset="100%" stop-color="#dde1e3"/></linearGradient>
+  <filter id="softsmoke" x="-70%" y="-70%" width="240%" height="260%"><feGaussianBlur stdDeviation="1.7"/></filter>
+  <radialGradient id="sweepg" cx="450" cy="380" r="300" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#e29578" stop-opacity="0.38"/>
+    <stop offset="70%" stop-color="#e29578" stop-opacity="0.10"/>
+    <stop offset="100%" stop-color="#e29578" stop-opacity="0"/>
+  </radialGradient>
+  <g id="cluster">
+    <g fill="#6cb8a7"><path d="M-18 6 L-6 6 L-12 -24 Z M-15 -6 L-9 -6 L-12 -26 Z"/></g>
+    <g fill="#4f9e8e"><path d="M6 8 L22 8 L14 -32 Z M9 -6 L19 -6 L14 -34 Z"/></g>
+    <g fill="#3a8576"><path d="M-8 10 L12 10 L2 -42 Z M-4 -8 L8 -8 L2 -44 Z"/></g>
+  </g>
+  <style>
+    .flame   { transform-box: fill-box; transform-origin: 50% 100%; animation: flick 0.85s ease-in-out infinite; }
+    .flame.b { animation-duration: 0.7s; animation-delay: -0.35s; }
+    .flame-in{ transform-box: fill-box; transform-origin: 50% 100%; animation: flickIn 0.6s ease-in-out infinite; }
+    .smoke   { transform-box: fill-box; transform-origin: 50% 100%; animation: rise2 3.4s ease-out infinite; }
+    .smoke.b { animation-delay: -1.7s; }
+    .ring    { animation: ringpulse 4s ease-in-out infinite; } .ring.r2 { animation-delay: -2s; }
+    @keyframes flick   { 0%,100%{transform:scaleY(1) scaleX(1)} 20%{transform:scaleY(1.12) scaleX(0.93)} 45%{transform:scaleY(0.95) scaleX(1.05)} 70%{transform:scaleY(1.07) scaleX(0.96)} }
+    @keyframes flickIn { 0%,100%{transform:scaleY(0.97) skewX(0deg)} 30%{transform:scaleY(1.15) skewX(4deg)} 55%{transform:scaleY(0.9) skewX(-4deg)} 80%{transform:scaleY(1.07) skewX(2deg)} }
+    @keyframes rise2   { 0%{transform:translate(0,8px) scale(0.6);opacity:0} 16%{opacity:0.8} 60%{opacity:0.45} 100%{transform:translate(6px,-30px) scale(1.25);opacity:0} }
+    @keyframes ringpulse { 0%,100%{opacity:0.5} 50%{opacity:0.9} }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</defs>
+
+<!-- range rings -->
+<g fill="none" stroke="#e29578" stroke-width="2" stroke-dasharray="4 9">
+  <circle class="ring" cx="450" cy="380" r="185" opacity="0.55"/>
+  <circle class="ring r2" cx="450" cy="380" r="290" opacity="0.45"/>
+</g>
+
+<!-- rotating radar sweep -->
+<path d="M450 380 L740 313 A298 298 0 0 1 740 447 Z" fill="url(#sweepg)">
+  <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 450 380" to="360 450 380" dur="7s" repeatCount="indefinite"/>
+</path>
+
+<!-- forest clusters -->
+<use href="#cluster" transform="translate(450,150) scale(1.05)"/>
+<use href="#cluster" transform="translate(180,235) scale(0.95)"/>
+<use href="#cluster" transform="translate(745,470) scale(1.0)"/>
+<use href="#cluster" transform="translate(470,640) scale(1.05)"/>
+
+<!-- sightlines from tower to the two detections -->
+<g stroke="#e29578" stroke-width="3" stroke-linecap="round" opacity="0.9">
+  <path d="M470 332 L688 196"/><path d="M438 338 L232 482"/>
+</g>
+
+<!-- DETECTION 1 (top-right) -->
+<g transform="translate(700,178)">
+  <g filter="url(#softsmoke)"><g class="smoke" fill="url(#smokeg)" transform="translate(0,8)"><circle cx="0" cy="0" r="7"/><circle cx="-6" cy="-9" r="9"/><circle cx="5" cy="-18" r="9"/><circle cx="-3" cy="-28" r="7"/></g></g>
+  <g transform="translate(0,30)">
+    <g class="flame"><path d="M-15 0 C -19 -17 -5 -22 -10 -40 C -1 -27 5 -31 4 -45 C 9 -28 17 -25 13 0 Z" fill="#e3602f"/></g>
+    <g class="flame-in"><path d="M-8 0 C -10 -11 -3 -15 -5 -26 C 0 -18 5 -21 4 -30 C 8 -19 10 -14 7 0 Z" fill="#f4a23c"/></g>
+  </g>
+  <rect x="-34" y="-40" width="64" height="74" rx="4" fill="none" stroke="#e29578" stroke-width="3.5"/>
+</g>
+
+<!-- DETECTION 2 (lower-left) -->
+<g transform="translate(210,470)">
+  <g filter="url(#softsmoke)"><g class="smoke b" fill="url(#smokeg)" transform="translate(0,8)"><circle cx="0" cy="0" r="7"/><circle cx="-6" cy="-9" r="9"/><circle cx="5" cy="-18" r="9"/><circle cx="-3" cy="-28" r="7"/></g></g>
+  <g transform="translate(0,30)">
+    <g class="flame b"><path d="M-15 0 C -19 -17 -5 -22 -10 -40 C -1 -27 5 -31 4 -45 C 9 -28 17 -25 13 0 Z" fill="#e3602f"/></g>
+    <g class="flame-in"><path d="M-8 0 C -10 -11 -3 -15 -5 -26 C 0 -18 5 -21 4 -30 C 8 -19 10 -14 7 0 Z" fill="#f4a23c"/></g>
+  </g>
+  <rect x="-34" y="-40" width="64" height="74" rx="4" fill="none" stroke="#e29578" stroke-width="3.5"/>
+</g>
+
+<!-- central hill + tower -->
+<g transform="translate(450,380)">
+  <ellipse cx="0" cy="44" rx="98" ry="30" fill="#3a8576" opacity="0.35"/>
+  <path d="M-92 40 C -60 -6 -18 -10 6 -8 C 44 -4 70 14 92 40 Z" fill="url(#hill)"/>
+  <path d="M-66 34 l11 0 l-11 -30 l-11 30 Z M-66 20 l7 0 l-7 -18 l-7 18 Z" fill="#15463f"/>
+  <path d="M64 36 l10 0 l-10 -26 l-10 26 Z" fill="#15463f"/>
+  <!-- lattice tower -->
+  <g stroke="#15463f" stroke-width="5" stroke-linecap="round" fill="none">
+    <path d="M-22 38 L-5 -64"/><path d="M12 38 L-1 -64"/>
+    <path d="M-17 6 L8 6"/><path d="M-13 -24 L4 -24"/><path d="M-9 -46 L1 -46"/>
+  </g>
+  <!-- camera head with two cameras -->
+  <rect x="-19" y="-70" width="32" height="7" rx="3.5" fill="#15463f"/>
+  <rect x="-22" y="-65" width="17" height="12" rx="3" fill="#006d77"/><circle cx="-14" cy="-59" r="3.5" fill="#e29578"/>
+  <rect x="3" y="-65" width="17" height="12" rx="3" fill="#006d77"/><circle cx="12" cy="-59" r="3.5" fill="#e29578"/>
+</g>
+</svg>
