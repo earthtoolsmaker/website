@@ -6,8 +6,8 @@ github_repo: https://github.com/earthtoolsmaker/trout-reid
 date: 2024-12-08
 hero_image: /images/pages/spaces/trout_identification/hero.jpg
 project: /projects/trout_identification/
-hf_space: earthtoolsmaker-trout-reid
-hf_space_code: https://huggingface.co/spaces/earthtoolsmaker/trout-reID/tree/main
+hf_space: achouffe-trout-reid
+hf_space_code: https://huggingface.co/spaces/achouffe/trout-reID/tree/main
 manual_steps:
   - step_name: Image Selection
     description: Choose an image from the examples provided below, or upload your own data.
