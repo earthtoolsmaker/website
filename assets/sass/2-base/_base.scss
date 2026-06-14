@@ -6,7 +6,7 @@ body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height !important;
-  overflow-x: hidden;
+  overflow-x: clip; // clip (not hidden) so it doesn't break position:sticky on .header
   color: var(--text-color);
   background-color: var(--background-color);
   -webkit-font-smoothing: antialiased;

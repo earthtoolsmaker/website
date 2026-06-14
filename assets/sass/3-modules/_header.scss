@@ -37,6 +37,27 @@ $nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
   }
 }
 
+.header.is-scrolled {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgba(255, 255, 255, .82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 6px 24px -18px rgba(0, 0, 0, .5);
+
+  .brandmark { --bm-h: 40px; }
+}
+
+.dark-mode .header.is-scrolled {
+  background-color: rgba(22, 22, 22, .82);
+  border-bottom-color: rgba(255, 255, 255, .10);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header { transition: none; }
+}
+
 /* Logo */
 .logo {
   margin-right: 24px;

@@ -17,6 +17,16 @@ document.addEventListener("DOMContentLoaded", function() {
     menu();
   });
 
+  // Condense the sticky header after a little scroll
+  var header = document.querySelector(".header");
+  if (header) {
+    var onScroll = function () {
+      header.classList.toggle("is-scrolled", window.scrollY > 24);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
   // Close menu when clicking outside
   document.addEventListener("click", (event) => {
     const isMenuOpen = menuList.classList.contains("is-visible");
