@@ -1,7 +1,25 @@
+// Header-specific breakpoints (independent of the grid's $desktop/$tablet/$mobile):
+$logo-compact: 1100px; // <= this width the logo shows compact "etm"
+$nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
+
+// Header bottom margin, exposed as a custom property so full-bleed heroes can
+// cancel it (margin-top: calc(-1 * var(--header-mb))) and stay flush under the
+// nav without hard-coding a matching magic number that drifts when this changes.
+:root {
+  --header-mb: 32px;
+  @media (max-width: $tablet) { --header-mb: 24px; }
+  @media (max-width: $mobile) { --header-mb: 16px; }
+}
+
 /* Header */
 .header {
-  padding: 32px 0;
-  margin-bottom: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  padding: 16px 0;
+  margin-bottom: var(--header-mb);
+  transition: padding .25s ease, background-color .25s ease,
+              box-shadow .25s ease, border-color .25s ease;
 
   .header__inner {
     position: relative;
@@ -11,24 +29,39 @@
     max-width: 1600px;
     margin: 0 auto;
 
-    @media (max-width: $desktop) {
+    @media (max-width: $nav-collapse) {
       display: flex;
       justify-content: space-between;
       flex-wrap: nowrap;
     }
   }
 
-  @media (max-width: $desktop) {
-    margin-bottom: 48px;
-  }
-
-  @media (max-width: $tablet) {
-    margin-bottom: 28px;
-  }
-
   @media (max-width: $mobile) {
-    margin-bottom: 16px;
+    padding: 12px 0;
   }
+}
+
+.header.is-scrolled {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  // Near-opaque so the nav stays legible over busy photo heroes (the blur is
+  // just for a hint of depth, not the main contrast).
+  background-color: rgba(255, 255, 255, .95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 6px 24px -18px rgba(0, 0, 0, .5);
+
+  .brandmark { --bm-h: 40px; }
+}
+
+.dark-mode .header.is-scrolled {
+  background-color: rgba(22, 22, 22, .95);
+  border-bottom-color: rgba(255, 255, 255, .10);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header { transition: none; }
 }
 
 /* Logo */
@@ -64,20 +97,19 @@
   }
 }
 
-// Animated brandmark: the pangolin rolls on hover while the word swaps from
-// "etm" to the full "earthtoolsmaker". Shared by the header (--unroll) and the
-// footer (--slide). The full word sits in-flow so its width is always reserved
-// (nav/footer never shift); "etm" is overlaid on top.
+// Brandmark: a pangolin beside the "etm" / "earthtoolsmaker" word. The pangolin
+// rolls on hover/click in both variants. The word differs per variant:
+//   --swap  (header): static, breakpoint-driven (etm < $logo-compact, full above).
+//   --slide (footer): odometer that swaps etm -> earthtoolsmaker on hover.
 .brandmark {
-  --bm-h: 60px;
+  --bm-h: 48px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   line-height: 0;
 
-  @media (max-width: $desktop) { --bm-h: 54px; }
-  @media (max-width: $tablet)  { --bm-h: 48px; }
-  @media (max-width: $mobile)  { --bm-h: 44px; }
+  @media (max-width: $tablet)  { --bm-h: 44px; }
+  @media (max-width: $mobile)  { --bm-h: 40px; }
 
   &--sm { --bm-h: 44px; } // footer
 }
@@ -89,11 +121,13 @@
   transition: transform .7s ease;
 }
 
-// only the animated variants spin; the static home logo never does
-.brandmark--unroll:hover .brandmark__pan img,
+// The pangolin spins on hover for every variant (home --swap included); only the
+// word-swap animation differs (--swap keeps the word static, just breakpoint-driven).
+.brandmark--swap:hover .brandmark__pan img,
 .brandmark--slide:hover .brandmark__pan img,
-a:focus-visible .brandmark--unroll .brandmark__pan img,
-a:focus-visible .brandmark--slide .brandmark__pan img {
+a:focus-visible .brandmark--swap .brandmark__pan img,
+a:focus-visible .brandmark--slide .brandmark__pan img,
+.brandmark.is-spinning .brandmark__pan img { // JS adds this on click, then navigates on animationend
   animation: bm-roll .8s ease;
 }
 
@@ -110,26 +144,23 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
   width: auto;
 }
 
-.brandmark__word--etm { position: absolute; top: 0; left: 0; } // overlay
+.brandmark__word--etm { position: absolute; top: 0; left: 0; } // overlay (footer --slide)
 
-// ---- UNROLL (header): etm fades out, full unrolls left→right. On exit the
-// full word folds back, then etm waits and fades in (no overlap). Longhands so
-// the per-state transition-delay isn't clobbered by a shorthand delay:0.
-.brandmark--unroll {
-  .brandmark__word {
-    transition-property: clip-path, opacity;
-    transition-duration: .35s, .25s;
-    transition-timing-function: ease;
+// ---- SWAP (header): static responsive logo; the word never swaps, only the
+// pangolin spins. Full "earthtoolsmaker" is the default — it fits when the nav is
+// wide (>= $logo-compact) AND when the nav has collapsed into the hamburger
+// (<= $nav-collapse), since the inline links no longer compete for the row.
+// Only the in-between band (inline nav present but not wide enough) falls back to
+// the compact "etm".
+.brandmark--swap {
+  .brandmark__word--etm  { display: none; } // full is shown by default (in-flow)
+}
+
+@media (min-width: #{$nav-collapse + 1}) and (max-width: #{$logo-compact - 1}) {
+  .brandmark--swap {
+    .brandmark__word--etm  { display: block; position: static; }
+    .brandmark__word--full { display: none; }
   }
-  .brandmark__word--etm  { opacity: 1; transition-delay: .4s; }
-  .brandmark__word--full { opacity: 1; clip-path: inset(0 100% 0 0); }
-
-  &:hover .brandmark__word--etm,
-  a:focus-visible &:hover .brandmark__word--etm,
-  a:focus-visible & .brandmark__word--etm  { opacity: 0; transition-delay: .1s; }
-
-  &:hover .brandmark__word--full,
-  a:focus-visible & .brandmark__word--full { clip-path: inset(0 0 0 0); transition-delay: .45s; }
 }
 
 // ---- SLIDE (footer): odometer. etm slides up & out, full rises up into place.
@@ -169,7 +200,7 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
   display: flex;
   align-items: center;
 
-  @media (max-width: $desktop) {
+  @media (max-width: $nav-collapse) {
     position: absolute;
     top: 80px;
     right: $base-spacing-unit;
@@ -223,21 +254,6 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
             display: block;
             margin-bottom: 0;
             font-size: 16px;
-
-            &:hover {
-              &::before {
-                opacity: 1;
-                visibility: visible;
-              }
-            }
-
-            &.active-link {
-              &::before {
-                opacity: 1;
-                visibility: visible;
-                background-color: var(--primary-color);
-              }
-            }
           }
         }
 
@@ -248,9 +264,8 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
           font-size: 16px;
           line-height: 1.6;
 
-          &::before {
-            top: 0;
-          }
+          // Hamburger panel: color change only, no underline.
+          &::after { content: none; }
 
           .arrow-down {
             display: none;
@@ -262,7 +277,7 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
 }
 
 .dark-mode {
-  @media (max-width: $desktop) {
+  @media (max-width: $nav-collapse) {
     .main-nav {
       background-color: var(--background-alt-color);
     }
@@ -273,7 +288,7 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
   display: flex;
   align-items: center;
 
-  @media (max-width: $desktop) {
+  @media (max-width: $nav-collapse) {
     display: block;
   }
 }
@@ -281,6 +296,8 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
 .nav__list {
   display: flex;
   align-items: center;
+  position: relative;
+  top: -1px; // optical: lift sans nav to match serif logo centerline
 
   .nav__item {
     display: inline-block;
@@ -293,39 +310,34 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
 
     .nav__link {
       position: relative;
-      padding: 12px 0;
+      padding: 10px 0;
       font-size: 16px;
       line-height: 1;
       font-weight: 700;
+      transition: color .2s ease;
 
-      &::before {
+      &::after {
         content: "";
         position: absolute;
-        display: block;
-        width: 6px;
-        top: 9px;
-        right: -6px;
-        height: 6px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all .2s;
-        border-radius: 50%;
-        background-color: var(--text-alt-color);
+        left: 0;
+        right: 100%;
+        bottom: 2px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: var(--secondary-color);
+        transition: right .25s ease;
       }
 
       &:hover {
-        &::before {
-          opacity: 1;
-          visibility: visible;
-        }
+        color: var(--secondary-color);
+
+        &::after { right: 0; }
       }
 
       &.active-link {
-        &::before {
-          opacity: 1;
-          visibility: visible;
-          background-color: var(--primary-color);
-        }
+        color: var(--secondary-color);
+
+        &::after { right: 0; }
       }
 
     }
@@ -342,7 +354,11 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
       }
 
       .arrow-down {
-        font-size: 12px;
+        font-size: 11px;
+        margin-left: 2px;
+        vertical-align: middle;
+        position: relative;
+        top: -1px;
       }
 
       .dropdown-toggle {
@@ -379,23 +395,15 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
       padding: 0 0 0 12px;
       font-size: 16px;
       line-height: 1.6;
+      transition: color .2s ease;
 
-      // Dropdown items use a clean colour change. The top-level nav's
-      // floating dot (::before) reads as a stray mark in the desktop
-      // floating dropdown, so it's removed there in favour of a hover/
-      // active colour. Gated to desktop so the inline mobile menu — which
-      // shares this selector — keeps its dot indicator.
-      @media (min-width: $desktop + 1) {
-        &::before { content: none; }
-        &::after { content: none; }
-      }
+      // Dropdown items (desktop + hamburger): color change only, no dot/underline.
+      &::before { content: none; }
+      &::after { content: none; }
 
-      &:hover {
-        color: var(--secondary-color);
-      }
-
+      &:hover,
       &.active-link {
-        color: var(--primary-color);
+        color: var(--secondary-color);
       }
 
       &:last-child {
@@ -409,7 +417,7 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
   .dropdown-menu {
     background-color: var(--background-alt-color);
 
-    @media (max-width: $desktop) {
+    @media (max-width: $nav-collapse) {
       background-color: inherit;
     }
   }
@@ -428,7 +436,7 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
     }
   }
 
-  @media (max-width: $desktop) {
+  @media (max-width: $nav-collapse) {
     flex-shrink: 0;
     margin-left: auto;
     margin-right: 16px;
@@ -443,7 +451,7 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
   display: none;
   cursor: pointer;
 
-  @media (max-width: $desktop) {
+  @media (max-width: $nav-collapse) {
     position: relative;
     z-index: 101;
     display: flex;

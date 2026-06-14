@@ -17,6 +17,54 @@ document.addEventListener("DOMContentLoaded", function() {
     menu();
   });
 
+  // Condense the sticky header after a little scroll. Use hysteresis (turn on
+  // higher than off) so the ~20px height change from condensing — which shortens
+  // the page and can nudge scrollY back across a single threshold on short pages
+  // like /contact/ — can't make the state oscillate.
+  var header = document.querySelector(".header");
+  if (header) {
+    var CONDENSE_ON = 48, CONDENSE_OFF = 8;
+    var onScroll = function () {
+      var y = window.scrollY;
+      if (!header.classList.contains("is-scrolled")) {
+        if (y > CONDENSE_ON) header.classList.add("is-scrolled");
+      } else if (y < CONDENSE_OFF) {
+        header.classList.remove("is-scrolled");
+      }
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  // Logo click: spin the pangolin, then navigate once the animation finishes
+  var logoLink = document.querySelector(".logo__link");
+  var brandmark = logoLink && logoLink.querySelector(".brandmark");
+  var panImg = brandmark && brandmark.querySelector(".brandmark__pan img");
+  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (brandmark && panImg && !prefersReducedMotion) {
+    logoLink.addEventListener("click", function (event) {
+      // Let the browser handle new-tab / modified / non-primary clicks normally
+      if (event.defaultPrevented || event.button !== 0 ||
+          event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+        return;
+      }
+      event.preventDefault();
+      var href = logoLink.getAttribute("href");
+      var navigated = false;
+      var go = function () {
+        if (navigated) return;
+        navigated = true;
+        window.location.href = href;
+      };
+      // Restart the spin from the top, even if a hover spin was mid-flight
+      brandmark.classList.remove("is-spinning");
+      void brandmark.offsetWidth; // force reflow so the animation re-triggers
+      brandmark.classList.add("is-spinning");
+      panImg.addEventListener("animationend", go, { once: true });
+      setTimeout(go, 900); // fallback if animationend doesn't fire
+    });
+  }
+
   // Close menu when clicking outside
   document.addEventListener("click", (event) => {
     const isMenuOpen = menuList.classList.contains("is-visible");
