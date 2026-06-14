@@ -20,6 +20,11 @@ pinned: true
 weight: 1
 date: 2026-06-12
 image: /images/projects/early_forest_fire_detection/cover.jpg
+stats:
+  - value: "50"
+    label: sites monitored
+  - value: "500+"
+    label: fires detected
 ---
 
 ## Context
@@ -36,7 +41,7 @@ on it.
 >
 > <cite>– Pyronear</cite>
 
-![System Overview](/images/projects/early_forest_fire_detection/overview_system.png)
+![System Overview](/images/projects/early_forest_fire_detection/overview_system.svg)
 *Overview of the Pyronear system to monitor forests around the clock*
 
 The video below, filmed in the Forest of Fontainebleau, shows how the system
@@ -198,8 +203,5 @@ A computer vision model that catches the first signs of forest fire is a
 practical, low-cost way to protect them. It gets firefighters to the scene
 sooner — and as climate change leaves forests increasingly exposed, that head
 start matters more every year.
-
-You can try the model yourself on the [ML Space]({{< ref
-"/spaces/early_forest_fire_detection" >}}).
 
 {{< demo_cta >}}

@@ -13,7 +13,16 @@
 {{ $imgPath := strings.TrimPrefix "/" $src }}
 {{ $image := resources.Get $imgPath }}
 
-{{ if $image }}
+{{ if and $image (strings.HasSuffix (lower $imgPath) ".svg") }}
+  {{/* SVG: vector, can't (and needn't) go through the resize pipeline.
+       Publish as-is and emit a plain img so inline CSS animations run. */}}
+  <img
+    src="{{ $image.RelPermalink }}"
+    alt="{{ $alt }}"
+    {{ with $title }}title="{{ . }}"{{ end }}
+    loading="lazy"
+    decoding="async">
+{{ else if $image }}
   {{/* Generate responsive image with WebP */}}
   {{ $widths := slice 400 600 800 1200 }}
 
