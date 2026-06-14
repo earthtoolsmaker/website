@@ -1,7 +1,16 @@
+// Header-specific breakpoints (independent of the grid's $desktop/$tablet/$mobile):
+$logo-compact: 1100px; // <= this width the logo shows compact "etm"
+$nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
+
 /* Header */
 .header {
-  padding: 32px 0;
-  margin-bottom: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  padding: 16px 0;
+  margin-bottom: 32px;
+  transition: padding .25s ease, background-color .25s ease,
+              box-shadow .25s ease, border-color .25s ease;
 
   .header__inner {
     position: relative;
@@ -11,22 +20,19 @@
     max-width: 1600px;
     margin: 0 auto;
 
-    @media (max-width: $desktop) {
+    @media (max-width: $nav-collapse) {
       display: flex;
       justify-content: space-between;
       flex-wrap: nowrap;
     }
   }
 
-  @media (max-width: $desktop) {
-    margin-bottom: 48px;
-  }
-
   @media (max-width: $tablet) {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   @media (max-width: $mobile) {
+    padding: 12px 0;
     margin-bottom: 16px;
   }
 }
@@ -69,15 +75,14 @@
 // footer (--slide). The full word sits in-flow so its width is always reserved
 // (nav/footer never shift); "etm" is overlaid on top.
 .brandmark {
-  --bm-h: 60px;
+  --bm-h: 48px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   line-height: 0;
 
-  @media (max-width: $desktop) { --bm-h: 54px; }
-  @media (max-width: $tablet)  { --bm-h: 48px; }
-  @media (max-width: $mobile)  { --bm-h: 44px; }
+  @media (max-width: $tablet)  { --bm-h: 44px; }
+  @media (max-width: $mobile)  { --bm-h: 40px; }
 
   &--sm { --bm-h: 44px; } // footer
 }
