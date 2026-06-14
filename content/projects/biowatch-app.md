@@ -15,7 +15,7 @@ clients:
     logo: /images/clients/inbo/logo.jpg
 status: completed
 github_repo: https://github.com/earthtoolsmaker/biowatch
-pinned: true
+pinned: false
 date: 2025-02-20
 image: /images/projects/biowatch-app/cover.png
 aliases:
