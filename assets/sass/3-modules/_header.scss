@@ -49,19 +49,105 @@
 .logo__image,
 .logo__image__dark {
   max-width: 100%;
-  max-height: 120px;
+  max-height: 60px;
 
   @media (max-width: $desktop) {
-    max-height: 100px;
+    max-height: 54px;
   }
 
   @media (max-width: $tablet) {
-    max-height: 90px;
+    max-height: 48px;
   }
 
   @media (max-width: $mobile) {
-    max-height: 80px;
+    max-height: 44px;
   }
+}
+
+// Animated brandmark: the pangolin rolls on hover while the word swaps from
+// "etm" to the full "earthtoolsmaker". Shared by the header (--unroll) and the
+// footer (--slide). The full word sits in-flow so its width is always reserved
+// (nav/footer never shift); "etm" is overlaid on top.
+.brandmark {
+  --bm-h: 60px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 0;
+
+  @media (max-width: $desktop) { --bm-h: 54px; }
+  @media (max-width: $tablet)  { --bm-h: 48px; }
+  @media (max-width: $mobile)  { --bm-h: 44px; }
+
+  &--sm { --bm-h: 44px; } // footer
+}
+
+.brandmark__pan img {
+  display: block;
+  height: var(--bm-h);
+  width: auto;
+  transition: transform .7s ease;
+}
+
+// only the animated variants spin; the static home logo never does
+.brandmark--unroll:hover .brandmark__pan img,
+.brandmark--slide:hover .brandmark__pan img,
+a:focus-visible .brandmark--unroll .brandmark__pan img,
+a:focus-visible .brandmark--slide .brandmark__pan img {
+  animation: bm-roll .8s ease;
+}
+
+@keyframes bm-roll { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+
+.brandmark__words {
+  position: relative;
+  display: inline-block;
+}
+
+.brandmark__word {
+  display: block;       // full word in-flow → reserves width
+  height: var(--bm-h);
+  width: auto;
+}
+
+.brandmark__word--etm { position: absolute; top: 0; left: 0; } // overlay
+
+// ---- UNROLL (header): etm fades out, full unrolls left→right. On exit the
+// full word folds back, then etm waits and fades in (no overlap). Longhands so
+// the per-state transition-delay isn't clobbered by a shorthand delay:0.
+.brandmark--unroll {
+  .brandmark__word {
+    transition-property: clip-path, opacity;
+    transition-duration: .35s, .25s;
+    transition-timing-function: ease;
+  }
+  .brandmark__word--etm  { opacity: 1; transition-delay: .4s; }
+  .brandmark__word--full { opacity: 1; clip-path: inset(0 100% 0 0); }
+
+  &:hover .brandmark__word--etm,
+  a:focus-visible &:hover .brandmark__word--etm,
+  a:focus-visible & .brandmark__word--etm  { opacity: 0; transition-delay: .1s; }
+
+  &:hover .brandmark__word--full,
+  a:focus-visible & .brandmark__word--full { clip-path: inset(0 0 0 0); transition-delay: .45s; }
+}
+
+// ---- SLIDE (footer): odometer. etm slides up & out, full rises up into place.
+.brandmark--slide {
+  .brandmark__words { height: var(--bm-h); overflow: hidden; }
+  .brandmark__word {
+    transition-property: transform, opacity;
+    transition-duration: .3s, .3s;
+    transition-timing-function: ease;
+  }
+  .brandmark__word--etm  { transform: translateY(0);    opacity: 1; transition-delay: .34s; }
+  .brandmark__word--full { transform: translateY(100%); opacity: 0; transition-delay: 0s; }
+
+  &:hover .brandmark__word--etm,
+  a:focus-visible & .brandmark__word--etm  { transform: translateY(-100%); opacity: 0; transition-delay: 0s; }
+
+  &:hover .brandmark__word--full,
+  a:focus-visible & .brandmark__word--full { transform: translateY(0); opacity: 1; transition-delay: .34s; }
 }
 
 .logo__image__dark {
@@ -82,7 +168,6 @@
 .main-nav {
   display: flex;
   align-items: center;
-  padding-top:40px;
 
   @media (max-width: $desktop) {
     position: absolute;
@@ -332,7 +417,6 @@
 
 .header__cta {
   justify-self: end;
-  padding-top: 40px;
 
   .button {
     color: var(--dark);

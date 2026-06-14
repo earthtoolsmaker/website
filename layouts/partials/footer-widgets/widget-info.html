@@ -3,21 +3,21 @@
 
     <div class="logo-footer">
       <a class="logo-footer__link" href="{{ .Site.BaseURL }}">
-        {{ if or (.Site.Params.logo) (.Site.Params.logo_dark) }}
-        {{ with .Site.Params.logo }}
-          {{ $imgPath := strings.TrimPrefix "/" . }}
-          {{ $img := resources.Get $imgPath }}
-          {{ if $img }}
-        <img class="logo-footer__image" src="{{ $img.RelPermalink }}" alt="{{ site.Title }}">
-          {{ end }}
-        {{ end }}
-        {{ with .Site.Params.logo_dark }}
-          {{ $imgPath := strings.TrimPrefix "/" . }}
-          {{ $img := resources.Get $imgPath }}
-          {{ if $img }}
-        <img class="logo-footer__image__dark" src="{{ $img.RelPermalink }}" alt="{{ site.Title }}">
-          {{ end }}
-        {{ end }}
+        {{ $full := and .Site.Params.logo (resources.Get (strings.TrimPrefix "/" .Site.Params.logo)) }}
+        {{ $panIcon := resources.Get "images/logos/etm-logo.png" }}
+        {{ $wordEtm := resources.Get "images/logos/logo-word-etm.png" }}
+        {{ $wordFull := resources.Get "images/logos/logo-word-full.png" }}
+        {{ if and $panIcon $wordEtm $wordFull }}
+          {{/* Footer: "etm" slides up to the full wordmark on hover (pangolin rolls) */}}
+        <span class="brandmark brandmark--slide brandmark--sm">
+          <span class="brandmark__pan"><img src="{{ $panIcon.RelPermalink }}" alt="{{ site.Title }}"></span>
+          <span class="brandmark__words">
+            <img class="brandmark__word brandmark__word--full" src="{{ $wordFull.RelPermalink }}" alt="" aria-hidden="true">
+            <img class="brandmark__word brandmark__word--etm" src="{{ $wordEtm.RelPermalink }}" alt="" aria-hidden="true">
+          </span>
+        </span>
+        {{ else if $full }}
+        <img class="logo-footer__image" src="{{ $full.RelPermalink }}" alt="{{ site.Title }}">
         {{ else }}
         {{ .Site.Title }}
         {{ end }}
