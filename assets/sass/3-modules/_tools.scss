@@ -307,3 +307,10 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+/* homepage tools section — the CTA band sits outside .container__inner, so it
+   misses the -32px pull-up the other sections get and leaves an oversized gap
+   before the next section. Pull it back up to match the section rhythm. */
+.tools-section .build-cta {
+  margin-bottom: -32px;
+}
