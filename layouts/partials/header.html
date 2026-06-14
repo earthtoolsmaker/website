@@ -10,16 +10,11 @@
             {{ $panIcon := resources.Get "images/logos/etm-logo.png" }}
             {{ $wordEtm := resources.Get "images/logos/logo-word-etm.png" }}
             {{ $wordFull := resources.Get "images/logos/logo-word-full.png" }}
-            {{ if and .IsHome $panIcon $wordFull }}
-              {{/* Home: static full wordmark, same pangolin+word spacing as the other pages */}}
-            <span class="brandmark">
-              <span class="brandmark__pan"><img src="{{ $panIcon.RelPermalink }}" alt="{{ site.Title }}"></span>
-              <span class="brandmark__words">
-                <img class="brandmark__word brandmark__word--full" src="{{ $wordFull.RelPermalink }}" alt="" aria-hidden="true">
-              </span>
-            </span>
-            {{ else if and $panIcon $wordEtm $wordFull }}
-              {{/* Non-home: the pangolin rolls on hover while the word unrolls from "etm" to the full wordmark */}}
+            {{ if and $panIcon $wordEtm $wordFull }}
+              {{/* Same responsive brandmark on every page (incl. home). The pangolin
+                   rolls on hover at all widths. The resting word is viewport-driven via
+                   CSS: full "earthtoolsmaker" >=1100px, compact "etm" below — and in the
+                   etm band, hover unrolls to the full word. */}}
             <span class="brandmark brandmark--unroll">
               <span class="brandmark__pan"><img src="{{ $panIcon.RelPermalink }}" alt="{{ site.Title }}"></span>
               <span class="brandmark__words">
