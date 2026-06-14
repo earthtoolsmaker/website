@@ -2,7 +2,7 @@
 # General Site Settings
 baseURL = "https://earthtoolsmaker.org"
 languageCode = "en-us"
-title = "EarthToolsMaker"
+title = "earthtoolsmaker"
 googleAnalytics = "" # Add your identifier. For example UA-99631805-1.
 # paginate = 6
 
