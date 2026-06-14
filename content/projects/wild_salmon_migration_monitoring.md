@@ -259,6 +259,6 @@ identifying and addressing threats, and engaging stakeholders in conservation
 efforts.
 
 One can try out the model from the [ML Space]({{< ref
-"/spaces/wild_salmon_migration_monitoring" >}}) or directly from the snippet below:
+"/spaces/wild_salmon_migration_monitoring" >}}) or right here:
 
-{{< hf_space "earthtoolsmaker-salmon-vision" >}}
+{{< demo_cta >}}

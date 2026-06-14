@@ -1,6 +1,11 @@
 ---
 title: "Biowatch: Camera Trap Data, Visualized"
 summary: A free, open-source desktop application for visualizing camera trap data to support conservation efforts.
+tools:
+  - Computer Vision
+  - Machine Learning
+  - Camera Traps
+  - Interactive Map
 clients:
   - name: OSI Panthera
     link: https://www.osi-panthera.org/
