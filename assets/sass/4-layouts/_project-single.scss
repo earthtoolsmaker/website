@@ -48,3 +48,59 @@
     .project-hero__stat-value { font-size: 30px; }
   }
 }
+
+// --- Facts bar (under hero, aligned to the reading column) ---
+.project-facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+  max-width: 780px;
+  margin: -28px auto 8px;          // pull up into the hero's bottom margin
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-color);
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
+    font-size: 15px;
+    color: var(--text-alt-color);
+
+    img { height: 18px; width: auto; }
+    i { font-size: 18px; }
+
+    &:hover { color: var(--secondary-color); }
+  }
+
+  &__tools {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__chip {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--background-alt-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+  }
+
+  &__date {
+    margin-left: auto;
+    font-size: 14px;
+    color: var(--text-alt-color);
+  }
+
+  @media (max-width: $tablet) {
+    padding-left: $base-spacing-unit;
+    padding-right: $base-spacing-unit;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 8px;
+    &__date { margin-left: 0; }
+  }
+}
