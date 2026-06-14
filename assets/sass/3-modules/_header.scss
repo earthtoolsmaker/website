@@ -115,26 +115,46 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
   width: auto;
 }
 
-.brandmark__word--etm { position: absolute; top: 0; left: 0; } // overlay
+.brandmark__word--etm { position: absolute; top: 0; left: 0; } // overlay (footer --slide)
 
-// ---- UNROLL (header): etm fades out, full unrolls left→right. On exit the
-// full word folds back, then etm waits and fades in (no overlap). Longhands so
-// the per-state transition-delay isn't clobbered by a shorthand delay:0.
+// ---- UNROLL (header), DEFAULT (< $logo-compact): "etm" is the resting word,
+// in-flow so the logo footprint stays narrow; the full word overlays absolutely
+// and unrolls left→right on hover. (Overrides the global etm-overlay rule above,
+// which the footer --slide still relies on.)
 .brandmark--unroll {
-  .brandmark__word {
-    transition-property: clip-path, opacity;
-    transition-duration: .35s, .25s;
-    transition-timing-function: ease;
+  .brandmark__word--etm {
+    position: static;
+    opacity: 1;
+    transition: opacity .25s ease;
   }
-  .brandmark__word--etm  { opacity: 1; transition-delay: .4s; }
-  .brandmark__word--full { opacity: 1; clip-path: inset(0 100% 0 0); }
+  .brandmark__word--full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: inset(0 100% 0 0); // hidden: clipped from the right
+    transition: clip-path .35s ease;
+  }
 
   &:hover .brandmark__word--etm,
-  a:focus-visible &:hover .brandmark__word--etm,
   a:focus-visible & .brandmark__word--etm  { opacity: 0; transition-delay: .1s; }
 
   &:hover .brandmark__word--full,
-  a:focus-visible & .brandmark__word--full { clip-path: inset(0 0 0 0); transition-delay: .45s; }
+  a:focus-visible & .brandmark__word--full { clip-path: inset(0 0 0 0); transition-delay: .1s; }
+}
+
+// ---- WIDE (>= $logo-compact): full wordmark at rest, in-flow; "etm" hidden; no swap.
+@media (min-width: $logo-compact) {
+  .brandmark--unroll {
+    .brandmark__word--full {
+      position: static;
+      clip-path: none;
+      transition: none;
+    }
+    .brandmark__word--etm { display: none; }
+
+    &:hover .brandmark__word--full,
+    a:focus-visible & .brandmark__word--full { clip-path: none; }
+  }
 }
 
 // ---- SLIDE (footer): odometer. etm slides up & out, full rises up into place.
