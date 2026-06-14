@@ -14,7 +14,6 @@ space: /spaces/early_forest_fire_detection/
 tools:
   - Computer Vision
   - Machine Learning
-  - MLOps
 status: completed
 pinned: true
 weight: 1
