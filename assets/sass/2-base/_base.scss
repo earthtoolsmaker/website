@@ -28,7 +28,7 @@ body {
     width: 100%;
     height: 100%;
     background: var(--background-color);
-    z-index: 15;
+    z-index: 300; // above the sticky header (z-index 200) so the load curtain covers it too
     transition: 1s;
   }
 
