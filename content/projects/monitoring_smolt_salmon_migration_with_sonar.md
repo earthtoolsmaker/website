@@ -130,7 +130,7 @@ Rather than spanning the trigger segment across the entire sonar range, this pro
 
 Experience the smolt detection and counting model in action. Upload preprocessed sonar footage or use the provided examples to see automated detection and tracking:
 
-{{< hf_space "Lumax-eco-sonar-smolt" >}}
+{{< demo_cta >}}
 
 ## Conclusion
 

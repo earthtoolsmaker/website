@@ -380,26 +380,26 @@ a:focus-visible .brandmark--slide .brandmark__pan img {
       font-size: 16px;
       line-height: 1.6;
 
+      // Dropdown items use a clean colour change. The top-level nav's
+      // floating dot (::before) reads as a stray mark in the desktop
+      // floating dropdown, so it's removed there in favour of a hover/
+      // active colour. Gated to desktop so the inline mobile menu — which
+      // shares this selector — keeps its dot indicator.
+      @media (min-width: $desktop + 1) {
+        &::before { content: none; }
+        &::after { content: none; }
+      }
+
       &:hover {
-        &::after {
-          opacity: .3;
-        }
+        color: var(--secondary-color);
+      }
+
+      &.active-link {
+        color: var(--primary-color);
       }
 
       &:last-child {
         margin-bottom: 0;
-      }
-
-      &.active-link {
-        &::before {
-          opacity: 1;
-          visibility: visible;
-          background-color: var(--primary-color);
-        }
-      }
-
-      &::before {
-        top: 0;
       }
     }
   }

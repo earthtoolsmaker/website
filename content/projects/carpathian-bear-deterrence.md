@@ -257,6 +257,6 @@ diverse species.
 </span>
 <br/>
 
-One can try out the model from the [ML Space]({{< ref "/spaces/human_wildlife_bear_conflict" >}}) or directly from the snippet below:
+One can try out the model from the [ML Space]({{< ref "/spaces/human_wildlife_bear_conflict" >}}).
 
-{{< hf_space "achouffe-bear-detection" >}}
+{{< demo_cta >}}

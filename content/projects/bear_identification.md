@@ -13,7 +13,7 @@ github_repo: https://github.com/earthtoolsmaker/bear-conservation
 space: /spaces/bear_identification/
 tools:
   - Computer Vision
-  - Maching Learning
+  - Machine Learning
 status: completed
 date: 2024-04-03
 pinned: false
@@ -227,6 +227,6 @@ conservation. The development of open-source tools in this project signifies a
 valuable contribution, not only facilitating adaptability to various species
 but also holding potential to enhance conservation endeavors on a global scale.
 
-One can try out the model from the [ML Space]({{< ref "/spaces/bear_identification" >}}) or directly from the snippet below:
+One can try out the model from the [ML Space]({{< ref "/spaces/bear_identification" >}}).
 
-{{< hf_space "earthtoolsmaker-bear-face-recognition" >}}
+{{< demo_cta >}}
