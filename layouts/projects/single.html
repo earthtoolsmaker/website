@@ -68,23 +68,31 @@
   </div>
 </div>
 
-{{/* ---------- 4. PARTNER STRIP ---------- */}}
+{{/* ---------- 4. PARTNER STRIP (same treatment as the spaces pages) ---------- */}}
 {{ with .Params.clients }}
-<section class="section project-partners">
-  <div class="container"><div class="row"><div class="col col-12"><div class="container__inner">
-    <div class="section__info">
-      <div class="section__head"><h2 class="section__title">Partners</h2></div>
-      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
-    </div>
-    <div class="project-partners__grid">
-      {{ range . }}
-      <a class="partner-logo-container{{ with .bg }} partner-bg-{{ . }}{{ end }}" href="{{ .link }}" target="_blank" rel="noopener" title="{{ .name }}">
-        {{ $imgPath := strings.TrimPrefix "/" .logo }}{{ $img := resources.Get $imgPath }}{{ if $img }}<img class="partner-logo" src="{{ $img.RelPermalink }}" alt="{{ .name }}" loading="lazy">{{ end }}
+<div class="container">
+  <div class="space-partners">
+    <div class="space-partners__label">In partnership with</div>
+    <div class="space-partners__logos">
+      {{ range $partner := . }}
+      {{ $img := "" }}
+      {{ with $partner.logo }}
+        {{ $imgPath := strings.TrimPrefix "/" . }}
+        {{/* Prefer a dark-text variant (for white-on-transparent logos) when one exists */}}
+        {{ $img = or (resources.Get (replace $imgPath "logo.png" "logo_dark.png")) (resources.Get $imgPath) }}
+        {{ if and $img (not (strings.HasSuffix $imgPath ".svg")) (gt $img.Width 380) }}
+          {{ $img = $img.Resize "380x" }}
+        {{ end }}
+      {{ end }}
+      {{ with $img }}
+      <a class="space-partners__item" href="{{ $partner.link }}" target="_blank" rel="noopener noreferrer" title="{{ $partner.name }}">
+        <img class="space-partners__logo" src="{{ .RelPermalink }}" alt="{{ $partner.name }}" loading="lazy">
       </a>
       {{ end }}
+      {{ end }}
     </div>
-  </div></div></div></div>
-</section>
+  </div>
+</div>
 {{ end }}
 
 {{/* ---------- 5. CTA BAND (status-aware) ---------- */}}
