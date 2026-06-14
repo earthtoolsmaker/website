@@ -173,7 +173,7 @@ pagerSize = 6
     limit = 6
 
   [params.projects.fundraising]
-    enable = true
+    enable = false
     projects_title= "😇 Looking for Funding"
     limit = 3
 
