@@ -179,6 +179,14 @@ pagerSize = 6
 
 
   #-------------------------------
+  # Home Tools Section
+  [params.home_tools]
+    enable = true
+    title = "🛠️ Our Tools"
+    featured = ["pyronear", "salmonvision", "biowatch"]  # tool slugs, in display order
+
+
+  #-------------------------------
   # Partners Section
   [params.partners]
     enable = true
