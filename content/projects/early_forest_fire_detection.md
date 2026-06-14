@@ -51,33 +51,34 @@ department.
 
 Protecting forests from fire is crucial for several reasons:
 
-- __Biodiversity Conservation:__ Forests are home to a
-vast array of plant and animal species. Wildfires can
-devastate habitats, leading to the loss of biodiversity
-and potentially driving species to extinction.
-- __Carbon Sequestration:__ Forests act as carbon sinks,
-absorbing carbon dioxide from the atmosphere and storing
-it in trees and soil. When forests burn, this stored
-carbon is released back into the atmosphere,
-exacerbating climate change.
-- __Water Resources:__ Healthy forests play a critical
-role in regulating water cycles. They help maintain soil
-moisture, reduce erosion, and sustain the flow of rivers
-and streams. Wildfires can disrupt these processes,
-leading to soil degradation and affecting water quality
-and availability.
-- __Economic Impact:__ Forests provide various ecosystem
-services, including timber, non-timber forest products,
-and recreational opportunities. Wildfires can damage
-these resources, impacting industries such as forestry,
-tourism, and agriculture, leading to economic losses for
-communities.
-- __Human Health:__ Wildfires produce smoke and air
-pollution, which can pose significant health risks,
-especially to vulnerable populations such as children,
-the elderly, and individuals with respiratory
-conditions. Protecting forests from fire helps safeguard
-public health and well-being.
+<div class="support__grid">
+
+  <div class="support__card">
+    <h3 class="support__card-title">Biodiversity Conservation</h3>
+    <p class="support__card-description">Forests are home to a vast array of plant and animal species. Wildfires can devastate habitats, leading to the loss of biodiversity and potentially driving species to extinction.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Carbon Sequestration</h3>
+    <p class="support__card-description">Forests act as carbon sinks, absorbing carbon dioxide from the atmosphere and storing it in trees and soil. When forests burn, this stored carbon is released back into the atmosphere, exacerbating climate change.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Water Resources</h3>
+    <p class="support__card-description">Healthy forests play a critical role in regulating water cycles. They help maintain soil moisture, reduce erosion, and sustain the flow of rivers and streams. Wildfires can disrupt these processes, leading to soil degradation and affecting water quality and availability.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Economic Impact</h3>
+    <p class="support__card-description">Forests provide various ecosystem services, including timber, non-timber forest products, and recreational opportunities. Wildfires can damage these resources, impacting industries such as forestry, tourism, and agriculture, leading to economic losses for communities.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Human Health</h3>
+    <p class="support__card-description">Wildfires produce smoke and air pollution, which can pose significant health risks, especially to vulnerable populations such as children, the elderly, and individuals with respiratory conditions. Protecting forests from fire helps safeguard public health and well-being.</p>
+  </div>
+
+</div>
 
 Overall, preserving forests from fire is essential for
 maintaining ecological balance, mitigating climate
