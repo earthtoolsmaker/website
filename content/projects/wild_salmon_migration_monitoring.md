@@ -1,6 +1,14 @@
 ---
 title: Wild Salmon Migration Monitoring
 summary: The project monitors wild salmon migration to ensure the number passing through meets state regulations, addressing threats from human activities like fisheries and dams.
+tagline: Automated, multi-sensor counting that keeps Pacific salmon runs within regulation.
+stats:
+  - value: "7"
+    label: salmon species recognized
+  - value: "3"
+    label: sensing modalities
+  - value: "24/7"
+    label: automated counting
 github_repo: https://github.com/Salmon-Computer-Vision/salmon-computer-vision/tree/master
 space: /spaces/wild_salmon_migration_monitoring/
 clients:
@@ -251,6 +259,6 @@ identifying and addressing threats, and engaging stakeholders in conservation
 efforts.
 
 One can try out the model from the [ML Space]({{< ref
-"/spaces/wild_salmon_migration_monitoring" >}}) or directly from the snippet below:
+"/spaces/wild_salmon_migration_monitoring" >}}).
 
-{{< hf_space "earthtoolsmaker-salmon-vision" >}}
+{{< demo_cta >}}
