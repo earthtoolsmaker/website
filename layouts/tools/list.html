@@ -60,32 +60,7 @@
   <div class="container animate">
     <div class="row">
       {{ range (where .Site.RegularPages "Section" "tools" ) }}
-      <article class="tool col col-4 col-w-6 col-t-12">
-        <div class="tool__content">
-          <div class="tool__image"{{ with .Params.card_tint }} style="--tool-tint: {{ . }}"{{ end }}>
-            <div class="tool__logo{{ if .Params.logo_container }} tool__logo--chip{{ end }}">
-              {{ $iconPath := strings.TrimPrefix "/" .Params.icon }}
-              {{ $icon := resources.Get $iconPath }}
-              {{ if $icon }}
-              <img src="{{ $icon.RelPermalink }}" alt="{{ .Title }} logo" />
-              {{ else }}
-              <img src="{{ .Params.icon }}" alt="{{ .Title }} logo" />
-              {{ end }}
-            </div>
-          </div>
-          <div class="tool__inner">
-            <div class="tool__info">
-              {{ with .Params.subtitle }}
-              <div class="tool__subtitle">{{ . }}</div>
-              {{ end }}
-              <h3 class="tool__title"><a href="{{ .RelPermalink }}" class="tool__link">{{ .Title }}</a></h3>
-              {{ with .Params.summary }}
-              <p class="tool__excerpt">{{ . }}</p>
-              {{ end }}
-            </div>
-          </div>
-        </div>
-      </article>
+      {{ partial "tool-card.html" . }}
       {{ end }}
     </div>
   </div>

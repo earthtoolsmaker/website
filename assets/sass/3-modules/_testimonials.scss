@@ -27,6 +27,8 @@
 
 .testimonial-item {
   margin-bottom: 36px;
+  // Top room so the hover lift isn't clipped by the slider's overflow:hidden
+  padding-top: 12px;
   position: relative;
 
   @media (max-width: $mobile) {
@@ -35,11 +37,18 @@
 }
 
 .testimonial-content {
+  position: relative;
   padding: 32px;
   border-radius: 16px;
   background: var(--background-alt-color);
   border: 1px solid var(--border-color);
   box-shadow: 0 6px 26px rgba(0, 0, 0, 0.05);
+  will-change: transform;
+  transition: transform .3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
 
   @media (max-width: $mobile) {
     padding: 20px;
@@ -69,11 +78,6 @@
     height: 100%;
     user-select: none;
     object-fit: cover;
-    transition: transform .3s ease;
-  }
-
-  &:hover .client-avatar {
-    transform: scale(1.05);
   }
 
   @media (max-width: $mobile) {
@@ -83,29 +87,23 @@
 }
 
 .client-logo {
-  width: 100%;
-  position: relative;
+  margin-top: 20px;
+  text-align: center;
 
   .client-logo-image {
-    display: block;
-    position: absolute;
-    top: -16px; /* Distance from the top of its normal position */
-    right: -16px; /* Distance from the right of its normal position */
-    height: 30px;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    // Bounding box normalises visual weight across square + wide logos
+    max-width: 140px;
+    max-height: 46px;
     filter: grayscale(100%);
     opacity: 0.7;
-    transition: all 0.3s ease;
 
     @media (max-width: $mobile) {
-      height: 20px;
-      top: -10px; /* Distance from the top of its normal position */
-      right: -10px; /* Distance from the right of its normal position */
+      max-width: 110px;
+      max-height: 36px;
     }
-  }
-
-  &:hover .client-logo-image {
-    filter: grayscale(0%);
-    opacity: 1;
   }
 }
 
@@ -118,6 +116,17 @@
     font-size: 18px;
     font-family: $base-font-family;
     font-weight: 700;
+
+    a::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      border-radius: 16px;
+    }
   }
 
   .client-designation {
