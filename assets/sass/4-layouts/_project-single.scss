@@ -232,6 +232,7 @@ $project-cta-gap: 56px;
 }
 
 // Per-chip selected state: highlight the active chip and reveal its panel.
+// Indices match the .threats shortcode (0..5; a couple extra for safety).
 @for $i from 0 through 7 {
   .post__content #threat-#{$i}:checked ~ .threats__chips label[for="threat-#{$i}"] {
     background: var(--secondary-color);
@@ -245,6 +246,7 @@ $project-cta-gap: 56px;
     display: block;
   }
 
+  // Keyboard focus: show an outline on the chip whose radio is focused.
   .post__content #threat-#{$i}:focus-visible ~ .threats__chips label[for="threat-#{$i}"] {
     outline: 2px solid var(--secondary-color);
     outline-offset: 3px;

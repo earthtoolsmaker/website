@@ -1,33 +1,45 @@
 {{/*
-  Salmon species grid for the SalmonVision tool page.
+  Salmon species grid for the SalmonVision tool and project pages.
 
   Renders the main Pacific salmon species SalmonVision recognizes, using the
   species illustrations from the wild-salmon project bundle (looked up in
-  assets/ and resized to optimized WebP). Species data is defined inline below
-  since this grid is specific to this page.
+  assets/ and resized to optimized WebP). Each card flips on click/tap (pure
+  CSS, via the hidden checkbox) to reveal a longer description. Species data is
+  defined inline below since this grid is specific to these pages.
 */}}
 
 {{ $base := "images/projects/wild_salmon_migration_monitoring/species" }}
 {{ $species := slice
-  (dict "file" "chinook.png"         "name" "Chinook"   "meta" "The largest Pacific salmon — often ~30 lb, up to 100+")
-  (dict "file" "sockeye.png"         "name" "Sockeye"   "meta" "Prized red-fleshed salmon — 5–12 lb")
-  (dict "file" "coho.png"            "name" "Coho"      "meta" "Adaptable “silver” salmon — 8–12 lb")
-  (dict "file" "chum.png"            "name" "Chum"      "meta" "Second-largest salmon — 12–15 lb")
-  (dict "file" "pink_0.png"          "name" "Pink"      "meta" "Smallest and most abundant — 3–11 lb")
-  (dict "file" "steelhead-trout.png" "name" "Steelhead" "meta" "Sea-run rainbow trout — can spawn more than once")
+  (dict "file" "chinook.png"         "name" "Chinook"   "meta" "The largest Pacific salmon — often ~30 lb, up to 100+" "desc" "The largest Pacific salmon and the prized “king” of the runs — typically around 30 lb but capable of topping 100 lb, and 40–60 inches long.")
+  (dict "file" "sockeye.png"         "name" "Sockeye"   "meta" "Prized red-fleshed salmon — 5–12 lb" "desc" "Slim, streamlined and brilliantly coloured. Culturally vital to many First Nations; matures around age four at 5–12 lb and 20–28 inches.")
+  (dict "file" "coho.png"            "name" "Coho"      "meta" "Adaptable “silver” salmon — 8–12 lb" "desc" "A highly adaptable “silver” salmon found in rivers and streams across North America. Usually 8–12 lb and 18–24 inches long.")
+  (dict "file" "chum.png"            "name" "Chum"      "meta" "Second-largest salmon — 12–15 lb" "desc" "The second-largest Pacific salmon after Chinook. Typically 12–15 lb and 35–45 inches long.")
+  (dict "file" "pink_0.png"          "name" "Pink"      "meta" "Smallest and most abundant — 3–11 lb" "desc" "The smallest and most abundant Pacific salmon in BC, and the least vulnerable to extinction. Usually 3–11 lb and 18–24 inches.")
+  (dict "file" "steelhead-trout.png" "name" "Steelhead" "meta" "Sea-run rainbow trout — can spawn more than once" "desc" "Sea-run rainbow trout that, unlike other Pacific salmon, can spawn more than once. Most are 8–20 lb, though some top 30 lb and 45 inches.")
 }}
 
 <div class="species-grid">
   {{ range $species }}
   {{ $sp := . }}
   {{ $img := resources.Get (printf "%s/%s" $base $sp.file) }}
-  <div class="species-card">
-    {{ with $img }}
-    {{ $o := .Resize "560x webp q85" }}
-    <img class="species-card__img" src="{{ $o.RelPermalink }}" alt="{{ $sp.name }} salmon" loading="lazy" width="{{ $o.Width }}" height="{{ $o.Height }}" />
-    {{ end }}
-    <p class="species-card__name">{{ $sp.name }}</p>
-    <p class="species-card__meta">{{ $sp.meta }}</p>
-  </div>
+  <label class="species-card">
+    <input type="checkbox" class="species-card__toggle" aria-label="Flip the {{ $sp.name }} card for more detail">
+    <span class="species-card__inner">
+      <span class="species-card__face species-card__front">
+        {{ with $img }}
+        {{ $o := .Resize "560x webp q85" }}
+        <img class="species-card__img" src="{{ $o.RelPermalink }}" alt="{{ $sp.name }} salmon" loading="lazy" width="{{ $o.Width }}" height="{{ $o.Height }}" />
+        {{ end }}
+        <span class="species-card__name">{{ $sp.name }}</span>
+        <span class="species-card__meta">{{ $sp.meta }}</span>
+        <span class="species-card__flip" aria-hidden="true">＋ tap for more</span>
+      </span>
+      <span class="species-card__face species-card__back">
+        <span class="species-card__name">{{ $sp.name }}</span>
+        <span class="species-card__desc">{{ $sp.desc }}</span>
+        <span class="species-card__flip" aria-hidden="true">↩ tap to flip back</span>
+      </span>
+    </span>
+  </label>
   {{ end }}
 </div>
