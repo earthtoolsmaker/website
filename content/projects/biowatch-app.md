@@ -1,6 +1,14 @@
 ---
 title: "Biowatch: Camera Trap Data, Visualized"
 summary: A free, open-source desktop application for visualizing camera trap data to support conservation efforts.
+tagline: A free, open-source desktop app that turns a folder of camera-trap images into living ecological insight — entirely offline.
+stats:
+  - value: "Free"
+    label: "& open-source"
+  - value: "100%"
+    label: offline
+  - value: "Win / macOS / Linux"
+    label: desktop app
 tools:
   - Computer Vision
   - Machine Learning
@@ -22,11 +30,11 @@ aliases:
   - /projects/observation_visualisations_app/
 ---
 
-## 🦊 Biowatch is Here
+## Biowatch is Here
 
 What started as a prototype is now **[Biowatch](/tools/biowatch/)** — a free, open-source desktop application that lets conservationists analyze, visualize, and explore camera trap datasets entirely offline. It runs on Windows, macOS, and Linux, and your sensitive wildlife data never leaves your computer.
 
-<div style="display: flex; gap: 1em; flex-wrap: wrap; margin: 1.5em 0;">
+<div style="display: flex; gap: 1em; flex-wrap: wrap; justify-content: center; margin: 1.5em 0;">
   <a class="link-no-decoration" href="/tools/biowatch/">
     <button class="button button--cta">Download Biowatch</button>
   </a>
@@ -41,17 +49,48 @@ Camera traps have transformed wildlife monitoring: they gather huge volumes of d
 
 Most tools stop at classification, or live on the web behind accounts and uploads. Biowatch is different. It's a desktop app that keeps your data private, handles large datasets without lengthy uploads, and works in remote field locations. Installation is a simple double-click—no technical expertise required—and unlike web platforms such as [Wildlife Insights](https://www.wildlifeinsights.org/), nothing ever leaves your machine.
 
+![How Biowatch works — import images or datasets, identify species on-device, explore the results on maps and activity charts, then export to GBIF or tidy per-species folders](/images/projects/biowatch-app/diagrams/workflow.svg)
+*From raw images to a published study: import from anywhere, identify species on
+your own machine, explore patterns in space and time, then export to open
+standards — all without your data leaving your computer.*
+
 ## What Biowatch Does
 
-Biowatch turns a folder of raw camera trap images, or a published dataset, into an interactive study you can explore:
+Biowatch turns a folder of raw camera trap images, or a published dataset, into an interactive study you can explore.
 
-- **Import from anywhere** — scan a folder of your own images, open a [Camtrap DP](https://camtrap-dp.tdwg.org/) package, or pull curated datasets straight from [GBIF](https://www.gbif.org/) and [LILA BC](https://lila.science/). Wildlife Insights and DeepFaune CSV exports are supported too.
-- **On-device species identification** — run AI models locally to detect and identify animals as a study is built. SpeciesNet (Google, 2,000+ species worldwide), MegaDetector (Microsoft), DeepFaune (CNRS, Europe), and Manas (snow leopards in the Himalayas) are available, with a coverage map to pick the right one for your region.
-- **Interactive spatio-temporal analysis** — an Explore tab with camera locations rendered as species pie charts, abundance markers, density heatmaps, or hex grids, alongside daily-activity clocks and seasonal timelines.
-- **Species filtering** — select species to compare their distributions and activity patterns, with consistent colors across maps and charts.
-- **Review and correct** — step through images in a gallery viewer, adjust bounding boxes, and fix AI predictions before they become observations.
-- **Deployment insights** — per-deployment activity timelines, heatmaps, and editable metadata you can export and re-import as CSV.
-- **Standards-based export** — publish to GBIF as a Camtrap DP package, or export media organized into one folder per species.
+<div class="support__grid">
+
+  <div class="support__card">
+    <h3 class="support__card-title">Import from anywhere</h3>
+    <p class="support__card-description">Scan a folder of your own images, open a <a href="https://camtrap-dp.tdwg.org/">Camtrap DP</a> package, or pull curated datasets straight from <a href="https://www.gbif.org/">GBIF</a> and <a href="https://lila.science/">LILA BC</a> — Wildlife Insights and DeepFaune CSV exports included.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">On-device species ID</h3>
+    <p class="support__card-description">Run AI models locally to detect and identify animals as a study builds: SpeciesNet (Google, 2,000+ species), MegaDetector (Microsoft), DeepFaune (CNRS, Europe) and Manas (Himalayan snow leopards), with a coverage map to pick the right one for your region.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Explore in space &amp; time</h3>
+    <p class="support__card-description">See camera locations as species pie-charts, abundance, density heatmaps or hex grids, alongside daily-activity clocks and seasonal timelines — and filter species to compare their distributions and patterns.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Review &amp; correct</h3>
+    <p class="support__card-description">Step through images in a gallery viewer, adjust bounding boxes, and fix AI predictions before they ever become observations.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Deployment insights</h3>
+    <p class="support__card-description">Per-camera activity timelines and heatmaps, with editable metadata you can export and re-import as CSV.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Standards-based export</h3>
+    <p class="support__card-description">Publish to GBIF as a Camtrap DP package, or export media organized into one tidy folder per species.</p>
+  </div>
+
+</div>
 
 Everything runs locally. No cloud uploads, no accounts, no tracking—ideal for the sensitive location data of endangered species.
 
@@ -70,7 +109,7 @@ Everything runs locally. No cloud uploads, no accounts, no tracking—ideal for 
 
 Biowatch is free to download for Windows, macOS, and Linux, and the full source is on [GitHub](https://github.com/earthtoolsmaker/biowatch) for anyone to inspect, use, or improve. Built together with conservation partners, it closes the gap between AI classification and practical insight—making wildlife monitoring more effective, more private, and more accessible.
 
-<div style="display: flex; gap: 1em; flex-wrap: wrap; margin: 1.5em 0;">
+<div style="display: flex; gap: 1em; flex-wrap: wrap; justify-content: center; margin: 1.5em 0;">
   <a class="link-no-decoration" href="/tools/biowatch/">
     <button class="button button--cta">Download Biowatch</button>
   </a>
