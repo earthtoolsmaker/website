@@ -1,0 +1,99 @@
+<svg viewBox="0 0 1062 380" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#bfe6e4"/><stop offset="100%" stop-color="#5fb0bb"/></linearGradient>
+  <linearGradient id="troutg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9c8638"/><stop offset="55%" stop-color="#c2ad5e"/><stop offset="100%" stop-color="#e0d28a"/></linearGradient>
+  <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e3a4a"/><stop offset="100%" stop-color="#176074"/></linearGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#e29578"/></marker>
+  <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.08"/></filter>
+  <style>
+    .title { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 26px; font-weight: 600; fill: #161616; }
+    .desc  { font-size: 15px; fill: #60626a; }
+    .step  { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; fill: #e29578; }
+    .chip  { font-size: 12px; font-weight: 700; fill: #fff; }
+    .swim  { transform-box: fill-box; transform-origin: 50% 50%; animation: swim 3.6s ease-in-out infinite; }
+    .kp    { animation: kpp 2.2s ease-in-out infinite; } .k2{animation-delay:-0.5s}.k3{animation-delay:-1s}.k4{animation-delay:-1.5s}
+    .match { animation: glow 2.4s ease-in-out infinite; }
+    @keyframes swim { 0%,100%{transform:translateX(0)} 50%{transform:translateX(5px)} }
+    @keyframes kpp { 0%,100%{opacity:0.45} 50%{opacity:1} }
+    @keyframes glow { 0%,100%{opacity:0.6} 50%{opacity:1} }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <!-- trout: olive-gold body, black spots, red cutthroat slash (faces right) -->
+  <g id="trout">
+    <path d="M-46 0 L-66 -17 C -57 -7 -57 7 -66 17 Z" fill="#8a7a3a"/>
+    <path d="M-4 13 C 0 23 10 22 13 12 Z" fill="#9a8a44"/>
+    <path d="M-26 12 C -23 19 -14 19 -14 11 Z" fill="#9a8a44"/>
+    <path d="M50 0 C 46 -8 34 -14 18 -16 C 4 -17 -16 -16 -34 -11 C -40 -9 -44 -6 -46 -3 L-46 3 C -44 6 -40 9 -34 11 C -16 16 4 17 18 16 C 34 14 46 8 50 0 Z" fill="url(#troutg)"/>
+    <path d="M20 7 C 24 17 33 16 35 8 Z" fill="#8a7a3a"/>
+    <path d="M2 -15 C 8 -26 19 -24 25 -12 C 16 -16 9 -16 2 -15 Z" fill="#9a8a44"/>
+    <path d="M-30 -11 C -34 -17 -40 -16 -42 -12 C -38 -13 -33 -13 -30 -11 Z" fill="#9a8a44"/>
+    <g fill="#2a2620"><circle cx="-32" cy="-4" r="1.7"/><circle cx="-24" cy="3" r="1.6"/><circle cx="-16" cy="-6" r="1.7"/><circle cx="-9" cy="4" r="1.5"/><circle cx="-2" cy="-7" r="1.6"/><circle cx="3" cy="6" r="1.4"/><circle cx="-20" cy="-1" r="1.4"/><circle cx="-27" cy="6" r="1.3"/><circle cx="-11" cy="-1" r="1.3"/><circle cx="7" cy="-4" r="1.4"/><circle cx="13" cy="3" r="1.3"/><circle cx="-6" cy="-2" r="1.2"/></g>
+    <path d="M24 8 q 8 2 14 1" stroke="#d6452f" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M30 -10 C 26 -3 26 4 30 10" stroke="#8a7a3a" stroke-width="1.4" fill="none" opacity="0.7"/>
+    <circle cx="39" cy="-3" r="3.2" fill="#2a2320"/><circle cx="40.1" cy="-4.1" r="1" fill="#fff"/>
+  </g>
+  <g id="kpmark" stroke="#e29578" stroke-width="1.6"><path d="M-3 0 H3 M0 -3 V3"/></g>
+</defs>
+
+<g stroke="#e29578" stroke-width="3.5" fill="none" stroke-linecap="round">
+  <line x1="250" y1="134" x2="291" y2="134" marker-end="url(#arrow)"/>
+  <line x1="509" y1="134" x2="550" y2="134" marker-end="url(#arrow)"/>
+  <line x1="768" y1="134" x2="809" y2="134" marker-end="url(#arrow)"/>
+</g>
+
+<!-- CARD 1 — PHOTO -->
+<rect x="36" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(142,128)">
+  <rect x="-66" y="-50" width="132" height="100" rx="9" fill="#eef5f2" stroke="#cdd4d6" stroke-width="2"/>
+  <clipPath id="ph"><rect x="-64" y="-48" width="128" height="96" rx="8"/></clipPath>
+  <g clip-path="url(#ph)">
+    <rect x="-64" y="-48" width="128" height="96" fill="url(#water)"/>
+    <g transform="translate(-2,6) rotate(-8)"><g class="swim"><use href="#trout"/></g></g>
+  </g>
+  <g transform="translate(-50,-38)"><circle r="7" fill="#fff" stroke="#e29578" stroke-width="2"/><circle r="3" fill="#e29578"/></g>
+</g>
+<text class="step" x="142" y="280" text-anchor="middle">01</text>
+<text class="title" x="142" y="312" text-anchor="middle">Photo</text>
+<text class="desc"  x="142" y="338" text-anchor="middle">A photo of a trout</text>
+
+<!-- CARD 2 — NORMALIZE -->
+<rect x="295" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(401,128)">
+  <rect x="-78" y="-58" width="156" height="116" rx="12" fill="#f1f5f3"/>
+  <g stroke="#d7e0db" stroke-width="1"><path d="M-78 -20 H78 M-78 20 H78 M-26 -58 V58 M26 -58 V58"/></g>
+  <g transform="translate(0,2)"><use href="#trout"/></g>
+  <g stroke="#83c5be" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M-70 -40 L-70 -52 L-58 -52"/><path d="M58 -52 L70 -52 L70 -40"/><path d="M-70 40 L-70 52 L-58 52"/><path d="M58 52 L70 52 L70 40"/>
+  </g>
+</g>
+<text class="step" x="401" y="280" text-anchor="middle">02</text>
+<text class="title" x="401" y="312" text-anchor="middle">Normalize</text>
+<text class="desc"  x="401" y="338" text-anchor="middle">Straightened &amp; cut out</text>
+
+<!-- CARD 3 — KEYPOINTS -->
+<rect x="554" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(660,128)">
+  <rect x="-78" y="-58" width="156" height="116" rx="12" fill="#10303a"/>
+  <g transform="translate(0,2)" opacity="0.5"><use href="#trout"/></g>
+  <!-- keypoint constellation over the spots -->
+  <g stroke="#e29578" stroke-width="1" opacity="0.5" fill="none"><path d="M-32 -4 L-24 3 L-16 -6 L-9 4 L-2 -7 L3 6 L13 3"/></g>
+  <g><g class="kp" transform="translate(-32,-4)"><use href="#kpmark"/></g><g class="kp k2" transform="translate(-24,3)"><use href="#kpmark"/></g><g class="kp k3" transform="translate(-16,-6)"><use href="#kpmark"/></g><g class="kp k4" transform="translate(-9,4)"><use href="#kpmark"/></g><g class="kp k2" transform="translate(-2,-7)"><use href="#kpmark"/></g><g class="kp k3" transform="translate(3,6)"><use href="#kpmark"/></g><g class="kp" transform="translate(13,3)"><use href="#kpmark"/></g></g>
+</g>
+<text class="step" x="660" y="280" text-anchor="middle">03</text>
+<text class="title" x="660" y="312" text-anchor="middle">Keypoints</text>
+<text class="desc"  x="660" y="338" text-anchor="middle">Spot pattern extracted</text>
+
+<!-- CARD 4 — MATCH -->
+<rect x="813" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(919,128)">
+  <rect x="-80" y="-60" width="160" height="120" rx="12" fill="url(#panel)"/>
+  <text class="chip" x="-66" y="-44" font-size="10" fill="#cfe9e0" letter-spacing="0.08em">DATABASE</text>
+  <g transform="translate(0,-22)"><rect x="-66" y="-12" width="132" height="22" rx="6" fill="#0a4a55"/><g stroke="#9fc3c0" stroke-width="1.4" opacity="0.7"><path d="M-52 0 l8 -5 l8 5 l8 -4"/></g><text class="chip" x="48" y="3" text-anchor="end" font-size="11" fill="#9fc3c0">#A07</text></g>
+  <g transform="translate(0,8)" class="match"><rect x="-68" y="-13" width="136" height="24" rx="6" fill="#0a7d86" stroke="#3fd07a" stroke-width="2.5"/><g stroke="#bfe0d6" stroke-width="1.6"><path d="M-54 0 l8 -5 l8 5 l8 -4"/></g><text class="chip" x="34" y="3" text-anchor="end">#A12</text><circle cx="52" cy="0" r="9" fill="#3fd07a"/><path d="M48 0 L51 3 L56 -3" stroke="#fff" stroke-width="1.8" fill="none"/></g>
+  <g transform="translate(0,38)"><rect x="-66" y="-12" width="132" height="22" rx="6" fill="#0a4a55"/><g stroke="#9fc3c0" stroke-width="1.4" opacity="0.7"><path d="M-52 0 l8 -5 l8 5 l8 -4"/></g><text class="chip" x="48" y="3" text-anchor="end" font-size="11" fill="#9fc3c0">#B33</text></g>
+  <g transform="translate(0,56)"><rect x="-44" y="-10" width="88" height="20" rx="10" fill="#15463f"/><text class="chip" x="0" y="4" text-anchor="middle" font-size="11">0.95 match</text></g>
+</g>
+<text class="step" x="919" y="280" text-anchor="middle">04</text>
+<text class="title" x="919" y="312" text-anchor="middle">Match</text>
+<text class="desc"  x="919" y="338" text-anchor="middle">Found in the database</text>
+</svg>

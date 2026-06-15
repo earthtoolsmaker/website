@@ -1,6 +1,7 @@
 ---
 title: Trout Identification
 summary: Non-invasive technology for monitoring trout populations using computer vision to accurately identify individual fish.
+tagline: Recognising individual trout by their spot patterns — like fingerprints — without ever touching the fish.
 clients:
   - name: Lumax AI
     link: https://lumax.ai/
@@ -12,6 +13,19 @@ related_posts:
 tools:
   - Machine Learning
   - Computer Vision
+pressures:
+  - name: Habitat loss
+    desc: "Urban development, farming and logging strip away the streamside habitat and clean water these trout depend on."
+  - name: Fragmentation
+    desc: "Dams, roads and other barriers cut populations off from one another, blocking migration and eroding genetic diversity."
+  - name: Pollution
+    desc: "Runoff from farms, industry and towns degrades the water quality these sensitive fish need."
+  - name: Invasive species
+    desc: "Introduced brook and rainbow trout compete with, hybridise with, and prey on the native cutthroat."
+  - name: Climate change
+    desc: "Shifting temperatures and flows warm and reshape the cold, clear streams cutthroat rely on to spawn."
+  - name: Overfishing
+    desc: "Heavy or unsustainable fishing pressure thins local populations and their genetic diversity."
 status: completed
 pinned: true
 date: 2024-12-08
@@ -19,132 +33,68 @@ github_repo: https://github.com/earthtoolsmaker/trout-reid
 image: /images/projects/trout_identification/cover.png
 ---
 
-## Context
+Trout are freshwater members of the salmon family, prized for their vivid colours
+and markings. The **Westslope Cutthroat Trout** — named for the red-orange slash
+under its jaw — is native to the cold, clear streams of British Columbia and the
+northwestern US, and because it is so sensitive to water quality, its health is a
+barometer for the whole stream.
 
-Trouts are freshwater fish belonging to the family Salmonidae, which also
-includes salmon and char. They are found in various habitats, including rivers,
-lakes, and streams, and are known for their vibrant colors and distinctive
-markings.
+Every cutthroat carries something remarkable: a pattern of black spots as unique
+as a fingerprint, and stable for life. Together with [Lumax AI](https://lumax.ai/),
+we built a system that reads those spot patterns to **recognise individual trout
+from a photo** — no tags, no handling, no stress to the fish.
 
-![Westslope Cutthroat Trout](/images/projects/trout_identification/wct_example.png)
-*Gallery / Westslope Cutthroat Trout*
+![From a photo to an identity — normalize the trout, extract its spot-pattern keypoints, and match them against a database](/images/projects/trout_identification/diagrams/pipeline.svg)
+*A photo is straightened and cut out, the trout's unique spots become keypoints,
+and those keypoints are matched against a database of known fish.*
 
-The Westslope Cutthroat Trout (Oncorhynchus clarkii lewisi) is a unique
-subspecies of cutthroat trout native to the freshwater systems of British
-Columbia, Canada, and parts of the northwestern United States. It is one of
-only two cutthroat trout subspecies found naturally in Canada, with distinct
-populations located in Alberta and the Pacific region of British Columbia.
+{{< image_carousel id="trout-intro" items="2" >}}
+  {{< carousel_image src="/images/projects/trout_identification/wct_example.png" alt="Westslope Cutthroat Trout" caption="The Westslope Cutthroat Trout — note the golden body, black spots, and the red slash beneath the jaw that gives it its name." >}}
+  {{< carousel_image src="/images/projects/trout_identification/map_elk_river.png" alt="Map of the Elk River" caption="The Elk River, British Columbia, where this trout population is monitored." >}}
+{{< /image_carousel >}}
 
-Renowned for its striking appearance, the Westslope Cutthroat Trout boasts a
-vibrant golden-yellow body adorned with numerous small black spots,
-complemented by a characteristic red or orange slash beneath its jaw. This
-trout thrives in cold, clear streams, rivers, and lakes, where it plays a
-crucial role in the aquatic ecosystem. Due to its specific habitat
-requirements, the Westslope Cutthroat Trout is often regarded as an important
-indicator of ecosystem health.
+## Why this trout matters
 
-![Elk River](/images/projects/trout_identification/map_elk_river.png)
-*Gallery / Map of the Elk River where the trout population is monitored*
+A native species in cold, clear water, the Westslope Cutthroat is woven through
+the health of its whole stream.
 
-One fascinating aspect of trouts is their stable and unique spot patterns. Just
-like human fingerprints, these patterns can be used to identify individual
-fish. Each trout has a distinct arrangement of spots, which remain consistent
-throughout its life. Researchers and biologists utilize these unique markings
-to study trout populations, monitor their health, and track their movements in
-the wild. This method of identification not only aids in conservation efforts
-but also enhances our understanding of trout behavior and ecology, highlighting
-the importance of these remarkable fish in freshwater ecosystems.
+<div class="support__grid">
 
-![Stable Spot patterns](/images/projects/trout_identification/lightglue/lightglue_matching.png)
-*Gallery / Unique spot patterns are like fingerprints*
+  <div class="support__card">
+    <h3 class="support__card-title">Food-web role</h3>
+    <p class="support__card-description">Both predator and prey — it eats insects and smaller fish, and in turn feeds birds, bears and larger fish, helping keep the web in balance.</p>
+  </div>
 
-## A vital role for the ecosystems
+  <div class="support__card">
+    <h3 class="support__card-title">Indicator species</h3>
+    <p class="support__card-description">Sensitive to water quality and habitat, healthy cutthroat populations signal a healthy stream — and warn early when something is wrong.</p>
+  </div>
 
-The Westslope Cutthroat Trout plays a crucial role in its ecosystem for several reasons:
+  <div class="support__card">
+    <h3 class="support__card-title">Culture &amp; habitat</h3>
+    <p class="support__card-description">It anchors recreational fishing and local economies, cycles nutrients, and its spawning even helps shape the streambed for other species.</p>
+  </div>
 
-- __Biodiversity Support__: As a native species, the Westslope Cutthroat Trout
-contributes to the overall biodiversity of freshwater ecosystems. Its presence
-helps maintain a balanced food web.
-- __Prey and Predator Dynamics__: This trout serves as both a predator and prey
-within its habitat. It feeds on insects, crustaceans, and smaller fish, helping
-to control these populations. In turn, it is a food source for larger
-predators, such as birds of prey, bears, and other fish species.
-- __Nutrient Cycling__: The Westslope Cutthroat Trout contributes to nutrient
-cycling in aquatic ecosystems. As it feeds and excretes waste, it helps to
-recycle nutrients that support the growth of aquatic plants and microorganisms.
-- __Indicator Species__: The health of Westslope Cutthroat Trout populations
-can indicate the overall health of freshwater ecosystems. Their sensitivity to
-changes in water quality and habitat conditions makes them valuable indicators
-for environmental monitoring.
-- __Cultural and Economic Importance__: This trout is significant for local
-communities, particularly for recreational fishing and tourism. Healthy
-populations can support local economies and promote conservation efforts.
-- __Habitat Formation__: The activities of Westslope Cutthroat Trout, such as
-spawning, can influence the physical characteristics of their habitats. Their
-nesting behaviors can help create and maintain suitable environments for other
-aquatic organisms.
+</div>
 
-Overall, the Westslope Cutthroat Trout is vital for maintaining the ecological
-balance and health of freshwater ecosystems in British Columbia and beyond.
+## Under pressure
 
-## Conservation concerns
+In many areas the Westslope Cutthroat is a species of concern, with populations
+in decline. Tap each pressure to learn more.
 
-In some regions, the Westslope Cutthroat Trout is considered a species
-of concern or is listed as threatened or endangered.
+{{< threats "pressures" >}}
 
-Many populations of Westslope Cutthroat Trout have experienced
-significant declines, leading to concerns about their long-term
-viability. The species faces several conservation threats that impact
-its populations and habitats:
+## How the system works
 
-- __Habitat Loss and Degradation__: Urban development, agriculture, and
-logging can lead to the destruction and alteration of natural habitats.
-This includes the loss of riparian zones, which are crucial for
-maintaining water quality and providing shelter.
-- __Habitat Fragmentation__: Habitat fragmentation caused by dams,
-roads, and other barriers can isolate populations, making it difficult
-for them to migrate, breed, and maintain genetic diversity.
-- __Pollution__: Runoff from agricultural practices, industrial
-activities, and urban areas can introduce pollutants into waterways,
-negatively affecting water quality and the health of trout populations.
-- __Invasive Species__: The introduction of non-native fish species,
-such as brook trout and rainbow trout, can lead to competition for
-resources, hybridization, and predation, which threaten the survival of
-Westslope Cutthroat Trout.
-- __Climate Change__: Changes in temperature and precipitation patterns
-can alter stream flows and water temperatures, impacting the habitats
-that Westslope Cutthroat Trout rely on for spawning and growth.
-- __Overfishing__: Unsustainable fishing practices can deplete local
-populations, particularly in areas where fishing pressure is high. This
-can lead to reduced genetic diversity and population declines.
+Recognising a trout takes two steps: prepare the photo, then match the spots.
 
-Overall, addressing these threats and concerns is essential for the
-conservation of the Westslope Cutthroat Trout and the health of the
-ecosystems they inhabit.
+### Prepare the photo
 
-## Developed Tools
+Each raw photo is **normalized** — the fish is cut out from its background and
+straightened into a standard pose — and its unique spots are extracted as
+**keypoints**. Getting this right is what makes the later matching accurate.
 
-### Pipeline Overview
-
-Throughout this project, a variety of tools were developed to
-effectively utilize the unique biomarkers of trouts for enhanced
-identification and monitoring.
-
-![ML Pipeline for Trout Identification](/images/projects/trout_identification/pipeline.png)
-*Gallery / Overview of the ML pipeline developed to identify trouts*
-
-### Preprocessing Stage
-
-The preprocessing stage is meticulously designed to transform a raw
-image of a trout into a normalized, segmented representation of the
-fish. This critical step ensures high accuracy during the subsequent
-identification phase of the pipeline.
-
-The table below illustrates how the preprocessing stage transforms the original
-image into a normalized representation of the trout, allowing for the
-extraction of its unique markings.
-
-| Original Picture | Normalized Trout | Extracted Keypoints |
+| Original photo | Normalized trout | Extracted keypoints |
 |:-------:|:----------:|:---------:|
 | ![Picture 1](/images/projects/trout_identification/images/raw/1.jpg) | ![Normalized 1](/images/projects/trout_identification/images/normalized/1.webp) | ![Keypoints 1](/images/projects/trout_identification/images/keypoints/1.webp) |
 | ![Picture 2](/images/projects/trout_identification/images/raw/2.jpg) | ![Normalized 2](/images/projects/trout_identification/images/normalized/2.webp) | ![Keypoints 2](/images/projects/trout_identification/images/keypoints/2.webp) |
@@ -152,20 +102,13 @@ extraction of its unique markings.
 | ![Picture 4](/images/projects/trout_identification/images/raw/4.jpg) | ![Normalized 4](/images/projects/trout_identification/images/normalized/4.webp) | ![Keypoints 4](/images/projects/trout_identification/images/keypoints/4.webp) |
 | ![Picture 5](/images/projects/trout_identification/images/raw/5.jpg) | ![Normalized 5](/images/projects/trout_identification/images/normalized/5.webp) | ![Keypoints 5](/images/projects/trout_identification/images/keypoints/5.webp) |
 
-### Identification Stage
+### Match the spots
 
-Once the trout image is normalized, the algorithm extracts key
-biomarkers, specifically the unique spot patterns of the trout, and
-compares them against a comprehensive database of known trout. If the
-comparison yields a sufficiently high score, the system identifies the
-fish as a match and retrieves its associated PIT tag and name.
-Conversely, if the comparison score is low, it indicates that the trout
-does not correspond to any entries in the database, and the system
-classifies it as a new individual.
-
-The table below demonstrates the functionality of the matching algorithm using
-the extracted keypoints. On the left, you will find examples of matching pairs,
-while the right side displays examples of non-matching pairs.
+The keypoints from a new photo are compared against a database of known trout. A
+strong enough match returns that individual — and its PIT tag and name; a weak
+match means it is a fish we have not seen before, ready to be registered. The
+pairs below show the matcher at work: genuine matches on the left, where the
+spot patterns line up, and non-matches on the right, where they don't.
 
 | ✅ Keypoints match | ❌ Keypoints do not match |
 |:-----:|:---------:|
@@ -176,18 +119,10 @@ while the right side displays examples of non-matching pairs.
 
 ## Conclusion
 
-In conclusion, a non-invasive trout identification system represents a
-transformative approach to monitoring trout populations effectively and
-sustainably. By utilizing unique spot patterns and other distinguishing
-features, researchers can gather critical data without disturbing the
-fish or their habitats. The advancement of these techniques not only
-enhances our understanding of trout ecology but also supports targeted
-conservation efforts. As we strive to protect and preserve aquatic
-ecosystems worldwide, such innovative methods will play a vital role in
-ensuring the long-term survival of trout species and the health of the
-environments they inhabit.
-
-One can try out the model from the [live demo]({{< ref
-"/demos/trout_identification" >}}).
+Reading a trout by its spots turns population monitoring into something fast,
+repeatable and completely non-invasive — gathering the data researchers need
+without ever disturbing the fish or their habitat. As pressure on freshwater
+ecosystems grows, methods like this help track individual trout over time and
+target conservation where it matters most.
 
 {{< demo_cta >}}
