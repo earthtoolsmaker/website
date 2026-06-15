@@ -62,8 +62,8 @@ None for the hero. `.tool-hero` and friends are already shared/generic.
 ## Follow-on additions
 
 ### Stat band
-A three-up stat band on the tool page, after the intro/Fontainebleau video and
-before the gallery carousel — reusing the SalmonVision tool-page pattern
+A three-up stat band on the tool page, directly below the hero video and above
+the intro paragraph — reusing the SalmonVision tool-page pattern
 (`about-stats about-stats--three tools-stats`). Values (provided by the user,
 matching the `stats:` front matter on the fire-detection project page):
 `24/7` monitoring · `50` sites monitored · `500+` fires detected. No new CSS.

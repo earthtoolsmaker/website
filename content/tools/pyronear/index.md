@@ -30,14 +30,6 @@ date: 2025-05-01
   </div>
 </div>
 
-Pyronear is a complete, open-source fire-detection system. A computer-vision model runs on a low-power microcomputer wired to cameras on high vantage points, watching the forest for the first signs of smoke. When it detects a fire, it sends an alert to a supervision platform used by fire departments — efficient, automatic, energy-efficient, and modular by design.
-
-The video below, filmed in the Forest of Fontainebleau, shows how the system works end to end: a firefighter walks through the full pipeline, from the cameras spotting the first signs of smoke to the alert reaching the fire department.
-
-<p><iframe src="https://www.youtube.com/embed/W3DxacGsdks" loading="lazy" frameborder="0" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9;"></iframe></p>
-<em style="font-size:14px;line-height:1.4em;display:block;">End-to-end demonstration of the Pyronear system in the Forest of Fontainebleau</em>
-<br/>
-
 <section class="about-stats about-stats--three tools-stats">
   <div class="about-stats__grid">
     <div class="about-stats__item">
@@ -54,6 +46,14 @@ The video below, filmed in the Forest of Fontainebleau, shows how the system wor
     </div>
   </div>
 </section>
+
+Pyronear is a complete, open-source fire-detection system. A computer-vision model runs on a low-power microcomputer wired to cameras on high vantage points, watching the forest for the first signs of smoke. When it detects a fire, it sends an alert to a supervision platform used by fire departments — efficient, automatic, energy-efficient, and modular by design.
+
+The video below, filmed in the Forest of Fontainebleau, shows how the system works end to end: a firefighter walks through the full pipeline, from the cameras spotting the first signs of smoke to the alert reaching the fire department.
+
+<p><iframe src="https://www.youtube.com/embed/W3DxacGsdks" loading="lazy" frameborder="0" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9;"></iframe></p>
+<em style="font-size:14px;line-height:1.4em;display:block;">End-to-end demonstration of the Pyronear system in the Forest of Fontainebleau</em>
+<br/>
 
 {{< image_carousel id="pyronear-gallery" items="2" >}}
   {{< carousel_image src="./images/platform1.png" alt="Pyronear Platform Alert" caption="Fire alert triggered on the Pyronear web platform, showing detected wildfire location and camera feed." >}}
