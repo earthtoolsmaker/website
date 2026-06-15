@@ -33,6 +33,7 @@ pressures:
   - name: Climate change
     desc: "Warming pushes treelines and suitable habitat upslope, shrinking the alpine zone and forcing snow leopards closer to people."
 status: fundraising
+hide_funding_eyebrow: true
 pinned: true
 date: 2025-02-04
 image: /images/projects/snow_leopard_monitoring/cover.png
