@@ -1,0 +1,60 @@
+{{/*
+  SEO meta partial. One responsibility: everything search engines and social
+  scrapers read from <head> EXCEPT JSON-LD (that lives in seo/schema.html).
+  Emits: <title>, description, canonical, Open Graph, Twitter Card, article:* meta.
+*/}}
+
+{{/* Title — preserves the site's existing title logic */}}
+<title>{{ if not .IsHome }}{{ .Title }}{{ .Params.name }} | {{ end }}{{ .Site.Title }}</title>
+
+{{/* Description with fallback chain: page description -> summary -> site description */}}
+{{ $description := .Description | default .Summary | default .Site.Params.description }}
+<meta name="description" content="{{ $description }}">
+
+{{/* Canonical — always the page's own www permalink */}}
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{/* Resolve an absolute share-image URL.
+     Page image is processed from assets/ (front matter uses a leading slash). */}}
+{{ $ogImage := "" }}
+{{ with .Params.image }}
+  {{ $img := resources.Get (strings.TrimPrefix "/" .) }}
+  {{ with $img }}
+    {{ $ogImage = (.Fill "1200x630 jpg q85").Permalink }}
+  {{ end }}
+{{ end }}
+{{ if not $ogImage }}
+  {{ with resources.Get .Site.Params.seo.default_image }}
+    {{ $ogImage = .Permalink }}
+  {{ end }}
+{{ end }}
+
+{{/* og:type — article for blog posts, website otherwise */}}
+{{ $ogType := "website" }}
+{{ if and .IsPage (eq .Section "posts") }}{{ $ogType = "article" }}{{ end }}
+
+{{/* Shared title expression for OG/Twitter */}}
+{{ $title := printf "%s%s | %s" .Title .Params.name .Site.Title }}
+{{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+
+{{/* Open Graph */}}
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:type" content="{{ $ogType }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="{{ replace .Site.LanguageCode "-" "_" }}">
+{{ with $ogImage }}<meta property="og:image" content="{{ . }}">{{ end }}
+
+{{/* Twitter Card */}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+{{ with $ogImage }}<meta name="twitter:image" content="{{ . }}">{{ end }}
+
+{{/* Article metadata — blog posts only */}}
+{{ if eq $ogType "article" }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+<meta property="article:author" content="{{ .Site.Params.author.author_name }}">
+{{ end }}
