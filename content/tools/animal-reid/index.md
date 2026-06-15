@@ -12,7 +12,37 @@ js:
   - /js/tabs.js
 ---
 
-# Individual Animal Identification Across Species
+<!--
+  Hero background video: static/videos/animal-reid-hero.mp4
+  Source: Pexels "Leopard Jungtier" (pexels.com/video/leopard_jungtier-18955955/)
+  License: Pexels License (free for commercial use, no attribution required).
+-->
+<div class="tool-hero">
+  <video class="tool-hero__video" autoplay muted loop playsinline preload="auto" aria-label="Close-up footage of a young leopard, its spotted coat filling the frame">
+    <source src="/videos/animal-reid-hero.mp4" type="video/mp4">
+  </video>
+  <div class="tool-hero__overlay">
+    <h1 class="tool-hero__title">Identify Every Individual</h1>
+    <p class="tool-hero__tagline">Non-invasive computer vision that tells one animal from another — bear, trout, seal, or snow leopard.</p>
+  </div>
+</div>
+
+<section class="about-stats about-stats--three tools-stats">
+  <div class="about-stats__grid">
+    <div class="about-stats__item">
+      <div class="about-stats__value">4</div>
+      <div class="about-stats__label">species supported</div>
+    </div>
+    <div class="about-stats__item">
+      <div class="about-stats__value">0 tags</div>
+      <div class="about-stats__label">fully non-invasive</div>
+    </div>
+    <div class="about-stats__item">
+      <div class="about-stats__value">100%</div>
+      <div class="about-stats__label">open source</div>
+    </div>
+  </div>
+</section>
 
 Animal reID is a modular computer vision framework for identifying individual animals. It adapts to each species by choosing the right technique — facial recognition, spot-pattern matching, or local feature analysis.
 
@@ -91,7 +121,7 @@ Upload bear photographs and watch as the system segments facial features and mat
 
 See local feature matching in action as the system analyzes spot patterns to identify individual trout from river monitoring programs.
 
-{{< hf_space "earthtoolsmaker-trout-reid" >}}
+{{< hf_space "achouffe-trout-reid" >}}
 
 {{< /tab >}}
 {{< tab index="2" >}}
@@ -157,8 +187,7 @@ Explore the open-source projects and technical guides behind Animal reID.
 
 <p class="tabs__intro">Each implementation is open-source with detailed documentation:</p>
 
-<div class="container">
-  <div class="row">
+<div class="row">
 
 {{< project_card title="Bear Identification" link="/projects/bear_identification/" image="/images/projects/bear_identification/cover.png" excerpt="Noninvasive technologies to identify and monitor bears, facilitating their conservation." >}}
 
@@ -168,7 +197,6 @@ Explore the open-source projects and technical guides behind Animal reID.
 
 {{< project_card title="Wadden Sea Seal Monitoring" link="/projects/wadden_sea_seal_monitoring/" image="/images/projects/wadden_sea_seal_monitoring/cover.jpg" excerpt="Automated seal population monitoring using AI to count, classify, and identify individual seals from aerial imagery in the Wadden Sea." >}}
 
-  </div>
 </div>
 
 {{< /tab >}}
@@ -176,8 +204,7 @@ Explore the open-source projects and technical guides behind Animal reID.
 
 <p class="tabs__intro">In-depth technical guides covering the design and implementation of animal identification systems:</p>
 
-<div class="container">
-  <div class="row">
+<div class="row">
 
 {{< article_card title="A guide to designing a bear face segmentation system" link="/posts/bear-face-segmentation-guide/" image="/images/posts/bear-face-segmentation-guide/cover.png" description="Detecting bears in real time using low-power technology." date="11 Apr, 2024" reading_time="8" tags="AI, vision, camera traps" >}}
 
@@ -187,7 +214,6 @@ Explore the open-source projects and technical guides behind Animal reID.
 
 {{< article_card title="Identify individuals with Local Feature Matching" link="/posts/local-feature-matching-lightglue/" image="/images/posts/local-feature-matching-lightglue/cover.png" description="A comprehensive examination of using local feature matching for individual identification." date="9 Dec, 2024" reading_time="14" tags="AI, vision, identification, local feature" >}}
 
-  </div>
 </div>
 
 {{< /tab >}}
