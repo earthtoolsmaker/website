@@ -149,16 +149,21 @@ other NGOs working in comparable ranges.
 
 ### Mapping detections over space and time
 
-A standalone, cross-platform, open-source app to explore the results: plot
-detections on an interactive map, filter by species, and see how activity shifts
-across locations and seasons. It works with any camera-trap dataset, not just
-this one.
+Classifying species is only half the job — you still have to make sense of the
+results: where animals turn up, how they move, and how numbers shift across
+seasons. The prototype we built for exactly this need grew into
+**[BioWatch](/tools/biowatch/)**, a free, open-source desktop app that plots
+detections on an interactive map, filters by species, and charts activity over
+time. It runs entirely offline on Windows, macOS and Linux, works with any
+camera-trap dataset, and keeps your sensitive wildlife data on your own machine. A
+full [online manual](https://biowatch.earthtoolsmaker.org/) walks through every
+feature.
 
-{{< image_carousel id="cocomap-gallery" contained="true" >}}
-  {{< carousel_image src="/images/projects/snow_leopard_monitoring/cocomap/1.png" alt="Interactive map of detections" caption="An interactive map showing camera-trap locations and species detections." >}}
-  {{< carousel_image src="/images/projects/snow_leopard_monitoring/cocomap/3.png" alt="Detection detail view" caption="A detailed view of individual detection events with their metadata." >}}
-  {{< carousel_image src="/images/projects/snow_leopard_monitoring/cocomap/4.png" alt="Temporal analysis" caption="Temporal analysis of species activity patterns across locations." >}}
-  {{< carousel_image src="/images/projects/snow_leopard_monitoring/cocomap/2.png" alt="Data exploration" caption="The data-visualisation prototype for exploring a camera-trap dataset." >}}
+{{< image_carousel id="biowatch-gallery" contained="true" >}}
+  {{< carousel_image src="/images/projects/biowatch-app/overview.png" alt="BioWatch study overview" caption="Every study opens with an interactive map, key metrics, the best captures, and the full species distribution." >}}
+  {{< carousel_image src="/images/projects/biowatch-app/explore-map.png" alt="BioWatch Explore tab" caption="Map camera locations as species pie-charts, abundance or density heatmaps, with daily-activity and seasonal charts alongside." >}}
+  {{< carousel_image src="/images/projects/biowatch-app/deployments.png" alt="BioWatch deployments view" caption="Camera-trap deployments plotted across the study area." >}}
+  {{< carousel_image src="/images/projects/biowatch-app/export.png" alt="BioWatch export dialog" caption="Publish to GBIF as a Camtrap DP package, or export media organised one folder per species." >}}
 {{< /image_carousel >}}
 
 ### Identifying individuals
