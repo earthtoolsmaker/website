@@ -36,7 +36,7 @@ pinned: true
 image: /images/projects/monitoring_smolt_salmon_migration_with_sonar/cover.png
 ---
 
-Monitoring smolt — juvenile salmon migrating downstream toward the ocean — is essential for understanding salmon population health and evaluating the impact of hydroelectric infrastructure on fish survival. In partnership with [BC Hydro](https://www.bchydro.com/) and [Lumax AI](https://lumax.ai/), we are developing an automated system to detect, track, and count smolt from ARIS sonar imagery collected at Cho':lhsh?ta Lake (Jansen Lake), British Columbia.
+Each spring, young salmon called **smolt** leave the rivers where they hatched and ride the current down to the sea — running a gauntlet of predators, dams and turbines along the way. How many survive that journey is one of the clearest measures of a salmon population's health. Together with [BC Hydro](https://www.bchydro.com/) and [Lumax AI](https://lumax.ai/), we're building a system that detects, tracks and counts smolt automatically from **ARIS sonar** footage recorded at Cho':lhsh?ta Lake (Jansen Lake), British Columbia.
 
 {{< image_carousel id="smolt-monitoring-intro" items="2" >}}
   {{< carousel_image src="/images/projects/monitoring_smolt_salmon_migration_with_sonar/map_overview.png" alt="Jansen Lake Map" caption="Jansen Lake, British Columbia, located on Vancouver Island" >}}
@@ -52,14 +52,14 @@ From a raw sonar recording to a verified count, the system runs four automated s
 
 ### What are smolt?
 
-Smolt are juvenile salmonids (8–14 cm) undergoing smoltification — the physiological transformation that prepares them for the transition from freshwater to saltwater. During this critical life stage, they migrate downstream through rivers and past infrastructure on their way to the ocean.
+Smolt are juvenile salmon (8–14 cm) going through **smoltification** — the bodily changes that turn a freshwater fish into one ready for the sea. It's the stage when they leave the river behind, slipping downstream past whatever infrastructure stands between them and the ocean.
 
 ![Salmon lifecycle](/images/projects/monitoring_smolt_salmon_migration_with_sonar/lifecycle_salmon.png)
 *Salmon lifecycle — courtesy of the [Pacific Salmon Foundation](https://psf.ca/learn/species-lifecycle/)*
 
 ### Why the smolt stage is critical
 
-The downstream migration is one of the most dangerous periods in a salmon's life. Smolt must navigate past dams, turbines, and other infrastructure that can cause direct mortality or disorientation. They swim close to the water surface where they are vulnerable to predators, and they often travel in dense groups over short time windows. Climate change is adding further pressure through altered river flows and rising water temperatures, compressing migration windows and increasing stress on already vulnerable juveniles.
+The trip downstream is one of the most dangerous stretches of a salmon's life. Smolt have to slip past dams and turbines that can kill or disorient them, they swim near the surface where predators wait, and they move in dense pulses packed into a few short windows. Climate change tightens the squeeze further — altering river flows and warming the water, which compresses those windows and piles stress onto already-vulnerable juveniles.
 
 ### Why accurate counting matters
 
@@ -69,11 +69,11 @@ Reliable smolt counts are fundamental for salmon conservation — tap each to le
 
 ### The challenge of current methods
 
-Traditional smolt counting relies on manual review of sonar footage, which is time-consuming and error-prone. Analysts must watch hours of recordings by hand, identifying and counting individual fish in noisy acoustic images. Dense migration events — where thousands of smolt pass in a short period — make manual review particularly impractical. The sheer volume of data generated during peak migration windows means that manual methods simply cannot scale to provide the continuous, reliable counts that conservation demands.
+Today, counting mostly means a person watching hours of footage and tallying fish by hand in grainy, noisy acoustic images. During a peak run, thousands of smolt can pass in a short burst — far more than anyone can keep up with frame by frame. The approach is slow, easy to get wrong, and impossible to scale to the continuous, reliable counts conservation actually needs.
 
 ## What is ARIS Sonar?
 
-ARIS sonar creates acoustic images using sound reflections, enabling fish detection in conditions where optical cameras fail: turbid water, zero visibility, and nighttime. It produces high-resolution, video-like acoustic image sequences that are well suited for detecting and counting small fish like smolt.
+ARIS sonar "sees" with sound instead of light, building video-like images from the echoes that bounce back off objects in the water. That lets it pick out fish where an ordinary camera is blind — in murky water, total darkness, at night — and its resolution is fine enough to catch something as small as a smolt.
 
 ![Sonar Aris Frame](/images/projects/monitoring_smolt_salmon_migration_with_sonar/sonar_aris_frame.png)
 *Example ARIS sonar frame — acoustic image showing fish targets in the sonar beam.*
@@ -82,31 +82,50 @@ ARIS sonar creates acoustic images using sound reflections, enabling fish detect
 
 ### Project scope
 
-The overarching goal of this project is to assess the feasibility of automated smolt enumeration from ARIS sonar data. We do this by reviewing existing methods, selecting the most promising candidates, and developing an end-to-end analysis pipeline combining deep learning-based object detection with tracking algorithms.
+The goal is to find out whether smolt can be counted automatically from ARIS sonar — and to build the pipeline that does it. We surveyed the existing methods, picked the most promising, and assembled an end-to-end workflow that pairs deep-learning object detection with tracking.
 
 ### Sonar analysis challenges
 
-Hydroacoustic imaging is a widely used and effective method to enumerate fish in waterways, but the analysis of large amounts of data is time-consuming and requires trained personnel. Methods to facilitate the analysis of sonar data are much needed but challenging to develop, especially due to background noise and variation in the intensity and type of the return signal of fish. Significant progress has been made in background subtraction and object detection in software such as [Echoview](https://echoview.com/) and [ArisFish](https://arisfish.software.informer.com/), but reliable algorithms to detect, track, and enumerate fish in an automated workflow remain elusive.
+Acoustic imaging is a proven way to count fish, but turning the footage into numbers is hard work: the signal is noisy, and a fish's echo varies in both strength and shape. Tools like [Echoview](https://echoview.com/) and [ArisFish](https://arisfish.software.informer.com/) have pushed background subtraction and detection forward, yet a fully automated detect-track-count workflow has stayed out of reach. Recent progress in deep neural networks is finally changing that.
 
-Over the last years, the fast development of Artificial Intelligence (AI), in particular Deep Neural Networks, has led to rapid progress in image analysis, including automated detection and tracking of fish in sonar imagery. Smolt present unique challenges compared to adult salmon: their small size (8–14 cm) makes them harder to detect and separate from noise, they swim close to the noisy water surface, and they can migrate in dense groups over short time periods.
+Smolt make it harder still. Next to adult salmon they're tiny (8–14 cm) and easily lost in noise, they hug the cluttered water surface, and they arrive in dense groups over short windows — exactly the conditions that trip up older methods.
 
 ### Key technical achievements
 
-Some key technical achievements of this project include:
-- Automated conversion and preprocessing of proprietary .aris format with motion-enhanced noise reduction
-- Detection and tracking of individual smolt using deep learning
-- Length estimation of the detected smolt
-- Directional counting of smolt migrating past a virtual trigger segment
+The pipeline now does four things end to end:
+
+<div class="services__list">
+  <div class="services__item">
+    <span class="services__number" aria-hidden="true">01</span>
+    <h4 class="services__item-title">Convert &amp; clean</h4>
+    <p class="services__item-description">Convert the proprietary <code>.aris</code> format and clean it up, with motion-aware noise reduction.</p>
+  </div>
+  <div class="services__item">
+    <span class="services__number" aria-hidden="true">02</span>
+    <h4 class="services__item-title">Detect &amp; track</h4>
+    <p class="services__item-description">Detect and follow each individual smolt across frames with deep learning.</p>
+  </div>
+  <div class="services__item">
+    <span class="services__number" aria-hidden="true">03</span>
+    <h4 class="services__item-title">Estimate length</h4>
+    <p class="services__item-description">Estimate every tracked fish's body length and convert it to real-world centimetres.</p>
+  </div>
+  <div class="services__item">
+    <span class="services__number" aria-hidden="true">04</span>
+    <h4 class="services__item-title">Count by direction</h4>
+    <p class="services__item-description">Count smolt as they cross a virtual line, recording each fish's direction of travel.</p>
+  </div>
+</div>
 
 ### Study site
 
-The [Alouette River](https://en.wikipedia.org/wiki/Alouette_River) is the target site for deployment of sonar smolt enumeration. For the first year we used smolt data from the outflow of Jansen Lake, as data collection at the Alouette River was not possible in 2025.
+The [Alouette River](https://en.wikipedia.org/wiki/Alouette_River) is the eventual deployment site. Because data collection there wasn't possible in 2025, this first year drew on smolt data from the outflow of Jansen Lake.
 
 ## Preprocessing
 
-Raw ARIS sonar files go through a five-step preprocessing pipeline before analysis: file conversion from the proprietary `.aris` format to `.mp4`, frame stabilization, noise reduction, colour channel adjustment, and chunking into manageable segments. Together these steps transform noisy acoustic recordings into clean, analysis-ready video.
+Before any analysis, each raw `.aris` file runs through five preprocessing steps — converting the proprietary format to `.mp4`, stabilizing the frames, reducing noise, adjusting the colour channels, and chunking the result into manageable segments. Together they turn noisy recordings into clean, analysis-ready video.
 
-The preprocessed output is visualized as an RGB image where each colour channel encodes a different layer of information. The blue background represents the original raw sonar input, while fish appear as bright red regions that stand out clearly against it, making them easy to distinguish from the static sonar information.
+The output is encoded as an RGB image, with each channel carrying a different layer: the raw sonar sits in the blue background, while moving fish light up in bright red — easy for both a person and the model to pick out from the static clutter.
 
 ![Preprocessing before and after](/images/projects/monitoring_smolt_salmon_migration_with_sonar/preprocess.png)
 *Before and after preprocessing — the RGB encoding makes fish (red) clearly distinguishable from the static sonar information (blue).*
@@ -115,47 +134,47 @@ Large sonar files are split into smaller chunks so the downstream detection and 
 
 ## Detection and Tracking
 
-We fine-tuned a pretrained [YOLOv11](https://github.com/ultralytics/ultralytics) model for smolt detection in preprocessed sonar frames. YOLO (You Only Look Once) is a family of real-time object detection models known for their excellent balance of speed and accuracy — critical when processing thousands of sonar frames per recording session. The model learns to locate smolt in each frame and output bounding boxes with confidence scores.
+We fine-tuned a pretrained [YOLOv11](https://github.com/ultralytics/ultralytics) model to spot smolt in the preprocessed frames. YOLO ("You Only Look Once") is a family of real-time detectors prized for balancing speed and accuracy — essential when a single session runs to thousands of frames. For each frame it returns a box around every smolt it finds, with a confidence score.
 
 ![YOLO tasks](/images/projects/monitoring_smolt_salmon_migration_with_sonar/yolo_tasks.png)
 *Overview of YOLO tasks — detection, segmentation, classification, pose estimation, and oriented bounding boxes (courtesy of [Ultralytics](https://github.com/ultralytics/ultralytics)).*
 
-To follow individual smolt across consecutive frames we use [BoTSort](https://github.com/NirAharon/BoT-SORT) (Robust Associations Multi-Pedestrian Tracking). Unlike simpler tracking approaches such as SORT that rely solely on bounding-box overlap, BoTSort combines motion prediction with visual appearance features and camera-motion compensation. This makes it far more robust when fish cross paths or temporarily disappear behind noise, providing continuous trajectories that allow us to count each smolt exactly once as it migrates past the sonar.
+Spotting a fish in one frame isn't enough — we need to follow it across many. [BoTSort](https://github.com/NirAharon/BoT-SORT) links detections into continuous tracks, combining motion prediction, visual appearance, and camera-motion compensation. Unlike simpler trackers such as SORT that only compare box overlap, it keeps hold of a fish when paths cross or it briefly vanishes behind noise — so each smolt is counted exactly once as it passes the sonar.
 
 <p><iframe src="https://www.youtube.com/embed/UY08mjPBHbc" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
 <p class="media-caption">Automated smolt detection and tracking in action on preprocessed ARIS sonar footage.</p>
 
 ## Size Estimation
 
-Estimating the length of each detected smolt is an important step in the pipeline because fish length is one of the key characteristics used to distinguish species and life stages. Our approach uses the dimensions of the bounding boxes drawn around each detection to estimate fish length.
+Length is one of the most telling things you can know about a fish — it helps separate species and life stages — so the pipeline estimates it for every smolt it tracks, working from the size of the detection boxes.
 
-For each detection the algorithm determines whether the fish is swimming roughly horizontally or vertically and selects the bounding-box dimension that best represents its body length. Because individual detections can vary, the system collects multiple measurements across a fish's tracked trajectory and filters out extreme values as outliers, keeping the estimates reliable. Each final length estimate is assigned a confidence rating based on how many consistent measurements were available — more observations mean higher confidence.
+For each detection the system reads whether the fish is swimming roughly horizontally or vertically and picks the box dimension that best matches its body. Single detections are noisy, so it gathers measurements across the whole track, discards the outliers, and combines the rest — trusting the estimate more the more consistent readings back it up.
 
-This method provides length estimates for the vast majority of tracked fish. As a final step, pixel measurements are converted to real-world centimetres using a known-size reference object placed in the sonar's field of view during installation.
+That yields a length for the vast majority of tracked fish. A known-size reference placed in the sonar's field of view at installation then converts the pixel measurements into real-world centimetres.
 
 ![Length estimation process](/images/projects/monitoring_smolt_salmon_migration_with_sonar/length_estimation.png)
 *Length estimation — multiple detections across frames are collected, filtered for outliers, and combined into a single length estimate in pixels.*
 
 ## Counting
 
-The counting step translates the tracked fish trajectories into actual migration counts. A fish is counted when its track crosses a defined trigger segment — a virtual line drawn across the sonar image. To avoid double-counting, the system only registers a crossing when the track has crossed the segment an odd number of times, and it records the direction of travel (upstream or downstream) based on the sonar's orientation.
+Counting turns those tracks into migration numbers. A smolt is counted when its track crosses a **trigger line** drawn across the image; to avoid double-counting, a crossing only registers on an odd number of passes, and the direction of travel — upstream or downstream — is read from the sonar's orientation.
 
-Rather than spanning the trigger segment across the entire sonar range, this project uses a regional trigger segment focused on the area of interest — specifically the weir box exit. This focused approach brings several advantages: it eliminates false detections from outside the migration corridor, and it allows more targeted optimization of the detection and tracking models. This matters because sonar imagery characteristics change with distance from the transducer, so a model tuned for one region performs better than one stretched across the full range.
+Rather than stretch that line across the full sonar range, we place a focused **regional trigger** right at the weir-box exit. That keeps detections from outside the migration corridor from ever counting, and lets us tune the model for a single zone — which matters because sonar imagery changes with distance from the transducer, so a region-specific model beats one stretched across the whole range.
 
-![Counting trigger](/images/projects/monitoring_smolt_salmon_migration_with_sonar/counting_trigger.png)
-*Regional trigger segment — a fish is counted when its track crosses the segment placed at the weir box exit.*
+![How counting works — a smolt is tallied as its track crosses the regional trigger line at the weir-box exit](/images/projects/monitoring_smolt_salmon_migration_with_sonar/diagrams/counting.svg)
+*A focused trigger line at the weir-box exit: each smolt is counted once as it crosses, and its direction of travel is recorded.*
 
 ## Interactive Demo
 
-Experience the smolt detection and counting model in action. Upload preprocessed sonar footage or use the provided examples to see automated detection and tracking:
+See the model work for yourself. Upload preprocessed sonar footage, or run one of the built-in examples, and watch it detect and track smolt in real time:
 
 {{< demo_cta >}}
 
 ## Conclusion
 
-This project demonstrates that automated smolt enumeration from ARIS sonar imagery is feasible and effective. By combining deep learning-based detection with robust tracking, size estimation, and directional counting, the pipeline transforms hours of manual sonar review into an automated workflow that delivers reliable migration data.
+Counting smolt automatically from ARIS sonar works. By chaining deep-learning detection with robust tracking, length estimation and directional counting, the pipeline turns hours of manual review into a workflow that produces reliable migration data on its own.
 
-The system developed in partnership with [BC Hydro](https://www.bchydro.com/) and [Lumax AI](https://lumax.ai/) handles the full analysis chain — from raw sonar files through to individual fish counts with length estimates and migration direction. By making smolt monitoring faster and more consistent, this approach supports the data-driven conservation decisions that are essential for protecting salmon populations.
+Built with [BC Hydro](https://www.bchydro.com/) and [Lumax AI](https://lumax.ai/), it handles the whole chain — from raw sonar files to per-fish counts with lengths and travel direction. Faster, more consistent smolt monitoring means the people protecting salmon get the data they depend on, season after season.
 
 <p><iframe src="https://www.youtube.com/embed/Tg-gyDn8zfk" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
 <p class="media-caption">Full pipeline demo — detection, tracking, counting, and size estimation on ARIS sonar footage.</p>

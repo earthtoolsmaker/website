@@ -1,0 +1,70 @@
+<svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="sonar" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e3a4a"/><stop offset="100%" stop-color="#176074"/></linearGradient>
+  <radialGradient id="fishglow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff7a45"/><stop offset="100%" stop-color="#ff7a45" stop-opacity="0"/></radialGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#e29578"/></marker>
+  <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.08"/></filter>
+  <pattern id="sonar-noise" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="0.7" fill="#bfe0d6" opacity="0.16"/><circle cx="5" cy="4.5" r="0.6" fill="#bfe0d6" opacity="0.12"/></pattern>
+  <style>
+    .cap   { font-size: 14px; fill: #60626a; }
+    .tag   { font-size: 12px; font-weight: 700; fill: #fff; }
+    .cross { transform-box: fill-box; transform-origin: 50% 50%; animation: cross 3.2s ease-in-out infinite; }
+    .glow  { animation: glowp 3.2s ease-in-out infinite; }
+    .dash  { stroke-dasharray: 5 5; animation: flow 0.9s linear infinite; }
+    @keyframes cross { 0%{transform:translateY(-26px)} 55%,100%{transform:translateY(28px)} }
+    @keyframes glowp { 0%,45%{opacity:0.25} 60%,100%{opacity:1} }
+    @keyframes flow { to { stroke-dashoffset: -20; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <g id="smolt">
+    <ellipse cx="0" cy="0" rx="20" ry="8" fill="url(#fishglow)" opacity="0.7"/>
+    <ellipse cx="0" cy="0" rx="10" ry="3.1" fill="#ff6a3d"/>
+    <path d="M-10 0 L-16 -3.6 L-13 0 L-16 3.6 Z" fill="#ff6a3d"/>
+  </g>
+  <!-- a sonar tile with range arcs + a weir-box gate -->
+  <g id="tile">
+    <rect x="-140" y="-110" width="280" height="220" rx="14" fill="url(#sonar)"/>
+    <clipPath id="tc"><rect x="-140" y="-110" width="280" height="220" rx="14"/></clipPath>
+    <g clip-path="url(#tc)">
+      <rect x="-140" y="-110" width="280" height="220" fill="url(#sonar-noise)"/>
+      <g stroke="#7fb6c4" stroke-width="1.4" fill="none" opacity="0.28">
+        <path d="M-95 -70 A 118 118 0 0 1 95 -70"/>
+        <path d="M-110 -10 A 150 150 0 0 1 110 -10"/>
+        <path d="M-120 55 A 175 175 0 0 1 120 55"/>
+      </g>
+      <!-- weir-box gate -->
+      <g stroke="#9fd6d4" stroke-width="4" fill="none" opacity="0.85"><path d="M-34 78 L-34 18"/><path d="M34 78 L34 18"/></g>
+    </g>
+  </g>
+</defs>
+
+<!-- PANEL 1 — trigger placed -->
+<rect x="20" y="20" width="280" height="220" rx="14" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(160,130)">
+  <use href="#tile"/>
+  <!-- regional trigger line across the weir-box exit -->
+  <line class="dash" x1="-34" y1="32" x2="34" y2="32" stroke="#e29578" stroke-width="3" stroke-linecap="round"/>
+  <g transform="translate(0,58)"><rect x="-44" y="-12" width="88" height="22" rx="11" fill="#006d77"/><text class="tag" x="0" y="4" text-anchor="middle">weir-box exit</text></g>
+</g>
+<text class="cap" x="160" y="270" text-anchor="middle">A trigger line, just at the weir-box exit</text>
+
+<!-- arrow -->
+<line x1="318" y1="130" x2="362" y2="130" stroke="#e29578" stroke-width="3.5" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+<!-- PANEL 2 — fish counted on crossing -->
+<rect x="380" y="20" width="280" height="220" rx="14" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(520,130)">
+  <use href="#tile"/>
+  <g clip-path="url(#tc)">
+    <!-- downstream track crossing the trigger -->
+    <path class="dash" d="M0 -34 L0 40" stroke="#bfe0d6" stroke-width="2" fill="none" opacity="0.7"/>
+    <g class="cross"><use href="#smolt"/></g>
+  </g>
+  <line class="dash" x1="-34" y1="32" x2="34" y2="32" stroke="#e29578" stroke-width="3" stroke-linecap="round"/>
+  <!-- count badge -->
+  <g transform="translate(96,-84)" class="glow"><circle r="18" fill="#006d77"/><text x="0" y="6" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">+1</text></g>
+  <!-- downstream direction -->
+  <g transform="translate(-104,-86)" stroke="#bfe0d6" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.85"><path d="M0 -10 L0 12" marker-end="url(#arrow)"/></g>
+</g>
+<text class="cap" x="520" y="270" text-anchor="middle">Counted once on crossing — by direction</text>
+</svg>
