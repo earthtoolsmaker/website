@@ -98,11 +98,10 @@ Doing this well, by hand, is genuinely hard. Tap each challenge to see why.
 
 ## Two systems working together
 
-In partnership with Wageningen Marine Research, we built two AI systems that
-work side by side for grey seals (*Halichoerus grypus*) and harbour seals
-(*Phoca vitulina*): one that **counts and classifies** every seal in a photo,
-and one that **recognises individuals** over time. Both feed a web app where
-researchers review the AI's work and export validated data for analysis.
+Two AI systems work side by side, across both grey seals (*Halichoerus grypus*)
+and harbour seals (*Phoca vitulina*): one **counts and classifies** every seal
+in a photo, the other **recognises individuals** over time. Both feed a single
+web app where researchers check the AI's work and export validated data.
 
 ## Counting and classifying every seal
 
@@ -202,8 +201,8 @@ Recognising individuals over time turns a population count into a living record:
 
 The system has reshaped the work at Wageningen Marine Research. Analysis that
 once took hundreds of hours now takes a fraction of the time, and the counts are
-more consistent from one survey year to the next. Researchers spend their effort
-on biology and conservation strategy instead of data entry — and the
+more consistent from one survey year to the next. Researchers can focus on
+biology and conservation strategy instead of data entry — and the
 re-identification system opens an entirely new, individual-level view of seal
 life that simply wasn't possible before. The same framework can extend to other
 colonies, regions, or marine-mammal species.

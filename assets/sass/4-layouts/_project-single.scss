@@ -256,3 +256,13 @@ $project-cta-gap: 56px;
 @media (prefers-reduced-motion: reduce) {
   .post__content .threats__chip { transition: none; }
 }
+
+// Card/component titles inside the article column are headings (<h3>/<h4>), so
+// they'd otherwise inherit the article's heading top-margin (.post__content h3
+// = 1.5em) and sit pushed down from the card top. Keep them flush to the top.
+.post__content {
+  .support__card-title,
+  .services__item-title {
+    margin-top: 0;
+  }
+}
