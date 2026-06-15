@@ -141,17 +141,18 @@ challenges that apply to a wide range of species:
 
 </div>
 
-The pictures below show the same individual — bear **bf32** — at different times
-and places. A person finds it hard; the model has to learn to see past the
-seasons, angles and lighting to the bear underneath.
+The pictures below show the same individual — **Chunk** (`bf32`), one of the
+well-known Brooks River bears — at different times and places. A person finds it
+hard; the model has to learn to see past the seasons, angles and lighting to the
+bear underneath.
 
 {{< image_carousel id="bear-bf32" items="2" >}}
-  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_3.jpg" alt="The same bear, bf32, photographed at a different time" caption="The same individual — bf32 — at a different time and place." >}}
-  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_1.jpg" alt="The same bear, bf32, photographed at a different time" caption="The same individual — bf32 — at a different time and place." >}}
-  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_2.jpg" alt="The same bear, bf32, photographed at a different time" caption="The same individual — bf32 — at a different time and place." >}}
-  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_4.jpg" alt="The same bear, bf32, photographed at a different time" caption="The same individual — bf32 — at a different time and place." >}}
+  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_3.jpg" alt="The same bear, bf32, photographed at a different time" caption="Chunk (bf32) — the same individual at a different time and place." >}}
+  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_1.jpg" alt="The same bear, bf32, photographed at a different time" caption="Chunk (bf32) — the same individual at a different time and place." >}}
+  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_2.jpg" alt="The same bear, bf32, photographed at a different time" caption="Chunk (bf32) — the same individual at a different time and place." >}}
+  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_4.jpg" alt="The same bear, bf32, photographed at a different time" caption="Chunk (bf32) — the same individual at a different time and place." >}}
 {{< /image_carousel >}}
-<p class="media-caption">One individual — bear bf32 — across seasons and locations, from the <a href="https://bearresearch.org" target="_blank">BearID Project</a>.</p>
+<p class="media-caption">One individual — Chunk (bf32) — across seasons and locations, from the <a href="https://bearresearch.org" target="_blank">BearID Project</a>.</p>
 
 ## How the system works
 
