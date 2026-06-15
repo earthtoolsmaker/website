@@ -48,9 +48,95 @@ $project-live-color: #3fb950;
     color: rgba(255, 255, 255, 0.8);
   }
 
+  // --- Partner logos overlaid top-right on the hero ---
+  .project-hero__partners {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    // Chips are decorative here (the lower strip carries the links).
+    pointer-events: none;
+
+    .container-wide {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+  }
+
+  .project-hero__partners-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .project-hero__partners-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+    max-width: 340px;
+  }
+
+  .project-hero__partner-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 13px;
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .project-hero__partner-logo {
+    display: block;
+    width: auto;
+    height: 26px;
+  }
+
   @media (max-width: $mobile) {
     .project-hero__stats { gap: 24px; }
     .project-hero__stat-value { font-size: 30px; }
+
+    // The fixed-height hero can't fit the partner chips on a phone, so let it
+    // grow: the photo sits absolutely behind an in-flow overlay that drives the
+    // height (min 340px, the old fixed value), so nothing gets clipped.
+    &.about-hero {
+      height: auto;
+    }
+    // Only the hero's own background picture (a direct child) goes behind —
+    // NOT the partner-chip logos, which live inside the overlay.
+    & > picture,
+    & > picture img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+    }
+
+    // No room top-right on a phone — reflow the chips below the stats.
+    .about-hero__overlay {
+      position: relative;
+      min-height: 340px;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-end;
+    }
+    // Keep the main hero text/stats above the partner block.
+    .about-hero__overlay > .container-wide:last-child { order: 1; }
+
+    .project-hero__partners {
+      position: static;
+      order: 2;
+      margin-top: 20px;
+
+      .container-wide { align-items: flex-start; }
+    }
+    .project-hero__partners-label { text-align: left; }
+    .project-hero__partners-logos { justify-content: flex-start; max-width: none; }
   }
 }
 
