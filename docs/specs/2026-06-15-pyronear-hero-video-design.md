@@ -24,16 +24,18 @@ Pyronear (`content/tools/pyronear/index.md`) currently opens with a plain
 ## Design
 
 ### 1. Asset
-- Source a CC0 / royalty-free aerial-over-forest clip (Coverr / Pixabay are CC0;
-  Pexels license permits free use). Prefer footage that already loops cleanly or
-  can be trimmed to a clean loop.
-- Optimize with `ffmpeg` to match the SalmonVision hero profile: H.264 mp4,
-  ~1080p, **audio stripped**, short (~10–20s), small file (SalmonVision's hero is
-  ~843 KB — aim for the same ballpark).
-- Save to `static/videos/pyronear-hero.mp4`.
-
-**Fallback:** if no strong CC0 clip is found, stop and ask the user (do not
-auto-fall-back to extracting Pyronear's YouTube footage).
+- **Chosen clip:** Mixkit "Aerial view of a wooded landscape in the morning"
+  (id 2795,
+  `mixkit.co/free-stock-video/aerial-view-of-a-wooded-landscape-in-the-morning-2795/`).
+  Aerial drone glide over forested hills in soft morning mist — on-theme for
+  "watching the forest for the first signs of smoke."
+- **License:** Mixkit Free License — free for commercial use, **no attribution
+  required**. Source/license recorded in an HTML comment above the hero markup.
+- **Encoding:** matched to the SalmonVision hero profile — stored 1280×720
+  (16:9, CSS `object-fit:cover` does the 16:7 crop), H.264 high / yuv420p,
+  audio stripped, `+faststart`. ~12s loop, ~1.17 MB (SalmonVision's is 843 KB at
+  ~half the duration).
+- Saved to `static/videos/pyronear-hero.mp4`.
 
 ### 2. Markup
 In `content/tools/pyronear/index.md`, replace the

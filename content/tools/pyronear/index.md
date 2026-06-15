@@ -15,7 +15,20 @@ js:
 date: 2025-05-01
 ---
 
-# Open, Real-Time Wildfire Detection
+<!--
+  Hero background video: static/videos/pyronear-hero.mp4
+  Source: Mixkit "Aerial view of a wooded landscape in the morning" (mixkit.co/free-stock-video/aerial-view-of-a-wooded-landscape-in-the-morning-2795/)
+  License: Mixkit Free License (free for commercial use, no attribution required).
+-->
+<div class="tool-hero">
+  <video class="tool-hero__video" autoplay muted loop playsinline preload="auto" aria-label="Aerial drone footage drifting over a forest canopy in the morning mist">
+    <source src="/videos/pyronear-hero.mp4" type="video/mp4">
+  </video>
+  <div class="tool-hero__overlay">
+    <h1 class="tool-hero__title">Open, Real-Time Wildfire Detection</h1>
+    <p class="tool-hero__tagline">Watching the forest for the first signs of smoke — so fire departments get the alert within minutes.</p>
+  </div>
+</div>
 
 Pyronear is a complete, open-source fire-detection system. A computer-vision model runs on a low-power microcomputer wired to cameras on high vantage points, watching the forest for the first signs of smoke. When it detects a fire, it sends an alert to a supervision platform used by fire departments — efficient, automatic, energy-efficient, and modular by design.
 
