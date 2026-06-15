@@ -75,6 +75,14 @@
 }
 
 /* Widget Recent Posts */
+.widget-recent-posts {
+  padding-right: 32px;
+
+  @media (max-width: $desktop) {
+    padding-right: 0;
+  }
+}
+
 .recent-posts {
   position: relative;
   display: flex;
