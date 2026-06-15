@@ -174,7 +174,7 @@ $project-cta-gap: 56px;
 //     radio <label>) highlights it and reveals its explanation panel below.
 //     Pure CSS via the general-sibling combinator. ---
 .post__content .threats {
-  margin: 24px 0 8px;
+  margin: 24px 0 36px;
 
   .threats__toggle {            // visually hidden, still keyboard-focusable
     position: absolute;
