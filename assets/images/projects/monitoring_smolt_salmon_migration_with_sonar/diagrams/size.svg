@@ -1,0 +1,77 @@
+<svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="sonar" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e3a4a"/><stop offset="100%" stop-color="#176074"/></linearGradient>
+  <radialGradient id="fishglow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff7a45"/><stop offset="100%" stop-color="#ff7a45" stop-opacity="0"/></radialGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#e29578"/></marker>
+  <marker id="tick" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M5 1 L5 9" stroke="#bfe0d6" stroke-width="2"/></marker>
+  <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.08"/></filter>
+  <pattern id="sonar-noise" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="0.7" fill="#bfe0d6" opacity="0.16"/><circle cx="5" cy="4.5" r="0.6" fill="#bfe0d6" opacity="0.12"/></pattern>
+  <style>
+    .cap  { font-size: 14px; fill: #60626a; }
+    .tag  { font-size: 12px; font-weight: 700; fill: #fff; }
+    .lab  { font-size: 11px; font-weight: 700; fill: #cfe9e0; letter-spacing: 0.04em; }
+    .glow { animation: glowp 2.6s ease-in-out infinite; }
+    .xo   { animation: xo 2.6s ease-in-out infinite; }
+    @keyframes glowp { 0%,100%{opacity:0.55} 50%{opacity:1} }
+    @keyframes xo { 0%,100%{opacity:0.5} 50%{opacity:1} }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <g id="smolt">
+    <ellipse cx="0" cy="0" rx="22" ry="9" fill="url(#fishglow)" opacity="0.7"/>
+    <ellipse cx="0" cy="0" rx="11" ry="3.4" fill="#ff6a3d"/>
+    <path d="M-11 0 L-18 -4 L-15 0 L-18 4 Z" fill="#ff6a3d"/>
+  </g>
+  <g id="stile">
+    <rect x="-140" y="-110" width="280" height="220" rx="14" fill="url(#sonar)"/>
+    <clipPath id="stc"><rect x="-140" y="-110" width="280" height="220" rx="14"/></clipPath>
+    <g clip-path="url(#stc)">
+      <rect x="-140" y="-110" width="280" height="220" fill="url(#sonar-noise)"/>
+      <g stroke="#7fb6c4" stroke-width="1.4" fill="none" opacity="0.22"><path d="M-95 -70 A 118 118 0 0 1 95 -70"/><path d="M-110 -10 A 150 150 0 0 1 110 -10"/></g>
+    </g>
+  </g>
+</defs>
+
+<!-- PANEL 1 — measured every frame -->
+<rect x="20" y="20" width="280" height="220" rx="14" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(160,130)">
+  <use href="#stile"/>
+  <!-- frames badge -->
+  <g transform="translate(86,-86)"><rect x="-30" y="-12" width="60" height="24" rx="6" fill="#006d77"/><rect x="-24" y="-6" width="9" height="9" rx="1.5" fill="#bfe0d6"/><rect x="-21" y="-9" width="9" height="9" rx="1.5" fill="#83c5be"/><text class="tag" x="6" y="4" text-anchor="middle">× N</text></g>
+  <!-- smolt + caliper -->
+  <g transform="translate(0,16)"><use href="#smolt"/></g>
+  <g stroke="#bfe0d6" stroke-width="2" stroke-linecap="round">
+    <path d="M-26 -2 L-26 -16 M26 -2 L26 -16"/>
+    <path d="M-26 -10 L26 -10" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  </g>
+  <g transform="translate(0,-40)"><rect x="-30" y="-12" width="60" height="22" rx="11" fill="#0a7d86"/><text class="tag" x="0" y="4" text-anchor="middle">≈ 60 px</text></g>
+</g>
+<text class="cap" x="160" y="270" text-anchor="middle">A length read from every frame</text>
+
+<!-- arrow -->
+<line x1="318" y1="130" x2="362" y2="130" stroke="#e29578" stroke-width="3.5" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+<!-- PANEL 2 — filter outliers, take the median -->
+<rect x="380" y="20" width="280" height="220" rx="14" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(520,130)">
+  <use href="#stile"/>
+  <g clip-path="url(#stc)">
+    <!-- axis -->
+    <line x1="-104" y1="34" x2="104" y2="34" stroke="#7fb6c4" stroke-width="1.5" opacity="0.5"/>
+    <!-- IQR band around the kept cluster -->
+    <rect x="-30" y="22" width="66" height="24" rx="12" fill="#83c5be" opacity="0.2"/>
+    <!-- kept measurements -->
+    <g fill="#bfe0d6"><circle cx="-20" cy="34" r="4.5"/><circle cx="-7" cy="34" r="4.5"/><circle cx="3" cy="34" r="4.5"/><circle cx="14" cy="34" r="4.5"/><circle cx="26" cy="34" r="4.5"/></g>
+    <!-- median tick -->
+    <line x1="3" y1="18" x2="3" y2="50" stroke="#e29578" stroke-width="3" stroke-linecap="round"/>
+    <text class="lab" x="3" y="64" text-anchor="middle">median</text>
+    <!-- outliers, dropped -->
+    <g class="xo">
+      <circle cx="-92" cy="34" r="4.5" fill="#e8232a"/><path d="M-97 29 L-87 39 M-97 39 L-87 29" stroke="#fff" stroke-width="1.8"/>
+      <circle cx="86" cy="34" r="4.5" fill="#e8232a"/><path d="M81 29 L91 39 M81 39 L91 29" stroke="#fff" stroke-width="1.8"/>
+    </g>
+  </g>
+  <!-- result pill (px -> cm) -->
+  <g transform="translate(3,-46)" class="glow"><rect x="-44" y="-15" width="88" height="30" rx="15" fill="#006d77"/><path d="M0 15 L-7 23 L7 23 Z" fill="#006d77"/><text class="tag" x="0" y="4" text-anchor="middle" font-size="14">12.4 cm</text></g>
+</g>
+<text class="cap" x="520" y="270" text-anchor="middle">Outliers dropped, median taken — in cm</text>
+</svg>
