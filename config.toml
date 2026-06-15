@@ -1,8 +1,9 @@
 #-------------------------------
 # General Site Settings
-baseURL = "https://earthtoolsmaker.org"
+baseURL = "https://www.earthtoolsmaker.org/"
 languageCode = "en-us"
 title = "EarthToolsMaker"
+enableRobotsTXT = true
 googleAnalytics = "" # Add your identifier. For example UA-99631805-1.
 # paginate = 6
 
@@ -17,6 +18,9 @@ pagerSize = 6
   logo = "/images/logos/etm-logo-text.png" # Full "earthtoolsmaker" wordmark (footer + home header). Non-home headers use the layered logo-pangolin / logo-word-* assets for the hover swap.
   # logo_dark = "/images/logo.png"
   description = "Open Technology for Wildlife and the Planet"
+  # SEO default share image (asset-relative, under assets/). Fallback OG/Twitter
+  # image and Organization/Publisher logo in JSON-LD.
+  seo = { default_image = "images/logos/etm-logo-text.png" }
   # color_scheme = "auto" # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
   color_scheme = "light" # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
 
