@@ -134,12 +134,19 @@ Large sonar files are split into smaller chunks so the downstream detection and 
 
 ## Detection and Tracking
 
-We fine-tuned a pretrained [YOLOv11](https://github.com/ultralytics/ultralytics) model to spot smolt in the preprocessed frames. YOLO ("You Only Look Once") is a family of real-time detectors prized for balancing speed and accuracy — essential when a single session runs to thousands of frames. For each frame it returns a box around every smolt it finds, with a confidence score.
+### Finding each fish
 
-![YOLO tasks](/images/projects/monitoring_smolt_salmon_migration_with_sonar/yolo_tasks.png)
-*Overview of YOLO tasks — detection, segmentation, classification, pose estimation, and oriented bounding boxes (courtesy of [Ultralytics](https://github.com/ultralytics/ultralytics)).*
+First the system has to *find* the fish. We trained a **detector** — a model shown thousands of example frames until it learned what a smolt looks like in sonar. Shown a new frame, it draws a box around every fish it spots and gives each one a confidence score, while leaving the static background and noise alone. (Under the hood it's a fine-tuned [YOLOv11](https://github.com/ultralytics/ultralytics) model, a fast, widely-used object detector.)
 
-Spotting a fish in one frame isn't enough — we need to follow it across many. [BoTSort](https://github.com/NirAharon/BoT-SORT) links detections into continuous tracks, combining motion prediction, visual appearance, and camera-motion compensation. Unlike simpler trackers such as SORT that only compare box overlap, it keeps hold of a fish when paths cross or it briefly vanishes behind noise — so each smolt is counted exactly once as it passes the sonar.
+![How the detector works — it reads a sonar frame and boxes each smolt with a confidence score](/images/projects/monitoring_smolt_salmon_migration_with_sonar/diagrams/detection.svg)
+*The detector reads a noisy sonar frame and returns a box — and a confidence score — around each smolt, ignoring the background clutter.*
+
+### Following each fish
+
+Finding a fish in a single frame isn't enough: the same smolt shows up in dozens of frames as it swims past, and we must count it only **once**. So the system *follows* each fish from frame to frame, linking its boxes into a single path — and holding on to it even when two fish cross or one briefly slips behind the noise. Every smolt becomes exactly one track, and one count. (This uses [BoTSort](https://github.com/NirAharon/BoT-SORT), which combines each fish's motion and appearance to keep it on the right track.)
+
+![How tracking works — detections are linked across frames into one path per fish, keeping their IDs when paths cross](/images/projects/monitoring_smolt_salmon_migration_with_sonar/diagrams/tracking.svg)
+*Each fish's detections are linked across frames into a single track, so it keeps its identity — and is counted once — even when paths cross.*
 
 <p><iframe src="https://www.youtube.com/embed/UY08mjPBHbc" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
 <p class="media-caption">Automated smolt detection and tracking in action on preprocessed ARIS sonar footage.</p>
