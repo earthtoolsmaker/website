@@ -12,3 +12,10 @@
 
   [plugins.inputs]
     paths = ["resources"]
+
+# Old HuggingFace-derived "Spaces" section was renamed to "Live Demos".
+# Preserve any inbound links to the previous /spaces/ URLs.
+[[redirects]]
+  from = "/spaces/*"
+  to = "/demos/:splat"
+  status = 301

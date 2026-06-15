@@ -10,7 +10,7 @@ related_posts:
   - racing-models-not-opinions
   - protecting-the-forest-early-forest-fire-detector
 github_repo: https://github.com/earthtoolsmaker/pyronear-mlops
-space: /spaces/early_forest_fire_detection/
+space: /demos/early_forest_fire_detection/
 tools:
   - Computer Vision
   - Machine Learning

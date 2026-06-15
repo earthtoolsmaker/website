@@ -39,7 +39,7 @@
     <div class="container">
       <div class="about-stats__grid">
         <div class="about-stats__item">
-          <div class="about-stats__value">{{ len (where .Site.RegularPages "Section" "spaces") }}</div>
+          <div class="about-stats__value">{{ len (where .Site.RegularPages "Section" "demos") }}</div>
           <div class="about-stats__label">interactive demos</div>
         </div>
         <div class="about-stats__item">
@@ -61,7 +61,7 @@
 
   <div class="container animate">
     <div class="row">
-      {{ range (where .Site.RegularPages "Section" "spaces" ) }}
+      {{ range (where .Site.RegularPages "Section" "demos" ) }}
       <article class="space col col-4 col-w-6 col-t-12">
         <div class="space__content">
           {{ if .Params.card_image }}

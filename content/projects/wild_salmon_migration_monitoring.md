@@ -10,7 +10,7 @@ stats:
   - value: "24/7"
     label: automated counting
 github_repo: https://github.com/Salmon-Computer-Vision/salmon-computer-vision/tree/master
-space: /spaces/wild_salmon_migration_monitoring/
+space: /demos/wild_salmon_migration_monitoring/
 clients:
   - name: Pacific Salmon Foundation
     link: https://psf.ca/
@@ -258,7 +258,7 @@ conserving wild salmon by providing the data needed for effective management,
 identifying and addressing threats, and engaging stakeholders in conservation
 efforts.
 
-One can try out the model from the [ML Space]({{< ref
-"/spaces/wild_salmon_migration_monitoring" >}}).
+One can try out the model from the [live demo]({{< ref
+"/demos/wild_salmon_migration_monitoring" >}}).
 
 {{< demo_cta >}}

@@ -55,8 +55,8 @@ pagerSize = 6
 
   [[menu.main]]
     parent = "work"
-    name = "Spaces"
-    url = "/spaces/"
+    name = "Live Demos"
+    url = "/demos/"
     weight = 3
 
   [[menu.main]]
@@ -92,8 +92,8 @@ pagerSize = 6
       weight = 3
 
       [[menu.footer]]
-      name = "Spaces"
-      url = "/spaces/"
+      name = "Live Demos"
+      url = "/demos/"
       weight = 4
 
       [[menu.footer]]

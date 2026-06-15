@@ -345,7 +345,7 @@ accurately re-identify individuals, making it a valuable tool for wildlife
 monitoring and conservation efforts.
 
 One can try out the model from the [ML pipeline that performs Local Feature
-Matching on trout spot patterns]({{< ref "/spaces/trout_identification" >}}) or
+Matching on trout spot patterns]({{< ref "/demos/trout_identification" >}}) or
 directly from the snippet below:
 
 {{< hf_space "earthtoolsmaker-trout-reid" >}}
