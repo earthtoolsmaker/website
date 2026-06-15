@@ -19,6 +19,30 @@
   ) }}
   {{ end }}
   <div class="about-hero__overlay">
+    {{ with .Params.clients }}
+    <div class="project-hero__partners">
+      <div class="container-wide">
+        <span class="project-hero__partners-label">In partnership with</span>
+        <div class="project-hero__partners-logos">
+          {{ range $partner := . }}
+          {{ $img := "" }}
+          {{ with $partner.logo }}
+            {{ $imgPath := strings.TrimPrefix "/" . }}
+            {{ $img = or (resources.Get (replace $imgPath "logo.png" "logo_dark.png")) (resources.Get $imgPath) }}
+            {{ if and $img (not (strings.HasSuffix $imgPath ".svg")) (gt $img.Width 200) }}
+              {{ $img = $img.Resize "200x" }}
+            {{ end }}
+          {{ end }}
+          {{ with $img }}
+          <span class="project-hero__partner-chip" title="{{ $partner.name }}">
+            <img class="project-hero__partner-logo" src="{{ .RelPermalink }}" alt="{{ $partner.name }}" loading="eager">
+          </span>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
     <div class="container-wide">
       {{ if $kicker }}<p class="project-hero__kicker">{{ delimit $kicker " · " }}</p>{{ end }}
       <h1 class="about-hero__title">{{ .Title }}</h1>
