@@ -41,7 +41,7 @@ pressures:
 status: completed
 date: 2024-04-02
 pinned: true
-image: /images/projects/human_wildlife_conflict_bear/cover.png
+image: /images/projects/human_wildlife_conflict_bear/skydancer/brown_bear_meadow.webp
 ---
 
 The Carpathian Mountains of Romania are home to the largest brown bear
@@ -65,9 +65,6 @@ humans and bears. Together with
 Conservation Carpathia](https://www.carpathia.org/), we develop and
 field-test smart detection and deterrent systems that keep bears out of
 villages — without harming them.
-
-![Brown bear in the Carpathians](/images/projects/human_wildlife_conflict_bear/skydancer/brown_bear_meadow.webp)
-*A brown bear near the deployment area in the Carpathian Mountains — photo courtesy of <a href="https://www.hack-the-planet.io" target="_blank">HackThePlanet</a>*
 
 Our ongoing research and development of a software tool aim to offer a
 cost-effective, scalable, and versatile solution applicable not only to
@@ -107,12 +104,13 @@ and their presence is a sign of a healthy, balanced environment.
 
 </div>
 
-{{< gallery caption="Gallery / Different individuals from the <a href=\"https://bearresearch.org\" target=\"_blank\">BearID Project</a>" >}}
-  {{< gallery_image src="/images/projects/bear_identification/bears/bear1.jpg" alt="Bear 1" >}}
-  {{< gallery_image src="/images/projects/bear_identification/bears/bear2.jpg" alt="Bear 2" >}}
-  {{< gallery_image src="/images/projects/bear_identification/bears/bear3.jpg" alt="Bear 3" >}}
-  {{< gallery_image src="/images/projects/bear_identification/bears/bear4.jpg" alt="Bear 4" >}}
-{{< /gallery >}}
+{{< image_carousel id="bear-individuals" items="2" >}}
+  {{< carousel_image src="/images/projects/bear_identification/bears/bear1.jpg" alt="An individual brown bear" caption="An individual brown bear from the BearID Project." >}}
+  {{< carousel_image src="/images/projects/bear_identification/bears/bear2.jpg" alt="An individual brown bear" caption="An individual brown bear from the BearID Project." >}}
+  {{< carousel_image src="/images/projects/bear_identification/bears/bear3.jpg" alt="An individual brown bear" caption="An individual brown bear from the BearID Project." >}}
+  {{< carousel_image src="/images/projects/bear_identification/bears/bear4.jpg" alt="An individual brown bear" caption="An individual brown bear from the BearID Project." >}}
+{{< /image_carousel >}}
+<p class="media-caption">Different individuals from the <a href="https://bearresearch.org" target="_blank">BearID Project</a>.</p>
 
 ## Conservation concerns
 
@@ -170,12 +168,13 @@ Bears make this genuinely hard: they're most active at dawn and dusk, but as
 opportunistic feeders they can turn up at any hour — and where people are
 around, they often shift to the cover of night.
 
-{{< gallery caption="Camera-trap pictures of bears in Romania, near the farms where the system is deployed" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear4.jpg" alt="Camera trap bear picture 4" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear1.jpg" alt="Camera trap bear picture 1" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear2.jpg" alt="Camera trap bear picture 2" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear3.jpg" alt="Camera trap bear picture 3" >}}
-{{< /gallery >}}
+{{< image_carousel id="bear-cameratrap" items="2" >}}
+  {{< carousel_image src="/images/projects/human_wildlife_conflict_bear/bears/bear4.jpg" alt="Camera trap bear picture" caption="A camera-trap photo of a bear near the deployment farms in Romania." >}}
+  {{< carousel_image src="/images/projects/human_wildlife_conflict_bear/bears/bear1.jpg" alt="Camera trap bear picture" caption="A camera-trap photo of a bear near the deployment farms in Romania." >}}
+  {{< carousel_image src="/images/projects/human_wildlife_conflict_bear/bears/bear2.jpg" alt="Camera trap bear picture" caption="A camera-trap photo of a bear near the deployment farms in Romania." >}}
+  {{< carousel_image src="/images/projects/human_wildlife_conflict_bear/bears/bear3.jpg" alt="Camera trap bear picture" caption="A camera-trap photo of a bear near the deployment farms in Romania." >}}
+{{< /image_carousel >}}
+<p class="media-caption">Camera-trap pictures of bears in Romania, near the farms where the system is deployed.</p>
 
 ## Deterrent
 
@@ -187,11 +186,12 @@ replaceability. However, it remains uncertain whether bears can learn to
 disregard the deterrent over time, necessitating iterative improvements to the
 system as required in the future.
 
-{{< gallery caption="Gallery / The inflatable sky-dancer deterrent in the field — photos courtesy of <a href=\"https://www.hack-the-planet.io/projects/carpathia-skydancer-prototype/\" target=\"_blank\">HackThePlanet</a>" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/skydancer/skydancer_carpathia.webp" alt="The sky-dancer deterrent deployed in a Carpathian meadow" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/skydancer/installing_blower.webp" alt="The HackThePlanet team installing the sky-dancer blower unit" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/skydancer/deterrent_station_aerial.webp" alt="Aerial view of the deterrent station with the sky-dancer activated" >}}
-{{< /gallery >}}
+{{< image_carousel id="bear-skydancer" items="2" >}}
+  {{< carousel_image src="/images/projects/human_wildlife_conflict_bear/skydancer/installing_blower.webp" alt="The HackThePlanet team installing the sky-dancer blower unit" caption="The HackThePlanet team installing the sky-dancer's blower unit." >}}
+  {{< carousel_image src="/images/projects/human_wildlife_conflict_bear/skydancer/deterrent_station_aerial.webp" alt="Aerial view of the deterrent station with the sky-dancer activated" caption="An aerial view of the deterrent station with the sky-dancer activated." >}}
+  {{< carousel_image src="/images/projects/human_wildlife_conflict_bear/skydancer/skydancer_carpathia.webp" alt="The sky-dancer deterrent deployed in a Carpathian meadow" caption="The inflatable sky-dancer deployed in a Carpathian meadow." >}}
+{{< /image_carousel >}}
+<p class="media-caption">The inflatable sky-dancer deterrent in the field — photos courtesy of <a href="https://www.hack-the-planet.io/projects/carpathia-skydancer-prototype/" target="_blank">HackThePlanet</a>.</p>
 
 ## Field Testing the Sky-Dancer in the Carpathians
 
