@@ -33,9 +33,9 @@
 {{ $ogType := "website" }}
 {{ if and .IsPage (eq .Section "posts") }}{{ $ogType = "article" }}{{ end }}
 
-{{/* Shared title expression for OG/Twitter */}}
-{{ $title := printf "%s%s | %s" .Title .Params.name .Site.Title }}
-{{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+{{/* Shared title expression for OG/Twitter — mirrors the <title> logic above */}}
+{{ $title := .Site.Title }}
+{{ if not .IsHome }}{{ $title = printf "%s%s | %s" .Title (.Params.name | default "") .Site.Title }}{{ end }}
 
 {{/* Open Graph */}}
 <meta property="og:title" content="{{ $title }}">
