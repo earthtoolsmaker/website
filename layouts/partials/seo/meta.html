@@ -43,7 +43,9 @@
 <meta property="og:type" content="{{ $ogType }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
-<meta property="og:locale" content="{{ replace .Site.LanguageCode "-" "_" }}">
+{{ $locale := .Site.LanguageCode }}
+{{ if strings.Contains $locale "-" }}{{ $p := split $locale "-" }}{{ $locale = printf "%s_%s" (index $p 0) (upper (index $p 1)) }}{{ end }}
+<meta property="og:locale" content="{{ $locale }}">
 {{ with $ogImage }}<meta property="og:image" content="{{ . }}">{{ end }}
 
 {{/* Twitter Card */}}
