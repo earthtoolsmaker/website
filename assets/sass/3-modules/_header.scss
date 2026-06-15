@@ -114,6 +114,11 @@ $nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
   &--sm { --bm-h: 44px; } // footer
 }
 
+// Logo imgs opt out of the global `img { max-width: 100% }` reset: they are
+// sized by a fixed height + width:auto, so a max-width clamp from a tight flex
+// row would squeeze width while height stays fixed, distorting the pangolin.
+.brandmark img { max-width: none; }
+
 .brandmark__pan img {
   display: block;
   height: var(--bm-h);
@@ -147,16 +152,15 @@ a:focus-visible .brandmark--slide .brandmark__pan img,
 .brandmark__word--etm { position: absolute; top: 0; left: 0; } // overlay (footer --slide)
 
 // ---- SWAP (header): static responsive logo; the word never swaps, only the
-// pangolin spins. Full "earthtoolsmaker" is the default — it fits when the nav is
-// wide (>= $logo-compact) AND when the nav has collapsed into the hamburger
-// (<= $nav-collapse), since the inline links no longer compete for the row.
-// Only the in-between band (inline nav present but not wide enough) falls back to
-// the compact "etm".
+// pangolin spins. Full "earthtoolsmaker" shows at wide viewports (>= $logo-compact);
+// below that the compact "etm" takes over. The full wordmark is too wide to share
+// a phone row with the "Support Us" CTA + hamburger, so showing it below 900px
+// overflowed the nowrap row and squeezed the logo out of aspect ratio.
 .brandmark--swap {
   .brandmark__word--etm  { display: none; } // full is shown by default (in-flow)
 }
 
-@media (min-width: #{$nav-collapse + 1}) and (max-width: #{$logo-compact - 1}) {
+@media (max-width: #{$logo-compact - 1}) {
   .brandmark--swap {
     .brandmark__word--etm  { display: block; position: static; }
     .brandmark__word--full { display: none; }
