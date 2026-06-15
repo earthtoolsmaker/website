@@ -1,6 +1,14 @@
 ---
 title: Bird Flu Monitoring
 summary: Utilize drones for precise monitoring of breeding seabird colonies by detection of live and dead adults and chicks to determine survival and reproduction and asses the impact of avian influenza.
+tagline: Counting every bird in a seabird colony — alive or lost — from a drone overhead, to measure avian flu's toll without setting foot inside.
+stats:
+  - value: "Aerial"
+    label: drone survey
+  - value: "Adults & chicks"
+    label: counted apart
+  - value: "Non-invasive"
+    label: no colony disturbance
 clients:
   - name: Lumax AI
     link: https://lumax.ai/
@@ -10,50 +18,87 @@ tools:
   - Machine Learning
   - Photogrammetry
   - Drones
+impacts:
+  - name: Mortality
+    desc: "Infected birds sicken and die — and in a densely packed colony, losses can climb fast."
+  - name: Breeding disruption
+    desc: "Sick adults abandon nests or stop feeding their young, so few chicks make it through the season."
+  - name: Spread to chicks
+    desc: "Adults pass the virus to their offspring, putting the colony's next generation at risk."
+  - name: Population decline
+    desc: "Where highly pathogenic strains take hold, a colony can shrink year after year."
+  - name: Ecological ripple
+    desc: "Colonies anchor food webs and nutrient cycling, so their collapse reaches far beyond the birds."
 status: fundraising
 date: 2024-06-23
 image: /images/projects/bird_flu_monitoring/cover.png
 ---
 
-## Context
+Many seabirds breed in dense colonies on low-lying sandbanks, beaches and
+isolated islands — out of reach of ground predators, but increasingly exposed to
+erosion, flooding and a fast-moving new threat: **avian influenza**. To protect
+these colonies, conservationists need accurate, up-to-date counts of how many
+birds are there, and how they are faring. That has always been hard to do
+without disturbing the very birds you are trying to count.
 
-Many seabirds breed on low lying sandbanks and beaches, concentrated in
-colonies. The colonies are often located on isolated islands or peninsulas
-where they are out of reach of ground predators. Due to rising sea levels,
-these breeding areas are often subject to erosion and flooding which can cause
-the (partial) destruction of breeding colonies and leads to loss of breeding
-sites. Effective conservation of breeding seabirds requires accurate
-information about numbers and spatial distributions and their habitat.
+Together with [Lumax AI](https://lumax.ai/), we're building a system that surveys
+an entire colony **from the air** and turns the imagery into numbers — counting
+live and dead adults and chicks to track survival, reproduction, and the toll of
+bird flu, all without setting foot among the birds.
 
-Bird flu, also known as avian influenza, is a viral infection that primarily
-affects birds, including domestic poultry and wild birds. There are several
-strains of avian influenza viruses, some of which can cause mild to severe
-illness in birds. Infections can range from asymptomatic to highly contagious
-and deadly outbreaks.
+## The monitoring challenge
 
-When bird flu impacts breeding colonies of birds, such as those in waterfowl or
-seabird colonies, it can have significant effects:
+Seabird colonies are some of the hardest places in conservation to get good
+numbers from — and bird flu raises the stakes.
 
-- __Morbidity and Mortality:__ Bird flu can cause illness and death among
-infected birds. In breeding colonies, this can lead to a reduction in
-population size if a significant number of birds are affected.
-- __Disruption of Breeding:__ Severe outbreaks can disrupt breeding cycles.
-Infected birds may abandon nests or fail to care for their young, leading to
-decreased reproductive success.
-- __Transmission to Offspring:__ Infected birds can transmit the virus to their
-offspring, potentially affecting the next generation of birds in the colony.
-- __Population Dynamics:__ In cases of highly pathogenic avian influenza
-(HPAI), where mortality rates are high, breeding colonies may experience
-population declines over time if the virus persists or recurs.
-- __Ecological Impact:__ Breeding colonies play crucial roles in ecosystems,
-and declines due to disease can affect food webs, nutrient cycling, and other
-ecological processes.
+<div class="support__grid">
+
+  <div class="support__card">
+    <h3 class="support__card-title">Remote &amp; fragile sites</h3>
+    <p class="support__card-description">Colonies cluster on low-lying sandbanks and islands that rising seas increasingly erode and flood — remote, exposed, and easily damaged.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Counting harms them</h3>
+    <p class="support__card-description">Walking a colony to count by hand disturbs nesting birds, risks trampling eggs, and is slow, dangerous and rarely complete.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Flu moves fast</h3>
+    <p class="support__card-description">A highly pathogenic outbreak can tear through a colony in days, so counts have to be quick, repeatable and safe to gather often.</p>
+  </div>
+
+</div>
+
+## How bird flu hits a colony
+
+Avian influenza is a viral infection of birds that ranges from mild to highly
+contagious and deadly. When a severe strain reaches a breeding colony, the
+damage compounds. Tap each to learn more.
+
+{{< threats "impacts" >}}
+
+## How we monitor it
+
+Rather than send people in, we send a drone over the top.
+
+![How it works — a drone surveys the colony, its photos are stitched into one map, a model counts live and dead adults and chicks, and the totals reveal the colony's health](/images/projects/bird_flu_monitoring/diagrams/pipeline.svg)
+*A drone flies the colony, its overlapping photos are stitched into a single
+high-resolution map, a computer-vision model finds and classifies every bird,
+and the totals reveal how the colony is faring.*
+
+Flying a fixed grid, the drone captures hundreds of overlapping photos that are
+stitched into one high-resolution **orthomosaic** of the colony. A computer-vision
+model then finds and classifies every bird — **live or dead, adult or chick** —
+and the totals reveal both how many birds the colony holds and where an outbreak
+is biting hardest. Because a survey is fast and disturbs nothing, it can be
+repeated as often as needed to watch a colony through the breeding season.
 
 ## Conclusion
 
-Management strategies to mitigate the impact of bird flu on breeding colonies
-include surveillance, early detection, quarantine measures, vaccination (where
-applicable), and sometimes culling infected birds to prevent further spread.
-Monitoring and research are essential to understand the dynamics of avian
-influenza in breeding populations and to implement effective conservation
-measures when necessary.
+Managing bird flu in wild populations relies on surveillance and early detection,
+followed by measures like quarantine, vaccination where it's feasible, and
+occasionally culling to slow the spread. None of it works without good data.
+Fast, repeatable, non-invasive counts give conservationists the early warning and
+the population picture they need to act — and to understand how avian influenza
+moves through wild colonies over time.
