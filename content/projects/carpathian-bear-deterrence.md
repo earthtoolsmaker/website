@@ -41,7 +41,7 @@ pressures:
 status: completed
 date: 2024-04-02
 pinned: true
-image: /images/projects/human_wildlife_conflict_bear/skydancer/brown_bear_meadow.webp
+image: /images/projects/human_wildlife_conflict_bear/cover_unsplash.jpg
 ---
 
 The Carpathian Mountains of Romania are home to the largest brown bear
