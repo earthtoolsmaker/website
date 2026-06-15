@@ -9,6 +9,10 @@ stats:
     label: sensing modalities
   - value: "24/7"
     label: automated counting
+  - value: "20"
+    label: sites monitored
+  - value: "1M+"
+    label: salmon counted
 github_repo: https://github.com/Salmon-Computer-Vision/salmon-computer-vision/tree/master
 space: /demos/wild_salmon_migration_monitoring/
 clients:
