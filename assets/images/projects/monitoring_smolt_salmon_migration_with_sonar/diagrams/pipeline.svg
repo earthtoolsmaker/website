@@ -1,0 +1,123 @@
+<svg viewBox="0 0 1062 380" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#bfe6e4"/><stop offset="100%" stop-color="#5fb0bb"/></linearGradient>
+  <linearGradient id="sonar" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e3a4a"/><stop offset="100%" stop-color="#176074"/></linearGradient>
+  <radialGradient id="fishglow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff7a45"/><stop offset="100%" stop-color="#ff7a45" stop-opacity="0"/></radialGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#e29578"/></marker>
+  <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.08"/></filter>
+  <pattern id="sonar-noise" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="0.7" fill="#bfe0d6" opacity="0.16"/><circle cx="5" cy="4.5" r="0.6" fill="#bfe0d6" opacity="0.12"/></pattern>
+  <style>
+    .title { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 26px; font-weight: 600; fill: #161616; }
+    .desc  { font-size: 15px; fill: #60626a; }
+    .step  { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; fill: #e29578; }
+    .pill  { font-size: 12px; font-weight: 700; fill: #fff; }
+    .beam  { animation: beam 2.4s ease-in-out infinite; }
+    .swim  { transform-box: fill-box; transform-origin: 50% 50%; animation: swim 3.4s ease-in-out infinite; }
+    .box   { animation: boxpulse 2.2s ease-in-out infinite; }
+    .scan  { animation: sweep 3.2s ease-in-out infinite; }
+    .cross { transform-box: fill-box; transform-origin: 50% 50%; animation: cross 3s ease-in-out infinite; }
+    .glow  { animation: glowp 2s ease-in-out infinite; }
+    @keyframes beam { 0%,100%{opacity:0.25} 50%{opacity:0.6} }
+    @keyframes swim { 0%,100%{transform:translateX(0)} 50%{transform:translateX(5px)} }
+    @keyframes boxpulse { 0%,100%{opacity:0.6} 50%{opacity:1} }
+    @keyframes sweep { 0%{transform:translateY(0)} 50%{transform:translateY(96px)} 100%{transform:translateY(0)} }
+    @keyframes cross { 0%{transform:translateX(-22px)} 100%{transform:translateX(26px)} }
+    @keyframes glowp { 0%,100%{opacity:0.5} 50%{opacity:1} }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+
+  <!-- reusable smolt mark (bright sonar return, faces right) -->
+  <g id="smolt">
+    <ellipse cx="0" cy="0" rx="22" ry="9" fill="url(#fishglow)" opacity="0.7"/>
+    <ellipse cx="0" cy="0" rx="11" ry="3.4" fill="#ff6a3d"/>
+    <path d="M-11 0 L-18 -4 L-15 0 L-18 4 Z" fill="#ff6a3d"/>
+    <ellipse cx="2" cy="-0.8" rx="7" ry="1.6" fill="#ffc7a8" opacity="0.7"/>
+  </g>
+</defs>
+
+<!-- ARROWS -->
+<g stroke="#e29578" stroke-width="3.5" fill="none" stroke-linecap="round">
+  <line x1="250" y1="134" x2="291" y2="134" marker-end="url(#arrow)"/>
+  <line x1="509" y1="134" x2="550" y2="134" marker-end="url(#arrow)"/>
+  <line x1="768" y1="134" x2="809" y2="134" marker-end="url(#arrow)"/>
+</g>
+
+<!-- CARD 1 — RECORD (cx=142) -->
+<rect x="36" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(142,128)">
+  <clipPath id="c1"><rect x="-90" y="-84" width="180" height="168" rx="12"/></clipPath>
+  <g clip-path="url(#c1)">
+    <rect x="-90" y="-84" width="180" height="168" fill="url(#water)"/>
+    <!-- transducer -->
+    <g transform="translate(0,-66)"><rect x="-13" y="-8" width="26" height="16" rx="4" fill="#15463f"/><rect x="-8" y="8" width="16" height="6" rx="2" fill="#0a3f44"/></g>
+    <!-- fan beam -->
+    <path class="beam" d="M0 -52 L-58 64 L58 64 Z" fill="#e29578" opacity="0.4"/>
+    <!-- range arcs -->
+    <g stroke="#fbf6f6" stroke-width="1.5" fill="none" opacity="0.35"><path d="M-30 8 A 40 40 0 0 0 30 8"/><path d="M-46 40 A 62 62 0 0 0 46 40"/></g>
+    <!-- smolt in the beam -->
+    <g transform="translate(-6,30)"><g class="swim"><use href="#smolt"/></g></g>
+  </g>
+</g>
+<text class="step" x="142" y="280" text-anchor="middle">01</text>
+<text class="title" x="142" y="312" text-anchor="middle">Record</text>
+<text class="desc"  x="142" y="338" text-anchor="middle">ARIS sonar scans the water</text>
+
+<!-- CARD 2 — DETECT (cx=401) -->
+<rect x="295" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(401,128)">
+  <clipPath id="c2"><rect x="-84" y="-72" width="168" height="144" rx="12"/></clipPath>
+  <rect x="-84" y="-72" width="168" height="144" rx="12" fill="url(#sonar)"/>
+  <g clip-path="url(#c2)">
+    <rect x="-84" y="-72" width="168" height="144" fill="url(#sonar-noise)"/>
+    <g stroke="#7fb6c4" stroke-width="1.4" fill="none" opacity="0.3"><path d="M-60 -40 A 75 75 0 0 1 60 -40"/><path d="M-72 0 A 95 95 0 0 1 72 0"/><path d="M-78 40 A 110 110 0 0 1 78 40"/></g>
+    <g transform="translate(-4,4)"><g class="swim"><use href="#smolt"/></g></g>
+    <rect class="scan" x="-84" y="-72" width="168" height="3" fill="#e29578" opacity="0.55"/>
+  </g>
+  <rect class="box" x="-30" y="-12" width="56" height="30" rx="3" fill="none" stroke="#e8232a" stroke-width="3"/>
+  <g transform="translate(50,-58)"><rect x="-16" y="-13" width="32" height="26" rx="6" fill="#006d77"/><circle cx="-6" cy="-3" r="2.6" fill="#bfe0d6"/><circle cx="6" cy="-3" r="2.6" fill="#bfe0d6"/><circle cx="0" cy="7" r="2.6" fill="#bfe0d6"/><path d="M-6 -3 L0 7 L6 -3" stroke="#83c5be" stroke-width="1.8" fill="none"/></g>
+</g>
+<text class="step" x="401" y="280" text-anchor="middle">02</text>
+<text class="title" x="401" y="312" text-anchor="middle">Detect</text>
+<text class="desc"  x="401" y="338" text-anchor="middle">AI finds each smolt</text>
+
+<!-- CARD 3 — MEASURE (cx=660) -->
+<rect x="554" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(660,128)">
+  <clipPath id="c3"><rect x="-84" y="-72" width="168" height="144" rx="12"/></clipPath>
+  <rect x="-84" y="-72" width="168" height="144" rx="12" fill="url(#sonar)"/>
+  <g clip-path="url(#c3)">
+    <rect x="-84" y="-72" width="168" height="144" fill="url(#sonar-noise)"/>
+    <g transform="translate(-2,8)"><use href="#smolt"/></g>
+  </g>
+  <!-- length caliper over the fish -->
+  <g stroke="#bfe0d6" stroke-width="2" stroke-linecap="round">
+    <path d="M-26 -16 L-26 -28 M26 -16 L26 -28"/>
+    <path d="M-26 -22 L26 -22" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  </g>
+  <g transform="translate(0,-44)"><rect x="-30" y="-12" width="60" height="22" rx="11" fill="#006d77"/><text class="pill" x="0" y="4" text-anchor="middle">12.4 cm</text></g>
+</g>
+<text class="step" x="660" y="280" text-anchor="middle">03</text>
+<text class="title" x="660" y="312" text-anchor="middle">Measure</text>
+<text class="desc"  x="660" y="338" text-anchor="middle">Estimates its length</text>
+
+<!-- CARD 4 — COUNT (cx=919) -->
+<rect x="813" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(919,128)">
+  <clipPath id="c4"><rect x="-84" y="-72" width="168" height="144" rx="12"/></clipPath>
+  <rect x="-84" y="-72" width="168" height="144" rx="12" fill="url(#sonar)"/>
+  <g clip-path="url(#c4)">
+    <rect x="-84" y="-72" width="168" height="144" fill="url(#sonar-noise)"/>
+    <!-- trigger line -->
+    <path d="M6 -64 L6 64" stroke="#e29578" stroke-width="3" stroke-dasharray="6 6"/>
+    <!-- smolt crossing downstream -->
+    <g transform="translate(0,4)"><g class="cross"><use href="#smolt"/></g></g>
+    <!-- downstream direction arrow -->
+    <g stroke="#bfe0d6" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.8"><path d="M-40 -46 L-14 -46" marker-end="url(#arrow)"/></g>
+  </g>
+  <!-- count badge -->
+  <g transform="translate(48,-50)" class="glow"><circle r="17" fill="#006d77"/><text x="0" y="6" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">+1</text></g>
+</g>
+<text class="step" x="919" y="280" text-anchor="middle">04</text>
+<text class="title" x="919" y="312" text-anchor="middle">Count</text>
+<text class="desc"  x="919" y="338" text-anchor="middle">Tallies it crossing the line</text>
+</svg>

@@ -1,6 +1,14 @@
 ---
 title: Monitoring Smolt Salmon Migration with Sonar
 summary: An innovative use of sonar imagery to monitor and analyze the migration patterns of smolt salmon as they journey from freshwater to the ocean
+tagline: Counting juvenile salmon by sonar as they run the gauntlet downstream to the ocean.
+stats:
+  - value: "8–14 cm"
+    label: smolt detected
+  - value: "Day & night"
+    label: sonar imaging
+  - value: "Automated"
+    label: counting
 clients:
   - name: BC Hydro 
     link: https://www.bchydro.com/
@@ -12,6 +20,15 @@ tools:
   - Machine Learning
   - Computer Vision
   - Sonar
+why_count:
+  - name: Population trends
+    desc: "Tracking smolt numbers year over year reveals whether a salmon population is growing, stable or declining — an early warning of collapse."
+  - name: Dam impact
+    desc: "Counts above and below a dam quantify how hydroelectric infrastructure affects downstream fish survival."
+  - name: Regulatory compliance
+    desc: "Facilities must monitor and mitigate their impact on fish; automated counting provides the consistent, auditable data regulators require."
+  - name: Management actions
+    desc: "Smolt abundance feeds decisions on dam operations, habitat-restoration priorities, and fishing quotas for the adults that return."
 date: 2026-01-10
 space: /demos/smolt_sonar_monitoring/
 status: completed
@@ -25,6 +42,11 @@ Monitoring smolt — juvenile salmon migrating downstream toward the ocean — i
   {{< carousel_image src="/images/projects/monitoring_smolt_salmon_migration_with_sonar/map_overview.png" alt="Jansen Lake Map" caption="Jansen Lake, British Columbia, located on Vancouver Island" >}}
   {{< carousel_image src="/images/projects/monitoring_smolt_salmon_migration_with_sonar/map_satellite.png" alt="Jansen Lake Satellite" caption="Jansen Lake, British Columbia, Satellite close up" >}}
 {{< /image_carousel >}}
+
+From a raw sonar recording to a verified count, the system runs four automated steps:
+
+![From a sonar recording to a counted smolt — the analysis pipeline](/images/projects/monitoring_smolt_salmon_migration_with_sonar/diagrams/pipeline.svg)
+*ARIS sonar records the water, a model detects and measures each smolt, and fish are tallied as they cross a virtual line.*
 
 ## Why count smolt?
 
@@ -41,12 +63,9 @@ The downstream migration is one of the most dangerous periods in a salmon's life
 
 ### Why accurate counting matters
 
-Reliable smolt counts are fundamental for salmon conservation:
+Reliable smolt counts are fundamental for salmon conservation — tap each to learn more.
 
-- __Population trend assessment__: Tracking smolt numbers over multiple years reveals whether salmon populations are growing, stable, or declining — providing early warning of population collapse.
-- __Evaluating dam impact__: Hydroelectric operators like [BC Hydro](https://www.bchydro.com/) need to understand how their infrastructure affects downstream fish survival. Accurate counts above and below dams quantify this impact.
-- __Regulatory compliance__: Hydroelectric facilities operate under environmental regulations that require monitoring and mitigating impacts on fish populations. Automated counting provides the consistent, auditable data needed for compliance.
-- __Informing management actions__: Smolt abundance data feeds directly into decisions about dam operations, habitat restoration priorities, and fishing quotas for returning adults.
+{{< threats "why_count" >}}
 
 ### The challenge of current methods
 
@@ -104,7 +123,7 @@ We fine-tuned a pretrained [YOLOv11](https://github.com/ultralytics/ultralytics)
 To follow individual smolt across consecutive frames we use [BoTSort](https://github.com/NirAharon/BoT-SORT) (Robust Associations Multi-Pedestrian Tracking). Unlike simpler tracking approaches such as SORT that rely solely on bounding-box overlap, BoTSort combines motion prediction with visual appearance features and camera-motion compensation. This makes it far more robust when fish cross paths or temporarily disappear behind noise, providing continuous trajectories that allow us to count each smolt exactly once as it migrates past the sonar.
 
 <p><iframe src="https://www.youtube.com/embed/UY08mjPBHbc" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
-<em style="font-size:14px;line-height:1.4em;display:block;">Automated smolt detection and tracking in action on preprocessed ARIS sonar footage.</em>
+<p class="media-caption">Automated smolt detection and tracking in action on preprocessed ARIS sonar footage.</p>
 
 ## Size Estimation
 
@@ -139,4 +158,4 @@ This project demonstrates that automated smolt enumeration from ARIS sonar image
 The system developed in partnership with [BC Hydro](https://www.bchydro.com/) and [Lumax AI](https://lumax.ai/) handles the full analysis chain — from raw sonar files through to individual fish counts with length estimates and migration direction. By making smolt monitoring faster and more consistent, this approach supports the data-driven conservation decisions that are essential for protecting salmon populations.
 
 <p><iframe src="https://www.youtube.com/embed/Tg-gyDn8zfk" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
-<em style="font-size:14px;line-height:1.4em;display:block;">Full pipeline demo — detection, tracking, counting, and size estimation on ARIS sonar footage.</em>
+<p class="media-caption">Full pipeline demo — detection, tracking, counting, and size estimation on ARIS sonar footage.</p>
