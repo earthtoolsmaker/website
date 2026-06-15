@@ -169,3 +169,36 @@ $project-cta-gap: 56px;
 .about-cta.demo-cta {
   margin: $project-cta-gap 0 0;
 }
+
+// --- Threat chips: compact pills summarizing the pressures on wild salmon in
+//     the "Salmon under pressure" section. Reuses the facts-bar chip look at a
+//     slightly larger, in-article size, with a small teal accent dot. ---
+.post__content .threat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.post__content .threat-chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--background-alt-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+
+  &::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    margin-right: 0.6em;
+    border-radius: 50%;
+    background: var(--secondary-color);
+  }
+}
