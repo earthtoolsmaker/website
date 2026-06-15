@@ -101,6 +101,42 @@ $project-live-color: #3fb950;
   @media (max-width: $mobile) {
     .project-hero__stats { gap: 24px; }
     .project-hero__stat-value { font-size: 30px; }
+
+    // The fixed-height hero can't fit the partner chips on a phone, so let it
+    // grow: the photo sits absolutely behind an in-flow overlay that drives the
+    // height (min 340px, the old fixed value), so nothing gets clipped.
+    &.about-hero {
+      height: auto;
+    }
+    // Only the hero's own background picture (a direct child) goes behind —
+    // NOT the partner-chip logos, which live inside the overlay.
+    & > picture,
+    & > picture img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+    }
+
+    // No room top-right on a phone — reflow the chips below the stats.
+    .about-hero__overlay {
+      position: relative;
+      min-height: 340px;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-end;
+    }
+    // Keep the main hero text/stats above the partner block.
+    .about-hero__overlay > .container-wide:last-child { order: 1; }
+
+    .project-hero__partners {
+      position: static;
+      order: 2;
+      margin-top: 20px;
+
+      .container-wide { align-items: flex-start; }
+    }
+    .project-hero__partners-label { text-align: left; }
+    .project-hero__partners-logos { justify-content: flex-start; max-width: none; }
   }
 }
 
