@@ -87,6 +87,16 @@ pills where clicking one highlights it and reveals its explanation panel below.
 The "See the models in action" `about-cta` block (above "Why Pyronear") was
 removed at the user's request.
 
+### Section reorder
+The interactive demos were moved out of their own early section and folded into
+the "See Pyronear in Action" section (after the field-detection video), so they
+sit just before the closing "Explore the full Pyronear platform" CTA. The
+page-local `#demos` anchor was dropped (nothing on the page linked to it).
+
+### Caption alignment
+The two inline video captions were centered (`text-align:center`) so they sit
+centered under their full-width videos.
+
 ## Out of scope
 - No changes to the SalmonVision page.
 - No changes to the shared `.tool-hero` CSS.

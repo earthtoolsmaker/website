@@ -80,30 +80,6 @@ Pyronear pairs cutting-edge detection with open, low-tech hardware that communit
 <br/>
 <br/>
 
-## Interactive Demos {#demos}
-
-Two interactive demos let you run the Pyronear models on real data, right from this website.
-
-{{< tabs labels="::Single-frame detection|::Temporal verification" id="pyronear-demos" >}}
-{{< tab index="0" >}}
-
-Upload a camera image and watch the detector draw boxes around smoke.
-
-{{< hf_space "earthtoolsmaker-forest-fire-pyronear" >}}
-
-{{< /tab >}}
-{{< tab index="1" >}}
-
-The second-stage model watches whole sequences: real wildfires get caught within minutes while clouds, fog, and haze look-alikes are rejected. This is the model that cuts false alarms by 4× in production.
-
-<p><iframe src="https://achouffe-temporal-smoke-pyronear.hf.space" loading="lazy" frameborder="0" style="width:100%;height:1000px;border:0;"></iframe></p>
-
-{{< /tab >}}
-{{< /tabs >}}
-
-<br/>
-<br/>
-
 ## How It Works
 
 Pyronear catches fires in two stages: a fast detector proposes candidate smoke, then a temporal model confirms it before an alert goes out.
@@ -145,6 +121,28 @@ The computer vision model detected a forest fire in Fontainebleau from a distanc
 
 <p><iframe src="https://www.youtube.com/embed/i9Qy-zY16Ew" loading="lazy" frameborder="0" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9;"></iframe></p>
 <em style="font-size:14px;line-height:1.4em;display:block;text-align:center;">Real-time forest fire detection from 35 kilometers away in Fontainebleau</em>
+<br/>
+
+Two interactive demos let you run the Pyronear models on real data, right from this website.
+
+{{< tabs labels="::Single-frame detection|::Temporal verification" id="pyronear-demos" >}}
+{{< tab index="0" >}}
+
+Upload a camera image and watch the detector draw boxes around smoke.
+
+{{< hf_space "earthtoolsmaker-forest-fire-pyronear" >}}
+
+{{< /tab >}}
+{{< tab index="1" >}}
+
+The second-stage model watches whole sequences: real wildfires get caught within minutes while clouds, fog, and haze look-alikes are rejected. This is the model that cuts false alarms by 4× in production.
+
+<p><iframe src="https://achouffe-temporal-smoke-pyronear.hf.space" loading="lazy" frameborder="0" style="width:100%;height:1000px;border:0;"></iframe></p>
+
+{{< /tab >}}
+{{< /tabs >}}
+
+<br/>
 <br/>
 
 <div class="about-cta">
