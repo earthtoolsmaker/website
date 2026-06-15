@@ -207,9 +207,4 @@ re-identification system opens an entirely new, individual-level view of seal
 life that simply wasn't possible before. The same framework can extend to other
 colonies, regions, or marine-mammal species.
 
-## Try the seal re-identification system
-
-Upload images of seal faces and watch the model extract their features and match
-individuals — right in your browser:
-
 {{< demo_cta >}}

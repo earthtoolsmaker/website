@@ -59,7 +59,7 @@
     <rect class="bar b3" x="26"  y="-18" width="9" height="36" rx="2" fill="#83c5be"/>
     <rect class="bar b4" x="40"  y="-24" width="9" height="48" rx="2" fill="#bfe0d6"/>
   </g>
-  <text class="chip" x="0" y="46" text-anchor="middle" font-size="10" fill="#cfe9e0" letter-spacing="0.1em">FEATURE FINGERPRINT</text>
+  <text class="chip" x="0" y="46" text-anchor="middle" font-size="10" fill="#cfe9e0" letter-spacing="0.06em">FINGERPRINT</text>
 </g>
 <text class="step" x="401" y="280" text-anchor="middle">02</text>
 <text class="title" x="401" y="312" text-anchor="middle">A fingerprint</text>
