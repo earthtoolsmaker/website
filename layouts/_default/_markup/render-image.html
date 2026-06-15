@@ -32,6 +32,18 @@
     {{ with $class }}class="{{ . }}"{{ end }}
     loading="lazy"
     decoding="async">
+{{ else if and $image (strings.HasSuffix (lower $imgPath) ".gif") }}
+  {{/* GIF: Hugo's resize keeps only the first frame, so an animated GIF would
+       render as a static image. Publish as-is to preserve the animation. */}}
+  <img
+    src="{{ $image.RelPermalink }}"
+    alt="{{ $alt }}"
+    {{ with $title }}title="{{ . }}"{{ end }}
+    {{ with $class }}class="{{ . }}"{{ end }}
+    width="{{ $image.Width }}"
+    height="{{ $image.Height }}"
+    loading="lazy"
+    decoding="async">
 {{ else if $image }}
   {{/* Generate responsive image with WebP */}}
   {{ $widths := slice 400 600 800 1200 }}
