@@ -3,8 +3,8 @@ title: Wild Salmon Migration Monitoring
 summary: The project monitors wild salmon migration to ensure the number passing through meets state regulations, addressing threats from human activities like fisheries and dams.
 tagline: Automated, multi-sensor counting that keeps Pacific salmon runs within regulation.
 stats:
-  - value: "7"
-    label: salmon species recognized
+  - value: "14"
+    label: fish species recognized
   - value: "3"
     label: sensing modalities
   - value: "24/7"
