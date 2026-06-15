@@ -36,6 +36,19 @@ tools:
   - Machine Learning
   - Sonar
   - Drones
+threats:
+  - name: Habitat loss
+    desc: "Urban development, logging and agriculture degrade and destroy the spawning and rearing streams salmon depend on."
+  - name: Dams &amp; barriers
+    desc: "Dams, weirs and culverts obstruct migration routes, cutting fish off from the spawning and rearing habitat upstream."
+  - name: Overfishing
+    desc: "Unsustainable harvest depletes populations and erodes the genetic diversity that keeps runs resilient."
+  - name: Climate change
+    desc: "Warming water and shifting flows disrupt migration timing and the narrow temperature windows salmon need to survive and spawn."
+  - name: Pollution
+    desc: "Runoff from farms, industry and urban areas contaminates waterways, harming salmon health and survival."
+  - name: Disease &amp; parasites
+    desc: "Contact with farmed fish can spread diseases and parasites to wild salmon, weakening already-stressed populations."
 status: completed
 pinned: true
 weight: 2

@@ -14,6 +14,17 @@ space: /demos/early_forest_fire_detection/
 tools:
   - Computer Vision
   - Machine Learning
+forest_protection:
+  - name: Biodiversity conservation
+    desc: "Forests shelter countless plant and animal species. Wildfire destroys their habitats, eroding biodiversity and pushing vulnerable species toward extinction."
+  - name: Carbon sequestration
+    desc: "Forests act as carbon sinks, pulling CO₂ from the air and locking it into trees and soil. When they burn, that stored carbon is released back into the atmosphere, accelerating climate change."
+  - name: Water resources
+    desc: "Healthy forests regulate the water cycle — holding soil moisture, curbing erosion, and feeding rivers and streams. Fire disrupts all of it, degrading soil and harming water quality and supply."
+  - name: Economic impact
+    desc: "Forests underpin livelihoods — timber, non-timber products, and recreation. Wildfire damages these resources and the forestry, tourism, and agriculture that depend on them, costing local communities dearly."
+  - name: Human health
+    desc: "Wildfire smoke drifts far beyond the fire line, and its air pollution hits the vulnerable hardest — children, the elderly, and people with respiratory conditions. Stopping fires early protects public health."
 status: completed
 pinned: true
 weight: 1
@@ -53,36 +64,10 @@ department.
 
 ## Forests Protection
 
-Protecting forests from fire is crucial for several reasons:
+Protecting forests from fire is crucial for several reasons — tap each to learn
+more.
 
-<div class="support__grid">
-
-  <div class="support__card">
-    <h3 class="support__card-title">Biodiversity Conservation</h3>
-    <p class="support__card-description">Forests shelter countless plant and animal species. Wildfire destroys their habitats, eroding biodiversity and pushing vulnerable species toward extinction.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">Carbon Sequestration</h3>
-    <p class="support__card-description">Forests act as carbon sinks, pulling CO₂ from the air and locking it into trees and soil. When they burn, that stored carbon is released back into the atmosphere, accelerating climate change.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">Water Resources</h3>
-    <p class="support__card-description">Healthy forests regulate the water cycle — holding soil moisture, curbing erosion, and feeding rivers and streams. Fire disrupts all of it, degrading soil and harming water quality and supply.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">Economic Impact</h3>
-    <p class="support__card-description">Forests underpin livelihoods — timber, non-timber products, and recreation. Wildfire damages these resources and the forestry, tourism, and agriculture that depend on them, costing local communities dearly.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">Human Health</h3>
-    <p class="support__card-description">Wildfire smoke drifts far beyond the fire line, and its air pollution hits the vulnerable hardest — children, the elderly, and people with respiratory conditions. Stopping fires early protects public health.</p>
-  </div>
-
-</div>
+{{< threats "forest_protection" >}}
 
 Preserving forests from fire is essential — for ecological balance, a stable
 climate, the livelihoods forests support, and the health of people and wildlife
