@@ -139,12 +139,13 @@ against the camera.
 Models are trained on reef imagery from around the world to cope with this
 variety:
 
-{{< gallery caption="Coral reefs photographed in different regions across the world" >}}
-  {{< gallery_image src="/images/projects/coral_reef_segmentation/reefs/reef1.jpg" alt="Reef 1 sample" >}}
-  {{< gallery_image src="/images/projects/coral_reef_segmentation/reefs/reef2.jpg" alt="Reef 2 sample" >}}
-  {{< gallery_image src="/images/projects/coral_reef_segmentation/reefs/reef3.jpg" alt="Reef 3 sample" >}}
-  {{< gallery_image src="/images/projects/coral_reef_segmentation/reefs/reef4.jpg" alt="Reef 4 sample" >}}
-{{< /gallery >}}
+{{< image_carousel id="coral-reefs" items="2" >}}
+  {{< carousel_image src="/images/projects/coral_reef_segmentation/reefs/reef1.jpg" alt="A coral reef sample" caption="A coral reef photographed in the field." >}}
+  {{< carousel_image src="/images/projects/coral_reef_segmentation/reefs/reef2.jpg" alt="A coral reef sample" caption="A coral reef photographed in the field." >}}
+  {{< carousel_image src="/images/projects/coral_reef_segmentation/reefs/reef3.jpg" alt="A coral reef sample" caption="A coral reef photographed in the field." >}}
+  {{< carousel_image src="/images/projects/coral_reef_segmentation/reefs/reef4.jpg" alt="A coral reef sample" caption="A coral reef photographed in the field." >}}
+{{< /image_carousel >}}
+<p class="media-caption">Coral reefs photographed in different regions across the world.</p>
 
 ## Conclusion
 
