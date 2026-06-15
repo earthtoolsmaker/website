@@ -1,0 +1,75 @@
+{{/*
+  JSON-LD structured data. One <script type="application/ld+json"> per schema type,
+  selected by page kind. JSON is built with dict/slice + jsonify so output is always
+  valid JSON (no hand-built string interpolation).
+*/}}
+
+{{/* Resolve logo (absolute URL), shared by Organization + Article publisher */}}
+{{ $logoURL := "" }}
+{{ with resources.Get .Site.Params.seo.default_image }}{{ $logoURL = .Permalink }}{{ end }}
+
+{{/* sameAs — single source of truth is params.social */}}
+{{ $sameAs := slice }}
+{{ range .Site.Params.social }}{{ $sameAs = $sameAs | append .link }}{{ end }}
+
+{{/* --- Organization (every page) --- */}}
+{{ $org := dict
+  "@context" "https://schema.org"
+  "@type" "Organization"
+  "name" .Site.Title
+  "url" .Site.BaseURL
+  "description" .Site.Params.description
+  "sameAs" $sameAs
+}}
+{{ with $logoURL }}{{ $org = merge $org (dict "logo" .) }}{{ end }}
+<script type="application/ld+json">{{ $org | jsonify | safeJS }}</script>
+
+{{/* --- WebSite (homepage only) --- */}}
+{{ if .IsHome }}
+{{ $website := dict
+  "@context" "https://schema.org"
+  "@type" "WebSite"
+  "name" .Site.Title
+  "url" .Site.BaseURL
+}}
+<script type="application/ld+json">{{ $website | jsonify | safeJS }}</script>
+{{ end }}
+
+{{/* --- Article (blog posts only) --- */}}
+{{ if and .IsPage (eq .Section "posts") }}
+{{ $articleImg := "" }}
+{{ with .Params.image }}
+  {{ with resources.Get (strings.TrimPrefix "/" .) }}
+    {{ $articleImg = (.Fill "1200x630 jpg q85").Permalink }}
+  {{ end }}
+{{ end }}
+{{ $publisher := dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL }}
+{{ with $logoURL }}{{ $publisher = merge $publisher (dict "logo" (dict "@type" "ImageObject" "url" .)) }}{{ end }}
+{{ $article := dict
+  "@context" "https://schema.org"
+  "@type" "Article"
+  "headline" .Title
+  "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+  "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+  "author" (dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL)
+  "publisher" $publisher
+  "mainEntityOfPage" .Permalink
+}}
+{{ with $articleImg }}{{ $article = merge $article (dict "image" .) }}{{ end }}
+<script type="application/ld+json">{{ $article | jsonify | safeJS }}</script>
+{{ end }}
+
+{{/* --- BreadcrumbList (any nested single page: posts, projects, tools, spaces) --- */}}
+{{ if and .IsPage .Section }}
+{{ $crumbs := slice
+  (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.BaseURL)
+  (dict "@type" "ListItem" "position" 2 "name" (humanize .Section) "item" (printf "%s%s/" .Site.BaseURL .Section))
+  (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink)
+}}
+{{ $breadcrumb := dict
+  "@context" "https://schema.org"
+  "@type" "BreadcrumbList"
+  "itemListElement" $crumbs
+}}
+<script type="application/ld+json">{{ $breadcrumb | jsonify | safeJS }}</script>
+{{ end }}
