@@ -38,6 +38,23 @@ The video below, filmed in the Forest of Fontainebleau, shows how the system wor
 <em style="font-size:14px;line-height:1.4em;display:block;">End-to-end demonstration of the Pyronear system in the Forest of Fontainebleau</em>
 <br/>
 
+<section class="about-stats about-stats--three tools-stats">
+  <div class="about-stats__grid">
+    <div class="about-stats__item">
+      <div class="about-stats__value">24/7</div>
+      <div class="about-stats__label">monitoring</div>
+    </div>
+    <div class="about-stats__item">
+      <div class="about-stats__value">50</div>
+      <div class="about-stats__label">sites monitored</div>
+    </div>
+    <div class="about-stats__item">
+      <div class="about-stats__value">500+</div>
+      <div class="about-stats__label">fires detected</div>
+    </div>
+  </div>
+</section>
+
 {{< image_carousel id="pyronear-gallery" items="2" >}}
   {{< carousel_image src="./images/platform1.png" alt="Pyronear Platform Alert" caption="Fire alert triggered on the Pyronear web platform, showing detected wildfire location and camera feed." >}}
   {{< carousel_image src="./images/platform2.png" alt="Pyronear Platform Overview" caption="Fire management platform interface for fire departments to monitor and respond to alerts." >}}
@@ -56,33 +73,12 @@ The video below, filmed in the Forest of Fontainebleau, shows how the system wor
 
 Pyronear pairs cutting-edge detection with open, low-tech hardware that communities can deploy themselves.
 
-<div class="support__grid">
-
-  <div class="support__card">
-    <h3 class="support__card-title">Cutting-edge AI detection</h3>
-    <p class="support__card-description">Computer-vision models detect wildfire smoke in real time and keep improving as new field data comes in.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">Web fire-management platform</h3>
-    <p class="support__card-description">An intuitive web app surfaces recent alerts and streamlines response for fire departments.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">Open source and low-tech</h3>
-    <p class="support__card-description">Built in the open on affordable, off-the-shelf hardware that communities can deploy and maintain themselves.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">Energy-efficient and economical</h3>
-    <p class="support__card-description">Runs on low-power microcomputers at the edge, keeping running costs and energy use low.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">Modular by design</h3>
-    <p class="support__card-description">Detection, alerting, and the supervision platform are separable pieces you can adapt to local needs.</p>
-  </div>
-
+<div class="tools-pills">
+  <span class="project-facts__chip">Cutting-edge AI detection</span>
+  <span class="project-facts__chip">Web fire-management platform</span>
+  <span class="project-facts__chip">Open source and low-tech</span>
+  <span class="project-facts__chip">Energy-efficient and economical</span>
+  <span class="project-facts__chip">Modular by design</span>
 </div>
 
 <br/>

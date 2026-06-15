@@ -57,7 +57,24 @@ block, adapted:
 The rest of the page (intro paragraph, demos, carousels, etc.) is unchanged.
 
 ### 3. CSS
-None. `.tool-hero` and friends are already shared/generic.
+None for the hero. `.tool-hero` and friends are already shared/generic.
+
+## Follow-on additions
+
+### Stat band
+A three-up stat band on the tool page, after the intro/Fontainebleau video and
+before the gallery carousel — reusing the SalmonVision tool-page pattern
+(`about-stats about-stats--three tools-stats`). Values (provided by the user,
+matching the `stats:` front matter on the fire-detection project page):
+`24/7` monitoring · `50` sites monitored · `500+` fires detected. No new CSS.
+
+### "Why Pyronear" pills
+Replace the five `support__card` cards in the "Why Pyronear" section with a
+compact pill row matching the fire-detection **project** page's facts-bar pills.
+Each benefit becomes a `.project-facts__chip` (reused for an identical look)
+inside a new block-level `.tools-pills` flex-wrap wrapper (one small rule added
+to `_tools.scss`). This trades the per-card descriptions for a scannable row of
+labels, by request.
 
 ## Out of scope
 - No changes to the SalmonVision page.

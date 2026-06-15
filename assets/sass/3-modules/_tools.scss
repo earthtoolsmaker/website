@@ -293,6 +293,15 @@
   margin: 36px 0 44px;
 }
 
+/* Pill row (e.g. "Why Pyronear") — reuses the project facts-bar chip styling
+   (.project-facts__chip) inside a block-level wrapping flex row. */
+.tools-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 8px 0 4px;
+}
+
 .tools-cta {
   margin: 8px 0 0;
 }
