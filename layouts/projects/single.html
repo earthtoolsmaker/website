@@ -2,9 +2,10 @@
 
 {{/* ---------- 1. HERO ---------- */}}
 {{/* Only fundraising projects show an eyebrow above the title ("Seeking
-     funding"); the tools already appear as chips in the facts bar. */}}
+     funding"); the tools already appear as chips in the facts bar. A page can
+     opt out of the eyebrow with `hide_funding_eyebrow: true` in front matter. */}}
 {{ $kicker := slice }}
-{{ if eq .Params.status "fundraising" }}{{ $kicker = $kicker | append "Seeking funding" }}{{ end }}
+{{ if and (eq .Params.status "fundraising") (not .Params.hide_funding_eyebrow) }}{{ $kicker = $kicker | append "Seeking funding" }}{{ end }}
 <div class="about-hero project-hero{{ if not .Params.image }} project-hero--gradient{{ end }}">
   {{ if .Params.image }}
   {{ $imgPath := strings.TrimPrefix "/" .Params.image }}
