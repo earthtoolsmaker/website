@@ -170,12 +170,14 @@
 
 /* Widget Footer Navigation */
 .widget-nav {
-  text-align: right;
+  text-align: left;
 
   .footer__nav-list {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    column-gap: 48px;
     line-height: 1;
-    column-count: 2;
-    column-gap: 32px;
   }
 
   .footer__nav-item {
@@ -220,10 +222,6 @@
       border-radius: 50%;
       background-color: var(--text-alt-color);
     }
-  }
-
-  @media (max-width: $desktop) {
-    text-align: left;
   }
 }
 
