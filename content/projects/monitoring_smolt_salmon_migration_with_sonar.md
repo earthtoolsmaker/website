@@ -123,12 +123,12 @@ The [Alouette River](https://en.wikipedia.org/wiki/Alouette_River) is the eventu
 
 ## Preprocessing
 
-Before any analysis, each raw `.aris` file runs through five preprocessing steps — converting the proprietary format to `.mp4`, stabilizing the frames, reducing noise, adjusting the colour channels, and chunking the result into manageable segments. Together they turn noisy recordings into clean, analysis-ready video.
+Before any analysis, each raw `.aris` file runs through five preprocessing steps that turn a noisy acoustic recording into clean, analysis-ready video.
 
 The output is encoded as an RGB image, with each channel carrying a different layer: the raw sonar sits in the blue background, while moving fish light up in bright red — easy for both a person and the model to pick out from the static clutter.
 
-![Preprocessing before and after](/images/projects/monitoring_smolt_salmon_migration_with_sonar/preprocess.png)
-*Before and after preprocessing — the RGB encoding makes fish (red) clearly distinguishable from the static sonar information (blue).*
+![How preprocessing works — five steps turn a raw ARIS frame into a clean, colour-encoded one where fish show up in red](/images/projects/monitoring_smolt_salmon_migration_with_sonar/diagrams/preprocess.svg)
+*Five steps turn a raw, noisy ARIS frame into clean video — the colour encoding makes fish (red) stand out from the static sonar background (blue).*
 
 Large sonar files are split into smaller chunks so the downstream detection and tracking steps can process them efficiently.
 

@@ -1,0 +1,64 @@
+<svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="raw" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3a4145"/><stop offset="100%" stop-color="#20262a"/></linearGradient>
+  <linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1f4aa6"/><stop offset="100%" stop-color="#0c1f4d"/></linearGradient>
+  <radialGradient id="redglow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff4530"/><stop offset="100%" stop-color="#ff4530" stop-opacity="0"/></radialGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#e29578"/></marker>
+  <filter id="cardshadow" x="-25%" y="-15%" width="150%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.1"/></filter>
+  <pattern id="grit" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1.4" cy="1.4" r="0.9" fill="#cfd4d6" opacity="0.22"/><circle cx="4.2" cy="3.8" r="0.7" fill="#cfd4d6" opacity="0.16"/><circle cx="2.6" cy="5" r="0.6" fill="#cfd4d6" opacity="0.12"/></pattern>
+  <pattern id="bnoise" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="0.7" fill="#9fc4ff" opacity="0.18"/><circle cx="5" cy="4.5" r="0.6" fill="#9fc4ff" opacity="0.12"/></pattern>
+  <style>
+    .cap { font-size: 14px; fill: #60626a; }
+    .lab { font-size: 12.5px; fill: #2a2f33; }
+    .num { font-size: 13px; font-weight: 800; fill: #fff; }
+    .glow { animation: g 2.6s ease-in-out infinite; }
+    @keyframes g { 0%,100%{opacity:0.55} 50%{opacity:1} }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <!-- ARIS fan: apex at the bottom (transducer), opening upward to the far range -->
+  <path id="fan" d="M0 96 L-58 -80 Q0 -96 58 -80 Z"/>
+</defs>
+
+<!-- LEFT — raw fan -->
+<g transform="translate(108,128)">
+  <use href="#fan" fill="url(#raw)" filter="url(#cardshadow)"/>
+  <clipPath id="cl"><use href="#fan"/></clipPath>
+  <g clip-path="url(#cl)">
+    <use href="#fan" fill="url(#grit)"/>
+    <g stroke="#8b9298" stroke-width="1.2" fill="none" opacity="0.25"><path d="M-46 -52 Q0 -64 46 -52"/><path d="M-30 0 Q0 -10 30 0"/></g>
+    <!-- fish, lost in the clutter -->
+    <ellipse cx="6" cy="34" rx="13" ry="4" fill="#9aa1a5" opacity="0.5"/>
+  </g>
+</g>
+<text class="cap" x="108" y="262" text-anchor="middle">Raw ARIS frame</text>
+
+<line x1="178" y1="124" x2="212" y2="124" stroke="#e29578" stroke-width="3.5" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+<!-- MIDDLE — the five preprocessing steps -->
+<line x1="248" y1="48" x2="248" y2="208" stroke="#e29578" stroke-width="2" opacity="0.35"/>
+<g>
+  <g transform="translate(248,52)"><circle r="13" fill="#e29578"/><text class="num" x="0" y="4" text-anchor="middle">1</text><text class="lab" x="24" y="5">Convert <tspan font-family="monospace" font-size="11.5">.aris → .mp4</tspan></text></g>
+  <g transform="translate(248,91)"><circle r="13" fill="#e29578"/><text class="num" x="0" y="4" text-anchor="middle">2</text><text class="lab" x="24" y="5">Stabilize the frames</text></g>
+  <g transform="translate(248,130)"><circle r="13" fill="#e29578"/><text class="num" x="0" y="4" text-anchor="middle">3</text><text class="lab" x="24" y="5">Reduce the noise</text></g>
+  <g transform="translate(248,169)"><circle r="13" fill="#e29578"/><text class="num" x="0" y="4" text-anchor="middle">4</text><text class="lab" x="24" y="5">Encode in colour <tspan fill="#d23b2c" font-weight="700">(fish → red)</tspan></text></g>
+  <g transform="translate(248,208)"><circle r="13" fill="#e29578"/><text class="num" x="0" y="4" text-anchor="middle">5</text><text class="lab" x="24" y="5">Chunk into segments</text></g>
+</g>
+
+<line x1="690" y1="124" x2="724" y2="124" stroke="#e29578" stroke-width="3.5" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+<!-- RIGHT — enhanced fan (blue background, fish in red) -->
+<g transform="translate(792,128)">
+  <use href="#fan" fill="url(#blue)" filter="url(#cardshadow)"/>
+  <clipPath id="cr"><use href="#fan"/></clipPath>
+  <g clip-path="url(#cr)">
+    <use href="#fan" fill="url(#bnoise)"/>
+    <g stroke="#9fc4ff" stroke-width="1.2" fill="none" opacity="0.22"><path d="M-46 -52 Q0 -64 46 -52"/><path d="M-30 0 Q0 -10 30 0"/></g>
+    <!-- fish, bright red and unmistakable -->
+    <ellipse class="glow" cx="6" cy="34" rx="26" ry="11" fill="url(#redglow)"/>
+    <ellipse cx="6" cy="34" rx="13" ry="4.2" fill="#ff4530"/>
+    <path d="M-7 34 L-15 30 L-11 34 L-15 38 Z" fill="#ff4530"/>
+    <ellipse cx="-22" cy="-14" rx="7" ry="3" fill="#ff5a3c" opacity="0.7"/>
+  </g>
+</g>
+<text class="cap" x="792" y="262" text-anchor="middle">Enhanced frame</text>
+</svg>
