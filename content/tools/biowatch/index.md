@@ -16,7 +16,37 @@ js:
 all_downloads_url: https://github.com/earthtoolsmaker/biowatch/releases/tag/v1.0.11
 ---
 
-# Analyze Camera Trap Data — Privately, On Your Machine
+<!--
+  Hero background video: static/videos/biowatch-hero.mp4
+  Source: Pexels "Red fox in snowy forest adventure" (pexels.com/video/red-fox-in-snowy-forest-adventure-35628259/)
+  License: Pexels License (free for commercial use, no attribution required).
+-->
+<div class="tool-hero">
+  <video class="tool-hero__video" autoplay muted loop playsinline preload="auto" aria-label="A red fox moving through a snowy forest, as a wildlife camera might capture it">
+    <source src="/videos/biowatch-hero.mp4" type="video/mp4">
+  </video>
+  <div class="tool-hero__overlay">
+    <h1 class="tool-hero__title">Analyze Camera Trap Data</h1>
+    <p class="tool-hero__tagline">A free, open-source desktop app to explore, visualize, and analyze your camera-trap datasets — 100% offline, on your own machine.</p>
+  </div>
+</div>
+
+<section class="about-stats about-stats--three tools-stats">
+  <div class="about-stats__grid">
+    <div class="about-stats__item">
+      <div class="about-stats__value">100%</div>
+      <div class="about-stats__label">offline &amp; private</div>
+    </div>
+    <div class="about-stats__item">
+      <div class="about-stats__value">4</div>
+      <div class="about-stats__label">on-device AI models</div>
+    </div>
+    <div class="about-stats__item">
+      <div class="about-stats__value">Free</div>
+      <div class="about-stats__label">open source</div>
+    </div>
+  </div>
+</section>
 
 Biowatch is a free, open-source desktop application that lets you analyze, visualize, and explore camera trap datasets entirely offline. Your sensitive wildlife data never gets uploaded to any server — everything runs locally on your computer.
 
