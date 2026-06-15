@@ -378,6 +378,93 @@
   margin: 36px 0 44px;
 }
 
+// --- Interactive pill chips (the .threats shortcode) on tool pages: clicking a
+//     pill (a radio <label>) highlights it and reveals its explanation panel
+//     below. Pure CSS via the general-sibling combinator. Mirrors the
+//     .post__content .threats rules used on project pages, scoped to the tool
+//     page's .tool-content wrapper. ---
+.tool-content .threats {
+  margin: 24px 0 36px;
+
+  .threats__toggle {            // visually hidden, still keyboard-focusable
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  .threats__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li { margin: 0; }
+  }
+
+  .threats__chip {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: var(--background-alt-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background .2s, color .2s, border-color .2s;
+
+    &::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      margin-right: 0.6em;
+      border-radius: 50%;
+      background: var(--secondary-color);
+      transition: background .2s;
+    }
+  }
+
+  .threats__panel {
+    display: none;
+    margin: 14px 0 0;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: var(--background-alt-color);
+    border-left: 3px solid var(--secondary-color);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-color);
+  }
+}
+
+// Per-chip selected state: highlight the active chip and reveal its panel.
+@for $i from 0 through 7 {
+  .tool-content #threat-#{$i}:checked ~ .threats__chips label[for="threat-#{$i}"] {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: #fff;
+
+    &::before { background: #fff; }
+  }
+
+  .tool-content #threat-#{$i}:checked ~ .threats__panels #threat-panel-#{$i} {
+    display: block;
+  }
+
+  .tool-content #threat-#{$i}:focus-visible ~ .threats__chips label[for="threat-#{$i}"] {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-content .threats__chip { transition: none; }
+}
+
 .tools-cta {
   margin: 8px 0 0;
 }

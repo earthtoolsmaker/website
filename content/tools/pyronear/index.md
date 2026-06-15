@@ -13,16 +13,57 @@ js:
   - /js/biowatch.js
   - /js/tabs.js
 date: 2025-05-01
+why_pyronear:
+  - name: Cutting-edge AI detection
+    desc: "Computer-vision models detect wildfire smoke in real time and keep improving as new field data comes in."
+  - name: Web fire-management platform
+    desc: "An intuitive web app surfaces recent alerts and streamlines response for fire departments."
+  - name: Open source and low-tech
+    desc: "Built in the open on affordable, off-the-shelf hardware that communities can deploy and maintain themselves."
+  - name: Energy-efficient and economical
+    desc: "Runs on low-power microcomputers at the edge, keeping running costs and energy use low."
+  - name: Modular by design
+    desc: "Detection, alerting, and the supervision platform are separable pieces you can adapt to local needs."
 ---
 
-# Open, Real-Time Wildfire Detection
+<!--
+  Hero background video: static/videos/pyronear-hero.mp4
+  Source: Mixkit "Aerial view of a wooded landscape in the morning" (mixkit.co/free-stock-video/aerial-view-of-a-wooded-landscape-in-the-morning-2795/)
+  License: Mixkit Free License (free for commercial use, no attribution required).
+-->
+<div class="tool-hero">
+  <video class="tool-hero__video" autoplay muted loop playsinline preload="auto" aria-label="Aerial drone footage drifting over a forest canopy in the morning mist">
+    <source src="/videos/pyronear-hero.mp4" type="video/mp4">
+  </video>
+  <div class="tool-hero__overlay">
+    <h1 class="tool-hero__title">Open, Real-Time Wildfire Detection</h1>
+    <p class="tool-hero__tagline">Watching the forest for the first signs of smoke — so fire departments get the alert within minutes.</p>
+  </div>
+</div>
+
+<section class="about-stats about-stats--three tools-stats">
+  <div class="about-stats__grid">
+    <div class="about-stats__item">
+      <div class="about-stats__value">24/7</div>
+      <div class="about-stats__label">monitoring</div>
+    </div>
+    <div class="about-stats__item">
+      <div class="about-stats__value">50</div>
+      <div class="about-stats__label">sites monitored</div>
+    </div>
+    <div class="about-stats__item">
+      <div class="about-stats__value">500+</div>
+      <div class="about-stats__label">fires detected</div>
+    </div>
+  </div>
+</section>
 
 Pyronear is a complete, open-source fire-detection system. A computer-vision model runs on a low-power microcomputer wired to cameras on high vantage points, watching the forest for the first signs of smoke. When it detects a fire, it sends an alert to a supervision platform used by fire departments — efficient, automatic, energy-efficient, and modular by design.
 
 The video below, filmed in the Forest of Fontainebleau, shows how the system works end to end: a firefighter walks through the full pipeline, from the cameras spotting the first signs of smoke to the alert reaching the fire department.
 
 <p><iframe src="https://www.youtube.com/embed/W3DxacGsdks" loading="lazy" frameborder="0" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9;"></iframe></p>
-<em style="font-size:14px;line-height:1.4em;display:block;">End-to-end demonstration of the Pyronear system in the Forest of Fontainebleau</em>
+<em style="font-size:14px;line-height:1.4em;display:block;text-align:center;">End-to-end demonstration of the Pyronear system in the Forest of Fontainebleau</em>
 <br/>
 
 {{< image_carousel id="pyronear-gallery" items="2" >}}
@@ -30,71 +71,11 @@ The video below, filmed in the Forest of Fontainebleau, shows how the system wor
   {{< carousel_image src="./images/platform2.png" alt="Pyronear Platform Overview" caption="Fire management platform interface for fire departments to monitor and respond to alerts." >}}
 {{< /image_carousel >}}
 
-<div class="about-cta">
-  <h3 class="about-cta__title">See the models in action</h3>
-  <p class="about-cta__description">Run the Pyronear detector on real camera images and watch the temporal verifier judge live wildfire sequences — right from your browser.</p>
-  <a href="#demos" class="link-no-decoration button button--middle">Try the live demos</a>
-</div>
-
-<br/>
-<br/>
-
 ## Why Pyronear
 
-Pyronear pairs cutting-edge detection with open, low-tech hardware that communities can deploy themselves.
+Pyronear pairs cutting-edge detection with open, low-tech hardware that communities can deploy themselves — tap each to learn more.
 
-<div class="support__grid">
-
-  <div class="support__card">
-    <h3 class="support__card-title">Cutting-edge AI detection</h3>
-    <p class="support__card-description">Computer-vision models detect wildfire smoke in real time and keep improving as new field data comes in.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">Web fire-management platform</h3>
-    <p class="support__card-description">An intuitive web app surfaces recent alerts and streamlines response for fire departments.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">Open source and low-tech</h3>
-    <p class="support__card-description">Built in the open on affordable, off-the-shelf hardware that communities can deploy and maintain themselves.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">Energy-efficient and economical</h3>
-    <p class="support__card-description">Runs on low-power microcomputers at the edge, keeping running costs and energy use low.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">Modular by design</h3>
-    <p class="support__card-description">Detection, alerting, and the supervision platform are separable pieces you can adapt to local needs.</p>
-  </div>
-
-</div>
-
-<br/>
-<br/>
-
-## Interactive Demos {#demos}
-
-Two interactive demos let you run the Pyronear models on real data, right from this website.
-
-{{< tabs labels="::Single-frame detection|::Temporal verification" id="pyronear-demos" >}}
-{{< tab index="0" >}}
-
-Upload a camera image and watch the detector draw boxes around smoke.
-
-{{< hf_space "earthtoolsmaker-forest-fire-pyronear" >}}
-
-{{< /tab >}}
-{{< tab index="1" >}}
-
-The second-stage model watches whole sequences: real wildfires get caught within minutes while clouds, fog, and haze look-alikes are rejected. This is the model that cuts false alarms by 4× in production.
-
-<p><iframe src="https://achouffe-temporal-smoke-pyronear.hf.space" loading="lazy" frameborder="0" style="width:100%;height:1000px;border:0;"></iframe></p>
-
-{{< /tab >}}
-{{< /tabs >}}
+{{< threats "why_pyronear" >}}
 
 <br/>
 <br/>
@@ -139,7 +120,29 @@ Pyronear catches fires in two stages: a fast detector proposes candidate smoke, 
 The computer vision model detected a forest fire in Fontainebleau from a distance of 35 kilometers in real time, setting a new record for the Pyronear system. The video below shows a thin black smoke rising in the distance.
 
 <p><iframe src="https://www.youtube.com/embed/i9Qy-zY16Ew" loading="lazy" frameborder="0" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9;"></iframe></p>
-<em style="font-size:14px;line-height:1.4em;display:block;">Real-time forest fire detection from 35 kilometers away in Fontainebleau</em>
+<em style="font-size:14px;line-height:1.4em;display:block;text-align:center;">Real-time forest fire detection from 35 kilometers away in Fontainebleau</em>
+<br/>
+
+Two interactive demos let you run the Pyronear models on real data, right from this website.
+
+{{< tabs labels="::Single-frame detection|::Temporal verification" id="pyronear-demos" >}}
+{{< tab index="0" >}}
+
+Upload a camera image and watch the detector draw boxes around smoke.
+
+{{< hf_space "earthtoolsmaker-forest-fire-pyronear" >}}
+
+{{< /tab >}}
+{{< tab index="1" >}}
+
+The second-stage model watches whole sequences: real wildfires get caught within minutes while clouds, fog, and haze look-alikes are rejected. This is the model that cuts false alarms by 4× in production.
+
+<p><iframe src="https://achouffe-temporal-smoke-pyronear.hf.space" loading="lazy" frameborder="0" style="width:100%;height:1000px;border:0;"></iframe></p>
+
+{{< /tab >}}
+{{< /tabs >}}
+
+<br/>
 <br/>
 
 <div class="about-cta">

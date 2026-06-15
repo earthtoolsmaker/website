@@ -1,0 +1,110 @@
+# Pyronear hero video — design
+
+**Date:** 2026-06-15
+**Status:** Approved
+
+## Goal
+
+Give the Pyronear tool page the same looping background-video hero that the
+SalmonVision tool page has. The clip should read as a drone shot drifting over a
+forest canopy and loop seamlessly behind an overlaid headline.
+
+## Background
+
+SalmonVision (`content/tools/salmonvision/index.md`) opens with a `.tool-hero`
+block: a muted, autoplaying, looping `<video>` filling a 16/7 rounded panel, with
+a gradient overlay carrying a title and tagline. The supporting CSS
+(`.tool-hero`, `.tool-hero__video`, `.tool-hero__overlay`, `.tool-hero__title`,
+`.tool-hero__tagline` in `assets/sass/3-modules/_tools.scss`) is already generic
+— not SalmonVision-specific — so no CSS work is needed to reuse it.
+
+Pyronear (`content/tools/pyronear/index.md`) currently opens with a plain
+`# Open, Real-Time Wildfire Detection` H1.
+
+## Design
+
+### 1. Asset
+- **Chosen clip:** Mixkit "Aerial view of a wooded landscape in the morning"
+  (id 2795,
+  `mixkit.co/free-stock-video/aerial-view-of-a-wooded-landscape-in-the-morning-2795/`).
+  Aerial drone glide over forested hills in soft morning mist — on-theme for
+  "watching the forest for the first signs of smoke."
+- **License:** Mixkit Free License — free for commercial use, **no attribution
+  required**. Source/license recorded in an HTML comment above the hero markup.
+- **Encoding:** matched to the SalmonVision hero profile — stored 1280×720
+  (16:9, CSS `object-fit:cover` does the 16:7 crop), H.264 high / yuv420p,
+  audio stripped, `+faststart`. ~12s loop, ~1.17 MB (SalmonVision's is 843 KB at
+  ~half the duration).
+- Saved to `static/videos/pyronear-hero.mp4`.
+
+### 2. Markup
+In `content/tools/pyronear/index.md`, replace the
+`# Open, Real-Time Wildfire Detection` H1 with the SalmonVision `.tool-hero`
+block, adapted:
+
+```html
+<div class="tool-hero">
+  <video class="tool-hero__video" autoplay muted loop playsinline preload="auto" aria-label="Aerial drone footage drifting over a forest canopy">
+    <source src="/videos/pyronear-hero.mp4" type="video/mp4">
+  </video>
+  <div class="tool-hero__overlay">
+    <h1 class="tool-hero__title">Open, Real-Time Wildfire Detection</h1>
+    <p class="tool-hero__tagline">Watching the forest for the first signs of smoke — so fire departments get the alert within minutes.</p>
+  </div>
+</div>
+```
+
+The rest of the page (intro paragraph, demos, carousels, etc.) is unchanged.
+
+### 3. CSS
+None for the hero. `.tool-hero` and friends are already shared/generic.
+
+## Follow-on additions
+
+### Stat band
+A three-up stat band on the tool page, directly below the hero video and above
+the intro paragraph — reusing the SalmonVision tool-page pattern
+(`about-stats about-stats--three tools-stats`). Values (provided by the user,
+matching the `stats:` front matter on the fire-detection project page):
+`24/7` monitoring · `50` sites monitored · `500+` fires detected. No new CSS.
+
+### "Why Pyronear" interactive pills
+Replace the five `support__card` cards in the "Why Pyronear" section with the
+**interactive `threats` shortcode** (the same pure-CSS pill component used for
+"Forests Protection" on the fire-detection project page): a row of radio-backed
+pills where clicking one highlights it and reveals its explanation panel below.
+- Shortcode `layouts/shortcodes/threats.html` reused as-is; data comes from a
+  `why_pyronear` front-matter list of `{ name, desc }`, passed via the
+  positional arg `{{< threats "why_pyronear" >}}`.
+- The benefit descriptions (previously the card bodies) are retained — now shown
+  on click rather than always-on.
+- CSS: the project page scopes `.threats` under `.post__content`; the tool page
+  uses `.tool-content`, so the same rules are mirrored under `.tool-content` in
+  `_tools.scss`. (The earlier `.tools-pills`/`project-facts__chip` approach was
+  removed.)
+
+### Demos CTA removal
+The "See the models in action" `about-cta` block (above "Why Pyronear") was
+removed at the user's request.
+
+### Section reorder
+The interactive demos were moved out of their own early section and folded into
+the "See Pyronear in Action" section (after the field-detection video), so they
+sit just before the closing "Explore the full Pyronear platform" CTA. The
+page-local `#demos` anchor was dropped (nothing on the page linked to it).
+
+### Caption alignment
+The two inline video captions were centered (`text-align:center`) so they sit
+centered under their full-width videos.
+
+## Out of scope
+- No changes to the SalmonVision page.
+- No changes to the shared `.tool-hero` CSS.
+- No new shortcode — the hero is inline HTML, matching SalmonVision.
+
+## Verification
+- `hugo` builds with no errors; `static/videos/pyronear-hero.mp4` is emitted to
+  `public/videos/`.
+- The Pyronear tool page renders the looping video hero with the overlaid title
+  and tagline, visually consistent with SalmonVision.
+- Hero file size is in the same ballpark as `salmonvision-hero.mp4`.
