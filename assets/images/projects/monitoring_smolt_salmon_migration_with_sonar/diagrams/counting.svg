@@ -8,11 +8,11 @@
   <style>
     .cap   { font-size: 14px; fill: #60626a; }
     .tag   { font-size: 12px; font-weight: 700; fill: #fff; }
-    .cross { transform-box: fill-box; transform-origin: 50% 50%; animation: cross 3.2s ease-in-out infinite; }
-    .glow  { animation: glowp 3.2s ease-in-out infinite; }
+    .cross { transform-box: fill-box; transform-origin: 50% 50%; animation: cross 3.4s linear -2.2s infinite; }
+    .glow  { animation: glowp 3.4s ease-in-out -2.2s infinite; }
     .dash  { stroke-dasharray: 5 5; animation: flow 0.9s linear infinite; }
-    @keyframes cross { 0%{transform:translateY(-26px)} 55%,100%{transform:translateY(28px)} }
-    @keyframes glowp { 0%,45%{opacity:0.25} 60%,100%{opacity:1} }
+    @keyframes cross { from { transform: translateY(-118px); } to { transform: translateY(118px); } }
+    @keyframes glowp { 0%,56%{opacity:0.25} 68%,100%{opacity:1} }
     @keyframes flow { to { stroke-dashoffset: -20; } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
@@ -57,7 +57,7 @@
   <use href="#tile"/>
   <g clip-path="url(#tc)">
     <!-- downstream track crossing the trigger -->
-    <path class="dash" d="M0 -34 L0 40" stroke="#bfe0d6" stroke-width="2" fill="none" opacity="0.7"/>
+    <path class="dash" d="M0 -40 L0 52" stroke="#bfe0d6" stroke-width="2" fill="none" opacity="0.7"/>
     <g class="cross"><use href="#smolt"/></g>
   </g>
   <line class="dash" x1="-34" y1="32" x2="34" y2="32" stroke="#e29578" stroke-width="3" stroke-linecap="round"/>
