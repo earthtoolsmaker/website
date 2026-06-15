@@ -10,12 +10,14 @@ Conservation teams collect more data than they can ever look at: years of audio,
 
 **Free to use. Free to modify. Open source, end to end.**
 
-{{< about_stats >}}
-
 {{< services >}}
 
-{{< about_partners >}}
+{{< about_stats >}}
+
+{{< team >}}
 
 {{< about_timeline >}}
 
-{{< team >}}
+{{< about_partners >}}
+
+{{< work_in_field >}}
