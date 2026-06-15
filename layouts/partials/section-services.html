@@ -27,61 +27,6 @@
       {{ end }}
     </div>
 
-    <div class="section__info">
-      <div class="section__head">
-        <h2 class="section__title">🐾 Work in the Field</h2>
-      </div>
-      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none">
-        <path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-          d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8" />
-      </svg>
-    </div>
-
-    <div class="case-studies">
-      {{ range $index, $example := .examples }}
-      <article class="case-study{{ if mod $index 2 }} case-study--reverse{{ end }}">
-        <div class="case-study__image">
-          <a href="{{ $example.challenge_link }}">
-            {{ $imgPath := strings.TrimPrefix "/" $example.image }}
-            {{ partial "responsive-image.html" (dict
-              "src" $imgPath
-              "alt" $example.title
-              "class" "no-lightense"
-              "sizes" "(max-width: 768px) 100vw, 50vw"
-              "widths" (slice 400 600 800)
-              "lazy" true
-              "lqip" true
-            ) }}
-          </a>
-        </div>
-        <div class="case-study__content">
-          <h3 class="case-study__title">{{ $example.title }}</h3>
-          <p class="case-study__solution">{{ $example.description }}</p>
-          <div class="case-study__partners">
-            {{ range $p := $example.partners }}
-            <a href="{{ $p.link }}" target="_blank" rel="noopener" title="{{ $p.name }}"
-              class="case-study__partner">
-              {{ with resources.Get (strings.TrimPrefix "/" $p.logo) }}
-              <img src="{{ .RelPermalink }}" alt="{{ $p.name }}">
-              {{ end }}
-            </a>
-            {{ end }}
-          </div>
-        </div>
-      </article>
-      {{ end }}
-    </div>
-
-    <p class="services__more">
-      Explore all {{ len (where site.RegularPages "Section" "projects") }} projects on our <a href="/projects/">projects page</a> — or grab the <a href="/tools/">open-source tools</a> behind them.
-    </p>
-
-    <div class="about-cta">
-      <h3 class="about-cta__title">Have a conservation challenge?</h3>
-      <p class="about-cta__description">Tell us about your data and your field problem — we'll give you an honest read on what's possible and what it would take.</p>
-      <a href="/contact/" class="link-no-decoration button button--middle">Start a project</a>
-    </div>
-
   </div>
 </section>
 <!-- end services -->
