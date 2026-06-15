@@ -511,18 +511,70 @@ html {
 }
 
 /* 404 */
+// Vertically centre the 404 content in the space between header and footer.
+// Scoped via :has() so only the error page turns <main> into a flex column —
+// every other page is untouched.
+.content:has(.error-page) {
+  display: flex;
+}
+
+.error-page {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 0;
+}
+
 .error {
   text-align: center;
 
+  // "404" with the pangolin mascot standing in for the middle 0.
   .error__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.04em;
     margin-bottom: 24px;
     font-size: 120px;
     line-height: 1;
   }
-  
+
+  // The pangolin-as-zero: sized in em so it tracks the responsive title size and
+  // sits at the digits' visual height. Rolls in on load (it IS a rolling ball),
+  // then settles into a slow gentle bob.
+  .error__zero {
+    display: inline-flex;
+
+    img {
+      height: 0.82em;
+      width: auto;
+      animation:
+        error-pangolin-rollin 0.9s ease-out both,
+        error-pangolin-bob 3s ease-in-out 0.9s infinite;
+    }
+  }
+
   @media (max-width: $mobile) {
     .error__title {
       font-size: 100px;
     }
+  }
+}
+
+@keyframes error-pangolin-rollin {
+  from { transform: translateX(-0.6em) rotate(-360deg); opacity: 0; }
+  to   { transform: translateX(0)      rotate(0);        opacity: 1; }
+}
+
+@keyframes error-pangolin-bob {
+  0%, 100% { transform: translateY(0)     rotate(0); }
+  50%      { transform: translateY(-0.05em) rotate(4deg); }
+}
+
+// Honour reduced-motion: show the pangolin static, no roll-in, no bob.
+@media (prefers-reduced-motion: reduce) {
+  .error .error__zero img {
+    animation: none;
   }
 }

@@ -7,6 +7,12 @@ body {
   font-size: $base-font-size;
   line-height: $base-line-height !important;
   overflow-x: clip; // clip (not hidden) so it doesn't break position:sticky on .header
+  // Sticky footer: full-height flex column so the footer sinks to the bottom of the
+  // viewport on short pages (e.g. 404). The hero image (position:absolute, home-only)
+  // and load curtain (position:fixed) are out of flow, so they ignore the flex layout.
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   color: var(--text-color);
   background-color: var(--background-color);
   -webkit-font-smoothing: antialiased;
@@ -41,6 +47,12 @@ body {
   @media (max-width: $mobile) {
     font-size: 16px;
   }
+}
+
+// Main content region grows to absorb leftover height, pushing the footer down
+// (sticky footer). Pairs with the flex column on `body` above.
+.content {
+  flex: 1 0 auto;
 }
 
 h1,

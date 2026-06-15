@@ -1,14 +1,13 @@
 {{ define "main" }}
 
 <!-- begin page -->
-<div class="container">
-  <div class="page">
-    <div class="page__content">
-      <div class="error">
-        <h2 class="error__title">404</h2>
-        <p class="error__text">The requested page could not be found.</p>
-        <p><a href="/" class="button">Back to the blog</a></p>
-      </div>
+<div class="error-page">
+  <div class="container">
+    <div class="error">
+      {{ $pangolin := resources.Get "images/logos/etm-logo.png" }}
+      <h2 class="error__title">4{{ with $pangolin }}<span class="error__zero"><img src="{{ .RelPermalink }}" alt="0"></span>{{ else }}0{{ end }}4</h2>
+      <p class="error__text">The requested page could not be found.</p>
+      <p><a href="/" class="button">Back to home</a></p>
     </div>
   </div>
 </div>
