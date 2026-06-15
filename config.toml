@@ -112,7 +112,7 @@ pagerSize = 6
       weight = 7
 
       [[menu.footer]]
-      name = "Support"
+      name = "Support Us"
       url = "/support/"
       weight = 8
 
