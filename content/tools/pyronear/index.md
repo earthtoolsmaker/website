@@ -13,6 +13,17 @@ js:
   - /js/biowatch.js
   - /js/tabs.js
 date: 2025-05-01
+why_pyronear:
+  - name: Cutting-edge AI detection
+    desc: "Computer-vision models detect wildfire smoke in real time and keep improving as new field data comes in."
+  - name: Web fire-management platform
+    desc: "An intuitive web app surfaces recent alerts and streamlines response for fire departments."
+  - name: Open source and low-tech
+    desc: "Built in the open on affordable, off-the-shelf hardware that communities can deploy and maintain themselves."
+  - name: Energy-efficient and economical
+    desc: "Runs on low-power microcomputers at the edge, keeping running costs and energy use low."
+  - name: Modular by design
+    desc: "Detection, alerting, and the supervision platform are separable pieces you can adapt to local needs."
 ---
 
 <!--
@@ -60,26 +71,11 @@ The video below, filmed in the Forest of Fontainebleau, shows how the system wor
   {{< carousel_image src="./images/platform2.png" alt="Pyronear Platform Overview" caption="Fire management platform interface for fire departments to monitor and respond to alerts." >}}
 {{< /image_carousel >}}
 
-<div class="about-cta">
-  <h3 class="about-cta__title">See the models in action</h3>
-  <p class="about-cta__description">Run the Pyronear detector on real camera images and watch the temporal verifier judge live wildfire sequences — right from your browser.</p>
-  <a href="#demos" class="link-no-decoration button button--middle">Try the live demos</a>
-</div>
-
-<br/>
-<br/>
-
 ## Why Pyronear
 
-Pyronear pairs cutting-edge detection with open, low-tech hardware that communities can deploy themselves.
+Pyronear pairs cutting-edge detection with open, low-tech hardware that communities can deploy themselves — tap each to learn more.
 
-<div class="tools-pills">
-  <span class="project-facts__chip">Cutting-edge AI detection</span>
-  <span class="project-facts__chip">Web fire-management platform</span>
-  <span class="project-facts__chip">Open source and low-tech</span>
-  <span class="project-facts__chip">Energy-efficient and economical</span>
-  <span class="project-facts__chip">Modular by design</span>
-</div>
+{{< threats "why_pyronear" >}}
 
 <br/>
 <br/>

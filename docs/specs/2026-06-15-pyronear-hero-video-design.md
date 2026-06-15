@@ -68,13 +68,24 @@ the intro paragraph — reusing the SalmonVision tool-page pattern
 matching the `stats:` front matter on the fire-detection project page):
 `24/7` monitoring · `50` sites monitored · `500+` fires detected. No new CSS.
 
-### "Why Pyronear" pills
-Replace the five `support__card` cards in the "Why Pyronear" section with a
-compact pill row matching the fire-detection **project** page's facts-bar pills.
-Each benefit becomes a `.project-facts__chip` (reused for an identical look)
-inside a new block-level `.tools-pills` flex-wrap wrapper (one small rule added
-to `_tools.scss`). This trades the per-card descriptions for a scannable row of
-labels, by request.
+### "Why Pyronear" interactive pills
+Replace the five `support__card` cards in the "Why Pyronear" section with the
+**interactive `threats` shortcode** (the same pure-CSS pill component used for
+"Forests Protection" on the fire-detection project page): a row of radio-backed
+pills where clicking one highlights it and reveals its explanation panel below.
+- Shortcode `layouts/shortcodes/threats.html` reused as-is; data comes from a
+  `why_pyronear` front-matter list of `{ name, desc }`, passed via the
+  positional arg `{{< threats "why_pyronear" >}}`.
+- The benefit descriptions (previously the card bodies) are retained — now shown
+  on click rather than always-on.
+- CSS: the project page scopes `.threats` under `.post__content`; the tool page
+  uses `.tool-content`, so the same rules are mirrored under `.tool-content` in
+  `_tools.scss`. (The earlier `.tools-pills`/`project-facts__chip` approach was
+  removed.)
+
+### Demos CTA removal
+The "See the models in action" `about-cta` block (above "Why Pyronear") was
+removed at the user's request.
 
 ## Out of scope
 - No changes to the SalmonVision page.

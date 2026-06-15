@@ -1,0 +1,23 @@
+{{/*
+  Interactive pill chips. Data comes from a page front-matter list of
+  { name, desc }; the list key defaults to `threats` but can be overridden with
+  a positional argument, e.g. {{< threats "forest_protection" >}}. Pure CSS
+  (radio inputs + general-sibling combinator): clicking a chip highlights it and
+  reveals its explanation panel below. Single-select. Styling lives in
+  assets/sass/4-layouts/_project-single.scss (.threats).
+*/}}
+{{ $key := .Get 0 | default "threats" }}
+{{ with index .Page.Params $key }}
+<div class="threats">
+  {{ range $i, $t := . }}<input type="radio" name="threat-group" id="threat-{{ $i }}" class="threats__toggle" {{ if eq $i 0 }}checked{{ end }}>
+  {{ end }}
+  <ul class="threats__chips">
+    {{ range $i, $t := . }}<li><label for="threat-{{ $i }}" class="threats__chip">{{ $t.name | safeHTML }}</label></li>
+    {{ end }}
+  </ul>
+  <div class="threats__panels">
+    {{ range $i, $t := . }}<p class="threats__panel" id="threat-panel-{{ $i }}">{{ $t.desc | safeHTML }}</p>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
