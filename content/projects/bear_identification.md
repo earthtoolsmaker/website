@@ -10,7 +10,7 @@ related_posts:
   - bear-face-segmentation-guide
   - bear-identification-with-metric-learning-guide
 github_repo: https://github.com/earthtoolsmaker/bear-conservation
-space: /spaces/bear_identification/
+space: /demos/bear_identification/
 tools:
   - Computer Vision
   - Machine Learning
@@ -227,6 +227,6 @@ conservation. The development of open-source tools in this project signifies a
 valuable contribution, not only facilitating adaptability to various species
 but also holding potential to enhance conservation endeavors on a global scale.
 
-One can try out the model from the [ML Space]({{< ref "/spaces/bear_identification" >}}).
+One can try out the model from the [live demo]({{< ref "/demos/bear_identification" >}}).
 
 {{< demo_cta >}}

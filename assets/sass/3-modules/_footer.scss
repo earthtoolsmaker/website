@@ -5,7 +5,7 @@
   background: #fff5ed;
 
   .footer__inner {
-    padding: 40px 0;
+    padding: 28px 0;
   
     .row .col {
       flex-grow: 1;
@@ -24,23 +24,23 @@
 /* Widgets */
 .widget-footer {
   @media (max-width: $desktop) {
-    margin-bottom: 60px;
+    margin-bottom: 36px;
   }
 
   @media (max-width: $mobile) {
-    margin-bottom: 48px;
+    margin-bottom: 32px;
   }
 }
 
 .widget-title {
-  margin-bottom: 28px;
-  font-size: 24px;
+  margin-bottom: 16px;
+  font-size: 18px;
 }
 
 /* Widget Footer Info */
 .logo-footer__link {
   display: inline-flex;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
   font-size: 32px;
   font-family: $heading-font-family;
   line-height: 1;
@@ -70,16 +70,24 @@
 
 .widget-footer__desc {
   max-width: 480px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   font-size: 16px;
 }
 
 /* Widget Recent Posts */
+.widget-recent-posts {
+  padding-right: 32px;
+
+  @media (max-width: $desktop) {
+    padding-right: 0;
+  }
+}
+
 .recent-posts {
   position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 
   &:last-child {
     margin-bottom: 0;
@@ -170,9 +178,13 @@
 
 /* Widget Footer Navigation */
 .widget-nav {
-  text-align: right;
+  text-align: left;
 
   .footer__nav-list {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    column-gap: 48px;
     line-height: 1;
   }
 
@@ -219,10 +231,6 @@
       background-color: var(--text-alt-color);
     }
   }
-
-  @media (max-width: $desktop) {
-    text-align: left;
-  }
 }
 
 /* Footer Info */
@@ -230,7 +238,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  padding: 32px 0;
+  padding: 20px 0;
   border-top: 1px solid var(--border-color);
 
   @media (max-width: $tablet) {

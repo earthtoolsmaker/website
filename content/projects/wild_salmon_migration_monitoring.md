@@ -10,7 +10,7 @@ stats:
   - value: "24/7"
     label: automated counting
 github_repo: https://github.com/Salmon-Computer-Vision/salmon-computer-vision/tree/master
-space: /spaces/wild_salmon_migration_monitoring/
+space: /demos/wild_salmon_migration_monitoring/
 clients:
   - name: Pacific Salmon Foundation
     link: https://psf.ca/

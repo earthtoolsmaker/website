@@ -1,8 +1,9 @@
 #-------------------------------
 # General Site Settings
-baseURL = "https://earthtoolsmaker.org"
+baseURL = "https://www.earthtoolsmaker.org/"
 languageCode = "en-us"
 title = "earthtoolsmaker"
+enableRobotsTXT = true
 googleAnalytics = "" # Add your identifier. For example UA-99631805-1.
 # paginate = 6
 
@@ -17,6 +18,9 @@ pagerSize = 6
   logo = "/images/logos/etm-logo-text.png" # Full "earthtoolsmaker" wordmark (footer + home header). Non-home headers use the layered logo-pangolin / logo-word-* assets for the hover swap.
   # logo_dark = "/images/logo.png"
   description = "Open Technology for Wildlife and the Planet"
+  # SEO default share image (asset-relative, under assets/). Fallback OG/Twitter
+  # image and Organization/Publisher logo in JSON-LD.
+  seo = { default_image = "images/logos/etm-logo-text.png" }
   # color_scheme = "auto" # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
   color_scheme = "light" # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the users can choose the light or dark mode themself.
 
@@ -55,8 +59,8 @@ pagerSize = 6
 
   [[menu.main]]
     parent = "work"
-    name = "Spaces"
-    url = "/spaces/"
+    name = "Live Demos"
+    url = "/demos/"
     weight = 3
 
   [[menu.main]]
@@ -92,8 +96,8 @@ pagerSize = 6
       weight = 3
 
       [[menu.footer]]
-      name = "Spaces"
-      url = "/spaces/"
+      name = "Live Demos"
+      url = "/demos/"
       weight = 4
 
       [[menu.footer]]
@@ -112,7 +116,7 @@ pagerSize = 6
       weight = 7
 
       [[menu.footer]]
-      name = "Support"
+      name = "Support Us"
       url = "/support/"
       weight = 8
 
@@ -169,12 +173,12 @@ pagerSize = 6
 
   [params.projects.completed]
     enable = true
-    projects_title= "👨🏻‍💻 Featured Projects"
+    projects_title= "Featured Projects"
     limit = 6
 
   [params.projects.fundraising]
     enable = false
-    projects_title= "😇 Looking for Funding"
+    projects_title= "Looking for Funding"
     limit = 3
 
 
@@ -182,7 +186,7 @@ pagerSize = 6
   # Home Tools Section
   [params.home_tools]
     enable = true
-    title = "🛠️ Our Tools"
+    title = "Our Tools"
     featured = ["pyronear", "salmonvision", "biowatch"]  # tool slugs, in display order
 
 
@@ -190,7 +194,7 @@ pagerSize = 6
   # Partners Section
   [params.partners]
     enable = true
-    partners_title = "🤝 Our Partners"
+    partners_title = "Our Partners"
 
   [[params.partner_item]]
     name = "Pyronear"
@@ -383,7 +387,7 @@ pagerSize = 6
   # Blog Section
   [params.blog]
     enable = true
-    blog_title = "📚 Read Latest Posts"
+    blog_title = "Read Latest Posts"
     limit = 3
 
 
@@ -391,7 +395,7 @@ pagerSize = 6
   # Tags Section
   [params.tags]
     enable = false
-    tags_title = "✌️ Explore Topics"
+    tags_title = "Explore Topics"
 
 
   #-------------------------------

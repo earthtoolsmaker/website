@@ -1,7 +1,8 @@
 <div class="col col-3 col-d-12">
   <div class="widget-footer widget-nav">
     <h3 class="widget-title">Navigation</h3>
-    <ul class="footer__nav-list list-reset">
+    {{ $rows := int (math.Ceil (div (len .Site.Menus.footer) 2.0)) }}
+    <ul class="footer__nav-list list-reset" style="grid-template-rows: repeat({{ $rows }}, auto);">
       {{ $currentPage := . }}
       {{ range.Site.Menus.footer }}
       {{ $menuURL := .URL | absLangURL }}
