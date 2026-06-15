@@ -177,7 +177,7 @@ matched against a catalogue to find the same cat across different sightings. It'
 built into our [Animal reID](/tools/animal-reid/) tool, which works across spot-
 and stripe-patterned species.
 
-{{< image_carousel id="snow-leopard-reid-gallery" contained="true" >}}
+{{< image_carousel id="snow-leopard-reid-gallery" items="1" items_tablet="1" contained="true" >}}
   {{< carousel_image src="/images/projects/snow_leopard_monitoring/reid/leopard_1.png" alt="Snow leopard individual identification" caption="Local feature matching identifies individual snow leopards by their unique spot patterns across camera-trap images." >}}
   {{< carousel_image src="/images/projects/snow_leopard_monitoring/reid/leopard_2.png" alt="Snow leopard keypoint matching" caption="LightGLUE matches keypoints between a query image and catalogue entries to find the same individual across sightings." >}}
 {{< /image_carousel >}}
