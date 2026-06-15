@@ -6,9 +6,23 @@
   &__wrapper {
     position: relative;
 
+    // Off-screen slides are clipped here (not on .tns-ovh) so the hover scale
+    // and box-shadow of the visible images can bleed into this padding instead
+    // of being cut off at the slider viewport edge. Horizontal padding is kept
+    // below the gutter width (20px) so the cloned/off-screen slides stay hidden
+    // and don't peek in at the edges; vertical room is generous for hover.
+    overflow: hidden;
+    padding: 20px 8px;
+
     // Vertically center items of different heights
     .tns-horizontal.tns-subpixel > .tns-item {
       vertical-align: middle;
+    }
+
+    // Let the slider viewport overflow so the hover scale + shadow show;
+    // clipping of off-screen slides is handled by the padded wrapper above.
+    .tns-ovh {
+      overflow: visible;
     }
   }
 
@@ -143,16 +157,13 @@
     display: none;
   }
 
-  // Contained mode - keeps images within bounds (for pages with sidebars)
+  // Contained mode - keeps images within bounds (for pages with sidebars).
+  // The padded, overflow-hidden wrapper above already keeps slides within the
+  // column, so we only tighten the padding here (shadows still get room to show).
   &--contained {
     .image-carousel__wrapper {
       margin: 0;
-
-      .tns-ovh,
-      .tns-outer,
-      .tns-inner {
-        overflow: hidden;
-      }
+      padding: 12px 8px;
     }
 
     .image-carousel__slide {
