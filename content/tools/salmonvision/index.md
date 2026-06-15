@@ -23,6 +23,19 @@ why_salmonvision:
     desc: "Models recognize the main Pacific salmon species — and other fish — on the fly, not just a single overall count."
   - name: Exportable reports
     desc: "Daily count reports are generated and exported to support fisheries management, habitat protection, and regulatory compliance."
+faq:
+  - name: How accurate is it?
+    desc: "Models reach over 95% accuracy for salmon detection and counting in good conditions, with 90–95% species classification. Accuracy depends on water clarity, lighting, and camera placement."
+  - name: What footage does it work with?
+    desc: "Video from underwater cameras, weirs, fish ladders, and drones, in standard formats and across a wide range of field conditions."
+  - name: Which species can it identify?
+    desc: "The main Pacific salmon species — Steelhead, Sockeye, Pink, Coho, Chum, and Chinook — plus other fish such as trout, whitefish, and lamprey."
+  - name: Is it open source?
+    desc: "The computer-vision models are released under the MIT license, and the training datasets under CC BY-NC-SA 4.0, to support conservation worldwide."
+  - name: What does it cost?
+    desc: "The web application is free for educational and research use. Conservation groups and Indigenous communities may qualify for subsidized or complimentary access."
+  - name: Can you build a custom model?
+    desc: "Yes — models can be fine-tuned or built from scratch for your specific watershed, camera setup, or target species."
 ---
 
 <div class="tool-hero">
@@ -205,49 +218,11 @@ First Nations across the North and Central Coast of British Columbia are at the 
 <br/>
 <br/>
 
-## Our Partners
-
-SalmonVision is built and sustained through close collaboration with leading conservation organizations, research institutions, and industry partners.
-
-{{< partner_logos >}}
-
-<br/>
-
 ## Frequently Asked Questions
 
-<div class="support__grid">
+Tap a question to see the answer.
 
-  <div class="support__card">
-    <h3 class="support__card-title">How accurate is it?</h3>
-    <p class="support__card-description">Models reach over 95% accuracy for salmon detection and counting in good conditions, with 90–95% species classification. Accuracy depends on water clarity, lighting, and camera placement.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">What footage does it work with?</h3>
-    <p class="support__card-description">Video from underwater cameras, weirs, fish ladders, and drones, in standard formats and across a wide range of field conditions.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">Which species can it identify?</h3>
-    <p class="support__card-description">The main Pacific salmon species — Steelhead, Sockeye, Pink, Coho, Chum, and Chinook — plus other fish such as trout, whitefish, and lamprey.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">Is it open source?</h3>
-    <p class="support__card-description">The computer-vision models are released under the MIT license, and the training datasets under CC BY-NC-SA 4.0, to support conservation worldwide.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">What does it cost?</h3>
-    <p class="support__card-description">The web application is free for educational and research use. Conservation groups and Indigenous communities may qualify for subsidized or complimentary access.</p>
-  </div>
-
-  <div class="support__card">
-    <h3 class="support__card-title">Can you build a custom model?</h3>
-    <p class="support__card-description">Yes — models can be fine-tuned or built from scratch for your specific watershed, camera setup, or target species.</p>
-  </div>
-
-</div>
+{{< threats "faq" >}}
 
 <br/>
 <br/>
@@ -257,3 +232,12 @@ SalmonVision is built and sustained through close collaboration with leading con
   <p class="about-cta__description">See deployments, count dashboards, and how to get involved on the SalmonVision website.</p>
   <a href="https://salmonvision.org" class="link-no-decoration button button--middle" target="_blank">Visit SalmonVision</a>
 </div>
+
+<br/>
+<br/>
+
+## Our Partners
+
+SalmonVision is built and sustained through close collaboration with leading conservation organizations, research institutions, and industry partners.
+
+{{< partner_logos >}}

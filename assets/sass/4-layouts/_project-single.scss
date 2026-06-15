@@ -231,25 +231,25 @@ $project-cta-gap: 56px;
   }
 }
 
-// Per-chip selected state: highlight the active chip and reveal its panel.
-// Indices match the .threats shortcode (0..5; a couple extra for safety).
-@for $i from 0 through 7 {
-  .post__content #threat-#{$i}:checked ~ .threats__chips label[for="threat-#{$i}"] {
-    background: var(--secondary-color);
-    border-color: var(--secondary-color);
-    color: #fff;
+// Selected/focused chip — uses :has() so it works for any namespaced radio
+// group, allowing multiple .threats instances on one page.
+.post__content .threats__chip:has(.threats__toggle:checked) {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: #fff;
 
-    &::before { background: #fff; }
-  }
+  &::before { background: #fff; }
+}
 
-  .post__content #threat-#{$i}:checked ~ .threats__panels #threat-panel-#{$i} {
+.post__content .threats__chip:has(.threats__toggle:focus-visible) {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 3px;
+}
+
+// Reveal the panel whose index matches the checked chip (positional pairing).
+@for $i from 1 through 12 {
+  .post__content .threats:has(.threats__chips > li:nth-child(#{$i}) .threats__toggle:checked) .threats__panels > .threats__panel:nth-child(#{$i}) {
     display: block;
-  }
-
-  // Keyboard focus: show an outline on the chip whose radio is focused.
-  .post__content #threat-#{$i}:focus-visible ~ .threats__chips label[for="threat-#{$i}"] {
-    outline: 2px solid var(--secondary-color);
-    outline-offset: 3px;
   }
 }
 
