@@ -1,0 +1,88 @@
+<svg viewBox="0 0 804 380" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="spectro" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d7dbde"/><stop offset="100%" stop-color="#aab2b6"/></linearGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#e29578"/></marker>
+  <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.08"/></filter>
+  <style>
+    .title { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 26px; font-weight: 600; fill: #161616; }
+    .desc  { font-size: 15px; fill: #60626a; }
+    .step  { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; fill: #e29578; }
+    .pill  { font-size: 12px; font-weight: 700; fill: #fff; }
+    .synapse { stroke-dasharray: 3 6; animation: flow 0.8s linear infinite; }
+    .node    { animation: nodepulse 1.8s ease-in-out infinite; }
+    .n1{animation-delay:-1.5s}.n2{animation-delay:-1.1s}.n3{animation-delay:-0.7s}.n4{animation-delay:-0.3s}
+    .box     { animation: boxpulse 2.2s ease-in-out infinite; }
+    .scan    { animation: sweep 3.2s ease-in-out infinite; }
+    @keyframes flow { to { stroke-dashoffset: -18; } }
+    @keyframes nodepulse { 0%,100%{opacity:0.35} 50%{opacity:1} }
+    @keyframes boxpulse  { 0%,100%{opacity:0.6} 50%{opacity:1} }
+    @keyframes sweep { 0%{transform:translateX(0)} 50%{transform:translateX(150px)} 100%{transform:translateX(0)} }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+
+  <!-- reusable spectrogram tile (centered) -->
+  <g id="spec">
+    <rect x="-78" y="-54" width="156" height="108" rx="10" fill="url(#spectro)"/>
+    <clipPath id="specclip"><rect x="-78" y="-54" width="156" height="108" rx="10"/></clipPath>
+    <g clip-path="url(#specclip)">
+      <g stroke="#8b9398" stroke-width="2">
+        <path d="M-70 54 V-54" opacity="0.25"/><path d="M-60 54 V-54" opacity="0.5"/><path d="M-52 54 V-54" opacity="0.3"/><path d="M-42 54 V-54" opacity="0.6"/><path d="M-34 54 V-54" opacity="0.35"/><path d="M-24 54 V-54" opacity="0.55"/><path d="M-14 54 V-54" opacity="0.3"/><path d="M-4 54 V-54" opacity="0.5"/><path d="M6 54 V-54" opacity="0.35"/><path d="M16 54 V-54" opacity="0.6"/><path d="M26 54 V-54" opacity="0.3"/><path d="M36 54 V-54" opacity="0.5"/><path d="M46 54 V-54" opacity="0.35"/><path d="M56 54 V-54" opacity="0.55"/><path d="M66 54 V-54" opacity="0.3"/>
+      </g>
+      <g fill="#5b6469" opacity="0.55"><ellipse cx="-28" cy="32" rx="20" ry="9"/><ellipse cx="24" cy="38" rx="24" ry="8"/></g>
+    </g>
+  </g>
+</defs>
+
+<!-- arrows -->
+<g stroke="#e29578" stroke-width="3.5" fill="none" stroke-linecap="round">
+  <line x1="250" y1="134" x2="291" y2="134" marker-end="url(#arrow)"/>
+  <line x1="509" y1="134" x2="550" y2="134" marker-end="url(#arrow)"/>
+</g>
+
+<!-- ===== CARD 1 — INPUT (cx=142) ===== -->
+<rect x="36" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(142,128)">
+  <use href="#spec"/>
+  <rect class="scan" x="-78" y="-54" width="3" height="108" fill="#e29578" opacity="0.6" clip-path="url(#specclip)"/>
+</g>
+<text class="step" x="142" y="280" text-anchor="middle">01</text>
+<text class="title" x="142" y="312" text-anchor="middle">Input</text>
+<text class="desc"  x="142" y="338" text-anchor="middle">A spectrogram of audio</text>
+
+<!-- ===== CARD 2 — MODEL (cx=401) — reused neural-net board ===== -->
+<rect x="295" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(401,128)">
+  <rect x="-66" y="-56" width="132" height="112" rx="14" fill="#006d77"/>
+  <rect x="-66" y="-56" width="132" height="112" rx="14" fill="none" stroke="#0a7d86" stroke-width="3"/>
+  <g fill="#0a7d86"><rect x="-74" y="-30" width="8" height="6" rx="2"/><rect x="-74" y="-6" width="8" height="6" rx="2"/><rect x="-74" y="18" width="8" height="6" rx="2"/><rect x="66" y="-30" width="8" height="6" rx="2"/><rect x="66" y="-6" width="8" height="6" rx="2"/><rect x="66" y="18" width="8" height="6" rx="2"/></g>
+  <g stroke="#83c5be" stroke-width="1.4" opacity="0.6">
+    <g class="synapse">
+      <path d="M-38 -26 L0 -34 M-38 -26 L0 -2 M-38 -26 L0 30"/>
+      <path d="M-38 0 L0 -34 M-38 0 L0 -2 M-38 0 L0 30"/>
+      <path d="M-38 26 L0 -34 M-38 26 L0 -2 M-38 26 L0 30"/>
+      <path d="M0 -34 L40 -16 M0 -34 L40 18 M0 -2 L40 -16 M0 -2 L40 18 M0 30 L40 -16 M0 30 L40 18"/>
+    </g>
+  </g>
+  <g fill="#bfe0d6">
+    <circle class="node n1" cx="-38" cy="-26" r="6"/><circle class="node n2" cx="-38" cy="0" r="6"/><circle class="node n3" cx="-38" cy="26" r="6"/>
+    <circle class="node n4" cx="0" cy="-34" r="6"/><circle class="node n2" cx="0" cy="-2" r="6"/><circle class="node n3" cx="0" cy="30" r="6"/>
+    <circle class="node n1" cx="40" cy="-16" r="6"/><circle class="node n4" cx="40" cy="18" r="6"/>
+  </g>
+</g>
+<text class="step" x="401" y="280" text-anchor="middle">02</text>
+<text class="title" x="401" y="312" text-anchor="middle">Model</text>
+<text class="desc"  x="401" y="338" text-anchor="middle">Runs the detection model</text>
+
+<!-- ===== CARD 3 — OUTPUT (cx=660) ===== -->
+<rect x="554" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(660,128)">
+  <use href="#spec"/>
+  <!-- detection box + pill -->
+  <rect class="box" x="-48" y="22" width="42" height="26" rx="3" fill="none" stroke="#e8232a" stroke-width="3"/>
+  <g transform="translate(-27,12)"><rect x="-34" y="-11" width="68" height="18" rx="9" fill="#e8232a"/><text class="pill" x="0" y="3" text-anchor="middle">rumble 0.92</text></g>
+  <rect class="box" x="6" y="30" width="46" height="22" rx="3" fill="none" stroke="#e8232a" stroke-width="2.5" opacity="0.8"/>
+</g>
+<text class="step" x="660" y="280" text-anchor="middle">03</text>
+<text class="title" x="660" y="312" text-anchor="middle">Output</text>
+<text class="desc"  x="660" y="338" text-anchor="middle">Rumbles boxed and scored</text>
+</svg>
