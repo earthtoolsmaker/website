@@ -287,6 +287,6 @@ in anti-poaching efforts, informs habitat management, supports research,
 engages local communities, and offers a cost-effective, scalable solution for
 conservation efforts.
 
-One can try out the model from the [ML Space]({{< ref "/demos/forest_elephant_rumble_detection" >}}).
+One can try out the model from the [live demo]({{< ref "/demos/forest_elephant_rumble_detection" >}}).
 
 {{< demo_cta >}}

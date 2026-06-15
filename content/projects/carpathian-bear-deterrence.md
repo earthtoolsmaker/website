@@ -257,6 +257,6 @@ diverse species.
 </span>
 <br/>
 
-One can try out the model from the [ML Space]({{< ref "/demos/human_wildlife_bear_conflict" >}}).
+One can try out the model from the [live demo]({{< ref "/demos/human_wildlife_bear_conflict" >}}).
 
 {{< demo_cta >}}

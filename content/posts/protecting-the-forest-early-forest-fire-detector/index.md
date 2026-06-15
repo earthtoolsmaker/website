@@ -440,6 +440,6 @@ The computer vision model detects a forest fire in Fontainebleau from a
 distance of 35 kilometers in real time. Setting a new record for the Pyronear
 systems.
 
-One can try out the model from the [ML Space]({{< ref "/demos/early_forest_fire_detection" >}}) or directly from the snippet below:
+One can try out the model from the [live demo]({{< ref "/demos/early_forest_fire_detection" >}}) or directly from the snippet below:
 
 {{< hf_space "earthtoolsmaker-forest-fire-pyronear" >}}

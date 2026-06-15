@@ -200,7 +200,7 @@ forests. This technology facilitates the swift deployment of firefighters,
 greatly improving our capacity to protect forests that are increasingly
 threatened by the impacts of global warming.
 
-One can try out the model from the [ML Space]({{< ref
+One can try out the model from the [live demo]({{< ref
 "/demos/early_forest_fire_detection" >}}).
 
 {{< demo_cta >}}

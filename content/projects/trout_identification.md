@@ -187,7 +187,7 @@ ecosystems worldwide, such innovative methods will play a vital role in
 ensuring the long-term survival of trout species and the health of the
 environments they inhabit.
 
-One can try out the model from the [ML Space]({{< ref
+One can try out the model from the [live demo]({{< ref
 "/demos/trout_identification" >}}).
 
 {{< demo_cta >}}

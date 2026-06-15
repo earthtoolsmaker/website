@@ -258,7 +258,7 @@ conserving wild salmon by providing the data needed for effective management,
 identifying and addressing threats, and engaging stakeholders in conservation
 efforts.
 
-One can try out the model from the [ML Space]({{< ref
+One can try out the model from the [live demo]({{< ref
 "/demos/wild_salmon_migration_monitoring" >}}).
 
 {{< demo_cta >}}
