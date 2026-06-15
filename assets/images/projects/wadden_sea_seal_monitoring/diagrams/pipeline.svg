@@ -1,0 +1,121 @@
+<svg viewBox="0 0 1062 380" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#cfeef0"/><stop offset="100%" stop-color="#9fd6da"/></linearGradient>
+  <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e7d6b5"/><stop offset="100%" stop-color="#cdb487"/></linearGradient>
+  <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7fc0c6"/><stop offset="100%" stop-color="#4f9aa2"/></linearGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#e29578"/></marker>
+  <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.08"/></filter>
+  <style>
+    .title { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 26px; font-weight: 600; fill: #161616; }
+    .desc  { font-size: 15px; fill: #60626a; }
+    .step  { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; fill: #e29578; }
+    .chip  { font-size: 11px; font-weight: 700; fill: #fff; }
+    .fly   { animation: fly 4s ease-in-out infinite; }
+    .scan  { animation: pulse 2.2s ease-in-out infinite; }
+    .box   { animation: boxpulse 2.4s ease-in-out infinite; } .box.b{animation-delay:-0.8s} .box.c{animation-delay:-1.6s}
+    .pop   { transform-box: fill-box; transform-origin: 50% 50%; animation: pop 3s ease-in-out infinite; }
+    @keyframes fly { 0%,100%{transform:translate(-6px,2px)} 50%{transform:translate(6px,-2px)} }
+    @keyframes pulse { 0%,100%{opacity:0.25} 50%{opacity:0.7} }
+    @keyframes boxpulse { 0%,100%{opacity:0.55} 50%{opacity:1} }
+    @keyframes pop { 0%,100%{opacity:0.85} 50%{opacity:1} }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <!-- top-down seal: grey body with a slightly tapered head, faces right -->
+  <g id="seal"><ellipse cx="0" cy="0" rx="18" ry="7" fill="#737a80"/><circle cx="15" cy="0" r="5.5" fill="#7f868c"/><path d="M-18 0 L-26 -3 L-23 0 L-26 3 Z" fill="#737a80"/><ellipse cx="-2" cy="-1.5" rx="11" ry="2.4" fill="#8b9298" opacity="0.6"/></g>
+</defs>
+
+<g stroke="#e29578" stroke-width="3.5" fill="none" stroke-linecap="round">
+  <line x1="250" y1="134" x2="291" y2="134" marker-end="url(#arrow)"/>
+  <line x1="509" y1="134" x2="550" y2="134" marker-end="url(#arrow)"/>
+  <line x1="768" y1="134" x2="809" y2="134" marker-end="url(#arrow)"/>
+</g>
+
+<!-- CARD 1 — SURVEY -->
+<rect x="36" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(142,128)">
+  <clipPath id="c1"><rect x="-90" y="-84" width="180" height="168" rx="12"/></clipPath>
+  <g clip-path="url(#c1)">
+    <rect x="-90" y="-84" width="180" height="168" fill="url(#sky)"/>
+    <!-- sea + sandbank -->
+    <rect x="-90" y="34" width="180" height="50" fill="url(#sea)"/>
+    <path d="M-90 56 Q-20 30 40 44 Q80 52 90 48 L90 84 L-90 84 Z" fill="url(#sand)"/>
+    <!-- seals hauled out -->
+    <g transform="translate(-38,64) scale(0.62)"><use href="#seal"/></g>
+    <g transform="translate(4,70) scale(0.62) rotate(-8)"><use href="#seal"/></g>
+    <g transform="translate(46,62) scale(0.62) rotate(6)"><use href="#seal"/></g>
+    <!-- aircraft + camera cone -->
+    <g class="fly">
+      <g transform="translate(-2,-48)">
+        <path class="scan" d="M0 6 L-26 56 L26 56 Z" fill="#e29578"/>
+        <g fill="#15463f"><ellipse cx="0" cy="0" rx="16" ry="5"/><rect x="-22" y="-2" width="44" height="4" rx="2"/><path d="M0 -3 L8 -14 L11 -13 L4 -1 Z"/><rect x="-4" y="2" width="8" height="6" rx="1.5"/></g>
+      </g>
+    </g>
+  </g>
+</g>
+<text class="step" x="142" y="280" text-anchor="middle">01</text>
+<text class="title" x="142" y="312" text-anchor="middle">Survey</text>
+<text class="desc"  x="142" y="338" text-anchor="middle">Photographed from the air</text>
+
+<!-- CARD 2 — DETECT -->
+<rect x="295" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(401,128)">
+  <clipPath id="c2"><rect x="-90" y="-84" width="180" height="168" rx="12"/></clipPath>
+  <g clip-path="url(#c2)">
+    <rect x="-90" y="-84" width="180" height="168" fill="url(#sand)"/>
+    <rect x="-90" y="-84" width="180" height="40" fill="url(#sea)" opacity="0.85"/>
+    <g transform="translate(-44,-8) scale(0.7)"><use href="#seal"/></g>
+    <g transform="translate(28,-28) scale(0.7) rotate(-12)"><use href="#seal"/></g>
+    <g transform="translate(40,40) scale(0.7) rotate(8)"><use href="#seal"/></g>
+    <g transform="translate(-30,52) scale(0.7) rotate(-4)"><use href="#seal"/></g>
+  </g>
+  <g fill="none" stroke="#3fd07a" stroke-width="3">
+    <rect class="box" x="-66" y="-24" width="44" height="30" rx="3"/>
+    <rect class="box b" x="2" y="-44" width="46" height="30" rx="3"/>
+    <rect class="box c" x="16" y="24" width="44" height="30" rx="3"/>
+    <rect class="box b" x="-52" y="36" width="44" height="28" rx="3"/>
+  </g>
+</g>
+<text class="step" x="401" y="280" text-anchor="middle">02</text>
+<text class="title" x="401" y="312" text-anchor="middle">Detect</text>
+<text class="desc"  x="401" y="338" text-anchor="middle">Every seal located</text>
+
+<!-- CARD 3 — CLASSIFY -->
+<rect x="554" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(660,128)">
+  <clipPath id="c3"><rect x="-90" y="-84" width="180" height="168" rx="12"/></clipPath>
+  <g clip-path="url(#c3)"><rect x="-90" y="-84" width="180" height="168" fill="url(#sand)"/></g>
+  <!-- focal seal -->
+  <g transform="translate(-50,0) scale(1.05)"><use href="#seal"/></g>
+  <rect class="box" x="-88" y="-22" width="78" height="40" rx="3" fill="none" stroke="#3fd07a" stroke-width="3"/>
+  <!-- five attribute chips -->
+  <g class="pop">
+    <g transform="translate(40,-58)"><rect x="-42" y="-11" width="84" height="20" rx="10" fill="#006d77"/><text class="chip" x="0" y="4" text-anchor="middle">Grey seal</text></g>
+    <g transform="translate(40,-32)"><rect x="-42" y="-11" width="84" height="20" rx="10" fill="#0a7d86"/><text class="chip" x="0" y="4" text-anchor="middle">Pup</text></g>
+    <g transform="translate(40,-6)"><rect x="-42" y="-11" width="84" height="20" rx="10" fill="#0a7d86"/><text class="chip" x="0" y="4" text-anchor="middle">On land</text></g>
+    <g transform="translate(40,20)"><rect x="-42" y="-11" width="84" height="20" rx="10" fill="#0a7d86"/><text class="chip" x="0" y="4" text-anchor="middle">Alive</text></g>
+    <g transform="translate(40,46)"><rect x="-42" y="-11" width="84" height="20" rx="10" fill="#0a7d86"/><text class="chip" x="0" y="4" text-anchor="middle">Female ♀</text></g>
+  </g>
+</g>
+<text class="step" x="660" y="280" text-anchor="middle">03</text>
+<text class="title" x="660" y="312" text-anchor="middle">Classify</text>
+<text class="desc"  x="660" y="338" text-anchor="middle">Tagged five ways</text>
+
+<!-- CARD 4 — REVIEW -->
+<rect x="813" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(919,128)">
+  <rect x="-78" y="-66" width="156" height="120" rx="12" fill="#006d77"/>
+  <rect x="-78" y="-66" width="156" height="26" rx="12" fill="#0a7d86"/><rect x="-78" y="-52" width="156" height="12" fill="#0a7d86"/>
+  <circle cx="-64" cy="-53" r="3.5" fill="#bfe0d6"/><circle cx="-53" cy="-53" r="3.5" fill="#83c5be"/>
+  <text class="chip" x="14" y="-49" text-anchor="middle" font-size="10" fill="#cfe9e0" letter-spacing="0.08em">SEAL COUNTS</text>
+  <!-- count rows -->
+  <g font-size="12" font-weight="700">
+    <g transform="translate(0,-22)"><circle cx="-58" cy="0" r="5" fill="#9fb6bd"/><text x="-46" y="4" fill="#eaf3ef">Grey seal</text><text x="64" y="4" text-anchor="end" fill="#fff">142</text></g>
+    <g transform="translate(0,2)"><circle cx="-58" cy="0" r="5" fill="#cdb487"/><text x="-46" y="4" fill="#eaf3ef">Harbour</text><text x="64" y="4" text-anchor="end" fill="#fff">88</text></g>
+    <g transform="translate(0,26)"><circle cx="-58" cy="0" r="5" fill="#e29578"/><text x="-46" y="4" fill="#eaf3ef">Pups</text><text x="64" y="4" text-anchor="end" fill="#fff">37</text></g>
+  </g>
+  <g transform="translate(40,46)"><rect x="-30" y="-11" width="60" height="22" rx="11" fill="#3fd07a"/><text class="chip" x="0" y="4" text-anchor="middle">Export ✓</text></g>
+</g>
+<text class="step" x="919" y="280" text-anchor="middle">04</text>
+<text class="title" x="919" y="312" text-anchor="middle">Review</text>
+<text class="desc"  x="919" y="338" text-anchor="middle">Checked &amp; exported</text>
+</svg>
