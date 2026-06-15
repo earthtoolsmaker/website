@@ -180,22 +180,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
   /* =======================
-  // Zoom Image
+  // Zoom Image — intentionally disabled
+  // The Lightense full-screen zoom on content/gallery images was broken, so it
+  // is turned off. Full-screen expand is handled only by the dedicated
+  // image-carousel lightbox further down.
   ======================= */
-  const lightense = document.querySelector(".page__content img, .post__content img, .project-content img, .gallery__image img"),
-  imageLink = document.querySelectorAll(".page__content a img, .post__content a img, .project-content a img, .gallery__image a img");
-
-  if (imageLink) {
-    for (var i = 0; i < imageLink.length; i++) imageLink[i].parentNode.classList.add("image-link");
-    for (var i = 0; i < imageLink.length; i++) imageLink[i].classList.add("no-lightense");
-  }
-
-  if (lightense) {
-    Lightense(".page__content img:not(.no-lightense), .post__content img:not(.no-lightense), .project-content img:not(.no-lightense), .gallery__image img:not(.no-lightense)", {
-    padding: 60,
-    offset: 30
-    });
-  }
 
 
   /* ============================

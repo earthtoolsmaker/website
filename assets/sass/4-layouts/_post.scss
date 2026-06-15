@@ -193,6 +193,26 @@
   }
 }
 
+/* Markdown image captions: the `*caption*` line right after an image renders as
+   an <em> in the same paragraph. Style that emphasis as a real, centered
+   caption instead of stray italic text. */
+.post__content,
+.page__content,
+.project-content {
+  p > img + em,
+  p > picture + em,
+  .gallery-box > em {
+    display: block;
+    margin: 12px auto 0;
+    max-width: 90%;
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #80838b;
+  }
+}
+
 .post,
 .page {
   max-width: 780px;
@@ -235,6 +255,13 @@
     border-radius: 0;
     pointer-events: none;
     user-select: none;
+  }
+
+  /* Opt out of the default rounded corners (e.g. framed image strips that
+     bring their own borders). Triggered by the #noround fragment on the src,
+     which the image render hook turns into this class. */
+  img.no-round {
+    border-radius: 0;
   }
 
 }

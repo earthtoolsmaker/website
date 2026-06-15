@@ -52,7 +52,7 @@
           <div class="about-stats__label">open-source tools</div>
         </div>
         <div class="about-stats__item">
-          <div class="about-stats__value">{{ len (where site.RegularPages "Section" "spaces") }}</div>
+          <div class="about-stats__value">{{ len (where site.RegularPages "Section" "demos") }}</div>
           <div class="about-stats__label">interactive demos</div>
         </div>
       </div>
@@ -107,7 +107,11 @@
   {{/* ---- Support CTA ---- */}}
   <section class="section partners-cta animate">
     <div class="container-wide">
-      {{ partial "support-cta.html" . }}
+      <div class="about-cta">
+        <h3 class="about-cta__title">Powered by our community</h3>
+        <p class="about-cta__description">We rely on support from our community. It's because of your contributions that we can carry out these projects and partnerships, helping us fulfill our mission. Please consider sponsoring this project.</p>
+        <a href="/support/" class="link-no-decoration button">Support our work 🌍</a>
+      </div>
     </div>
   </section>
 

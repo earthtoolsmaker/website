@@ -5,7 +5,7 @@ clients:
   - name: Lumax AI
     link: https://lumax.ai/
     logo: /images/clients/lumax-ai/logo.png
-space: /spaces/trout_identification/
+space: /demos/trout_identification/
 related_posts:
   - how-to-prepare-data-for-identification
   - local-feature-matching-lightglue
@@ -187,7 +187,7 @@ ecosystems worldwide, such innovative methods will play a vital role in
 ensuring the long-term survival of trout species and the health of the
 environments they inhabit.
 
-One can try out the model from the [ML Space]({{< ref
-"/spaces/trout_identification" >}}).
+One can try out the model from the [live demo]({{< ref
+"/demos/trout_identification" >}}).
 
 {{< demo_cta >}}

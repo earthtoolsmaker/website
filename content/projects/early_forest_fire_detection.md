@@ -10,33 +10,37 @@ related_posts:
   - racing-models-not-opinions
   - protecting-the-forest-early-forest-fire-detector
 github_repo: https://github.com/earthtoolsmaker/pyronear-mlops
-space: /spaces/early_forest_fire_detection/
+space: /demos/early_forest_fire_detection/
 tools:
   - Computer Vision
   - Machine Learning
-  - MLOps
 status: completed
 pinned: true
 weight: 1
 date: 2026-06-12
 image: /images/projects/early_forest_fire_detection/cover.jpg
+stats:
+  - value: "24/7"
+    label: monitoring
+  - value: "50"
+    label: sites monitored
+  - value: "500+"
+    label: fires detected
 ---
 
-## Context
-
-Pyronear offers a holistic solution for managing fire risks. Central to its
-capabilities is an innovative early wildfire detection algorithm, seamlessly
-operated on a compact microcomputer. This core system is augmented by a network
-of high-resolution cameras strategically positioned at elevated vantage points,
-providing panoramic coverage of forested regions. Together, these components
-form a resilient and proactive strategy for wildfire prevention and management.
+Pyronear takes a whole-system approach to wildfire risk. At its core is an
+early-detection model that runs on a compact, low-power microcomputer, fed by a
+network of high-resolution cameras mounted at high vantage points for panoramic
+coverage of the forest. Together they form a proactive line of defense against
+wildfires — spotting smoke early and getting the alert to the people who can act
+on it.
 
 > Our detectors communicate fire alerts to a database that is connected
 > to a supervision platform for the fire department.
 >
 > <cite>– Pyronear</cite>
 
-![System Overview](/images/projects/early_forest_fire_detection/overview_system.png)
+![System Overview](/images/projects/early_forest_fire_detection/overview_system.svg)
 *Overview of the Pyronear system to monitor forests around the clock*
 
 The video below, filmed in the Forest of Fontainebleau, shows how the system
@@ -51,38 +55,38 @@ department.
 
 Protecting forests from fire is crucial for several reasons:
 
-- __Biodiversity Conservation:__ Forests are home to a
-vast array of plant and animal species. Wildfires can
-devastate habitats, leading to the loss of biodiversity
-and potentially driving species to extinction.
-- __Carbon Sequestration:__ Forests act as carbon sinks,
-absorbing carbon dioxide from the atmosphere and storing
-it in trees and soil. When forests burn, this stored
-carbon is released back into the atmosphere,
-exacerbating climate change.
-- __Water Resources:__ Healthy forests play a critical
-role in regulating water cycles. They help maintain soil
-moisture, reduce erosion, and sustain the flow of rivers
-and streams. Wildfires can disrupt these processes,
-leading to soil degradation and affecting water quality
-and availability.
-- __Economic Impact:__ Forests provide various ecosystem
-services, including timber, non-timber forest products,
-and recreational opportunities. Wildfires can damage
-these resources, impacting industries such as forestry,
-tourism, and agriculture, leading to economic losses for
-communities.
-- __Human Health:__ Wildfires produce smoke and air
-pollution, which can pose significant health risks,
-especially to vulnerable populations such as children,
-the elderly, and individuals with respiratory
-conditions. Protecting forests from fire helps safeguard
-public health and well-being.
+<div class="support__grid">
 
-Overall, preserving forests from fire is essential for
-maintaining ecological balance, mitigating climate
-change, sustaining livelihoods, and safeguarding human
-health and biodiversity.
+  <div class="support__card">
+    <h3 class="support__card-title">Biodiversity Conservation</h3>
+    <p class="support__card-description">Forests shelter countless plant and animal species. Wildfire destroys their habitats, eroding biodiversity and pushing vulnerable species toward extinction.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Carbon Sequestration</h3>
+    <p class="support__card-description">Forests act as carbon sinks, pulling CO₂ from the air and locking it into trees and soil. When they burn, that stored carbon is released back into the atmosphere, accelerating climate change.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Water Resources</h3>
+    <p class="support__card-description">Healthy forests regulate the water cycle — holding soil moisture, curbing erosion, and feeding rivers and streams. Fire disrupts all of it, degrading soil and harming water quality and supply.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Economic Impact</h3>
+    <p class="support__card-description">Forests underpin livelihoods — timber, non-timber products, and recreation. Wildfire damages these resources and the forestry, tourism, and agriculture that depend on them, costing local communities dearly.</p>
+  </div>
+
+  <div class="support__card">
+    <h3 class="support__card-title">Human Health</h3>
+    <p class="support__card-description">Wildfire smoke drifts far beyond the fire line, and its air pollution hits the vulnerable hardest — children, the elderly, and people with respiratory conditions. Stopping fires early protects public health.</p>
+  </div>
+
+</div>
+
+Preserving forests from fire is essential — for ecological balance, a stable
+climate, the livelihoods forests support, and the health of people and wildlife
+alike.
 
 ## Project Scope and Objectives
 
@@ -95,13 +99,13 @@ effectively managing, deploying, and maintaining Machine
 Learning Models, ensuring optimal performance and
 reliability over time.
 
-![Overview 360](/images/projects/early_forest_fire_detection/overview_360.png)
+![Overview 360](/images/projects/early_forest_fire_detection/overview_360.svg)
 *Overview of the camera system that can cover 360 degrees angle*
 
 Our work is centered on enhancing the core of the Pyronear system, which
 analyzes real-time images from cameras mounted on tower antennas.
 
-![Overview ML Model](/images/projects/early_forest_fire_detection/overview_ai_model.png)
+![Overview ML Model](/images/projects/early_forest_fire_detection/overview_ai_model.svg)
 *Overview of the embedded ML system*
 
 ### Setting up the Pyronear system
@@ -153,6 +157,9 @@ unit built around a Raspberry Pi, connected to four cameras that provide
 360-degree coverage. This system processes images continuously, around the
 clock.
 
+![A Raspberry Pi board next to a credit card of the same size](/images/projects/early_forest_fire_detection/raspberry_pi_credit_card.svg)
+*The brain of the whole system is no bigger than a credit card.*
+
 {{< gallery caption="Pyronear hardware system case - Raspberry Pi, power chords, RJ45, and SIM card" >}}
   {{< gallery_image src="/images/projects/early_forest_fire_detection/cameras/fontainebleau/setup/pyronear_hardware.jpg" alt="Pyronear hardware system" >}}
 {{< /gallery >}}
@@ -164,43 +171,34 @@ system. The video below shows a thin black smoke rising in the distance.
 {{< youtube id=i9Qy-zY16Ew >}}
 <br/>
 
-## Second Stage: Temporal Verification
+## Telling smoke from look-alikes
 
-Single-frame detection has a false-alarm ceiling: early wildfire smoke is a
-faint grey wisp easily confused with clouds, fog, or dust, and every false
-alarm sent to a fire department erodes trust in the system. The second phase
-of our collaboration added a server-side **temporal verifier** that judges
-the *sequence* of frames rather than each frame alone — real smoke appears at
-a fixed point on the terrain, grows, and drifts, and that behavior is the
-signal look-alikes cannot fake.
+A single frame can only tell you so much. Early wildfire smoke is a faint grey
+wisp — easy to confuse with a passing cloud, a bank of fog, or kicked-up dust —
+and every false alarm that reaches a fire crew chips away at their trust in the
+system.
 
-The work ran as a structured R&D effort: a literature survey of 28 papers, a
-shortlist of candidate approaches, and five models raced on a shared
-leaderboard against a frozen test set. The winning model cuts false alarms
-by **4×** while improving recall, at the cost of roughly 1.7 minutes of
-mean detection delay:
+So we taught the system to look at *how a candidate behaves over time*. Real
+smoke does things a cloud doesn't: it stays anchored to one spot on the
+hillside, grows, and slowly drifts. To make that easy to read, the system locks
+onto the candidate and holds the view steady — so the background sits still and
+the smoke becomes the one thing that moves.
 
-![Leaderboard of the five candidate temporal verifiers: F1 score versus false positive rate](/images/projects/early_forest_fire_detection/temporal_leaderboard.png)
-*Five candidate verifiers on the same frozen test set — the winner reduces
-the false positive rate from 0.159 to 0.040.*
+![The same hillside across twenty frames; with the view held steady, a faint plume grows and drifts while everything around it stays put](/images/projects/early_forest_fire_detection/temporal_patches.jpg#noround)
+*The same candidate across twenty frames. Hold the view steady and real smoke
+gives itself away — it's the one thing that grows and drifts.*
 
-The winner is now packaged as a versioned, self-contained model [released on
-HuggingFace](https://huggingface.co/pyronear/temporal-model) and served
-through a FastAPI service from the
-[pyronear/temporal-model](https://github.com/pyronear/temporal-model)
-monorepo. Two blog posts cover this phase in depth: [how the R&D was run]({{<
-ref "/posts/racing-models-not-opinions" >}}) and [how the temporal model
-works]({{< ref "/posts/smoke-is-a-behavior" >}}).
+That extra, time-aware look cuts false alarms by around **4×** while still
+catching the real fires — a far cleaner stream of alerts for the people acting
+on them. If you want the full story, we wrote up [how we built and raced the
+candidate models]({{< ref "/posts/racing-models-not-opinions" >}}) and [how the
+model reads smoke over time]({{< ref "/posts/smoke-is-a-behavior" >}}).
 
 ## Conclusion
 
-In summary, an advanced computer vision model for detecting early signs of
-forest fires provides a cost-effective and efficient means of safeguarding our
-forests. This technology facilitates the swift deployment of firefighters,
-greatly improving our capacity to protect forests that are increasingly
-threatened by the impacts of global warming.
-
-One can try out the model from the [ML Space]({{< ref
-"/spaces/early_forest_fire_detection" >}}).
+A computer vision model that catches the first signs of forest fire is a
+practical, low-cost way to protect them. It gets firefighters to the scene
+sooner — and as climate change leaves forests increasingly exposed, that head
+start matters more every year.
 
 {{< demo_cta >}}

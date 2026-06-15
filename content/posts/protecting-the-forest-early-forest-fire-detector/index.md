@@ -4,7 +4,7 @@ description: Detecting early forest fires in real time using low powered technol
 date: 2024-08-21
 params:
   math: true
-image: /images/posts/how-to-build-an-early-forest-fire-detector/cover.png
+image: /images/projects/early_forest_fire_detection/cover.jpg
 tags: ["AI", "vision", "low power"]
 ---
 
@@ -30,7 +30,7 @@ cameras. When the computer vision system detects rising smoke from any camera
 feed, it generates an alert. This alert is then reviewed by the fire
 department, allowing them to take immediate action to address the fire.
 
-![System Overview](./images/overview_system.png)
+![System Overview](/images/projects/early_forest_fire_detection/overview_system.svg)
 *Overview of the Pyronear system to monitor forests around the clock*
 
 ## Project Scope
@@ -41,7 +41,7 @@ thereby increasing confidence among firefighters and enhancing the model's
 precision. Additionally, we are implementing best engineering and MLOps
 practices to ensure long-term reliability and optimal performance.
 
-![Overview ML Model](./images/overview_ai_model.png)
+![Overview ML Model](/images/projects/early_forest_fire_detection/overview_ai_model.svg)
 *Overview of the embedded ML system*
 
 Our work concentrates on the software component responsible for analyzing input
@@ -49,7 +49,7 @@ from the cameras.
 
 ### Covered sites
 
-![Overview 360](./images/overview_360.png)
+![Overview 360](/images/projects/early_forest_fire_detection/overview_360.svg)
 *Overview of the camera system that can cover 360 degrees angle*
 
 The cameras are configured to provide a full 360-degree coverage. Mounted on
@@ -440,6 +440,6 @@ The computer vision model detects a forest fire in Fontainebleau from a
 distance of 35 kilometers in real time. Setting a new record for the Pyronear
 systems.
 
-One can try out the model from the [ML Space]({{< ref "/spaces/early_forest_fire_detection" >}}) or directly from the snippet below:
+One can try out the model from the [live demo]({{< ref "/demos/early_forest_fire_detection" >}}) or directly from the snippet below:
 
 {{< hf_space "earthtoolsmaker-forest-fire-pyronear" >}}

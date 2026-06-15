@@ -347,6 +347,6 @@ Notably, this framework possesses the potential to transcend bear
 management, offering promising avenues for mitigating human-wildlife
 conflicts across a spectrum of species.
 
-One can try out the model from the [ML Space]({{< ref "/spaces/human_wildlife_bear_conflict" >}}) or directly from the snippet below:
+One can try out the model from the [live demo]({{< ref "/demos/human_wildlife_bear_conflict" >}}) or directly from the snippet below:
 
 {{< hf_space "achouffe-bear-detection" >}}

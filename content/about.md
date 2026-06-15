@@ -1,7 +1,7 @@
 ---
 layout: about
 title: About
-hero_image: /images/projects/wild_salmon_migration_monitoring/cover.png
+hero_image: /images/pages/about/hero-forest.jpg
 hero_title: Technology for the people protecting wild places
 hero_description: We build open-source AI for conservation — listening for elephants in rainforest audio, counting salmon as they swim upriver, spotting wildfire smoke from 35 km away.
 ---
@@ -10,12 +10,14 @@ Conservation teams collect more data than they can ever look at: years of audio,
 
 **Free to use. Free to modify. Open source, end to end.**
 
-{{< about_stats >}}
-
 {{< services >}}
 
-{{< about_partners >}}
+{{< about_stats >}}
+
+{{< team >}}
 
 {{< about_timeline >}}
 
-{{< team >}}
+{{< about_partners >}}
+
+{{< work_in_field >}}

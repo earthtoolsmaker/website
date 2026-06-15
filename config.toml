@@ -2,7 +2,7 @@
 # General Site Settings
 baseURL = "https://www.earthtoolsmaker.org/"
 languageCode = "en-us"
-title = "EarthToolsMaker"
+title = "earthtoolsmaker"
 enableRobotsTXT = true
 googleAnalytics = "" # Add your identifier. For example UA-99631805-1.
 # paginate = 6
@@ -28,7 +28,7 @@ pagerSize = 6
   #-------------------------------
   # Author Settings
   [params.author]
-    author_name = "EarthToolsMaker"
+    author_name = "earthtoolsmaker"
 
 
 #-------------------------------
@@ -59,8 +59,8 @@ pagerSize = 6
 
   [[menu.main]]
     parent = "work"
-    name = "Spaces"
-    url = "/spaces/"
+    name = "Live Demos"
+    url = "/demos/"
     weight = 3
 
   [[menu.main]]
@@ -96,8 +96,8 @@ pagerSize = 6
       weight = 3
 
       [[menu.footer]]
-      name = "Spaces"
-      url = "/spaces/"
+      name = "Live Demos"
+      url = "/demos/"
       weight = 4
 
       [[menu.footer]]
@@ -116,7 +116,7 @@ pagerSize = 6
       weight = 7
 
       [[menu.footer]]
-      name = "Support"
+      name = "Support Us"
       url = "/support/"
       weight = 8
 
@@ -173,20 +173,28 @@ pagerSize = 6
 
   [params.projects.completed]
     enable = true
-    projects_title= "👨🏻‍💻 Featured Projects"
+    projects_title= "Featured Projects"
     limit = 6
 
   [params.projects.fundraising]
-    enable = true
-    projects_title= "😇 Looking for Funding"
+    enable = false
+    projects_title= "Looking for Funding"
     limit = 3
+
+
+  #-------------------------------
+  # Home Tools Section
+  [params.home_tools]
+    enable = true
+    title = "Our Tools"
+    featured = ["pyronear", "salmonvision", "biowatch"]  # tool slugs, in display order
 
 
   #-------------------------------
   # Partners Section
   [params.partners]
     enable = true
-    partners_title = "🤝 Our Partners"
+    partners_title = "Our Partners"
 
   [[params.partner_item]]
     name = "Pyronear"
@@ -337,7 +345,7 @@ pagerSize = 6
   [[params.testimonial_item]]
     name = "Mateo Lostanlen"
     image = "/images/testimonials/mateo_pyronear.png"
-    logo = "/images/clients/pyronear/logo_bare.png"
+    logo = "/images/clients/pyronear/logo.png"
     designation = "Co-founder and CEO - Pyronear"
     link = "https://www.pyronear.org"
     content = "We absolutely love working with you. You are incredibly professional. They trained our latest model and achieved outstanding performance, setting a new benchmark. They also implemented the MLOps pipeline!"
@@ -353,7 +361,7 @@ pagerSize = 6
   [[params.testimonial_item]]
     name = "Yohan Runhaar"
     image = "/images/testimonials/yohan-reefsupport.jpg"
-    logo = "/images/clients/reefsupport/logo_without_text.png"
+    logo = "/images/clients/reefsupport/logo.png"
     designation = "CTO - ReefSupport"
     link = "https://reef.support"
     content = "I am very excited for what is ahead, there is so much potential in the work that's been done. Your hard work and passion have really shone through!"
@@ -362,7 +370,7 @@ pagerSize = 6
   [[params.testimonial_item]]
     name = "Thijs Suijten"
     image = "/images/testimonials/thijs-hacktheplanet.jpg"
-    logo = "/images/clients/hacktheplanet/logo_without_text.png"
+    logo = "/images/clients/hacktheplanet/logo.png"
     designation = "Co-founder & CTO - HackThePlanet"
     link = "https://www.hack-the-planet.io/"
     content = "They really helped us by training a YOLOv8 model for our system to prevent human-bear-conflicts. He thinks along well, knows what he is talking about and is a nice person to work with!"
@@ -370,7 +378,7 @@ pagerSize = 6
   [[params.testimonial_item]]
     name = "Melanie Clapham"
     image = "/images/testimonials/melanie-bearid.jpg"
-    logo = "/images/clients/bearid/logo_without_text.png"
+    logo = "/images/clients/bearid/logo_dark.png"
     designation = "Director & Conservation Scientist - The BearID Project"
     link = "https://bearresearch.org/"
     content = "There is definitely a want and need from the conservation community to work with people like you, with your expertise, as the technical side to this type of development is often the barrier. "
@@ -379,7 +387,7 @@ pagerSize = 6
   # Blog Section
   [params.blog]
     enable = true
-    blog_title = "📚 Read Latest Posts"
+    blog_title = "Read Latest Posts"
     limit = 3
 
 
@@ -387,7 +395,7 @@ pagerSize = 6
   # Tags Section
   [params.tags]
     enable = false
-    tags_title = "✌️ Explore Topics"
+    tags_title = "Explore Topics"
 
 
   #-------------------------------

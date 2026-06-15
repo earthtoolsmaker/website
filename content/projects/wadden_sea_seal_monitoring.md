@@ -8,7 +8,7 @@ clients:
   - name: Lumax AI
     link: https://lumax.ai/
     logo: /images/clients/lumax-ai/logo.png
-space: /spaces/seal_identification/
+space: /demos/seal_identification/
 tools:
   - Computer Vision
   - Machine Learning
