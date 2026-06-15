@@ -13,7 +13,7 @@ clients:
 related_posts:
   - how-to-build-a-real-time-bear-detection-system
 github_repo: https://gitlab.com/fruitpunch/projects/ai-for-bears/face-detection-and-segmentation/albear
-space: /spaces/human_wildlife_bear_conflict/
+space: /demos/human_wildlife_bear_conflict/
 tools:
   - "Computer Vision"
   - "Machine Learning"
@@ -257,6 +257,6 @@ diverse species.
 </span>
 <br/>
 
-One can try out the model from the [ML Space]({{< ref "/spaces/human_wildlife_bear_conflict" >}}).
+One can try out the model from the [ML Space]({{< ref "/demos/human_wildlife_bear_conflict" >}}).
 
 {{< demo_cta >}}

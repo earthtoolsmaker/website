@@ -8,7 +8,7 @@ clients:
 related_posts:
   - how-to-build-a-benthic-coral-reefs-analyser
 github_repo: https://github.com/earthtoolsmaker/coralreef-conservation
-space: /spaces/coral_reef_health_monitoring/
+space: /demos/coral_reef_health_monitoring/
 tools:
   - Computer Vision
   - Machine Learning
@@ -209,6 +209,6 @@ health and dynamics.
 ![Benthic Analysis System](/images/projects/coral_reef_segmentation/coral_ai.gif)
 *Gallery / Benthic Imagery Analysis System by <a href="https://reef.support">Reef Support</a>*
 
-One can try out the model from the [ML Space]({{< ref "/spaces/coral_reef_health_monitoring" >}}).
+One can try out the model from the [ML Space]({{< ref "/demos/coral_reef_health_monitoring" >}}).
 
 {{< demo_cta >}}
