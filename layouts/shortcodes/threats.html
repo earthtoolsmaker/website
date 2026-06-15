@@ -1,0 +1,26 @@
+{{/*
+  Interactive threat chips for the wild-salmon "Salmon under pressure" section.
+  Pure CSS (radio inputs + general-sibling combinator): clicking a chip
+  highlights it and reveals a short explanation panel below. Single-select.
+  Styling lives in assets/sass/4-layouts/_project-single.scss (.threats).
+*/}}
+{{ $threats := slice
+  (dict "name" "Habitat loss"        "desc" "Urban development, logging and agriculture degrade and destroy the spawning and rearing streams salmon depend on.")
+  (dict "name" "Dams &amp; barriers" "desc" "Dams, weirs and culverts obstruct migration routes, cutting fish off from the spawning and rearing habitat upstream.")
+  (dict "name" "Overfishing"         "desc" "Unsustainable harvest depletes populations and erodes the genetic diversity that keeps runs resilient.")
+  (dict "name" "Climate change"      "desc" "Warming water and shifting flows disrupt migration timing and the narrow temperature windows salmon need to survive and spawn.")
+  (dict "name" "Pollution"           "desc" "Runoff from farms, industry and urban areas contaminates waterways, harming salmon health and survival.")
+  (dict "name" "Disease &amp; parasites" "desc" "Contact with farmed fish can spread diseases and parasites to wild salmon, weakening already-stressed populations.")
+}}
+<div class="threats">
+  {{ range $i, $t := $threats }}<input type="radio" name="salmon-threat" id="threat-{{ $i }}" class="threats__toggle" {{ if eq $i 0 }}checked{{ end }}>
+  {{ end }}
+  <ul class="threats__chips">
+    {{ range $i, $t := $threats }}<li><label for="threat-{{ $i }}" class="threats__chip">{{ $t.name | safeHTML }}</label></li>
+    {{ end }}
+  </ul>
+  <div class="threats__panels">
+    {{ range $i, $t := $threats }}<p class="threats__panel" id="threat-panel-{{ $i }}">{{ $t.desc | safeHTML }}</p>
+    {{ end }}
+  </div>
+</div>

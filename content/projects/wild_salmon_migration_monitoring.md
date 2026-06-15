@@ -48,6 +48,9 @@ raised them. That return is the heartbeat of British Columbia's watersheds: it
 feeds bears, eagles and orcas, carries ocean nutrients far inland, and anchors
 the culture and economy of the communities along the water.
 
+![The Pacific salmon life cycle](/images/projects/wild_salmon_migration_monitoring/lifecycle_salmon.png)
+*The Pacific salmon life cycle — courtesy of the [Pacific Salmon Foundation](https://psf.ca/learn/species-lifecycle/).*
+
 Knowing how many fish actually make it back is the single most important number
 in salmon management — escapement targets exist to guarantee enough survive to
 spawn. But counting them by hand, river by river, season after season, simply
@@ -105,14 +108,7 @@ Each pressure compounds the others — and you cannot manage what you cannot
 measure. That is why an accurate, continuous count is the foundation beneath
 every other conservation decision.
 
-<ul class="threat-chips">
-  <li class="threat-chip">Habitat loss</li>
-  <li class="threat-chip">Dams &amp; barriers</li>
-  <li class="threat-chip">Overfishing</li>
-  <li class="threat-chip">Climate change</li>
-  <li class="threat-chip">Pollution</li>
-  <li class="threat-chip">Disease &amp; parasites</li>
-</ul>
+{{< threats >}}
 
 ## How SalmonVision counts a run
 

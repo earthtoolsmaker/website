@@ -63,7 +63,7 @@
     <path class="shimmer" d="M-62 -30 L62 -30" stroke="#eaf7f6" stroke-width="2" fill="none" opacity="0.6"/>
     <path class="shimmer" d="M-62 30 L62 30" stroke="#eaf7f6" stroke-width="2" fill="none" opacity="0.4"/>
     <g fill="#2f7e88" opacity="0.5"><circle cx="-40" cy="46" r="9"/><circle cx="-2" cy="50" r="11"/><circle cx="40" cy="46" r="10"/></g>
-    <g class="swim" transform="translate(-2,2) scale(0.92)"><use href="#salmon"/></g>
+    <g transform="translate(-2,2) scale(0.92)"><g class="swim"><use href="#salmon"/></g></g>
   </g>
   <!-- camera REC badge -->
   <g transform="translate(-50,-38)"><circle r="7" fill="#fff" stroke="#e29578" stroke-width="2"/><circle r="3" fill="#e29578"/></g>
@@ -105,7 +105,7 @@
     <rect x="-62" y="-48" width="124" height="96" fill="url(#waterdeep)"/>
     <path class="shimmer" d="M-62 -28 L62 -28" stroke="#eaf7f6" stroke-width="2" fill="none" opacity="0.5"/>
     <g fill="#2f7e88" opacity="0.5"><circle cx="-36" cy="48" r="9"/><circle cx="6" cy="50" r="11"/></g>
-    <g class="swim" transform="translate(-2,4) scale(0.92)"><use href="#salmon"/></g>
+    <g transform="translate(-2,4) scale(0.92)"><g class="swim"><use href="#salmon"/></g></g>
   </g>
   <!-- bounding box + species pill -->
   <rect class="box" x="-62" y="-28" width="110" height="58" rx="4" fill="none" stroke="#e29578" stroke-width="4"/>

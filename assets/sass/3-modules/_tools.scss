@@ -263,9 +263,15 @@
 // description (back) with no JavaScript.
 .species-card {
   display: block;
-  height: 232px;
+  height: 248px;
   perspective: 1000px;
   cursor: pointer;
+
+  // Two-column (tablet) cards are narrowest, so the back-face description
+  // wraps to the most lines — give it extra height to avoid clipping. The
+  // single-column (mobile) card is wide again, so it needs less.
+  @media (max-width: $tablet) { height: 268px; }
+  @media (max-width: $mobile) { height: 224px; }
 }
 
 .species-card__toggle {
@@ -310,9 +316,18 @@
 .species-card__back {
   transform: rotateY(180deg);
   justify-content: center;
-  background-color: var(--secondary-color);
+  // Fixed brand teal (not var(--secondary-color)) so white text keeps AA
+  // contrast in BOTH themes — the dark-theme secondary is a light coral that
+  // would drop the description below 4.5:1.
+  background-color: #006d77;
 
   .species-card__name { color: #fff; }
+}
+
+// Respect reduced-motion: skip the 0.6s 3D flip transition (the card still
+// flips, just instantly), matching the diagrams' reduced-motion guard.
+@media (prefers-reduced-motion: reduce) {
+  .species-card__inner { transition: none; }
 }
 
 .species-card__img {
