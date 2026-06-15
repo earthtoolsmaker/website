@@ -152,8 +152,8 @@ For each detection the system reads whether the fish is swimming roughly horizon
 
 That yields a length for the vast majority of tracked fish. A known-size reference placed in the sonar's field of view at installation then converts the pixel measurements into real-world centimetres.
 
-![Length estimation process](/images/projects/monitoring_smolt_salmon_migration_with_sonar/length_estimation.png)
-*Length estimation — multiple detections across frames are collected, filtered for outliers, and combined into a single length estimate in pixels.*
+![How length is estimated — many per-frame measurements are filtered down to one length](/images/projects/monitoring_smolt_salmon_migration_with_sonar/diagrams/size.svg)
+*A length is read in every frame; the outliers are dropped, the rest are combined at the median, and the result is converted from pixels to centimetres.*
 
 ## Counting
 
