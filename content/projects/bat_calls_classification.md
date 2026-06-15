@@ -91,9 +91,9 @@ ultrasonic calls bats use to navigate in the dark.
 *Each recording is turned into a spectrogram — a picture of sound — and a model
 reads that picture to identify the species behind the call.*
 
-Together with **Citibats Cambodia**, we're building bioacoustics tools — as part
-of Pytorch-Wildlife — that turn those recordings into species. The model lets
-researchers classify the huge volume of calls the community gathers, and share
+Together with **Citibats Cambodia**, we're building bioacoustics tools that turn
+those recordings into species. The model lets researchers classify the huge
+volume of calls the community gathers, and share
 the results openly on
 [iNaturalist](https://www.inaturalist.org/projects/citibats-cambodia) for further
 research by anyone, anywhere.
