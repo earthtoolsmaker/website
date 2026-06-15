@@ -201,7 +201,8 @@
 .project-content {
   p > img + em,
   p > picture + em,
-  .gallery-box > em {
+  .gallery-box > em,
+  .media-caption {
     display: block;
     margin: 12px auto 0;
     max-width: 90%;

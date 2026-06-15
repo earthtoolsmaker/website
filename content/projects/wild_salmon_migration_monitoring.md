@@ -37,6 +37,8 @@ pinned: true
 weight: 2
 date: 2024-08-20
 image: /images/projects/wild_salmon_migration_monitoring/cover.png
+js:
+  - /js/tabs.js
 ---
 
 Pacific salmon are born in freshwater, migrate out to the ocean, and then fight
@@ -67,7 +69,7 @@ that counts and identifies migrating salmon automatically, around the clock.
 fish, and individuals are tallied into a count managers can act on.*
 
 <p><video autoplay muted loop playsinline preload="metadata" style="width:100%;border-radius:12px;"><source src="/videos/salmonvision-hero.mp4" type="video/mp4"></video></p>
-*Wild salmon holding in the current, filmed by an underwater monitoring camera.*
+<p class="media-caption">Wild salmon holding in the current, filmed by an underwater monitoring camera.</p>
 
 ## Why wild salmon matter
 
@@ -168,13 +170,21 @@ pipeline with three complementary ways of seeing the water.
 
 ### In the field
 
+Three complementary sensors, one shared vision pipeline — switch between them to
+see each in action.
+
+{{< tabs labels="::Underwater cameras|::Sonar|::Drones" id="salmon-field" >}}
+{{< tab index="0" markdown="true" >}}
+
 Motion-triggered underwater cameras are the backbone of the system. When a fish
 swims into view, the camera wakes and the model counts and classifies it in real
 time.
 
 {{< youtube id=V-rZSeM5YtY >}}
-*An underwater monitoring camera goes live at Bear Creek — as fish pass, the
-system wakes and counts them.*
+<p class="media-caption">An underwater monitoring camera goes live at Bear Creek — as fish pass, the system wakes and counts them.</p>
+
+{{< /tab >}}
+{{< tab index="1" markdown="true" >}}
 
 Where the water is silty, dark or fast, light-based cameras struggle. Sonar uses
 sound instead, so it keeps counting in zero-visibility conditions and at night.
@@ -182,17 +192,22 @@ We push the same idea further in our sister project on [monitoring juvenile
 smolt with ARIS sonar]({{< ref "/projects/monitoring_smolt_salmon_migration_with_sonar" >}}).
 
 ![Setting up sonar at the Haida site](/images/projects/wild_salmon_migration_monitoring/sonar/haida-sonar.jpg)
-*An acoustic sonar counter deployed at the Haida site, where silty water defeats
-optical cameras.*
+*An acoustic sonar counter deployed at the Haida site, where silty water defeats optical cameras.*
 
 {{< youtube id=DlKYhipkSNk >}}
+<p class="media-caption">Sonar detects and counts fish acoustically — no light required.</p>
+
+{{< /tab >}}
+{{< tab index="2" markdown="true" >}}
 
 For wider stretches of river, drones survey from above — mapping reaches that
 fixed sensors can't cover.
 
 ![Drone photogrammetry of a salmon stream](/images/projects/wild_salmon_migration_monitoring/drone/drone_imagery.webp)
-*Photogrammetry of a freshwater stream where salmon migrate — courtesy of
-[Lumax AI](https://lumax.ai).*
+*Photogrammetry of a freshwater stream where salmon migrate — courtesy of [Lumax AI](https://lumax.ai).*
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ### In the web app
 
@@ -205,8 +220,7 @@ trustworthy, exportable reports.
 for a reviewer to confirm.*
 
 <p><video controls muted loop playsinline preload="metadata" style="width:100%;border-radius:12px;"><source src="/videos/salmonvision-tracking.mp4" type="video/mp4"></video></p>
-*Reviewing detections in the app — bounding boxes, species labels and a running
-count on a timeline.*
+<p class="media-caption">Reviewing detections in the app — bounding boxes, species labels and a running count on a timeline.</p>
 
 <div class="about-cta">
   <h3 class="about-cta__title">Explore the full SalmonVision platform</h3>
