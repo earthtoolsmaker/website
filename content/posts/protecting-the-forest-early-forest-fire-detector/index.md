@@ -8,8 +8,8 @@ image: /images/projects/early_forest_fire_detection/cover.jpg
 tags: ["AI", "vision", "low power"]
 ---
 
-In this blog post, we’ll delve into the development process of a cutting-edge
-early forest fire detection system, created in collaboration with the NGO
+In this post, we’ll walk through the development of an early forest fire
+detection system, built in collaboration with the NGO
 [Pyronear](https://pyronear.org).
 
 > Our detectors communicate fire alerts to a database that is connected
@@ -17,29 +17,33 @@ early forest fire detection system, created in collaboration with the NGO
 >
 > <cite>– Pyronear</cite>
 
-Pyronear offers a holistic solution for managing fire risks. Central to its
-capabilities is an innovative early wildfire detection algorithm, seamlessly
-operated on a compact microcomputer. This core system is augmented by a network
-of high-resolution cameras strategically positioned at elevated vantage points,
-providing panoramic coverage of forested regions. Together, these components
-form a resilient and proactive strategy for wildfire prevention and management.
+Pyronear takes a whole-system approach to fire risk. At its core is an early
+wildfire detection algorithm that runs on a compact microcomputer, fed by a
+network of high-resolution cameras mounted at high vantage points for panoramic
+coverage of the forest. Together they form a proactive line of defense against
+wildfires.
 
-A computer vision system is integrated into the Pyronear setup, which is
-installed on antenna towers. These systems continuously monitor forests using
-cameras. When the computer vision system detects rising smoke from any camera
-feed, it generates an alert. This alert is then reviewed by the fire
-department, allowing them to take immediate action to address the fire.
+Installed on antenna towers, the system continuously watches the forest through
+these cameras. When it detects smoke in a feed, it raises an alert; the fire
+department reviews it and can act immediately.
 
 ![System Overview](/images/projects/early_forest_fire_detection/overview_system.svg)
 *Overview of the Pyronear system to monitor forests around the clock*
+
+The video below, filmed in the Forest of Fontainebleau, shows the system end to
+end — from the cameras catching the first wisps of smoke to the alert reaching
+the fire department.
+
+{{< youtube id=W3DxacGsdks >}}
+<p class="media-caption">A walk through the full Pyronear pipeline, filmed in the Forest of Fontainebleau</p>
 
 ## Project Scope
 
 Our collaboration focuses on improving the accuracy of their machine learning
 system for early forest fire detection. Our goal is to minimize false alarms,
 thereby increasing confidence among firefighters and enhancing the model's
-precision. Additionally, we are implementing best engineering and MLOps
-practices to ensure long-term reliability and optimal performance.
+precision. Additionally, we are putting sound engineering and MLOps practices in place for
+long-term reliability.
 
 ![Overview ML Model](/images/projects/early_forest_fire_detection/overview_ai_model.svg)
 *Overview of the embedded ML system*
@@ -50,7 +54,7 @@ from the cameras.
 ### Covered sites
 
 ![Overview 360](/images/projects/early_forest_fire_detection/overview_360.svg)
-*Overview of the camera system that can cover 360 degrees angle*
+*The camera system covers a full 360-degree view*
 
 The cameras are configured to provide a full 360-degree coverage. Mounted on
 tall antennas, the system is capable of detecting fires from distances of 30 to
@@ -85,42 +89,45 @@ Pyronear's published paper
 
 ### Primary Sources
 
-- __HPWREN__: The High-Performance Wireless Research and Education Network
-(HPWREN), funded by the National Science Foundation, is a non-commercial,
-wide-area wireless network featuring Pan-Tilt-Zoom (PTZ) cameras. Serving
-Southern California, HPWREN supports network research and demonstrates its
-capabilities in wildfire detection.
-- __ALERTWildfire__: A consortium of universities across the western U.S.
-provides access to advanced PTZ fire cameras and tools, supporting firefighters
-and first responders in wildfire management. ALERTWildfire covers vast regions,
-including Washington, Oregon, Idaho, California, and Nevada. Its website also
-offers public access to live camera feeds.
+<div class="support__grid support__grid--two">
+  <div class="support__card">
+    <h3 class="support__card-title">HPWREN</h3>
+    <p class="support__card-description">A non-commercial, wide-area wireless network of Pan-Tilt-Zoom (PTZ) cameras across Southern California, funded by the NSF — used for network research and wildfire detection.</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">ALERTWildfire</h3>
+    <p class="support__card-description">A university consortium across the western U.S. providing PTZ fire cameras and public live feeds, supporting firefighters across Washington, Oregon, Idaho, California, and Nevada.</p>
+  </div>
+</div>
 
 ### Derived Datasets
 
-- __SmokeFrames__: Developed by Schaetzen et al. (2020), this dataset contains
-nearly 50,000 images sourced from ALERTWildfire cameras. A subset,
-SmokeFrames-2.4k, was tailored to meet specific requirements, consisting of
-2,410 images from 677 sequences, with an average of 3.6 images per sequence. It
-includes a significant number of false positives, which are vital for building
-a robust wildfire detection model.
-- __Nemo__: This dataset by Yazdi et al. (2022) comprises frames extracted from
-raw wildfire videos captured by ALERTWildfire’s PTZ cameras, covering various
-stages of fire and smoke progression.
-- __Fuego__: Created as part of the Fuego project (Govil et al., 2020), this
-dataset includes images manually selected and annotated from the HPWREN camera
-network based on historical fire records from Cal Fire. While the authors
-report 8,500 annotated images focusing on early fire stages, only 1,661 images
-are publicly available.
-- __AiForMankind__: Emerging from hackathons organized by the nonprofit AI For
-Mankind (2023), two training datasets were merged to create a large collection
-of annotated images for smoke detection and segmentation.
-- __FIgLib__: Proposed by Dewangan et al. (2022), the Fire Ignition Image
-Library (FIgLib) consists of 24,800 images of 315 different fires in Southern
-California, sourced from HPWREN. It serves as the official dataset for fire
-ignition studies.
-- __Synthetic__: This dataset was generated by overlaying computer-generated
-smoke onto various landscape images to create synthetic wildfire scenarios.
+<div class="support__grid">
+  <div class="support__card">
+    <h3 class="support__card-title">SmokeFrames</h3>
+    <p class="support__card-description">~50,000 images from ALERTWildfire cameras (Schaetzen et al., 2020). The SmokeFrames-2.4k subset adds 2,410 images across 677 sequences, with plenty of false positives for robustness.</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">Nemo</h3>
+    <p class="support__card-description">Frames from raw ALERTWildfire PTZ videos (Yazdi et al., 2022), covering many stages of fire and smoke progression.</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">Fuego</h3>
+    <p class="support__card-description">HPWREN images annotated from Cal Fire records (Govil et al., 2020) — 8,500 reported, 1,661 publicly available, focused on early fire stages.</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">AiForMankind</h3>
+    <p class="support__card-description">Two annotated smoke-detection and segmentation datasets, merged from AI For Mankind hackathons (2023).</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">FIgLib</h3>
+    <p class="support__card-description">The Fire Ignition Image Library (Dewangan et al., 2022): 24,800 images of 315 fires in Southern California from HPWREN — the reference dataset for fire-ignition studies.</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">Synthetic</h3>
+    <p class="support__card-description">Computer-generated smoke overlaid onto landscape images to create synthetic wildfire scenarios.</p>
+  </div>
+</div>
 
 ## Data Modeling
 
@@ -135,84 +142,48 @@ reliability in wildfire detection.
 
 ### Evaluation Metrics
 
-#### Precision
+We judge the detector with three standard metrics, all built from true
+positives (TP), false positives (FP), and false negatives (FN).
 
-__Precision__ measures how many of the predicted objects are correct. In object
-detection, it's the percentage of detected objects (e.g., bounding boxes) that
-are true positives (i.e., correctly identified objects) out of all the objects
-the model predicted.
-
-\[
-\text{Precision} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}
-\]
-
-- __True Positives (TP)__: The objects correctly identified by the model
-(correct object, correct location).
-- __False Positives (FP)__: The objects that the model predicted but were not
-actually there (incorrect or excess predictions).
-
-A __high precision__ means that most of the detected objects are correct, with
-few false positives.
-
-### Recall
-
-__Recall__ measures how many actual objects were detected by the model. It's
-the percentage of true objects that the model successfully identified.
+**Precision** — of everything the model flags as smoke, how much is real smoke?
+Fewer false alarms means higher precision.
 
 \[
-\text{Recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}
+\text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
 \]
 
-- __False Negatives (FN)__: The objects that exist but the model missed (didn’t
-detect).
-
-A __high recall__ means that the model is good at detecting most of the
-objects, even if some of the detections may be incorrect (i.e., it might have
-some false positives).
-
-### F1 Score
-
-The __F1 score__ is the harmonic mean of precision and recall. It provides a
-balanced measure that takes both precision and recall into account. It's
-particularly useful when you want to find a balance between the two metrics.
+**Recall** — of the real fires in view, how many does the model catch? Missing
+fewer fires means higher recall.
 
 \[
-\text{F1 Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
+\text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
 \]
 
-- A __high F1 score__ indicates that the model has both high precision and high
-recall, meaning it correctly identifies most objects while minimizing false
-detections.
+**F1 score** — the harmonic mean of the two: a single number that only stays
+high when precision and recall are both high.
 
-### Example in Object Detection
+\[
+\text{F1} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
+\]
 
-In the context of object detection (e.g., detecting wildfires in camera
-footage):
-- __Precision__ would measure how many of the detected fires are actual fires
-(and not false alarms).
-- __Recall__ would measure how many of the actual fires in the footage were
-detected by the model.
-- The __F1 score__ helps to evaluate the overall performance, balancing between
-catching all fires (high recall) and minimizing false alarms (high precision). 
-
-In an ideal scenario, the model would aim for both high precision and high
-recall to ensure timely and accurate wildfire detection.
+For Pyronear, recall must stay high — a missed fire is the worst outcome — while
+precision keeps false alarms rare enough that firefighters keep trusting the
+alerts.
 
 ### YOLO
 
 #### Overview
 
-We opted to utilize a pretrained
-[YOLO](https://github.com/ultralytics/ultralytics) model and fine-tune it for
-our specific object detection task. Renowned for its speed, accuracy, and
-user-friendly interface, YOLO stands out as an ideal solution for various
-tasks, including object detection, tracking, instance segmentation, image
-classification, and pose estimation.
+We took a pretrained
+[YOLO](https://github.com/ultralytics/ultralytics) model and fine-tuned it for
+our object detection task. YOLO is fast, accurate, and easy to work with, and it
+handles a range of tasks — object detection, tracking, instance segmentation,
+image classification, and pose estimation.
 
 ![YOLOv8 CV Tasks](./images/yolov8_tasks.png)
 *YOLO Computer Vision Tasks*
 
-#### Random Hyper Parameter Search
+#### Random Hyperparameter Search
 
 To efficiently identify an optimal combination of hyperparameters, we
 opted for random hyperparameter search across 12 hyperparameters for the
@@ -261,81 +232,14 @@ space = {
 }
 ```
 
-Random hyperparameter search is particularly useful when trying to find an
-effective combination of hyperparameters for a machine learning model because
-it offers a more efficient and often more effective alternative to traditional
-grid search. Hyperparameters are the settings of the model that must be tuned
-manually (e.g., learning rate, batch size, number of layers), and finding the
-right combination can have a significant impact on performance.
+Random search samples configurations at random instead of walking a fixed grid.
+In high-dimensional spaces where only a few hyperparameters really matter, it
+finds good settings faster and scales far better — it spends its budget
+exploring each parameter's range broadly rather than testing every combination
+exhaustively.
 
-- **Explores More Space Efficiently**: 
-   In random search, values for each hyperparameter are selected at random from
-a predefined range. This randomness allows the search to explore a wider
-variety of hyperparameter combinations. Since some hyperparameters are more
-sensitive than others, random search often finds better combinations faster by
-allocating more of the search effort to different regions of the space, rather
-than exhaustively testing every possible combination.
-
-- **Avoids Redundancy**:
-   In grid search, hyperparameters are chosen from a fixed set of values for
-each parameter, creating a structured, exhaustive search. However, many of
-these points can be redundant, especially if certain hyperparameters have
-little influence on performance. Random search avoids this by covering a more
-diverse set of combinations, which can yield better results without testing
-every combination.
-
-- **Faster and More Scalable**:
-   Random search is faster because it doesn't attempt to search every single
-combination of hyperparameters. Instead, it samples hyperparameters randomly,
-allowing the search to be terminated early if a good result is found. This is
-especially useful when working with high-dimensional hyperparameter spaces,
-where grid search becomes exponentially more time-consuming as the number of
-hyperparameters increases.
-
-- **Effective in High-Dimensional Spaces**:
-   Some hyperparameters may have a stronger influence on model performance than
-others. Random search increases the likelihood of stumbling upon good
-combinations in these more sensitive regions, especially in high-dimensional
-spaces. For example, one or two key hyperparameters may dominate the model's
-performance, and random search is more likely to find the right values for
-these parameters without needing to explore the entire grid.
-
-##### Comparison to Grid Search
-
-###### **Grid Search**:
-
-- **Method**: Tests all possible combinations of a set of hyperparameter values
-defined in a grid.
-- **Exploration**: Systematic but potentially redundant. It evaluates every
-combination, even if the difference in performance between certain values is
-negligible.
-- **Efficiency**: Inefficient in large or high-dimensional search spaces
-because the number of combinations grows exponentially.
-- **Use Case**: Suitable for small search spaces where exhaustive exploration
-is feasible.
-
-###### **Random Search**:
-
-- **Method**: Randomly selects combinations of hyperparameters from a defined
-range of possible values.
-- **Exploration**: More efficient because it covers the hyperparameter space
-more broadly without being constrained by the grid. It avoids the exhaustive
-search of every combination.
-- **Efficiency**: Faster and more scalable, especially for large and
-high-dimensional hyperparameter spaces.
-- **Use Case**: Particularly useful when only a few hyperparameters are
-expected to significantly impact the model's performance. It’s preferred when
-computational resources are limited, or the search space is large.
-
-##### Explained visually
-
-![](./images/model/yolov8/hyperparameter_search/random_search_vs_grid_search.png)
-
-Random hyperparameter search is useful because it’s faster, more efficient, and
-more scalable in exploring hyperparameter spaces, especially when only a few
-parameters are critical to performance. It avoids the exhaustive nature and
-redundancy of grid search, making it a preferred choice in many machine
-learning workflows.
+![Grid search tests a fixed lattice of points while random search spreads samples across each parameter's full range](./images/model/yolov8/hyperparameter_search/random_vs_grid_search.svg)
+*Grid search samples a fixed lattice; random search covers each parameter's range more densely (after Bergstra & Bengio)*
 
 #### Data Augmentation
 
@@ -354,7 +258,7 @@ hyperparameter space.
 
 Below is the best-performing YOLOv8 model, evaluated on the holdout test set:
 
-![Training Results of the best YOLOv8 Model](./images/model/yolov8/best/results.png)
+![Training Results of the best YOLOv8 Model](./images/model/yolov8/best/results.png#noround)
 *Training results of the best YOLOv8 model*
 
 Versions 9 and 10 of YOLO were also tested using a similar approach, but
@@ -370,7 +274,7 @@ and has been deployed to the Pyronear systems as the new best model.
 |:---------:|:------:|:--------:|
 | 0.922     | 0.898  | 0.910    |
 
-Here is a quantitative evaluation based on a random sample from the evaluation set.
+Here is a qualitative look at the model on a random sample from the evaluation set.
 
 | Ground Truth | Prediction |
 |:------------:|:----------:|
@@ -378,21 +282,19 @@ Here is a quantitative evaluation based on a random sample from the evaluation s
 
 ## MLOps
 
-In addition to enhancing Pyronear's early forest fire detection capabilities,
-the project integrated several MLOps practices. MLOps (Machine Learning
-Operations) merges machine learning, software engineering, and DevOps
-principles to optimize the development, deployment, and monitoring of ML models
-in production. It emphasizes automating and managing the entire lifecycle of ML
-models, ensuring their scalability, reliability, and continuous improvement in
-real-world scenarios.
+Alongside improving Pyronear's detection accuracy, the project put several
+MLOps practices in place. MLOps blends machine learning, software engineering,
+and DevOps to manage a model's full lifecycle in production — keeping it
+reproducible, reliable, and improvable over time.
 
 ### DVC
 
-The first crucial aspect of managing a data-intensive project is implementing a
-robust system for versioning and managing data.
+Managing a data-intensive project starts with a robust way to version and track
+the data itself.
 
-![DVC Logo](./images/mlops/dvc.svg)
-*DVC Logo*
+<p style="text-align:center; margin: 24px 0;">
+  <img src="./images/mlops/dvc.svg" alt="DVC logo" style="max-width: 150px; width: 100%;" />
+</p>
 
 [__DVC__](https://dvc.org/) (Data Version Control) is an open-source tool
 designed to manage and version control machine learning datasets and models,
@@ -404,17 +306,18 @@ development lifecycle.
 
 ### Library Code and Scripts
 
-All code for data processing, training, and evaluation is organized into
-well-structured library files and scripts. Jupyter Notebooks are avoided at
-this stage to improve reproducibility, scalability, and maintainability,
-resulting in a more organized and efficient machine learning workflow.
+All code for data processing, training, and evaluation lives in well-structured
+library files and scripts. We avoid Jupyter notebooks at this stage to keep the
+workflow reproducible, scalable, and maintainable.
 
 ## Future development
 
 The computer vision team at Pyronear is busy exploring ways to reduce false
 positives by leveraging temporal data. Often, low clouds can resemble early
 fire smoke in a single image frame, but analyzing a sequence of frames can make
-it easier to distinguish between them.
+it easier to distinguish between them. We've since done exactly that — read
+[how we raced the candidate models]({{< ref "/posts/racing-models-not-opinions" >}})
+and [how the temporal model reads smoke over time]({{< ref "/posts/smoke-is-a-behavior" >}}).
 
 Additionally, the team is considering the development of models with varying
 hardware requirements. Due to limited network bandwidth, streaming all images
@@ -434,12 +337,9 @@ our contributions go live, with the system now actively detecting wildfires and
 helping to protect forests!
 
 {{< youtube id=i9Qy-zY16Ew >}}
-<br/>
+<p class="media-caption">The model detects a forest fire in Fontainebleau from 35 kilometres away, in real time — a new record for the Pyronear systems.</p>
 
-The computer vision model detects a forest fire in Fontainebleau from a
-distance of 35 kilometers in real time. Setting a new record for the Pyronear
-systems.
+You can try the detector yourself on real camera footage — the interactive demo
+runs the model right in your browser.
 
-One can try out the model from the [live demo]({{< ref "/demos/early_forest_fire_detection" >}}) or directly from the snippet below:
-
-{{< hf_space "earthtoolsmaker-forest-fire-pyronear" >}}
+{{< demo_cta "/demos/early_forest_fire_detection/" >}}
