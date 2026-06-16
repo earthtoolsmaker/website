@@ -32,6 +32,13 @@ metric_losses:
 ![Images are embedded as points; the same individual forms a cluster](./images/embedding-space.svg)
 *Each image becomes a point. Same individual, nearby points — identification turns into nearest-neighbour search.*
 
+How do we measure "close"? Two choices dominate — tap each:
+
+{{< threats "distances" >}}
+
+![Euclidean measures straight-line distance; cosine measures angle](./images/distance.svg)
+*Euclidean cares about length; cosine cares only about direction.*
+
 ## Shaping the space: a short history of losses
 
 ## Making it work in practice
