@@ -50,4 +50,7 @@ The loss function decides how the space gets shaped. The ideas built on each oth
 
 ## Making it work in practice
 
+![Easy, semi-hard, and hard negatives around an anchor](./images/mining.svg)
+*The hardest negatives — the ones that sneak inside the margin — carry the most learning signal.*
+
 ## Where this shows up in conservation
