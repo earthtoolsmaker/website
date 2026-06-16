@@ -10,6 +10,9 @@
   // space (and any boot-time Gradio glitch) instead of floating over the
   // content below it while <gradio-app> is still 0px tall.
   min-height: 480px;
+  // Ease the reserved height down on reveal so a demo shorter than 480px
+  // settles smoothly instead of snapping.
+  transition: min-height 0.5s ease;
 }
 
 // Once revealed, stop reserving space — let the embed collapse to the live
@@ -20,10 +23,12 @@
 
 // Keep the live app (and all of Gradio's pre-render UI) invisible and inert
 // until ready. opacity:0 still lets Gradio load, connect, and render offscreen.
+// On reveal the demo fades in quickly so it's solid before the overlay finishes
+// dissolving — avoids a muddy cross-fade where both are half-visible at once.
 .gradio-embed gradio-app {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.35s ease;
 }
 
 .gradio-embed.is-ready gradio-app {
@@ -42,11 +47,14 @@
   gap: 18px;
   background: var(--background-color);
   opacity: 1;
-  transition: opacity 0.4s ease;
+  // Dissolve a touch slower than the demo fades in, with a subtle scale-down,
+  // so the overlay melts away to reveal the (already solid) demo beneath.
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
 .gradio-embed.is-ready .gradio-embed__loader {
   opacity: 0;
+  transform: scale(0.98);
   pointer-events: none;
 }
 
@@ -73,6 +81,7 @@
   .gradio-embed__pangolin {
     animation: none;
   }
+  .gradio-embed,
   .gradio-embed__loader,
   .gradio-embed gradio-app {
     transition: none;

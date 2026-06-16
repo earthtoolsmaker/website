@@ -12,7 +12,9 @@
   // never renders eventually reveals (showing Gradio's own error) rather than
   // spinning forever.
   var MAX_WAIT_MS = 30000;
-  var FADE_MS = 400;
+  // Must cover the longest reveal transition in _gradio-loader.scss (0.55s)
+  // so the loader isn't removed from layout before its dissolve finishes.
+  var FADE_MS = 600;
 
   function initEmbed(embed) {
     var loader = embed.querySelector("[data-gradio-loader]");
