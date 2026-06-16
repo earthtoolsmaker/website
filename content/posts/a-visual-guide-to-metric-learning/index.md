@@ -24,6 +24,9 @@ metric_losses:
 
 ## Why classification hits a wall
 
+![Classification needs fixed slots; metric learning just adds a point](./images/classification-wall.svg)
+*A classifier needs a slot per identity — a new individual means a retrain. Metric learning just drops another point into the space.*
+
 ## The core idea: turn images into points
 
 ## Shaping the space: a short history of losses
