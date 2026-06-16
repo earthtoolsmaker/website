@@ -1,7 +1,8 @@
 // Pangolin loading overlay shown over an embedded Gradio app while the HF Space
-// wakes up. The overlay sits on top of <gradio-app> (which starts at 0px height)
-// and reserves its own height so the boot-time error/status flash stays hidden.
-// JS (assets/js/gradio-loader.js) adds .is-ready to reveal the demo.
+// wakes up. The <gradio-app> itself is held invisible (opacity:0) until ready,
+// so Gradio's own building/sleeping/error UI — including high-z-index toasts,
+// which inherit an ancestor's opacity — never shows through. JS
+// (assets/js/gradio-loader.js) adds .is-ready once Gradio fires `render`.
 
 .gradio-embed {
   position: relative;
@@ -15,6 +16,19 @@
 // demo's natural height.
 .gradio-embed.is-ready {
   min-height: 0;
+}
+
+// Keep the live app (and all of Gradio's pre-render UI) invisible and inert
+// until ready. opacity:0 still lets Gradio load, connect, and render offscreen.
+.gradio-embed gradio-app {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.gradio-embed.is-ready gradio-app {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .gradio-embed__loader {
@@ -59,7 +73,8 @@
   .gradio-embed__pangolin {
     animation: none;
   }
-  .gradio-embed__loader {
+  .gradio-embed__loader,
+  .gradio-embed gradio-app {
     transition: none;
   }
 }

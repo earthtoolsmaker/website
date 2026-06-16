@@ -6,7 +6,12 @@
   "use strict";
 
   var MIN_DISPLAY_MS = 2000;
-  var MAX_WAIT_MS = 15000;
+  // Cold HF Spaces can take much longer than a warm one to render. Gradio fires
+  // `render` only when the real app mounts (not during the building/sleeping
+  // phase), so we lean on that; this is just a last-resort cap so a Space that
+  // never renders eventually reveals (showing Gradio's own error) rather than
+  // spinning forever.
+  var MAX_WAIT_MS = 30000;
   var FADE_MS = 400;
 
   function initEmbed(embed) {
@@ -41,15 +46,16 @@
       }
     }
 
-    // Primary signal: gradio dispatches "render" on the element once mounted.
+    // Primary signal: gradio dispatches "render" on the element only once the
+    // real app has mounted — NOT during the building/sleeping/error phase.
     app.addEventListener("render", requestReveal, { once: true });
 
-    // Backstop: watch for the real Gradio container appearing (light or shadow DOM).
+    // Backstop (in case `render` is absent on some gradio version): reveal when
+    // actual interactive content exists. The building/sleeping screen has no
+    // form controls, so this won't fire prematurely the way watching for the
+    // bare .gradio-container shell did.
     observer = new MutationObserver(function () {
-      var container =
-        app.querySelector(".gradio-container") ||
-        (app.shadowRoot && app.shadowRoot.querySelector(".gradio-container"));
-      if (container) requestReveal();
+      if (app.querySelector("button, input, textarea")) requestReveal();
     });
     observer.observe(app, { childList: true, subtree: true });
 
