@@ -6,171 +6,116 @@ image: /images/posts/how-to-build-a-real-time-bear-detection-system/cover.png
 tags: ["AI", "vision", "low power", "camera traps"]
 ---
 
-In this blog post, we'll delve into the successful development of a real-time
-bear detection system, achieved through collaboration with the NGO
-[HackThePlanet](https://www.hack-the-planet.io). Our initiative aims to
-safeguard Romanian farms by deterring bear encroachments.
+In this post, we'll walk through the development of a real-time bear detection
+system, built with the NGO
+[HackThePlanet](https://www.hack-the-planet.io) to safeguard Romanian farms by
+deterring bears.
 
 > Implementing non-invasive methods to deter bears from approaching farms
 > and livestock holds promise in fostering harmonious relations between
 > humans and bears.
 
-For a comprehensive understanding of this project, please click on the pipeline
-overview below:
+For the full picture, here is the bear deterrence pipeline — tap through for the
+project:
 
-<a href='{{< ref "/projects/carpathian-bear-deterrence.md" >}}' title="Project Details">
-  <img src="./images/pipeline_overview.png" />
-</a>
+[![The bear deterrence pipeline: watch, detect, trigger, deter](/images/projects/human_wildlife_conflict_bear/diagrams/pipeline.svg)]({{< ref "/projects/carpathian-bear-deterrence.md" >}})
+*Watch → detect the bear on-device → trigger → deter it from the farm*
 
 ## Project Scope
 
-The computer vision model responsible for detecting
-bears will operate on a low-power microcontroller (such
-as the Raspberry Pi5). This necessitates swift operation
-and minimal power consumption during inference. Ensuring
-timely detection of approaching bears is critical, as
-their entry onto farms can result in predation on
-livestock, such as pigs. Achieving an extremely high
-recall rate is imperative to prevent such incidents.
-Additionally, since brown bear activities can occur day
-or night, the system must remain operational around the
-clock.
+The detection model runs on a low-power microcontroller (a Raspberry Pi 5), so
+it has to be fast and frugal at inference. Catching an approaching bear in time
+is critical — a bear on the farm can prey on livestock like pigs — so recall has
+to be very high. And since bears are active day and night, the system runs
+around the clock.
 
-![RPi5 Microcontroller](./images/rpi5.png)
-*Gallery / Raspberry Pi5 - Low Power device*
+![A Raspberry Pi board next to a credit card of the same size](/images/projects/early_forest_fire_detection/raspberry_pi_credit_card.svg)
+*A Raspberry Pi is no bigger than a credit card — small and low-power enough to run at the farm's edge*
 
-Maintaining a low false positive rate is essential for
-two key reasons: Firstly, to uphold trust among farmers
-who rely on the system daily, it must avoid triggering
-unnecessarily. Secondly, to prevent excessive power
-consumption when activating the bear deterrent
-component, false positives must be minimized.
+A low false-positive rate matters just as much, for two reasons: false alarms
+erode farmers' trust in a system they rely on daily, and each one needlessly
+fires the power-hungry bear-deterrent.
 
 ## Provided Dataset
 
 We have amassed a collection of camera trap images captured over the
 past years from forests near the farms in Romania.
 
-{{< gallery caption="Gallery / Camera trap pictures of bears in Romania, near the farms where the system is deployed" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear4.jpg" alt="Camera trap bear picture 4" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear1.jpg" alt="Camera trap bear picture 1" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear2.jpg" alt="Camera trap bear picture 2" >}}
-  {{< gallery_image src="/images/projects/human_wildlife_conflict_bear/bears/bear3.jpg" alt="Camera trap bear picture 3" >}}
-{{< /gallery >}}
+{{< image_carousel id="romania-bears" >}}
+  {{< carousel_image src="/images/projects/human_wildlife_conflict_bear/bears/bear4.jpg" alt="Camera-trap picture of a bear in Romania" caption="A bear near a Romanian farm, captured by a camera trap" >}}
+  {{< carousel_image src="/images/projects/human_wildlife_conflict_bear/bears/bear1.jpg" alt="Camera-trap picture of a bear in Romania" caption="Camera-trap image used to train the detector" >}}
+  {{< carousel_image src="/images/projects/human_wildlife_conflict_bear/bears/bear2.jpg" alt="Camera-trap picture of a bear in Romania" caption="A bear photographed at the edge of farmland" >}}
+  {{< carousel_image src="/images/projects/human_wildlife_conflict_bear/bears/bear3.jpg" alt="Camera-trap picture of a bear in Romania" caption="Night-time camera-trap capture of a bear" >}}
+{{< /image_carousel >}}
+*Camera-trap pictures of bears in Romania, near the farms where the system is deployed*
 
 ### Camera Traps
 
-The advent of camera traps has transformed wildlife observation and research,
-enabling unprecedented insights into behavioral ecology and facilitating
-citizen science census projects. These non-invasive monitoring tools offer the
-advantage of data collection without human presence, minimizing stress on the
-observed individuals. From the Arctic tundra to tropical rainforests, camera
-traps have proven versatile, facilitating the study of a diverse range of
-species. Initially designed for game scouting, camera traps have evolved
-significantly to become indispensable tools for wildlife research, driving
-advancements in design, functionality, and affordability.
+Camera traps have transformed wildlife research: a camera paired with a motion
+sensor collects data without anyone present, capturing animals with minimal
+disturbance. From the Arctic tundra to tropical rainforests, they've become an
+affordable, indispensable tool for studying a huge range of species.
 
-{{< gallery caption="Gallery / Camera Traps" >}}
+{{< gallery caption="Camera traps" >}}
   {{< gallery_image src="/images/projects/bear_identification/camera_traps/camera1.png" alt="Camera Trap 1" >}}
   {{< gallery_image src="/images/projects/bear_identification/camera_traps/camera3.jpg" alt="Camera Trap 2" >}}
 {{< /gallery >}}
 
 ### Exploratory Data Analysis
 
-Exploratory Data Analysis (EDA) is an approach to analyzing datasets to
-summarize their main characteristics, often employing visual methods. The
-primary goal of EDA is to uncover patterns, relationships, and anomalies in the
-data, which can then inform subsequent analysis or modeling tasks.
-
-EDA typically involves the following steps:
-
-1. __Data Collection__: Gathering the relevant dataset(s) from various sources.
-2. __Data Cleaning__: Identifying and handling missing values, outliers, and
-   inconsistencies in the data.
-3. __Summary Statistics__: Computing descriptive statistics such as mean,
-   median, mode, standard deviation, etc., to understand the central tendencies
-and variability of the data.
-4. __Data Visualization__: Creating visual representations of the data using
-   plots, charts, histograms, scatter plots, etc., to explore patterns,
-distributions, correlations, and trends within the data.
-5. __Exploratory Modeling__: Building simple models or using statistical
-   techniques to further understand relationships within the data.
-6. __Hypothesis Testing__: Formulating and testing hypotheses about the data to
-   validate assumptions or gain insights.
-7. __Iterative Analysis__: Iteratively exploring the data, refining analysis
-   techniques, and generating new hypotheses as insights emerge.
-
-EDA is a crucial initial step in any data analysis or modeling project as it
-helps analysts gain a deeper understanding of the dataset, identify potential
-challenges or biases, and inform subsequent analytical decisions. It provides a
-foundation for more advanced analyses, such as predictive modeling, hypothesis
-testing, or machine learning, by guiding feature selection, model building, and
-evaluation strategies.
+Before modelling, we explored the dataset closely — and it surfaced several
+data-quality issues worth fixing first.
 
 #### Data quality issues
 
-This section outlines various data quality issues identified during the
-Exploratory Data Analysis (EDA) process.
-
 ##### Bursts of Images
 
-Camera traps consist of a camera and a motion sensor.
-Upon detecting movement, the camera begins recording the
-scene, often resulting in numerous video frames capturing
-the same animal in a similar pose. It's crucial to ensure
-that these bursts of images are properly handled during
-data splitting. Failure to do so can result in train/test
-data leakage, potentially causing the model to
-inaccurately overreport its performance.
+When its motion sensor fires, a camera trap records a burst of frames — many
+near-identical shots of the same animal. These bursts must be kept together
+during the data split; otherwise near-duplicates leak across train and test,
+and the model overreports its performance.
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="./images/camera_traps/bursts/image1.jpg" loading="lazy" alt="camera trap bear picture 1" \>
-    <img src="./images/camera_traps/bursts/image2.jpg" loading="lazy" alt="camera trap bear picture 2" \>
-    <img src="./images/camera_traps/bursts/image3.jpg" loading="lazy" alt="camera trap bear picture 3" \>
-    <img src="./images/camera_traps/bursts/image4.jpg" loading="lazy" alt="camera trap bear picture 4" \>
+    <img src="./images/camera_traps/bursts/image1.jpg" loading="lazy" alt="camera trap bear picture 1">
+    <img src="./images/camera_traps/bursts/image2.jpg" loading="lazy" alt="camera trap bear picture 2">
+    <img src="./images/camera_traps/bursts/image3.jpg" loading="lazy" alt="camera trap bear picture 3">
+    <img src="./images/camera_traps/bursts/image4.jpg" loading="lazy" alt="camera trap bear picture 4">
   </div>
-  <em>Gallery / Camera trap pictures of bears in Romania, near the farms where the system is deployed - Same bear encounter</em>
+  <em>A single bear encounter — the camera fires a burst of near-identical frames</em>
 </div>
 
 ##### Corrupted Images
 
-We encountered numerous camera trap pictures that were corrupted and couldn't
-be loaded properly. As data is fundamental to constructing a robust machine
-learning system, it was disheartening to have to discard a significant portion
-of it due to the inability to recover these corrupted images.
+A sizeable share of the camera-trap pictures were corrupted and wouldn't load.
+We couldn't recover them, so they had to be discarded.
 
-#### Class Imbalance
+#### Class imbalance
 
-The dataset was heavily skewed towards bear images, with a prevalence
-approximately five times higher than that of images featuring other animals or
-empty frames.
+The dataset skews heavily towards bears — roughly five times more bear images
+than other animals or empty frames — which biases a model towards the majority
+class. Three techniques can help rebalance it:
 
-When dealing with imbalanced datasets in machine learning, where one class is
-significantly more prevalent than the others, it can lead to biased models that
-perform poorly on minority classes.
-
-##### Resampling Techniques
-
-- __Oversampling__: Increase the number of instances in the minority class by
-duplicating or generating new instances.
-- __Undersampling__: Decrease the number of instances in the majority class by
-randomly removing instances. This can help balance the class distribution.
-
-##### Data Augmentation
-
-Augment the minority class by introducing small variations or perturbations to
-the existing data, similar to techniques used in image processing.
+<div class="support__grid">
+  <div class="support__card">
+    <h3 class="support__card-title">Oversampling</h3>
+    <p class="support__card-description">Duplicate or synthesise extra examples of the minority class to even out the counts.</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">Undersampling</h3>
+    <p class="support__card-description">Randomly drop examples from the majority class to balance the distribution.</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">Data augmentation</h3>
+    <p class="support__card-description">Add small variations to minority-class images — our most effective option here.</p>
+  </div>
+</div>
 
 ![Data Augmentation](./images/data_augmentation/tencrop.png)
-*Data Augmentation / [TenCrop](https://pytorch.org/vision/main/generated/torchvision.transforms.TenCrop.html) - Generate 10 images from one to mitigate the class imbalance*
+*Data augmentation / [TenCrop](https://pytorch.org/vision/main/generated/torchvision.transforms.TenCrop.html) — generate 10 images from one to mitigate the class imbalance*
 
-We conducted thorough testing and evaluation of common resampling and
-data augmentation methods. In our experiments, we observed that data
-augmentation yielded particularly effective results when applied to
-empty frames and images featuring other animals. This approach allowed
-us to maintain a high number of bear images while introducing subtle
-variations into the dataset.
+In our experiments, augmenting the empty frames and other-animal images worked
+best: it kept plenty of bear images while adding variety to the rest.
 
 ### Data Annotation
 
@@ -182,10 +127,9 @@ traps should include generating bounding boxes that
 outline the location of each detected bear: (x, y, width,
 height).
 
-Both models successfully identified bears in camera trap images, but
-GroundingDINO, when prompted with the text "bear," exhibited higher accuracy.
-GroundingDINO also produced fewer false positives and false negatives.
-Consequently, we opted to utilize GroundingDINO to generate the dataset.
+Both models found bears in the camera-trap images, but GroundingDINO — prompted
+with "bear" — was more accurate, with fewer false positives and negatives, so we
+used it to generate the dataset.
 
 ![Annotations](./images/annotations/labels.jpg)
 
@@ -197,35 +141,19 @@ training our machine learning model.
 
 #### MegaDetector
 
-__MegaDetector__ is a deep learning-based object detection model
-developed by
-Microsoft AI for Earth. It is specifically designed for detecting
-animals in
-camera trap images, including rare or previously unseen species.
-MegaDetector
-employs state-of-the-art convolutional neural networks (CNNs) to
-automatically
-identify and localize animals within images, facilitating large-scale
-wildlife monitoring and conservation efforts.
-
-<a href="https://github.com/microsoft/CameraTraps/blob/main/megadetector.md">
-  <img src="./images/pytorch_wildlife.png" alt="MegaDetector and Pytorch Wildlife" />
-</a>
-<br/>
-<br/>
+[__MegaDetector__](https://github.com/microsoft/CameraTraps/blob/main/megadetector.md)
+is a camera-trap animal detector from Microsoft AI for Earth, built to localize
+animals — including rare species — across large-scale monitoring datasets.
 
 #### GroundingDINO
 
 <a href="https://github.com/IDEA-Research/GroundingDINO">
   <img style="float: left; margin-right: 10px; max-height: 120px;" src="./images/grounding_dino_logo.png" alt="GroundingDINO Logo" />
 </a>
-<b>GroundingDINO</b> is a multimodal framework that combines Vision
-Transformers (ViTs) with language grounding for image-text matching tasks. It
-leverages the power of transformer-based models for both image and text
-modalities, enabling efficient processing of visual and textual information. By
-grounding textual descriptions with visual features, GroundingDINO achieves
-improved performance in tasks such as image retrieval and cross-modal
-understanding.
+<b>GroundingDINO</b> is a multimodal model that combines a Vision Transformer
+(ViT) with language grounding. By tying a text prompt to visual features, it
+detects and localizes objects from a free-text description rather than a fixed
+list of classes — so prompting it with "bear" is enough to label the dataset.
 
 <br style="clear:both;"/>
 <br />
@@ -234,45 +162,36 @@ understanding.
 
 ### Data split
 
-The annotated dataset has been divided into three sets: train,
-validation, and test, with the following ratios: 80%, 10%, and 10%,
-respectively. To prevent any potential data leakage between training and
-testing phases, we partitioned the data based on camera reference and
-date information extracted from the picture's exif metadata
+We split the annotated dataset 80/10/10 into train, validation, and test. To
+avoid leakage, we partitioned by camera reference and capture date (from each
+picture's EXIF metadata), keeping a camera's bursts together in one split.
 
 ### Image Classification vs Object Detection
 
-How might we approach modeling this dataset? One option is to conceptualize the
-problem as a binary image classification task, where the goal is to predict
-whether an image contains a bear or not. Alternatively, it could be formulated
-as an object detection task, aiming to predict bounding boxes that delineate
-the location of any detected bears within the image.
+There are two ways to frame this. As **image classification**, we'd simply
+predict whether an image contains a bear. As **object detection**, we'd predict
+bounding boxes around any bears in the image.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="./images/cv_tasks/image_classification.png" loading="lazy" alt="Image Classification" \>
-    <img src="./images/cv_tasks/object_detection.png" loading="lazy" alt="Object Detection" \>
-  </div>
-  <em>Image Classification (left) vs Object Detection (right)</em>
-</div>
+![Image classification assigns a single label to the whole image](./images/cv_tasks/image_classification.png)
+*Image classification — one label for the whole image*
 
-Both approaches have their advantages and drawbacks. Initially, when we opted
-for the straightforward image classification task to model the dataset, we
-encountered an issue: The model learned to rely on recurring image backgrounds
-captured by the fixed camera traps to make predictions. This tendency could
-potentially hinder generalization when deploying the system. However, framing
-the problem as an object detection task resulted in improved performance.
+![Object detection draws bounding boxes around each detected bear](./images/cv_tasks/object_detection.png)
+*Object detection — a bounding box around each bear*
+
+We started with classification, but the model learned to cue off the fixed
+camera-trap backgrounds rather than the bears themselves — which would hurt
+generalization in the field. Reframing it as object detection fixed that and
+performed better.
 
 ### YOLOv8
 
 #### Overview
 
-We opted to utilize a pretrained
-[YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tune it for
-our specific object detection task. Renowned for its speed, accuracy, and
-user-friendly interface, YOLOv8 stands out as an ideal solution for various
-tasks, including object detection, tracking, instance segmentation, image
-classification, and pose estimation.
+We took a pretrained
+[YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tuned it for
+our object detection task. YOLOv8 is fast, accurate, and easy to work with, and
+it handles a range of tasks — object detection, tracking, instance
+segmentation, image classification, and pose estimation.
 
 ![YOLOv8 CV Tasks](./images/yolov8_tasks.png)
 *YOLOv8 Computer Vision Tasks*
@@ -294,59 +213,50 @@ accuracy) and processing speed.
 
 #### Training
 
-We conducted training over 200 epochs on the training set, with
-continuous monitoring of model performance using mean Intersection over
-Union (IoU), Box Precision, and Box Recall as primary metrics, utilizing
-the validation set. To enhance model robustness and generalization, we
-employed various common data augmentation techniques, including random
-horizontal flipping, random cropping, mosaic image aggregation,
-rotation, color filtering, among others.
+We trained for 200 epochs, tracking mean IoU, box precision, and box recall on
+the validation set throughout. To improve robustness, we applied the usual
+augmentations — horizontal flips, random crops, mosaic aggregation, rotation,
+colour jitter, and more.
 
 ![Data Augmentation](./images/data_augmentation/mosaic_rotation.jpg)
-*Data augmentation during training - Mosaic, rotation, etc*
+*Data augmentation during training — mosaic, rotation, and more*
 
-Throughout the training process, these metrics were continuously
-evaluated on both the training and validation sets.
-
-![Training Results](./images/training_results.png)
+![Training Results](./images/training_results.png#noround)
 
 #### Evaluation
 
-The evaluation is conducted on the test set, and the performance is
-reported using a confusion matrix. In this evaluation, the model acts as
-a binary classifier: if the probability of a bear being localized
-exceeds a specific threshold, the image is classified as containing a
-bear.
+On the test set we report a confusion matrix, treating the model as a binary
+classifier: if its best bear detection clears a probability threshold, the image
+counts as containing a bear.
 
-![Confusion Matrix Normalized - imgsz 1024](./images/speed_accuracy_tradeoff/1024/confusion_matrix_normalized.png)
+![Confusion Matrix Normalized - imgsz 1024](./images/speed_accuracy_tradeoff/1024/confusion_matrix_normalized.png#noround)
 *Confusion Matrix Normalized - imgsz 1024*
 
 ### Inference Speed vs Model Accuracy
 
-The real-time requirement of this system necessitates careful consideration of
-the tradeoff between inference speed and model accuracy. Opting for a larger
-model operating on a full image frame of the video feed can deliver superior
-accuracy but at the expense of slower processing speed. Evaluating this
-tradeoff was crucial in selecting the most suitable model for the task.
+Running in real time forces a tradeoff between speed and accuracy: a larger
+model on the full frame is more accurate but slower. Weighing the two was key to
+picking the right model.
 
-![Inference Speed vs Model Accuracy](./images/speed_accuracy_tradeoff/tradeoff.png)
+![Inference Speed vs Model Accuracy](./images/speed_accuracy_tradeoff/tradeoff.png#noround)
 *Inference speed and model accuracy tradeoff on the Raspberry Pi 5*
 
 ## Conclusion
 
-This guide has outlined the methodology employed to construct an
-advanced Machine Learning model for real-time bear detection. The
-Exploratory Data Analysis phase meticulously addressed various data
-quality concerns within the dataset and examined multiple modeling
-strategies. Utilizing GroundingDINO proved instrumental in swiftly
-annotating the camera trap images. Furthermore, we underscored the
-significance of striking a balance between speed and accuracy when
-selecting a model suitable for deployment on low-power devices.
+We've walked through building a real-time bear detector: cleaning up the
+dataset, using GroundingDINO to annotate it quickly, and balancing speed against
+accuracy to land on a model that runs on a low-power device. The same approach
+extends well beyond bears to other human-wildlife conflicts.
 
-Notably, this framework possesses the potential to transcend bear
-management, offering promising avenues for mitigating human-wildlife
-conflicts across a spectrum of species.
-
-One can try out the model from the [live demo]({{< ref "/demos/human_wildlife_bear_conflict" >}}) or directly from the snippet below:
-
-{{< hf_space "achouffe-bear-detection" >}}
+<div class="about-cta">
+  <h3 class="about-cta__title">Explore the project</h3>
+  <p class="about-cta__description">Try the detector on real camera-trap images, or dive into the full Carpathian bear deterrence project and how it works in the field.</p>
+  <div class="button--cta-container">
+    <a class="link-no-decoration" href="/demos/human_wildlife_bear_conflict/">
+      <button class="button button--middle">Try the demo</button>
+    </a>
+    <a class="link-no-decoration" href="/projects/carpathian-bear-deterrence/">
+      <button class="button button--middle">View the project</button>
+    </a>
+  </div>
+</div>
