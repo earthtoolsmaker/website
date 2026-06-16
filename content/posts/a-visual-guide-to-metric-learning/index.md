@@ -41,6 +41,13 @@ How do we measure "close"? Two choices dominate — tap each:
 
 ## Shaping the space: a short history of losses
 
+The loss function decides how the space gets shaped. The ideas built on each other — tap each:
+
+{{< threats "metric_losses" >}}
+
+![From pairs to triplets to angular margins](./images/loss-intuition.svg)
+*Pairs pull and push; triplets compare three at once; ArcFace separates identities by angle.*
+
 ## Making it work in practice
 
 ## Where this shows up in conservation
