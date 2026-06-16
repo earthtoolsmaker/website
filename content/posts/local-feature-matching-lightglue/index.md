@@ -4,9 +4,21 @@ description: A comprehensive examination of using local feature matching for ind
 date: 2024-12-09
 image: /images/posts/local-feature-matching-lightglue/cover.png
 tags: ["AI", "vision", "identification", "local feature"]
+feature_matchers:
+  - name: Brute-Force
+    desc: "Computes the distance between every pair of descriptors and keeps the closest. Exact and simple, but the cost grows quickly with the number of keypoints."
+  - name: SuperGlue
+    desc: "A neural network that matches features using both local descriptors and global context, making it robust to occlusions and changing viewpoints — state of the art, but heavy."
+  - name: LightGlue
+    desc: "A lightweight, adaptive successor to SuperGlue: it keeps the accuracy while running fast enough for real-time use, even on modest hardware."
+match_filters:
+  - name: Ratio Test
+    desc: "Lowe's test, from SIFT: compare the closest match's distance to the second-closest. If the ratio is small enough, the match is distinctive enough to trust."
+  - name: RANSAC
+    desc: "Random Sample Consensus — fits a geometric transformation to the matches and discards the outliers that don't agree with it."
 ---
 
-In this blog post, we will explore a powerful technique widely used for
+In this post, we will explore a powerful technique widely used for
 identifying individuals across various species. This method leverages unique
 physical markings that remain relatively stable throughout an organism's
 lifetime, making it effective for species with distinct patterns. For instance,
@@ -40,84 +52,99 @@ image matching is local feature matching, which focuses on identifying and
 matching distinctive features in images.
 
 ![LightGlue Matching Trout](./images/matching/lightglue_matching_trout_1.png)
-*Gallery / Local Feature Matching on trout spot patterns*
+*Local feature matching on trout spot patterns*
+
+End to end, identifying an individual comes down to four steps:
+
+![The trout identification pipeline in four steps: photo, normalize, keypoints, match](/images/projects/trout_identification/diagrams/pipeline.svg)
+*From a field photo to an identification, at a glance*
+
+Here is that same pipeline on a real cutthroat trout — from a raw field photo
+to a confirmed match against another sighting of the same fish:
+
+![A raw field photo of a cutthroat trout lying in a measuring trough](/images/projects/trout_identification/images/raw/1.jpg)
+*1 · Photo — a raw photo straight from the field*
+
+![The same trout segmented from its background and straightened to a standard pose](/images/projects/trout_identification/images/normalized/1.webp)
+*2 · Normalize — the fish is cut out and straightened so every image is comparable*
+
+![The straightened trout with distinctive keypoints marked as blue dots across its spot pattern](/images/projects/trout_identification/images/keypoints/1.webp)
+*3 · Detect — distinctive keypoints are found all over the spot pattern*
+
+![Two photos of the same trout with matching keypoints joined by green lines](/images/projects/trout_identification/images/matches/match_1.webp)
+*4 · Match — those keypoints line up with another photo of the same trout, confirming the individual*
 
 ### Overview of Local Feature Matching
 
 Local feature matching involves several key steps:
 
-1. __Feature Detection__: The first step is to detect keypoints in the images.
-   Keypoints are specific points in the image that are likely to be stable and
-distinctive. Common classical algorithms for feature detection include:
-   - __Harris Corner Detector__: Identifies corners in the image.
-   - __SIFT (Scale-Invariant Feature Transform)__: Detects keypoints that are
-   invariant to scale and rotation. It focuses on areas of high contrast. It is
-   the Gold Standard for classical locale feature extraction.
-   - __DISK (Dense Image Keypoint)__: A method that generates dense keypoints
-   across the image, focusing on capturing a wide range of features.
-   - __ALIKED (A Local Image Keypoint Descriptor)__: A descriptor that
-   emphasizes local image characteristics, providing robust matching
-   capabilities.
+![The five stages of local feature matching: detect keypoints, describe them, match across images, filter, and verify geometry](./images/pipeline.svg)
+*The local feature matching pipeline, stage by stage*
 
-Current state-of-the-art methods effectively utilize deep learning-based
-features; however, classical methods continue to be strong contenders for
-feature extraction.
+**1 · Feature Detection** — find keypoints in each image: specific points
+likely to be stable and distinctive. Common classical detectors include:
 
-2. __Feature Description__: Once keypoints are detected, the next step is to
-   describe the local image patches around these keypoints. This is done using
-feature descriptors that capture the appearance of the keypoints. Common
-descriptors include:
-   - __SIFT Descriptors__: Provide a vector representation of the local image
-   patch.
+- __Harris Corner Detector__: Identifies corners in the image.
+- __SIFT (Scale-Invariant Feature Transform)__: Detects keypoints invariant to
+  scale and rotation, focusing on areas of high contrast — the gold standard
+  for classical local feature extraction.
+- __DISK (Dense Image Keypoint)__: Generates dense keypoints across the image,
+  capturing a wide range of features.
+- __ALIKED (A Local Image Keypoint Descriptor)__: Emphasizes local image
+  characteristics for robust matching.
+
+State-of-the-art methods now lean on deep-learning features, but classical
+methods remain strong contenders for feature extraction.
+
+**2 · Feature Description** — describe the patch around each keypoint as a
+vector that captures its appearance. Common descriptors include:
+
+- __SIFT Descriptors__: A vector representation of the local image patch.
 
 ![SIFT Descriptors](./images/sift/sift_descriptors.png)
 *SIFT descriptors describe the direction and magnitude of gradients*
 
-   - __DISK Descriptors__: Work in conjunction with the DISK keypoints to
-   provide a rich representation of local features.
-   - __SuperPoint__: A deep learning-based approach that generates both
-   keypoints and descriptors in a single network, providing high-quality
-   matches and robustness to various transformations.
+- __DISK Descriptors__: Work in conjunction with the DISK keypoints for a rich
+  representation of local features.
+- __SuperPoint__: A deep-learning approach that produces both keypoints and
+  descriptors in a single network, robust to many transformations.
 
 ![SuperPoint - Compute Keypoints and Descriptors in a single forward pass](./images/superpoint/superpoint_matching.png)
 *Superpoint Deep Learning Model Architecture - Computes keypoints and descriptors in a single forward pass*
 
-3. __Feature Matching__: After extracting keypoints and their descriptors from
-   both images, the next step is to match these features. This can be done
-using various techniques:
-   - __Brute-Force Matching__: Computes the distance between all pairs of
-   descriptors and finds the best matches. This is computationally expensive
-   but straightforward.
-   - __SuperGlue__: A state-of-the-art method that uses a neural network to
-   perform feature matching. It takes advantage of both local features and
-   global context to produce high-quality matches, making it robust to
-   occlusions and varying viewpoints.
-   - __LightGlue__: A lightweight alternative to SuperGlue, designed for
-   real-time applications. It maintains high matching accuracy while being
-   computationally efficient, making it suitable for scenarios where speed is
-   critical.
+**3 · Feature Matching** — with keypoints and descriptors from both images,
+pair them up. Tap each approach to compare:
 
-4. __Filtering Matches__: Not all matches are reliable, so filtering techniques
-   are applied to improve the quality of matches. Common methods include:
-   - __Ratio Test__: Proposed by David Lowe for SIFT, this method compares the
-   distance of the closest match to the distance of the second closest match.
-   If the ratio is below a certain threshold, the match is considered reliable.
-   - __RANSAC (Random Sample Consensus)__: A robust method to estimate the
-   transformation between matched features while filtering out outliers.
+{{< threats "feature_matchers" >}}
 
-5. __Geometric Verification__: After obtaining a set of matches, geometric
-   verification is often performed to ensure that the matches are consistent
-with a particular geometric transformation (e.g., homography, affine
-transformation). This step helps to eliminate false matches and refine the
-matching results.
+**4 · Filtering Matches** — not every match is reliable, so filters weed out
+the weak ones:
+
+{{< threats "match_filters" >}}
+
+**5 · Geometric Verification** — finally, check that the surviving matches are
+consistent with a single geometric transformation (a homography or affine
+warp). This eliminates false matches that look similar but don't fit the
+overall geometry, refining the result.
 
 ### Applications of Local Feature Matching
 
 Local feature matching is widely used in various applications, including:
 
-- __Image Stitching__: Combining multiple images to create a panoramic view.
-- __Object Recognition__: Identifying and classifying objects within images.
-- __3D Reconstruction__: Creating 3D models from multiple 2D images.
+<div class="support__grid">
+  <div class="support__card">
+    <h3 class="support__card-title">Image stitching</h3>
+    <p class="support__card-description">Combining multiple overlapping images into a single panoramic view.</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">Object recognition</h3>
+    <p class="support__card-description">Identifying and classifying objects within images by their distinctive features.</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">3D reconstruction</h3>
+    <p class="support__card-description">Building 3D models from multiple 2D images of the same scene.</p>
+  </div>
+</div>
 
 {{< image_carousel id="trout-matching-gallery" >}}
   {{< carousel_image src="./images/matching/match_1.webp" alt="Trout matching example 1" caption="Local feature matching identifying keypoints between two images of the same trout" >}}
@@ -139,7 +166,7 @@ suitable for scenarios where computational resources are limited or where speed
 is critical, such as in mobile devices or embedded systems.
 
 ![LightGlue Example](./images/lightglue/lightglue_easy_hard.jpg)
-*Gallery / LightGlue example from their [GitHub repository](https://github.com/cvg/LightGlue)*
+*LightGlue example from their [GitHub repository](https://github.com/cvg/LightGlue)*
 
 The model operates by first extracting keypoints and their descriptors from
 input images, similar to traditional feature matching methods. However, it then
@@ -178,17 +205,6 @@ Using these more advanced metrics, one can gain deeper insights into the
 overall effectiveness and discriminative power of the LightGlue matcher, beyond
 a basic analysis of match lengths.
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="./images/metrics/matcher_metric_auc.png" loading="lazy" title="AUC metric to compare two individuals">
-    <img src="./images/metrics/matcher_metric_wasserstein.png" loading="lazy" title="Wasserstein distance to compare two individuals">
-  </div>
-  <em>
-      Left: AUC scores when comparing different individuals | Right: Wasserstein scores when comparing different individuals.<br/>
-      0 and 1 are the same individual different pictures while 2 is a different individual.
-   </em>
-</div>
-
 We found that the AUC (Area Under Curve) and Wasserstein Distance metrics have
 very similar discriminative power when applied to the LightGlue matching score
 distributions. This suggests that either metric can be used to effectively
@@ -212,32 +228,20 @@ exclusive as possible, thereby enhancing the accuracy and reliability of
 individual identification. This thorough analysis will guide us in selecting
 the best extractor for our specific application.
 
-| Extractor Type | n_keypoints | Metric         | Precision | Recall | F1   | Distributions |
-|:--------------:|:-----------:|:--------------:|:---------:|:------:|:----:|:----:|
-| SIFT           | 512         | AUC            |  0.89     | 0.97   | 0.93 | ![Plot](./images/lightglue/lightglue_sift_512_auc.png) |
-| SIFT           | 1024        | AUC            |  0.91     | 0.99   | 0.95 | ![Plot](./images/lightglue/lightglue_sift_1024_auc.png) |
-| SIFT           | 512         | Wasserstein    |  0.88     | 0.95   | 0.91 | ![Plot](./images/lightglue/lightglue_sift_512_wasserstein.png) |
-| SIFT           | 1024        | Wasserstein    |  0.91     | 0.99   | 0.95 | ![Plot](./images/lightglue/lightglue_sift_1024_wasserstein.png) |
-| DISK           | 512         | AUC            |  0.91     | 0.99   | 0.95 | ![Plot](./images/lightglue/lightglue_disk_512_auc.png) |
-| DISK           | 1024        | AUC            |  0.91     | 0.98   | 0.94 | ![Plot](./images/lightglue/lightglue_disk_1024_auc.png) |
-| DISK           | 512         | Wasserstein    |  0.91     | 0.99   | 0.95 | ![Plot](./images/lightglue/lightglue_disk_512_wasserstein.png) |
-| DISK           | 1024        | Wasserstein    |  0.91     | 0.98   | 0.94 | ![Plot](./images/lightglue/lightglue_disk_1024_wasserstein.png) |
-| ALIKED         | 512         | AUC            |  0.91     | 0.99   | 0.95 | ![Plot](./images/lightglue/lightglue_aliked_512_auc.png) |
-| ALIKED         | 1024        | AUC            |  0.91     | 0.99   | 0.95 | ![Plot](./images/lightglue/lightglue_aliked_1024_auc.png) |
-| ALIKED         | 512         | Wasserstein    |  0.91     | 0.99   | 0.95 | ![Plot](./images/lightglue/lightglue_aliked_512_wasserstein.png) |
-| ALIKED         | 1024        | Wasserstein    |  0.91     | 0.99   | 0.95 | ![Plot](./images/lightglue/lightglue_aliked_1024_wasserstein.png) |
-| SUPERPOINT     | 512         | AUC            |  0.91     | 0.99   | 0.95 | ![Plot](./images/lightglue/lightglue_superpoint_512_auc.png) |
-| SUPERPOINT     | 1024        | AUC            |  0.91     | 0.99   | 0.95 | ![Plot](./images/lightglue/lightglue_superpoint_1024_auc.png) |
-| SUPERPOINT     | 512         | Wasserstein    |  0.91     | 0.99   | 0.95 | ![Plot](./images/lightglue/lightglue_superpoint_512_wasserstein.png) |
-| SUPERPOINT     | 1024        | Wasserstein    |  0.91     | 0.99   | 0.95 | ![Plot](./images/lightglue/lightglue_superpoint_1024_wasserstein.png) |
+| Extractor  | Precision | Recall | F1   |
+|:----------:|:---------:|:------:|:----:|
+| SIFT       | 0.89      | 0.97   | 0.93 |
+| DISK       | 0.91      | 0.99   | 0.95 |
+| ALIKED     | 0.91      | 0.99   | 0.95 |
+| SuperPoint | 0.91      | 0.99   | 0.95 |
 
-As illustrated in the table above, SIFT exhibits lower performance compared to
-the other three feature extractor types. Notably, the parameter `n_keypoints`
-can be reduced to 512 without compromising accuracy. This adjustment not only
-streamlines the feature extraction process but also accelerates the comparison
-of image pairs, as the model processes a smaller input size. By optimizing this
-parameter, we can enhance efficiency while maintaining the integrity of the
-results.
+<p class="media-caption">Precision, recall, and F1 for each extractor at 512 keypoints (AUC metric), measured on 250 matching and 250 non-matching trout pairs.</p>
+
+SIFT trails the other three extractors, and the gap widens as you reduce the
+keypoint budget. The deep-learning extractors (DISK, ALIKED, SuperPoint) hold
+up well at just 512 keypoints — no better at 1024 — so the smaller budget is
+the better choice: it streamlines extraction and speeds up every pairwise
+comparison without costing accuracy.
 
 The next step involves selecting a threshold to identify a new individual. This
 threshold represents a critical point in the metric score on the distribution
@@ -277,35 +281,20 @@ performance of the LightGlue Matcher model on the GPU.
 
 The table below summarizes the results of our benchmark.
 
-| Hardware       | Extractor Type | number keypoints | Batch Size | Extraction (ms) | Identification | Pair processing time (ms) |
-|:--------------:|:--------------:|:----------------:|:----------:|:---------------:|:--------------:|:-------------------------:|
-| __CPU__        | ALIKED         | 1024             | 1          | 5400            | 1h5min         | 1418                      |
-| 1xGPU (T4)     | ALIKED         | 1024             | 1          | 129             | 1min22s        | 29.8                      |
-| 1xGPU (T4)     | ALIKED         | 1024             | 8          | 129             | 1min8s         | 24.7                      |
-| 1xGPU (T4)     | ALIKED         | 1024             | 16         | 129             | 1min6s         | 24.0                      |
-| 1xGPU (T4)     | ALIKED         | 1024             | 32         | 129             | 1min4s         | 23.2                      |
-| 1xGPU (T4)     | ALIKED         | 1024             | __64__     | 129             | 1min3s         | 22.9                      |
-| 2xGPU (T4)     | ALIKED         | 1024             | 64         | 129             | 35s            | 12.7                      |
-| __4xGPU__ (T4) | ALIKED         | 1024             | 64         | 129             | 20s            | __7.3__                   |
-| 1xGPU (T4)     | SIFT           | 1024             | 1          | 196             | 1min14s        | 26.9                      |
-| 1xGPU (T4)     | SIFT           | 1024             | 64         | 196             | 53s            | 19.3                      |
-| 1xGPU (T4)     | SIFT           | 512              | 64         | 196             | 38s            | 13.8                      |
-| 1xGPU (T4)     | SIFT           | 256              | 64         | 196             | 32s            | 11.6                      |
-| 1xGPU (T4)     | SIFT           | __128__          | 64         | 196             | 28s            | __10.2__                  |
-| 1xGPU (T4)     | SUPERPOINT     | 1024             | 1          | 160             | 1min17s        | 28.0                      |
-| 1xGPU (T4)     | SUPERPOINT     | 1024             | 64         | 160             | 58s            | 21.1                      |
-| 1xGPU (T4)     | DISK           | 1024             | 1          | 202             | 1min23s        | 30.2                      |
-| 1xGPU (T4)     | DISK           | 1024             | 64         | 202             | 1min12s        | 26.2                      |
+| Hardware       | Extractor | Keypoints | Batch | Identification | ms / pair |
+|:--------------:|:---------:|:---------:|:-----:|:--------------:|:---------:|
+| __CPU__        | ALIKED    | 1024      | 1     | 1h 5min        | 1418      |
+| 1×GPU (T4)     | ALIKED    | 1024      | 1     | 1min 22s       | 29.8      |
+| 1×GPU (T4)     | ALIKED    | 1024      | 64    | 1min 3s        | 22.9      |
+| __4×GPU__ (T4) | ALIKED    | 1024      | 64    | 20s            | __7.3__   |
+| 1×GPU (T4)     | SIFT      | 1024      | 64    | 53s            | 19.3      |
+| 1×GPU (T4)     | SIFT      | __128__   | 64    | 28s            | __10.2__  |
 
-As demonstrated, using a larger __batch size__, reducing the __number of
-keypoints__ to match, or utilizing __multiple GPUs__ can significantly enhance
-processing speed. Notably, employing a GPU can yield up to a 50x increase in
-performance compared to a CPU.
-
-The different matchers run at approximately the same speed. With a batch size
-of 64, it takes between 20 and 30 milliseconds to match two sets of keypoints
-and descriptors. This provides a good indicator for the total time it takes,
-depending on the size of the known corpus.
+The pattern is clear: a GPU is the single biggest win — roughly **50× faster
+than a CPU** — and from there, a larger __batch size__, __fewer keypoints__, or
+__more GPUs__ each shave off more time. The matchers themselves run at roughly
+the same speed; at batch size 64 a single pair takes 20–30 ms, which sets the
+budget for identifying against the whole corpus.
 
 | Dataset size | Comparisons time (ms) |
 |:------------:|:---------------------:|
@@ -316,11 +305,9 @@ depending on the size of the known corpus.
 | 10.000       | 3min20s               |
 | 100.000      | 33min20s              |
 
-<span class="gallery-box">
-  <span class="gallery"></span>
-  <em>This method scales linearly with the size of the dataset. It can become impractical for large datasets.</em>
-</span>
-<br/>
+![Log-log chart of identification time against corpus size: a straight line showing time grows in direct proportion to the number of known individuals, becoming impractical at large scale](./images/scaling.svg#noround)
+
+<p class="media-caption">Identification time scales linearly with the corpus size — a straight line on these log-log axes. Each 10× more individuals costs 10× more time, which becomes impractical for large datasets.</p>
 
 Running LightGlue on a CPU is generally impractical, as it requires an
 excessive amount of time to process even a single input image. The optimal
@@ -344,8 +331,7 @@ However, conservationists can leverage this non-invasive technology to
 accurately re-identify individuals, making it a valuable tool for wildlife
 monitoring and conservation efforts.
 
-One can try out the model from the [ML pipeline that performs Local Feature
-Matching on trout spot patterns]({{< ref "/demos/trout_identification" >}}) or
-directly from the snippet below:
+You can try the model yourself on real trout spot patterns — the interactive
+demo runs the full local feature matching pipeline right in your browser.
 
-{{< hf_space "earthtoolsmaker-trout-reid" >}}
+{{< demo_cta "/demos/trout_identification/" >}}

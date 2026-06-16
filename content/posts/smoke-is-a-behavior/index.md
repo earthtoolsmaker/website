@@ -33,7 +33,7 @@ flood of false alarms.
 
 But crop to the candidate region and lay the same sequence out over time:
 
-![The same sequence cropped to the candidate region: the smoke puff appears, thickens, and drifts across ten patches](./images/avinyonet_patches.jpg)
+![The same sequence cropped to the candidate region: the smoke puff appears, thickens, and drifts across ten patches](./images/avinyonet_patches.jpg#noround)
 
 Now it's unmistakable. The puff appears, thickens, and drifts — anchored to
 one spot on the terrain. Clouds scud, fog banks roll, dust settles; smoke
@@ -55,7 +55,7 @@ deliberately *permissive* settings: a low confidence threshold and a high
 inference resolution, because distant plumes need both sensitivity and
 pixels.
 
-![Four frames of a growing smoke plume, each with a red YOLO detection box following it](./images/brison_frame_strip.jpg)
+![Four frames of a growing smoke plume, each with a red YOLO detection box following it](./images/brison_frame_strip.jpg#noround)
 
 False positives are expected and tolerated here. A cloud edge or a dust patch
 may well get a box — the detector's job is only to nominate *candidates*.
@@ -86,7 +86,7 @@ Raw tubes are messy, so three cleanup passes follow:
 Here are all three passes acting on a real sequence — each row is a candidate
 tube, each dot a detection:
 
-![Two timeline panels: eight raw candidate tubes, then four kept tubes after filtering, merging, and gap interpolation](./images/brison020_tube_stages.png)
+![Two timeline panels: eight raw candidate tubes, then four kept tubes after filtering, merging, and gap interpolation](./images/brison020_tube_stages.png#noround)
 
 The tracker initially sees one plume as three fragments — the detector
 dropped it twice. The merge pass recognizes them as the same plume and fuses
@@ -95,7 +95,7 @@ flickers (gray) never make it past the filter. And here is why interpolation
 matters — the crops along the merged tube, green borders for real
 detections, orange for interpolated boxes:
 
-![Six crops along the merged tube: the smoke stays plainly visible even on the frames where the detector lost it](./images/brison020_gap_crops.jpg)
+![Six crops along the merged tube: the smoke stays plainly visible even on the frames where the detector lost it](./images/brison020_gap_crops.jpg#noround)
 
 The smoke never actually disappears — YOLO simply lost it for a few frames.
 The interpolated boxes keep cropping the same spot, so the classifier's view
@@ -109,7 +109,7 @@ For each tube, every frame is cropped to a square patch around the candidate
 region. The obvious way to do this is to crop each frame to its own
 detection box. It looks like this:
 
-![Seven patches cropped to the per-frame boxes: the framing jumps and re-zooms on every frame](./images/brison_patches_unstabilized.jpg)
+![Seven patches cropped to the per-frame boxes: the framing jumps and re-zooms on every frame](./images/brison_patches_unstabilized.jpg#noround)
 
 The detection box grows and shifts with the plume, so the framing re-zooms
 and pans on every frame. The camera is bolted to a mast — yet the
@@ -126,7 +126,7 @@ nearby clouds), squared off, and used to crop *every* frame identically.
 
 Same tube, same frames, stabilized — this is the actual classifier input:
 
-![Seven stabilized 224 by 224 patches: the hillside holds perfectly still while the smoke plume grows](./images/brison_patches.jpg)
+![Seven stabilized 224 by 224 patches: the hillside holds perfectly still while the smoke plume grows](./images/brison_patches.jpg#noround)
 
 The hillside now holds still, and the only thing left moving is the smoke.
 Whatever the classifier learns about change over time, it will be learning
@@ -152,7 +152,7 @@ pixels — is now twenty vectors.
 Here is that matrix for the tube above, frames down the side, embedding
 dimensions across:
 
-![Heatmap of the 20 by 384 embedding matrix the temporal head receives, showing strong vertical striping](./images/brison_head_input.png)
+![Heatmap of the 20 by 384 embedding matrix the temporal head receives, showing strong vertical striping](./images/brison_head_input.png#noround)
 
 The vertical striping is the stabilization paying off, made visible:
 dimensions encoding the static scene stay nearly constant down each column,
@@ -174,7 +174,7 @@ interpolated gap boxes carry confidence zero, a tube the detector kept
 losing is automatically discounted), and the **number of tubes** in the
 sequence (busy scenes are trusted less).
 
-![Two panels: calibrated probability curves for three tube contexts, and the decision boundary over the logit and tube-length plane](./images/calibrator_curves.png)
+![Two panels: calibrated probability curves for three tube contexts, and the decision boundary over the logit and tube-length plane](./images/calibrator_curves.png#noround)
 
 The left panel shows the same raw logit converting to very different
 probabilities depending on the tube behind it: a long, consistently-detected,
@@ -215,6 +215,8 @@ released model — the [illustrated technical
 documentation](https://github.com/pyronear/temporal-model/tree/main/docs)
 goes one level deeper, down to the functions and config keys, and every
 figure is regenerable from the scripts checked in next to it.
+
+{{< demo_cta "/demos/temporal_smoke_verification/" >}}
 
 *This work is part of our ongoing collaboration with
 [Pyronear](https://pyronear.org) — read [how the model was selected]({{< ref

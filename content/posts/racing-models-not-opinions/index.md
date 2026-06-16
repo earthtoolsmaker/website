@@ -168,7 +168,7 @@ unmistakable when cropped to the candidate region and laid out over time:
 
 ![A nearly invisible distant smoke plume in a full camera frame, with detection and crop windows marked](./images/avinyonet_annotated.jpg)
 
-![The same sequence cropped to the candidate region and laid out over time, where the smoke is clearly visible and growing](./images/avinyonet_patches.jpg)
+![The same sequence cropped to the candidate region and laid out over time, where the smoke is clearly visible and growing](./images/avinyonet_patches.jpg#noround)
 *Top: the hard case — the full frame looks empty. Bottom: the same sequence
 as the temporal model sees it. How this works end to end deserves its own
 post — coming soon.*
@@ -227,6 +227,8 @@ In the next post, we'll open up the winning model itself — how YOLO boxes
 become *tubes*, why stabilized cropping is the trick that makes the temporal
 signal legible, and how a DINOv2 backbone and a tiny transformer head learn
 that smoke is a behavior, not an appearance.
+
+{{< demo_cta "/demos/temporal_smoke_verification/" >}}
 
 *Interested in this kind of applied ML R&D for your conservation
 organization? [Get in touch]({{< ref "/contact" >}}).*

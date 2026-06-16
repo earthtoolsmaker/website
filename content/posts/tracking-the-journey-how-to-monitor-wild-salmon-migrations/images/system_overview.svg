@@ -1,0 +1,70 @@
+<svg viewBox="0 0 760 560" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 1 L9 5 L0 9 Z" fill="#e29578"/>
+  </marker>
+  <style>
+    .lbl { font-size: 15px; font-weight: 700; fill: #1f2937; }
+    .sig { animation: sig 2.4s ease-in-out infinite; }
+    @keyframes sig { 0%,100%{opacity:.4} 50%{opacity:1} }
+    @media (prefers-reduced-motion: reduce){ *{animation:none!important} }
+  </style>
+</defs>
+
+<!-- arrows -->
+<g stroke="#e29578" stroke-width="2.6" fill="none" stroke-linecap="round">
+  <line x1="165" y1="424" x2="165" y2="300" marker-end="url(#arrow)"/>
+  <line x1="595" y1="424" x2="595" y2="300" marker-end="url(#arrow)"/>
+  <line x1="206" y1="232" x2="338" y2="142" marker-end="url(#arrow)"/>
+  <line x1="554" y1="232" x2="422" y2="142" marker-end="url(#arrow)"/>
+</g>
+
+<!-- CLOUD STORAGE (S3) — top center (380,110) -->
+<g transform="translate(380,110)">
+  <g fill="#83c5be"><ellipse cx="-2" cy="-10" rx="24" ry="15"/><circle cx="-18" cy="-3" r="12"/><circle cx="15" cy="-6" r="14"/></g>
+  <rect x="-28" y="2" width="56" height="24" rx="5" fill="#006d77"/>
+  <g fill="#bfe0d6"><circle cx="-17" cy="14" r="2.6"/><rect x="-8" y="12" width="30" height="4.5" rx="2"/></g>
+</g>
+<text class="lbl" x="380" y="56" text-anchor="middle">Cloud storage (S3)</text>
+
+<!-- SATELLITE SYNC — mid-left (165,258) -->
+<g transform="translate(165,258)">
+  <g transform="rotate(-20)">
+    <rect x="-7" y="-15" width="14" height="30" rx="3" fill="#64748b"/>
+    <rect x="-32" y="-9" width="20" height="18" rx="2" fill="#3a86b5"/>
+    <rect x="12" y="-9" width="20" height="18" rx="2" fill="#3a86b5"/>
+    <g stroke="#bcd6e8" stroke-width="1"><line x1="-22" y1="-9" x2="-22" y2="9"/><line x1="22" y1="-9" x2="22" y2="9"/></g>
+    <rect x="-4" y="15" width="8" height="9" rx="2" fill="#475569"/>
+  </g>
+  <g class="sig" stroke="#83c5be" stroke-width="2.4" fill="none" stroke-linecap="round"><path d="M-20 20 a 9 9 0 0 0 -9 9"/><path d="M-15 25 a 5 5 0 0 0 -5 5"/></g>
+</g>
+<text class="lbl" x="165" y="316" text-anchor="middle">Satellite sync</text>
+
+<!-- VIDEO CLIPS ON SITE — bottom-left (165,458) -->
+<g transform="translate(165,458)">
+  <rect x="-30" y="-15" width="42" height="30" rx="5" fill="#475569"/>
+  <path d="M12 -9 L30 -17 L30 17 L12 9 Z" fill="#64748b"/>
+  <circle cx="-10" cy="0" r="8" fill="#94a3b8"/><circle cx="-10" cy="0" r="4" fill="#cbd5e1"/>
+  <g transform="translate(34,7)" fill="#e29578"><path d="M0 0 C 4 -5 13 -5 18 0 C 13 5 4 5 0 0 Z"/><path d="M0 0 L-6 -5 L-6 5 Z"/></g>
+</g>
+<text class="lbl" x="165" y="512" text-anchor="middle">Video clips</text>
+<text class="lbl" x="165" y="530" text-anchor="middle">recorded on site</text>
+
+<!-- WEB APP (LABEL STUDIO) — mid-right (595,258) -->
+<g transform="translate(595,258)">
+  <rect x="-30" y="-22" width="60" height="44" rx="6" fill="#fff" stroke="#e29578" stroke-width="2.6"/>
+  <line x1="-30" y1="-10" x2="30" y2="-10" stroke="#e29578" stroke-width="2"/>
+  <g fill="#e29578"><circle cx="-23" cy="-16" r="2.2"/><circle cx="-15" cy="-16" r="2.2"/></g>
+  <rect x="-14" y="-2" width="28" height="18" fill="none" stroke="#e29578" stroke-width="2" stroke-dasharray="3 2.5"/>
+  <circle cx="0" cy="7" r="2.4" fill="#e29578"/>
+</g>
+<text class="lbl" x="595" y="318" text-anchor="middle">Web app</text>
+
+<!-- USERS — bottom-right (595,458) -->
+<g transform="translate(595,458)">
+  <rect x="-24" y="-18" width="48" height="30" rx="3" fill="#fff" stroke="#475569" stroke-width="2.6"/>
+  <rect x="-19" y="-13" width="38" height="20" rx="1.5" fill="#eef2f6"/>
+  <path d="M-32 12 L32 12 L37 19 L-37 19 Z" fill="#94a3b8"/>
+</g>
+<text class="lbl" x="595" y="512" text-anchor="middle">Users</text>
+</svg>

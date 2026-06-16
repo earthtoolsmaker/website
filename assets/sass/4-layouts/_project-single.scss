@@ -256,6 +256,13 @@ $project-cta-gap: 56px;
   margin: $project-cta-gap 0 0;
 }
 
+// In a blog post a CTA card (the demo CTA, or an inline donation card) is
+// followed by body copy, not a section band, so unlike on the project page it
+// needs its own bottom gap to breathe.
+.post__content .about-cta {
+  margin-bottom: $project-cta-gap;
+}
+
 // --- Interactive threat chips (the .threats shortcode): clicking a pill (a
 //     radio <label>) highlights it and reveals its explanation panel below.
 //     Pure CSS via the general-sibling combinator. ---

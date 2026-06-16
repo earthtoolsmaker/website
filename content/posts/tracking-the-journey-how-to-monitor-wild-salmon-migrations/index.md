@@ -6,9 +6,8 @@ image: /images/posts/tracking-the-journey-how-to-monitor-wild-salmon-migrations/
 tags: ["AI", "vision", "low power", "camera traps"]
 ---
 
-In this blog post, we will dive into the successful development of a wild
-salmon monitoring system, currently deployed to 8 different sites in British
-Columbia.
+In this post, we will dive into the development of a wild salmon monitoring
+system, currently deployed at 8 sites in British Columbia.
 
 > We must take every step in our control now as climate-change related trends
 > will make things more difficult for salmon populations in the years ahead.
@@ -16,6 +15,10 @@ Columbia.
 > grizzlies, orcas and eagles, that depend on Pacific salmon.
 >
 > <cite>– Pacific Salmon Foundation</cite>
+
+<p style="text-align:center; margin: 32px 0;">
+  <img src="./images/salmonvision-logo.svg" alt="SalmonVision logo" style="max-width: 360px; width: 100%;" />
+</p>
 
 The [__SalmonVision__](https://salmonvision.org) project is a
 collaborative effort involving the [Pacific Salmon
@@ -43,15 +46,13 @@ validating the machine learning models and continuously expanding the dataset.
 This growing dataset will feed back into the AI training process, improving the
 system's accuracy over time.
 
-<p>
-  <iframe src="https://www.youtube.com/embed/V-rZSeM5YtY" loading="lazy" frameborder="0" allowfullscreen>
-  </iframe>
-</p>
-<em style="font-size:14px;line-height:1.4em;display:block;">Underwater camera activated at Bear Creek River: Monitoring system now live
-</em>
-<br/>
+{{< youtube id=V-rZSeM5YtY >}}
+<p class="media-caption">Underwater camera activated at Bear Creek River — the monitoring system goes live</p>
 
 ## Overview of the SalmonVision Application
+
+![The SalmonVision pipeline in four stages: watch the river, detect each fish, classify its species, and count the run](/images/projects/wild_salmon_migration_monitoring/diagrams/pipeline.svg)
+*From camera to count — the SalmonVision pipeline at a glance*
 
 The SalmonVision application is designed to monitor salmon migration using an
 advanced system of underwater cameras and machine learning models. At each
@@ -66,8 +67,8 @@ on large local hard drives. To ensure timely access to the data, a satellite
 connection is used to sync the recorded videos to the cloud multiple times per
 hour.
 
-![System Overview](./images/system_overview.png)
-*Gallery / System overview of the [__SalmonVision__](https://salmonvision.org/) application*
+![System Overview](./images/system_overview.svg)
+*System overview of the [__SalmonVision__](https://salmonvision.org/) application*
 
 The system’s machine learning models, running on edge devices like Raspberry
 Pis, analyze the video footage in real time. An object detection model
@@ -81,8 +82,8 @@ synced to the cloud via satellite connections. Users can access this data
 through a web application, where they can review the video clips and verify the
 accuracy of the model’s predictions.
 
-![RPi 5](./images/rpi5.png)
-*Gallery / Raspberry Pi 5 micro-controller*
+![A Raspberry Pi board next to a credit card of the same size](/images/projects/early_forest_fire_detection/raspberry_pi_credit_card.svg)
+*A Raspberry Pi is no bigger than a credit card — small enough to sit at each camera*
 
 ## Deployment at sites
 
@@ -91,10 +92,12 @@ coordinates the system by making use of the motion detectors, the underwater
 cameras and the starlink connectors. It is the brain of the setup and it
 controls how the different hardware pieces function together.
 
-{{< gallery caption="Gallery / Setting up sonars and underwater cameras at Haida site" >}}
-  {{< gallery_image src="./images/hardware/deployed_river.png" alt="Deployed river hardware" >}}
-  {{< gallery_image src="/images/projects/wild_salmon_migration_monitoring/sonar/haida-sonar.jpg" alt="Haida sonar setup" >}}
-{{< /gallery >}}
+{{< image_carousel id="deployment-gallery" >}}
+  {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/cover.png" alt="Wild sockeye salmon swimming up a coastal river" caption="Wild salmon returning up a coastal river — the runs SalmonVision monitors" >}}
+  {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/sites/haida.jpg" alt="River monitoring site on Haida territory" caption="A monitoring site on Haida territory" >}}
+  {{< carousel_image src="./images/hardware/deployed_river.png" alt="Hardware deployed at the river" caption="Hardware deployed at the river — cameras, motion sensors, and a Raspberry Pi" >}}
+  {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/sonar/haida-sonar.jpg" alt="Sonar setup at the Haida site" caption="Setting up sonar alongside the underwater cameras" >}}
+{{< /image_carousel >}}
 
 ## Web Application
 
@@ -112,8 +115,8 @@ application. We have chosen to host the platform on AWS, utilizing S3 buckets
 for cloud storage and RDS instances for database management.
 
 ![Web application overview](./images/webapp_overview.png)
-*Gallery / Overview of the web application developed to centralize counts
-reports and video clips*
+*Overview of the web application developed to centralize count reports and
+video clips*
 
 DNS configuration is managed through AWS Route 53, mapping salmonvision.org to
 the landing page and app.salmonvision.org to our customized version of
@@ -129,21 +132,17 @@ the storage usage for each site and camera. Given that a significant portion of
 our costs will be associated with storage, this helps us monitor and optimize
 our usage. Currently, terabytes of video data are stored in our S3 buckets.
 
-All infrastructure is managed using CloudFormation to ensure scalable,
-controlled growth and adaptation over the long term, adhering to industry best
-practices.
+All infrastructure is managed as code with CloudFormation, keeping growth
+scalable and controlled over the long term.
 
 ### Quick Start: Navigating the UI
 
 In this section, we highlight key features of the web application designed to
 facilitate the review of predictions made by our computer vision models.
 
-Upon visiting [https://app.salmonvision.org](https://app.salmonvision.org),
-users will see the login form. Access is restricted to onboarded organizations
-and users who have been granted credentials.
-
-![Login Form](./images/labelstudio/login.png)
-*SalmonVision Login Form*
+The app lives at [https://app.salmonvision.org](https://app.salmonvision.org),
+with access restricted to onboarded organizations and users who have been
+granted credentials.
 
 After logging in, users are redirected to a dashboard displaying a list of
 projects, each corresponding to a different river site where the system is
@@ -178,48 +177,30 @@ the [following research paper](./papers/fmars-10-1200408.pdf).
 
 ### Exploratory Data Analysis
 
-Exploratory Data Analysis (EDA) is an approach to analyzing datasets to
-summarize their main characteristics, often employing visual methods. The
-primary goal of EDA is to uncover patterns, relationships, and anomalies in the
-data, which can then inform subsequent analysis or modeling tasks.
-
-EDA typically involves the following steps:
-
-1. __Data Collection__: Gathering the relevant dataset(s) from various sources.
-2. __Data Cleaning__: Identifying and handling missing values, outliers, and
-   inconsistencies in the data.
-3. __Summary Statistics__: Computing descriptive statistics such as mean,
-   median, mode, standard deviation, etc., to understand the central tendencies
-and variability of the data.
-4. __Data Visualization__: Creating visual representations of the data using
-   plots, charts, histograms, scatter plots, etc., to explore patterns,
-distributions, correlations, and trends within the data.
-5. __Exploratory Modeling__: Building simple models or using statistical
-   techniques to further understand relationships within the data.
-6. __Hypothesis Testing__: Formulating and testing hypotheses about the data to
-   validate assumptions or gain insights.
-7. __Iterative Analysis__: Iteratively exploring the data, refining analysis
-   techniques, and generating new hypotheses as insights emerge.
-
-EDA is a crucial initial step in any data analysis or modeling project as it
-helps analysts gain a deeper understanding of the dataset, identify potential
-challenges or biases, and inform subsequent analytical decisions. It provides a
-foundation for more advanced analyses, such as predictive modeling, hypothesis
-testing, or machine learning, by guiding feature selection, model building, and
-evaluation strategies.
+Before training anything, we explored the dataset to understand its shape —
+summarizing the species counts, checking how they vary across river sites, and
+looking for patterns or biases that could trip up a model. The most important
+thing it surfaced was a severe class imbalance.
 
 #### Class Imbalance
 
 The research team has curated a dataset featuring 16 distinct species of fish
-found in the rivers of British Columbia. Below, you'll find graphs illustrating
-the distribution of each species within the dataset.
+found in the rivers of British Columbia. The model recognizes the main Pacific
+salmon species individually — tap a card for more:
 
-![Salmon Counts distribution](./images/dataset/salmon_counts_distribution.png)
+{{< salmon_species >}}
+
+Beyond the salmon above, it also recognizes Bull Trout, Rainbow Trout,
+Whitefish, Shiner, Pikeminnow, Jack Chinook, Lamprey, and Cutthroat Trout.
+
+The graphs below show how those species are distributed across the dataset.
+
+![Salmon Counts distribution](./images/dataset/salmon_counts_distribution.png#noround)
 
 The fish dataset was gathered from four different rivers between 2019 and 2023.
 The plots below showcase the species distribution across these river sites.
 
-![Ground Truth Annotations four rivers](./images/dataset/ground_truth_annotations_four_rivers.png)
+![Ground Truth Annotations four rivers](./images/dataset/ground_truth_annotations_four_rivers.png#noround)
 
 Class imbalance in computer vision can be a significant issue for machine
 learning models because it leads to biased learning. When one class dominates
@@ -235,15 +216,14 @@ often necessary to mitigate this issue and improve model performance.
 
 ### YOLO Overview
 
-We opted to utilize a pretrained
-[YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tune it for
-our specific object detection task. Renowned for its speed, accuracy, and
-user-friendly interface, YOLOv8 stands out as an ideal solution for various
-tasks, including object detection, tracking, instance segmentation, image
-classification, and pose estimation.
+We took a pretrained
+[YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tuned it for
+our object detection task. YOLOv8 is fast, accurate, and easy to work with, and
+it handles a range of tasks — object detection, tracking, instance
+segmentation, image classification, and pose estimation.
 
-![YOLOv8 CV Tasks](./images/yolov8_tasks.png)
-*YOLOv8 Computer Vision Tasks*
+![A salmon detection: an underwater frame goes into the vision model and comes out with a bounding box and a species label](/images/projects/wild_salmon_migration_monitoring/diagrams/detection.svg)
+*Our fine-tuned YOLOv8 in action — an underwater frame in, a boxed and identified fish out*
 
 #### ByteTrack
 
@@ -269,8 +249,8 @@ monitoring of fish migration across various river sites.
 
 | River Site | Camera Reference | Day        | Coho | Bull | Sockeye | Rainbow | ... | Chinook |
 |------------|------------------|------------|------|------|---------|---------|-----|---------|
-| Bear Creak | Jetson 0         | 2024-08-29 | 12   | 5    | 108     | 8       | ... | 0       |
-| Bear Creak | Jetson 1         | 2024-08-29 | 7    | 9    | 78      | 2       | ... | 1       |
+| Bear Creek | Jetson 0         | 2024-08-29 | 12   | 5    | 108     | 8       | ... | 0       |
+| Bear Creek | Jetson 1         | 2024-08-29 | 7    | 9    | 78      | 2       | ... | 1       |
 | ...        | ...              | ...        | ...  | ...  | ...     | ...     | ... | ...     |
 | Koeye      | Jetson 0         | 2024-08-29 | 54   | 32   | 12      | 0       | ... | 14      |
 | Koeye      | Jetson 1         | 2024-08-29 | 24   | 25   | 18      | 1       | ... | 9       |
@@ -281,8 +261,8 @@ The machine learning pipeline developed for this project integrates YOLO object
 detection, ByteTrack, and post-processing techniques to accurately count fish
 in a given video stream.
 
-![ML Pipeline](./images/ml_pipeline.png)
-*Gallery / Overview of the ML Pipeline*
+![ML Pipeline](./images/ml_pipeline.svg)
+*Overview of the ML pipeline*
 
 1. __Detection with YOLO__: YOLO is employed to detect objects in each video
    frame, producing bounding boxes, class labels, and confidence scores for
@@ -300,7 +280,7 @@ behavior over time.
 We evaluate the performance of our object detection model using a holdout test
 set. Below is the confusion matrix for the fine-tuned YOLOv8 object detector.
 
-![Confusion Matrix](./images/model/confusion_matrix.png)
+![Confusion Matrix](./images/model/confusion_matrix.png#noround)
 
 Although the model isn't perfect yet, it is effective for practical use. Our
 strategy involves continuously gathering more data as we deploy the systems at
@@ -338,7 +318,15 @@ wild salmon migrating back to their natal streams. This solution is crucial
 for effectively managing and mitigating threats to salmon populations and
 will play a key role in engaging stakeholders in conservation efforts.
 
-One can try out the model from the [live demo]({{< ref
-"/demos/wild_salmon_migration_monitoring" >}}) or directly from the snippet below:
-
-{{< hf_space "earthtoolsmaker-salmon-vision" >}}
+<div class="about-cta">
+  <h3 class="about-cta__title">Explore SalmonVision</h3>
+  <p class="about-cta__description">Try the detection and tracking model on real underwater footage, or dive into the full project and how it was built.</p>
+  <div class="button--cta-container">
+    <a class="link-no-decoration" href="/demos/wild_salmon_migration_monitoring/">
+      <button class="button button--middle">Try the demo</button>
+    </a>
+    <a class="link-no-decoration" href="/projects/wild_salmon_migration_monitoring/">
+      <button class="button button--middle">View the project</button>
+    </a>
+  </div>
+</div>

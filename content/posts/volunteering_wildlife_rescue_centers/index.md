@@ -7,23 +7,21 @@ tags: ["wildlife", "illegal wildlife trade", "volunteering"]
 ---
 
 
-In this blog, we will share our experiences volunteering at various wildlife
+In this post, we will share our experiences volunteering at various wildlife
 rescue centers.
 
-<div class="button--cta-container">
-  <a class="link-no-decoration" href="https://www.wfft.org/donate/">
-    <button class="button button--cta">
-      Make a donation to WFFT 🐘
-  </button>
-  </a>
-  <a class="link-no-decoration" href="https://arcasguatemala.org/donors/" style="padding-left: 10px;">
-    <button  class="button button--cta"/>
-      Make a donation to ARCAS 🐒
-    </button>
-  </a>
+<div class="about-cta">
+  <h3 class="about-cta__title">Support wildlife rescue</h3>
+  <p class="about-cta__description">WFFT and ARCAS both rely on donations to feed, treat, and rehabilitate the animals in their care. Every contribution goes directly to that work.</p>
+  <div class="button--cta-container">
+    <a class="link-no-decoration" href="https://www.wfft.org/donate/">
+      <button class="button button--cta">Make a donation to WFFT</button>
+    </a>
+    <a class="link-no-decoration" href="https://arcasguatemala.org/donors/">
+      <button class="button button--cta">Make a donation to ARCAS</button>
+    </a>
+  </div>
 </div>
-<br/>
-<br/>
 
 
 ## Introduction
@@ -47,7 +45,7 @@ raise awareness.
 
 ## Wildlife Friend Foundation Thailand - WFFT
 
-<p style="text-align:center">
+<p style="text-align:center; margin: 36px 0;">
   <img src="./images/WFFT-Logo-2025.webp" title="WFFT Logo" />
 </p>
 
@@ -59,12 +57,8 @@ animals in Thailand. It promotes wildlife protection through educational
 initiatives aimed at both local Thai communities and tourists. Many of the
 rescued animals are either kept as illegal pets or found injured in the wild.
 
-<p>
-  <iframe src="https://www.youtube.com/embed/akGPiurjjCo" loading="lazy" frameborder="0" allowfullscreen>
-  </iframe>
-</p>
-<em style="font-size:14px;line-height:1.4em;display:block;">WFFT Volunteer Introduction Video</em>
-<br/>
+{{< youtube id=akGPiurjjCo >}}
+<p class="media-caption">WFFT Volunteer Introduction Video</p>
 
 Spending a couple of weeks volunteering in animal care involves following a
 daily routine designed by wildlife experts and veterinarians. This schedule
@@ -92,7 +86,7 @@ no elephant is ever chained, day or night.
   {{< carousel_image src="./images/elephant_eat_2.jpg" alt="Elephant eating" caption="Elephants forage for food hidden by volunteers to stimulate natural behavior" >}}
 {{< /image_carousel >}}
 
-Elephant are given fresh food every day, two times a day. Volunteers hide the
+Elephants are given fresh food every day, twice a day. Volunteers hide the
 food inside tires or hang them in trees which forces the animals to forage for
 their food. This is more stimulating for them as they never get to find their
 food twice in the same spot.
@@ -108,7 +102,7 @@ weeks, volunteers often need to go and chop down some banana trees nearby.
   <em>Banana trees are collected for elephants</em>
 </div>
 
-#### 🙅‍♂️  Never back ride an elephant
+#### Never back ride an elephant
 
 The training of elephants for riding and performances in Thailand often
 involves a process that can be quite harsh and traumatic for the animals.
@@ -129,12 +123,8 @@ repetitive commands and rewards, such as food, to reinforce desired behaviors.
 However, the initial trauma inflicted during training often leaves lasting
 psychological scars on the elephants.
 
-<p>
-  <iframe src="https://www.youtube.com/embed/GAinaDnPPO0" loading="lazy" frameborder="0" allowfullscreen>
-  </iframe>
-</p>
-<em style="font-size:14px;line-height:1.4em;display:block;">Breaking the spirit of elephants is inhumane practice</em>
-<br/>
+{{< youtube id=GAinaDnPPO0 >}}
+<p class="media-caption">Breaking the spirit of elephants is inhumane practice</p>
 
 The physiological and psychological trauma experienced by these animals is
 profound. The training process can lead to chronic stress and anxiety, with
@@ -210,7 +200,7 @@ lives in a safe haven before being released back into the wild.
 
 ## ARCAS
 
-<p style="text-align:center">
+<p style="text-align:center; margin: 36px 0;">
   <img src="./images/arcas_logo.png" title="ARCAS Logo" />
 </p>
 
@@ -254,7 +244,7 @@ Each day, there is an opportunity to engage with veterinarians and gain
 insights into their work. We also heard deeply moving stories about some of the
 animals that arrived at ARCAS.
 
-## Conclusion
+## Closing thoughts
 
 There are numerous ways you can support organizations like
 [WFFT](https://www.wfft.org/) and [ARCAS](https://arcasguatemala.org/) or other
@@ -267,15 +257,15 @@ extinction. If volunteering isn’t an option, you can also make a meaningful
 impact by donating to these organizations, helping them continue their vital
 work in wildlife conservation.
 
-<div class="button--cta-container">
-  <a class="link-no-decoration" href="https://www.wfft.org/donate/">
-    <button class="button button--cta">
-      Make a donation to WFFT 🐘
-  </button>
-  </a>
-  <a class="link-no-decoration" href="https://arcasguatemala.org/donors/">
-    <button  class="button button--cta"/>
-      Make a donation to ARCAS 🐒
-    </button>
+<div class="about-cta">
+  <h3 class="about-cta__title">Help WFFT and ARCAS continue their work</h3>
+  <p class="about-cta__description">Whether or not you can volunteer, a donation helps these centers feed, treat, and rehabilitate the animals in their care — and work toward releasing them back into the wild.</p>
+  <div class="button--cta-container">
+    <a class="link-no-decoration" href="https://www.wfft.org/donate/">
+      <button class="button button--cta">Make a donation to WFFT</button>
     </a>
+    <a class="link-no-decoration" href="https://arcasguatemala.org/donors/">
+      <button class="button button--cta">Make a donation to ARCAS</button>
+    </a>
+  </div>
 </div>

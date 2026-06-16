@@ -1,0 +1,93 @@
+<svg viewBox="0 0 1040 320" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 1 L9 5 L0 9 Z" fill="#e29578"/>
+  </marker>
+  <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%">
+    <feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.08"/>
+  </filter>
+  <style>
+    .title { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 22px; font-weight: 600; fill: #161616; }
+    .desc  { font-size: 13.5px; fill: #60626a; }
+    .step  { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; fill: #e29578; }
+    .kp    { animation: kpp 2.4s ease-in-out infinite; }
+    .k2{animation-delay:-.6s}.k3{animation-delay:-1.2s}.k4{animation-delay:-1.8s}
+    .ln    { animation: glow 2.6s ease-in-out infinite; }
+    @keyframes kpp  { 0%,100%{opacity:.5} 50%{opacity:1} }
+    @keyframes glow { 0%,100%{opacity:.55} 50%{opacity:1} }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <g id="kp" stroke="#e29578" stroke-width="1.8" stroke-linecap="round"><path d="M-4 0 H4 M0 -4 V4"/></g>
+</defs>
+
+<!-- arrows between cards -->
+<g stroke="#e29578" stroke-width="3" fill="none" stroke-linecap="round">
+  <line x1="198" y1="114" x2="224" y2="114" marker-end="url(#arrow)"/>
+  <line x1="404" y1="114" x2="430" y2="114" marker-end="url(#arrow)"/>
+  <line x1="610" y1="114" x2="636" y2="114" marker-end="url(#arrow)"/>
+  <line x1="816" y1="114" x2="842" y2="114" marker-end="url(#arrow)"/>
+</g>
+
+<!-- ===== 1 · DETECT (cx=108) ===== -->
+<rect x="20" y="24" width="176" height="180" rx="18" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<rect x="50" y="62" width="116" height="96" rx="10" fill="#10303a"/>
+<g><use class="kp" href="#kp" x="72" y="84"/><use class="kp k2" href="#kp" x="98" y="76"/><use class="kp k3" href="#kp" x="130" y="90"/><use class="kp k4" href="#kp" x="150" y="80"/><use class="kp k2" href="#kp" x="80" y="120"/><use class="kp k3" href="#kp" x="110" y="132"/><use class="kp" href="#kp" x="142" y="124"/><use class="kp k4" href="#kp" x="100" y="104"/><use class="kp k3" href="#kp" x="134" y="110"/></g>
+<text class="step"  x="108" y="234" text-anchor="middle">01</text>
+<text class="title" x="108" y="260" text-anchor="middle">Detect</text>
+<text class="desc"  x="108" y="284" text-anchor="middle">Find distinctive</text>
+<text class="desc"  x="108" y="301" text-anchor="middle">keypoints</text>
+
+<!-- ===== 2 · DESCRIBE (cx=314) ===== -->
+<rect x="226" y="24" width="176" height="180" rx="18" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<rect x="270" y="64" width="88" height="88" rx="8" fill="#eef5f2" stroke="#cdd4d6" stroke-width="1.5"/>
+<g stroke="#cdd4d6" stroke-width="1"><path d="M314 64 V152 M270 108 H358"/></g>
+<g stroke="#006d77" stroke-width="1.8" stroke-linecap="round" opacity="0.9">
+  <g transform="translate(292,86)"><path d="M0 -8 V8 M-8 0 H8 M-6 -6 L6 6 M6 -6 L-6 6"/></g>
+  <g transform="translate(336,86)"><path d="M0 -8 V8 M-8 0 H8 M-6 -6 L6 6 M6 -6 L-6 6"/></g>
+  <g transform="translate(292,130)"><path d="M0 -8 V8 M-8 0 H8 M-6 -6 L6 6 M6 -6 L-6 6"/></g>
+  <g transform="translate(336,130)"><path d="M0 -8 V8 M-8 0 H8 M-6 -6 L6 6 M6 -6 L-6 6"/></g>
+</g>
+<circle cx="314" cy="108" r="4" fill="#e29578"/>
+<text class="step"  x="314" y="234" text-anchor="middle">02</text>
+<text class="title" x="314" y="260" text-anchor="middle">Describe</text>
+<text class="desc"  x="314" y="284" text-anchor="middle">Encode each point's</text>
+<text class="desc"  x="314" y="301" text-anchor="middle">neighborhood</text>
+
+<!-- ===== 3 · MATCH (cx=520) ===== -->
+<rect x="432" y="24" width="176" height="180" rx="18" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<rect x="454" y="64" width="52" height="88" rx="8" fill="#10303a"/>
+<rect x="534" y="64" width="52" height="88" rx="8" fill="#10303a"/>
+<g class="ln" stroke="#3fd07a" stroke-width="2" stroke-linecap="round">
+  <line x1="492" y1="86"  x2="548" y2="92"/>
+  <line x1="486" y1="110" x2="556" y2="112"/>
+  <line x1="494" y1="132" x2="546" y2="128"/>
+</g>
+<g fill="#e29578"><circle cx="492" cy="86" r="3"/><circle cx="486" cy="110" r="3"/><circle cx="494" cy="132" r="3"/><circle cx="548" cy="92" r="3"/><circle cx="556" cy="112" r="3"/><circle cx="546" cy="128" r="3"/></g>
+<text class="step"  x="520" y="234" text-anchor="middle">03</text>
+<text class="title" x="520" y="260" text-anchor="middle">Match</text>
+<text class="desc"  x="520" y="284" text-anchor="middle">Pair points across</text>
+<text class="desc"  x="520" y="301" text-anchor="middle">the two images</text>
+
+<!-- ===== 4 · FILTER (cx=726) ===== -->
+<rect x="638" y="24" width="176" height="180" rx="18" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<path d="M672 70 L780 70 L744 116 L708 116 Z" fill="#eef5f2" stroke="#cdd4d6" stroke-width="1.5"/>
+<rect x="718" y="116" width="16" height="22" fill="#eef5f2" stroke="#cdd4d6" stroke-width="1.5"/>
+<g fill="#e29578"><circle cx="690" cy="60" r="3"/><circle cx="712" cy="58" r="3"/><circle cx="734" cy="60" r="3"/><circle cx="756" cy="58" r="3"/><circle cx="701" cy="50" r="3"/><circle cx="745" cy="50" r="3"/></g>
+<g fill="#006d77"><circle cx="722" cy="150" r="3.5"/><circle cx="730" cy="150" r="3.5"/></g>
+<text class="step"  x="726" y="234" text-anchor="middle">04</text>
+<text class="title" x="726" y="260" text-anchor="middle">Filter</text>
+<text class="desc"  x="726" y="284" text-anchor="middle">Drop unreliable</text>
+<text class="desc"  x="726" y="301" text-anchor="middle">matches</text>
+
+<!-- ===== 5 · VERIFY (cx=932) ===== -->
+<rect x="844" y="24" width="176" height="180" rx="18" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<rect x="894" y="68" width="76" height="76" rx="6" fill="#eef5f2" stroke="#cdd4d6" stroke-width="1.5"/>
+<g stroke="#cdd4d6" stroke-width="1"><path d="M919 68 V144 M894 106 H970"/></g>
+<polygon points="902,80 968,72 974,138 898,150" fill="none" stroke="#006d77" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="958" cy="150" r="11" fill="#3fd07a"/>
+<path d="M953 150 L957 154 L964 145" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text class="step"  x="932" y="234" text-anchor="middle">05</text>
+<text class="title" x="932" y="260" text-anchor="middle">Verify</text>
+<text class="desc"  x="932" y="284" text-anchor="middle">Check geometric</text>
+<text class="desc"  x="932" y="301" text-anchor="middle">consistency</text>
+</svg>
