@@ -137,14 +137,17 @@ end-to-end with one of the losses above.
 
 ## Where this shows up in conservation
 
-This is the recipe behind our bear face recognition system — and the reason it
-generalises. The geometry never changes; only the data and the crop are
+This is the recipe behind our [bear face recognition system]({{< ref "posts/bear-identification-with-metric-learning-guide" >}})
+— and the reason it generalises. The geometry never changes; only the data and the crop are
 species-specific. Swap brown bear faces for trout flanks or seal coats and the
 same machinery re-identifies a different animal.
 
 It also sits alongside other identification approaches rather than replacing
 them. Where individuals carry rich local texture, matching keypoints directly
-with local feature matching is a strong alternative; metric learning instead
-learns a single global embedding per image. And whichever route you take, the
-result is only as good as the data feeding it — careful preparation of the
-crops and splits is what keeps the evaluation honest.
+with [local feature matching]({{< ref "posts/local-feature-matching-lightglue" >}})
+is a strong alternative; metric learning instead learns a single global
+embedding per image. And whichever route you take, the result is only as good
+as the data feeding it — [careful preparation of the crops and splits]({{< ref "posts/how-to-prepare-data-for-identification" >}})
+is what keeps the evaluation honest.
+
+{{< demo_cta "/demos/bear_identification/" >}}
