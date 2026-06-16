@@ -1,0 +1,23 @@
+<svg viewBox="0 0 440 200" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#2a2620"/></marker>
+  <marker id="arrm" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1 L9 5 L0 9 Z" fill="#60626a"/></marker>
+  <style>.lbl{font-size:14px;fill:#1f2937}.it{font-size:15px;font-style:italic;fill:#60626a}</style>
+</defs>
+
+<!-- time axis -->
+<line x1="20" y1="100" x2="418" y2="100" stroke="#2a2620" stroke-width="2" marker-end="url(#arr)"/>
+<text class="it" x="424" y="105">t</text>
+
+<!-- sine wave -->
+<path d="M30,100 C51.6,50 68.4,50 90,100 C111.6,150 128.4,150 150,100 C171.6,50 188.4,50 210,100 C231.6,150 248.4,150 270,100 C291.6,50 308.4,50 330,100 C351.6,150 368.4,150 390,100"
+  fill="none" stroke="#1f7a8c" stroke-width="3" stroke-linecap="round"/>
+
+<!-- amplitude (at first peak, x=60) -->
+<line x1="60" y1="100" x2="60" y2="52" stroke="#60626a" stroke-width="1.5" marker-start="url(#arrm)" marker-end="url(#arrm)"/>
+<text class="lbl" x="70" y="80">Amplitude</text>
+
+<!-- period T (peak to peak, x 60 -> 180) -->
+<line x1="60" y1="34" x2="180" y2="34" stroke="#60626a" stroke-width="1.5" marker-start="url(#arrm)" marker-end="url(#arrm)"/>
+<text class="lbl" x="120" y="28" text-anchor="middle">Period (T)</text>
+</svg>

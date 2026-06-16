@@ -1,0 +1,31 @@
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#2a2620"/></marker>
+  <style>.zone{font-size:16px;font-weight:700;fill:#1f2937}.ann{font-size:12px;font-style:italic;fill:#80838b}.tick{font-size:11px;fill:#80838b}</style>
+</defs>
+
+<!-- zone dividers -->
+<g stroke="#c9bdb0" stroke-width="1.5" stroke-dasharray="4 5">
+  <line x1="240" y1="40" x2="240" y2="232"/>
+  <line x1="420" y1="40" x2="420" y2="232"/>
+</g>
+
+<!-- zone labels + who hears here -->
+<text class="zone" x="160" y="48" text-anchor="middle">Infrasound</text>
+<text class="ann"  x="160" y="70" text-anchor="middle">elephants · whales</text>
+<text class="zone" x="330" y="48" text-anchor="middle">Audible area</text>
+<text class="ann"  x="330" y="70" text-anchor="middle">humans</text>
+<text class="zone" x="510" y="48" text-anchor="middle">Ultrasonic</text>
+<text class="ann"  x="510" y="70" text-anchor="middle">bats · dolphins</text>
+
+<!-- increasing-frequency wave (same amplitude, tighter waves to the right) -->
+<path d="M80,170 a20 26 0 0 1 40 0 a20 26 0 0 0 40 0 a20 26 0 0 1 40 0 a20 26 0 0 0 40 0 a9 26 0 0 1 18 0 a9 26 0 0 0 18 0 a9 26 0 0 1 18 0 a9 26 0 0 0 18 0 a9 26 0 0 1 18 0 a9 26 0 0 0 18 0 a9 26 0 0 1 18 0 a9 26 0 0 0 18 0 a9 26 0 0 1 18 0 a9 26 0 0 0 18 0 a5 26 0 0 1 10 0 a5 26 0 0 0 10 0 a5 26 0 0 1 10 0 a5 26 0 0 0 10 0 a5 26 0 0 1 10 0 a5 26 0 0 0 10 0 a5 26 0 0 1 10 0 a5 26 0 0 0 10 0 a5 26 0 0 1 10 0 a5 26 0 0 0 10 0 a5 26 0 0 1 10 0 a5 26 0 0 0 10 0 a5 26 0 0 1 10 0 a5 26 0 0 0 10 0 a5 26 0 0 1 10 0 a5 26 0 0 0 10 0 a5 26 0 0 1 10 0 a5 26 0 0 0 10 0"
+  fill="none" stroke="#1f7a8c" stroke-width="2.5"/>
+
+<!-- frequency axis -->
+<line x1="70" y1="232" x2="615" y2="232" stroke="#2a2620" stroke-width="2" marker-end="url(#arr)"/>
+<g class="tick" text-anchor="middle">
+  <text x="90" y="250">0.02</text><text x="240" y="250">20</text><text x="420" y="250">20 000</text><text x="600" y="250">200k</text>
+</g>
+<text class="tick" x="560" y="272">Frequency (Hz)</text>
+</svg>
