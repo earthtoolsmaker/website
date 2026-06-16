@@ -1,0 +1,59 @@
+<svg viewBox="0 0 1040 400" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%">
+    <feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.08"/>
+  </filter>
+  <style>
+    .title { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 23px; font-weight: 600; fill: #161616; }
+    .desc  { font-size: 13.5px; fill: #60626a; }
+    .leg   { font-size: 13px; font-weight: 700; fill: #161616; }
+    .legd  { font-size: 12px; fill: #60626a; }
+    .mlab  { font-size: 12px; font-weight: 700; fill: #9aa0a6; letter-spacing: 0.08em; }
+  </style>
+</defs>
+
+<text class="title" x="40" y="44">Hard negative mining</text>
+<text class="desc"  x="40" y="66">Not every negative is worth learning from — the hardest ones carry the most signal.</text>
+
+<!-- scatter scene -->
+<!-- margin ring -->
+<circle cx="420" cy="232" r="100" fill="#fbe9e1" fill-opacity="0.5" stroke="#e29578" stroke-width="1.6" stroke-dasharray="6 5"/>
+<text class="mlab" x="420" y="120" text-anchor="middle">MARGIN</text>
+
+<!-- easy negatives (far, faded) -->
+<g fill="#9aa0a6" opacity="0.5"><circle cx="150" cy="120" r="8"/><circle cx="175" cy="352" r="8"/><circle cx="330" cy="372" r="8"/><circle cx="600" cy="350" r="8"/><circle cx="135" cy="245" r="8"/></g>
+
+<!-- semi-hard negatives (just outside the margin) -->
+<g fill="#d9a441"><circle cx="545" cy="168" r="8"/><circle cx="284" cy="172" r="8"/><circle cx="498" cy="332" r="8"/></g>
+
+<!-- hard negatives (inside the margin) -->
+<g><circle cx="358" cy="184" r="13" fill="none" stroke="#e29578" stroke-width="2"/><circle cx="358" cy="184" r="8" fill="#7b6cae"/></g>
+<g><circle cx="472" cy="298" r="13" fill="none" stroke="#e29578" stroke-width="2"/><circle cx="472" cy="298" r="8" fill="#7b6cae"/></g>
+<g><circle cx="356" cy="286" r="13" fill="none" stroke="#e29578" stroke-width="2"/><circle cx="356" cy="286" r="8" fill="#7b6cae"/></g>
+
+<!-- positive + anchor -->
+<circle cx="464" cy="206" r="8" fill="#006d77"/>
+<circle cx="420" cy="232" r="11" fill="#e29578"/>
+<text class="desc" x="420" y="262" text-anchor="middle" font-weight="800" fill="#161616">anchor</text>
+<text class="desc" x="478" y="200" font-weight="800" fill="#006d77">P</text>
+
+<!-- legend -->
+<rect x="712" y="96" width="300" height="216" rx="16" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g>
+  <circle cx="744" cy="138" r="8" fill="#006d77"/>
+  <text class="leg"  x="764" y="134">Positive</text>
+  <text class="legd" x="764" y="152">same individual — pull in</text>
+
+  <circle cx="744" cy="186" r="8" fill="#9aa0a6" opacity="0.6"/>
+  <text class="leg"  x="764" y="182">Easy negative</text>
+  <text class="legd" x="764" y="200">far away — little to learn</text>
+
+  <circle cx="744" cy="234" r="8" fill="#d9a441"/>
+  <text class="leg"  x="764" y="230">Semi-hard negative</text>
+  <text class="legd" x="764" y="248">just outside the margin</text>
+
+  <g><circle cx="744" cy="282" r="11" fill="none" stroke="#e29578" stroke-width="2"/><circle cx="744" cy="282" r="7" fill="#7b6cae"/></g>
+  <text class="leg"  x="764" y="278">Hard negative</text>
+  <text class="legd" x="764" y="296">inside the margin — most signal</text>
+</g>
+</svg>

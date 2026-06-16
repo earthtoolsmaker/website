@@ -1,0 +1,68 @@
+<svg viewBox="0 0 1500 1050" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f3"/><stop offset="100%" stop-color="#f1e9e1"/></linearGradient>
+  <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#e7f1ef" stop-opacity="0.95"/><stop offset="70%" stop-color="#e7f1ef" stop-opacity="0.45"/><stop offset="100%" stop-color="#e7f1ef" stop-opacity="0"/></radialGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="9" stdDeviation="18" flood-color="#1c2b28" flood-opacity="0.13"/></filter>
+  <style>
+    .eyebrow { font-size: 28px; font-weight: 800; letter-spacing: 0.26em; fill: #e29578; }
+    .h1      { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 110px; font-weight: 600; fill: #161616; }
+    .sub     { font-size: 34px; fill: #60626a; }
+  </style>
+  <g id="bearface">
+    <circle cx="-34" cy="-32" r="16" fill="#6e4a30"/><circle cx="34" cy="-32" r="16" fill="#6e4a30"/>
+    <circle cx="-34" cy="-32" r="7.5" fill="#5a3c26"/><circle cx="34" cy="-32" r="7.5" fill="#5a3c26"/>
+    <ellipse cx="0" cy="0" rx="42" ry="39" fill="#6e4a30"/>
+    <ellipse cx="0" cy="19" rx="23" ry="19" fill="#8a6648"/>
+    <circle cx="-17" cy="-6" r="4.5" fill="#221913"/><circle cx="17" cy="-6" r="4.5" fill="#221913"/>
+    <ellipse cx="0" cy="11" rx="9" ry="6.5" fill="#2a1d15"/>
+    <path d="M0 17 V29" stroke="#2a1d15" stroke-width="2"/>
+  </g>
+</defs>
+
+<rect x="0" y="0" width="1500" height="1050" fill="url(#bg)"/>
+
+<!-- embedding space halo + soft boundary -->
+<ellipse cx="1150" cy="690" rx="430" ry="370" fill="url(#halo)"/>
+<ellipse cx="1150" cy="690" rx="320" ry="290" fill="none" stroke="#bcd2ce" stroke-width="2" stroke-dasharray="3 10" stroke-linecap="round" opacity="0.8"/>
+
+<!-- header -->
+<text class="eyebrow" x="120" y="156">CONSERVATION · COMPUTER VISION</text>
+<text class="h1"  x="116" y="276">Metric Learning</text>
+<text class="sub" x="120" y="334">A visual guide to telling individual animals apart</text>
+
+<!-- ===== bear face (the image) ===== -->
+<g filter="url(#soft)"><circle cx="340" cy="720" r="210" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g>
+<g transform="translate(340,726) scale(3.1)"><use href="#bearface"/></g>
+
+<!-- ===== dissolve: a flowing arc of dots from face into the space ===== -->
+<g>
+  <!-- near the face: brown fragments -->
+  <circle cx="540" cy="712" r="7" fill="#6e4a30"/><circle cx="566" cy="690" r="7" fill="#7a5436"/>
+  <circle cx="596" cy="716" r="6" fill="#8a6648"/><circle cx="628" cy="688" r="7" fill="#8a6648"/>
+  <!-- mid stream: warming to coral -->
+  <circle cx="664" cy="704" r="6" fill="#b98e63"/><circle cx="700" cy="676" r="7" fill="#cfa07f"/>
+  <circle cx="740" cy="700" r="6" fill="#e0b48f"/><circle cx="782" cy="664" r="7" fill="#e29578"/>
+  <circle cx="824" cy="688" r="6" fill="#e29578"/><circle cx="868" cy="652" r="6" fill="#e6a98c"/>
+  <!-- entering the space: cooling to cluster tones -->
+  <circle cx="912" cy="672" r="6" fill="#9fb9b5"/><circle cx="956" cy="630" r="6" fill="#7fb0ac"/>
+</g>
+
+<!-- ===== organised clusters inside the space ===== -->
+<!-- constellation links -->
+<g stroke="#9bb7b3" stroke-width="1.8" opacity="0.65">
+  <line x1="1030" y1="556" x2="1072" y2="538"/><line x1="1072" y1="538" x2="1090" y2="580"/><line x1="1030" y1="556" x2="1052" y2="594"/><line x1="1090" y1="580" x2="1052" y2="594"/>
+  <line x1="1276" y1="690" x2="1314" y2="676"/><line x1="1314" y1="676" x2="1296" y2="714"/>
+  <line x1="1118" y1="836" x2="1156" y2="820"/><line x1="1156" y1="820" x2="1142" y2="858"/>
+</g>
+<!-- teal cluster -->
+<g fill="#0e7c86"><circle cx="1030" cy="556" r="14"/><circle cx="1072" cy="538" r="14"/><circle cx="1090" cy="580" r="14"/><circle cx="1052" cy="594" r="14"/><circle cx="1086" cy="616" r="14"/></g>
+<!-- gold cluster -->
+<g fill="#c2ad5e"><circle cx="1276" cy="690" r="14"/><circle cx="1314" cy="676" r="14"/><circle cx="1296" cy="714" r="14"/><circle cx="1262" cy="712" r="14"/></g>
+<!-- purple cluster -->
+<g fill="#7b6cae"><circle cx="1118" cy="836" r="14"/><circle cx="1156" cy="820" r="14"/><circle cx="1142" cy="858" r="14"/><circle cx="1104" cy="858" r="14"/></g>
+<!-- query point retrieving nearest neighbours in the teal cluster -->
+<g stroke="#e29578" stroke-width="2.4" stroke-dasharray="7 5">
+  <line x1="1150" y1="680" x2="1086" y2="616"/><line x1="1150" y1="680" x2="1090" y2="580"/><line x1="1150" y1="680" x2="1052" y2="594"/>
+</g>
+<circle cx="1150" cy="680" r="15" fill="#e29578"/>
+</svg>
