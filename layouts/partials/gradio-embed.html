@@ -1,0 +1,20 @@
+{{- $src := .src -}}
+{{- $ver := .gradio_js_version | default "5.4.0" -}}
+<div class="gradio-embed" data-gradio-embed>
+  <div class="gradio-embed__loader" data-gradio-loader aria-hidden="true">
+    {{ $pangolin := resources.Get "images/logos/etm-logo.png" }}
+    {{ with $pangolin }}<img class="gradio-embed__pangolin" src="{{ .RelPermalink }}" alt="" width="72" height="72">{{ end }}
+    <p class="gradio-embed__label">Waking up the live demo…</p>
+  </div>
+  <script
+    type="module"
+    src="https://gradio.s3-us-west-2.amazonaws.com/{{ $ver }}/gradio.js"
+  ></script>
+  <gradio-app
+    src="https://{{ $src }}.hf.space"
+    initial_height="0px"
+    theme_mode="light"
+    eager="true"
+    container="false"
+  ></gradio-app>
+</div>
