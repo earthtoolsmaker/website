@@ -5,6 +5,16 @@
 
 .gradio-embed {
   position: relative;
+  // Reserve height in the document flow so the opaque loader covers its own
+  // space (and any boot-time Gradio glitch) instead of floating over the
+  // content below it while <gradio-app> is still 0px tall.
+  min-height: 480px;
+}
+
+// Once revealed, stop reserving space — let the embed collapse to the live
+// demo's natural height.
+.gradio-embed.is-ready {
+  min-height: 0;
 }
 
 .gradio-embed__loader {
@@ -16,7 +26,6 @@
   align-items: center;
   justify-content: center;
   gap: 18px;
-  min-height: 480px;
   background: var(--background-color);
   opacity: 1;
   transition: opacity 0.4s ease;
