@@ -62,10 +62,10 @@
   {{/* ---- Grouped partner sections ---- */}}
   {{ $partners := .Site.Params.partner_item }}
   {{ $categories := slice
-    (dict "key" "conservation" "title" "🌿 Conservation Organizations")
-    (dict "key" "research"     "title" "🔬 Research Institutions")
-    (dict "key" "technology"   "title" "⚙️ Technology Partners")
-    (dict "key" "funders"      "title" "💛 Funders &amp; Supporters")
+    (dict "key" "conservation" "title" "Conservation Organizations")
+    (dict "key" "research"     "title" "Research Institutions")
+    (dict "key" "technology"   "title" "Technology Partners")
+    (dict "key" "funders"      "title" "Funders &amp; Supporters")
   }}
 
   {{ range $cat := $categories }}
@@ -103,6 +103,31 @@
     </section>
     {{ end }}
   {{ end }}
+
+  {{/* ---- Partner With Us (ways to partner, reuses support track cards) ---- */}}
+  <section class="section partners-section support-tracks animate">
+    <div class="container-wide">
+      <h2 class="partners-section__title">Partner With Us</h2>
+      {{ with .Site.Data.support.tracks_intro }}
+      <p class="support__section-intro">{{ . }}</p>
+      {{ end }}
+      <div class="support__grid">
+        {{ range .Site.Data.support.tracks }}
+        <div class="support__card support__track">
+          <span class="support__track-label">{{ .label }}</span>
+          <h3 class="support__card-title">{{ .title }}</h3>
+          <p class="support__card-description">{{ .description }}</p>
+          <div class="support__track-proof">{{ .proof | markdownify }}</div>
+          <ul class="support__track-offers">
+            {{ range .offers }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
 
   {{/* ---- Support CTA ---- */}}
   <section class="section partners-cta animate">
