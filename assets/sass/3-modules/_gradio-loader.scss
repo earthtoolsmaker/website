@@ -1,0 +1,89 @@
+// Pangolin loading overlay shown over an embedded Gradio app while the HF Space
+// wakes up. The <gradio-app> itself is held invisible (opacity:0) until ready,
+// so Gradio's own building/sleeping/error UI — including high-z-index toasts,
+// which inherit an ancestor's opacity — never shows through. JS
+// (assets/js/gradio-loader.js) adds .is-ready once Gradio fires `render`.
+
+.gradio-embed {
+  position: relative;
+  // Reserve height in the document flow so the opaque loader covers its own
+  // space (and any boot-time Gradio glitch) instead of floating over the
+  // content below it while <gradio-app> is still 0px tall.
+  min-height: 480px;
+  // Ease the reserved height down on reveal so a demo shorter than 480px
+  // settles smoothly instead of snapping.
+  transition: min-height 0.5s ease;
+}
+
+// Once revealed, stop reserving space — let the embed collapse to the live
+// demo's natural height.
+.gradio-embed.is-ready {
+  min-height: 0;
+}
+
+// Keep the live app (and all of Gradio's pre-render UI) invisible and inert
+// until ready. opacity:0 still lets Gradio load, connect, and render offscreen.
+// On reveal the demo fades in quickly so it's solid before the overlay finishes
+// dissolving — avoids a muddy cross-fade where both are half-visible at once.
+.gradio-embed gradio-app {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.gradio-embed.is-ready gradio-app {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.gradio-embed__loader {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: var(--background-color);
+  opacity: 1;
+  // Dissolve a touch slower than the demo fades in, with a subtle scale-down,
+  // so the overlay melts away to reveal the (already solid) demo beneath.
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.gradio-embed.is-ready .gradio-embed__loader {
+  opacity: 0;
+  transform: scale(0.98);
+  pointer-events: none;
+}
+
+.gradio-embed__pangolin {
+  width: 72px;
+  height: 72px;
+  animation: gradio-pangolin-spin 1.1s linear infinite;
+}
+
+.gradio-embed__label {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: var(--text-alt-color);
+}
+
+@keyframes gradio-pangolin-spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}
+
+// Reduced motion: static pangolin, instant reveal.
+@media (prefers-reduced-motion: reduce) {
+  .gradio-embed__pangolin {
+    animation: none;
+  }
+  .gradio-embed,
+  .gradio-embed__loader,
+  .gradio-embed gradio-app {
+    transition: none;
+  }
+}
