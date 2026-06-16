@@ -8,18 +8,15 @@ image: /images/posts/how-to-build-a-benthic-coral-reefs-analyser/cover.jpg
 tags: ["AI", "vision"]
 ---
 
-Welcome to our blog post where we'll explore the development process of
-a benthic coral reef analyzer, created in partnership with
-[ReefSupport](https://reef.support). Our goal is simple: to improve the
-tools available for monitoring coral reefs and marine environments.
-Let's dive into how we're making this happen!
+In this post we explore the development of a benthic coral reef analyzer, built
+in partnership with [ReefSupport](https://reef.support) to improve the tools for
+monitoring coral reefs and marine environments.
 
-For a comprehensive understanding of this project, please click on the
-image below:
+For the full picture, here is the coral analysis pipeline — tap through for the
+project:
 
-<a href='{{< ref "/projects/coral_reef_health_monitoring.md" >}}' title="Project Details">
-  <img src="./images/pipeline_overview.png" />
-</a>
+[![The coral analysis pipeline: capture, segment, classify, measure](/images/projects/coral_reef_segmentation/diagrams/pipeline.svg)]({{< ref "/projects/coral_reef_health_monitoring.md" >}})
+*Capture → segment → classify → measure coral cover over time*
 
 > Leveraging computer vision for the segmentation of
 coral reefs in benthic imagery holds the potential to
@@ -29,38 +26,33 @@ within
 
 ## Project Scope
 
-Our collaboration aims to lead the way in developing an advanced underwater
-benthic imagery model. This model is designed to accurately identify and locate
-various functional groups within reef ecosystems. It's flexible and can be used
-in different marine regions worldwide.
+Our collaboration develops an underwater benthic imagery model that identifies
+and locates the functional groups in a reef — flexible enough to use across
+marine regions worldwide.
 
 ![Benthic Analysis System](./images/coral_ai.gif)
-*Gallery / Benthic Imagery Analysis System by [Reef Support](https://reef.support)*
+*The benthic imagery analysis system by [Reef Support](https://reef.support)*
 
-Initially, our main focus is on distinguishing between hard and soft coral
-species. However, our approach is iterative, meaning we can gradually include
-more detailed taxonomic classifications as the system evolves and becomes more
-sophisticated. By establishing a strong foundation with this broad framework,
-we set the stage for comprehensive analysis and management of reef ecosystems.
+We start by distinguishing hard from soft coral, then add finer taxonomic
+detail as the system matures — a broad foundation to build comprehensive reef
+analysis on.
 
 ## Provided Datasets
 
 The data provided by [ReefSupport](https://reef.support) is made available on a
-publically hosted [Google Cloud bucket](https://console.cloud.google.com/storage/browser/rs_storage_open). 
-Two types of datasets are available:
+publicly hosted [Google Cloud bucket](https://console.cloud.google.com/storage/browser/rs_storage_open). 
+It comes in two forms:
 
-- __Point Labels__ or __Sparse Labels__: random points in an image are
-classified. A typical image would contain
-between 50 and 100 point labels. 
-  - [IBF](https://indonesiabiru.id/)
-  - [Reefolution](https://reefolution.org/)
-  - [Seaview](https://espace.library.uq.edu.au/view/UQ:734799)
-- __Mask Labels__ or __Dense Labels__: detailed segmentations masks are
-provided for hard and soft corals.
-  - [CoralSeg](https://onlinelibrary.wiley.com/doi/abs/10.1002/rob.21915) 
-  - __ReefSupport__ meticulously annotated subsets of the aforementioned
-  datasets, ensuring comprehensive coverage of coral reefs spanning
-  various global regions.
+<div class="support__grid support__grid--two">
+  <div class="support__card">
+    <h3 class="support__card-title">Point (sparse) labels</h3>
+    <p class="support__card-description">Random points in an image are classified — typically 50–100 per image. Sources: <a href="https://indonesiabiru.id/">IBF</a>, <a href="https://reefolution.org/">Reefolution</a>, and <a href="https://espace.library.uq.edu.au/view/UQ:734799">Seaview</a>.</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">Mask (dense) labels</h3>
+    <p class="support__card-description">Full segmentation masks for hard and soft corals. Sources: <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/rob.21915">CoralSeg</a>, plus ReefSupport's own carefully annotated subsets covering reefs worldwide.</p>
+  </div>
+</div>
 
 {{< image_carousel id="reefsupport-samples-gallery" >}}
   {{< carousel_image src="./images/eda/samples/1.jpg" alt="Coral reef sample 1" caption="Underwater benthic imagery showing coral reef ecosystem from the ReefSupport dataset" >}}
@@ -79,78 +71,38 @@ of all the individual coral instances.
 
 ### Exploratory Data Analysis
 
-Exploratory Data Analysis (EDA) is an approach to analyzing datasets to
-summarize their main characteristics, often employing visual methods. The
-primary goal of EDA is to uncover patterns, relationships, and anomalies in the
-data, which can then inform subsequent analysis or modeling tasks.
-
-EDA typically involves the following steps:
-
-1. __Data Collection__: Gathering the relevant dataset(s) from various sources.
-2. __Data Cleaning__: Identifying and handling missing values, outliers, and
-   inconsistencies in the data.
-3. __Summary Statistics__: Computing descriptive statistics such as mean,
-   median, mode, standard deviation, etc., to understand the central tendencies
-and variability of the data.
-4. __Data Visualization__: Creating visual representations of the data using
-   plots, charts, histograms, scatter plots, etc., to explore patterns,
-distributions, correlations, and trends within the data.
-5. __Exploratory Modeling__: Building simple models or using statistical
-   techniques to further understand relationships within the data.
-6. __Hypothesis Testing__: Formulating and testing hypotheses about the data to
-   validate assumptions or gain insights.
-7. __Iterative Analysis__: Iteratively exploring the data, refining analysis
-   techniques, and generating new hypotheses as insights emerge.
-
-EDA is a crucial initial step in any data analysis or modeling project as it
-helps analysts gain a deeper understanding of the dataset, identify potential
-challenges or biases, and inform subsequent analytical decisions. It provides a
-foundation for more advanced analyses, such as predictive modeling, hypothesis
-testing, or machine learning, by guiding feature selection, model building, and
-evaluation strategies.
+Before modelling, we explored the dataset closely — and it surfaced several
+data-quality issues worth fixing first.
 
 #### Data quality issues
 
-This section outlines various data quality issues identified during the
-Exploratory Data Analysis (EDA) process.
-
 ##### Empty masks
 
-Empty stitched masks, characterized by entirely black
-pixels, were identified within the datasets. Subsequent
-removal of these empty masks resulted in improved overall
-performance. Notably, there were 532 empty masks
-identified in SEAVIEW_PAC_USA and 328 in SEAVIEW_ATL. The
-elimination of such empty masks contributes to a
-more refined dataset, enhancing the model’s efficiency
-and accuracy during training and evaluation.
+Some stitched masks were entirely black — 532 in SEAVIEW_PAC_USA and 328 in
+SEAVIEW_ATL. Removing these empty masks gave a cleaner dataset and improved
+performance during training and evaluation.
 
 ![Empty Masks samples](./images/eda/data_quality/empty_labels/samples.png)
 *Empty Masks samples*
 
 ##### Low quality labels
 
-The presence of dense labels in SEAVIEW/PAC_USA has introduced
-challenges in the data modeling process, necessitating their exclusion
-from the training set. Regrettably, the labeling process for this
-dataset involved creating extensive masks that covered almost all corals
-within an image, rather than generating individual masks for each
-distinct entity.
+The dense labels in SEAVIEW/PAC_USA covered almost all the coral in an image as
+one big mask rather than outlining each individual, so we excluded them from the
+training set.
 
 ![Low quality Masks samples](./images/eda/data_quality/low_quality/samples.png)
 *Low quality Masks samples*
 
 ##### Mismatched sparse and dense labels
 
-An exploratory analysis was conducted to compare sparse (point) and
-dense (mask) labels. In particular, we compared the dense labels
-provided by ReefSupport with the point labels associated with the
-corresponding images.
+We compared ReefSupport's dense (mask) labels against the sparse (point) labels
+for the same images.
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="./images/eda/data_quality/mismatched_labels/summary.png" loading="lazy" alt="Mismatch summary" \>
-    <img src="./images/eda/data_quality/mismatched_labels/label_mismatch_distribution.png" loading="lazy" alt="Mismatch Distribution" \>
+    <img src="./images/eda/data_quality/mismatched_labels/summary.png" loading="lazy" alt="Mismatch summary" class="no-round">
+    <img src="./images/eda/data_quality/mismatched_labels/label_mismatch_distribution.png" loading="lazy" alt="Mismatch Distribution" class="no-round">
   </div>
   <em>Mismatch summary and distribution</em>
 </div>
@@ -162,59 +114,45 @@ demonstrating a complete 100% error mismatch.
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="./images/eda/data_quality/mismatched_labels/mismatch_17_percent.png" loading="lazy" alt="Mismatch Qualitative 1 - 17 percent" \>
-    <img src="./images/eda/data_quality/mismatched_labels/mismatch_26_percent.png" loading="lazy" alt="Mismatch Qualitative 2 - 26 percent" \>
-    <img src="./images/eda/data_quality/mismatched_labels/mismatch_52_percent.png" loading="lazy" alt="Mismatch Qualitative 3 - 52 percent" \>
-    <img src="./images/eda/data_quality/mismatched_labels/mismatch_100_percent.png" loading="lazy" alt="Mismatch Qualitative 4 - 100 percent" \>
+    <img src="./images/eda/data_quality/mismatched_labels/mismatch_17_percent.png" loading="lazy" alt="Mismatch Qualitative 1 - 17 percent">
+    <img src="./images/eda/data_quality/mismatched_labels/mismatch_26_percent.png" loading="lazy" alt="Mismatch Qualitative 2 - 26 percent">
+    <img src="./images/eda/data_quality/mismatched_labels/mismatch_52_percent.png" loading="lazy" alt="Mismatch Qualitative 3 - 52 percent">
+    <img src="./images/eda/data_quality/mismatched_labels/mismatch_100_percent.png" loading="lazy" alt="Mismatch Qualitative 4 - 100 percent">
   </div>
   <em>Samples to illustrate sparse and dense label mismatches</em>
 </div>
 
 ##### Data leakage
 
-In one of the regions, certain images have been flagged for potential
-data leakage due to overlapping content within the same quadrats. This
-poses a significant challenge as these images may inadvertently find
-their way into multiple datasets, including training, validation, or
-testing sets. Such occurrences can lead to an overestimation of
-performance metrics during evaluations on both test and validation sets.
-A detailed analysis of the sequential order of image IDs highlights a
-consistent trend, showing that a majority of images share overlaps with
-their neighboring counterparts.
+In one region, many images overlap with their neighbours within the same
+quadrats. If overlapping images land in different splits, the model effectively
+sees test content during training — inflating its scores. Ordering by image ID
+makes it clear: most images share content with their neighbours.
 
 ![Sequence 1](./images/eda/data_quality/data_leakage/sequence1.png)
-*Sequence of 4 photos that share overlaps with their neigbors*
+*A sequence of 4 photos that share overlaps with their neighbours*
 
 ![Sequence 2](./images/eda/data_quality/data_leakage/sequence2.png)
-*Other sequence of 4 photos that share overlaps with their neigbors*
+*Another sequence of 4 photos that share overlaps with their neighbours*
 
-We will assess the magnitude of the data leakage by evaluating the
-performance of the fine-tuned model at the regional level as it only
-occurs in one identified region.
+Since it is confined to one region, we gauge its impact by evaluating the model
+region by region.
 
 ##### Class imbalance
 
-The dataset exhibited a bias towards hard coral
-instances, with their prevalence being approximately five
-times higher compared to that of soft coral instances.
+The dataset skews heavily towards hard coral — roughly five times more
+instances than soft coral. Such imbalance biases a model towards the majority
+class and hurts its performance on the minority one.
 
-Imbalanced datasets pose challenges in machine learning,
-particularly when one class is substantially more
-dominant than others. This disparity can result in biased
-models that inadequately address minority classes,
-impacting overall performance.
-
-![Class Imbalance](./images/eda/data_quality/class_imbalance/distributions.png)
+![Class Imbalance](./images/eda/data_quality/class_imbalance/distributions.png#noround)
 *Class imbalance distributions*
 
 ### Data Preparation
 
 #### YOLOv8 TXT format
 
-To leverage the YOLOv8 ecosystem, it is imperative to preprocess the raw
-datasets provided into [a format that is
-compatible](https://roboflow.com/formats/yolov8-pytorch-txt) with the
-model’s requirements.
+To use the YOLOv8 ecosystem, we first convert the raw datasets into [its
+expected format](https://roboflow.com/formats/yolov8-pytorch-txt).
 
 ![YOLOv8 TXT Format from Individual Masks](./images/yolov8_txt_format.png)
 *YOLOv8 TXT format conversion*
@@ -284,108 +222,44 @@ organisms.
 
 ### Evaluation Metrics
 
-The __mean Intersection Over Union (mIoU)__ and the
-__Dice Coefficient__ were selected to evaluate the
-performance of the semantic segmentation results from the
-models. We stayed away from mean Precision Accuracy (mPA)
-as it can be very problematic in skewed datasets.
+We evaluate segmentation with **mean IoU (mIoU)** and the **Dice coefficient**,
+avoiding mean pixel accuracy since it's misleading on skewed datasets.
 
-#### mIoU or Jaccard Index
-
-In the context of semantic segmentation, the __Jaccard Index__ is often
-referred to as the __Intersection over Union (IoU)__ or the __Jaccard
-similarity coefficient__. It is a metric used to assess the accuracy of
-segmentation models by measuring the overlap between the predicted
-segmentation masks and the ground truth masks.
+**mIoU (Jaccard index)** measures the overlap between the predicted and
+ground-truth masks — higher is better:
 
 $$\mathit{IoU} = \dfrac{A \cap B}{A \cup B}$$
 
-The intersection is the number of pixels that are correctly predicted as
-part of the object, and the union is the total number of pixels
-predicted as part of the object by the model, including both true
-positives and false positives.
-
-Higher Jaccard Index values imply better segmentation accuracy,
-indicating a greater overlap between the predicted and ground truth
-regions.
-
-The Jaccard Index is commonly used as an evaluation metric for semantic
-segmentation models. Alongside metrics like pixel accuracy and
-class-wise
-accuracy, the Jaccard Index helps quantify the spatial agreement between the
-predicted and ground truth segmentation masks.
-
-#### Dice Coefficient or F1 score
-
-The __Dice coefficient__, also known as the Dice similarity coefficient or Dice
-score, is a metric commonly used in semantic segmentation to quantify the
-similarity between the predicted segmentation mask and the ground truth mask.
-It is particularly useful for evaluating the performance of segmentation
-models, especially when dealing with imbalanced datasets.
-
-The Dice coefficient is calculated using the following formula:
+**Dice coefficient (F1)** also rewards overlap but weights true positives more
+heavily, which makes it well-suited to imbalanced data:
 
 $$\mathit{DiceCoefficient} = \dfrac{2 \times TP}{2 \times TP + FP + FN}$$
-
-Here's how the terms are defined:
-
-- __True Positives (TP)__: The number of pixels that are correctly predicted as
-part of the object by both the model and the ground truth. In segmentation, a
-true positive occurs when a pixel is correctly identified as belonging to the
-object.
-
-- __False Positives (FP)__: The number of pixels that are predicted by the
-model as part of the object but are actually part of the background according
-to the ground truth.
-
-- __False Negatives (FN)__: The number of pixels that are part of the object in
-the ground truth but are incorrectly predicted as background by the model.
-
-The Dice coefficient essentially measures how well the model captures the true
-positives relative to the total pixels predicted as part of the object (both
-true positives and false positives) and the total pixels that actually belong
-to the object (true positives and false negatives). The factor of 2 in the
-numerator and denominator is used to ensure that the Dice coefficient ranges
-from 0 to 1.
-
-A high Dice coefficient indicates a strong agreement between the predicted
-segmentation and the ground truth, while a low Dice coefficient suggests poor
-segmentation performance.
-
-In summary, the Dice coefficient provides a way to balance and evaluate the
-trade-off between precision (capturing true positives) and recall (capturing
-all actual positives) in semantic segmentation tasks. It is a valuable metric,
-especially in cases of class imbalance where accuracy alone may not provide a
-clear picture of the model's performance.
 
 ### YOLOv8
 
 #### Overview
 
-We opted to utilize a pretrained
-[YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tune it for
-our specific instance segmentation task. Renowned for its speed, accuracy, and
-user-friendly interface, YOLOv8 stands out as an ideal solution for various
-tasks, including object detection, tracking, instance segmentation, image
-classification, and pose estimation.
+We took a pretrained
+[YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tuned it for
+our instance segmentation task. YOLOv8 is fast, accurate, and easy to work
+with, and it handles a range of tasks — object detection, tracking, instance
+segmentation, image classification, and pose estimation.
 
-![YOLOv8 CV Tasks](./images/yolov8_tasks.png)
-*YOLOv8 Computer Vision Tasks*
+![A benthic image goes into the segmentation model and comes out with each coral colony mapped](/images/projects/coral_reef_segmentation/diagrams/segmentation.svg)
+*Segmentation on a benthic image: a photo in, each colony mapped out*
 
 #### Training
 
 ##### Baseline
 
-A __baseline__ model was swiftly established to gauge the effectiveness of
-our approach and assess the potential performance enhancements that
-could be achieved.
-A medium size pretrained model is finetuned for 5 epochs on the train split.
+We first established a __baseline__ to gauge the approach: a medium-size
+pretrained model fine-tuned for 5 epochs on the train split.
 
 | mIoU | IoU_hard | IoU_soft | IoU_other | mDice | Dice_hard | Dice_soft | Dice_other |
 | ---- | ---------| -------- | --------- | ----- | --------- | --------- | ---------- |
 | __0.70__ | 0.64     | 0.58     | 0.89      | 0.82  | 0.78      | 0.73      | 0.94       |
 
-![Quantitative Baseline Results](./images/evaluation/baseline/quantitative.png)
+![Quantitative Baseline Results](./images/evaluation/baseline/quantitative.png#noround)
 *Results / Quantitative - Training metrics (left) and pixel level confusion matrix (right)*
 
 ![Qualitative Baseline Results](./images/evaluation/baseline/qualitative.png)
@@ -397,9 +271,8 @@ selection of hyperparameters.
 
 ##### Best Model
 
-In this section, we showcase the optimal models achieved through
-extensive fine-tuning efforts, involving hundreds of hours of GPU time
-to identify effective hyperparameter combinations.
+After hundreds of GPU-hours of hyperparameter search, we arrived at the
+best-performing models.
 
 Given the uncertainty about ReefSupport’s hardware configurations and
 the intended use of the models (including the possibility of running on
@@ -420,10 +293,10 @@ images up to 45 degrees are applied during training.
 | ---- | ---------| -------- | --------- | ----- | --------- | --------- | ---------- |
 | __0.85__ | 0.80     | 0.81     | 0.94      | 0.92  | 0.89      | 0.90      | 0.97       |
 
-![Quantitative Baseline Results](./images/evaluation/best/quantitative.png)
+![Quantitative Best Results](./images/evaluation/best/quantitative.png#noround)
 *Results / Quantitative - Training metrics (left) and pixel level confusion matrix (right)*
 
-![Qualitative Baseline Results](./images/evaluation/best/qualitative.png)
+![Qualitative Best Results](./images/evaluation/best/qualitative.png)
 *Results / Qualitative*
 
 #### Evaluation
@@ -475,13 +348,9 @@ devices.
 
 ## Conclusion
 
-In our investigation, YOLOv8 has emerged as an exceptionally suitable
-model for our dataset and the associated computer vision task,
-particularly in instance segmentation. Its remarkable performance, even
-on modest hardware configurations, positions it as an effective solution
-for resource-constrained environments. Moreover, YOLOv8 demonstrates
-real-time capabilities when applied to video streams, significantly
-enhancing its practical utility.
+YOLOv8 proved a strong fit for this instance-segmentation task — accurate even
+on modest hardware, and fast enough to run on live underwater video streams,
+which makes it practical for real deployments.
 
 ![Hard Coral Viz](./images/hard_coral_viz.png)
 *Benthic Segmentation / Hard Coral*
@@ -493,6 +362,7 @@ insights gained from our findings are invaluable for refining and
 optimizing computer vision applications in marine biology and underwater
 image segmentation.
 
-One can try out the model from the [live demo]({{< ref "/demos/coral_reef_health_monitoring" >}}) or directly from the snippet below:
+You can try the segmenter yourself on real benthic imagery — the interactive
+demo runs right in your browser.
 
-{{< hf_space "earthtoolsmaker-coral-segmentation-reef-support" >}}
+{{< demo_cta "/demos/coral_reef_health_monitoring/" >}}
