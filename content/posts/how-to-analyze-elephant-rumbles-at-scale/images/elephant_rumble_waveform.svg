@@ -1,0 +1,18 @@
+<svg viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#2a2620"/></marker>
+  <style>.ax{font-size:13px;fill:#60626a}</style>
+  <!-- top half of the waveform envelope, filled down to the midline (y=150) -->
+  <path id="wavehalf" d="M40,145 C72,145 88,68 120,68 C162,68 183,128 225,128 C267,128 288,50 330,50 C368,50 387,130 425,130 C463,130 482,82 520,82 C556,82 574,128 610,128 C646,128 664,62 700,62 C736,62 754,130 790,130 C826,130 844,56 880,56 C912,56 928,142 960,142 L960,150 L40,150 Z" fill="#1f7a8c"/>
+</defs>
+
+<!-- waveform: top half + mirrored bottom half about y=150 -->
+<use href="#wavehalf"/>
+<use href="#wavehalf" transform="matrix(1 0 0 -1 0 300)"/>
+<line x1="40" y1="150" x2="960" y2="150" stroke="#0d4d5a" stroke-width="1" opacity="0.5"/>
+
+<!-- axes -->
+<line x1="40" y1="270" x2="970" y2="270" stroke="#2a2620" stroke-width="1.5" marker-end="url(#arr)"/>
+<text class="ax" x="960" y="288" text-anchor="end">Time</text>
+<text class="ax" x="40" y="288">Amplitude over time — a recorded elephant rumble</text>
+</svg>

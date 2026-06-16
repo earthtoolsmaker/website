@@ -1,0 +1,49 @@
+<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#2a2620"/></marker>
+  <marker id="arrm" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1 L9 5 L0 9 Z" fill="#60626a"/></marker>
+  <style>.idx{font-size:11px;fill:#80838b}.it{font-size:15px;font-style:italic}</style>
+</defs>
+
+<!-- filled area between curve and baseline -->
+<path d="M40,170 C59,170 59,120 78,120 C97,120 97,60 116,60 C135,60 135,100 154,100 C173,100 173,120 192,120 C211,120 211,100 230,100 C249,100 249,90 268,90 C287,90 287,130 306,130 C325,130 325,168 344,168 C363,168 363,235 382,235 C401,235 401,258 420,258 C439,258 439,265 458,265 C477,265 477,245 496,245 C515,245 515,205 534,205 L534,170 L40,170 Z"
+  fill="#fbe08a" opacity="0.85"/>
+
+<!-- sample bars + dots -->
+<g stroke="#2a6f97" stroke-width="1.6">
+  <line x1="40" y1="170" x2="40" y2="170"/><line x1="78" y1="170" x2="78" y2="120"/><line x1="116" y1="170" x2="116" y2="60"/>
+  <line x1="154" y1="170" x2="154" y2="100"/><line x1="192" y1="170" x2="192" y2="120"/><line x1="230" y1="170" x2="230" y2="100"/>
+  <line x1="268" y1="170" x2="268" y2="90"/><line x1="306" y1="170" x2="306" y2="130"/><line x1="344" y1="170" x2="344" y2="168"/>
+  <line x1="382" y1="170" x2="382" y2="235"/><line x1="420" y1="170" x2="420" y2="258"/><line x1="458" y1="170" x2="458" y2="265"/>
+  <line x1="496" y1="170" x2="496" y2="245"/><line x1="534" y1="170" x2="534" y2="205"/>
+</g>
+<g fill="#2a6f97">
+  <circle cx="78" cy="120" r="4"/><circle cx="116" cy="60" r="4"/><circle cx="154" cy="100" r="4"/><circle cx="192" cy="120" r="4"/>
+  <circle cx="230" cy="100" r="4"/><circle cx="268" cy="90" r="4"/><circle cx="306" cy="130" r="4"/><circle cx="344" cy="168" r="4"/>
+  <circle cx="382" cy="235" r="4"/><circle cx="420" cy="258" r="4"/><circle cx="458" cy="265" r="4"/><circle cx="496" cy="245" r="4"/><circle cx="534" cy="205" r="4"/>
+</g>
+
+<!-- continuous signal curve -->
+<path d="M40,170 C59,170 59,120 78,120 C97,120 97,60 116,60 C135,60 135,100 154,100 C173,100 173,120 192,120 C211,120 211,100 230,100 C249,100 249,90 268,90 C287,90 287,130 306,130 C325,130 325,168 344,168 C363,168 363,235 382,235 C401,235 401,258 420,258 C439,258 439,265 458,265 C477,265 477,245 496,245 C515,245 515,205 534,205"
+  fill="none" stroke="#3a9d6e" stroke-width="2.5"/>
+
+<!-- t axis -->
+<line x1="20" y1="170" x2="580" y2="170" stroke="#2a2620" stroke-width="2" marker-end="url(#arr)"/>
+<text class="it" x="585" y="175" fill="#60626a">t</text>
+
+<!-- sampling period T (between samples 1 and 2) -->
+<line x1="78" y1="150" x2="116" y2="150" stroke="#60626a" stroke-width="1.4" marker-start="url(#arrm)" marker-end="url(#arrm)"/>
+<text class="it" x="97" y="144" text-anchor="middle" fill="#60626a">T</text>
+
+<!-- labels -->
+<text class="it" x="120" y="48" fill="#3a9d6e">S(t)</text>
+<text class="it" x="158" y="84" fill="#2a6f97">S&#8336;</text>
+
+<!-- sample indices -->
+<g class="idx" text-anchor="middle">
+  <text x="40" y="188">0</text><text x="78" y="188">1</text><text x="116" y="188">2</text><text x="154" y="188">3</text>
+  <text x="192" y="188">4</text><text x="230" y="188">5</text><text x="268" y="188">6</text><text x="306" y="188">7</text>
+  <text x="344" y="188">8</text><text x="382" y="188">9</text><text x="420" y="188">10</text><text x="458" y="188">11</text>
+  <text x="496" y="188">12</text><text x="534" y="188">13</text>
+</g>
+</svg>

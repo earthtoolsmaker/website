@@ -6,10 +6,19 @@ params:
   math: true
 image: /images/posts/how-to-detect-elephant-rumbles-at-scale/cover2.png
 tags: ["AI", "audio"]
+spectrogram_reasons:
+  - name: Frequency–time view
+    desc: "A spectrogram shows which frequencies are present and how they change over time — exactly what tasks like sound-event detection need."
+  - name: Visual features
+    desc: "Turning audio into an image lets convolutional networks bring their powerful pattern-recognition to bear on sound."
+  - name: Noise robustness
+    desc: "Seeing the frequency content makes it easier for a model to focus on the signal and ignore the noisy parts of a recording."
+  - name: Task adaptation
+    desc: "Spectrograms can be tuned per task — Mel-spectrograms for speech and music, for instance — to highlight the features that matter."
 ---
 
-This blog post will detail the development process of an elephant rumble
-audio analyzer, created in partnership with [The Elephant Listening
+This post walks through the development of an elephant rumble audio analyzer,
+built in partnership with [The Elephant Listening
 Project](https://www.elephantlisteningproject.org).
 
 > Our vision is to conserve the tropical forests of Africa through acoustic
@@ -23,7 +32,7 @@ ref "/projects/elephants_passive_acoustic_monitoring" >}}).
 
 ## What is sound?
 
- 🔉Sound is produced by variations in air pressure. These pressure variations can
+Sound is produced by variations in air pressure. These pressure variations can
 be measured and plotted over time to create a visual representation of the
 sound.
 
@@ -31,7 +40,7 @@ Sound waves often repeat at regular intervals, forming patterns where each wave
 has the same shape. The height of these waves, known as amplitude, indicates
 the intensity of the sound.
 
-![Signal Sampling](./images/sound.png "Variation of air pressure")
+![A sound wave as a variation of air pressure, labeled with amplitude and period](./images/sound.svg)
 *A soundwave as a variation of air pressure*
 
 The time required for a signal to complete one full wave is called the period.
@@ -44,8 +53,8 @@ However, signals of different frequencies can be combined to form composite
 signals with more complex repeating patterns. All the sounds we hear, including
 the human voice, are made up of such composite waveforms.
 
-![Signal Sampling](images/elephant_rumble_waveform.png "Recording of an elephant rumble in the forest")
-*Elephant rumble recorded in an african forest*
+![The amplitude of a recorded elephant rumble over time](./images/elephant_rumble_waveform.svg)
+*Elephant rumble recorded in an African forest*
 
 ### Encoding sound digitally
 
@@ -53,8 +62,8 @@ To digitize a sound wave, the signal is converted into a series of numbers.
 This process involves measuring the amplitude of the sound at regular time
 intervals.
 
-![Signal Sampling](images/signal_sampling.png "Signal Sampling")
-*Signal Sampling from [Wikimedia](https://commons.wikimedia.org/wiki/File:Signal_Sampling.png)*
+![A continuous signal sampled at regular intervals into discrete values](./images/signal_sampling.svg)
+*A continuous signal, sampled at regular intervals into discrete values*
 
 Each measurement is called a sample, and the sampling rate is the number of
 samples taken per second. For example, a common sampling rate is 44,100 samples
@@ -62,13 +71,13 @@ per second. This means a 10-second music clip would contain 441,000 samples.
 
 ### Human hearing range
 
- 👂The human ear can detect sounds within a specific range of frequencies,
+The human ear can detect sounds within a specific range of frequencies,
 typically from about 20 Hz to 20,000 Hz (20 kHz). Sounds below this range are
 known as infrasounds, while sounds above this range are referred to as
 ultrasounds.
 
-![Sound Frequencies](images/sound_frequencies.webp "Audible human range")
-*Audible range for humans*
+![The frequency spectrum split into infrasound, the human audible range, and ultrasonic](./images/sound_frequencies.svg)
+*Audible range for humans, between infrasound and ultrasonic*
 
 __Infrasounds__, with frequencies below 20 Hz, are used by animals like elephants.
 Elephants communicate using these low-frequency sounds, which can travel long
@@ -76,7 +85,7 @@ distances and penetrate through obstacles like dense vegetation.
 
 On the other end of the spectrum, __ultrasounds__ have frequencies above 20 kHz.
 
-🦇 Bats are well-known for their use of ultrasound in echolocation. They emit
+Bats are well-known for their use of ultrasound in echolocation. They emit
 high-frequency sound waves that bounce off objects and return as echoes,
 allowing bats to navigate and hunt in complete darkness.
 
@@ -133,37 +142,16 @@ As a result, spectrograms are vital in audio deep learning because they
 transform audio signals into a format that is more suitable for analysis by
 machine learning models, especially those based on deep learning techniques.
 
-Here are several reasons why spectrograms are so important:
+Spectrograms matter for a few reasons — tap each:
 
-1. __Frequency-Time Representation__: Spectrograms provide a detailed
-frequency-time representation of an audio signal, making it easier to analyze
-the frequency components and how they change over time. This is crucial for
-tasks such as speech recognition, music genre classification, and sound event
-detection, where understanding both the frequency content and temporal dynamics
-is essential.
-2. __Visual Features__: Many deep learning models, particularly convolutional
-neural networks (CNNs), are designed to work with visual data. Spectrograms
-convert audio data into a visual format, allowing these models to leverage
-their powerful feature extraction and pattern recognition capabilities. This
-visual representation helps the models learn complex patterns and structures in
-the audio signal.
-3. __Noise Robustness__: Spectrograms can help in distinguishing useful signal
-components from noise. By analyzing the frequency content, models can be
-trained to focus on relevant features and ignore irrelevant or noisy parts of
-the audio signal, improving the robustness and accuracy of the model.
-4. __Task-Specific Adaptation__: Different audio tasks may require focusing on
-different aspects of the audio signal. For example, speech recognition models
-might benefit from detailed time-frequency resolution, while music analysis
-might focus on harmonic content. Spectrograms can be adapted to highlight
-specific features relevant to the task, such as using Mel-spectrograms for
-speech and music applications.
+{{< threats "spectrogram_reasons" >}}
 
 ## Elephant Rumbles
 
 Elephant rumbles are low-frequency vocalizations produced by elephants,
 primarily for communication.
 
-![Spectrogram Rumble](./images/elp_spectrogram_rumble.jpg "Spectrogram of two elephant rumbles")
+![Spectrogram of two elephant rumbles shown as stacks of harmonics, mostly below the infrasound boundary](./images/elp_spectrogram_rumble.svg)
 *Spectrogram of two elephant rumbles*
 
 - Two elephant rumbles are shown as stacks of parallel lines.
@@ -174,7 +162,7 @@ Hz) and women (140-400 Hz).
 - The stacks of lines above the white line represent the harmonics of the
 fundamental frequency, which in these calls is infrasonic.
 
-Have a listen to the rumbles 🐘
+Have a listen:
 
 <audio controls src="audio/rumble.mp3"></audio>
 
@@ -185,32 +173,41 @@ detailed explanation:
 
 ### Characteristics of Elephant Rumbles
 
-- __Low Frequency__: Elephant rumbles typically fall in the infrasound range,
-   below 20 Hz, which is often below the threshold of human hearing. However,
-some rumbles can also be heard by humans as a low, throaty sound.
-- __Long Distance Communication__: Due to their low frequency, rumbles can
-   travel long distances, sometimes several kilometers, allowing elephants to
-communicate with each other across vast areas, even when they are out of sight.
-It can also travel through dense forests as the wavelength is very large.
-- __Vocal Production__: Rumbles are produced by the larynx and can vary in
-   frequency, duration, and modulation. Elephants use different types of
-rumbles to convey different messages.
+<div class="support__grid">
+  <div class="support__card">
+    <h3 class="support__card-title">Low frequency</h3>
+    <p class="support__card-description">Most rumbles sit in the infrasound range, below 20 Hz — often beneath the threshold of human hearing, though some carry a low, throaty edge we can hear.</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">Long-distance</h3>
+    <p class="support__card-description">Their low frequency lets rumbles travel several kilometres and pass through dense forest, so elephants stay in contact even out of sight.</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">Vocal production</h3>
+    <p class="support__card-description">Produced by the larynx, rumbles vary in frequency, duration, and modulation — different rumbles carry different messages.</p>
+  </div>
+</div>
 
 ### Functions of Elephant Rumbles
 
-- __Coordination and Social Bonding__: Elephants use rumbles to maintain
-   contact with members of their herd, coordinate movements, and reinforce
-social bonds. For example, a matriarch might use a rumble to lead her group to
-a new location.
-- __Reproductive Communication__: Male elephants, or bulls, use rumbles to
-   communicate their reproductive status and readiness to mate. Females also
-use rumbles to signal their estrus status to potential mates.
-- __Alarm and Distress Calls__: Rumbles can signal alarm or distress, warning
-   other elephants of potential danger. These rumbles can mobilize the herd and
-prompt protective behavior.
-- __Mother-Calf Communication__: Mothers and calves use rumbles to stay in
-   contact, especially when they are separated. Calves may rumble to signal
-hunger or distress, prompting a response from their mothers.
+<div class="support__grid">
+  <div class="support__card">
+    <h3 class="support__card-title">Coordination &amp; bonding</h3>
+    <p class="support__card-description">Rumbles keep the herd in contact, coordinate movement, and reinforce social bonds — a matriarch might lead the group with one.</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">Reproduction</h3>
+    <p class="support__card-description">Bulls rumble to advertise their readiness to mate; females signal their estrus status to potential mates.</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">Alarm &amp; distress</h3>
+    <p class="support__card-description">Rumbles can warn of danger, mobilising the herd and prompting protective behaviour.</p>
+  </div>
+  <div class="support__card">
+    <h3 class="support__card-title">Mother &amp; calf</h3>
+    <p class="support__card-description">Mothers and calves rumble to stay in contact when separated; a calf may rumble to signal hunger or distress.</p>
+  </div>
+</div>
 
 ## Designing an ML pipeline to process large audio files
 
@@ -219,8 +216,8 @@ forest in Congo. Terabytes of data are commonly generated in about a couple of
 months. Being able to process this amount of audio data fast and with accuracy
 is key to monitor the forest elephant population.
 
-![Pipeline Overview](./images/pipeline_overview.png)
-*Overview of the ML pipeline to process audio files*
+![The passive acoustic monitoring pipeline: a microphone catches a rumble, 50 mics record around the clock, the model detects each rumble, and its source is located](/images/projects/forest_elephants_passive_acoustic_monitoring/diagrams/pipeline.svg)
+*From microphone to located rumble — the passive acoustic monitoring pipeline*
 
 The system must be capable of analyzing terabytes of data within a few hours.
 The primary bottlenecks in the data pipeline are:
@@ -283,37 +280,8 @@ spectrograms with bounding boxes that localize the rumbles.
 
 #### Exploratory Data Analysis
 
-Exploratory Data Analysis (EDA) is an approach to analyzing datasets to
-summarize their main characteristics, often employing visual methods. The
-primary goal of EDA is to uncover patterns, relationships, and anomalies in the
-data, which can then inform subsequent analysis or modeling tasks.
-
-EDA typically involves the following steps:
-
-1. __Data Collection__: Gathering the relevant dataset(s) from various sources.
-2. __Data Cleaning__: Identifying and handling missing values, outliers, and
-   inconsistencies in the data.
-3. __Summary Statistics__: Computing descriptive statistics such as mean,
-   median, mode, standard deviation, etc., to understand the central tendencies
-and variability of the data.
-4. __Data Visualization__: Creating visual representations of the data using
-   plots, charts, histograms, scatter plots, etc., to explore patterns,
-distributions, correlations, and trends within the data.
-5. __Exploratory Modeling__: Building simple models or using statistical
-   techniques to further understand relationships within the data.
-6. __Hypothesis Testing__: Formulating and testing hypotheses about the data to
-   validate assumptions or gain insights.
-7. __Iterative Analysis__: Iteratively exploring the data, refining analysis
-   techniques, and generating new hypotheses as insights emerge.
-
-EDA is a crucial initial step in any data analysis or modeling project as it
-helps analysts gain a deeper understanding of the dataset, identify potential
-challenges or biases, and inform subsequent analytical decisions. It provides a
-foundation for more advanced analyses, such as predictive modeling, hypothesis
-testing, or machine learning, by guiding feature selection, model building, and
-evaluation strategies.
-
-Some key insights were derived from the exploratory data analysis:
+Before training, we explored the dataset to understand the rumbles we were
+working with. A few findings shaped the rest of the pipeline:
 
 - __Rumble Duration:__ The typical duration of an elephant rumble ranges from 2
 to 6 seconds, with some lasting up to 10 seconds. This information is
@@ -335,8 +303,8 @@ ranges. Each annotated audio file is divided into three distinct time segments:
 80% of the rumbles are allocated to the training set, 10% to the validation
 set, and 10% to the testing set.
 
-![Data Split](./images/data_split.png)
-*80/10/10 split of a 24 hour audio file in 3 non overlapping segments*
+![An 80/10/10 split of a 24-hour audio file into non-overlapping training, validation, and testing segments](./images/data_split.svg)
+*80/10/10 split of a 24-hour audio file into 3 non-overlapping segments*
 
 ### Fast Spectrogram Generation
 
@@ -358,8 +326,9 @@ community, known for its user-friendly interface and comprehensive suite of
 tools for audio processing. It provides robust functions for loading audio
 files, computing spectrograms, and various other audio transformations.
 
-![Librosa logo](./images/logo/librosa.png)
-*Librosa Logo*
+<p style="text-align:center; margin: 24px 0;">
+  <img src="./images/logo/librosa.png" alt="Librosa logo" style="max-width: 160px; width: 100%;" />
+</p>
 
 We began evaluating spectrogram generation using the librosa library. Loading
 raw audio files proved to be slow because librosa, by default, operates in a
@@ -386,17 +355,14 @@ allows for seamless integration with deep learning models. It is optimized for
 performance and can leverage GPU acceleration to speed up spectrogram
 generation and other audio processing tasks.
 
-![Torchaudio logo](./images/logo/torchaudio.png)
-*Torchaudio logo*
+<p style="text-align:center; margin: 24px 0;">
+  <img src="./images/logo/torchaudio.png" alt="TorchAudio logo" style="max-width: 200px; width: 100%;" />
+</p>
 
 Loading raw audio files with torchaudio is significantly faster because it
-leverages multiple cores by default. Spectrogram generation is also much
-quicker than with librosa due to its optimized multiprocessing capabilities.
-Additionally, torchaudio can utilize GPU acceleration, further speeding up the
-process. After benchmarking both libraries, we decided to use torchaudio. This
-state-of-the-art audio processing library, which is part of the PyTorch
-ecosystem, offers robust performance and is well-maintained, making it the
-superior choice for our needs.
+uses multiple cores by default, and spectrogram generation is quicker too — with
+GPU acceleration speeding it up further. After benchmarking both, we chose
+torchaudio for its speed, GPU support, and tight fit with our PyTorch stack.
 
 Loading a 24-hour raw audio file takes approximately 4 seconds, while
 generating 560 spectrograms to cover the entire recording takes around 11
@@ -418,15 +384,14 @@ vision challenge.
 
 #### YOLO Overview
 
-We opted to utilize a pretrained
-[YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tune it for
-our specific object detection task. Renowned for its speed, accuracy, and
-user-friendly interface, YOLOv8 stands out as an ideal solution for various
-tasks, including object detection, tracking, instance segmentation, image
-classification, and pose estimation.
+We took a pretrained
+[YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tuned it for
+our object detection task. YOLOv8 is fast, accurate, and easy to work with, and
+it handles a range of tasks — object detection, tracking, instance
+segmentation, image classification, and pose estimation.
 
-![YOLOv8 CV Tasks](./images/yolov8_tasks.png)
-*YOLOv8 Computer Vision Tasks*
+![A spectrogram goes into the detection model and comes out with rumbles boxed and scored](/images/projects/forest_elephants_passive_acoustic_monitoring/diagrams/detection.svg)
+*Detection on a spectrogram: an audio frame in, boxed and scored rumbles out*
 
 #### Spectrogram Generation and YOLOv8 Model Constraints
 
@@ -444,7 +409,7 @@ Additionally, each spectrogram overlaps the next by 10 seconds, which
 corresponds to the maximum rumble duration and helps in deduplicating predicted
 rumbles.
 
-![560 generated spectrograms](./images/spectrograms_generation.png)
+![560 generated spectrograms](./images/spectrograms_generation.svg)
 *Generation of 560 spectrograms to cover the 24-hour time range*
 
 
@@ -479,7 +444,7 @@ model inference.
 1 terabyte of audio data currently represents one month of recordings collected
 from 50 microphones distributed throughout the forest.
 
-## Conclusion 🐘
+## Conclusion
 
 This article outlines the engineering approach used to develop a
 state-of-the-art elephant rumble detector with a strong emphasis on
@@ -491,6 +456,7 @@ conservation initiatives. Moreover, the methods and techniques presented can be
 adapted to various conservation applications, including rare species
 identification and biodiversity monitoring.
 
-One can try out the model from the [live demo]({{< ref "/demos/forest_elephant_rumble_detection" >}}) or directly from the snippet below:
+You can try the detector yourself — the interactive demo runs the full
+spectrogram-and-detection pipeline right in your browser.
 
-{{< hf_space "earthtoolsmaker-forest-elephant-rumbles-detection" >}}
+{{< demo_cta "/demos/forest_elephant_rumble_detection/" >}}

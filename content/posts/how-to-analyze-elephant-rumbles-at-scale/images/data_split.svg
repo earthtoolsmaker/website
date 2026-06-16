@@ -1,0 +1,27 @@
+<svg viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#2a2620"/></marker>
+  <style>.seg{font-size:13px;font-weight:700;fill:#1f2937}.tick{font-size:12px;fill:#80838b}</style>
+</defs>
+
+<!-- segments (mapped to their time position; 80/10/10) -->
+<rect x="60"  y="60"  width="416" height="34" rx="5" fill="#83c5be"/>
+<text class="seg" x="268" y="50" text-anchor="middle">training</text>
+<rect x="476" y="102" width="52"  height="30" rx="5" fill="#006d77"/>
+<text class="seg" x="502" y="94" text-anchor="middle">validation</text>
+<rect x="528" y="142" width="52"  height="30" rx="5" fill="#e29578"/>
+<text class="seg" x="554" y="134" text-anchor="middle">testing</text>
+
+<!-- timeline -->
+<line x1="40" y1="190" x2="600" y2="190" stroke="#2a2620" stroke-width="2" marker-end="url(#arr)"/>
+<g stroke="#2a2620" stroke-width="1.5">
+  <line x1="60"  y1="184" x2="60"  y2="196"/>
+  <line x1="320" y1="184" x2="320" y2="196"/>
+  <line x1="580" y1="184" x2="580" y2="196"/>
+</g>
+<g class="tick" text-anchor="middle">
+  <text x="60"  y="212">midnight</text><text x="60"  y="228">day N</text>
+  <text x="320" y="212">noon</text><text x="320" y="228">day N</text>
+  <text x="580" y="212">midnight</text><text x="580" y="228">day N+1</text>
+</g>
+</svg>
