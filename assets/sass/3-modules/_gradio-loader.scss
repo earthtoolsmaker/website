@@ -1,0 +1,56 @@
+// Pangolin loading overlay shown over an embedded Gradio app while the HF Space
+// wakes up. The overlay sits on top of <gradio-app> (which starts at 0px height)
+// and reserves its own height so the boot-time error/status flash stays hidden.
+// JS (assets/js/gradio-loader.js) adds .is-ready to reveal the demo.
+
+.gradio-embed {
+  position: relative;
+}
+
+.gradio-embed__loader {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 480px;
+  background: var(--background-color);
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.gradio-embed.is-ready .gradio-embed__loader {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gradio-embed__pangolin {
+  width: 72px;
+  height: 72px;
+  animation: gradio-pangolin-spin 1.1s linear infinite;
+}
+
+.gradio-embed__label {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: var(--text-alt-color);
+}
+
+@keyframes gradio-pangolin-spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}
+
+// Reduced motion: static pangolin, instant reveal.
+@media (prefers-reduced-motion: reduce) {
+  .gradio-embed__pangolin {
+    animation: none;
+  }
+  .gradio-embed__loader {
+    transition: none;
+  }
+}
