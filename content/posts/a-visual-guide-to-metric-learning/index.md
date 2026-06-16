@@ -63,6 +63,16 @@ neural network to map each image to a vector — an **embedding** — and we sha
 that mapping so two images of the *same* individual land close together while
 *different* individuals land far apart.
 
+So what *is* an embedding, concretely? Just a fixed-length list of numbers — a
+few hundred of them — that the network reads off each image.
+
+![An image becomes a list of numbers — a point in high-dimensional space](./images/embedding-vector.svg)
+*The embedding is simply a list of numbers (here 512 of them). That list is the coordinates of a single point in a 512-dimensional space.*
+
+Hundreds of dimensions sounds abstract, but the picture is the same as on a
+flat sheet of paper — just with more axes. Two points are "the same individual"
+when they sit close together.
+
 ![Images are embedded as points; the same individual forms a cluster](./images/embedding-space.svg)
 *Each image becomes a point. Same individual, nearby points — identification turns into nearest-neighbour search.*
 
@@ -126,14 +136,16 @@ Two more practical pieces complete the picture:
   problem, so we ask a retrieval question: is the correct individual among the
   top *k* matches? Tracking accuracy@1, @5, and @10 reflects how the system is
   actually used — surface a short list of candidates for a human to confirm.
-- **Seeing the space — UMAP / t-SNE.** Embeddings live in hundreds of
-  dimensions, but projecting them down to two lets you *watch* clusters form
-  over training. It is the quickest sanity check that the space is taking the
-  shape you want.
+- **Seeing the space.** An embedding has far more than two dimensions, but it
+  can be flattened into a 2-D picture so you can literally *watch* the clusters
+  form as training proceeds — the quickest sanity check that the space is taking
+  the shape you want.
 
-Architecturally, none of this is exotic: a backbone pretrained for feature
-extraction (a ResNet or ConvNeXt) with a small embedder head on top, trained
-end-to-end with one of the losses above.
+![High-dimensional embeddings projected down to a readable 2-D map](./images/projection.svg)
+*A projection tool like UMAP or t-SNE squeezes the 512 dimensions down to two while keeping near things near — turning an unviewable space into a map where the clusters jump out.*
+
+And the model itself is nothing exotic: a standard image-recognition network
+with a small extra layer added on to turn each picture into its embedding.
 
 ## Where this shows up in conservation
 
