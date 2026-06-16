@@ -29,6 +29,9 @@ metric_losses:
 
 ## The core idea: turn images into points
 
+![Images are embedded as points; the same individual forms a cluster](./images/embedding-space.svg)
+*Each image becomes a point. Same individual, nearby points — identification turns into nearest-neighbour search.*
+
 ## Shaping the space: a short history of losses
 
 ## Making it work in practice
