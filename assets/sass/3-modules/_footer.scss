@@ -104,10 +104,12 @@
   position: relative;
   display: block;
   transform: translate(0);
-  height: 100%;
+  width: 100px;
   min-width: 100px;
+  flex-shrink: 0;
   margin-right: 16px;
   border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   overflow: hidden;
   background: var(--background-alt-color);
 
@@ -118,7 +120,9 @@
   &::after {
     content: "";
     display: table;
-    padding-top: 90%;
+    // Match the 1500×1050 (70%) cover aspect ratio so object-fit: cover
+    // fills the box without cropping the title text on the left edge.
+    padding-top: 70%;
   }
 
   img {
