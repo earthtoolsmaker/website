@@ -1,0 +1,100 @@
+<svg viewBox="0 0 1500 1050" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f3"/><stop offset="100%" stop-color="#f1e9e1"/></linearGradient>
+  <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#88c8b9"/><stop offset="100%" stop-color="#4f9e8e"/></linearGradient>
+  <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#cfe9e0"/><stop offset="100%" stop-color="#aedccf"/></linearGradient>
+  <linearGradient id="smokeg" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#9aa4a7"/><stop offset="55%" stop-color="#bcc3c6"/><stop offset="100%" stop-color="#dde1e3"/></linearGradient>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#eaf3f0"/><stop offset="100%" stop-color="#dcebe6"/></linearGradient>
+  <radialGradient id="sweepg" cx="0" cy="0" r="420" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#e29578" stop-opacity="0.42"/><stop offset="65%" stop-color="#e29578" stop-opacity="0.12"/><stop offset="100%" stop-color="#e29578" stop-opacity="0"/></radialGradient>
+  <filter id="softsmoke" x="-70%" y="-70%" width="240%" height="260%"><feGaussianBlur stdDeviation="3"/></filter>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#1c2b28" flood-opacity="0.12"/></filter>
+  <style>
+    .eyebrow { font-size: 28px; font-weight: 800; letter-spacing: 0.26em; fill: #e29578; }
+    .h1      { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 110px; font-weight: 600; fill: #161616; }
+    .sub     { font-size: 34px; fill: #60626a; }
+    .pill    { font-size: 26px; font-weight: 700; fill: #fff; }
+  </style>
+  <!-- camera tower on a hill — taller mast so the camera head sits high.
+       Camera head is at y = -132 (relative to base at 0,0). -->
+  <g id="tower">
+    <path d="M-92 40 C -60 -6 -18 -10 6 -8 C 44 -4 70 14 92 40 Z" fill="url(#hill)"/>
+    <g stroke="#15463f" stroke-width="5" stroke-linecap="round" fill="none">
+      <!-- tall tapering lattice legs -->
+      <path d="M-24 38 L-5 -130"/><path d="M14 38 L1 -130"/>
+      <!-- crossbars up the mast -->
+      <path d="M-19 6 L9 6"/><path d="M-15 -24 L5 -24"/><path d="M-12 -54 L3 -54"/><path d="M-9 -84 L1 -84"/><path d="M-7 -110 L0 -110"/>
+    </g>
+    <!-- camera head at top -->
+    <rect x="-19" y="-138" width="32" height="7" rx="3.5" fill="#15463f"/>
+    <rect x="-22" y="-133" width="17" height="12" rx="3" fill="#006d77"/><circle cx="-14" cy="-127" r="3.5" fill="#e29578"/>
+    <rect x="3" y="-133" width="17" height="12" rx="3" fill="#006d77"/><circle cx="12" cy="-127" r="3.5" fill="#e29578"/>
+  </g>
+  <!-- conifer tree (base at 0,0) -->
+  <g id="tree">
+    <rect x="-3" y="-8" width="6" height="14" rx="2" fill="#3a6b54"/>
+    <path d="M0 -44 L16 -14 L-16 -14 Z" fill="#2f7d63"/>
+    <path d="M0 -34 L13 -8 L-13 -8 Z" fill="#379a76"/>
+    <path d="M0 -24 L11 -2 L-11 -2 Z" fill="#43b189"/>
+  </g>
+  <!-- smoke plume + flame (base at 0,0) -->
+  <g id="fire">
+    <g filter="url(#softsmoke)" fill="url(#smokeg)" transform="translate(0,-12)"><circle cx="0" cy="0" r="14"/><circle cx="-10" cy="-20" r="18"/><circle cx="8" cy="-42" r="18"/><circle cx="28" cy="-64" r="15"/><circle cx="46" cy="-84" r="11"/></g>
+    <g transform="translate(0,2)"><path d="M-15 0 C -19 -17 -5 -22 -10 -40 C -1 -27 5 -31 4 -45 C 9 -28 17 -25 13 0 Z" fill="#e3602f"/><path d="M-8 0 C -10 -11 -3 -15 -5 -26 C 0 -18 5 -21 4 -30 C 8 -19 10 -14 7 0 Z" fill="#f4a23c"/></g>
+  </g>
+</defs>
+
+<rect x="0" y="0" width="1500" height="1050" fill="url(#bg)"/>
+
+<!-- header -->
+<text class="eyebrow" x="120" y="156">WILDFIRE · EDGE AI</text>
+<text class="h1"  x="116" y="276">Watching the Forest</text>
+<text class="sub" x="120" y="334">Camera towers spot smoke before it spreads</text>
+
+<!-- ===== hero tower medallion (left) ===== -->
+<g filter="url(#soft)"><circle cx="430" cy="700" r="240" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g>
+<g transform="translate(430,700)">
+  <clipPath id="mclip"><circle r="232"/></clipPath>
+  <g clip-path="url(#mclip)">
+    <rect x="-232" y="-232" width="464" height="464" fill="url(#sky)"/>
+    <!-- rolling hills -->
+    <path d="M-232 120 C -120 60 0 70 120 90 C 180 100 232 96 232 96 L232 232 L-232 232 Z" fill="url(#hill2)"/>
+    <path d="M-232 160 C -120 110 10 116 120 140 C 180 152 232 150 232 150 L232 232 L-232 232 Z" fill="url(#hill)"/>
+    <!-- forest around the tower -->
+    <g transform="translate(-150,150) scale(1.4)"><use href="#tree"/></g>
+    <g transform="translate(-95,168) scale(1.7)"><use href="#tree"/></g>
+    <g transform="translate(110,156) scale(1.5)"><use href="#tree"/></g>
+    <g transform="translate(160,172) scale(1.2)"><use href="#tree"/></g>
+    <!-- tower on the central hill -->
+    <g transform="translate(0,118) scale(1.7)"><use href="#tower"/></g>
+  </g>
+</g>
+
+<!-- radar scan sweep originating at the tower camera head (~430,594) toward the fire -->
+<g transform="translate(440,596)">
+  <!-- range-ring arcs centred on the camera -->
+  <g fill="none" stroke="#e29578" stroke-width="2.5" stroke-dasharray="5 11" stroke-linecap="round" opacity=".55">
+    <path d="M300 -132 A330 330 0 0 1 300 132"/>
+    <path d="M450 -200 A492 492 0 0 1 450 200"/>
+  </g>
+  <!-- sweep wedge fanning out toward the fire -->
+  <path d="M0 0 L560 -150 A580 580 0 0 1 560 150 Z" fill="url(#sweepg)"/>
+</g>
+
+<!-- ===== detected fire scene (right): hill + trees + smoke, boxed ===== -->
+<g transform="translate(1110,680)">
+  <!-- hill below the fire -->
+  <path d="M-260 120 C -150 50 -40 56 60 78 C 150 98 230 96 280 110 L280 220 L-260 220 Z" fill="url(#hill2)"/>
+  <path d="M-260 150 C -150 96 -30 100 70 124 C 160 144 240 142 280 150 L280 220 L-260 220 Z" fill="url(#hill)"/>
+  <!-- trees flanking the fire -->
+  <g transform="translate(-180,150) scale(1.5)"><use href="#tree"/></g>
+  <g transform="translate(-120,138) scale(1.9)"><use href="#tree"/></g>
+  <g transform="translate(110,128) scale(2.0)"><use href="#tree"/></g>
+  <g transform="translate(175,150) scale(1.5)"><use href="#tree"/></g>
+  <g transform="translate(225,158) scale(1.2)"><use href="#tree"/></g>
+  <!-- the fire (smoke + flame) on the hill -->
+  <g transform="translate(-10,118) scale(1.5)"><use href="#fire"/></g>
+  <!-- detection box + pill -->
+  <rect x="-90" y="-70" width="150" height="200" rx="6" fill="none" stroke="#e8232a" stroke-width="5"/>
+  <g transform="translate(-15,-82)"><rect x="-86" y="-26" width="172" height="44" rx="22" fill="#e8232a"/><text class="pill" x="0" y="6" text-anchor="middle">smoke 0.93</text></g>
+</g>
+</svg>

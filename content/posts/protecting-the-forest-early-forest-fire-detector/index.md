@@ -4,7 +4,7 @@ description: Detecting early forest fires in real time using low powered technol
 date: 2024-08-21
 params:
   math: true
-image: /images/projects/early_forest_fire_detection/cover.jpg
+image: /images/posts/protecting-the-forest-early-forest-fire-detector/cover.png
 tags: ["AI", "vision", "low power"]
 ---
 
