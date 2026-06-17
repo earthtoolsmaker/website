@@ -96,7 +96,7 @@ controls how the different hardware pieces function together.
   {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/cover.png" alt="Wild sockeye salmon swimming up a coastal river" caption="Wild salmon returning up a coastal river — the runs SalmonVision monitors" >}}
   {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/sites/haida.jpg" alt="River monitoring site on Haida territory" caption="A monitoring site on Haida territory" >}}
   {{< carousel_image src="./images/hardware/deployed_river.png" alt="Hardware deployed at the river" caption="Hardware deployed at the river — cameras, motion sensors, and a Raspberry Pi" >}}
-  {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/sonar/haida-sonar.jpg" alt="Sonar setup at the Haida site" caption="Setting up sonar alongside the underwater cameras" >}}
+  {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/sonar/haida-sonar.webp" alt="Sonar setup at the Haida site" caption="Setting up sonar alongside the underwater cameras" >}}
 {{< /image_carousel >}}
 
 ## Web Application

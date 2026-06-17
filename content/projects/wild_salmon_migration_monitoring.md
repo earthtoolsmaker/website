@@ -204,7 +204,7 @@ sound instead, so it keeps counting in zero-visibility conditions and at night.
 We push the same idea further in our sister project on [monitoring juvenile
 smolt with ARIS sonar]({{< ref "/projects/monitoring_smolt_salmon_migration_with_sonar" >}}).
 
-![Setting up sonar at the Haida site](/images/projects/wild_salmon_migration_monitoring/sonar/haida-sonar.jpg)
+![Setting up sonar at the Haida site](/images/projects/wild_salmon_migration_monitoring/sonar/haida-sonar.webp)
 *An acoustic sonar counter deployed at the Haida site, where silty water defeats optical cameras.*
 
 {{< youtube id=DlKYhipkSNk >}}
