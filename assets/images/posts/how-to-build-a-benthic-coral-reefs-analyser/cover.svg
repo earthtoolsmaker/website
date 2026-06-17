@@ -1,0 +1,167 @@
+<svg viewBox="0 0 1500 1050" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f3"/><stop offset="100%" stop-color="#f1e9e1"/></linearGradient>
+  <!-- layered water: lighter near the surface, deepening down, with a teal-blue cast -->
+  <linearGradient id="deep" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#bfeae3"/><stop offset="32%" stop-color="#73c6bd"/>
+    <stop offset="68%" stop-color="#2f8f86"/><stop offset="100%" stop-color="#0e4751"/>
+  </linearGradient>
+  <radialGradient id="surfaceglow" cx="50%" cy="0%" r="90%"><stop offset="0%" stop-color="#bdeef0" stop-opacity="0.5"/><stop offset="55%" stop-color="#bdeef0" stop-opacity="0.12"/><stop offset="100%" stop-color="#bdeef0" stop-opacity="0"/></radialGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="9" stdDeviation="18" flood-color="#1c2b28" flood-opacity="0.13"/></filter>
+  <!-- gentle caustic wave line -->
+  <path id="caustic" d="M-620 0 q70 -16 140 0 t140 0 t140 0 t140 0 t140 0 t140 0 t140 0 t140 0 t140 0" fill="none"/>
+  <style>
+    .eyebrow { font-size: 28px; font-weight: 800; letter-spacing: 0.26em; fill: #e29578; }
+    .h1      { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 110px; font-weight: 600; fill: #161616; }
+    .sub     { font-size: 34px; fill: #60626a; }
+    .lbl     { font-size: 30px; font-weight: 700; fill: #fff; }
+  </style>
+  <!-- ===== coral colonies in the live-demo vocabulary (base at y=0, growing up) ===== -->
+  <!-- digitate / finger coral: a row of rounded columns -->
+  <g id="fingerCoral">
+    <rect x="-30" y="-48" width="15" height="48" rx="7.5"/><rect x="-10" y="-64" width="15" height="64" rx="7.5"/>
+    <rect x="10" y="-64" width="15" height="64" rx="7.5"/><rect x="30" y="-48" width="15" height="48" rx="7.5"/>
+  </g>
+  <!-- branching staghorn coral: stroked branches -->
+  <g id="hardBranch" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 0 V -150"/>
+    <path d="M0 -36 q -30 -30 -44 -104"/><path d="M0 -36 q 30 -30 44 -104"/>
+    <path d="M0 -70 q -52 -28 -70 -78"/><path d="M0 -70 q 52 -28 70 -78"/>
+    <path d="M-26 -70 q -10 -28 -14 -52"/><path d="M26 -70 q 10 -28 14 -52"/>
+    <path d="M0 -104 q -22 -10 -30 -40"/><path d="M0 -104 q 22 -10 30 -40"/>
+  </g>
+  <!-- sea fan / gorgonian: branching fan strokes -->
+  <g id="fanCoral" fill="none" stroke-linecap="round">
+    <path d="M0 0 V -64"/>
+    <path d="M0 -34 q -12 -18 -34 -40"/><path d="M0 -48 q 14 -16 36 -42"/>
+    <path d="M-22 -50 q -6 -16 -8 -34"/><path d="M24 -58 q 6 -14 6 -30"/>
+  </g>
+  <!-- brain / boulder coral: dome with meandering ridges -->
+  <g id="hardBoulder">
+    <path d="M-44 0 a44 36 0 0 1 88 0 Z" fill="#176058"/>
+    <g stroke="#0a3a36" stroke-width="3.5" fill="none" opacity="0.55"><path d="M-28 -8 q 28 -12 56 0"/><path d="M-30 -18 q 30 -12 60 0"/><path d="M-26 -27 q 26 -10 52 0"/></g>
+  </g>
+  <!-- soft coral: finger coral tinted warm (alias of fingerCoral, recoloured at use) -->
+  <g id="softCoral">
+    <rect x="-30" y="-48" width="15" height="48" rx="7.5"/><rect x="-10" y="-64" width="15" height="64" rx="7.5"/>
+    <rect x="10" y="-64" width="15" height="64" rx="7.5"/><rect x="30" y="-48" width="15" height="48" rx="7.5"/>
+  </g>
+  <!-- algae / seaweed frond (base at 0,0) -->
+  <g id="algae"><g stroke="#3a9e7e" stroke-width="6" fill="none" stroke-linecap="round" opacity=".7"><path d="M0 0 C -8 -22, 8 -34, 0 -58"/><path d="M-2 -20 C -16 -28, -18 -40, -26 -46"/><path d="M2 -32 C 14 -38, 18 -50, 26 -54"/></g></g>
+  <!-- little fish (faces right, base centre) -->
+  <g id="fish"><ellipse cx="0" cy="0" rx="14" ry="8" fill="#f2c75a"/><path d="M-14 0 L-24 -7 L-24 7 Z" fill="#e0a93c"/><circle cx="8" cy="-2" r="2" fill="#1f150e"/></g>
+  <!-- reef shark silhouette (faces LEFT, streamlined; local centre, base unit ~120 long) -->
+  <g id="shark" fill="#13524d">
+    <!-- streamlined body: pointed snout (left) tapering to the tail (right) -->
+    <path d="M-62 -2
+             C -46 -14, -18 -16, 14 -12
+             C 40 -9, 56 -4, 64 0
+             C 56 4, 40 9, 14 12
+             C -18 16, -46 14, -62 2
+             C -66 1, -66 -1, -62 -2 Z"/>
+    <!-- caudal (tail) fin: longer upper lobe, shorter fuller lower lobe (shark-like, rounded) -->
+    <path d="M60 -1
+             C 70 -8, 80 -20, 90 -34
+             C 86 -22, 84 -10, 80 0
+             C 83 7, 84 15, 82 23
+             C 76 14, 68 6, 60 1
+             C 58 0, 58 0, 60 -1 Z"/>
+    <!-- dorsal fin (top): upright triangle, gently back-raked -->
+    <path d="M4 -11 L20 -36 C 22 -30, 24 -22, 22 -11 Z"/>
+    <!-- second (small) dorsal, near the tail -->
+    <path d="M44 -6 L52 -17 C 53 -13, 53 -10, 51 -6 Z"/>
+    <!-- pectoral fin (underside): broad, swept back -->
+    <path d="M-6 8 C -12 18, -22 24, -32 26 C -24 18, -18 12, -14 8 Z"/>
+    <!-- pelvic fin (small, underside) -->
+    <path d="M24 9 L30 19 C 31 14, 30 12, 29 9 Z"/>
+    <!-- belly highlight + eye + gills -->
+    <path d="M-58 3 C -30 13, 10 12, 50 3 C 10 8, -28 9, -58 3 Z" fill="#2f8f86" opacity=".5"/>
+    <circle cx="-50" cy="-3" r="2.4" fill="#cfe9e0"/>
+    <g stroke="#0c413d" stroke-width="1.6" opacity=".55"><path d="M-34 -6 q-3 6 0 12"/><path d="M-28 -7 q-3 7 0 13"/><path d="M-22 -7 q-3 7 0 13"/></g>
+  </g>
+  <!-- bubbles -->
+  <g id="bubbles" fill="#cdeff0" opacity=".55"><circle cx="0" cy="0" r="5"/><circle cx="8" cy="-14" r="3.5"/><circle cx="-4" cy="-26" r="4"/></g>
+</defs>
+
+<rect x="0" y="0" width="1500" height="1050" fill="url(#bg)"/>
+
+<!-- header -->
+<text class="eyebrow" x="120" y="156">CONSERVATION · MARINE AI</text>
+<text class="h1"  x="116" y="276">Reading the Reef</text>
+<text class="sub" x="120" y="334">Segment &amp; classify every coral colony</text>
+
+<!-- ===== underwater reef scene ===== -->
+<g transform="translate(750,720)">
+  <g filter="url(#soft)"><rect x="-620" y="-260" width="1240" height="520" rx="30" fill="url(#deep)"/></g>
+  <clipPath id="reefclip"><rect x="-620" y="-260" width="1240" height="520" rx="30"/></clipPath>
+  <g clip-path="url(#reefclip)">
+    <!-- brighter surface glow up top -->
+    <rect x="-620" y="-260" width="1240" height="520" fill="url(#surfaceglow)"/>
+    <!-- light rays from the surface -->
+    <g fill="#bfeef0" opacity="0.12"><path d="M-400 -260 L-330 -260 L-470 260 L-560 260 Z"/><path d="M-120 -260 L-50 -260 L-200 260 L-300 260 Z"/><path d="M260 -260 L330 -260 L200 260 L100 260 Z"/></g>
+    <!-- caustic ripples near the surface -->
+    <g stroke="#cdeff0" fill="none" stroke-linecap="round" opacity="0.22">
+      <use href="#caustic" transform="translate(0,-220)" stroke-width="3"/>
+      <use href="#caustic" transform="translate(40,-190)" stroke-width="2.4" opacity="0.7"/>
+      <use href="#caustic" transform="translate(-30,-150)" stroke-width="2" opacity="0.5"/>
+    </g>
+    <!-- distant background algae (faint), tucked into gaps between coral columns -->
+    <g opacity=".4">
+      <g transform="translate(-560,252) scale(1.8)"><use href="#algae"/></g>
+      <g transform="translate(-270,252) scale(2.2)"><use href="#algae"/></g>
+      <g transform="translate(95,252) scale(2.0)"><use href="#algae"/></g>
+      <g transform="translate(560,252) scale(2.1)"><use href="#algae"/></g>
+    </g>
+    <!-- background school of small fish -->
+    <g opacity=".8">
+      <g transform="translate(-180,-150) scale(0.9)"><use href="#fish"/></g>
+      <g transform="translate(-130,-128) scale(0.9)"><use href="#fish"/></g>
+      <g transform="translate(-90,-160) scale(0.9)"><use href="#fish"/></g>
+      <g transform="translate(360,-120) scale(1.1)"><use href="#fish"/></g>
+      <g transform="translate(420,-100) scale(1.1)"><use href="#fish"/></g>
+    </g>
+    <!-- reef shark gliding through the upper mid-water -->
+    <g transform="translate(170,-120) scale(1.7)" opacity="0.92"><use href="#shark"/></g>
+
+    <!-- bubbles -->
+    <g transform="translate(-440,140)"><use href="#bubbles"/></g>
+    <g transform="translate(250,150) scale(1.3)"><use href="#bubbles"/></g>
+
+    <!-- layered seabed (demo-style: two overlapping dark curves) — corals sit on the upper line ~y=150 -->
+    <path d="M-620 150 C -360 110, -80 135, 180 122 C 400 110, 620 145, 620 150 L620 260 L-620 260 Z" fill="#0f4742"/>
+    <path d="M-620 196 C -300 168, 60 196, 620 184 L620 260 L-620 260 Z" fill="#0a3a36"/>
+
+    <!-- foreground algae, in the gaps between corals (drawn before corals) -->
+    <g transform="translate(-540,150) scale(1.7)"><use href="#algae"/></g>
+    <g transform="translate(-265,150) scale(1.6)"><use href="#algae"/></g>
+    <g transform="translate(70,150) scale(1.6)"><use href="#algae"/></g>
+    <g transform="translate(560,150) scale(1.7)"><use href="#algae"/></g>
+
+    <!-- ===== hero coral colonies on the seabed (base sits ~y=150) ===== -->
+    <!-- brain coral (Hard) -->
+    <g transform="translate(-380,150) scale(1.5)"><use href="#hardBoulder"/></g>
+    <!-- staghorn branching (teal) -->
+    <g transform="translate(-150,150) scale(0.95)" stroke="#3fa192" stroke-width="4.5"><use href="#hardBranch"/></g>
+    <!-- soft finger coral (Soft, warm) -->
+    <g transform="translate(180,150) scale(1.5)" fill="#e0916f"><use href="#softCoral"/></g>
+    <!-- sea fan (coral-pink) -->
+    <g transform="translate(420,150) scale(1.6)" stroke="#d9836b" stroke-width="13"><use href="#fanCoral"/></g>
+    <!-- a small teal finger coral tucked at far left -->
+    <g transform="translate(-560,150) scale(0.85)" fill="#2f8f86"><use href="#fingerCoral"/></g>
+
+    <!-- a fish swimming through the foreground -->
+    <g transform="translate(70,-20) scale(1.5)"><use href="#fish"/></g>
+  </g>
+
+  <!-- ===== segmentation masks + Hard/Soft classification (over the clip) ===== -->
+  <!-- brain coral (Hard): hugs the dome -->
+  <ellipse cx="-380" cy="123" rx="80" ry="48" fill="none" stroke="#7fe0d8" stroke-width="5" stroke-dasharray="11 8"/>
+  <!-- staghorn (Hard): a mask box around the branches -->
+  <rect x="-238" y="6" width="178" height="158" rx="14" fill="none" stroke="#7fe0d8" stroke-width="5" stroke-dasharray="11 8"/>
+  <!-- soft finger coral (Soft): coral-pink mask -->
+  <ellipse cx="180" cy="102" rx="86" ry="80" fill="none" stroke="#ffb38a" stroke-width="5" stroke-dasharray="11 8"/>
+
+  <g transform="translate(-380,40)"><rect x="-150" y="-24" width="300" height="44" rx="22" fill="#0d4750"/><text class="lbl" x="0" y="8" text-anchor="middle">Hard coral · 94%</text></g>
+  <g transform="translate(180,-8)"><rect x="-146" y="-24" width="292" height="44" rx="22" fill="#b85c3c"/><text class="lbl" x="0" y="8" text-anchor="middle">Soft coral · 91%</text></g>
+</g>
+</svg>
