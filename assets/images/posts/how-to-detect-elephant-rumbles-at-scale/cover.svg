@@ -1,0 +1,73 @@
+<svg viewBox="0 0 1500 1050" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f3"/><stop offset="100%" stop-color="#f1e9e1"/></linearGradient>
+  <linearGradient id="spectro" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#dde1e3"/><stop offset="100%" stop-color="#9aa3a8"/></linearGradient>
+  <pattern id="specnoise" width="6" height="13" patternUnits="userSpaceOnUse"><line x1="1.5" y1="0" x2="1.5" y2="13" stroke="#6f777c" stroke-width="1.6" opacity="0.4"/><line x1="4" y1="0" x2="4" y2="13" stroke="#8b9398" stroke-width="1" opacity="0.26"/></pattern>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="9" stdDeviation="18" flood-color="#1c2b28" flood-opacity="0.13"/></filter>
+  <style>
+    .eyebrow { font-size: 28px; font-weight: 800; letter-spacing: 0.26em; fill: #e29578; }
+    .h1      { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 110px; font-weight: 600; fill: #161616; }
+    .sub     { font-size: 34px; fill: #60626a; }
+    .pill    { font-size: 26px; font-weight: 700; fill: #fff; }
+  </style>
+  <!-- reusable elephant silhouette (faces right) — from the project's pipeline diagram -->
+  <g id="elephant" fill="#15463f">
+    <!-- legs first, so the body + trunk paint cleanly on top of their tops.
+         Tops are pushed well up into the body so no white gap shows. -->
+    <rect x="-26" y="6" width="10" height="31" rx="3"/>
+    <rect x="-9" y="6" width="10" height="33" rx="3"/>
+    <rect x="6" y="6" width="10" height="33" rx="3"/>
+    <rect x="17" y="6" width="10" height="31" rx="3"/>
+    <!-- body -->
+    <ellipse cx="0" cy="0" rx="32" ry="22"/>
+    <circle cx="27" cy="-4" r="16"/>
+    <ellipse cx="17" cy="-6" rx="10" ry="12" fill="#1d5b51"/>
+    <!-- trunk + tusk drawn last, over the front leg, so it reads as in front -->
+    <path d="M39 -10 C 51 -4 49 16 44 26 C 42 31 35 31 36 24 C 38 14 37 2 31 -3 Z"/>
+    <path d="M41 10 C 46 16 48 21 45 22 C 42 20 38 15 37 11 Z" fill="#e8e2d5"/>
+    <circle cx="31" cy="-6" r="1.9" fill="#cfe9e0"/>
+  </g>
+</defs>
+
+<rect x="0" y="0" width="1500" height="1050" fill="url(#bg)"/>
+
+<!-- header -->
+<text class="eyebrow" x="120" y="156">BIOACOUSTICS · COMPUTER VISION</text>
+<text class="h1"  x="116" y="276">Detecting Rumbles</text>
+<text class="sub" x="120" y="334">Finding elephant calls in terabytes of audio</text>
+
+<!-- elephant in a soft medallion -->
+<g filter="url(#soft)"><circle cx="360" cy="700" r="220" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g>
+<g transform="translate(322,712) scale(3.6)"><use href="#elephant"/></g>
+
+<!-- rumble waves emanating from the trunk toward the spectrogram -->
+<g transform="translate(556,672)" stroke="#e29578" stroke-width="6" fill="none" stroke-linecap="round">
+  <path d="M0 -18 A 26 26 0 0 1 0 18"/>
+  <path d="M22 -34 A 46 46 0 0 1 22 34"/>
+  <path d="M46 -50 A 68 68 0 0 1 46 50"/>
+</g>
+
+<!-- spectrogram tile with stacked low-frequency rumble harmonics + detection box -->
+<g transform="translate(1075,700)">
+  <clipPath id="sp"><rect x="-330" y="-200" width="660" height="400" rx="20"/></clipPath>
+  <g filter="url(#soft)"><rect x="-330" y="-200" width="660" height="400" rx="20" fill="url(#spectro)"/></g>
+  <g clip-path="url(#sp)">
+    <rect x="-330" y="-200" width="660" height="400" fill="url(#specnoise)"/>
+    <!-- primary rumble: stacked harmonics, low in the frame -->
+    <g stroke="#373f43" stroke-linecap="round" fill="none">
+      <path stroke-width="9"   d="M-210 60 q 100 -18 200 4"/>
+      <path stroke-width="8"   d="M-210 84 q 100 -18 200 4"/>
+      <path stroke-width="6.5" d="M-206 108 q 96 -16 192 4"/>
+      <path stroke-width="5"   d="M-206 132 q 96 -16 192 4" opacity=".8"/>
+    </g>
+    <!-- faint second rumble -->
+    <g stroke="#525a5e" stroke-linecap="round" fill="none" opacity=".45">
+      <path stroke-width="6" d="M150 96 q 60 -10 120 4"/>
+      <path stroke-width="5" d="M154 120 q 56 -9 112 4"/>
+    </g>
+  </g>
+  <!-- detection box + pill around the primary rumble -->
+  <rect x="-228" y="40" width="248" height="124" rx="6" fill="none" stroke="#e8232a" stroke-width="5"/>
+  <g transform="translate(-104,12)"><rect x="-96" y="-26" width="192" height="44" rx="22" fill="#e8232a"/><text class="pill" x="0" y="6" text-anchor="middle">rumble 0.92</text></g>
+</g>
+</svg>
