@@ -1,0 +1,56 @@
+<svg viewBox="0 0 1500 1050" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f3"/><stop offset="100%" stop-color="#f1e9e1"/></linearGradient>
+  <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#1c2b28" flood-opacity="0.12"/></filter>
+  <style>
+    .eyebrow { font-size: 28px; font-weight: 800; letter-spacing: 0.26em; fill: #e29578; }
+    .h1      { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 110px; font-weight: 600; fill: #161616; }
+    .sub     { font-size: 34px; fill: #60626a; }
+    .tag     { font-size: 30px; font-weight: 800; letter-spacing: 0.12em; }
+  </style>
+  <!-- flask (research) drawn centered on (0,0), viewBox of glyph ~56 -->
+  <g id="flask">
+    <path d="M-5 -20 h10 M-3 -20 v14 L-14 16 a5 5 0 0 0 4 8 h20 a5 5 0 0 0 4 -8 L3 -6 V-20" fill="none" stroke="#0e7c86" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M-9 8 h18 l5 8 a5 5 0 0 1 -4 8 H-10 a5 5 0 0 1 -4 -8 Z" fill="#7fb0ac" opacity=".55"/>
+    <circle cx="-4" cy="18" r="2.5" fill="#0e7c86"/><circle cx="4" cy="14" r="2" fill="#0e7c86"/>
+  </g>
+  <!-- package (production) centered on (0,0) -->
+  <g id="box">
+    <path d="M0 -18 L16 -10 V10 L0 18 L-16 10 V-10 Z" fill="#f2c0a4" stroke="#c2603f" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M-16 -10 L0 -2 L16 -10 M0 -2 V18" fill="none" stroke="#c2603f" stroke-width="2.5"/>
+  </g>
+</defs>
+
+<rect x="0" y="0" width="1500" height="1050" fill="url(#bg)"/>
+
+<!-- header -->
+<text class="eyebrow" x="120" y="186">ML R&amp;D · METHOD</text>
+<text class="h1"  x="116" y="306">Racing Models</text>
+<text class="sub" x="120" y="364">Let evidence pick the winner, not opinions</text>
+
+<!-- ============================================================
+     SPACING PLAN (vertical centre y = 720)
+     flask centre x = 470 ; package centre x = 1030
+     each glyph drawn at scale 6 -> visual radius ~ 24*6 = 144 wide
+     flask right edge  ~ 470 + 130 = 600
+     package left edge ~ 1030 - 130 = 900
+     gap = 600..900 (width 300), arrow centred in it:
+     arrow runs x=655 -> x=845 (38px inset each side), tip at 845
+     ============================================================ -->
+
+<!-- research halo + flask -->
+<!-- icons sit directly on the cream gradient (no halos) -->
+<!-- research: flask, centred at (490,610) -->
+<g transform="translate(490,610) scale(4.6)"><use href="#flask"/></g>
+<text class="tag" x="490" y="790" fill="#0e7c86" text-anchor="middle">RESEARCH</text>
+
+<!-- centred arrow between the icons (icons at x=490 / x=1010, gap midpoint 750) -->
+<g stroke="#c4b2a1" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="648" y1="610" x2="832" y2="610"/>
+  <path d="M816 590 L852 610 L816 630"/>
+</g>
+
+<!-- production: package, centred at (1010,610) -->
+<g transform="translate(1010,610) scale(4.6)"><use href="#box"/></g>
+<text class="tag" x="1010" y="790" fill="#c2603f" text-anchor="middle">PRODUCTION</text>
+</svg>
