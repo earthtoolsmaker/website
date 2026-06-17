@@ -4,7 +4,7 @@ description: Learn how to successfully train a computer vision model to accurate
 date: 2024-04-10
 params:
   math: true
-image: /images/posts/how-to-build-a-benthic-coral-reefs-analyser/cover.jpg
+image: /images/posts/how-to-build-a-benthic-coral-reefs-analyser/cover.png
 tags: ["AI", "vision"]
 ---
 
