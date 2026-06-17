@@ -1,0 +1,122 @@
+<svg viewBox="0 0 1500 1050" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f3"/><stop offset="100%" stop-color="#f1e9e1"/></linearGradient>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#eaf3ee"/><stop offset="55%" stop-color="#e7f0e7"/><stop offset="100%" stop-color="#f3e7d8"/></linearGradient>
+  <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8fc89f"/><stop offset="100%" stop-color="#5fa078"/></linearGradient>
+  <radialGradient id="sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f8d3b0" stop-opacity="0.9"/><stop offset="100%" stop-color="#f8d3b0" stop-opacity="0"/></radialGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="9" stdDeviation="18" flood-color="#1c2b28" flood-opacity="0.13"/></filter>
+  <style>
+    .eyebrow { font-size: 28px; font-weight: 800; letter-spacing: 0.26em; fill: #e29578; }
+    .h1      { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 110px; font-weight: 600; fill: #161616; }
+    .sub     { font-size: 34px; fill: #60626a; }
+  </style>
+  <!-- clean side-profile elephant: faces RIGHT, feet baseline y=0, body centred near x=0.
+       Legs are drawn FIRST with tops pushed well up into the body, then the body
+       ellipse paints over their tops so they read as attached (no gap). -->
+  <g id="elephant">
+    <!-- tail: anchored high on the rump and swept BACK behind the body so it
+         reads separately from the rear leg (drawn first; body covers its top) -->
+    <path d="M52 -72 C 74 -64 80 -40 74 -18" fill="none" stroke="#5e7d69" stroke-width="6" stroke-linecap="round"/>
+    <path d="M74 -18 c -6 4 -4 12 2 15 c 5 -3 6 -11 -2 -15 Z" fill="#4f6b59"/>
+    <!-- back legs (tops up at y=-58, inside the body) -->
+    <rect x="36" y="-58" width="22" height="60" rx="9" fill="#7e9a86"/>
+    <rect x="8" y="-58" width="22" height="60" rx="9" fill="#7e9a86"/>
+    <!-- front legs -->
+    <rect x="-42" y="-58" width="22" height="60" rx="9" fill="#7e9a86"/>
+    <rect x="-70" y="-58" width="22" height="60" rx="9" fill="#7e9a86"/>
+    <!-- body (paints over the leg tops + tail base) -->
+    <ellipse cx="-8" cy="-58" rx="64" ry="44" fill="#7e9a86"/>
+    <!-- ear: set toward the BACK of the head, with a soft outline so it reads -->
+    <ellipse cx="-44" cy="-66" rx="22" ry="28" fill="#6b8a76" stroke="#56735f" stroke-width="2.5"/>
+    <!-- inner-ear fold line -->
+    <path d="M-50 -84 C -36 -78 -36 -54 -48 -44" fill="none" stroke="#56735f" stroke-width="2" opacity=".5"/>
+    <!-- head (drawn over the ear's front edge) -->
+    <circle cx="-70" cy="-64" r="40" fill="#7e9a86"/>
+    <!-- trunk: a simple tapering trunk hanging down then curling slightly forward -->
+    <path d="M-100 -70
+             C -116 -64 -122 -44 -120 -22
+             C -119 -10 -114 0 -106 2
+             C -101 0 -103 -10 -104 -20
+             C -106 -40 -104 -56 -92 -60 Z" fill="#7e9a86"/>
+    <!-- single tusk: wide base, sharp (option 14) -->
+    <path d="M-91 -44 C -103 -41 -116 -34 -126 -23 C -119 -28 -110 -32 -101 -34 C -95 -36 -91 -39 -89 -41 Z" fill="#efe7da"/>
+    <!-- eye: on the head, in FRONT of the ear -->
+    <circle cx="-82" cy="-70" r="3.6" fill="#23312a"/>
+  </g>
+
+  <!-- calf: babyish proportions — bigger head &amp; ears relative to body, rounder body,
+       shorter trunk, short stubby tusk. faces RIGHT, feet baseline y=0. -->
+  <g id="calf">
+    <!-- tail -->
+    <path d="M40 -46 C 54 -40 58 -24 52 -12" fill="none" stroke="#5e7d69" stroke-width="5" stroke-linecap="round"/>
+    <path d="M52 -12 c -5 3 -3 9 2 11 c 4 -2 4 -8 -2 -11 Z" fill="#4f6b59"/>
+    <!-- stubby legs -->
+    <rect x="24" y="-36" width="17" height="38" rx="7" fill="#7e9a86"/>
+    <rect x="2" y="-36" width="17" height="38" rx="7" fill="#7e9a86"/>
+    <rect x="-30" y="-36" width="17" height="38" rx="7" fill="#7e9a86"/>
+    <rect x="-50" y="-36" width="17" height="38" rx="7" fill="#7e9a86"/>
+    <!-- rounder body -->
+    <ellipse cx="-4" cy="-40" rx="46" ry="33" fill="#7e9a86"/>
+    <!-- big ear -->
+    <ellipse cx="-30" cy="-48" rx="18" ry="23" fill="#6b8a76" stroke="#56735f" stroke-width="2.2"/>
+    <path d="M-35 -64 C -23 -59 -23 -40 -33 -33" fill="none" stroke="#56735f" stroke-width="1.8" opacity=".5"/>
+    <!-- big head -->
+    <circle cx="-52" cy="-46" r="33" fill="#7e9a86"/>
+    <!-- short trunk -->
+    <path d="M-76 -52 C -88 -46 -92 -32 -90 -18 C -89 -10 -86 -4 -81 -3 C -77 -4 -78 -10 -79 -18 C -81 -32 -80 -44 -70 -47 Z" fill="#7e9a86"/>
+    <!-- short stubby tusk -->
+    <path d="M-70 -30 C -79 -28 -88 -23 -93 -15 C -89 -18 -82 -22 -76 -24 C -71 -26 -69 -28 -68 -29 Z" fill="#efe7da"/>
+    <!-- eye -->
+    <circle cx="-62" cy="-50" r="3.2" fill="#23312a"/>
+  </g>
+  <!-- bird chevron -->
+  <path id="bird" d="M0,0 C4,-6 10,-6 13,-1 C16,-6 22,-6 26,0 C21,-3 16,-3 13,1 C10,-3 5,-3 0,0 Z"/>
+  <!-- simple acacia-ish tree -->
+  <g id="tree"><rect x="-5" y="-70" width="10" height="74" rx="4" fill="#6b5340"/><ellipse cx="0" cy="-78" rx="46" ry="26" fill="#5fa078"/><ellipse cx="-28" cy="-66" rx="26" ry="16" fill="#6cb487"/><ellipse cx="30" cy="-66" rx="26" ry="16" fill="#6cb487"/></g>
+</defs>
+
+<rect x="0" y="0" width="1500" height="1050" fill="url(#bg)"/>
+
+<!-- header -->
+<text class="eyebrow" x="120" y="156">WILDLIFE · CONSERVATION</text>
+<text class="h1"  x="116" y="276">Wildlife Rescue</text>
+<text class="sub" x="120" y="334">Caring for rescued animals, then setting them free</text>
+
+<!-- ===== warm sanctuary scene panel ===== -->
+<g transform="translate(750,720)">
+  <g filter="url(#soft)"><rect x="-620" y="-260" width="1240" height="520" rx="30" fill="url(#sky)"/></g>
+  <clipPath id="scene"><rect x="-620" y="-260" width="1240" height="520" rx="30"/></clipPath>
+  <g clip-path="url(#scene)">
+    <!-- low sun glow -->
+    <circle cx="330" cy="-110" r="200" fill="url(#sun)"/>
+    <circle cx="330" cy="-110" r="54" fill="#f6c9a6"/>
+    <!-- distant tree-line ridge -->
+    <path d="M-620 30 C -420 -30, -260 0, -80 -18 C 120 -38, 320 -6, 620 -30 L620 260 L-620 260 Z" fill="#bfe0c8" opacity=".8"/>
+    <!-- mid ridge -->
+    <path d="M-620 90 C -380 40, -120 70, 140 52 C 360 38, 480 70, 620 56 L620 260 L-620 260 Z" fill="#9fd0ad"/>
+    <!-- grassy ground -->
+    <path d="M-620 150 C -360 118, -60 140, 200 128 C 420 118, 520 146, 620 140 L620 260 L-620 260 Z" fill="url(#ground)"/>
+
+    <!-- flying birds -->
+    <g fill="#5b8a87" opacity=".85">
+      <use href="#bird" transform="translate(-260,-160) scale(2.2)"/>
+      <use href="#bird" transform="translate(-180,-190) scale(1.6)"/>
+      <use href="#bird" transform="translate(-120,-150) scale(1.9)"/>
+    </g>
+
+    <!-- background trees -->
+    <g transform="translate(-470,170) scale(1.7)"><use href="#tree"/></g>
+    <g transform="translate(470,176) scale(2.0)"><use href="#tree"/></g>
+    <g transform="translate(330,168) scale(1.2)"><use href="#tree"/></g>
+
+    <!-- hero elephant standing on the ground (clear of the left tree) -->
+    <g transform="translate(-110,152) scale(1.55)"><use href="#elephant"/></g>
+
+    <!-- a small companion calf beside it (distinct babyish proportions) -->
+    <g transform="translate(170,156) scale(1.05)"><use href="#calf"/></g>
+
+    <!-- a little watering pond -->
+    <ellipse cx="320" cy="210" rx="150" ry="30" fill="#bfe6e4" opacity=".7"/>
+  </g>
+</g>
+</svg>
