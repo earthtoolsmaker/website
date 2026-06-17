@@ -1,0 +1,83 @@
+<svg viewBox="0 0 1500 1050" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f3"/><stop offset="100%" stop-color="#f1e9e1"/></linearGradient>
+  <linearGradient id="salmong" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d8543a"/><stop offset="60%" stop-color="#ec7a52"/><stop offset="100%" stop-color="#f4a98a"/></linearGradient>
+  <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#bfe6e4"/><stop offset="100%" stop-color="#5fb0bb"/></linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="9" stdDeviation="18" flood-color="#1c2b28" flood-opacity="0.13"/></filter>
+  <style>
+    .eyebrow { font-size: 28px; font-weight: 800; letter-spacing: 0.26em; fill: #e29578; }
+    .h1      { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 110px; font-weight: 600; fill: #161616; }
+    .sub     { font-size: 34px; fill: #60626a; }
+    .lbl     { font-size: 28px; fill: #60626a; }
+  </style>
+  <!-- reusable salmon (faces right) — from the SalmonVision pipeline diagram -->
+  <g id="salmon">
+    <path d="M-46 0 L-66 -17 C -57 -7 -57 7 -66 17 Z" fill="#cf4f31"/>
+    <path d="M-4 13 C 0 23 10 22 13 12 Z" fill="#d75a3a"/>
+    <path d="M-26 12 C -23 19 -14 19 -14 11 Z" fill="#d75a3a"/>
+    <path d="M50 0 C 46 -8 34 -14 18 -16 C 4 -17 -16 -16 -34 -11 C -40 -9 -44 -6 -46 -3 L-46 3 C -44 6 -40 9 -34 11 C -16 16 4 17 18 16 C 34 14 46 8 50 0 Z" fill="url(#salmong)"/>
+    <path d="M20 7 C 24 17 33 16 35 8 Z" fill="#cf4f31"/>
+    <path d="M2 -15 C 8 -26 19 -24 25 -12 C 16 -16 9 -16 2 -15 Z" fill="#d75a3a"/>
+    <path d="M-30 -11 C -34 -17 -40 -16 -42 -12 C -38 -13 -33 -13 -30 -11 Z" fill="#d75a3a"/>
+    <path d="M-30 11 C -10 15 10 15 30 10 C 12 14 -8 14 -30 11 Z" fill="#f7b89c" opacity="0.55"/>
+    <g fill="#b23f24" opacity="0.5"><circle cx="6" cy="-8" r="1.6"/><circle cx="-8" cy="-6" r="1.5"/><circle cx="-20" cy="-4" r="1.3"/><circle cx="16" cy="-6" r="1.3"/></g>
+    <path d="M30 -10 C 26 -3 26 4 30 10" stroke="#cf4f31" stroke-width="1.6" fill="none" opacity="0.7"/>
+    <circle cx="39" cy="-3" r="3.2" fill="#2a2320"/><circle cx="40.1" cy="-4.1" r="1" fill="#fff"/>
+  </g>
+</defs>
+
+<rect x="0" y="0" width="1500" height="1050" fill="url(#bg)"/>
+
+<!-- header -->
+<text class="eyebrow" x="120" y="156">CONSERVATION · COMPUTER VISION</text>
+<text class="h1"  x="116" y="276">Tracking the Journey</text>
+<text class="sub" x="120" y="334">Wild salmon, home to their natal streams</text>
+
+<!-- hero salmon in an underwater medallion -->
+<g filter="url(#soft)"><circle cx="430" cy="700" r="240" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g>
+<g transform="translate(430,700)">
+  <clipPath id="mclip"><circle r="232"/></clipPath>
+  <g clip-path="url(#mclip)">
+    <circle r="232" fill="url(#water)"/>
+    <!-- waterline shimmer lines -->
+    <path d="M-232 -120 L232 -120" stroke="#eaf7f6" stroke-width="4" opacity=".6" stroke-dasharray="4 12"/>
+    <path d="M-232 -60 L232 -60" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-dasharray="4 12"/>
+    <!-- algae / water plants swaying up from the riverbed -->
+    <g fill="none" stroke-linecap="round">
+      <g stroke="#2f8f7e" stroke-width="9" opacity=".55">
+        <path d="M-170 232 C -184 180, -158 150, -172 100"/>
+        <path d="M-150 232 C -140 184, -160 156, -148 112"/>
+        <path d="M-132 232 C -146 188, -122 168, -136 128"/>
+      </g>
+      <g stroke="#37a08c" stroke-width="8" opacity=".5">
+        <path d="M150 232 C 138 182, 166 156, 152 108"/>
+        <path d="M172 232 C 186 186, 160 160, 176 118"/>
+        <path d="M192 232 C 180 190, 204 170, 190 134"/>
+      </g>
+      <!-- a couple of finer fronds mid-bed -->
+      <g stroke="#3fae98" stroke-width="5" opacity=".45">
+        <path d="M-20 232 C -30 196, -10 178, -22 150"/>
+        <path d="M30 232 C 42 198, 22 182, 36 156"/>
+      </g>
+    </g>
+    <!-- riverbed pebbles (drawn over the plant bases) -->
+    <g fill="#3f97a3" opacity=".45"><circle cx="-120" cy="196" r="22" /><circle cx="-40" cy="208" r="26"/><circle cx="60" cy="198" r="24"/><circle cx="150" cy="208" r="28"/></g>
+    <!-- a few drifting algae specks / bubbles -->
+    <g fill="#bfe6e4" opacity=".5"><circle cx="-90" cy="-40" r="5"/><circle cx="40" cy="-90" r="4"/><circle cx="120" cy="20" r="5"/><circle cx="-150" cy="60" r="4"/></g>
+    <!-- hero salmon (faces upstream/right) -->
+    <g transform="translate(-12,10) scale(3.3)"><use href="#salmon"/></g>
+  </g>
+</g>
+
+<!-- upstream trail: smaller salmon heading toward the natal stream (top right) -->
+<g transform="translate(820,620) scale(1.5) rotate(-14)"><use href="#salmon"/></g>
+<g transform="translate(1020,520) scale(1.15) rotate(-20)"><use href="#salmon"/></g>
+<g transform="translate(1190,455) scale(0.85) rotate(-16)"><use href="#salmon"/></g>
+
+<!-- dashed migration path toward the source -->
+<path d="M700 700 C 850 640, 1020 540, 1300 430" fill="none" stroke="#7fb0ac" stroke-width="4" stroke-dasharray="2 14" stroke-linecap="round" opacity=".85"/>
+
+<!-- natal-stream marker -->
+<circle cx="1320" cy="422" r="13" fill="#e29578"/>
+<text class="lbl" x="1320" y="392" text-anchor="middle">natal stream</text>
+</svg>
