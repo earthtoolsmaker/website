@@ -2,7 +2,7 @@
 title: "Volunteering at Wildlife Rescue Centers"
 description: Our experiences at various Wildlife Rescue Centers
 date: 2025-05-20
-image: /images/posts/volunteering_wildlife_rescue_centers/cover.jpg
+image: /images/posts/volunteering_wildlife_rescue_centers/cover.png
 tags: ["wildlife", "illegal wildlife trade", "volunteering"]
 ---
 
