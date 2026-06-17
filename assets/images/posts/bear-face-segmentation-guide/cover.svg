@@ -1,0 +1,63 @@
+<svg viewBox="0 0 1500 1050" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f3"/><stop offset="100%" stop-color="#f1e9e1"/></linearGradient>
+  <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#e7f1ef" stop-opacity="0.9"/><stop offset="70%" stop-color="#e7f1ef" stop-opacity="0.4"/><stop offset="100%" stop-color="#e7f1ef" stop-opacity="0"/></radialGradient>
+  <radialGradient id="furg" cx="42%" cy="34%" r="72%"><stop offset="0%" stop-color="#7e5736"/><stop offset="100%" stop-color="#5e3f28"/></radialGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="9" stdDeviation="18" flood-color="#1c2b28" flood-opacity="0.13"/></filter>
+  <style>
+    .eyebrow { font-size: 28px; font-weight: 800; letter-spacing: 0.26em; fill: #e29578; }
+    .h1      { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 110px; font-weight: 600; fill: #161616; }
+    .sub     { font-size: 34px; fill: #60626a; }
+    .pill    { font-size: 28px; font-weight: 700; fill: #fff; }
+  </style>
+  <!-- hero bear face #6 (combo + gradient). Base unit ~ ±50 wide. -->
+  <g id="bear">
+    <!-- ears -->
+    <circle cx="-34" cy="-32" r="16" fill="#5e3f28"/><circle cx="34" cy="-32" r="16" fill="#5e3f28"/>
+    <circle cx="-34" cy="-32" r="8" fill="#8a6648"/><circle cx="34" cy="-32" r="8" fill="#8a6648"/>
+    <circle cx="-34" cy="-32" r="4" fill="#4a3120"/><circle cx="34" cy="-32" r="4" fill="#4a3120"/>
+    <!-- head -->
+    <ellipse cx="0" cy="0" rx="42" ry="39" fill="url(#furg)"/>
+    <ellipse cx="0" cy="19" rx="23" ry="19" fill="#9a774f"/>
+    <!-- brow -->
+    <path d="M-24 -16 q7 -5 14 -1 M24 -16 q-7 -5 -14 -1" stroke="#3a2718" stroke-width="2.5" fill="none" opacity=".5"/>
+    <!-- eyes + glints -->
+    <circle cx="-17" cy="-6" r="4.7" fill="#1a130d"/><circle cx="17" cy="-6" r="4.7" fill="#1a130d"/>
+    <circle cx="-15.5" cy="-7.5" r="1.5" fill="#fff" opacity=".85"/><circle cx="18.5" cy="-7.5" r="1.5" fill="#fff" opacity=".85"/>
+    <!-- nose + mouth -->
+    <ellipse cx="0" cy="11" rx="9.5" ry="7" fill="#1f150e"/><ellipse cx="-3" cy="9" rx="2.6" ry="1.6" fill="#5a4a40" opacity=".8"/>
+    <path d="M0 18 V30" stroke="#1f150e" stroke-width="2"/>
+  </g>
+</defs>
+
+<rect x="0" y="0" width="1500" height="1050" fill="url(#bg)"/>
+
+<!-- soft halo behind the face -->
+<ellipse cx="1010" cy="700" rx="430" ry="360" fill="url(#halo)"/>
+
+<!-- header -->
+<text class="eyebrow" x="120" y="156">CONSERVATION · SEGMENTATION</text>
+<text class="h1"  x="116" y="276">Bear Face Segmentation</text>
+<text class="sub" x="120" y="334">A pixel-perfect mask of the face</text>
+
+<!-- hero face in a soft medallion -->
+<g filter="url(#soft)"><circle cx="1010" cy="710" r="272" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g>
+
+<!-- ===== segmentation mask BEHIND the bear: inflated head + ears, dashed.
+     The opaque bear (drawn next) covers all internal overlap lines, so only
+     the outer dashed rim shows — hugging the whole silhouette incl. ears.
+     Bear vertical span (ear-top local -51 .. chin +42) is centred in the
+     medallion so the ears clear the top edge with even margin. ===== -->
+<g transform="translate(1010,728) scale(3.95)" fill="#0e7c86" fill-opacity="0.18"
+   stroke="#0e7c86" stroke-width="1.7" stroke-dasharray="3.8 3" stroke-linecap="round">
+  <circle cx="-34" cy="-32" r="19"/>
+  <circle cx="34" cy="-32" r="19"/>
+  <ellipse cx="0" cy="0" rx="45.5" ry="42.5"/>
+</g>
+
+<!-- the bear, drawn on top of the mask -->
+<g transform="translate(1010,728) scale(3.95)"><use href="#bear"/></g>
+
+<!-- confidence pill (no bounding box) -->
+<g transform="translate(1010,398)"><rect x="-128" y="-30" width="256" height="56" rx="28" fill="#0e7c86"/><text class="pill" x="0" y="8" text-anchor="middle">bear face 96%</text></g>
+</svg>
