@@ -1,0 +1,75 @@
+<svg viewBox="0 0 1500 1050" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f3"/><stop offset="100%" stop-color="#f1e9e1"/></linearGradient>
+  <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#e7f1ef" stop-opacity="0.92"/><stop offset="70%" stop-color="#e7f1ef" stop-opacity="0.4"/><stop offset="100%" stop-color="#e7f1ef" stop-opacity="0"/></radialGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="9" stdDeviation="18" flood-color="#1c2b28" flood-opacity="0.13"/></filter>
+  <style>
+    .eyebrow { font-size: 28px; font-weight: 800; letter-spacing: 0.26em; fill: #e29578; }
+    .h1      { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 110px; font-weight: 600; fill: #161616; }
+    .sub     { font-size: 34px; fill: #60626a; }
+  </style>
+  <!-- bear face symbol (metric-learning style) -->
+  <g id="bear">
+    <circle cx="-34" cy="-32" r="16" fill="#6e4a30"/><circle cx="34" cy="-32" r="16" fill="#6e4a30"/>
+    <circle cx="-34" cy="-32" r="7.5" fill="#5a3c26"/><circle cx="34" cy="-32" r="7.5" fill="#5a3c26"/>
+    <ellipse cx="0" cy="0" rx="42" ry="39" fill="#6e4a30"/>
+    <ellipse cx="0" cy="19" rx="23" ry="19" fill="#8a6648"/>
+    <circle cx="-17" cy="-6" r="4.5" fill="#221913"/><circle cx="17" cy="-6" r="4.5" fill="#221913"/>
+    <ellipse cx="0" cy="11" rx="9" ry="6.5" fill="#2a1d15"/>
+    <path d="M0 17 V29" stroke="#2a1d15" stroke-width="2"/>
+  </g>
+  <!-- camera-trap glyph on a post (drawn so the lens points right toward the bear) -->
+  <g id="cameratrap">
+    <!-- mounting post -->
+    <rect x="-14" y="40" width="28" height="280" rx="6" fill="#8a8f96"/>
+    <rect x="-30" y="312" width="60" height="16" rx="5" fill="#7a7f86"/>
+    <!-- camera body -->
+    <g filter="url(#soft)"><rect x="-72" y="-72" width="150" height="120" rx="16" fill="#6f7984"/></g>
+    <rect x="-72" y="-72" width="150" height="120" rx="16" fill="none" stroke="#5b646e" stroke-width="2"/>
+    <!-- lens -->
+    <circle cx="64" cy="-12" r="34" fill="#3d454e"/><circle cx="64" cy="-12" r="20" fill="#9fb9b5"/><circle cx="58" cy="-18" r="6" fill="#e7f1ef" opacity=".8"/>
+    <!-- ir flash + status led -->
+    <circle cx="-44" cy="-44" r="9" fill="#cf5a4a"/><circle cx="-18" cy="-44" r="5" fill="#2bb673"/>
+    <!-- strap hint -->
+    <path d="M-72 -30 q-22 0 -22 24" fill="none" stroke="#7a7f86" stroke-width="6"/>
+  </g>
+</defs>
+
+<rect x="0" y="0" width="1500" height="1050" fill="url(#bg)"/>
+
+<!-- detection halo around the bear -->
+<ellipse cx="1075" cy="690" rx="420" ry="330" fill="url(#halo)"/>
+
+<!-- header -->
+<text class="eyebrow" x="120" y="156">EDGE AI · CAMERA TRAPS</text>
+<text class="h1"  x="116" y="276">Bear Detection</text>
+<text class="sub" x="120" y="334">Watching the farm in real time, day and night</text>
+
+<!-- day / night icons (round-the-clock) -->
+<g transform="translate(1230,150)">
+  <circle cx="0" cy="0" r="26" fill="#e0b35e"/>
+  <g stroke="#e0b35e" stroke-width="4" stroke-linecap="round"><line x1="0" y1="-40" x2="0" y2="-32"/><line x1="0" y1="32" x2="0" y2="40"/><line x1="-40" y1="0" x2="-32" y2="0"/><line x1="32" y1="0" x2="40" y2="0"/><line x1="-28" y1="-28" x2="-23" y2="-23"/><line x1="23" y1="23" x2="28" y2="28"/><line x1="-28" y1="28" x2="-23" y2="23"/><line x1="23" y1="-23" x2="28" y2="-28"/></g>
+</g>
+<g transform="translate(1330,150)">
+  <path d="M14 -26 a30 30 0 1 0 6 52 a32 32 0 1 1 -6 -52 Z" fill="#9aa3ad"/>
+  <circle cx="34" cy="-2" r="2.5" fill="#cdd3d8"/><circle cx="22" cy="20" r="2" fill="#cdd3d8"/>
+</g>
+
+<!-- camera trap on the left, scanning right -->
+<g transform="translate(330,560)"><use href="#cameratrap"/></g>
+
+<!-- detection beam from camera lens toward the bear -->
+<path d="M404 548 L760 430 L760 950 L404 720 Z" fill="#2bb673" opacity="0.10"/>
+<path d="M404 548 L760 430 M404 720 L760 950" stroke="#2bb673" stroke-width="2" opacity="0.35" stroke-dasharray="6 7"/>
+
+<!-- bear face in medallion inside the beam -->
+<g filter="url(#soft)"><circle cx="1075" cy="690" r="220" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g>
+<g transform="translate(1075,696) scale(3.2)"><use href="#bear"/></g>
+
+<!-- green detection bounding box around the bear + label -->
+<rect x="855" y="470" width="440" height="440" rx="8" fill="none" stroke="#2bb673" stroke-width="4"/>
+<rect x="855" y="436" width="190" height="34" rx="5" fill="#2bb673"/>
+<text x="868" y="462" font-size="22" font-weight="800" fill="#fff">bear · 0.98</text>
+<!-- tracking corner ticks -->
+<g stroke="#2bb673" stroke-width="4" fill="none"><path d="M855 508 v-38 h38"/><path d="M1295 872 v38 h-38"/></g>
+</svg>
