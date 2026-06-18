@@ -4,6 +4,9 @@ description: An intuition-first, visual guide to metric learning — how machine
 date: 2026-06-16
 image: /images/posts/a-visual-guide-to-metric-learning/cover.png
 tags: ["AI", "vision", "metric learning", "identification"]
+related_posts:
+  - bear-identification-with-metric-learning-guide
+  - local-feature-matching-lightglue
 distances:
   - name: Euclidean
     desc: "Straight-line distance between two vectors. Intuitive, but sensitive to length — two embeddings can point the same way yet sit far apart if their magnitudes differ."

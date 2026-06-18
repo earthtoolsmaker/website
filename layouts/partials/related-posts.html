@@ -1,5 +1,23 @@
 <!-- begin related posts -->
-{{ $related := first 2 ( where ( where .Site.Pages.ByDate.Reverse ".Params.tags" "intersect" .Params.tags ) "Permalink" "!=" .Permalink ) }}
+{{ $limit := 2 }}
+{{/* 1. Curated picks, in frontmatter order; skip slugs that don't resolve. */}}
+{{ $curated := slice }}
+{{ range .Params.related_posts }}
+  {{ $p := site.GetPage "posts" . }}
+  {{ if and $p (ne $p.Permalink $.Permalink) }}
+    {{ $curated = $curated | append $p }}
+  {{ end }}
+{{ end }}
+{{/* 2. Tag-intersection fallback, newest first, excluding self and curated picks. */}}
+{{ $tagMatches := where ( where .Site.Pages.ByDate.Reverse ".Params.tags" "intersect" .Params.tags ) "Permalink" "!=" .Permalink }}
+{{ $fill := slice }}
+{{ range $tagMatches }}
+  {{ if not (in $curated .) }}
+    {{ $fill = $fill | append . }}
+  {{ end }}
+{{ end }}
+{{/* 3. Curated first, then fill, capped at $limit. */}}
+{{ $related := first $limit ( $curated | append $fill ) }}
 {{ if $related }}
 <div class="container">
   <section class="section related-posts">

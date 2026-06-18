@@ -4,6 +4,9 @@ description: An in-depth look at the common preprocessing stages required to per
 date: 2024-12-08
 image: /images/posts/how-to-prepare-data-for-identification/cover.png
 tags: ["AI", "vision", "identification"]
+related_posts:
+  - a-visual-guide-to-metric-learning
+  - local-feature-matching-lightglue
 augmentations:
   - name: Random Scaling
     desc: "Varying the size of the images to simulate different distances from the camera."

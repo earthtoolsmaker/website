@@ -3,7 +3,10 @@ title: "Smoke Is a Behavior: Inside Pyronear's Temporal Wildfire Detection Model
 description: How the temporal smoke verifier works, step by step — detection boxes become tubes, stabilized crops make motion legible, and a vision transformer plus a tiny temporal head learn that smoke grows and drifts.
 date: 2026-06-12
 image: /images/posts/smoke-is-a-behavior/cover.png
-tags: ["AI", "vision", "temporal models", "transformers"]
+tags: ["AI", "vision", "temporal models", "transformers", "wildfire"]
+related_posts:
+  - racing-models-not-opinions
+  - protecting-the-forest-early-forest-fire-detector
 ---
 
 In [the previous post]({{< ref "/posts/racing-models-not-opinions" >}}) we

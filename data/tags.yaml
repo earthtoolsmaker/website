@@ -37,3 +37,18 @@ tags:
 
   volunteering:
     emoji: "\U0001F91D"  # Handshake - community
+
+  wildfire:
+    emoji: "\U0001F525"  # Fire - wildfire / smoke detection
+
+  bear:
+    emoji: "\U0001F43B"  # Bear - bear projects
+
+  marine:
+    emoji: "\U0001F30A"  # Water wave - aquatic species
+
+  edge:
+    emoji: "\U0001F4DF"  # Pager - on-device / low-power deployment
+
+  acoustics:
+    emoji: "\U0001F50A"  # Loud speaker - audio / bioacoustics

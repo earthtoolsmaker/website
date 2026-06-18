@@ -5,7 +5,10 @@ date: 2024-08-21
 params:
   math: true
 image: /images/posts/protecting-the-forest-early-forest-fire-detector/cover.png
-tags: ["AI", "vision", "low power"]
+tags: ["AI", "vision", "low power", "wildfire", "edge"]
+related_posts:
+  - smoke-is-a-behavior
+  - racing-models-not-opinions
 ---
 
 In this post, we’ll walk through the development of an early forest fire

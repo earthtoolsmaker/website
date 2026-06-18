@@ -5,7 +5,10 @@ date: 2024-04-10
 params:
   math: true
 image: /images/posts/how-to-build-a-benthic-coral-reefs-analyser/cover.png
-tags: ["AI", "vision"]
+tags: ["AI", "vision", "marine"]
+related_posts:
+  - tracking-the-journey-how-to-monitor-wild-salmon-migrations
+  - how-to-build-a-real-time-bear-detection-system
 ---
 
 In this post we explore the development of a benthic coral reef analyzer, built
