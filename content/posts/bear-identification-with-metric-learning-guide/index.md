@@ -3,7 +3,10 @@ title: A guide to designing a bear face recognition system
 description: Identify bears with Metric Learning.
 date: 2024-04-12
 image: /images/posts/bear-identification-with-metric-learning-guide/cover.png 
-tags: ["AI", "vision", "metric learning", "identification"]
+tags: ["AI", "vision", "metric learning", "identification", "bear"]
+related_posts:
+  - bear-face-segmentation-guide
+  - a-visual-guide-to-metric-learning
 metric_losses:
   - name: Contrastive
     desc: "Pulls similar pairs together and pushes dissimilar pairs apart in the embedding space."

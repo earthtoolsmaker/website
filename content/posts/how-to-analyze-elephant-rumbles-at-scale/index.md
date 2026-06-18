@@ -5,7 +5,10 @@ date: 2024-06-29
 params:
   math: true
 image: /images/posts/how-to-detect-elephant-rumbles-at-scale/cover.png
-tags: ["AI", "audio"]
+tags: ["AI", "audio", "acoustics"]
+related_posts:
+  - how-to-build-a-benthic-coral-reefs-analyser
+  - tracking-the-journey-how-to-monitor-wild-salmon-migrations
 spectrogram_reasons:
   - name: Frequency–time view
     desc: "A spectrogram shows which frequencies are present and how they change over time — exactly what tasks like sound-event detection need."

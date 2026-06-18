@@ -3,7 +3,10 @@ title: "Tracking the Journey: How to Monitor Wild Salmon Migrations"
 description: An in-depth look at the systems developed and deployed to track the journey of wild salmon as they return to their natal streams.
 date: 2024-08-30
 image: /images/posts/tracking-the-journey-how-to-monitor-wild-salmon-migrations/cover.png
-tags: ["AI", "vision", "low power", "camera traps"]
+tags: ["AI", "vision", "low power", "camera traps", "marine", "edge"]
+related_posts:
+  - how-to-build-a-benthic-coral-reefs-analyser
+  - how-to-build-a-real-time-bear-detection-system
 ---
 
 In this post, we will dive into the development of a wild salmon monitoring

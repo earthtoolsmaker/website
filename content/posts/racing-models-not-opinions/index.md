@@ -3,7 +3,10 @@ title: "Racing Models, Not Opinions: How We Ran Wildfire ML R&D for Pyronear"
 description: How a literature survey, self-contained experiments, and a shared leaderboard turned 28 research papers into a production smoke verifier with 4x fewer false alarms.
 date: 2026-06-12
 image: /images/posts/racing-models-not-opinions/cover.png
-tags: ["AI", "vision", "MLOps", "temporal models"]
+tags: ["AI", "vision", "MLOps", "temporal models", "wildfire"]
+related_posts:
+  - smoke-is-a-behavior
+  - protecting-the-forest-early-forest-fire-detector
 ---
 
 In 2024, we wrote about [building an early forest fire detector]({{< ref

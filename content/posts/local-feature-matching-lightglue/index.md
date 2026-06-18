@@ -3,7 +3,10 @@ title: "Identify individuals with Local Feature Matching"
 description: A comprehensive examination of using local feature matching for individual identification.
 date: 2024-12-09
 image: /images/posts/local-feature-matching-lightglue/cover.png
-tags: ["AI", "vision", "identification", "local feature"]
+tags: ["AI", "vision", "identification", "local feature", "marine"]
+related_posts:
+  - a-visual-guide-to-metric-learning
+  - how-to-prepare-data-for-identification
 feature_matchers:
   - name: Brute-Force
     desc: "Computes the distance between every pair of descriptors and keeps the closest. Exact and simple, but the cost grows quickly with the number of keypoints."

@@ -5,7 +5,10 @@ date: 2024-04-11
 params:
   math: true
 image: /images/posts/bear-face-segmentation-guide/cover.png 
-tags: ["AI", "vision", "camera traps"]
+tags: ["AI", "vision", "camera traps", "bear"]
+related_posts:
+  - bear-identification-with-metric-learning-guide
+  - how-to-prepare-data-for-identification
 ---
 
 In this post we'll walk through the technical development of a bear face

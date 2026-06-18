@@ -3,7 +3,10 @@ title: How to build a real time bear detection system
 description: Detecting bears in real time using low-power technology.
 date: 2024-04-09
 image: /images/posts/how-to-build-a-real-time-bear-detection-system/cover.png 
-tags: ["AI", "vision", "low power", "camera traps"]
+tags: ["AI", "vision", "low power", "camera traps", "bear", "edge"]
+related_posts:
+  - bear-face-segmentation-guide
+  - protecting-the-forest-early-forest-fire-detector
 ---
 
 In this post, we'll walk through the development of a real-time bear detection
