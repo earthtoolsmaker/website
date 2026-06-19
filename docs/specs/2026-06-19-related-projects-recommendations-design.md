@@ -251,3 +251,24 @@ No unit-test harness; verify via local build:
   `related_spaces`; add `space` to `snow_leopard_monitoring`.
 
 (No `data/tags.yaml` change — theme-tag emoji entries already present.)
+
+## Implementation notes (deviations from the draft above)
+
+Two refinements were made and approved during implementation:
+
+1. **Section order: Related projects → Try these demos → Related reading.** The
+   draft placed reading first; the final order keeps visitors in the
+   project/portfolio world first, with reading last.
+
+2. **Fallback excludes broad axis tags and sorts by date.** Tag-fill (for both
+   related reading and related projects) intersects on *theme* tags only —
+   `vision`/`audio` are removed via
+   `complement (slice "vision" "audio") .Params.tags` — and iterates
+   `site.Pages.ByDate.Reverse`. Without this, the near-universal `vision` tag
+   pulled unrelated newest posts (e.g. wildfire posts onto the seal project).
+
+3. **Slug/path resolution avoids `site.GetPage` for projects and demos.** A
+   project and a demo can share a basename (e.g. `trout_identification`), which
+   makes `site.GetPage` raise "page reference … is ambiguous". Final code matches
+   within the section instead: projects by `.File.ContentBaseName`, demos by
+   `.RelPermalink`. Posts still use `site.GetPage "posts"` (no collisions).
