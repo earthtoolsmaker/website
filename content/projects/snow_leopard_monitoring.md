@@ -1,6 +1,15 @@
 ---
 title: Snow Leopard Monitoring
 summary: Non-invasive snow leopard monitoring using computer vision analysis of camera trap photos to identify individual animals.
+space: /demos/snowleopard_identification/
+tags: ["identification", "camera traps", "vision"]
+related_projects:
+  - bear_identification
+  - trout_identification
+  - biowatch-app
+related_spaces:
+  - /demos/bear_identification/
+  - /demos/trout_identification/
 tagline: Identifying individual snow leopards in camera-trap photos to track a population almost no one ever sees.
 stats:
   - value: "4,000–7,500"

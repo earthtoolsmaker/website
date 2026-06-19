@@ -1,6 +1,14 @@
 ---
 title: "Biowatch: Camera Trap Data, Visualized"
 summary: A free, open-source desktop application for visualizing camera trap data to support conservation efforts.
+tags: ["camera traps", "vision"]
+related_projects:
+  - snow_leopard_monitoring
+  - bear_identification
+  - bird_flu_monitoring
+related_spaces:
+  - /demos/bear_identification/
+  - /demos/snowleopard_identification/
 tagline: A free, open-source desktop app that turns a folder of camera-trap images into living ecological insight — entirely offline.
 stats:
   - value: "Free"

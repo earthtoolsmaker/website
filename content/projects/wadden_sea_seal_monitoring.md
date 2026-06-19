@@ -1,6 +1,13 @@
 ---
 title: Wadden Sea Seal Monitoring
 summary: Automated seal population monitoring system using AI to count, classify, and identify individual seals from aerial imagery in the Wadden Sea.
+tags: ["marine", "identification", "vision"]
+related_projects:
+  - trout_identification
+  - wild_salmon_migration_monitoring
+related_spaces:
+  - /demos/seal_identification/
+  - /demos/trout_identification/
 tagline: Counting, classifying and recognising individual seals from aerial surveys of the Wadden Sea.
 stats:
   - value: "2"

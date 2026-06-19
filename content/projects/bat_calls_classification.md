@@ -1,6 +1,11 @@
 ---
 title: "Tropical Bat Call Detection and Classification"
 summary: Transforming bat population monitoring in Cambodia through advanced bio-acoustic analysis driven by Machine Learning algorithms.
+tags: ["acoustics", "audio"]
+related_projects:
+  - elephants_passive_acoustic_monitoring
+related_spaces:
+  - /demos/forest_elephant_rumble_detection/
 tagline: Teaching machines to recognise bats by their calls — so citizen scientists across Cambodia can map species no one has counted.
 stats:
   - value: "70+"

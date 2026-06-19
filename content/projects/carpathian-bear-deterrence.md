@@ -1,6 +1,13 @@
 ---
 title: Bear Deterrence in the Carpathians
 summary: Utilizing low-power technology to detect and deter bears from encroaching on Romanian farms.
+tags: ["bear", "edge", "camera traps", "vision"]
+related_projects:
+  - bear_identification
+  - early_forest_fire_detection
+related_spaces:
+  - /demos/bear_identification/
+  - /demos/early_forest_fire_detection/
 tagline: Spotting bears at the farm's edge and scaring them off — harmlessly — before conflict starts.
 stats:
   - value: "Real-time"

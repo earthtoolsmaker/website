@@ -1,6 +1,14 @@
 ---
 title: Wild Salmon Migration Monitoring
 summary: The project monitors wild salmon migration to ensure the number passing through meets state regulations, addressing threats from human activities like fisheries and dams.
+tags: ["marine", "vision"]
+related_projects:
+  - monitoring_smolt_salmon_migration_with_sonar
+  - trout_identification
+  - coral_reef_health_monitoring
+related_spaces:
+  - /demos/smolt_sonar_monitoring/
+  - /demos/trout_identification/
 tagline: Automated, multi-sensor counting that keeps Pacific salmon runs within regulation.
 stats:
   - value: "14"
