@@ -3,7 +3,7 @@ title: "Identify individuals with Local Feature Matching"
 description: A comprehensive examination of using local feature matching for individual identification.
 date: 2024-12-09
 image: /images/posts/local-feature-matching-lightglue/cover.png
-tags: ["AI", "vision", "identification", "local feature", "marine"]
+tags: ["AI", "vision", "identification", "local feature", "aquatic"]
 related_posts:
   - a-visual-guide-to-metric-learning
   - how-to-prepare-data-for-identification

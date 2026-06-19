@@ -1,7 +1,7 @@
 ---
 title: Coral Reefs Health Monitoring
 summary: Segmentation of coral reefs in benthic imagery to quantify the long-term growth or decline of coral cover within marine protected areas.
-tags: ["marine", "vision"]
+tags: ["aquatic", "marine", "vision"]
 related_projects:
   - wild_salmon_migration_monitoring
   - monitoring_smolt_salmon_migration_with_sonar

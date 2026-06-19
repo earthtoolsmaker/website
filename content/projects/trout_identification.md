@@ -1,7 +1,7 @@
 ---
 title: Trout Identification
 summary: Non-invasive technology for monitoring trout populations using computer vision to accurately identify individual fish.
-tags: ["marine", "identification", "vision"]
+tags: ["aquatic", "freshwater", "identification", "vision"]
 related_projects:
   - wild_salmon_migration_monitoring
   - bear_identification

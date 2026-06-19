@@ -250,7 +250,9 @@ No unit-test harness; verify via local build:
 - `content/projects/*.md` — 13 files: add `tags`, `related_projects`,
   `related_spaces`; add `space` to `snow_leopard_monitoring`.
 
-(No `data/tags.yaml` change — theme-tag emoji entries already present.)
+- `data/tags.yaml` — add `aquatic`/`freshwater` emoji entries and re-purpose
+  `marine` (see implementation note 6).
+- `content/posts/*/index.md` — 3 marine posts re-tagged to the aquatic scheme.
 
 ## Implementation notes (deviations from the draft above)
 
@@ -282,3 +284,16 @@ Two refinements were made and approved during implementation:
    `card_image` (an SVG), so the demos section renders cards via the
    `space-image.html` partial rather than reusing `project-card.html` (which
    reads `image`).
+
+6. **Aquatic tag scheme refined.** The single `marine` tag was inaccurate for
+   freshwater species. Replaced with an umbrella `aquatic` tag (keeps water
+   species clustered for fallback) plus precise habitat tags: `freshwater`
+   (trout, wild salmon, smolt) and `marine` (coral, seal). Applied to both
+   projects and the matching posts; new emoji entries added to `data/tags.yaml`.
+   `bird_flu_monitoring` lost its `identification` tag (it counts/detects birds
+   rather than identifying individuals; now `vision` only).
+
+7. **No curated reciprocal back-links.** Sink-node projects (seal, bird_flu) are
+   surfaced as related where tags overlap via the `aquatic` fallback rather than
+   by hand-editing back-links into other projects' top-3 (which the 3-item cap
+   would truncate anyway).

@@ -1,7 +1,7 @@
 ---
 title: Monitoring Smolt Salmon Migration with Sonar
 summary: An innovative use of sonar imagery to monitor and analyze the migration patterns of smolt salmon as they journey from freshwater to the ocean
-tags: ["marine", "vision"]
+tags: ["aquatic", "freshwater", "vision"]
 related_projects:
   - wild_salmon_migration_monitoring
   - coral_reef_health_monitoring
