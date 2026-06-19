@@ -163,7 +163,7 @@
 {{ end }}
 {{ $projFill := slice }}
 {{ if $themeTags }}
-  {{ range where ( where ( where site.Pages.ByDate.Reverse "Section" "projects" ) ".Params.tags" "intersect" $themeTags ) "Permalink" "!=" .Permalink }}
+  {{ range where ( where ( where site.RegularPages.ByDate.Reverse "Section" "projects" ) ".Params.tags" "intersect" $themeTags ) "Permalink" "!=" .Permalink }}
     {{ if not (in $curatedProj .) }}
       {{ $projFill = $projFill | append . }}
     {{ end }}
@@ -174,7 +174,7 @@
   {{ with .PrevInSection }}{{ $relatedProj = slice . }}{{ end }}
 {{ end }}
 {{ if $relatedProj }}
-<section class="section project-next">
+<section class="section project-related-projects">
   <div class="container"><div class="row"><div class="col col-12"><div class="container__inner">
     <div class="section__info">
       <div class="section__head"><h2 class="section__title">Related projects</h2></div>
@@ -189,15 +189,19 @@
 </section>
 {{ end }}
 
-{{/* ---------- 7. TRY THESE DEMOS (curated related_spaces) ---------- */}}
+{{/* ---------- 7. TRY THESE DEMOS (own space first, then related_spaces) ---------- */}}
 {{/* Match by RelPermalink within the demos section: a demo and a project can
      share a basename (e.g. trout_identification), which makes site.GetPage
-     ambiguous. Section-scoped permalink matching is unambiguous. */}}
+     ambiguous. Section-scoped permalink matching is unambiguous.
+     The project's own demo (.Params.space) always leads, then curated
+     related_spaces; deduped so a self-listed space never doubles up. */}}
 {{ $demoPages := where site.RegularPages "Section" "demos" }}
+{{ $demoPaths := .Params.related_spaces | default slice }}
+{{ with .Params.space }}{{ $demoPaths = (slice .) | append $demoPaths }}{{ end }}
 {{ $demos := slice }}
-{{ range $path := .Params.related_spaces }}
+{{ range $path := $demoPaths }}
   {{ range $demoPages }}
-    {{ if eq .RelPermalink $path }}
+    {{ if and (eq .RelPermalink $path) (not (in $demos .)) }}
       {{ $demos = $demos | append . }}
     {{ end }}
   {{ end }}
@@ -246,7 +250,7 @@
 {{ end }}
 {{ $postFill := slice }}
 {{ if $themeTags }}
-  {{ range where ( where site.Pages.ByDate.Reverse "Section" "posts" ) ".Params.tags" "intersect" $themeTags }}
+  {{ range where ( where site.RegularPages.ByDate.Reverse "Section" "posts" ) ".Params.tags" "intersect" $themeTags }}
     {{ if not (in $curatedPosts .) }}
       {{ $postFill = $postFill | append . }}
     {{ end }}
