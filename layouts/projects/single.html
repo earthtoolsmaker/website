@@ -210,8 +210,26 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
     </div>
     <div class="row">
-      {{ range $demos }}
-        {{ partial "project-card.html" . }}
+      {{ range $demo := $demos }}
+        {{/* Demo pages expose card_image (an SVG), not Image, so render via
+             space-image.html — the same partial the space sidebar uses. */}}
+        <article class="article col col-4 col-w-6 col-t-12">
+          <div class="article__content">
+            {{ with $demo.Params.card_image }}
+            <a href="{{ $demo.RelPermalink }}" class="article__image">
+              {{ partial "space-image.html" (dict "path" . "alt" $demo.Title) }}
+            </a>
+            {{ end }}
+            <div class="article__inner">
+              <div class="article__info">
+                <h3 class="article__title"><a href="{{ $demo.RelPermalink }}" class="article__link">{{ $demo.Title }}</a></h3>
+                {{ with $demo.Params.summary }}
+                <p class="article__excerpt">{{ . }}</p>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </article>
       {{ end }}
     </div>
   </div></div></div></div>
