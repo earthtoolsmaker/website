@@ -1,6 +1,12 @@
 ---
 title: Bird Flu Monitoring
 summary: Utilize drones for precise monitoring of breeding seabird colonies by detection of live and dead adults and chicks to determine survival and reproduction and asses the impact of avian influenza.
+tags: ["vision"]
+related_projects:
+  - wadden_sea_seal_monitoring
+  - wild_salmon_migration_monitoring
+related_spaces:
+  - /demos/seal_identification/
 tagline: Counting every bird in a seabird colony — alive or lost — from a drone overhead, to measure avian flu's toll without setting foot inside.
 stats:
   - value: "Aerial"

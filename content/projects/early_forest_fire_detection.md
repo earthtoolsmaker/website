@@ -1,6 +1,12 @@
 ---
 title: Early Forest Fire Detection
 summary: Democratize open and low-tech solutions for fighting wildfires, for the benefit of the ecosystems and the citizens.
+tags: ["wildfire", "edge", "vision"]
+related_projects:
+  - carpathian-bear-deterrence
+  - coral_reef_health_monitoring
+related_spaces:
+  - /demos/temporal_smoke_verification/
 clients:
   - name: Pyronear
     link: https://pyronear.org

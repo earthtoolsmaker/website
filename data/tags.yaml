@@ -44,8 +44,14 @@ tags:
   bear:
     emoji: "\U0001F43B"  # Bear - bear projects
 
+  aquatic:
+    emoji: "\U0001F30A"  # Water wave - aquatic species (umbrella)
+
   marine:
-    emoji: "\U0001F30A"  # Water wave - aquatic species
+    emoji: "\U0001F41A"  # Spiral shell - saltwater / ocean species
+
+  freshwater:
+    emoji: "\U0001F41F"  # Fish - rivers, lakes, streams
 
   edge:
     emoji: "\U0001F4DF"  # Pager - on-device / low-power deployment

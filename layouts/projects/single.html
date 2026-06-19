@@ -143,8 +143,121 @@
 </div>
 {{ end }}
 
-{{/* ---------- 6. RELATED READING ---------- */}}
-{{ if .Params.related_posts }}
+{{/* Theme tags = this page's tags minus broad axis tags (vision/audio), which
+     sit on nearly every page and would otherwise pollute fallback matching. */}}
+{{ $themeTags := complement (slice "vision" "audio") (.Params.tags | default slice) }}
+
+{{/* ---------- 6. RELATED PROJECTS (curated + tag-fill, else PrevInSection) ---------- */}}
+{{/* Match curated slugs by ContentBaseName within the projects section: a
+     project and a demo can share a basename (e.g. trout_identification), which
+     makes site.GetPage ambiguous. Section-scoped matching is unambiguous. */}}
+{{ $projLimit := 3 }}
+{{ $projPages := where site.RegularPages "Section" "projects" }}
+{{ $curatedProj := slice }}
+{{ range $slug := .Params.related_projects }}
+  {{ range $projPages }}
+    {{ if and (eq .File.ContentBaseName $slug) (ne .Permalink $.Permalink) }}
+      {{ $curatedProj = $curatedProj | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $projFill := slice }}
+{{ if $themeTags }}
+  {{ range where ( where ( where site.RegularPages.ByDate.Reverse "Section" "projects" ) ".Params.tags" "intersect" $themeTags ) "Permalink" "!=" .Permalink }}
+    {{ if not (in $curatedProj .) }}
+      {{ $projFill = $projFill | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $relatedProj := first $projLimit ( $curatedProj | append $projFill ) }}
+{{ if not $relatedProj }}
+  {{ with .PrevInSection }}{{ $relatedProj = slice . }}{{ end }}
+{{ end }}
+{{ if $relatedProj }}
+<section class="section project-related-projects">
+  <div class="container"><div class="row"><div class="col col-12"><div class="container__inner">
+    <div class="section__info">
+      <div class="section__head"><h2 class="section__title">Related projects</h2></div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+    </div>
+    <div class="row">
+      {{ range $relatedProj }}
+        {{ partial "project-card.html" . }}
+      {{ end }}
+    </div>
+  </div></div></div></div>
+</section>
+{{ end }}
+
+{{/* ---------- 7. TRY THESE DEMOS (own space first, then related_spaces) ---------- */}}
+{{/* Match by RelPermalink within the demos section: a demo and a project can
+     share a basename (e.g. trout_identification), which makes site.GetPage
+     ambiguous. Section-scoped permalink matching is unambiguous.
+     The project's own demo (.Params.space) always leads, then curated
+     related_spaces; deduped so a self-listed space never doubles up. */}}
+{{ $demoPages := where site.RegularPages "Section" "demos" }}
+{{ $demoPaths := .Params.related_spaces | default slice }}
+{{ with .Params.space }}{{ $demoPaths = (slice .) | append $demoPaths }}{{ end }}
+{{ $demos := slice }}
+{{ range $path := $demoPaths }}
+  {{ range $demoPages }}
+    {{ if and (eq .RelPermalink $path) (not (in $demos .)) }}
+      {{ $demos = $demos | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if $demos }}
+<section class="section project-demos">
+  <div class="container"><div class="row"><div class="col col-12"><div class="container__inner">
+    <div class="section__info">
+      <div class="section__head"><h2 class="section__title">Try these demos</h2></div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
+    </div>
+    <div class="row">
+      {{ range $demo := $demos }}
+        {{/* Demo pages expose card_image (an SVG), not Image, so render via
+             space-image.html — the same partial the space sidebar uses. */}}
+        <article class="article col col-4 col-w-6 col-t-12">
+          <div class="article__content">
+            {{ with $demo.Params.card_image }}
+            <a href="{{ $demo.RelPermalink }}" class="article__image">
+              {{ partial "space-image.html" (dict "path" . "alt" $demo.Title) }}
+            </a>
+            {{ end }}
+            <div class="article__inner">
+              <div class="article__info">
+                <h3 class="article__title"><a href="{{ $demo.RelPermalink }}" class="article__link">{{ $demo.Title }}</a></h3>
+                {{ with $demo.Params.summary }}
+                <p class="article__excerpt">{{ . }}</p>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </div></div></div></div>
+</section>
+{{ end }}
+
+{{/* ---------- 8. RELATED READING (curated posts + theme-tag fill) ---------- */}}
+{{ $postLimit := 3 }}
+{{ $curatedPosts := slice }}
+{{ range .Params.related_posts }}
+  {{ with site.GetPage "posts" . }}
+    {{ $curatedPosts = $curatedPosts | append . }}
+  {{ end }}
+{{ end }}
+{{ $postFill := slice }}
+{{ if $themeTags }}
+  {{ range where ( where site.RegularPages.ByDate.Reverse "Section" "posts" ) ".Params.tags" "intersect" $themeTags }}
+    {{ if not (in $curatedPosts .) }}
+      {{ $postFill = $postFill | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $relatedPosts := first $postLimit ( $curatedPosts | append $postFill ) }}
+{{ if $relatedPosts }}
 <section class="section project-related">
   <div class="container"><div class="row"><div class="col col-12"><div class="container__inner">
     <div class="section__info">
@@ -152,26 +265,9 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
     </div>
     <div class="row">
-      {{ range .Params.related_posts }}
-        {{ with site.GetPage "posts" . }}
-          {{ partial "article.html" . }}
-        {{ end }}
+      {{ range $relatedPosts }}
+        {{ partial "article.html" . }}
       {{ end }}
-    </div>
-  </div></div></div></div>
-</section>
-{{ end }}
-
-{{/* ---------- 7. NEXT PROJECT ---------- */}}
-{{ with .PrevInSection }}
-<section class="section project-next">
-  <div class="container"><div class="row"><div class="col col-12"><div class="container__inner">
-    <div class="section__info">
-      <div class="section__head"><h2 class="section__title">Next project</h2></div>
-      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none"><path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8"/></svg>
-    </div>
-    <div class="row">
-      {{ partial "project-card.html" . }}
     </div>
   </div></div></div></div>
 </section>

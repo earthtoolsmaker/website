@@ -1,6 +1,12 @@
 ---
 title: Forest Elephants Passive Acoustic Monitoring
 summary: Conservation efforts struggle to monitor forest elephants in dense rainforests, with acoustic monitoring providing a promising solution via accurate, user-friendly detection systems that aid in population monitoring and anti-poaching efforts while mitigating human-elephant conflicts.
+tags: ["acoustics", "audio"]
+related_projects:
+  - bat_calls_classification
+  - early_forest_fire_detection
+related_spaces:
+  - /demos/forest_elephant_rumble_detection/
 tagline: Finding forest elephants — and poachers — by sound, across Central Africa's rainforest.
 stats:
   - value: "60%"

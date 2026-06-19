@@ -1,6 +1,14 @@
 ---
 title: Bear Identification
 summary: Noninvasive technologies to identify and monitor bears, facilitating their conservation.
+tags: ["bear", "identification", "vision"]
+related_projects:
+  - carpathian-bear-deterrence
+  - trout_identification
+  - snow_leopard_monitoring
+related_spaces:
+  - /demos/trout_identification/
+  - /demos/snowleopard_identification/
 tagline: Recognising individual brown bears by their faces — from a camera-trap photo, with no tags and no handling.
 clients:
   - name: BearID
