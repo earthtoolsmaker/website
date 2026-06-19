@@ -272,3 +272,13 @@ Two refinements were made and approved during implementation:
    makes `site.GetPage` raise "page reference … is ambiguous". Final code matches
    within the section instead: projects by `.File.ContentBaseName`, demos by
    `.RelPermalink`. Posts still use `site.GetPage "posts"` (no collisions).
+
+4. **"Try these demos" always leads with the project's own demo.** The
+   project's own `space` (if set) is prepended to `related_spaces`, then the
+   combined list is resolved and deduped — so a project's own interactive demo
+   always appears first, and a self-listed space never doubles up.
+
+5. **Demo cards render `card_image`, not `image`.** Demo pages expose
+   `card_image` (an SVG), so the demos section renders cards via the
+   `space-image.html` partial rather than reusing `project-card.html` (which
+   reads `image`).
