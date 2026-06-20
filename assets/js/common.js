@@ -405,6 +405,32 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
+  /* ============================
+  // Standalone content images: click-to-expand (desktop only)
+  ============================ */
+  (function () {
+    if (!pageLightbox) return;
+    var desktop = window.matchMedia('(min-width: 768px) and (pointer: fine)');
+    if (!desktop.matches) return; // mobile / touch: no handlers, no zoom cursor
+
+    var content = document.querySelector('.post__content');
+    if (!content) return;
+
+    var candidates = Array.from(content.querySelectorAll('img'));
+    candidates.forEach(function (img) {
+      if (img.closest('.image-carousel')) return;      // carousels handle their own
+      if (img.classList.contains('no-zoom')) return;   // explicit opt-out
+      if (img.classList.contains('no-lightense')) return; // existing opt-out convention
+      if (img.closest('a')) return;                    // linked image: let the link win
+
+      img.classList.add('is-zoomable');
+      img.addEventListener('click', function () {
+        openImageLightbox([{ src: img.src, alt: img.alt, caption: img.alt }], 0, 'single');
+      });
+    });
+  })();
+
+
   // =====================
   // Load More Posts
   // =====================
