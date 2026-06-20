@@ -259,6 +259,81 @@ document.addEventListener("DOMContentLoaded", function() {
   /* ============================
   // Image Carousel with Lightbox
   ============================ */
+
+  /* ============================
+  // Shared image lightbox (used by carousels and standalone images)
+  ============================ */
+  var pageLightbox = document.getElementById('page-lightbox');
+  var openImageLightbox = function () {}; // no-op default if no lightbox on page
+
+  if (pageLightbox) {
+    var lbImage = pageLightbox.querySelector('.image-lightbox__image');
+    var lbCaption = pageLightbox.querySelector('.image-lightbox__caption');
+    var lbClose = pageLightbox.querySelector('.image-lightbox__close');
+    var lbOverlay = pageLightbox.querySelector('.image-lightbox__overlay');
+    var lbPrev = pageLightbox.querySelector('.image-lightbox__prev');
+    var lbNext = pageLightbox.querySelector('.image-lightbox__next');
+    var lbCurrent = pageLightbox.querySelector('.image-lightbox__current');
+    var lbTotal = pageLightbox.querySelector('.image-lightbox__total');
+
+    var lbImages = [];
+    var lbIndex = 0;
+    var lbMode = 'single';
+
+    function lbRender() {
+      var item = lbImages[lbIndex];
+      if (!item) return;
+      lbImage.src = item.src;
+      lbImage.alt = item.alt || '';
+      if (lbCaption) lbCaption.textContent = item.caption || '';
+      if (lbCurrent) lbCurrent.textContent = lbIndex + 1;
+      if (lbTotal) lbTotal.textContent = lbImages.length;
+    }
+
+    function lbNextImage() {
+      if (lbMode !== 'gallery') return;
+      lbIndex = (lbIndex + 1) % lbImages.length;
+      lbRender();
+    }
+
+    function lbPrevImage() {
+      if (lbMode !== 'gallery') return;
+      lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length;
+      lbRender();
+    }
+
+    function lbCloseFn() {
+      pageLightbox.classList.remove('is-active');
+      pageLightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lightbox-open');
+    }
+
+    openImageLightbox = function (images, startIndex, mode) {
+      lbImages = images || [];
+      lbIndex = startIndex || 0;
+      lbMode = mode === 'gallery' ? 'gallery' : 'single';
+      if (!lbImages.length) return;
+      pageLightbox.classList.toggle('is-single', lbMode === 'single');
+      lbRender();
+      pageLightbox.classList.add('is-active');
+      pageLightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lightbox-open');
+      if (lbClose) lbClose.focus();
+    };
+
+    if (lbClose) lbClose.addEventListener('click', lbCloseFn);
+    if (lbOverlay) lbOverlay.addEventListener('click', lbCloseFn);
+    if (lbNext) lbNext.addEventListener('click', lbNextImage);
+    if (lbPrev) lbPrev.addEventListener('click', lbPrevImage);
+
+    document.addEventListener('keydown', function (e) {
+      if (!pageLightbox.classList.contains('is-active')) return;
+      if (e.key === 'Escape') { lbCloseFn(); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { lbNextImage(); e.preventDefault(); }
+      if (e.key === 'ArrowLeft') { lbPrevImage(); e.preventDefault(); }
+    });
+  }
+
   document.querySelectorAll('.image-carousel').forEach(function(carouselContainer) {
     var slider = carouselContainer.querySelector('.image-carousel__slider');
     if (!slider) return;
@@ -308,118 +383,24 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
 
-    // Lightbox functionality
-    var lightbox = document.getElementById('page-lightbox');
-    if (!lightbox) return;
+    // Lightbox: feed the shared page-level lightbox in gallery mode.
+    if (!pageLightbox) return;
 
-    var lightboxImage = lightbox.querySelector('.image-lightbox__image');
-    var lightboxCaption = lightbox.querySelector('.image-lightbox__caption');
-    var lightboxClose = lightbox.querySelector('.image-lightbox__close');
-    var lightboxOverlay = lightbox.querySelector('.image-lightbox__overlay');
-    var lightboxPrev = lightbox.querySelector('.image-lightbox__prev');
-    var lightboxNext = lightbox.querySelector('.image-lightbox__next');
-    var lightboxCurrent = lightbox.querySelector('.image-lightbox__current');
-    var lightboxTotal = lightbox.querySelector('.image-lightbox__total');
-
-    // Collect only original images (exclude Tiny Slider clones) for lightbox navigation
-    var images = Array.from(carouselContainer.querySelectorAll('.image-carousel__slide:not(.tns-slide-cloned) img'));
-    // Collect ALL images (including clones) for click handlers
-    var allImages = Array.from(carouselContainer.querySelectorAll('.image-carousel__slide img'));
-    var currentIndex = 0;
-
-    // Update lightbox total count
-    if (lightboxTotal) {
-      lightboxTotal.textContent = images.length;
-    }
-
-    function openLightbox(index) {
-      currentIndex = index;
-      updateLightboxImage();
-      lightbox.classList.add('is-active');
-      lightbox.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('lightbox-open');
-      // Focus the close button for accessibility
-      if (lightboxClose) {
-        lightboxClose.focus();
-      }
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('is-active');
-      lightbox.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('lightbox-open');
-    }
-
-    function updateLightboxImage() {
-      var img = images[currentIndex];
-      if (img) {
-        lightboxImage.src = img.src;
-        lightboxImage.alt = img.alt;
-        if (lightboxCurrent) {
-          lightboxCurrent.textContent = currentIndex + 1;
-        }
-        // Update caption (empty string hides it via CSS :empty)
-        if (lightboxCaption) {
-          lightboxCaption.textContent = img.dataset.caption || '';
-        }
-      }
-    }
-
-    function nextImage() {
-      currentIndex = (currentIndex + 1) % images.length;
-      updateLightboxImage();
-    }
-
-    function prevImage() {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      updateLightboxImage();
-    }
-
-    // Click on ANY image (including clones) to open lightbox
-    allImages.forEach(function(img) {
-      img.addEventListener('click', function() {
-        // Find the matching original image by src
-        var originalIndex = images.findIndex(function(origImg) {
-          return origImg.src === img.src;
-        });
-        if (originalIndex !== -1) {
-          openLightbox(originalIndex);
-        }
-      });
+    // Build the gallery image list from original (non-clone) slides
+    var originalImages = Array.from(
+      carouselContainer.querySelectorAll('.image-carousel__slide:not(.tns-slide-cloned) img')
+    );
+    var galleryItems = originalImages.map(function (img) {
+      return { src: img.src, alt: img.alt, caption: img.dataset.caption || '' };
     });
 
-    // Close lightbox
-    if (lightboxClose) {
-      lightboxClose.addEventListener('click', closeLightbox);
-    }
-    if (lightboxOverlay) {
-      lightboxOverlay.addEventListener('click', closeLightbox);
-    }
-
-    // Navigate lightbox
-    if (lightboxNext) {
-      lightboxNext.addEventListener('click', nextImage);
-    }
-    if (lightboxPrev) {
-      lightboxPrev.addEventListener('click', prevImage);
-    }
-
-    // Keyboard navigation for lightbox
-    document.addEventListener('keydown', function(e) {
-      if (!lightbox.classList.contains('is-active')) return;
-
-      if (e.key === 'Escape') {
-        closeLightbox();
-        e.preventDefault();
-      }
-      if (e.key === 'ArrowRight') {
-        nextImage();
-        e.preventDefault();
-      }
-      if (e.key === 'ArrowLeft') {
-        prevImage();
-        e.preventDefault();
-      }
+    // Click ANY slide image (including clones) -> open shared lightbox at matching index
+    var allSlideImages = Array.from(carouselContainer.querySelectorAll('.image-carousel__slide img'));
+    allSlideImages.forEach(function (img) {
+      img.addEventListener('click', function () {
+        var idx = originalImages.findIndex(function (o) { return o.src === img.src; });
+        if (idx !== -1) openImageLightbox(galleryItems, idx, 'gallery');
+      });
     });
   });
 
