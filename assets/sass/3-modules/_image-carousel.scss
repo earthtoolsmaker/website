@@ -277,7 +277,8 @@
     width: 100%;
     height: 100%;
     // Light neutral backdrop so dark / transparent media stays legible.
-    background: rgba(244, 244, 246, 0.97);
+    // Fully opaque so page content behind never bleeds through.
+    background: #f4f4f6;
     cursor: pointer;
   }
 
@@ -364,6 +365,15 @@
     border-radius: 8px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
     animation: lightbox-zoom-in 0.3s ease;
+
+    // Vector media (SVG) has no meaningful intrinsic pixel size — a viewBox-only
+    // SVG defaults to ~300px in an <img>, so the caps above only constrain it,
+    // never scale it up. Drive its width from the viewport so it fills the
+    // frame (lossless, so upscaling is free), still bounded by max-height.
+    &.is-vector {
+      width: 95vw;
+      height: auto;
+    }
   }
 
   &__caption {

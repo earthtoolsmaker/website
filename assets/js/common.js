@@ -312,6 +312,9 @@ document.addEventListener("DOMContentLoaded", function() {
       if (!item) return;
       lbImage.src = item.src;
       lbImage.alt = item.alt || '';
+      // SVGs lack an intrinsic pixel size; flag them so CSS can scale them up.
+      var isSvg = /\.svg(\?|#|$)/i.test(item.src);
+      lbImage.classList.toggle('is-vector', isSvg);
       if (lbCaption) lbCaption.textContent = item.caption || '';
       if (lbCurrent) lbCurrent.textContent = lbIndex + 1;
       if (lbTotal) lbTotal.textContent = lbImages.length;
