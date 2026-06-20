@@ -479,3 +479,19 @@
 body.lightbox-open {
   overflow: hidden;
 }
+
+// Standalone content images that are click-to-expand (desktop only)
+@media (min-width: 768px) and (pointer: fine) {
+  .post__content img.is-zoomable {
+    cursor: zoom-in;
+  }
+}
+
+// Single-image mode hides gallery navigation chrome
+.image-lightbox.is-single {
+  .image-lightbox__prev,
+  .image-lightbox__next,
+  .image-lightbox__counter {
+    display: none;
+  }
+}
