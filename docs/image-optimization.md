@@ -290,3 +290,13 @@ The grayscale hover effect on project/article cards is preserved by combining fi
   filter: grayscale(0%);
 }
 ```
+
+## Click-to-expand images
+
+On desktop (pointer + viewport ≥ 768px), readers can click any image in a post
+body to view it fullscreen. This is automatic — no shortcode needed. The
+overlay caption uses the image's alt text.
+
+To exclude a specific image (e.g. a small icon or decorative graphic), add the
+`no-zoom` class to it. Images inside a link, and the post hero image, are never
+expandable. Carousels keep their own built-in fullscreen gallery.
