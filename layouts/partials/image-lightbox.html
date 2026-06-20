@@ -1,0 +1,26 @@
+{{/*
+  Shared page-level image lightbox.
+  Rendered once per post. Fed by both carousels (gallery mode) and
+  standalone content images (single mode) via assets/js/common.js.
+*/}}
+<div class="image-lightbox" id="page-lightbox" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Image viewer">
+  <div class="image-lightbox__overlay"></div>
+  <button class="image-lightbox__close" aria-label="Close lightbox">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <button class="image-lightbox__prev" aria-label="Previous image">
+    <i class="fa-solid fa-arrow-left-long"></i>
+  </button>
+  <button class="image-lightbox__next" aria-label="Next image">
+    <i class="fa-solid fa-arrow-right-long"></i>
+  </button>
+  <div class="image-lightbox__content">
+    <img class="image-lightbox__image no-lightense" src="" alt="" />
+    <p class="image-lightbox__caption"></p>
+  </div>
+  <div class="image-lightbox__counter">
+    <span class="image-lightbox__current">1</span>
+    <span class="image-lightbox__separator">/</span>
+    <span class="image-lightbox__total">1</span>
+  </div>
+</div>

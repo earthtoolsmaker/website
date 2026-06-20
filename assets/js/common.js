@@ -259,6 +259,111 @@ document.addEventListener("DOMContentLoaded", function() {
   /* ============================
   // Image Carousel with Lightbox
   ============================ */
+
+  /* ============================
+  // Shared image lightbox (used by carousels and standalone images)
+  ============================ */
+  var pageLightbox = document.getElementById('page-lightbox');
+  var openImageLightbox = function () {}; // no-op default if no lightbox on page
+
+  // Resolve the highest-resolution source for an image. Body/cover images are
+  // wrapped in <picture> with a width-capped srcset and a smaller fallback
+  // `src` (e.g. 800px), so img.src can be SMALLER than what's displayed.
+  // Prefer the largest candidate across the picture's <source> srcsets and the
+  // img's own srcset; fall back to currentSrc, then src.
+  function largestImageSrc(img) {
+    var best = { url: null, w: -1 };
+    function consider(srcset) {
+      if (!srcset) return;
+      srcset.split(',').forEach(function (part) {
+        var seg = part.trim().split(/\s+/);
+        if (!seg[0]) return;
+        var w = seg[1] && seg[1].slice(-1) === 'w' ? parseInt(seg[1], 10) : 0;
+        if (w >= best.w) { best.w = w; best.url = seg[0]; }
+      });
+    }
+    var picture = img.closest('picture');
+    if (picture) {
+      picture.querySelectorAll('source').forEach(function (s) {
+        // Prefer real srcset; data-srcset is the lazy-load placeholder form.
+        consider(s.getAttribute('srcset') || s.getAttribute('data-srcset'));
+      });
+    }
+    consider(img.getAttribute('srcset') || img.getAttribute('data-srcset'));
+    return best.url || img.currentSrc || img.src;
+  }
+
+  if (pageLightbox) {
+    var lbImage = pageLightbox.querySelector('.image-lightbox__image');
+    var lbCaption = pageLightbox.querySelector('.image-lightbox__caption');
+    var lbClose = pageLightbox.querySelector('.image-lightbox__close');
+    var lbOverlay = pageLightbox.querySelector('.image-lightbox__overlay');
+    var lbPrev = pageLightbox.querySelector('.image-lightbox__prev');
+    var lbNext = pageLightbox.querySelector('.image-lightbox__next');
+    var lbCurrent = pageLightbox.querySelector('.image-lightbox__current');
+    var lbTotal = pageLightbox.querySelector('.image-lightbox__total');
+
+    var lbImages = [];
+    var lbIndex = 0;
+    var lbMode = 'single';
+
+    function lbRender() {
+      var item = lbImages[lbIndex];
+      if (!item) return;
+      lbImage.src = item.src;
+      lbImage.alt = item.alt || '';
+      // SVGs lack an intrinsic pixel size; flag them so CSS can scale them up.
+      var isSvg = /\.svg(\?|#|$)/i.test(item.src);
+      lbImage.classList.toggle('is-vector', isSvg);
+      if (lbCaption) lbCaption.textContent = item.caption || '';
+      if (lbCurrent) lbCurrent.textContent = lbIndex + 1;
+      if (lbTotal) lbTotal.textContent = lbImages.length;
+    }
+
+    function lbNextImage() {
+      if (lbMode !== 'gallery') return;
+      lbIndex = (lbIndex + 1) % lbImages.length;
+      lbRender();
+    }
+
+    function lbPrevImage() {
+      if (lbMode !== 'gallery') return;
+      lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length;
+      lbRender();
+    }
+
+    function lbCloseFn() {
+      pageLightbox.classList.remove('is-active');
+      pageLightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lightbox-open');
+    }
+
+    openImageLightbox = function (images, startIndex, mode) {
+      lbImages = images || [];
+      lbIndex = startIndex || 0;
+      lbMode = mode === 'gallery' ? 'gallery' : 'single';
+      if (!lbImages.length) return;
+      pageLightbox.classList.toggle('is-single', lbMode === 'single');
+      lbRender();
+      pageLightbox.classList.add('is-active');
+      pageLightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lightbox-open');
+      if (lbClose) lbClose.focus();
+    };
+
+    if (lbClose) lbClose.addEventListener('click', lbCloseFn);
+    if (lbOverlay) lbOverlay.addEventListener('click', lbCloseFn);
+    if (lbNext) lbNext.addEventListener('click', lbNextImage);
+    if (lbPrev) lbPrev.addEventListener('click', lbPrevImage);
+
+    document.addEventListener('keydown', function (e) {
+      if (!pageLightbox.classList.contains('is-active')) return;
+      if (e.key === 'Escape') { lbCloseFn(); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { lbNextImage(); e.preventDefault(); }
+      if (e.key === 'ArrowLeft') { lbPrevImage(); e.preventDefault(); }
+    });
+  }
+
   document.querySelectorAll('.image-carousel').forEach(function(carouselContainer) {
     var slider = carouselContainer.querySelector('.image-carousel__slider');
     if (!slider) return;
@@ -308,120 +413,52 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
 
-    // Lightbox functionality
-    var lightbox = document.getElementById(id + '-lightbox');
-    if (!lightbox) return;
+    // Lightbox: feed the shared page-level lightbox in gallery mode.
+    if (!pageLightbox) return;
 
-    var lightboxImage = lightbox.querySelector('.image-lightbox__image');
-    var lightboxCaption = lightbox.querySelector('.image-lightbox__caption');
-    var lightboxClose = lightbox.querySelector('.image-lightbox__close');
-    var lightboxOverlay = lightbox.querySelector('.image-lightbox__overlay');
-    var lightboxPrev = lightbox.querySelector('.image-lightbox__prev');
-    var lightboxNext = lightbox.querySelector('.image-lightbox__next');
-    var lightboxCurrent = lightbox.querySelector('.image-lightbox__current');
-    var lightboxTotal = lightbox.querySelector('.image-lightbox__total');
+    // Build the gallery image list from original (non-clone) slides
+    var originalImages = Array.from(
+      carouselContainer.querySelectorAll('.image-carousel__slide:not(.tns-slide-cloned) img')
+    );
+    var galleryItems = originalImages.map(function (img) {
+      return { src: largestImageSrc(img), alt: img.alt, caption: img.dataset.caption || '' };
+    });
 
-    // Collect only original images (exclude Tiny Slider clones) for lightbox navigation
-    var images = Array.from(carouselContainer.querySelectorAll('.image-carousel__slide:not(.tns-slide-cloned) img'));
-    // Collect ALL images (including clones) for click handlers
-    var allImages = Array.from(carouselContainer.querySelectorAll('.image-carousel__slide img'));
-    var currentIndex = 0;
-
-    // Update lightbox total count
-    if (lightboxTotal) {
-      lightboxTotal.textContent = images.length;
-    }
-
-    function openLightbox(index) {
-      currentIndex = index;
-      updateLightboxImage();
-      lightbox.classList.add('is-active');
-      lightbox.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('lightbox-open');
-      // Focus the close button for accessibility
-      if (lightboxClose) {
-        lightboxClose.focus();
-      }
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('is-active');
-      lightbox.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('lightbox-open');
-    }
-
-    function updateLightboxImage() {
-      var img = images[currentIndex];
-      if (img) {
-        lightboxImage.src = img.src;
-        lightboxImage.alt = img.alt;
-        if (lightboxCurrent) {
-          lightboxCurrent.textContent = currentIndex + 1;
-        }
-        // Update caption (empty string hides it via CSS :empty)
-        if (lightboxCaption) {
-          lightboxCaption.textContent = img.dataset.caption || '';
-        }
-      }
-    }
-
-    function nextImage() {
-      currentIndex = (currentIndex + 1) % images.length;
-      updateLightboxImage();
-    }
-
-    function prevImage() {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      updateLightboxImage();
-    }
-
-    // Click on ANY image (including clones) to open lightbox
-    allImages.forEach(function(img) {
-      img.addEventListener('click', function() {
-        // Find the matching original image by src
-        var originalIndex = images.findIndex(function(origImg) {
-          return origImg.src === img.src;
-        });
-        if (originalIndex !== -1) {
-          openLightbox(originalIndex);
-        }
+    // Click ANY slide image (including clones) -> open shared lightbox at matching index
+    var allSlideImages = Array.from(carouselContainer.querySelectorAll('.image-carousel__slide img'));
+    allSlideImages.forEach(function (img) {
+      img.addEventListener('click', function () {
+        var idx = originalImages.findIndex(function (o) { return o.src === img.src; });
+        if (idx !== -1) openImageLightbox(galleryItems, idx, 'gallery');
       });
     });
-
-    // Close lightbox
-    if (lightboxClose) {
-      lightboxClose.addEventListener('click', closeLightbox);
-    }
-    if (lightboxOverlay) {
-      lightboxOverlay.addEventListener('click', closeLightbox);
-    }
-
-    // Navigate lightbox
-    if (lightboxNext) {
-      lightboxNext.addEventListener('click', nextImage);
-    }
-    if (lightboxPrev) {
-      lightboxPrev.addEventListener('click', prevImage);
-    }
-
-    // Keyboard navigation for lightbox
-    document.addEventListener('keydown', function(e) {
-      if (!lightbox.classList.contains('is-active')) return;
-
-      if (e.key === 'Escape') {
-        closeLightbox();
-        e.preventDefault();
-      }
-      if (e.key === 'ArrowRight') {
-        nextImage();
-        e.preventDefault();
-      }
-      if (e.key === 'ArrowLeft') {
-        prevImage();
-        e.preventDefault();
-      }
-    });
   });
+
+
+  /* ============================
+  // Standalone content images: click-to-expand (desktop only)
+  ============================ */
+  (function () {
+    if (!pageLightbox) return;
+    var desktop = window.matchMedia('(min-width: 768px) and (pointer: fine)');
+    if (!desktop.matches) return; // mobile / touch: no handlers, no zoom cursor
+
+    var content = document.querySelector('.post__content');
+    if (!content) return;
+
+    var candidates = Array.from(content.querySelectorAll('img'));
+    candidates.forEach(function (img) {
+      if (img.closest('.image-carousel')) return;      // carousels handle their own
+      if (img.classList.contains('no-zoom')) return;   // explicit opt-out
+      if (img.classList.contains('no-lightense')) return; // existing opt-out convention
+      if (img.closest('a')) return;                    // linked image: let the link win
+
+      img.classList.add('is-zoomable');
+      img.addEventListener('click', function () {
+        openImageLightbox([{ src: largestImageSrc(img), alt: img.alt, caption: img.alt }], 0, 'single');
+      });
+    });
+  })();
 
 
   // =====================

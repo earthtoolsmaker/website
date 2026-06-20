@@ -276,7 +276,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #000; // Fully opaque to prevent page content bleeding through
+    // Light neutral backdrop so dark / transparent media stays legible.
+    // Fully opaque so page content behind never bleeds through.
+    background: #f4f4f6;
     cursor: pointer;
   }
 
@@ -348,21 +350,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 90vw;
-    max-height: 85vh;
+    max-width: 95vw;
+    max-height: 95vh;
     z-index: 5;
   }
 
   &__image {
     display: block;
-    max-width: 100%;
-    max-height: 75vh;
+    max-width: 95vw;
+    max-height: 92vh;
     width: auto;
     height: auto;
     object-fit: contain;
     border-radius: 8px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
     animation: lightbox-zoom-in 0.3s ease;
+
+    // Vector media (SVG) has no meaningful intrinsic pixel size — a viewBox-only
+    // SVG defaults to ~300px in an <img>, so the caps above only constrain it,
+    // never scale it up. Drive its width from the viewport so it fills the
+    // frame (lossless, so upscaling is free), still bounded by max-height.
+    &.is-vector {
+      width: 95vw;
+      height: auto;
+    }
   }
 
   &__caption {
@@ -478,4 +489,20 @@
 // Prevent body scroll when lightbox is open
 body.lightbox-open {
   overflow: hidden;
+}
+
+// Standalone content images that are click-to-expand (desktop only)
+@media (min-width: 768px) and (pointer: fine) {
+  .post__content img.is-zoomable {
+    cursor: zoom-in;
+  }
+}
+
+// Single-image mode hides gallery navigation chrome
+.image-lightbox.is-single {
+  .image-lightbox__prev,
+  .image-lightbox__next,
+  .image-lightbox__counter {
+    display: none;
+  }
 }
