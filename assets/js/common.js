@@ -309,7 +309,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Lightbox functionality
-    var lightbox = document.getElementById(id + '-lightbox');
+    var lightbox = document.getElementById('page-lightbox');
     if (!lightbox) return;
 
     var lightboxImage = lightbox.querySelector('.image-lightbox__image');
