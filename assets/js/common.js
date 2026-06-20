@@ -266,6 +266,33 @@ document.addEventListener("DOMContentLoaded", function() {
   var pageLightbox = document.getElementById('page-lightbox');
   var openImageLightbox = function () {}; // no-op default if no lightbox on page
 
+  // Resolve the highest-resolution source for an image. Body/cover images are
+  // wrapped in <picture> with a width-capped srcset and a smaller fallback
+  // `src` (e.g. 800px), so img.src can be SMALLER than what's displayed.
+  // Prefer the largest candidate across the picture's <source> srcsets and the
+  // img's own srcset; fall back to currentSrc, then src.
+  function largestImageSrc(img) {
+    var best = { url: null, w: -1 };
+    function consider(srcset) {
+      if (!srcset) return;
+      srcset.split(',').forEach(function (part) {
+        var seg = part.trim().split(/\s+/);
+        if (!seg[0]) return;
+        var w = seg[1] && seg[1].slice(-1) === 'w' ? parseInt(seg[1], 10) : 0;
+        if (w >= best.w) { best.w = w; best.url = seg[0]; }
+      });
+    }
+    var picture = img.closest('picture');
+    if (picture) {
+      picture.querySelectorAll('source').forEach(function (s) {
+        // Prefer real srcset; data-srcset is the lazy-load placeholder form.
+        consider(s.getAttribute('srcset') || s.getAttribute('data-srcset'));
+      });
+    }
+    consider(img.getAttribute('srcset') || img.getAttribute('data-srcset'));
+    return best.url || img.currentSrc || img.src;
+  }
+
   if (pageLightbox) {
     var lbImage = pageLightbox.querySelector('.image-lightbox__image');
     var lbCaption = pageLightbox.querySelector('.image-lightbox__caption');
@@ -391,7 +418,7 @@ document.addEventListener("DOMContentLoaded", function() {
       carouselContainer.querySelectorAll('.image-carousel__slide:not(.tns-slide-cloned) img')
     );
     var galleryItems = originalImages.map(function (img) {
-      return { src: img.src, alt: img.alt, caption: img.dataset.caption || '' };
+      return { src: largestImageSrc(img), alt: img.alt, caption: img.dataset.caption || '' };
     });
 
     // Click ANY slide image (including clones) -> open shared lightbox at matching index
@@ -425,7 +452,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       img.classList.add('is-zoomable');
       img.addEventListener('click', function () {
-        openImageLightbox([{ src: img.src, alt: img.alt, caption: img.alt }], 0, 'single');
+        openImageLightbox([{ src: largestImageSrc(img), alt: img.alt, caption: img.alt }], 0, 'single');
       });
     });
   })();

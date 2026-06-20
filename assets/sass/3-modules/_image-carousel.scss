@@ -276,7 +276,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #000; // Fully opaque to prevent page content bleeding through
+    // Light neutral backdrop so dark / transparent media stays legible.
+    background: rgba(244, 244, 246, 0.97);
     cursor: pointer;
   }
 
@@ -348,20 +349,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 90vw;
-    max-height: 85vh;
+    max-width: 95vw;
+    max-height: 95vh;
     z-index: 5;
   }
 
   &__image {
     display: block;
-    max-width: 100%;
-    max-height: 75vh;
+    max-width: 95vw;
+    max-height: 92vh;
     width: auto;
     height: auto;
     object-fit: contain;
     border-radius: 8px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
     animation: lightbox-zoom-in 0.3s ease;
   }
 
