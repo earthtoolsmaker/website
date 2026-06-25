@@ -1,14 +1,13 @@
-// Pangolin loading overlay shown over an embedded Gradio app while the HF Space
-// wakes up. The <gradio-app> itself is held invisible (opacity:0) until ready,
-// so Gradio's own building/sleeping/error UI — including high-z-index toasts,
-// which inherit an ancestor's opacity — never shows through. JS
-// (assets/js/gradio-loader.js) adds .is-ready once Gradio fires `render`.
+// Pangolin loading overlay shown over an embedded Gradio demo while its HF Space
+// iframe loads. The iframe is held invisible (opacity:0) until ready, so Gradio's
+// own building/sleeping screen never flashes through. JS
+// (assets/js/gradio-loader.js) adds .is-ready once the iframe has loaded.
 
 .gradio-embed {
   position: relative;
   // Reserve height in the document flow so the opaque loader covers its own
   // space (and any boot-time Gradio glitch) instead of floating over the
-  // content below it while <gradio-app> is still 0px tall.
+  // content below it while the iframe is still settling.
   min-height: 480px;
   // Ease the reserved height down on reveal so a demo shorter than 480px
   // settles smoothly instead of snapping.
@@ -16,22 +15,24 @@
 }
 
 // Once revealed, stop reserving space — let the embed collapse to the live
-// demo's natural height.
+// demo's natural (resizer-driven) height.
 .gradio-embed.is-ready {
   min-height: 0;
 }
 
-// Keep the live app (and all of Gradio's pre-render UI) invisible and inert
-// until ready. opacity:0 still lets Gradio load, connect, and render offscreen.
-// On reveal the demo fades in quickly so it's solid before the overlay finishes
-// dissolving — avoids a muddy cross-fade where both are half-visible at once.
-.gradio-embed gradio-app {
+// Keep the iframe invisible and inert until ready, then fade it in. The height
+// attribute is a pre-resize floor; the iframe-resizer parent library drives the
+// final height to fit the embedded app's content.
+.gradio-embed__iframe {
+  display: block;
+  width: 100%;
+  border: 0;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease;
 }
 
-.gradio-embed.is-ready gradio-app {
+.gradio-embed.is-ready .gradio-embed__iframe {
   opacity: 1;
   pointer-events: auto;
 }
@@ -83,7 +84,7 @@
   }
   .gradio-embed,
   .gradio-embed__loader,
-  .gradio-embed gradio-app {
+  .gradio-embed__iframe {
     transition: none;
   }
 }
