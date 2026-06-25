@@ -1,40 +1,57 @@
-// Shows a spinning pangolin overlay over each embedded Gradio app until the HF
-// Space is ready, then fades the overlay out and the demo in. Reveal fires on
-// (ready signal OR max-timeout) but never before a minimum display time, so a
-// fast load does not flicker and a failed detection never traps the spinner.
+// Shows a spinning pangolin overlay over each embedded Gradio demo until its HF
+// Space iframe has loaded, then fades the overlay out and the demo in. Reveal
+// fires on (iframe load OR max-timeout) but never before a minimum display time,
+// so a fast load does not flicker and a stalled load never traps the spinner.
+//
+// We embed via <iframe> rather than the <gradio-app> web component: HuggingFace's
+// `.hf.space` CORS preflight currently omits `Access-Control-Allow-Credentials`,
+// which blocks the component's credentialed cross-origin /config fetch. Inside an
+// iframe the app talks to its own origin (no cross-origin preflight). HF already
+// serves the iframe-resizer contentWindow script inside every Space, so we load
+// the version-matched parent library to auto-height the iframe to its content.
 (function () {
   "use strict";
 
   var MIN_DISPLAY_MS = 2000;
-  // Cold HF Spaces can take much longer than a warm one to render. Gradio fires
-  // `render` only when the real app mounts (not during the building/sleeping
-  // phase), so we lean on that; this is just a last-resort cap so a Space that
-  // never renders eventually reveals (showing Gradio's own error) rather than
-  // spinning forever.
+  // Last-resort cap so the overlay reveals even if the iframe never fires `load`
+  // (e.g. a cold Space that is slow to serve its first byte).
   var MAX_WAIT_MS = 30000;
   // Must cover the longest reveal transition in _gradio-loader.scss (0.55s)
   // so the loader isn't removed from layout before its dissolve finishes.
   var FADE_MS = 600;
 
+  // iframe-resizer parent library, version-matched to the contentWindow script
+  // HuggingFace embeds inside every Space page (4.3.1). Loaded once.
+  var RESIZER_SRC =
+    "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js";
+
+  var resizerPromise = null;
+  function loadResizer() {
+    if (resizerPromise) return resizerPromise;
+    resizerPromise = new Promise(function (resolve, reject) {
+      if (window.iFrameResize) return resolve();
+      var s = document.createElement("script");
+      s.src = RESIZER_SRC;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+    return resizerPromise;
+  }
+
   function initEmbed(embed) {
     var loader = embed.querySelector("[data-gradio-loader]");
-    var app = embed.querySelector("gradio-app");
-    if (!loader || !app) return;
+    var iframe = embed.querySelector("[data-gradio-iframe]");
+    if (!loader || !iframe) return;
 
     var start = Date.now();
     var revealed = false;
-    var observer = null;
-    var maxTimer = null;
-
-    function cleanup() {
-      if (observer) { observer.disconnect(); observer = null; }
-      if (maxTimer) { clearTimeout(maxTimer); maxTimer = null; }
-    }
+    var maxTimer = setTimeout(requestReveal, MAX_WAIT_MS);
 
     function reveal() {
       if (revealed) return;
       revealed = true;
-      cleanup();
+      clearTimeout(maxTimer);
       embed.classList.add("is-ready");
       setTimeout(function () { loader.style.display = "none"; }, FADE_MS);
     }
@@ -48,21 +65,16 @@
       }
     }
 
-    // Primary signal: gradio dispatches "render" on the element only once the
-    // real app has mounted — NOT during the building/sleeping/error phase.
-    app.addEventListener("render", requestReveal, { once: true });
-
-    // Backstop (in case `render` is absent on some gradio version): reveal when
-    // actual interactive content exists. The building/sleeping screen has no
-    // form controls, so this won't fire prematurely the way watching for the
-    // bare .gradio-container shell did.
-    observer = new MutationObserver(function () {
-      if (app.querySelector("button, input, textarea")) requestReveal();
+    iframe.addEventListener("load", function () {
+      loadResizer()
+        .then(function () {
+          if (window.iFrameResize) {
+            window.iFrameResize({ checkOrigin: false, log: false }, iframe);
+          }
+        })
+        .catch(function () { /* keep the iframe's fixed fallback height */ })
+        .then(requestReveal);
     });
-    observer.observe(app, { childList: true, subtree: true });
-
-    // Hard fallback so the overlay never sticks if no signal arrives.
-    maxTimer = setTimeout(requestReveal, MAX_WAIT_MS);
   }
 
   function init() {

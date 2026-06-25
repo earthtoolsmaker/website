@@ -1,20 +1,25 @@
 {{- $src := .src -}}
-{{- $ver := .gradio_js_version | default "5.4.0" -}}
 <div class="gradio-embed" data-gradio-embed>
   <div class="gradio-embed__loader" data-gradio-loader aria-hidden="true">
     {{ $pangolin := resources.Get "images/logos/etm-logo.png" }}
     {{ with $pangolin }}<img class="gradio-embed__pangolin" src="{{ .RelPermalink }}" alt="" width="72" height="72">{{ end }}
     <p class="gradio-embed__label">Waking up the live demo…</p>
   </div>
-  <script
-    type="module"
-    src="https://gradio.s3-us-west-2.amazonaws.com/{{ $ver }}/gradio.js"
-  ></script>
-  <gradio-app
-    src="https://{{ $src }}.hf.space"
-    initial_height="0px"
-    theme_mode="light"
-    eager="true"
-    container="false"
-  ></gradio-app>
+  {{/* Embed via <iframe>, not the <gradio-app> web component: HuggingFace's
+       .hf.space CORS preflight omits Access-Control-Allow-Credentials, which
+       blocks the component's cross-origin /config fetch ("Could not get space
+       status"). Inside an iframe the app talks to its own origin, so no
+       cross-origin preflight. HF ships the iframe-resizer content script, so
+       gradio-loader.js loads the matching parent library to auto-height it. */}}
+  <iframe
+    class="gradio-embed__iframe"
+    data-gradio-iframe
+    {{/* __theme=light keeps parity with the old web component's theme_mode="light"
+         so the embedded app doesn't render dark on a dark-mode visitor. */}}
+    src="https://{{ $src }}.hf.space/?__theme=light"
+    title="Live demo"
+    height="720"
+    frameborder="0"
+    allow="camera; microphone; clipboard-read; clipboard-write; fullscreen"
+  ></iframe>
 </div>
