@@ -14,7 +14,9 @@
   <iframe
     class="gradio-embed__iframe"
     data-gradio-iframe
-    src="https://{{ $src }}.hf.space"
+    {{/* __theme=light keeps parity with the old web component's theme_mode="light"
+         so the embedded app doesn't render dark on a dark-mode visitor. */}}
+    src="https://{{ $src }}.hf.space/?__theme=light"
     title="Live demo"
     height="720"
     frameborder="0"
