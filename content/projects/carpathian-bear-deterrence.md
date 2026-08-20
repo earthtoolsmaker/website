@@ -8,7 +8,7 @@ related_projects:
 related_spaces:
   - /demos/bear_identification/
   - /demos/early_forest_fire_detection/
-tagline: Spotting bears at the farm's edge and scaring them off — harmlessly — before conflict starts.
+tagline: Spotting bears at the farm's edge and scaring them off, harmlessly, before conflict starts.
 stats:
   - value: "Real-time"
     label: bear detection
@@ -36,7 +36,7 @@ pressures:
   - name: Habitat loss &amp; fragmentation
     desc: "Deforestation, farming and infrastructure shrink and split bear habitat, making it harder to forage, den and breed."
   - name: Human–wildlife conflict
-    desc: "As people move into bear country, raids on livestock and crops trigger retaliation — and bears are often killed in response."
+    desc: "As people move into bear country, raids on livestock and crops trigger retaliation, and bears are often killed in response."
   - name: Poaching &amp; trade
     desc: "Bears are still poached for fur, claws and organs used in medicine, rituals or as trophies."
   - name: Climate change
@@ -54,7 +54,7 @@ image: /images/projects/human_wildlife_conflict_bear/cover_unsplash.jpg
 The Carpathian Mountains of Romania are home to the largest brown bear
 population in Europe. Bears and people have shared these valleys for
 centuries, but as villages expand and bears learn that farms mean easy
-calories, encounters are becoming more frequent — and more dangerous for
+calories, encounters are becoming more frequent, and more dangerous for
 both sides.
 
 ![Carpathian village](/images/projects/human_wildlife_conflict_bear/skydancer/carpathian_village.webp)
@@ -71,7 +71,7 @@ humans and bears. Together with
 [HackThePlanet](https://www.hack-the-planet.io) and [Foundation
 Conservation Carpathia](https://www.carpathia.org/), we develop and
 field-test smart detection and deterrent systems that keep bears out of
-villages — without harming them.
+villages without harming them.
 
 Our ongoing research and development of a software tool aim to offer a
 cost-effective, scalable, and versatile solution applicable not only to
@@ -83,25 +83,25 @@ global scale.
 
 <span class="gallery-box">
   <span class="gallery"></span>
-  <em>Living With Bears — Technology, Coexistence & Conservation, by <a target="_blank" href="https://hack-the-planet.io">HackThePlanet</a></em>
+  <em>Living With Bears: Technology, Coexistence & Conservation, by <a target="_blank" href="https://hack-the-planet.io">HackThePlanet</a></em>
 </span>
 <br/>
 
 ## Why bears matter
 
-As apex predators and ecosystem engineers, bears shape the forests around them —
+As apex predators and ecosystem engineers, bears shape the forests around them,
 and their presence is a sign of a healthy, balanced environment.
 
 <div class="support__grid">
 
   <div class="support__card">
     <h3 class="support__card-title">Apex predator</h3>
-    <p class="support__card-description">By keeping deer, elk and fish populations in check, bears prevent overgrazing and keep plant communities — and everything that depends on them — in balance.</p>
+    <p class="support__card-description">By keeping deer, elk and fish populations in check, bears prevent overgrazing and keep plant communities, and everything that depends on them, in balance.</p>
   </div>
 
   <div class="support__card">
     <h3 class="support__card-title">Gardener &amp; recycler</h3>
-    <p class="support__card-description">Roaming omnivores, they scatter seeds as they travel and enrich the soil through carcasses and dung — spreading plants and cycling nutrients across the forest.</p>
+    <p class="support__card-description">Roaming omnivores, they scatter seeds as they travel and enrich the soil through carcasses and dung, spreading plants and cycling nutrients across the forest.</p>
   </div>
 
   <div class="support__card">
@@ -130,22 +130,22 @@ directions at once. Tap each to learn more.
 
 The pieces are simple by design: a motion sensor and a night-vision camera,
 wired to a small **Raspberry Pi** that runs a bear-detection model right at the
-edge. The moment the model spots a bear, it fires the deterrent — no internet
+edge. The moment the model spots a bear, it fires the deterrent: no internet
 connection, no mains power required.
 
-![How it works — an AI camera detects an approaching bear on a low-power device, which triggers the sky-dancer deterrent](/images/projects/human_wildlife_conflict_bear/diagrams/pipeline.svg)
+![How it works: an AI camera detects an approaching bear on a low-power device, which triggers the sky-dancer deterrent](/images/projects/human_wildlife_conflict_bear/diagrams/pipeline.svg)
 *The camera watches the farm's edge, a bear is detected on the device itself,
 the controller fires, and the sky-dancer scares the bear off.*
 
 We build the detection software; [HackThePlanet](https://hack-the-planet.io)
 handles the electronics and packaging; and [Foundation Conservation
 Carpathia](https://www.carpathia.org/) runs the field deployments in the
-Carpathians. The model is tuned for **high recall** — catching every real bear
-that approaches — while keeping false alarms low, so everyday activity like
+Carpathians. The model is tuned for **high recall**, catching every real bear
+that approaches, while keeping false alarms low, so everyday activity like
 livestock feeding doesn't set it off and farmers keep trusting it.
 
 ![Installing the AI camera](/images/projects/human_wildlife_conflict_bear/skydancer/installing_ai_camera.webp)
-*Installing the AI camera at the edge of a farm in the Carpathian Mountains — photo courtesy of <a href="https://www.hack-the-planet.io" target="_blank">HackThePlanet</a>*
+*Installing the AI camera at the edge of a farm in the Carpathian Mountains, photo courtesy of <a href="https://www.hack-the-planet.io" target="_blank">HackThePlanet</a>*
 
 ## Built for the field
 
@@ -161,7 +161,7 @@ has to meet some hard constraints:
 
   <div class="support__card">
     <h3 class="support__card-title">Safe for all</h3>
-    <p class="support__card-description">The deterrent must be completely harmless — to the bear, and to the people living and working nearby.</p>
+    <p class="support__card-description">The deterrent must be completely harmless, to the bear and to the people living and working nearby.</p>
   </div>
 
   <div class="support__card">
@@ -172,7 +172,7 @@ has to meet some hard constraints:
 </div>
 
 Bears make this genuinely hard: they're most active at dawn and dusk, but as
-opportunistic feeders they can turn up at any hour — and where people are
+opportunistic feeders they can turn up at any hour, and where people are
 around, they often shift to the cover of night.
 
 {{< image_carousel id="bear-cameratrap" items="2" >}}
@@ -185,8 +185,8 @@ around, they often shift to the cover of night.
 
 ## Deterrent
 
-The chosen deterrent system consists of an inflatable tube man — a
-sky-dancer — capable of rapid inflation upon bear detection in a video
+The chosen deterrent system consists of an inflatable tube man, a
+sky-dancer, capable of rapid inflation upon bear detection in a video
 frame. This solution offers
 affordability, low power consumption, and harmlessness, with easy
 replaceability. However, it remains uncertain whether bears can learn to
@@ -198,13 +198,13 @@ system as required in the future.
   {{< carousel_image src="/images/projects/human_wildlife_conflict_bear/skydancer/deterrent_station_aerial.webp" alt="Aerial view of the deterrent station with the sky-dancer activated" caption="An aerial view of the deterrent station with the sky-dancer activated." >}}
   {{< carousel_image src="/images/projects/human_wildlife_conflict_bear/skydancer/skydancer_carpathia.webp" alt="The sky-dancer deterrent deployed in a Carpathian meadow" caption="The inflatable sky-dancer deployed in a Carpathian meadow." >}}
 {{< /image_carousel >}}
-<p class="media-caption">The inflatable sky-dancer deterrent in the field — photos courtesy of <a href="https://www.hack-the-planet.io/projects/carpathia-skydancer-prototype/" target="_blank">HackThePlanet</a>.</p>
+<p class="media-caption">The inflatable sky-dancer deterrent in the field, photos courtesy of <a href="https://www.hack-the-planet.io/projects/carpathia-skydancer-prototype/" target="_blank">HackThePlanet</a>.</p>
 
 ## Field Testing the Sky-Dancer in the Carpathians
 
 In 2023, [HackThePlanet](https://www.hack-the-planet.io) deployed AI
 cameras and Smart Deterrents across the Carpathian Mountains to keep
-brown bears out of villages. The system worked — for most bears. But
+brown bears out of villages. The system worked, for most bears. But
 some repeat-offender "problem bears" eventually figure out that the
 light and sound from a deterrent, however unpredictable, isn't actually
 dangerous. They learn, they adapt, and they come back.
@@ -220,7 +220,7 @@ the moment the AI camera detects an approaching bear.
 
 Field testing is ongoing. Early observations from the partner team
 suggest that the addition of dynamic motion does change bear behaviour
-at the deterrent station — particularly for individuals that had begun
+at the deterrent station, particularly for individuals that had begun
 to ignore audio-only systems.
 
 ## Conclusion

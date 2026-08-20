@@ -32,13 +32,13 @@ challenges:
   - name: Labour-intensive
     desc: "Counting and classifying thousands of seals across aerial photos takes hundreds of researcher-hours every survey season."
   - name: Five attributes at once
-    desc: "Each seal has to be recorded by species, life stage, position, vitality and sex — all at the same time."
+    desc: "Each seal has to be recorded by species, life stage, position, vitality and sex, all at the same time."
   - name: Breeding-season counts
     desc: "Accurate pup counts and sex ratios during the breeding season are vital for population health, yet hard to get by hand."
   - name: Variable imagery
     desc: "Aerial photos vary in lighting, angle, resolution and seal density, demanding expert judgement for every call."
   - name: Tracking individuals
-    desc: "Understanding movement and site fidelity needs a way to recognise individual seals — without tagging them."
+    desc: "Understanding movement and site fidelity needs a way to recognise individual seals without tagging them."
   - name: Consistency over years
     desc: "Keeping counting standards stable across seasons and different observers is hard without automation."
 status: completed
@@ -47,18 +47,18 @@ pinned: true
 image: /images/projects/wadden_sea_seal_monitoring/cover.jpg
 ---
 
-The Wadden Sea — a UNESCO World Heritage Site spanning the Dutch, German and
-Danish coasts — is one of Europe's most important nurseries for grey seals and
+The Wadden Sea, a UNESCO World Heritage Site spanning the Dutch, German and
+Danish coasts, is one of Europe's most important nurseries for grey seals and
 harbour seals. To track the health of those colonies, researchers at
 [Wageningen Marine Research](https://www.wur.nl/en/Research-Results/Research-Institutes/marine-research.htm)
 photograph them from light aircraft several times a year, building a record of
 population size, age structure and breeding success.
 
 But turning those photos into numbers has meant hundreds of hours of painstaking
-work — counting and classifying every seal by hand. Together with Wageningen
+work: counting and classifying every seal by hand. Together with Wageningen
 Marine Research and [Lumax AI](https://lumax.ai/), we built an AI system that
 does it automatically: it **detects, counts and classifies** every seal in an
-aerial image, and even **recognises individuals** by their natural markings —
+aerial image, and even **recognises individuals** by their natural markings,
 freeing researchers to spend their time on the science.
 
 {{< image_carousel id="wadden-sea-intro" >}}
@@ -69,7 +69,7 @@ freeing researchers to spend their time on the science.
 
 From a survey flight to a validated count, the system runs in four steps:
 
-![From an aerial survey to a seal census — detect every seal, classify it five ways, and review the counts](/images/projects/wadden_sea_seal_monitoring/diagrams/pipeline.svg)
+![From an aerial survey to a seal census: detect every seal, classify it five ways, and review the counts](/images/projects/wadden_sea_seal_monitoring/diagrams/pipeline.svg)
 *Aircraft photograph the colony; a model finds every seal, classifies each one
 five ways, and the counts are reviewed and exported in a web app.*
 
@@ -113,14 +113,14 @@ web app where researchers check the AI's work and export validated data.
 ## Counting and classifying every seal
 
 The first system starts with a **detector** that finds every seal in an aerial
-photo — even animals that are partly submerged, overlapping, or caught in
+photo, even animals that are partly submerged, overlapping, or caught in
 awkward light. It then classifies each one five different ways:
 
 <div class="support__grid">
 
   <div class="support__card">
     <h3 class="support__card-title">Species</h3>
-    <p class="support__card-description">Grey or harbour seal — told apart by size, head shape and coat. Grey seals are larger with longer snouts; harbour seals are rounder and spotted.</p>
+    <p class="support__card-description">Grey or harbour seal, told apart by size, head shape and coat. Grey seals are larger with longer snouts; harbour seals are rounder and spotted.</p>
   </div>
 
   <div class="support__card">
@@ -130,17 +130,17 @@ awkward light. It then classifies each one five different ways:
 
   <div class="support__card">
     <h3 class="support__card-title">Location</h3>
-    <p class="support__card-description">Hauled out on land or swimming in the water — a window into habitat use and behaviour.</p>
+    <p class="support__card-description">Hauled out on land or swimming in the water, a window into habitat use and behaviour.</p>
   </div>
 
   <div class="support__card">
     <h3 class="support__card-title">Vitality</h3>
-    <p class="support__card-description">Alive or dead, so mortality can be monitored — especially important through the breeding season.</p>
+    <p class="support__card-description">Alive or dead, so mortality can be monitored, which is especially important through the breeding season.</p>
   </div>
 
   <div class="support__card">
     <h3 class="support__card-title">Sex</h3>
-    <p class="support__card-description">Male or female, where it can be told — feeding the sex ratios that inform breeding biology and population structure.</p>
+    <p class="support__card-description">Male or female, where it can be told, feeding the sex ratios that inform breeding biology and population structure.</p>
   </div>
 
 </div>
@@ -159,20 +159,20 @@ spreadsheet.
 
 ## Recognising individual seals
 
-Tracking individual animals usually means tagging them — capture, handling,
+Tracking individual animals usually means tagging them: capture, handling,
 stress for the seal and logistics for the team. Our second system avoids all of
-that. Seals carry **stable, distinctive markings** — whisker spots, coat
-patterns, facial features — that stay with them for life, so the AI can
+that. Seals carry **stable, distinctive markings** (whisker spots, coat
+patterns, facial features) that stay with them for life, so the AI can
 recognise an individual from a photo alone, the way facial recognition works for
 people.
 
-![How seal re-identification works — a face becomes a unique fingerprint that is matched against a database of known individuals](/images/projects/wadden_sea_seal_monitoring/diagrams/reid.svg)
+![How seal re-identification works: a face becomes a unique fingerprint that is matched against a database of known individuals](/images/projects/wadden_sea_seal_monitoring/diagrams/reid.svg)
 *The model turns each seal's face into a compact "fingerprint", then compares it
 against a database of known individuals to find the best match.*
 
 When a new photo comes in, the model condenses the seal's face into that
 fingerprint and compares it with every seal already on file, returning the
-closest matches for a researcher to confirm — or registering a brand-new
+closest matches for a researcher to confirm, or registering a brand-new
 individual. The matches below were all made this way, from natural markings
 alone:
 
@@ -180,7 +180,7 @@ alone:
   {{< carousel_image src="/images/projects/wadden_sea_seal_monitoring/reid/match_different_seasons.png" alt="Same seal photographed in different seasons" caption="The same individual seal, re-identified across different survey seasons." shadow="false" rounded="false" >}}
   {{< carousel_image src="/images/projects/wadden_sea_seal_monitoring/reid/match_whisker_patterns.png" alt="Matching whisker patterns between sightings" caption="A match made on unique whisker-spot patterns, which stay stable for life." shadow="false" rounded="false" >}}
   {{< carousel_image src="/images/projects/wadden_sea_seal_monitoring/reid/match_spot_patterns.png" alt="Matching spot patterns between sightings" caption="Distinctive coat spots provide reliable identification markers across photos." shadow="false" rounded="false" >}}
-  {{< carousel_image src="/images/projects/wadden_sea_seal_monitoring/reid/match_facial_patterns.png" alt="Matching facial patterns between sightings" caption="Facial features — head shape and markings — identify the same individual." shadow="false" rounded="false" >}}
+  {{< carousel_image src="/images/projects/wadden_sea_seal_monitoring/reid/match_facial_patterns.png" alt="Matching facial patterns between sightings" caption="Facial features such as head shape and markings identify the same individual." shadow="false" rounded="false" >}}
 {{< /image_carousel >}}
 
 Recognising individuals over time turns a population count into a living record:
@@ -209,7 +209,7 @@ Recognising individuals over time turns a population count into a living record:
 The system has reshaped the work at Wageningen Marine Research. Analysis that
 once took hundreds of hours now takes a fraction of the time, and the counts are
 more consistent from one survey year to the next. Researchers can focus on
-biology and conservation strategy instead of data entry — and the
+biology and conservation strategy instead of data entry, and the
 re-identification system opens an entirely new, individual-level view of seal
 life that simply wasn't possible before. The same framework can extend to other
 colonies, regions, or marine-mammal species.
