@@ -50,17 +50,17 @@ This growing dataset will feed back into the AI training process, improving the
 system's accuracy over time.
 
 {{< youtube id=V-rZSeM5YtY >}}
-<p class="media-caption">Underwater camera activated at Bear Creek River — the monitoring system goes live</p>
+<p class="media-caption">Underwater camera activated at Bear Creek River: the monitoring system goes live</p>
 
 ## Overview of the SalmonVision Application
 
 ![The SalmonVision pipeline in four stages: watch the river, detect each fish, classify its species, and count the run](/images/projects/wild_salmon_migration_monitoring/diagrams/pipeline.svg)
-*From camera to count — the SalmonVision pipeline at a glance*
+*From camera to count: the SalmonVision pipeline at a glance*
 
 The SalmonVision application is designed to monitor salmon migration using an
 advanced system of underwater cameras and machine learning models. At each
 river site, multiple underwater cameras are strategically placed in fish
-corridors—passageways that allow salmon to swim back to their natal streams.
+corridors, passageways that allow salmon to swim back to their natal streams.
 These corridors are typically located at dams or fisheries and are essential
 for enabling fish migration.
 
@@ -86,7 +86,7 @@ through a web application, where they can review the video clips and verify the
 accuracy of the model’s predictions.
 
 ![A Raspberry Pi board next to a credit card of the same size](/images/projects/early_forest_fire_detection/raspberry_pi_credit_card.svg)
-*A Raspberry Pi is no bigger than a credit card — small enough to sit at each camera*
+*A Raspberry Pi is no bigger than a credit card, small enough to sit at each camera*
 
 ## Deployment at sites
 
@@ -96,9 +96,9 @@ cameras and the starlink connectors. It is the brain of the setup and it
 controls how the different hardware pieces function together.
 
 {{< image_carousel id="deployment-gallery" >}}
-  {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/cover.png" alt="Wild sockeye salmon swimming up a coastal river" caption="Wild salmon returning up a coastal river — the runs SalmonVision monitors" >}}
+  {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/cover.png" alt="Wild sockeye salmon swimming up a coastal river" caption="Wild salmon returning up a coastal river, the runs SalmonVision monitors" >}}
   {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/sites/haida.jpg" alt="River monitoring site on Haida territory" caption="A monitoring site on Haida territory" >}}
-  {{< carousel_image src="./images/hardware/deployed_river.png" alt="Hardware deployed at the river" caption="Hardware deployed at the river — cameras, motion sensors, and a Raspberry Pi" >}}
+  {{< carousel_image src="./images/hardware/deployed_river.png" alt="Hardware deployed at the river" caption="Hardware deployed at the river: cameras, motion sensors, and a Raspberry Pi" >}}
   {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/sonar/haida-sonar.webp" alt="Sonar setup at the Haida site" caption="Setting up sonar alongside the underwater cameras" >}}
 {{< /image_carousel >}}
 
@@ -180,7 +180,7 @@ the [following research paper](./papers/fmars-10-1200408.pdf).
 
 ### Exploratory Data Analysis
 
-Before training anything, we explored the dataset to understand its shape —
+Before training anything, we explored the dataset to understand its shape,
 summarizing the species counts, checking how they vary across river sites, and
 looking for patterns or biases that could trip up a model. The most important
 thing it surfaced was a severe class imbalance.
@@ -189,7 +189,7 @@ thing it surfaced was a severe class imbalance.
 
 The research team has curated a dataset featuring 16 distinct species of fish
 found in the rivers of British Columbia. The model recognizes the main Pacific
-salmon species individually — tap a card for more:
+salmon species individually. Tap a card for more:
 
 {{< salmon_species >}}
 
@@ -222,11 +222,11 @@ often necessary to mitigate this issue and improve model performance.
 We took a pretrained
 [YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tuned it for
 our object detection task. YOLOv8 is fast, accurate, and easy to work with, and
-it handles a range of tasks — object detection, tracking, instance
+it handles a range of tasks: object detection, tracking, instance
 segmentation, image classification, and pose estimation.
 
 ![A salmon detection: an underwater frame goes into the vision model and comes out with a bounding box and a species label](/images/projects/wild_salmon_migration_monitoring/diagrams/detection.svg)
-*Our fine-tuned YOLOv8 in action — an underwater frame in, a boxed and identified fish out*
+*Our fine-tuned YOLOv8 in action: an underwater frame in, a boxed and identified fish out*
 
 #### ByteTrack
 

@@ -54,7 +54,7 @@
 
 <!-- bracket -->
 <path d="M272 214 V222 H652 V214" fill="none" stroke="#c2b6b6" stroke-width="1.6"/>
-<text class="brk" x="462" y="244" text-anchor="middle">512 numbers — the embedding vector</text>
+<text class="brk" x="462" y="244" text-anchor="middle">512 numbers: the embedding vector</text>
 
 <!-- point -->
 <line x1="700" y1="148" x2="744" y2="148" stroke="#e29578" stroke-width="3" marker-end="url(#arrow)"/>

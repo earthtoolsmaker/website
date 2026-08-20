@@ -34,7 +34,7 @@ department reviews it and can act immediately.
 *Overview of the Pyronear system to monitor forests around the clock*
 
 The video below, filmed in the Forest of Fontainebleau, shows the system end to
-end — from the cameras catching the first wisps of smoke to the alert reaching
+end, from the cameras catching the first wisps of smoke to the alert reaching
 the fire department.
 
 {{< youtube id=W3DxacGsdks >}}
@@ -95,7 +95,7 @@ Pyronear's published paper
 <div class="support__grid support__grid--two">
   <div class="support__card">
     <h3 class="support__card-title">HPWREN</h3>
-    <p class="support__card-description">A non-commercial, wide-area wireless network of Pan-Tilt-Zoom (PTZ) cameras across Southern California, funded by the NSF — used for network research and wildfire detection.</p>
+    <p class="support__card-description">A non-commercial, wide-area wireless network of Pan-Tilt-Zoom (PTZ) cameras across Southern California, funded by the NSF and used for network research and wildfire detection.</p>
   </div>
   <div class="support__card">
     <h3 class="support__card-title">ALERTWildfire</h3>
@@ -116,7 +116,7 @@ Pyronear's published paper
   </div>
   <div class="support__card">
     <h3 class="support__card-title">Fuego</h3>
-    <p class="support__card-description">HPWREN images annotated from Cal Fire records (Govil et al., 2020) — 8,500 reported, 1,661 publicly available, focused on early fire stages.</p>
+    <p class="support__card-description">HPWREN images annotated from Cal Fire records (Govil et al., 2020): 8,500 reported, 1,661 publicly available, focused on early fire stages.</p>
   </div>
   <div class="support__card">
     <h3 class="support__card-title">AiForMankind</h3>
@@ -124,7 +124,7 @@ Pyronear's published paper
   </div>
   <div class="support__card">
     <h3 class="support__card-title">FIgLib</h3>
-    <p class="support__card-description">The Fire Ignition Image Library (Dewangan et al., 2022): 24,800 images of 315 fires in Southern California from HPWREN — the reference dataset for fire-ignition studies.</p>
+    <p class="support__card-description">The Fire Ignition Image Library (Dewangan et al., 2022): 24,800 images of 315 fires in Southern California from HPWREN, the reference dataset for fire-ignition studies.</p>
   </div>
   <div class="support__card">
     <h3 class="support__card-title">Synthetic</h3>
@@ -148,28 +148,28 @@ reliability in wildfire detection.
 We judge the detector with three standard metrics, all built from true
 positives (TP), false positives (FP), and false negatives (FN).
 
-**Precision** — of everything the model flags as smoke, how much is real smoke?
+**Precision**: of everything the model flags as smoke, how much is real smoke?
 Fewer false alarms means higher precision.
 
 \[
 \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
 \]
 
-**Recall** — of the real fires in view, how many does the model catch? Missing
+**Recall**: of the real fires in view, how many does the model catch? Missing
 fewer fires means higher recall.
 
 \[
 \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
 \]
 
-**F1 score** — the harmonic mean of the two: a single number that only stays
+**F1 score**: the harmonic mean of the two, a single number that only stays
 high when precision and recall are both high.
 
 \[
 \text{F1} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
 \]
 
-For Pyronear, recall must stay high — a missed fire is the worst outcome — while
+For Pyronear, recall must stay high (a missed fire is the worst outcome) while
 precision keeps false alarms rare enough that firefighters keep trusting the
 alerts.
 
@@ -180,7 +180,7 @@ alerts.
 We took a pretrained
 [YOLO](https://github.com/ultralytics/ultralytics) model and fine-tuned it for
 our object detection task. YOLO is fast, accurate, and easy to work with, and it
-handles a range of tasks — object detection, tracking, instance segmentation,
+handles a range of tasks: object detection, tracking, instance segmentation,
 image classification, and pose estimation.
 
 ![YOLOv8 CV Tasks](./images/yolov8_tasks.png)
@@ -237,7 +237,7 @@ space = {
 
 Random search samples configurations at random instead of walking a fixed grid.
 In high-dimensional spaces where only a few hyperparameters really matter, it
-finds good settings faster and scales far better — it spends its budget
+finds good settings faster and scales far better: it spends its budget
 exploring each parameter's range broadly rather than testing every combination
 exhaustively.
 
@@ -287,7 +287,7 @@ Here is a qualitative look at the model on a random sample from the evaluation s
 
 Alongside improving Pyronear's detection accuracy, the project put several
 MLOps practices in place. MLOps blends machine learning, software engineering,
-and DevOps to manage a model's full lifecycle in production — keeping it
+and DevOps to manage a model's full lifecycle in production, keeping it
 reproducible, reliable, and improvable over time.
 
 ### DVC
@@ -318,7 +318,7 @@ workflow reproducible, scalable, and maintainable.
 The computer vision team at Pyronear is busy exploring ways to reduce false
 positives by leveraging temporal data. Often, low clouds can resemble early
 fire smoke in a single image frame, but analyzing a sequence of frames can make
-it easier to distinguish between them. We've since done exactly that — read
+it easier to distinguish between them. We've since done exactly that. Read
 [how we raced the candidate models]({{< ref "/posts/racing-models-not-opinions" >}})
 and [how the temporal model reads smoke over time]({{< ref "/posts/smoke-is-a-behavior" >}}).
 
@@ -340,9 +340,9 @@ our contributions go live, with the system now actively detecting wildfires and
 helping to protect forests!
 
 {{< youtube id=i9Qy-zY16Ew >}}
-<p class="media-caption">The model detects a forest fire in Fontainebleau from 35 kilometres away, in real time — a new record for the Pyronear systems.</p>
+<p class="media-caption">The model detects a forest fire in Fontainebleau from 35 kilometres away, in real time, a new record for the Pyronear systems.</p>
 
-You can try the detector yourself on real camera footage — the interactive demo
+You can try the detector yourself on real camera footage; the interactive demo
 runs the model right in your browser.
 
 {{< demo_cta "/demos/early_forest_fire_detection/" >}}

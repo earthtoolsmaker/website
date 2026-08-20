@@ -30,7 +30,7 @@
 </defs>
 
 <text class="title" x="32" y="40">The embedding space</text>
-<text class="desc"  x="32" y="62">A learned function maps each image to a point — same individual, nearby points.</text>
+<text class="desc"  x="32" y="62">A learned function maps each image to a point: same individual, nearby points.</text>
 
 <!-- ===== thumbnail cards (left) ===== -->
 <!-- Bear A · photo 1 -->

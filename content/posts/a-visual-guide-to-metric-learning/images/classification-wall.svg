@@ -84,6 +84,6 @@
 <circle cx="864" cy="216" r="6.5" fill="#e29578"/>
 
 <text class="tag"  x="780" y="332" text-anchor="middle">NEW IDENTITY → ADD A POINT</text>
-<text class="desc" x="780" y="354" text-anchor="middle">No new outputs, no retraining —</text>
+<text class="desc" x="780" y="354" text-anchor="middle">No new outputs, no retraining;</text>
 <text class="desc" x="780" y="371" text-anchor="middle">the space already has room.</text>
 </svg>

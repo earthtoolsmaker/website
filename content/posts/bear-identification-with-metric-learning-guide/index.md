@@ -11,15 +11,15 @@ metric_losses:
   - name: Contrastive
     desc: "Pulls similar pairs together and pushes dissimilar pairs apart in the embedding space."
   - name: Triplet Margin
-    desc: "Uses (anchor, positive, negative) triplets so the anchor sits closer to the positive than the negative by a set margin — more discriminative than pairs alone."
+    desc: "Uses (anchor, positive, negative) triplets so the anchor sits closer to the positive than the negative by a set margin, more discriminative than pairs alone."
   - name: Circle
     desc: "Gives each class a circular boundary whose radius adapts to its spread; robust to noisy data and large intra-class variation."
   - name: ArcFace
-    desc: "Adds an angular margin on a hypersphere, minimizing intra-class and maximizing inter-class angles — especially strong for faces."
+    desc: "Adds an angular margin on a hypersphere, minimizing intra-class and maximizing inter-class angles. Especially strong for faces."
 ---
 
 In this post we'll walk through the technical development of a bear face
-recognition system — a critical component of the bear identification system
+recognition system, a critical component of the bear identification system
 built in close collaboration with the [BearID
 Project](https://bearresearch.org/) NGO.
 
@@ -29,7 +29,7 @@ Project](https://bearresearch.org/) NGO.
 >
 > <cite>– BearID Project</cite>
 
-For the full picture, here is the bear identification pipeline — tap through for
+For the full picture, here is the bear identification pipeline. Tap through for
 the project:
 
 [![The bear identification pipeline: photo, detect face, embed, match](/images/projects/bear_identification/diagrams/pipeline.svg)]({{< ref "/projects/bear_identification.md" >}})
@@ -113,7 +113,7 @@ the data.
 ## Re-identification
 
 **Re-identification** (re-ID) means recognizing and tracking individual animals
-across camera traps and over time — letting researchers study behaviour,
+across camera traps and over time, letting researchers study behaviour,
 population dynamics, and migration. For brown bears, which lack unique fur
 markings, the signal lives in the face.
 
@@ -135,8 +135,8 @@ Animal re-ID is harder than the person or object version:
 </div>
 
 The approach is two familiar steps: a deep network (a CNN) extracts
-discriminative features from each image, then those features are matched — by
-nearest-neighbour search or clustering — to link the same individual across
+discriminative features from each image, then those features are matched, by
+nearest-neighbour search or clustering, to link the same individual across
 images. The payoff for conservation:
 
 <div class="support__grid">
@@ -161,7 +161,7 @@ How identities overlap between training and testing shapes the whole problem:
 <div class="support__grid">
   <div class="support__card">
     <h3 class="support__card-title">Closed set</h3>
-    <p class="support__card-description">Every identity seen at test time was in the training gallery — the system only recognizes a fixed, known set.</p>
+    <p class="support__card-description">Every identity seen at test time was in the training gallery, so the system only recognizes a fixed, known set.</p>
   </div>
   <div class="support__card">
     <h3 class="support__card-title">Open set</h3>
@@ -169,7 +169,7 @@ How identities overlap between training and testing shapes the whole problem:
   </div>
   <div class="support__card">
     <h3 class="support__card-title">Disjoint set</h3>
-    <p class="support__card-description">Training and test identities don't overlap at all — the hardest, most realistic case for a changing population.</p>
+    <p class="support__card-description">Training and test identities don't overlap at all, the hardest, most realistic case for a changing population.</p>
   </div>
 </div>
 
@@ -212,7 +212,7 @@ is crucial for task performance.
 
 #### Losses
 
-The loss function guides how the embedding space is shaped — pulling similar
+The loss function guides how the embedding space is shaped, pulling similar
 faces together and pushing different ones apart. We compared four common
 choices; tap each:
 
@@ -263,7 +263,7 @@ time.
 #### Hard Negative Mining
 
 Hard negative mining focuses training on the most difficult, easily-confused
-examples — the ones contributing most to the loss. Concentrating on these
+examples, the ones contributing most to the loss. Concentrating on these
 ambiguous cases yields more discriminative embeddings, uses the training data
 more efficiently, helps with class imbalance, and improves robustness to noise.
 
@@ -326,10 +326,10 @@ our current approach.
 In this guide, we've walked through building an open-source model for animal
 re-identification, applied here to brown bear faces. Deployed with [The BearID
 Project](https://bearresearch.org) to monitor bear populations in Canada, it is
-a clear step up from the previous solution — and the same approach can be
+a clear step up from the previous solution, and the same approach can be
 adapted to other species.
 
-You can try the recognizer yourself on real bear faces — the interactive demo
+You can try the recognizer yourself on real bear faces; the interactive demo
 runs right in your browser.
 
 {{< demo_cta "/demos/bear_identification/" >}}

@@ -11,14 +11,14 @@ feature_matchers:
   - name: Brute-Force
     desc: "Computes the distance between every pair of descriptors and keeps the closest. Exact and simple, but the cost grows quickly with the number of keypoints."
   - name: SuperGlue
-    desc: "A neural network that matches features using both local descriptors and global context, making it robust to occlusions and changing viewpoints — state of the art, but heavy."
+    desc: "A neural network that matches features using both local descriptors and global context, making it robust to occlusions and changing viewpoints. State of the art, but heavy."
   - name: LightGlue
     desc: "A lightweight, adaptive successor to SuperGlue: it keeps the accuracy while running fast enough for real-time use, even on modest hardware."
 match_filters:
   - name: Ratio Test
     desc: "Lowe's test, from SIFT: compare the closest match's distance to the second-closest. If the ratio is small enough, the match is distinctive enough to trust."
   - name: RANSAC
-    desc: "Random Sample Consensus — fits a geometric transformation to the matches and discards the outliers that don't agree with it."
+    desc: "Random Sample Consensus: fits a geometric transformation to the matches and discards the outliers that don't agree with it."
 ---
 
 In this post, we will explore a powerful technique widely used for
@@ -62,20 +62,20 @@ End to end, identifying an individual comes down to four steps:
 ![The trout identification pipeline in four steps: photo, normalize, keypoints, match](/images/projects/trout_identification/diagrams/pipeline.svg)
 *From a field photo to an identification, at a glance*
 
-Here is that same pipeline on a real cutthroat trout — from a raw field photo
+Here is that same pipeline on a real cutthroat trout, from a raw field photo
 to a confirmed match against another sighting of the same fish:
 
 ![A raw field photo of a cutthroat trout lying in a measuring trough](/images/projects/trout_identification/images/raw/1.jpg)
-*1 · Photo — a raw photo straight from the field*
+*1 · Photo: a raw photo straight from the field*
 
 ![The same trout segmented from its background and straightened to a standard pose](/images/projects/trout_identification/images/normalized/1.webp)
-*2 · Normalize — the fish is cut out and straightened so every image is comparable*
+*2 · Normalize: the fish is cut out and straightened so every image is comparable*
 
 ![The straightened trout with distinctive keypoints marked as blue dots across its spot pattern](/images/projects/trout_identification/images/keypoints/1.webp)
-*3 · Detect — distinctive keypoints are found all over the spot pattern*
+*3 · Detect: distinctive keypoints are found all over the spot pattern*
 
 ![Two photos of the same trout with matching keypoints joined by green lines](/images/projects/trout_identification/images/matches/match_1.webp)
-*4 · Match — those keypoints line up with another photo of the same trout, confirming the individual*
+*4 · Match: those keypoints line up with another photo of the same trout, confirming the individual*
 
 ### Overview of Local Feature Matching
 
@@ -84,12 +84,12 @@ Local feature matching involves several key steps:
 ![The five stages of local feature matching: detect keypoints, describe them, match across images, filter, and verify geometry](./images/pipeline.svg)
 *The local feature matching pipeline, stage by stage*
 
-**1 · Feature Detection** — find keypoints in each image: specific points
+**1 · Feature Detection.** Find keypoints in each image: specific points
 likely to be stable and distinctive. Common classical detectors include:
 
 - __Harris Corner Detector__: Identifies corners in the image.
 - __SIFT (Scale-Invariant Feature Transform)__: Detects keypoints invariant to
-  scale and rotation, focusing on areas of high contrast — the gold standard
+  scale and rotation, focusing on areas of high contrast. The gold standard
   for classical local feature extraction.
 - __DISK (Dense Image Keypoint)__: Generates dense keypoints across the image,
   capturing a wide range of features.
@@ -99,7 +99,7 @@ likely to be stable and distinctive. Common classical detectors include:
 State-of-the-art methods now lean on deep-learning features, but classical
 methods remain strong contenders for feature extraction.
 
-**2 · Feature Description** — describe the patch around each keypoint as a
+**2 · Feature Description.** Describe the patch around each keypoint as a
 vector that captures its appearance. Common descriptors include:
 
 - __SIFT Descriptors__: A vector representation of the local image patch.
@@ -115,17 +115,17 @@ vector that captures its appearance. Common descriptors include:
 ![SuperPoint - Compute Keypoints and Descriptors in a single forward pass](./images/superpoint/superpoint_matching.png)
 *Superpoint Deep Learning Model Architecture - Computes keypoints and descriptors in a single forward pass*
 
-**3 · Feature Matching** — with keypoints and descriptors from both images,
+**3 · Feature Matching.** With keypoints and descriptors from both images,
 pair them up. Tap each approach to compare:
 
 {{< threats "feature_matchers" >}}
 
-**4 · Filtering Matches** — not every match is reliable, so filters weed out
+**4 · Filtering Matches.** Not every match is reliable, so filters weed out
 the weak ones:
 
 {{< threats "match_filters" >}}
 
-**5 · Geometric Verification** — finally, check that the surviving matches are
+**5 · Geometric Verification.** Finally, check that the surviving matches are
 consistent with a single geometric transformation (a homography or affine
 warp). This eliminates false matches that look similar but don't fit the
 overall geometry, refining the result.
@@ -242,7 +242,7 @@ the best extractor for our specific application.
 
 SIFT trails the other three extractors, and the gap widens as you reduce the
 keypoint budget. The deep-learning extractors (DISK, ALIKED, SuperPoint) hold
-up well at just 512 keypoints — no better at 1024 — so the smaller budget is
+up well at just 512 keypoints (no better at 1024), so the smaller budget is
 the better choice: it streamlines extraction and speeds up every pairwise
 comparison without costing accuracy.
 
@@ -293,8 +293,8 @@ The table below summarizes the results of our benchmark.
 | 1×GPU (T4)     | SIFT      | 1024      | 64    | 53s            | 19.3      |
 | 1×GPU (T4)     | SIFT      | __128__   | 64    | 28s            | __10.2__  |
 
-The pattern is clear: a GPU is the single biggest win — roughly **50× faster
-than a CPU** — and from there, a larger __batch size__, __fewer keypoints__, or
+The pattern is clear: a GPU is the single biggest win, roughly **50× faster
+than a CPU**, and from there, a larger __batch size__, __fewer keypoints__, or
 __more GPUs__ each shave off more time. The matchers themselves run at roughly
 the same speed; at batch size 64 a single pair takes 20–30 ms, which sets the
 budget for identifying against the whole corpus.
@@ -310,7 +310,7 @@ budget for identifying against the whole corpus.
 
 ![Log-log chart of identification time against corpus size: a straight line showing time grows in direct proportion to the number of known individuals, becoming impractical at large scale](./images/scaling.svg#noround)
 
-<p class="media-caption">Identification time scales linearly with the corpus size — a straight line on these log-log axes. Each 10× more individuals costs 10× more time, which becomes impractical for large datasets.</p>
+<p class="media-caption">Identification time scales linearly with the corpus size: a straight line on these log-log axes. Each 10× more individuals costs 10× more time, which becomes impractical for large datasets.</p>
 
 Running LightGlue on a CPU is generally impractical, as it requires an
 excessive amount of time to process even a single input image. The optimal
@@ -334,7 +334,7 @@ However, conservationists can leverage this non-invasive technology to
 accurately re-identify individuals, making it a valuable tool for wildlife
 monitoring and conservation efforts.
 
-You can try the model yourself on real trout spot patterns — the interactive
+You can try the model yourself on real trout spot patterns; the interactive
 demo runs the full local feature matching pipeline right in your browser.
 
 {{< demo_cta "/demos/trout_identification/" >}}

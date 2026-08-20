@@ -18,7 +18,7 @@ deterring bears.
 > and livestock holds promise in fostering harmonious relations between
 > humans and bears.
 
-For the full picture, here is the bear deterrence pipeline — tap through for the
+For the full picture, here is the bear deterrence pipeline. Tap through for the
 project:
 
 [![The bear deterrence pipeline: watch, detect, trigger, deter](/images/projects/human_wildlife_conflict_bear/diagrams/pipeline.svg)]({{< ref "/projects/carpathian-bear-deterrence.md" >}})
@@ -28,12 +28,12 @@ project:
 
 The detection model runs on a low-power microcontroller (a Raspberry Pi 5), so
 it has to be fast and frugal at inference. Catching an approaching bear in time
-is critical — a bear on the farm can prey on livestock like pigs — so recall has
+is critical (a bear on the farm can prey on livestock like pigs), so recall has
 to be very high. And since bears are active day and night, the system runs
 around the clock.
 
 ![A Raspberry Pi board next to a credit card of the same size](/images/projects/early_forest_fire_detection/raspberry_pi_credit_card.svg)
-*A Raspberry Pi is no bigger than a credit card — small and low-power enough to run at the farm's edge*
+*A Raspberry Pi is no bigger than a credit card, small and low-power enough to run at the farm's edge*
 
 A low false-positive rate matters just as much, for two reasons: false alarms
 erode farmers' trust in a system they rely on daily, and each one needlessly
@@ -66,14 +66,14 @@ affordable, indispensable tool for studying a huge range of species.
 
 ### Exploratory Data Analysis
 
-Before modelling, we explored the dataset closely — and it surfaced several
+Before modelling, we explored the dataset closely, and it surfaced several
 data-quality issues worth fixing first.
 
 #### Data quality issues
 
 ##### Bursts of Images
 
-When its motion sensor fires, a camera trap records a burst of frames — many
+When its motion sensor fires, a camera trap records a burst of frames, many
 near-identical shots of the same animal. These bursts must be kept together
 during the data split; otherwise near-duplicates leak across train and test,
 and the model overreports its performance.
@@ -85,7 +85,7 @@ and the model overreports its performance.
     <img src="./images/camera_traps/bursts/image3.jpg" loading="lazy" alt="camera trap bear picture 3">
     <img src="./images/camera_traps/bursts/image4.jpg" loading="lazy" alt="camera trap bear picture 4">
   </div>
-  <em>A single bear encounter — the camera fires a burst of near-identical frames</em>
+  <em>A single bear encounter: the camera fires a burst of near-identical frames</em>
 </div>
 
 ##### Corrupted Images
@@ -95,8 +95,8 @@ We couldn't recover them, so they had to be discarded.
 
 #### Class imbalance
 
-The dataset skews heavily towards bears — roughly five times more bear images
-than other animals or empty frames — which biases a model towards the majority
+The dataset skews heavily towards bears (roughly five times more bear images
+than other animals or empty frames), which biases a model towards the majority
 class. Three techniques can help rebalance it:
 
 <div class="support__grid">
@@ -110,12 +110,12 @@ class. Three techniques can help rebalance it:
   </div>
   <div class="support__card">
     <h3 class="support__card-title">Data augmentation</h3>
-    <p class="support__card-description">Add small variations to minority-class images — our most effective option here.</p>
+    <p class="support__card-description">Add small variations to minority-class images, our most effective option here.</p>
   </div>
 </div>
 
 ![Data Augmentation](./images/data_augmentation/tencrop.png)
-*Data augmentation / [TenCrop](https://pytorch.org/vision/main/generated/torchvision.transforms.TenCrop.html) — generate 10 images from one to mitigate the class imbalance*
+*Data augmentation / [TenCrop](https://pytorch.org/vision/main/generated/torchvision.transforms.TenCrop.html): generate 10 images from one to mitigate the class imbalance*
 
 In our experiments, augmenting the empty frames and other-animal images worked
 best: it kept plenty of bear images while adding variety to the rest.
@@ -130,8 +130,8 @@ traps should include generating bounding boxes that
 outline the location of each detected bear: (x, y, width,
 height).
 
-Both models found bears in the camera-trap images, but GroundingDINO — prompted
-with "bear" — was more accurate, with fewer false positives and negatives, so we
+Both models found bears in the camera-trap images, but GroundingDINO, prompted
+with "bear", was more accurate, with fewer false positives and negatives, so we
 used it to generate the dataset.
 
 ![Annotations](./images/annotations/labels.jpg)
@@ -146,7 +146,7 @@ training our machine learning model.
 
 [__MegaDetector__](https://github.com/microsoft/CameraTraps/blob/main/megadetector.md)
 is a camera-trap animal detector from Microsoft AI for Earth, built to localize
-animals — including rare species — across large-scale monitoring datasets.
+animals, including rare species, across large-scale monitoring datasets.
 
 #### GroundingDINO
 
@@ -156,7 +156,7 @@ animals — including rare species — across large-scale monitoring datasets.
 <b>GroundingDINO</b> is a multimodal model that combines a Vision Transformer
 (ViT) with language grounding. By tying a text prompt to visual features, it
 detects and localizes objects from a free-text description rather than a fixed
-list of classes — so prompting it with "bear" is enough to label the dataset.
+list of classes, so prompting it with "bear" is enough to label the dataset.
 
 <br style="clear:both;"/>
 <br />
@@ -176,13 +176,13 @@ predict whether an image contains a bear. As **object detection**, we'd predict
 bounding boxes around any bears in the image.
 
 ![Image classification assigns a single label to the whole image](./images/cv_tasks/image_classification.png)
-*Image classification — one label for the whole image*
+*Image classification: one label for the whole image*
 
 ![Object detection draws bounding boxes around each detected bear](./images/cv_tasks/object_detection.png)
-*Object detection — a bounding box around each bear*
+*Object detection: a bounding box around each bear*
 
 We started with classification, but the model learned to cue off the fixed
-camera-trap backgrounds rather than the bears themselves — which would hurt
+camera-trap backgrounds rather than the bears themselves, which would hurt
 generalization in the field. Reframing it as object detection fixed that and
 performed better.
 
@@ -193,7 +193,7 @@ performed better.
 We took a pretrained
 [YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tuned it for
 our object detection task. YOLOv8 is fast, accurate, and easy to work with, and
-it handles a range of tasks — object detection, tracking, instance
+it handles a range of tasks: object detection, tracking, instance
 segmentation, image classification, and pose estimation.
 
 ![YOLOv8 CV Tasks](./images/yolov8_tasks.png)
@@ -218,11 +218,11 @@ accuracy) and processing speed.
 
 We trained for 200 epochs, tracking mean IoU, box precision, and box recall on
 the validation set throughout. To improve robustness, we applied the usual
-augmentations — horizontal flips, random crops, mosaic aggregation, rotation,
+augmentations: horizontal flips, random crops, mosaic aggregation, rotation,
 colour jitter, and more.
 
 ![Data Augmentation](./images/data_augmentation/mosaic_rotation.jpg)
-*Data augmentation during training — mosaic, rotation, and more*
+*Data augmentation during training: mosaic, rotation, and more*
 
 ![Training Results](./images/training_results.png#noround)
 

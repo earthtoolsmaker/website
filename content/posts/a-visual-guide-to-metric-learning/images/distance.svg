@@ -27,7 +27,7 @@
 <!-- the euclidean gap -->
 <line x1="300" y1="150" x2="396" y2="70" stroke="#e29578" stroke-width="3.5"/>
 <text class="dlab" x="360" y="100">d</text>
-<text class="desc" x="260" y="328" text-anchor="middle">Same direction, different length —</text>
+<text class="desc" x="260" y="328" text-anchor="middle">Same direction, different length, yet</text>
 <text class="desc" x="260" y="346" text-anchor="middle">Euclidean still calls them far apart.</text>
 
 <!-- ===== RIGHT · COSINE ===== -->
@@ -48,6 +48,6 @@
 <!-- angle arc -->
 <path d="M708.7 286.8 A 70 70 0 0 0 693.8 255.2" stroke="#e29578" stroke-width="3" fill="none"/>
 <text class="dlab" x="720" y="270">θ</text>
-<text class="desc" x="780" y="328" text-anchor="middle">a and a′ share the same angle to b —</text>
+<text class="desc" x="780" y="328" text-anchor="middle">a and a′ share the same angle to b, so</text>
 <text class="desc" x="780" y="346" text-anchor="middle">cosine ignores length, only θ matters.</text>
 </svg>

@@ -18,7 +18,7 @@
 <!-- ===== LEFT · high-dimensional embeddings ===== -->
 <rect x="20" y="40" width="384" height="300" rx="18" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
 <text class="title" x="212" y="76" text-anchor="middle">Hundreds of dimensions</text>
-<text class="desc"  x="212" y="98" text-anchor="middle">each image is a long vector — impossible to draw</text>
+<text class="desc"  x="212" y="98" text-anchor="middle">each image is a long vector, impossible to draw</text>
 
 <!-- stack of tagged barcode vectors -->
 <g>
