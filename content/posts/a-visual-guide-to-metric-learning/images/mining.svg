@@ -13,7 +13,7 @@
 </defs>
 
 <text class="title" x="40" y="44">Hard negative mining</text>
-<text class="desc"  x="40" y="66">Not every negative is worth learning from — the hardest ones carry the most signal.</text>
+<text class="desc"  x="40" y="66">Not every negative is worth learning from; the hardest ones carry the most signal.</text>
 
 <!-- scatter scene -->
 <!-- margin ring -->
@@ -42,11 +42,11 @@
 <g>
   <circle cx="744" cy="138" r="8" fill="#006d77"/>
   <text class="leg"  x="764" y="134">Positive</text>
-  <text class="legd" x="764" y="152">same individual — pull in</text>
+  <text class="legd" x="764" y="152">same individual: pull in</text>
 
   <circle cx="744" cy="186" r="8" fill="#9aa0a6" opacity="0.6"/>
   <text class="leg"  x="764" y="182">Easy negative</text>
-  <text class="legd" x="764" y="200">far away — little to learn</text>
+  <text class="legd" x="764" y="200">far away: little to learn</text>
 
   <circle cx="744" cy="234" r="8" fill="#d9a441"/>
   <text class="leg"  x="764" y="230">Semi-hard negative</text>
@@ -54,6 +54,6 @@
 
   <g><circle cx="744" cy="282" r="11" fill="none" stroke="#e29578" stroke-width="2"/><circle cx="744" cy="282" r="7" fill="#7b6cae"/></g>
   <text class="leg"  x="764" y="278">Hard negative</text>
-  <text class="legd" x="764" y="296">inside the margin — most signal</text>
+  <text class="legd" x="764" y="296">inside the margin: most signal</text>
 </g>
 </svg>

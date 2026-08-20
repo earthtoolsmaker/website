@@ -55,7 +55,7 @@ throughout this post.
 
 To identify individuals reliably, we first isolate the animal and strip away the
 background. This lets the identification model focus only on the signal that
-matters — the markings — instead of being distracted by surrounding pixels.
+matters, the markings, instead of being distracted by surrounding pixels.
 
 In the case of bears, both existing literature and our research indicate that
 their facial markings and shapes are unique, making them effective for
@@ -102,7 +102,7 @@ segmenting the animal in a single pass.
 <b>GroundingDINO</b> is a multimodal model that combines a Vision Transformer
 (ViT) with language grounding. By tying a text prompt to visual features, it
 detects and localizes objects from a free-text description rather than a fixed
-list of classes — which is exactly what lets it find animals in our images
+list of classes, which is exactly what lets it find animals in our images
 without a purpose-trained detector.
 
 <br style="clear:both;"/>
@@ -128,8 +128,8 @@ operate efficiently on a CPU. Enter YOLO!
 #### YOLO Overview
 
 [YOLO](https://github.com/ultralytics/ultralytics) is a fast, accurate, and
-widely used computer-vision model. It excels at a range of tasks — object
-detection, tracking, and image classification — and, crucially for us, instance
+widely used computer-vision model. It excels at a range of tasks (object
+detection, tracking, and image classification) and, crucially for us, instance
 segmentation: it not only identifies and localizes objects but also separates
 individual instances. It is easy to use and efficient enough for real-time work,
 which makes it a strong fit for segmenting our animals on a CPU.
@@ -146,7 +146,7 @@ enhance our training set. These techniques help increase the diversity
 of the data and improve the model's robustness.
 
 ![Eight panels showing the same trout under each augmentation: original, random scaling, random rotation, mosaic, flipping, color jittering, cropping, and Gaussian noise](./images/augmentations.svg)
-*The same fish under each augmentation — the model learns to recognize it through all of these variations*
+*The same fish under each augmentation: the model learns to recognize it through all of these variations*
 
 Tap each method to see what it does:
 
@@ -227,7 +227,7 @@ standardize the orientation of the images.
 
 Pose estimation is the computer-vision task of working out the spatial
 configuration of a subject in an image or video. It pinpoints key points on the
-body — joints, facial landmarks — or the orientation of an object. From those
+body (joints, facial landmarks) or the orientation of an object. From those
 detected keypoints, we can normalize images: realigning them into a consistent
 representation based on the pose.
 
@@ -324,7 +324,7 @@ toolkit.
 
 <div class="about-cta">
   <h3 class="about-cta__title">See these techniques in action</h3>
-  <p class="about-cta__description">These preprocessing steps feed our real identification systems — explore the full projects they power.</p>
+  <p class="about-cta__description">These preprocessing steps feed our real identification systems. Explore the full projects they power.</p>
   <div class="button--cta-container">
     <a class="link-no-decoration" href="/projects/bear_identification/">
       <button class="button button--middle">Bear identification</button>

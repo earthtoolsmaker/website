@@ -14,5 +14,5 @@
 <!-- axes -->
 <line x1="40" y1="270" x2="970" y2="270" stroke="#2a2620" stroke-width="1.5" marker-end="url(#arr)"/>
 <text class="ax" x="960" y="288" text-anchor="end">Time</text>
-<text class="ax" x="40" y="288">Amplitude over time — a recorded elephant rumble</text>
+<text class="ax" x="40" y="288">Amplitude over time: a recorded elephant rumble</text>
 </svg>

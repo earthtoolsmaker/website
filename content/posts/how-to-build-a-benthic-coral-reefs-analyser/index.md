@@ -15,7 +15,7 @@ In this post we explore the development of a benthic coral reef analyzer, built
 in partnership with [ReefSupport](https://reef.support) to improve the tools for
 monitoring coral reefs and marine environments.
 
-For the full picture, here is the coral analysis pipeline — tap through for the
+For the full picture, here is the coral analysis pipeline. Tap through for the
 project:
 
 [![The coral analysis pipeline: capture, segment, classify, measure](/images/projects/coral_reef_segmentation/diagrams/pipeline.svg)]({{< ref "/projects/coral_reef_health_monitoring.md" >}})
@@ -30,14 +30,14 @@ within
 ## Project Scope
 
 Our collaboration develops an underwater benthic imagery model that identifies
-and locates the functional groups in a reef — flexible enough to use across
+and locates the functional groups in a reef, flexible enough to use across
 marine regions worldwide.
 
 ![Benthic Analysis System](./images/coral_ai.gif)
 *The benthic imagery analysis system by [Reef Support](https://reef.support)*
 
 We start by distinguishing hard from soft coral, then add finer taxonomic
-detail as the system matures — a broad foundation to build comprehensive reef
+detail as the system matures, a broad foundation to build comprehensive reef
 analysis on.
 
 ## Provided Datasets
@@ -49,7 +49,7 @@ It comes in two forms:
 <div class="support__grid support__grid--two">
   <div class="support__card">
     <h3 class="support__card-title">Point (sparse) labels</h3>
-    <p class="support__card-description">Random points in an image are classified — typically 50–100 per image. Sources: <a href="https://indonesiabiru.id/">IBF</a>, <a href="https://reefolution.org/">Reefolution</a>, and <a href="https://espace.library.uq.edu.au/view/UQ:734799">Seaview</a>.</p>
+    <p class="support__card-description">Random points in an image are classified, typically 50–100 per image. Sources: <a href="https://indonesiabiru.id/">IBF</a>, <a href="https://reefolution.org/">Reefolution</a>, and <a href="https://espace.library.uq.edu.au/view/UQ:734799">Seaview</a>.</p>
   </div>
   <div class="support__card">
     <h3 class="support__card-title">Mask (dense) labels</h3>
@@ -74,14 +74,14 @@ of all the individual coral instances.
 
 ### Exploratory Data Analysis
 
-Before modelling, we explored the dataset closely — and it surfaced several
+Before modelling, we explored the dataset closely, and it surfaced several
 data-quality issues worth fixing first.
 
 #### Data quality issues
 
 ##### Empty masks
 
-Some stitched masks were entirely black — 532 in SEAVIEW_PAC_USA and 328 in
+Some stitched masks were entirely black: 532 in SEAVIEW_PAC_USA and 328 in
 SEAVIEW_ATL. Removing these empty masks gave a cleaner dataset and improved
 performance during training and evaluation.
 
@@ -129,7 +129,7 @@ demonstrating a complete 100% error mismatch.
 
 In one region, many images overlap with their neighbours within the same
 quadrats. If overlapping images land in different splits, the model effectively
-sees test content during training — inflating its scores. Ordering by image ID
+sees test content during training, inflating its scores. Ordering by image ID
 makes it clear: most images share content with their neighbours.
 
 ![Sequence 1](./images/eda/data_quality/data_leakage/sequence1.png)
@@ -143,7 +143,7 @@ region by region.
 
 ##### Class imbalance
 
-The dataset skews heavily towards hard coral — roughly five times more
+The dataset skews heavily towards hard coral, with roughly five times more
 instances than soft coral. Such imbalance biases a model towards the majority
 class and hurts its performance on the minority one.
 
@@ -229,7 +229,7 @@ We evaluate segmentation with **mean IoU (mIoU)** and the **Dice coefficient**,
 avoiding mean pixel accuracy since it's misleading on skewed datasets.
 
 **mIoU (Jaccard index)** measures the overlap between the predicted and
-ground-truth masks — higher is better:
+ground-truth masks (higher is better):
 
 $$\mathit{IoU} = \dfrac{A \cap B}{A \cup B}$$
 
@@ -245,7 +245,7 @@ $$\mathit{DiceCoefficient} = \dfrac{2 \times TP}{2 \times TP + FP + FN}$$
 We took a pretrained
 [YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tuned it for
 our instance segmentation task. YOLOv8 is fast, accurate, and easy to work
-with, and it handles a range of tasks — object detection, tracking, instance
+with, and it handles a range of tasks: object detection, tracking, instance
 segmentation, image classification, and pose estimation.
 
 ![A benthic image goes into the segmentation model and comes out with each coral colony mapped](/images/projects/coral_reef_segmentation/diagrams/segmentation.svg)
@@ -345,13 +345,13 @@ are trained on the same training set, using the same test set for evaluation.
 
 The top-performing model is the `l` size model, as indicated in the table
 above. As the model size decreases, there is a slight degradation in
-performance—from a mIoU of 0.85 to 0.83. However, the advantage of smaller
+performance, from a mIoU of 0.85 to 0.83. However, the advantage of smaller
 models lies in their faster execution and compatibility with smaller hardware
 devices.
 
 ## Conclusion
 
-YOLOv8 proved a strong fit for this instance-segmentation task — accurate even
+YOLOv8 proved a strong fit for this instance-segmentation task, accurate even
 on modest hardware, and fast enough to run on live underwater video streams,
 which makes it practical for real deployments.
 
@@ -365,7 +365,7 @@ insights gained from our findings are invaluable for refining and
 optimizing computer vision applications in marine biology and underwater
 image segmentation.
 
-You can try the segmenter yourself on real benthic imagery — the interactive
+You can try the segmenter yourself on real benthic imagery; the interactive
 demo runs right in your browser.
 
 {{< demo_cta "/demos/coral_reef_health_monitoring/" >}}

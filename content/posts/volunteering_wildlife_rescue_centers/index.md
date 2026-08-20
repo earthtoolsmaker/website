@@ -115,7 +115,7 @@ significant distress and trauma. The first phase of training, often referred to
 as "breaking," involves isolating the elephant and using physical punishment to
 instill obedience. This can include confinement in small spaces, deprivation of
 food, and the use of tools like
-[bullhooks](https://www.elephantvoices.org/elephants-in-captivity-7/about-the-bull-hook.html) — sharp,
+[bullhooks](https://www.elephantvoices.org/elephants-in-captivity-7/about-the-bull-hook.html), sharp,
 pointed instruments used to inflict pain.
 
 Once the elephant is subdued, trainers employ fear-based techniques to
@@ -262,7 +262,7 @@ work in wildlife conservation.
 
 <div class="about-cta">
   <h3 class="about-cta__title">Help WFFT and ARCAS continue their work</h3>
-  <p class="about-cta__description">Whether or not you can volunteer, a donation helps these centers feed, treat, and rehabilitate the animals in their care — and work toward releasing them back into the wild.</p>
+  <p class="about-cta__description">Whether or not you can volunteer, a donation helps these centers feed, treat, and rehabilitate the animals in their care, and work toward releasing them back into the wild.</p>
   <div class="button--cta-container">
     <a class="link-no-decoration" href="https://www.wfft.org/donate/">
       <button class="button button--cta">Make a donation to WFFT</button>

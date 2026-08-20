@@ -11,13 +11,13 @@ related_posts:
   - tracking-the-journey-how-to-monitor-wild-salmon-migrations
 spectrogram_reasons:
   - name: Frequency–time view
-    desc: "A spectrogram shows which frequencies are present and how they change over time — exactly what tasks like sound-event detection need."
+    desc: "A spectrogram shows which frequencies are present and how they change over time, exactly what tasks like sound-event detection need."
   - name: Visual features
     desc: "Turning audio into an image lets convolutional networks bring their powerful pattern-recognition to bear on sound."
   - name: Noise robustness
     desc: "Seeing the frequency content makes it easier for a model to focus on the signal and ignore the noisy parts of a recording."
   - name: Task adaptation
-    desc: "Spectrograms can be tuned per task — Mel-spectrograms for speech and music, for instance — to highlight the features that matter."
+    desc: "Spectrograms can be tuned per task (Mel-spectrograms for speech and music, for instance) to highlight the features that matter."
 ---
 
 This post walks through the development of an elephant rumble audio analyzer,
@@ -145,7 +145,7 @@ As a result, spectrograms are vital in audio deep learning because they
 transform audio signals into a format that is more suitable for analysis by
 machine learning models, especially those based on deep learning techniques.
 
-Spectrograms matter for a few reasons — tap each:
+Spectrograms matter for a few reasons. Tap each:
 
 {{< threats "spectrogram_reasons" >}}
 
@@ -179,7 +179,7 @@ detailed explanation:
 <div class="support__grid">
   <div class="support__card">
     <h3 class="support__card-title">Low frequency</h3>
-    <p class="support__card-description">Most rumbles sit in the infrasound range, below 20 Hz — often beneath the threshold of human hearing, though some carry a low, throaty edge we can hear.</p>
+    <p class="support__card-description">Most rumbles sit in the infrasound range, below 20 Hz, often beneath the threshold of human hearing, though some carry a low, throaty edge we can hear.</p>
   </div>
   <div class="support__card">
     <h3 class="support__card-title">Long-distance</h3>
@@ -187,7 +187,7 @@ detailed explanation:
   </div>
   <div class="support__card">
     <h3 class="support__card-title">Vocal production</h3>
-    <p class="support__card-description">Produced by the larynx, rumbles vary in frequency, duration, and modulation — different rumbles carry different messages.</p>
+    <p class="support__card-description">Produced by the larynx, rumbles vary in frequency, duration, and modulation, and different rumbles carry different messages.</p>
   </div>
 </div>
 
@@ -196,7 +196,7 @@ detailed explanation:
 <div class="support__grid">
   <div class="support__card">
     <h3 class="support__card-title">Coordination &amp; bonding</h3>
-    <p class="support__card-description">Rumbles keep the herd in contact, coordinate movement, and reinforce social bonds — a matriarch might lead the group with one.</p>
+    <p class="support__card-description">Rumbles keep the herd in contact, coordinate movement, and reinforce social bonds. A matriarch might lead the group with one.</p>
   </div>
   <div class="support__card">
     <h3 class="support__card-title">Reproduction</h3>
@@ -220,7 +220,7 @@ months. Being able to process this amount of audio data fast and with accuracy
 is key to monitor the forest elephant population.
 
 ![The passive acoustic monitoring pipeline: a microphone catches a rumble, 50 mics record around the clock, the model detects each rumble, and its source is located](/images/projects/forest_elephants_passive_acoustic_monitoring/diagrams/pipeline.svg)
-*From microphone to located rumble — the passive acoustic monitoring pipeline*
+*From microphone to located rumble: the passive acoustic monitoring pipeline*
 
 The system must be capable of analyzing terabytes of data within a few hours.
 The primary bottlenecks in the data pipeline are:
@@ -363,7 +363,7 @@ generation and other audio processing tasks.
 </p>
 
 Loading raw audio files with torchaudio is significantly faster because it
-uses multiple cores by default, and spectrogram generation is quicker too — with
+uses multiple cores by default, and spectrogram generation is quicker too, with
 GPU acceleration speeding it up further. After benchmarking both, we chose
 torchaudio for its speed, GPU support, and tight fit with our PyTorch stack.
 
@@ -390,7 +390,7 @@ vision challenge.
 We took a pretrained
 [YOLOv8](https://github.com/ultralytics/ultralytics) model and fine-tuned it for
 our object detection task. YOLOv8 is fast, accurate, and easy to work with, and
-it handles a range of tasks — object detection, tracking, instance
+it handles a range of tasks: object detection, tracking, instance
 segmentation, image classification, and pose estimation.
 
 ![A spectrogram goes into the detection model and comes out with rumbles boxed and scored](/images/projects/forest_elephants_passive_acoustic_monitoring/diagrams/detection.svg)
@@ -459,7 +459,7 @@ conservation initiatives. Moreover, the methods and techniques presented can be
 adapted to various conservation applications, including rare species
 identification and biodiversity monitoring.
 
-You can try the detector yourself — the interactive demo runs the full
+You can try the detector yourself; the interactive demo runs the full
 spectrogram-and-detection pipeline right in your browser.
 
 {{< demo_cta "/demos/forest_elephant_rumble_detection/" >}}
