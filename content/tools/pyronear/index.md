@@ -37,7 +37,7 @@ why_pyronear:
   </video>
   <div class="tool-hero__overlay">
     <h1 class="tool-hero__title">Open, Real-Time Wildfire Detection</h1>
-    <p class="tool-hero__tagline">Watching the forest for the first signs of smoke — so fire departments get the alert within minutes.</p>
+    <p class="tool-hero__tagline">Watching the forest for the first signs of smoke, so fire departments get the alert within minutes.</p>
   </div>
 </div>
 
@@ -58,7 +58,7 @@ why_pyronear:
   </div>
 </section>
 
-Pyronear is a complete, open-source fire-detection system. A computer-vision model runs on a low-power microcomputer wired to cameras on high vantage points, watching the forest for the first signs of smoke. When it detects a fire, it sends an alert to a supervision platform used by fire departments — efficient, automatic, energy-efficient, and modular by design.
+Pyronear is a complete, open-source fire-detection system. A computer-vision model runs on a low-power microcomputer wired to cameras on high vantage points, watching the forest for the first signs of smoke. When it detects a fire, it sends an alert to a supervision platform used by fire departments: efficient, automatic, energy-efficient, and modular by design.
 
 The video below, filmed in the Forest of Fontainebleau, shows how the system works end to end: a firefighter walks through the full pipeline, from the cameras spotting the first signs of smoke to the alert reaching the fire department.
 
@@ -73,7 +73,7 @@ The video below, filmed in the Forest of Fontainebleau, shows how the system wor
 
 ## Why Pyronear
 
-Pyronear pairs cutting-edge detection with open, low-tech hardware that communities can deploy themselves — tap each to learn more.
+Pyronear pairs cutting-edge detection with open, low-tech hardware that communities can deploy themselves. Tap each to learn more.
 
 {{< threats "why_pyronear" >}}
 
@@ -89,7 +89,7 @@ Pyronear catches fires in two stages: a fast detector proposes candidate smoke, 
   <div class="support__card support__track">
     <span class="support__track-label">Stage one</span>
     <h3 class="support__card-title">Single-frame detection</h3>
-    <p class="support__card-description">A computer-vision model runs on each camera frame in real time, proposing candidate regions wherever it sees something that looks like smoke. It runs on a low-power microcomputer at the camera site, so only alerts — not video — travel over the network.</p>
+    <p class="support__card-description">A computer-vision model runs on each camera frame in real time, proposing candidate regions wherever it sees something that looks like smoke. It runs on a low-power microcomputer at the camera site, so only alerts, not video, travel over the network.</p>
     <div class="support__track-proof">In production, it detected a fire in Fontainebleau from 35 kilometers away.</div>
     <ul class="support__track-offers">
       <li>Real-time inference at the edge on low-power hardware</li>

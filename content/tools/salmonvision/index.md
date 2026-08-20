@@ -20,7 +20,7 @@ why_salmonvision:
   - name: Multi-sensor coverage
     desc: "Underwater cameras, sonar, and drones work in unison to track populations across clear, murky, and hard-to-reach river conditions."
   - name: Species classification
-    desc: "Models recognize the main Pacific salmon species — and other fish — on the fly, not just a single overall count."
+    desc: "Models recognize the main Pacific salmon species and other fish on the fly, not just a single overall count."
   - name: Exportable reports
     desc: "Daily count reports are generated and exported to support fisheries management, habitat protection, and regulatory compliance."
 faq:
@@ -29,13 +29,13 @@ faq:
   - name: What footage does it work with?
     desc: "Video from underwater cameras, weirs, fish ladders, and drones, in standard formats and across a wide range of field conditions."
   - name: Which species can it identify?
-    desc: "The main Pacific salmon species — Steelhead, Sockeye, Pink, Coho, Chum, and Chinook — plus other fish such as trout, whitefish, and lamprey."
+    desc: "The main Pacific salmon species (Steelhead, Sockeye, Pink, Coho, Chum, and Chinook), plus other fish such as trout, whitefish, and lamprey."
   - name: Is it open source?
     desc: "The computer-vision models are released under the MIT license, and the training datasets under CC BY-NC-SA 4.0, to support conservation worldwide."
   - name: What does it cost?
     desc: "The web application is free for educational and research use. Conservation groups and Indigenous communities may qualify for subsidized or complimentary access."
   - name: Can you build a custom model?
-    desc: "Yes — models can be fine-tuned or built from scratch for your specific watershed, camera setup, or target species."
+    desc: "Yes. Models can be fine-tuned or built from scratch for your specific watershed, camera setup, or target species."
 ---
 
 <div class="tool-hero">
@@ -65,19 +65,19 @@ faq:
   </div>
 </section>
 
-SalmonVision is a collaborative system for counting wild salmon as they return to their natal streams. It combines underwater cameras, sonar, and drones with computer-vision models that detect, classify, and count fish in real time — turning a labour-intensive manual task into precise, automated reports.
+SalmonVision is a collaborative system for counting wild salmon as they return to their natal streams. It combines underwater cameras, sonar, and drones with computer-vision models that detect, classify, and count fish in real time, turning a labour-intensive manual task into precise, automated reports.
 
 Built with the Pacific Salmon Foundation, the Wild Salmon Center, Lumax AI, and Simon Fraser University, it gives conservationists the reliable population data they need to manage fisheries, protect habitat, and meet regulatory targets.
 
 {{< image_carousel id="salmonvision-gallery" items="2" >}}
   {{< carousel_image src="/images/tools/salmonvision/review-interface.png" alt="A salmon under review in the SalmonVision web app" caption="Review interface: each fish is tracked and classified by species (Pink, Sockeye…), with counts tallied along a timeline for a reviewer to confirm." >}}
   {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/sonar/haida-sonar.webp" alt="Sonar setup at the Haida site" caption="Sonar in the field: an acoustic counter deployed at the Haida site for low-visibility water." >}}
-  {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/drone/drone_imagery.webp" alt="Drone photogrammetry of a salmon stream" caption="Drone photogrammetry of a freshwater stream where salmon migrate — courtesy of Lumax AI." >}}
+  {{< carousel_image src="/images/projects/wild_salmon_migration_monitoring/drone/drone_imagery.webp" alt="Drone photogrammetry of a salmon stream" caption="Drone photogrammetry of a freshwater stream where salmon migrate, courtesy of Lumax AI." >}}
 {{< /image_carousel >}}
 
 ## Why SalmonVision
 
-SalmonVision pairs multi-sensor hardware with computer vision to deliver counts that were previously impossible to gather at scale — tap each to learn more.
+SalmonVision pairs multi-sensor hardware with computer vision to deliver counts that were previously impossible to gather at scale. Tap each to learn more.
 
 {{< threats "why_salmonvision" >}}
 
@@ -99,7 +99,7 @@ Three sensing modalities feed the same computer-vision pipeline, each suited to 
   <div class="support__card support__track">
     <span class="support__track-label">Acoustic</span>
     <h3 class="support__card-title">Sonar</h3>
-    <p class="support__card-description">Acoustic sonar counts fish in low-visibility water where cameras struggle — including juvenile smolt migrating downstream past dams and turbines.</p>
+    <p class="support__card-description">Acoustic sonar counts fish in low-visibility water where cameras struggle, including juvenile smolt migrating downstream past dams and turbines.</p>
   </div>
 
   <div class="support__card support__track">
@@ -115,7 +115,7 @@ Three sensing modalities feed the same computer-vision pipeline, each suited to 
 
 ## Species We Recognize
 
-SalmonVision identifies the main Pacific salmon species as they pass the camera — not just a single overall fish count.
+SalmonVision identifies the main Pacific salmon species as they pass the camera, not just a single overall fish count.
 
 {{< salmon_species >}}
 
@@ -126,12 +126,12 @@ Beyond the salmon above, the system also recognizes Bull Trout, Rainbow Trout, W
 
 ## See SalmonVision in Action
 
-Watch the system at work — in the field and inside the web app.
+Watch the system at work in the field and inside the web app.
 
 {{< tabs labels="::In the field|::In the app" id="salmonvision-videos" >}}
 {{< tab index="0" markdown="true" >}}
 
-Filmed at Bear Creek River: the underwater monitoring system going live — as fish swim past, the camera activates and the system counts them in real time.
+Filmed at Bear Creek River: the underwater monitoring system going live. As fish swim past, the camera activates and the system counts them in real time.
 
 <p><iframe src="https://www.youtube.com/embed/V-rZSeM5YtY" loading="lazy" frameborder="0" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9;"></iframe></p>
 <em style="font-size:14px;line-height:1.4em;display:block;">Underwater Camera Activated at Bear Creek River: Monitoring System Now Live</em>
@@ -139,10 +139,10 @@ Filmed at Bear Creek River: the underwater monitoring system going live — as f
 {{< /tab >}}
 {{< tab index="1" markdown="true" >}}
 
-Inside the web app, the model tracks each fish across frames and proposes a species and count for a reviewer to confirm. This short clip — from the SalmonVision user guide — shows a review session in progress.
+Inside the web app, the model tracks each fish across frames and proposes a species and count for a reviewer to confirm. This short clip from the SalmonVision user guide shows a review session in progress.
 
 <p><video controls muted loop playsinline preload="metadata" style="width:100%;border-radius:12px;"><source src="/videos/salmonvision-tracking.mp4" type="video/mp4"></video></p>
-<em style="font-size:14px;line-height:1.4em;display:block;">Reviewing detections in the SalmonVision web app — bounding boxes, species labels, and counts on a timeline.</em>
+<em style="font-size:14px;line-height:1.4em;display:block;">Reviewing detections in the SalmonVision web app: bounding boxes, species labels, and counts on a timeline.</em>
 
 {{< /tab >}}
 {{< /tabs >}}
@@ -169,7 +169,7 @@ Run the sonar pipeline on ARIS footage to detect, track, and count juvenile smol
 
 ## In Partnership with First Nations
 
-First Nations across the North and Central Coast of British Columbia are at the heart of SalmonVision — contributing data and expertise to train the models, and leading their use for salmon stewardship within their own territories.
+First Nations across the North and Central Coast of British Columbia are at the heart of SalmonVision, contributing data and expertise to train the models and leading their use for salmon stewardship within their own territories.
 
 <div class="support__grid">
 
