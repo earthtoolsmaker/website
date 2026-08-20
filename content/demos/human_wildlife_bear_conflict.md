@@ -26,7 +26,7 @@ manual_steps:
 
 ## Overview
 
-This Bear Detector helps people and bears share the same landscape. Near farms in Romania, bears wandering close to crops and livestock can lead to losses — and, too often, to retaliation against the animals. The system detects bears in camera-trap images, even at night, and can trigger a deterrent the moment one approaches, keeping bears at a safe distance without harm.
+This Bear Detector helps people and bears share the same landscape. Near farms in Romania, bears wandering close to crops and livestock can lead to losses and, too often, to retaliation against the animals. The system detects bears in camera-trap images, even at night, and can trigger a deterrent the moment one approaches, keeping bears at a safe distance without harm.
 
 It's a low-cost, automated way to defuse human–wildlife conflict at the source: instead of a person watching a feed around the clock, the camera does the watching and acts only when a bear actually appears.
 
@@ -38,7 +38,7 @@ From a camera-trap frame to a deterrent that fires only when needed:
 
   <div class="support__card">
     <h3 class="support__card-title">Camera-trap input</h3>
-    <p class="support__card-description">Runs on the same camera-trap images already used for wildlife monitoring near farms — pick an example or upload your own.</p>
+    <p class="support__card-description">Runs on the same camera-trap images already used for wildlife monitoring near farms. Pick an example or upload your own.</p>
   </div>
 
   <div class="support__card">
@@ -48,7 +48,7 @@ From a camera-trap frame to a deterrent that fires only when needed:
 
   <div class="support__card">
     <h3 class="support__card-title">Deterrent trigger</h3>
-    <p class="support__card-description">When a bear is identified, the system can activate a deterrent automatically — encouraging the animal to move on before any harm is done.</p>
+    <p class="support__card-description">When a bear is identified, the system can activate a deterrent automatically, encouraging the animal to move on before any harm is done.</p>
   </div>
 
   <div class="support__card">
@@ -69,7 +69,7 @@ From a camera-trap frame to a deterrent that fires only when needed:
 
   <div class="support__card">
     <h3 class="support__card-title">Protect bears</h3>
-    <p class="support__card-description">Preventing conflict in the first place means fewer bears are harmed in retaliation — a win for the population.</p>
+    <p class="support__card-description">Preventing conflict in the first place means fewer bears are harmed in retaliation, a win for the population.</p>
   </div>
 
   <div class="support__card">
@@ -83,7 +83,7 @@ From a camera-trap frame to a deterrent that fires only when needed:
 
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
-  <p class="about-cta__description">See the full human–wildlife bear conflict project — the field context and the deterrent system behind this detector.</p>
+  <p class="about-cta__description">See the full human–wildlife bear conflict project, the field context and the deterrent system behind this detector.</p>
   <a href="/projects/human_wildlife_bear_conflict/" class="link-no-decoration button button--middle">View the project</a>
 </div>
 

@@ -1,7 +1,7 @@
 ---
 title: Seal Identification
 card_image: /images/pages/spaces/seal_identification/card.svg
-summary: Re-identifying individual seals by their whisker and face patterns — non-invasive, across seasons.
+summary: Re-identifying individual seals by their whisker and face patterns: non-invasive, across seasons.
 date: 2025-01-24
 hero_image: /images/pages/spaces/seal_identification/hero.png
 project: /projects/wadden_sea_seal_monitoring/
@@ -18,7 +18,7 @@ manual_steps:
 
 ## Overview
 
-Seal Identification lets researchers track individual seals over time without tagging or any invasive procedure. By reading the unique whisker patterns, facial markings, and head shape of each animal, the model builds a distinctive "fingerprint" that stays stable across seasons and years. Developed with [Wageningen Marine Research](https://www.wur.nl/en/Research-Results/Research-Institutes/marine-research.htm), it supports the grey and harbour seal colonies of the Wadden Sea — a UNESCO World Heritage Site.
+Seal Identification lets researchers track individual seals over time without tagging or any invasive procedure. By reading the unique whisker patterns, facial markings, and head shape of each animal, the model builds a distinctive "fingerprint" that stays stable across seasons and years. Developed with [Wageningen Marine Research](https://www.wur.nl/en/Research-Results/Research-Institutes/marine-research.htm), it supports the grey and harbour seal colonies of the Wadden Sea, a UNESCO World Heritage Site.
 
 ## Key Features
 
@@ -78,12 +78,12 @@ Where it supports seal conservation:
 
 ## Beyond the Wadden Sea
 
-Though built for the Wadden Sea, the same re-identification approach transfers to other seal populations and marine mammals worldwide — from Arctic ice seals to Antarctic fur seals — wherever non-invasive individual tracking can support conservation.
+Though built for the Wadden Sea, the same re-identification approach transfers to other seal populations and marine mammals worldwide, from Arctic ice seals to Antarctic fur seals, wherever non-invasive individual tracking can support conservation.
 
 {{< space_partners >}}
 
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
-  <p class="about-cta__description">See the full Wadden Sea seal monitoring project and our work with Wageningen Marine Research — including the detection system and researcher web app.</p>
+  <p class="about-cta__description">See the full Wadden Sea seal monitoring project and our work with Wageningen Marine Research, including the detection system and researcher web app.</p>
   <a href="/projects/wadden_sea_seal_monitoring/" class="link-no-decoration button button--middle">View the project</a>
 </div>

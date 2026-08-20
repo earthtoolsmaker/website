@@ -3,13 +3,13 @@ services:
     description: "Terabytes of audio, video, and sensor data turned into usable signals."
 
   - title: "Custom ML models"
-    description: "Species ID, behavior detection, environmental monitoring — trained on your data."
+    description: "Species ID, behavior detection, environmental monitoring, all trained on your data."
 
   - title: "Apps & deployment"
     description: "Web apps and dashboards your team actually uses, running on anything from edge devices to the cloud."
 
   - title: "Open source by default"
-    description: "Transparent, reproducible, and yours to keep — no vendor lock-in."
+    description: "Transparent, reproducible, and yours to keep, with no vendor lock-in."
 
 examples:
   - image: "/images/projects/early_forest_fire_detection/cover.jpg"
@@ -35,7 +35,7 @@ examples:
 
   - image: "/images/projects/forest_elephants_passive_acoustic_monitoring/cover.png"
     title: "Hearing elephants through the noise"
-    description: "Years of Congo-basin rainforest audio, scanned automatically for elephant rumbles — and gunshots. With Cornell's Elephant Listening Project."
+    description: "Years of Congo-basin rainforest audio, scanned automatically for elephant rumbles and gunshots. With Cornell's Elephant Listening Project."
     challenge_link: "/projects/elephants_passive_acoustic_monitoring/"
     partners:
       - name: "Elephant Listening Project"
@@ -47,7 +47,7 @@ examples:
 
   - image: "/images/projects/bear_identification/cover.png"
     title: "Knowing one bear from another"
-    description: "Facial recognition for grizzlies — population monitoring without tags or tranquilizers. With the BearID Project."
+    description: "Facial recognition for grizzlies: population monitoring without tags or tranquilizers. With the BearID Project."
     challenge_link: "/projects/bear_identification/"
     partners:
       - name: "BearID Project"

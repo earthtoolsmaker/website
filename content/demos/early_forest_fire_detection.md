@@ -19,7 +19,7 @@ manual_steps:
 
 ## Overview
 
-Early Forest Fire Detection analyzes camera imagery to spot the first wisps of wildfire smoke and flag them fast. It is the detection model behind [Pyronear](https://pyronear.org/), whose network of high-resolution cameras watches forested regions around the clock from elevated vantage points — turning a panoramic view of the landscape into an early warning the moment smoke appears.
+Early Forest Fire Detection analyzes camera imagery to spot the first wisps of wildfire smoke and flag them fast. It is the detection model behind [Pyronear](https://pyronear.org/), whose network of high-resolution cameras watches forested regions around the clock from elevated vantage points, turning a panoramic view of the landscape into an early warning the moment smoke appears.
 
 When the model spots smoke, it draws a bounding box with an associated probability. In the field, that detection becomes an alert routed to a supervision platform connected to the fire department, so responders can act while a fire is still small.
 
@@ -57,7 +57,7 @@ From a camera frame to an actionable alert:
 
   <div class="support__card">
     <h3 class="support__card-title">Biodiversity</h3>
-    <p class="support__card-description">Wildfires can wipe out habitats and the species that depend on them — catching fires early limits the damage.</p>
+    <p class="support__card-description">Wildfires can wipe out habitats and the species that depend on them; catching fires early limits the damage.</p>
   </div>
 
   <div class="support__card">
@@ -76,7 +76,7 @@ From a camera frame to an actionable alert:
 
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
-  <p class="about-cta__description">See the full early forest fire detection project and our work with Pyronear — the end-to-end system from camera to fire department.</p>
+  <p class="about-cta__description">See the full early forest fire detection project and our work with Pyronear, the end-to-end system from camera to fire department.</p>
   <a href="/projects/early_forest_fire_detection/" class="link-no-decoration button button--middle">View the project</a>
 </div>
 
