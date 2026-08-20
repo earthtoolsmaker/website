@@ -67,22 +67,22 @@ js:
 ---
 
 Pacific salmon are born in freshwater, migrate out to the ocean, and then fight
-their way back — often hundreds of miles — to spawn in the very stream where
+their way back, often hundreds of miles, to spawn in the very stream where
 they hatched. After spawning they die, and their bodies feed the river that
 raised them. That return is the heartbeat of British Columbia's watersheds: it
 feeds bears, eagles and orcas, carries ocean nutrients far inland, and anchors
 the culture and economy of the communities along the water.
 
 ![The Pacific salmon life cycle](/images/projects/wild_salmon_migration_monitoring/lifecycle_salmon.png)
-*The Pacific salmon life cycle — courtesy of the [Pacific Salmon Foundation](https://psf.ca/learn/species-lifecycle/).*
+*The Pacific salmon life cycle, courtesy of the [Pacific Salmon Foundation](https://psf.ca/learn/species-lifecycle/).*
 
 Knowing how many fish actually make it back is the single most important number
-in salmon management — escapement targets exist to guarantee enough survive to
+in salmon management: escapement targets exist to guarantee enough survive to
 spawn. But counting them by hand, river by river, season after season, simply
 does not scale. Together with the [Pacific Salmon Foundation](https://psf.ca/),
 the [Wild Salmon Center](https://wildsalmoncenter.org/),
 [Lumax AI](https://lumax.ai/) and [Simon Fraser University](https://www.sfu.ca/),
-we built [__SalmonVision__](https://salmonvision.org/) — a multi-sensor system
+we built [__SalmonVision__](https://salmonvision.org/), a multi-sensor system
 that counts and identifies migrating salmon automatically, around the clock.
 
 > We must take every step in our control now as climate-change related trends
@@ -92,7 +92,7 @@ that counts and identifies migrating salmon automatically, around the clock.
 >
 > <cite>– Pacific Salmon Foundation</cite>
 
-![From underwater footage to a counted run — the SalmonVision pipeline](/images/projects/wild_salmon_migration_monitoring/diagrams/pipeline.svg)
+![From underwater footage to a counted run: the SalmonVision pipeline](/images/projects/wild_salmon_migration_monitoring/diagrams/pipeline.svg)
 *Sensors watch the river, a computer-vision model detects and identifies each
 fish, and individuals are tallied into a count managers can act on.*
 
@@ -118,7 +118,7 @@ around the river begins to fray.
 
   <div class="support__card">
     <h3 class="support__card-title">Biodiversity &amp; economy</h3>
-    <p class="support__card-description">Healthy salmon populations underpin the region's biodiversity and sustain fisheries, tourism and local livelihoods — which is exactly why well-managed, sustainable runs matter.</p>
+    <p class="support__card-description">Healthy salmon populations underpin the region's biodiversity and sustain fisheries, tourism and local livelihoods, which is exactly why well-managed, sustainable runs matter.</p>
   </div>
 
 </div>
@@ -129,7 +129,7 @@ Wild salmon in BC and around the world are squeezed from every side. Habitat is
 lost to development and logging; dams and culverts block migration routes;
 unsustainable fishing thins the run; pollution degrades the water; and a warming
 climate raises river temperatures and scrambles the timing of the migration.
-Each pressure compounds the others — and you cannot manage what you cannot
+Each pressure compounds the others, and you cannot manage what you cannot
 measure. That is why an accurate, continuous count is the foundation beneath
 every other conservation decision.
 
@@ -138,7 +138,7 @@ every other conservation decision.
 ## How SalmonVision counts a run
 
 At the core is a computer-vision model that watches the river and does the work
-a human reviewer used to do by hand — frame by frame, fish by fish.
+a human reviewer used to do by hand: frame by frame, fish by fish.
 
 ![How the vision model turns one underwater frame into an identified fish](/images/projects/wild_salmon_migration_monitoring/diagrams/detection.svg)
 *Each frame runs through the model, which boxes every fish and labels its
@@ -155,7 +155,7 @@ pipeline with three complementary ways of seeing the water.
     <span class="support__track-label">Optical</span>
     <h3 class="support__card-title">Underwater cameras</h3>
     <p class="support__card-description">Motion-triggered cameras wake as a fish passes and feed clear footage to the model, which counts and classifies each individual by species.</p>
-    <div class="support__track-proof">The <strong>workhorse</strong> of most sites — best in clear, well-lit water.</div>
+    <div class="support__track-proof">The <strong>workhorse</strong> of most sites, best in clear, well-lit water.</div>
     <ul class="support__track-offers">
       <li>Species-level counts</li>
       <li>Real-time, motion-triggered</li>
@@ -166,7 +166,7 @@ pipeline with three complementary ways of seeing the water.
   <div class="support__card support__track">
     <span class="support__track-label">Acoustic</span>
     <h3 class="support__card-title">Sonar</h3>
-    <p class="support__card-description">Acoustic sonar counts fish in murky, dark or turbulent water where cameras fail — including juvenile smolt migrating downstream past dams.</p>
+    <p class="support__card-description">Acoustic sonar counts fish in murky, dark or turbulent water where cameras fail, including juvenile smolt migrating downstream past dams.</p>
     <div class="support__track-proof">Sees with <strong>sound</strong>, so it keeps working in zero visibility and at night.</div>
     <ul class="support__track-offers">
       <li>Works in silty, dark water</li>
@@ -191,7 +191,7 @@ pipeline with three complementary ways of seeing the water.
 
 ### In the field
 
-Three complementary sensors, one shared vision pipeline — switch between them to
+Three complementary sensors, one shared vision pipeline. Switch between them to
 see each in action.
 
 {{< tabs labels="::Underwater cameras|::Sonar|::Drones" id="salmon-field" >}}
@@ -202,7 +202,7 @@ swims into view, the camera wakes and the model counts and classifies it in real
 time.
 
 {{< youtube id=V-rZSeM5YtY >}}
-<p class="media-caption">An underwater monitoring camera goes live at Bear Creek — as fish pass, the system wakes and counts them.</p>
+<p class="media-caption">An underwater monitoring camera goes live at Bear Creek. As fish pass, the system wakes and counts them.</p>
 
 {{< /tab >}}
 {{< tab index="1" markdown="true" >}}
@@ -216,16 +216,16 @@ smolt with ARIS sonar]({{< ref "/projects/monitoring_smolt_salmon_migration_with
 *An acoustic sonar counter deployed at the Haida site, where silty water defeats optical cameras.*
 
 {{< youtube id=DlKYhipkSNk >}}
-<p class="media-caption">Sonar detects and counts fish acoustically — no light required.</p>
+<p class="media-caption">Sonar detects and counts fish acoustically, no light required.</p>
 
 {{< /tab >}}
 {{< tab index="2" markdown="true" >}}
 
-For wider stretches of river, drones survey from above — mapping reaches that
+For wider stretches of river, drones survey from above, mapping reaches that
 fixed sensors can't cover.
 
 ![Drone photogrammetry of a salmon stream](/images/projects/wild_salmon_migration_monitoring/drone/drone_imagery.webp)
-*Photogrammetry of a freshwater stream where salmon migrate — courtesy of [Lumax AI](https://lumax.ai).*
+*Photogrammetry of a freshwater stream where salmon migrate, courtesy of [Lumax AI](https://lumax.ai).*
 
 {{< /tab >}}
 {{< /tabs >}}
@@ -233,7 +233,7 @@ fixed sensors can't cover.
 ### In the web app
 
 Every detection flows into a review app, where counts are tallied on a timeline
-and a person can confirm the model's work — turning continuous footage into
+and a person can confirm the model's work, turning continuous footage into
 trustworthy, exportable reports.
 
 ![A salmon under review in the SalmonVision web app](/images/tools/salmonvision/review-interface.png)
@@ -241,7 +241,7 @@ trustworthy, exportable reports.
 for a reviewer to confirm.*
 
 <p><video controls muted loop playsinline preload="metadata" style="width:100%;border-radius:12px;"><source src="/videos/salmonvision-tracking.mp4" type="video/mp4"></video></p>
-<p class="media-caption">Reviewing detections in the app — bounding boxes, species labels and a running count on a timeline.</p>
+<p class="media-caption">Reviewing detections in the app: bounding boxes, species labels and a running count on a timeline.</p>
 
 <div class="about-cta">
   <h3 class="about-cta__title">Explore the full SalmonVision platform</h3>
@@ -252,7 +252,7 @@ for a reviewer to confirm.*
 ## The species we recognize
 
 SalmonVision identifies the main Pacific salmon species as they pass the
-camera — not just a single overall fish count.
+camera, not just a single overall fish count.
 
 {{< salmon_species >}}
 
@@ -262,14 +262,14 @@ Whitefish, Shiner, Pikeminnow, Jack Chinook, Lamprey, and Cutthroat Trout.
 ## Built with First Nations
 
 First Nations across the North and Central Coast of British Columbia are at the
-heart of this work — contributing data and expertise to train the models, and
+heart of this work, contributing data and expertise to train the models and
 leading their use for salmon stewardship within their own territories, alongside
 the research and conservation partners who sustain SalmonVision.
 
 ## Conclusion
 
 A wild salmon migration monitoring system turns the hardest, most tedious part
-of conservation — counting — into reliable, continuous data. With accurate
+of conservation (counting) into reliable, continuous data. With accurate
 numbers in hand, managers can set fishing quotas, prioritize habitat
 restoration, hold infrastructure to account, and give communities a transparent
 picture of the runs they depend on.

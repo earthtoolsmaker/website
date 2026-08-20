@@ -9,7 +9,7 @@ related_projects:
 related_spaces:
   - /demos/trout_identification/
   - /demos/snowleopard_identification/
-tagline: Recognising individual brown bears by their faces — from a camera-trap photo, with no tags and no handling.
+tagline: Recognising individual brown bears by their faces from a camera-trap photo, with no tags and no handling.
 clients:
   - name: BearID
     link: https://bearresearch.org
@@ -27,7 +27,7 @@ pressures:
   - name: Habitat loss &amp; fragmentation
     desc: "Deforestation, farming, urbanisation and infrastructure shrink and split bear habitat, making it harder to forage, den and breed."
   - name: Human–wildlife conflict
-    desc: "As people move into bear country, raids on livestock and crops trigger retaliation — and bears are often hunted or killed in response."
+    desc: "As people move into bear country, raids on livestock and crops trigger retaliation, and bears are often hunted or killed in response."
   - name: Poaching &amp; trade
     desc: "Bears are poached for fur, claws and organs used in traditional medicine, rituals or as trophies."
   - name: Climate change
@@ -42,17 +42,17 @@ pinned: false
 image: /images/projects/bear_identification/cover.png
 ---
 
-Brown bears are charismatic apex predators and umbrella species — protecting
+Brown bears are charismatic apex predators and umbrella species: protecting
 them protects whole ecosystems. But they are elusive, range over vast
 territories, and carry no natural tags, so simply knowing *which* bears are
 out there, and how many, is genuinely hard. The toolkit for non-invasive bear
 research is thin, which leaves population trends poorly understood.
 
 Together with the [BearID Project](https://bearresearch.org/), we built a
-computer-vision system that **recognises individual bears by their faces** —
+computer-vision system that **recognises individual bears by their faces**,
 straight from a camera-trap photo, with no tags, no collars and no handling.
 
-![From a camera-trap photo to an identity — detect the bear's face, turn it into a fingerprint, and match it against known individuals](/images/projects/bear_identification/diagrams/pipeline.svg)
+![From a camera-trap photo to an identity: detect the bear's face, turn it into a fingerprint, and match it against known individuals](/images/projects/bear_identification/diagrams/pipeline.svg)
 *A camera-trap photo comes in, the bear's face is found and cut out, turned
 into a numerical "fingerprint", and matched against a database of known
 individuals.*
@@ -65,19 +65,19 @@ individuals.*
 
 ## Why bears matter
 
-As apex predators and ecosystem engineers, bears shape the forests around them —
+As apex predators and ecosystem engineers, bears shape the forests around them,
 and their presence is a sign of a healthy, balanced environment.
 
 <div class="support__grid">
 
   <div class="support__card">
     <h3 class="support__card-title">Apex predator</h3>
-    <p class="support__card-description">By keeping deer, elk and fish populations in check, bears prevent overgrazing and keep plant communities — and everything that depends on them — in balance.</p>
+    <p class="support__card-description">By keeping deer, elk and fish populations in check, bears prevent overgrazing and keep plant communities, and everything that depends on them, in balance.</p>
   </div>
 
   <div class="support__card">
     <h3 class="support__card-title">Gardener &amp; recycler</h3>
-    <p class="support__card-description">Roaming omnivores, they scatter seeds as they travel and enrich the soil through carcasses and dung — spreading plants and cycling nutrients across the forest.</p>
+    <p class="support__card-description">Roaming omnivores, they scatter seeds as they travel and enrich the soil through carcasses and dung, spreading plants and cycling nutrients across the forest.</p>
   </div>
 
   <div class="support__card">
@@ -103,7 +103,7 @@ Brown bears face pressure from several directions at once. Tap each to learn mor
 
 ## Why identify individual bears
 
-Telling individuals apart — not just spotting *a* bear — is what turns camera-trap
+Telling individuals apart, not just spotting *a* bear, is what turns camera-trap
 images into real conservation data.
 
 <div class="support__grid">
@@ -115,7 +115,7 @@ images into real conservation data.
 
   <div class="support__card">
     <h3 class="support__card-title">Behaviour &amp; social life</h3>
-    <p class="support__card-description">Following individuals over time opens up the study of social interactions, mating and reproduction — the foundations of effective conservation strategy.</p>
+    <p class="support__card-description">Following individuals over time opens up the study of social interactions, mating and reproduction, the foundations of effective conservation strategy.</p>
   </div>
 
   <div class="support__card">
@@ -127,14 +127,14 @@ images into real conservation data.
 
 ## Why bears are hard to tell apart
 
-Brown bears extend facial recognition beyond primates — and in doing so expose
+Brown bears extend facial recognition beyond primates, and in doing so expose
 challenges that apply to a wide range of species:
 
 <div class="support__grid">
 
   <div class="support__card">
     <h3 class="support__card-title">No unique markings</h3>
-    <p class="support__card-description">Unlike spotted or striped species, brown bears have no consistent coat pattern to identify them — so the face becomes the most reliable signature.</p>
+    <p class="support__card-description">Unlike spotted or striped species, brown bears have no consistent coat pattern to identify them, so the face becomes the most reliable signature.</p>
   </div>
 
   <div class="support__card">
@@ -149,18 +149,18 @@ challenges that apply to a wide range of species:
 
 </div>
 
-The pictures below show the same individual — **Chunk** (`bf32`), one of the
-well-known Brooks River bears — at different times and places. A person finds it
+The pictures below show the same individual, **Chunk** (`bf32`), one of the
+well-known Brooks River bears, at different times and places. A person finds it
 hard; the model has to learn to see past the seasons, angles and lighting to the
 bear underneath.
 
 {{< image_carousel id="bear-bf32" items="2" >}}
-  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_3.jpg" alt="The same bear, bf32, photographed at a different time" caption="Chunk (bf32) — the same individual at a different time and place." >}}
-  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_1.jpg" alt="The same bear, bf32, photographed at a different time" caption="Chunk (bf32) — the same individual at a different time and place." >}}
-  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_2.jpg" alt="The same bear, bf32, photographed at a different time" caption="Chunk (bf32) — the same individual at a different time and place." >}}
-  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_4.jpg" alt="The same bear, bf32, photographed at a different time" caption="Chunk (bf32) — the same individual at a different time and place." >}}
+  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_3.jpg" alt="The same bear, bf32, photographed at a different time" caption="Chunk (bf32), the same individual at a different time and place." >}}
+  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_1.jpg" alt="The same bear, bf32, photographed at a different time" caption="Chunk (bf32), the same individual at a different time and place." >}}
+  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_2.jpg" alt="The same bear, bf32, photographed at a different time" caption="Chunk (bf32), the same individual at a different time and place." >}}
+  {{< carousel_image src="/images/projects/bear_identification/bears/bf32_4.jpg" alt="The same bear, bf32, photographed at a different time" caption="Chunk (bf32), the same individual at a different time and place." >}}
 {{< /image_carousel >}}
-<p class="media-caption">One individual — Chunk (bf32) — across seasons and locations, from the <a href="https://bearresearch.org" target="_blank">BearID Project</a>.</p>
+<p class="media-caption">One individual, Chunk (bf32), across seasons and locations, from the <a href="https://bearresearch.org" target="_blank">BearID Project</a>.</p>
 
 ## How the system works
 
@@ -174,13 +174,13 @@ right is what makes the matching that follows accurate.
 
 ### Match the fingerprint
 
-The second model turns each face into a numerical **fingerprint** — a point in a
+The second model turns each face into a numerical **fingerprint**: a point in a
 high-dimensional space where photos of the same bear land close together and
 different bears land far apart. Identifying a new photo is then simply a matter
 of finding its nearest neighbours: a strong enough match returns a known
 individual, while a weak one flags a bear we haven't seen before, ready to be added.
 
-Camera traps make all of this possible — collecting images day and night, in
+Camera traps make all of this possible, collecting images day and night, in
 places from Arctic tundra to temperate forest, without a researcher present and
 without disturbing the animals.
 
@@ -193,7 +193,7 @@ without disturbing the animals.
 ## Conclusion
 
 Reading a bear by its face turns population monitoring into something
-non-invasive, repeatable and scalable — gathering the data researchers need
+non-invasive, repeatable and scalable, gathering the data researchers need
 without ever tagging or handling an animal. Because the approach is open-source
 and not specific to bears, it offers a replicable blueprint that can be adapted
 to other species and strengthen conservation efforts worldwide.

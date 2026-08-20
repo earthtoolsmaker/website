@@ -26,11 +26,11 @@ forest_protection:
   - name: Carbon sequestration
     desc: "Forests act as carbon sinks, pulling CO₂ from the air and locking it into trees and soil. When they burn, that stored carbon is released back into the atmosphere, accelerating climate change."
   - name: Water resources
-    desc: "Healthy forests regulate the water cycle — holding soil moisture, curbing erosion, and feeding rivers and streams. Fire disrupts all of it, degrading soil and harming water quality and supply."
+    desc: "Healthy forests regulate the water cycle, holding soil moisture, curbing erosion, and feeding rivers and streams. Fire disrupts all of it, degrading soil and harming water quality and supply."
   - name: Economic impact
-    desc: "Forests underpin livelihoods — timber, non-timber products, and recreation. Wildfire damages these resources and the forestry, tourism, and agriculture that depend on them, costing local communities dearly."
+    desc: "Forests underpin livelihoods: timber, non-timber products, and recreation. Wildfire damages these resources and the forestry, tourism, and agriculture that depend on them, costing local communities dearly."
   - name: Human health
-    desc: "Wildfire smoke drifts far beyond the fire line, and its air pollution hits the vulnerable hardest — children, the elderly, and people with respiratory conditions. Stopping fires early protects public health."
+    desc: "Wildfire smoke drifts far beyond the fire line, and its air pollution hits the vulnerable hardest: children, the elderly, and people with respiratory conditions. Stopping fires early protects public health."
 status: completed
 pinned: true
 weight: 1
@@ -49,7 +49,7 @@ Pyronear takes a whole-system approach to wildfire risk. At its core is an
 early-detection model that runs on a compact, low-power microcomputer, fed by a
 network of high-resolution cameras mounted at high vantage points for panoramic
 coverage of the forest. Together they form a proactive line of defense against
-wildfires — spotting smoke early and getting the alert to the people who can act
+wildfires, spotting smoke early and getting the alert to the people who can act
 on it.
 
 > Our detectors communicate fire alerts to a database that is connected
@@ -70,12 +70,12 @@ department.
 
 ## Forests Protection
 
-Protecting forests from fire is crucial for several reasons — tap each to learn
+Protecting forests from fire is crucial for several reasons. Tap each to learn
 more.
 
 {{< threats "forest_protection" >}}
 
-Preserving forests from fire is essential — for ecological balance, a stable
+Preserving forests from fire is essential for ecological balance, a stable
 climate, the livelihoods forests support, and the health of people and wildlife
 alike.
 
@@ -165,22 +165,22 @@ system. The video below shows a thin black smoke rising in the distance.
 ## Telling smoke from look-alikes
 
 A single frame can only tell you so much. Early wildfire smoke is a faint grey
-wisp — easy to confuse with a passing cloud, a bank of fog, or kicked-up dust —
+wisp, easy to confuse with a passing cloud, a bank of fog, or kicked-up dust,
 and every false alarm that reaches a fire crew chips away at their trust in the
 system.
 
 So we taught the system to look at *how a candidate behaves over time*. Real
 smoke does things a cloud doesn't: it stays anchored to one spot on the
 hillside, grows, and slowly drifts. To make that easy to read, the system locks
-onto the candidate and holds the view steady — so the background sits still and
+onto the candidate and holds the view steady, so the background sits still and
 the smoke becomes the one thing that moves.
 
 ![The same hillside across twenty frames; with the view held steady, a faint plume grows and drifts while everything around it stays put](/images/projects/early_forest_fire_detection/temporal_patches.jpg#noround)
 *The same candidate across twenty frames. Hold the view steady and real smoke
-gives itself away — it's the one thing that grows and drifts.*
+gives itself away: it's the one thing that grows and drifts.*
 
 That extra, time-aware look cuts false alarms by around **4×** while still
-catching the real fires — a far cleaner stream of alerts for the people acting
+catching the real fires, a far cleaner stream of alerts for the people acting
 on them. If you want the full story, we wrote up [how we built and raced the
 candidate models]({{< ref "/posts/racing-models-not-opinions" >}}) and [how the
 model reads smoke over time]({{< ref "/posts/smoke-is-a-behavior" >}}).
@@ -189,7 +189,7 @@ model reads smoke over time]({{< ref "/posts/smoke-is-a-behavior" >}}).
 
 A computer vision model that catches the first signs of forest fire is a
 practical, low-cost way to protect them. It gets firefighters to the scene
-sooner — and as climate change leaves forests increasingly exposed, that head
+sooner, and as climate change leaves forests increasingly exposed, that head
 start matters more every year.
 
 {{< demo_cta >}}

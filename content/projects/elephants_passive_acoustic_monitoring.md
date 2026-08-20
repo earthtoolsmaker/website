@@ -7,7 +7,7 @@ related_projects:
   - early_forest_fire_detection
 related_spaces:
   - /demos/forest_elephant_rumble_detection/
-tagline: Finding forest elephants — and poachers — by sound, across Central Africa's rainforest.
+tagline: Finding forest elephants, and poachers, by sound across Central Africa's rainforest.
 stats:
   - value: "60%"
     label: lost in a decade
@@ -32,7 +32,7 @@ tools:
   - Machine Learning
 threats:
   - name: Ivory poaching
-    desc: "Forest-elephant ivory is prized for its hardness and rose-coloured tint, driving targeted killing — more than 12,000 elephants a year. It is hard to detect in dense, poorly-protected forest."
+    desc: "Forest-elephant ivory is prized for its hardness and rose-coloured tint, driving targeted killing of more than 12,000 elephants a year. It is hard to detect in dense, poorly-protected forest."
   - name: Bushmeat trade
     desc: "Hunting elephants for meat has grown into an international business, threatening animals of all ages, including calves, as human populations grow."
   - name: Resource extraction
@@ -40,7 +40,7 @@ threats:
   - name: Roads &amp; access
     desc: "Roads cut for extraction open once-remote forest interiors to hunters and settlement, multiplying the threat to elephants deep in the range."
   - name: Slow reproduction
-    desc: "Forest elephants breed slowly, so populations recover far more slowly than they are being lost — compounding every other pressure."
+    desc: "Forest elephants breed slowly, so populations recover far more slowly than they are being lost, compounding every other pressure."
 status: completed
 pinned: true
 weight: 3
@@ -51,14 +51,14 @@ image: /images/projects/forest_elephants_passive_acoustic_monitoring/cover.png
 Forest elephants are vanishing: more than **60% have been lost in the past
 decade**, and over **12,000 are killed each year** for their ivory. The hardest
 part of protecting them is simply knowing where they are. In the vast, dense
-rainforests of Central Africa they are nearly impossible to see — so instead of
+rainforests of Central Africa they are nearly impossible to see, so instead of
 watching for them, we listen.
 
 Working with the [Elephant Listening
 Project](https://www.elephantlisteningproject.org/) and the [Cornell Lab of
 Ornithology](https://www.birds.cornell.edu/), we built open-source tools that
 scan terabytes of forest audio to automatically detect and localize elephant
-**rumbles** — turning sound into the population and anti-poaching data that
+**rumbles**, turning sound into the population and anti-poaching data that
 conservation has been missing.
 
 > Our vision is to conserve the tropical forests of Africa through acoustic
@@ -66,13 +66,13 @@ conservation has been missing.
 >
 > <cite>– The Elephant Listening Project</cite>
 
-![From a rumble to a located elephant — the acoustic monitoring pipeline](/images/projects/forest_elephants_passive_acoustic_monitoring/diagrams/pipeline.svg)
+![From a rumble to a located elephant: the acoustic monitoring pipeline](/images/projects/forest_elephants_passive_acoustic_monitoring/diagrams/pipeline.svg)
 *Microphones across the forest record around the clock, a model finds rumbles in
 the audio, and the array pinpoints where each call came from.*
 
 ![A forest elephant in the rainforest undergrowth](/images/projects/forest_elephants_passive_acoustic_monitoring/main.jpg)
-*A forest elephant melts into the dense undergrowth — exactly why they are so
-hard to see, and why listening works where watching can't.*
+*A forest elephant melts into the dense undergrowth. That's exactly why they are
+so hard to see, and why listening works where watching can't.*
 
 ## Why forest elephants matter
 
@@ -83,7 +83,7 @@ daily lives, and unravels without them.
 
   <div class="support__card">
     <h3 class="support__card-title">Forest gardeners</h3>
-    <p class="support__card-description">They eat fruit and spread seeds across huge distances, and their movement opens clearings and trails — keeping the forest diverse, regenerating, and in balance.</p>
+    <p class="support__card-description">They eat fruit and spread seeds across huge distances, and their movement opens clearings and trails, keeping the forest diverse, regenerating, and in balance.</p>
   </div>
 
   <div class="support__card">
@@ -100,7 +100,7 @@ daily lives, and unravels without them.
 
 ## Under pressure
 
-Forest elephants face pressure from every side — and their slow reproductive
+Forest elephants face pressure from every side, and their slow reproductive
 rate means losses are hard to recover from. Tap each pressure to learn more.
 
 {{< threats >}}
@@ -116,11 +116,11 @@ rate means losses are hard to recover from. Tap each pressure to learn more.
 ## What a rumble is
 
 Rumbles are the low-frequency calls elephants use to communicate. Much of a
-rumble sits in the **infrasound** range — below 20 Hz, often beneath the
+rumble sits in the **infrasound** range, below 20 Hz, often beneath the
 threshold of human hearing.
 
 ![Spectrogram of elephant rumbles](/images/projects/forest_elephants_passive_acoustic_monitoring/spectrograms/rumbles_intro.png)
-*A spectrogram of elephant rumbles — the low-frequency energy that carries
+*A spectrogram of elephant rumbles: the low-frequency energy that carries
 across the forest.*
 
 Because their wavelength is so long, rumbles travel several kilometres and pass
@@ -133,7 +133,7 @@ we can reliably pick rumbles out of the noise, we can find elephants.
 ## Detecting rumbles at scale
 
 Fifty microphones are arranged in a grid across the tropical forest, recording
-continuously. The challenge is the sheer volume of audio — and the answer is a
+continuously. The challenge is the sheer volume of audio. The answer is a
 model that finds rumbles in a spectrogram the way an object detector finds
 objects in a photo.
 
@@ -144,7 +144,7 @@ scores it.*
 The [open-source tools](https://github.com/earthtoolsmaker/forest-elephants-rumble-detection)
 process audio in batch across all available CPU and GPU cores, so a 24-hour
 recording is scanned in around 20 seconds. At that speed, a full month of
-audio from all 50 recorders — roughly **1 TB** — is analysed in about
+audio from all 50 recorders (roughly **1 TB**) is analysed in about
 **8 hours** rather than weeks of manual review.
 
 | Spectrogram | Detected rumbles |
@@ -160,8 +160,8 @@ We cover how the detector was built and run in the companion post on
 
 ## Conclusion
 
-Listening turns the hardest part of forest-elephant conservation — finding
-animals that can't be seen — into continuous, non-invasive data. Around-the-clock
+Listening turns the hardest part of forest-elephant conservation, finding
+animals that can't be seen, into continuous, non-invasive data. Around-the-clock
 acoustic monitoring reveals where elephants are over time, surfaces signs of
 poaching, and gives rangers and researchers the evidence they need to act, at a
 scale and cost that field surveys never could.

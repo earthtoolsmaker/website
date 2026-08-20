@@ -29,7 +29,7 @@ tools:
   - Machine Learning
 pressures:
   - name: Warming &amp; bleaching
-    desc: "Rising sea temperatures make corals expel their algae and bleach — turning white, weakening, and falling prey to disease. Acidification weakens their skeletons too."
+    desc: "Rising sea temperatures make corals expel their algae and bleach, turning white, weakening, and falling prey to disease. Acidification weakens their skeletons too."
   - name: Pollution
     desc: "Runoff, sewage and debris smother corals and feed the algae that compete with them for light and space."
   - name: Overfishing
@@ -37,7 +37,7 @@ pressures:
   - name: Coastal development
     desc: "Dredging, construction and land clearing bury reefs in sediment and nutrient-laden runoff."
   - name: Unsustainable tourism
-    desc: "Anchoring, trampling and over-visiting fragile sites — and harvesting for souvenirs — wear reefs down."
+    desc: "Anchoring, trampling, over-visiting fragile sites and harvesting for souvenirs wear reefs down."
   - name: Invasive species
     desc: "Non-native species outcompete or prey on reef life and reshape the habitat."
   - name: Weak governance
@@ -48,18 +48,18 @@ date: 2024-01-30
 image: /images/projects/coral_reef_segmentation/cover.jpg
 ---
 
-Coral reefs are among the richest ecosystems on Earth — and among the most
+Coral reefs are among the richest ecosystems on Earth, and among the most
 threatened. Marine biologists track their health by photographing the seabed on
 research dives, but turning thousands of those images into numbers is slow,
 painstaking work, and the reporting lag blunts conservation's ability to respond
 in time.
 
 Together with [ReefSupport](https://reef.support), we built a computer-vision
-pipeline that **maps coral in benthic imagery** — outlining and classifying each
-colony automatically — so researchers can measure how coral cover is growing or
+pipeline that **maps coral in benthic imagery**, outlining and classifying each
+colony automatically, so researchers can measure how coral cover is growing or
 declining across a protected area, far faster than by hand.
 
-![From a dive photo to coral cover — capture, segment each colony, classify hard vs soft, and measure coral cover over time](/images/projects/coral_reef_segmentation/diagrams/pipeline.svg)
+![From a dive photo to coral cover: capture, segment each colony, classify hard vs soft, and measure coral cover over time](/images/projects/coral_reef_segmentation/diagrams/pipeline.svg)
 *A diver photographs the reef; the model outlines and classifies every coral
 colony, and the result becomes a coral-cover figure that can be tracked over
 time.*
@@ -71,14 +71,14 @@ time.*
 
 ## Why coral reefs matter
 
-Reefs cover a sliver of the ocean yet underpin a huge share of marine life — and
+Reefs cover a sliver of the ocean yet underpin a huge share of marine life, and
 the livelihoods of millions of people.
 
 <div class="support__grid">
 
   <div class="support__card">
     <h3 class="support__card-title">Biodiversity hotspots</h3>
-    <p class="support__card-description">Less than 1% of the seafloor, yet home to around 25% of all marine species — habitat, nursery and shelter for countless fish and invertebrates.</p>
+    <p class="support__card-description">Less than 1% of the seafloor, yet home to around 25% of all marine species: habitat, nursery and shelter for countless fish and invertebrates.</p>
   </div>
 
   <div class="support__card">
@@ -95,8 +95,8 @@ the livelihoods of millions of people.
 
 ## Reefs under pressure
 
-Coral reefs are squeezed by many forces at once — most of them driven, directly
-or indirectly, by people. Tap each to learn more.
+Coral reefs are squeezed by many forces at once, most of them driven directly
+or indirectly by people. Tap each to learn more.
 
 {{< threats "pressures" >}}
 
@@ -104,13 +104,13 @@ or indirectly, by people. Tap each to learn more.
 
 The system is built around **instance segmentation**: rather than just labelling
 a photo, it finds each individual coral colony, traces its exact outline, and
-classifies it. We started with the key distinction — **hard versus soft coral** —
+classifies it. We started with the key distinction of **hard versus soft coral**,
 with the framework designed to grow into finer functional groups and to adapt to
 reefs anywhere in the world.
 
-![How the model maps a reef — a benthic photo runs through the segmentation model, which outlines and labels every coral colony](/images/projects/coral_reef_segmentation/diagrams/segmentation.svg)
-*Instance segmentation traces the exact outline of each colony — hard coral in
-teal, soft coral in orange — rather than just drawing boxes.*
+![How the model maps a reef: a benthic photo runs through the segmentation model, which outlines and labels every coral colony](/images/projects/coral_reef_segmentation/diagrams/segmentation.svg)
+*Instance segmentation traces the exact outline of each colony (hard coral in
+teal, soft coral in orange) rather than just drawing boxes.*
 
 The models are open source and come in a range of sizes that trade speed against
 accuracy, so a survey team can pick the right balance for their hardware and
@@ -121,7 +121,7 @@ their reef.
 
 ## Why underwater vision is hard
 
-Reading a reef from a photo is far harder than it looks — water itself works
+Reading a reef from a photo is far harder than it looks: water itself works
 against the camera.
 
 <div class="support__grid">
@@ -138,7 +138,7 @@ against the camera.
 
   <div class="support__card">
     <h3 class="support__card-title">Variable &amp; scarce data</h3>
-    <p class="support__card-description">Conditions shift constantly and gear isn't standardised — and well-labelled underwater datasets are rare, which makes models hard to train and to generalise.</p>
+    <p class="support__card-description">Conditions shift constantly and gear isn't standardised, while well-labelled underwater datasets are rare, which makes models hard to train and to generalise.</p>
   </div>
 
 </div>
@@ -157,10 +157,10 @@ variety:
 ## Conclusion
 
 Automated benthic analysis turns a reporting bottleneck into fast, repeatable
-measurement — quantifying the long-term growth or decline of coral cover, and
+measurement, quantifying the long-term growth or decline of coral cover and
 giving reef managers the timely picture they need to act.
 
 ![The benthic imagery analysis system in action, by ReefSupport](/images/projects/coral_reef_segmentation/coral_ai.gif)
-*The benthic imagery analysis system in action — courtesy of [ReefSupport](https://reef.support).*
+*The benthic imagery analysis system in action, courtesy of [ReefSupport](https://reef.support).*
 
 {{< demo_cta >}}
