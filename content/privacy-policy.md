@@ -12,7 +12,7 @@ This website is served by [Netlify](https://www.netlify.com/). Like any web host
 
 ## Contact form
 
-When you submit the form on our [contact](/contact/) page, your name, email address, and message are processed by [Formspree](https://formspree.io/) and delivered to us by email. We use this information only to reply to you — never for marketing — and we do not share it with anyone else. See [Formspree's privacy policy](https://formspree.io/legal/privacy-policy/) for details.
+When you submit the form on our [contact](/contact/) page, your name, email address, and message are processed by [Formspree](https://formspree.io/) and delivered to us by email. We use this information only to reply to you, never for marketing, and we do not share it with anyone else. See [Formspree's privacy policy](https://formspree.io/legal/privacy-policy/) for details.
 
 ## Embedded content and third-party resources
 
@@ -24,7 +24,7 @@ Some pages embed interactive machine learning demos from [Hugging Face Spaces](h
 
 ## Your rights
 
-You can ask us what information we hold about you — realistically, only the emails you sent us through the forms — and ask us to correct or delete it. Reach out through the [contact page](/contact/) and we will take care of it.
+You can ask us what information we hold about you (realistically, only the emails you sent us through the forms) and ask us to correct or delete it. Reach out through the [contact page](/contact/) and we will take care of it.
 
 ## Questions
 

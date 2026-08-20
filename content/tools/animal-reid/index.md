@@ -23,7 +23,7 @@ js:
   </video>
   <div class="tool-hero__overlay">
     <h1 class="tool-hero__title">Identify Every Individual</h1>
-    <p class="tool-hero__tagline">Non-invasive computer vision that tells one animal from another — bear, trout, seal, or snow leopard.</p>
+    <p class="tool-hero__tagline">Non-invasive computer vision that tells one animal from another: bear, trout, seal, or snow leopard.</p>
   </div>
 </div>
 
@@ -44,7 +44,7 @@ js:
   </div>
 </section>
 
-Animal reID is a modular computer vision framework for identifying individual animals. It adapts to each species by choosing the right technique — facial recognition, spot-pattern matching, or local feature analysis.
+Animal reID is a modular computer vision framework for identifying individual animals. It adapts to each species by choosing the right technique, whether facial recognition, spot-pattern matching, or local feature analysis.
 
 From bears in British Columbia and trout in river systems to snow leopards in Central Asia and seals in coastal waters, it gives researchers non-invasive tools for wildlife monitoring and conservation.
 
@@ -57,7 +57,7 @@ From bears in British Columbia and trout in river systems to snow leopards in Ce
 
 <div class="about-cta">
   <h3 class="about-cta__title">See it in action</h3>
-  <p class="about-cta__description">Upload a photo to the live demos and watch Animal reID pick out the individual — bear, trout, seal, or snow leopard.</p>
+  <p class="about-cta__description">Upload a photo to the live demos and watch Animal reID pick out the individual bear, trout, seal, or snow leopard.</p>
   <a href="#demos" class="link-no-decoration button button--middle">Try the demos</a>
 </div>
 
@@ -221,6 +221,6 @@ Explore the open-source projects and technical guides behind Animal reID.
 
 <div class="about-cta">
   <h3 class="about-cta__title">Have a species to identify?</h3>
-  <p class="about-cta__description">Tell us about your animals and your image data — we'll give you an honest read on which identification approach fits and what it would take.</p>
+  <p class="about-cta__description">Tell us about your animals and your image data, and we'll give you an honest read on which identification approach fits and what it would take.</p>
   <a href="/contact/" class="link-no-decoration button button--middle">Start a project</a>
 </div>

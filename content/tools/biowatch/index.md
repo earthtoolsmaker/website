@@ -5,7 +5,7 @@ show_title: true
 button_cta: Download and Install
 icon: /images/logos/biowatch-icon.png
 card_tint: "#e0efec"
-summary: Open-source desktop app for analyzing camera trap data. Runs 100% locally — your sensitive wildlife data never leaves your computer.
+summary: Open-source desktop app for analyzing camera trap data. Runs 100% locally, so your sensitive wildlife data never leaves your computer.
 github_repo: https://github.com/earthtoolsmaker/biowatch
 project: /projects/biowatch-app
 hide_meta_links: true
@@ -27,7 +27,7 @@ all_downloads_url: https://github.com/earthtoolsmaker/biowatch/releases/tag/v1.0
   </video>
   <div class="tool-hero__overlay">
     <h1 class="tool-hero__title">Analyze Camera Trap Data</h1>
-    <p class="tool-hero__tagline">A free, open-source desktop app to explore, visualize, and analyze your camera-trap datasets — 100% offline, on your own machine.</p>
+    <p class="tool-hero__tagline">A free, open-source desktop app to explore, visualize, and analyze your camera-trap datasets, 100% offline on your own machine.</p>
   </div>
 </div>
 
@@ -48,7 +48,7 @@ all_downloads_url: https://github.com/earthtoolsmaker/biowatch/releases/tag/v1.0
   </div>
 </section>
 
-Biowatch is a free, open-source desktop application that lets you analyze, visualize, and explore camera trap datasets entirely offline. Your sensitive wildlife data never gets uploaded to any server — everything runs locally on your computer.
+Biowatch is a free, open-source desktop application that lets you analyze, visualize, and explore camera trap datasets entirely offline. Your sensitive wildlife data never gets uploaded to any server. Everything runs locally on your computer.
 
 {{< image_carousel id="biowatch-gallery" >}}
   {{< carousel_image src="./images/overview.png" alt="Biowatch study overview" caption="Overview: every study opens with an interactive map, key metrics, the best captures, and the full species distribution with IUCN status." shadow="false" rounded="false" >}}
@@ -79,7 +79,7 @@ Biowatch is a free, open-source desktop application that lets you analyze, visua
 
 <div class="about-cta" style="margin-bottom: 64px;">
   <h3 class="about-cta__title">New to Biowatch?</h3>
-  <p class="about-cta__description">The full online manual walks you through every feature — importing data, exploring studies, annotating images, running AI models, and exporting — with step-by-step guides and screenshots.</p>
+  <p class="about-cta__description">The full online manual covers every feature with step-by-step guides and screenshots: importing data, exploring studies, annotating images, running AI models, and exporting.</p>
   <a href="https://biowatch.earthtoolsmaker.org/" target="_blank" class="link-no-decoration button button--middle">Read the Manual</a>
 </div>
 
@@ -91,12 +91,12 @@ Three things set it apart:
 
   <div class="support__card">
     <h3 class="support__card-title">100% offline &amp; private</h3>
-    <p class="support__card-description">Your research data stays on your machine — no cloud uploads, no accounts, no tracking. Built for the sensitive location data of endangered species.</p>
+    <p class="support__card-description">Your research data stays on your machine: no cloud uploads, no accounts, no tracking. Built for the sensitive location data of endangered species.</p>
   </div>
 
   <div class="support__card">
     <h3 class="support__card-title">Open source</h3>
-    <p class="support__card-description">Inspect the code, contribute improvements, or adapt it to your needs — built transparently by the conservation community, for the conservation community.</p>
+    <p class="support__card-description">Inspect the code, contribute improvements, or adapt it to your needs. Built transparently by the conservation community, for the conservation community.</p>
   </div>
 
   <div class="support__card">
@@ -114,12 +114,12 @@ Everything from raw captures to published data:
 
   <div class="support__card">
     <h3 class="support__card-title">Import from anywhere</h3>
-    <p class="support__card-description">Start from your own image folders, a <a href="https://camtrap-dp.tdwg.org/" target="_blank" rel="noopener">Camtrap DP</a> package, or curated public datasets from <a href="https://www.gbif.org/" target="_blank" rel="noopener">GBIF</a> and <a href="https://lila.science/" target="_blank" rel="noopener">LILA</a> — or try the one-click demo dataset.</p>
+    <p class="support__card-description">Start from your own image folders, a <a href="https://camtrap-dp.tdwg.org/" target="_blank" rel="noopener">Camtrap DP</a> package, or curated public datasets from <a href="https://www.gbif.org/" target="_blank" rel="noopener">GBIF</a> and <a href="https://lila.science/" target="_blank" rel="noopener">LILA</a>, or try the one-click demo dataset.</p>
   </div>
 
   <div class="support__card">
     <h3 class="support__card-title">On-device species ID</h3>
-    <p class="support__card-description">Detect and identify animals with local AI models — SpeciesNet, MegaDetector, DeepFaune, and Manas — and pick the best fit for your region from a coverage map.</p>
+    <p class="support__card-description">Detect and identify animals with local AI models (SpeciesNet, MegaDetector, DeepFaune, and Manas) and pick the best fit for your region from a coverage map.</p>
   </div>
 
   <div class="support__card">
@@ -148,7 +148,7 @@ Everything from raw captures to published data:
 
 Biowatch grew out of a simple conviction: researchers shouldn't have to choose between modern AI tooling and keeping control of sensitive wildlife data.
 
-Whether you're tracking endangered species, studying behavior, or monitoring biodiversity, it turns raw camera-trap captures into clear results — on your own machine, with no cloud, no subscriptions, and no lock-in.
+Whether you're tracking endangered species, studying behavior, or monitoring biodiversity, it turns raw camera-trap captures into clear results on your own machine, with no cloud, no subscriptions, and no lock-in.
 
 ## Installation
 
@@ -183,7 +183,7 @@ Whether you're tracking endangered species, studying behavior, or monitoring bio
 <div class="support__cta-band">
   <div class="support__cta-band-text">
     <h3 class="support__cta-band-title">Ready to try it?</h3>
-    <p class="support__cta-band-description">Biowatch is free and open source — and built in the open. Download it for Windows, macOS, or Linux, or help us keep developing it.</p>
+    <p class="support__cta-band-description">Biowatch is free, open source, and built in the open. Download it for Windows, macOS, or Linux, or help us keep developing it.</p>
   </div>
   <div class="support__cta-band-buttons">
     <a class="link-no-decoration" href="#container-button-download-biowatch"><button class="button">Download Biowatch</button></a>
