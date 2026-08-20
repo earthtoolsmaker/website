@@ -41,7 +41,7 @@
 <!-- header -->
 <text class="eyebrow" x="120" y="156">COMPUTER VISION · IDENTIFICATION</text>
 <text class="h1"  x="116" y="276">Feature Matching</text>
-<text class="sub" x="120" y="334">Every spot becomes a keypoint — and lines up across photos</text>
+<text class="sub" x="120" y="334">Every spot becomes a keypoint and lines up across photos</text>
 
 <!-- hero seal face -->
 <g filter="url(#soft)"><circle cx="370" cy="700" r="220" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g>

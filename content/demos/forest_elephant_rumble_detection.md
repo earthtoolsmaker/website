@@ -22,7 +22,7 @@ manual_steps:
 
 ## Overview
 
-Forest Elephant Rumbles Detection listens to the soundscape of Central Africa's rainforests and picks out elephant rumbles — the low-frequency calls that travel far through dense forest where the animals themselves are almost impossible to see. Developed with the [Elephant Listening Project](https://elephantlisteningproject.org/) at the Cornell Lab's K. Lisa Yang Center for Conservation Bioacoustics, it turns long audio recordings into structured data on when and where elephants called.
+Forest Elephant Rumbles Detection listens to the soundscape of Central Africa's rainforests and picks out elephant rumbles, the low-frequency calls that travel far through dense forest where the animals themselves are almost impossible to see. Developed with the [Elephant Listening Project](https://elephantlisteningproject.org/) at the Cornell Lab's K. Lisa Yang Center for Conservation Bioacoustics, it turns long audio recordings into structured data on when and where elephants called.
 
 Forest elephants have declined by more than 60% in a decade, and a critical obstacle to protecting them is simply not knowing where they are over time. Passive acoustic monitoring offers a way to close that data gap at the scale of an entire forest.
 
@@ -34,7 +34,7 @@ From raw audio to a localized rumble log:
 
   <div class="support__card">
     <h3 class="support__card-title">Audio input</h3>
-    <p class="support__card-description">Works with recordings from the forest soundscape — choose an example clip or upload your own audio.</p>
+    <p class="support__card-description">Works with recordings from the forest soundscape. Choose an example clip or upload your own audio.</p>
   </div>
 
   <div class="support__card">
@@ -49,7 +49,7 @@ From raw audio to a localized rumble log:
 
   <div class="support__card">
     <h3 class="support__card-title">CSV export</h3>
-    <p class="support__card-description">Produces a CSV with a full analysis of the recording, including the time localization of each detected rumble — ready for downstream research.</p>
+    <p class="support__card-description">Produces a CSV with a full analysis of the recording, including the time localization of each detected rumble, ready for downstream research.</p>
   </div>
 
 </div>

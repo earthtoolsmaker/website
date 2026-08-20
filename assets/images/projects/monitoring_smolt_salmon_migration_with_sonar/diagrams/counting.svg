@@ -66,5 +66,5 @@
   <!-- downstream direction -->
   <g transform="translate(-104,-86)" stroke="#bfe0d6" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.85"><path d="M0 -10 L0 12" marker-end="url(#arrow)"/></g>
 </g>
-<text class="cap" x="520" y="270" text-anchor="middle">Counted once on crossing — by direction</text>
+<text class="cap" x="520" y="270" text-anchor="middle">Counted once on crossing, by direction</text>
 </svg>

@@ -21,7 +21,7 @@ manual_steps:
 
 Wild Salmon Migration Monitoring counts and classifies salmon straight from underwater camera streams as they return upriver to spawn. It's the model behind [SalmonVision](https://salmonvision.org/), built with the [Pacific Salmon Foundation](https://psf.ca/), the [Wild Salmon Center](https://wildsalmoncenter.org/), [Lumax AI](https://lumax.ai/), and [Simon Fraser University](https://sfu.ca/) to monitor a wide range of salmon species across British Columbia.
 
-Knowing how many salmon make it back is essential for management — escapement targets exist to ensure enough fish pass through, and populations face mounting pressure from fisheries, dams, and a changing climate. Automating the count turns continuous underwater video into reliable numbers without hours of manual review.
+Knowing how many salmon make it back is essential for management: escapement targets exist to ensure enough fish pass through, and populations face mounting pressure from fisheries, dams, and a changing climate. Automating the count turns continuous underwater video into reliable numbers without hours of manual review.
 
 ## How It Works
 
@@ -31,7 +31,7 @@ From an underwater clip to a counted run:
 
   <div class="support__card">
     <h3 class="support__card-title">Video input</h3>
-    <p class="support__card-description">Works on underwater camera footage of the river — choose an example clip or upload your own video.</p>
+    <p class="support__card-description">Works on underwater camera footage of the river. Choose an example clip or upload your own video.</p>
   </div>
 
   <div class="support__card">
@@ -62,7 +62,7 @@ From an underwater clip to a counted run:
 
   <div class="support__card">
     <h3 class="support__card-title">Pressure on populations</h3>
-    <p class="support__card-description">Fisheries, dams, and habitat change all threaten salmon runs — monitoring is the first step to managing them.</p>
+    <p class="support__card-description">Fisheries, dams, and habitat change all threaten salmon runs; monitoring is the first step to managing them.</p>
   </div>
 
   <div class="support__card">

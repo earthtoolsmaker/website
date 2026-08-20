@@ -20,7 +20,7 @@ manual_steps:
 
 The Snow Leopard Identification system lets researchers and conservationists track individual snow leopards across Central Asia's mountain ranges without invasive tagging. By analyzing the unique rosette patterns on each animal's coat, it builds distinctive visual fingerprints that stay stable throughout the animal's life.
 
-Snow leopards are notoriously hard to study — their remote, high-altitude habitats span rugged terrain across 12 countries. This technology turns camera trap images into actionable conservation data, supporting individual identification across survey seasons, population estimation in remote regions, movement tracking between territories, and long-term survival monitoring.
+Snow leopards are notoriously hard to study: their remote, high-altitude habitats span rugged terrain across 12 countries. This technology turns camera trap images into actionable conservation data, supporting individual identification across survey seasons, population estimation in remote regions, movement tracking between territories, and long-term survival monitoring.
 
 ## Key Features
 
@@ -30,7 +30,7 @@ What the identification system brings to the field:
 
   <div class="support__card">
     <h3 class="support__card-title">Multi-body-part matching</h3>
-    <p class="support__card-description">Works with images of head, left flank, right flank, tail, and other body regions — so you can identify an individual from whatever the camera captured.</p>
+    <p class="support__card-description">Works with images of head, left flank, right flank, tail, and other body regions, so you can identify an individual from whatever the camera captured.</p>
   </div>
 
   <div class="support__card">
@@ -45,7 +45,7 @@ What the identification system brings to the field:
 
   <div class="support__card">
     <h3 class="support__card-title">Confidence scoring</h3>
-    <p class="support__card-description">A four-level confidence system — 🔵 Excellent, 🟢 Good, 🟡 Fair, 🔴 Uncertain — makes every match easy to triage.</p>
+    <p class="support__card-description">A four-level confidence system (🔵 Excellent, 🟢 Good, 🟡 Fair, 🔴 Uncertain) makes every match easy to triage.</p>
   </div>
 
   <div class="support__card">
@@ -82,6 +82,6 @@ Where the system supports conservation work:
 
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
-  <p class="about-cta__description">See the full snow leopard monitoring project and our partnership with OSI Panthera — the field context behind this identification system.</p>
+  <p class="about-cta__description">See the full snow leopard monitoring project and our partnership with OSI Panthera, the field context behind this identification system.</p>
   <a href="/projects/snow_leopard_monitoring/" class="link-no-decoration button button--middle">View the project</a>
 </div>

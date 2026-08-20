@@ -1,5 +1,5 @@
 ---
 title: Live Demos
-description: Try our conservation ML models live — explore interactive demos for identifying wildlife, detecting wildfires, and monitoring ecosystems.
+description: Try our conservation ML models live. Explore interactive demos for identifying wildlife, detecting wildfires, and monitoring ecosystems.
 image: /images/pages/home/hero.jpg
 ---

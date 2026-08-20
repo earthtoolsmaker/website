@@ -1,7 +1,7 @@
 ---
 title: Bear Identification
 card_image: /images/pages/spaces/bear_identification/card.svg
-summary: Facial recognition that tells individual bears apart from photos — tracking British Columbia's black bear population over time.
+summary: Facial recognition that tells individual bears apart from photos, tracking British Columbia's black bear population over time.
 github_repo: https://github.com/earthtoolsmaker/bear-conservation
 date: 2024-04-03
 hero_image: /images/projects/bear_identification/cover.png
@@ -19,9 +19,9 @@ manual_steps:
 
 ## Overview
 
-Bear Identification uses facial recognition to tell individual bears apart from ordinary photos — no collars, tags, or handling required. Developed in collaboration with the [BearID Project](https://bearresearch.org/), the system segments a bear's face from an image and compares it against a catalog of known individuals from British Columbia, returning the closest match.
+Bear Identification uses facial recognition to tell individual bears apart from ordinary photos: no collars, tags, or handling required. Developed in collaboration with the [BearID Project](https://bearresearch.org/), the system segments a bear's face from an image and compares it against a catalog of known individuals from British Columbia, returning the closest match.
 
-Because a bear's facial features stay recognizable over time, the same animal can be re-identified across seasons and camera trap locations — turning everyday wildlife photos into long-term population data.
+Because a bear's facial features stay recognizable over time, the same animal can be re-identified across seasons and camera trap locations, turning everyday wildlife photos into long-term population data.
 
 ## Key Features
 
@@ -36,7 +36,7 @@ What powers the identification:
 
   <div class="support__card">
     <h3 class="support__card-title">Metric-learning embeddings</h3>
-    <p class="support__card-description">Turns each face into a compact signature that captures the subtle traits separating individuals — the approach proven in our British Columbia work.</p>
+    <p class="support__card-description">Turns each face into a compact signature that captures the subtle traits separating individuals, the approach proven in our British Columbia work.</p>
   </div>
 
   <div class="support__card">
@@ -83,6 +83,6 @@ Where it supports bear conservation:
 
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
-  <p class="about-cta__description">See the full bear identification project and our collaboration with the BearID Project — the field context and research behind this system.</p>
+  <p class="about-cta__description">See the full bear identification project and our collaboration with the BearID Project, the field context and research behind this system.</p>
   <a href="/projects/bear_identification/" class="link-no-decoration button button--middle">View the project</a>
 </div>

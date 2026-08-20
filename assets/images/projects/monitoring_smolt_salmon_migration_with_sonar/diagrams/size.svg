@@ -73,5 +73,5 @@
   <!-- result pill (px -> cm) -->
   <g transform="translate(3,-46)" class="glow"><rect x="-44" y="-15" width="88" height="30" rx="15" fill="#006d77"/><path d="M0 15 L-7 23 L7 23 Z" fill="#006d77"/><text class="tag" x="0" y="4" text-anchor="middle" font-size="14">12.4 cm</text></g>
 </g>
-<text class="cap" x="520" y="270" text-anchor="middle">Outliers dropped, median taken — in cm</text>
+<text class="cap" x="520" y="270" text-anchor="middle">Outliers dropped, median taken, in cm</text>
 </svg>

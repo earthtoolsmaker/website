@@ -1,7 +1,7 @@
 ---
 title: Trout Identification
 card_image: /images/pages/spaces/trout_identification/card.svg
-summary: Reading the spot patterns on trout to identify individual fish — a non-invasive way to monitor populations.
+summary: Reading the spot patterns on trout to identify individual fish, a non-invasive way to monitor populations.
 github_repo: https://github.com/earthtoolsmaker/trout-reid
 date: 2024-12-08
 hero_image: /images/pages/spaces/trout_identification/hero.jpg
@@ -19,9 +19,9 @@ manual_steps:
 
 ## Overview
 
-Trout Identification reads the spot patterns on a trout the way a fingerprint scanner reads a thumb. Each fish carries a unique, stable arrangement of black spots that stays consistent throughout its life — so a clear photo is enough to recognize the same individual again. Developed with [Lumax AI](https://lumax.ai/), the system was built around Westslope Cutthroat Trout monitored in the Elk River, British Columbia.
+Trout Identification reads the spot patterns on a trout the way a fingerprint scanner reads a thumb. Each fish carries a unique, stable arrangement of black spots that stays consistent throughout its life, so a clear photo is enough to recognize the same individual again. Developed with [Lumax AI](https://lumax.ai/), the system was built around Westslope Cutthroat Trout monitored in the Elk River, British Columbia.
 
-It compares a new image against a catalog of known fish and returns the most likely match — or flags the trout as a new entry when it hasn't been seen before. No tagging, no handling, no stress on the animal.
+It compares a new image against a catalog of known fish and returns the most likely match, or flags the trout as a new entry when it hasn't been seen before. No tagging, no handling, no stress on the animal.
 
 ## How It Works
 
@@ -31,7 +31,7 @@ From a photo to a confident match:
 
   <div class="support__card">
     <h3 class="support__card-title">Image input</h3>
-    <p class="support__card-description">Works from ordinary trout photographs — choose an example or upload your own image of the fish.</p>
+    <p class="support__card-description">Works from ordinary trout photographs. Choose an example or upload your own image of the fish.</p>
   </div>
 
   <div class="support__card">
@@ -46,7 +46,7 @@ From a photo to a confident match:
 
   <div class="support__card">
     <h3 class="support__card-title">New-entry detection</h3>
-    <p class="support__card-description">When no confident match exists, the fish is logged as a new individual — growing the catalog over time.</p>
+    <p class="support__card-description">When no confident match exists, the fish is logged as a new individual, growing the catalog over time.</p>
   </div>
 
 </div>
@@ -62,7 +62,7 @@ From a photo to a confident match:
 
   <div class="support__card">
     <h3 class="support__card-title">Non-invasive</h3>
-    <p class="support__card-description">Identification from natural markings means no tags or handling — monitoring that doesn't disturb the fish.</p>
+    <p class="support__card-description">Identification from natural markings means no tags or handling: monitoring that doesn't disturb the fish.</p>
   </div>
 
   <div class="support__card">
@@ -76,6 +76,6 @@ From a photo to a confident match:
 
 <div class="about-cta">
   <h3 class="about-cta__title">Learn more about the project</h3>
-  <p class="about-cta__description">See the full trout identification project and our work with Lumax AI on the Elk River — the research behind this tool.</p>
+  <p class="about-cta__description">See the full trout identification project and our work with Lumax AI on the Elk River, the research behind this tool.</p>
   <a href="/projects/trout_identification/" class="link-no-decoration button button--middle">View the project</a>
 </div>
