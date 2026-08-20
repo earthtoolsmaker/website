@@ -10,9 +10,9 @@ hf_space_code: https://huggingface.co/spaces/achouffe/temporal-smoke-pyronear/tr
 gradio_js_version: 6.18.0
 manual_steps:
   - step_name: Pick a sequence
-    description: Choose one of the real camera sequences: two early wildfires and two false-positive look-alikes (clouds, haze).
+    description: Choose one of the real camera sequences, two early wildfires and two false-positive look-alikes (clouds, haze).
   - step_name: Watch it play
-    description: The sequence loops automatically. Each box is a tracked candidate ("tube"), colored by the verdict: orange means judged smoke, gray means rejected.
+    description: The sequence loops automatically. Each box is a tracked candidate ("tube"), colored by the verdict, where orange means judged smoke and gray means rejected.
   - step_name: See what the classifier sees
     description: Below the animation, each tube's stabilized crops are laid out over time; the background holds still, so the only thing moving is the candidate.
   - step_name: Run the model live (optional)

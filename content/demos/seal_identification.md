@@ -1,7 +1,7 @@
 ---
 title: Seal Identification
 card_image: /images/pages/spaces/seal_identification/card.svg
-summary: Re-identifying individual seals by their whisker and face patterns: non-invasive, across seasons.
+summary: Re-identifying individual seals by their whisker and face patterns, non-invasively and across seasons.
 date: 2025-01-24
 hero_image: /images/pages/spaces/seal_identification/hero.png
 project: /projects/wadden_sea_seal_monitoring/
