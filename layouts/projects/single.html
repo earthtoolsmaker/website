@@ -71,7 +71,7 @@
     <a class="project-facts__link" target="_blank" rel="noopener noreferrer" href="{{ . }}"><i class="fa-brands fa-github"></i> Source code</a>
     {{ end }}
     {{ with .Params.space }}
-    <a class="project-facts__link" href="{{ . }}"><i class="fa-solid fa-circle-play"></i> Try the demo</a>
+    <a class="project-facts__link" href="{{ . }}"{{ if hasPrefix . "http" }} target="_blank" rel="noopener noreferrer"{{ end }}><i class="fa-solid fa-circle-play"></i> Try the demo</a>
     {{ end }}
     {{ with .Params.tools }}
     <span class="project-facts__tools">
@@ -142,6 +142,8 @@
   </div>
 </div>
 {{ end }}
+
+{{ partial "image-lightbox.html" . }}
 
 {{/* Theme tags = this page's tags minus broad axis tags (vision/audio), which
      sit on nearly every page and would otherwise pollute fallback matching. */}}
