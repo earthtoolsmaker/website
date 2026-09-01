@@ -145,8 +145,12 @@ CODAP turns coastal monitoring from an occasional, labour-intensive campaign
 into a routine: fly, process, publish, compare. Every survey lands in the
 same portal, classified the same way, comparable with every survey before it.
 Coastal managers at Rijkswaterstaat can watch the marsh edge evolve at
-centimetre precision without leaving their desk, and the same pipeline is
-ready to take on new sites along the coast.
+centimetre precision without leaving their desk.
+
+Wierum is only the beginning. The portal was built multi-site from day one,
+and we intend to expand it to more sites along the Wadden Sea coast and to
+coastlines in other countries: the same pipeline of fly, map, classify and
+compare applies to any shore a drone can survey.
 
 <div class="about-cta demo-cta">
   <h3 class="about-cta__title">Explore the live portal</h3>
