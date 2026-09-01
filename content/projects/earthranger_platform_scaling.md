@@ -55,7 +55,9 @@ more wildlife and more data every year.
 
 {{< image_carousel id="earthranger-intro" items="2" >}}
   {{< carousel_image src="/images/projects/earthranger_platform_scaling/ops-room.jpg" alt="An EarthRanger operations room with live maps on wall screens" caption="An EarthRanger operations room. Live maps show tracked wildlife, ranger patrols and field reports in real time. Photo courtesy of EarthRanger." >}}
+  {{< carousel_image src="/images/projects/earthranger_platform_scaling/cover.jpg" alt="A silverback gorilla in a swampy clearing" caption="A silverback gorilla at Mbeli Bai in Nouabalé-Ndoki National Park, Republic of the Congo. Photo: S. Ramsay / WCS." >}}
   {{< carousel_image src="/images/projects/earthranger_platform_scaling/leopard.jpg" alt="A leopard resting in a tree" caption="EarthRanger supports the people protecting wildlife across more than 900 conservation sites in over 80 countries. Photo courtesy of EarthRanger." >}}
+  {{< carousel_image src="/images/projects/earthranger_platform_scaling/amboseli.jpg" alt="Elephants moving through green bush below Mount Kilimanjaro" caption="Elephants below Mount Kilimanjaro in the Amboseli ecosystem, where Big Life Foundation was among the first hundred sites to run EarthRanger. Photo courtesy of EarthRanger." >}}
 {{< /image_carousel >}}
 
 ## What EarthRanger does
@@ -105,6 +107,14 @@ free for the people using it, deployed at **900+ conservation sites** in over
   </div>
 
 </div>
+
+This is what that looks like day to day: a live map of the whole protected
+area, every tracked animal and patrol on it, and the day's events one click
+away.
+
+![The EarthRanger web application showing tracked wildlife and patrols on a live map](/images/projects/earthranger_platform_scaling/webapp.jpg)
+*The EarthRanger web app in use: tracked wildlife, ranger patrols and events on
+one live map. Photo courtesy of EarthRanger.*
 
 ## The scaling challenge
 
