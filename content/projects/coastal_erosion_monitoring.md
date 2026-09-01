@@ -1,7 +1,7 @@
 ---
 title: Coastal Erosion and Land Cover Monitoring
 summary: Drone-based monitoring of coastal erosion, sedimentation and land cover change on the Wadden Sea coast, served through an interactive web portal.
-tags: ["marine", "vision"]
+tags: ["aquatic", "marine", "vision"]
 related_projects:
   - wadden_sea_seal_monitoring
 tagline: Tracking how the Wadden coast at Wierum erodes, builds up and greens over, from drone surveys to an interactive map.
@@ -11,7 +11,7 @@ stats:
   - value: "2+"
     label: years of monitoring
   - value: "cm"
-    label: scale elevation change
+    label: elevation change precision
 clients:
   - name: Rijkswaterstaat
     link: https://www.rijkswaterstaat.nl/en
@@ -48,15 +48,16 @@ trap sediment and form a natural first line of defence in front of the dikes
 that keep the land behind them dry.
 
 Together with [Rijkswaterstaat](https://www.rijkswaterstaat.nl/en) and
-[Lumax AI](https://lumax.ai/), we built **CODAP**, an end-to-end monitoring
-pipeline that turns repeated drone surveys of this coast into maps of land
-cover and elevation change, and serves them on an
+[Lumax AI](https://lumax.ai/), we built **CODAP**, the Coastal Data Portal:
+an end-to-end monitoring pipeline that turns repeated drone surveys of this
+coast into maps of land cover and elevation change, and serves them on an
 [interactive web portal](https://app.codaportal.org) anyone can explore in a
 browser.
 
 {{< image_carousel id="codap-portal-intro" >}}
   {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/site-overview.png" alt="The CODAP portal showing the Wierum site with land cover predictions over a drone orthophoto" caption="The monitoring site at Wierum in the portal. AI land cover predictions are draped over the drone orthophoto, with the survey boundary in yellow and the class legend on the right." >}}
   {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/landcover-detail.png" alt="Zoomed view of land cover predictions along the marsh edge, with a tooltip identifying dike vegetation" caption="Zooming in on the marsh edge. Hovering any spot reveals what the model sees there, here the grassy face of the sea dike." >}}
+  {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/erosion-ddem.png" alt="Elevation change map of the Wierum site between January 2024 and March 2026" caption="The Erosion tab distils two years of change into one map: blue where sediment builds up, red where the coast is eroding." >}}
 {{< /image_carousel >}}
 
 ## Why this coastline matters
@@ -93,6 +94,8 @@ each challenge to see why.
 
 ## From drone flights to a living map
 
+![From a drone survey to a change map: fly, map, classify, compare](/images/projects/coastal_erosion_monitoring/overview_system.svg)
+
 Every few months, a drone surveys the site and the imagery is processed into
 two precise products: an **orthophoto**, a distortion-free aerial image of the
 whole site, and a **digital elevation model** that records the height of every
@@ -117,6 +120,7 @@ mode for studying one survey in depth.
 {{< image_carousel id="codap-portal-compare" >}}
   {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/overlay-compare.png" alt="Swipe comparison of the Wierum marsh edge between January 2024 and March 2026" caption="Dragging the swipe handle across the marsh edge, January 2024 against March 2026. Two winters apart, the vegetated fringe below the dike visibly changes shape." >}}
   {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/split-compare.png" alt="Split-screen comparison of two drone surveys of the same stretch of coast" caption="Split view, the same stretch of coast on two dates, panning and zooming in lockstep. The timeline slider below selects any pair of flights." >}}
+  {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/landcover-winter.png" alt="Single mode showing the bare winter mudflat of the January 2024 baseline flight" caption="Single mode on the January 2024 baseline: the same marsh edge in the depth of winter, bare mud where the summer surveys show green." >}}
 {{< /image_carousel >}}
 
 ## Measuring erosion, centimetre by centimetre
@@ -126,7 +130,7 @@ going. By differencing the elevation models of two flights, the portal
 computes a **change map** of the entire site: blue where sediment has
 accumulated, red where the surface has eroded, at centimetre resolution.
 
-{{< image_carousel id="codap-portal-erosion" items="1" >}}
+{{< image_carousel id="codap-portal-erosion" items="1" items_tablet="1" >}}
   {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/erosion-ddem.png" alt="Elevation change map of the Wierum site between January 2024 and March 2026" caption="Two years of elevation change in one image. Blue marks sediment building up on the flats; the red scar along the marsh edge is erosion, exactly where the coastline is retreating." >}}
 {{< /image_carousel >}}
 
@@ -147,5 +151,5 @@ ready to take on new sites along the coast.
 <div class="about-cta demo-cta">
   <h3 class="about-cta__title">Explore the live portal</h3>
   <p class="about-cta__description">The CODAP portal is public. Pick a flight, drag the swipe handle, and watch two years of coastal change unfold in your browser.</p>
-  <a href="https://app.codaportal.org" class="link-no-decoration button button--middle"><i class="fa-solid fa-circle-play"></i>&nbsp;Open the portal</a>
+  <a href="https://app.codaportal.org" target="_blank" rel="noopener noreferrer" class="link-no-decoration button button--middle"><i class="fa-solid fa-circle-play"></i>&nbsp;Open the portal</a>
 </div>

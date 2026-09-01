@@ -240,6 +240,13 @@ pagerSize = 6
     blurb = "Dutch marine research institute. We automate seal detection and counting from their Wadden Sea aerial surveys."
 
   [[params.partner_item]]
+    name = "Rijkswaterstaat"
+    logo = "/images/clients/rijkswaterstaat/logo.svg"
+    link = "https://www.rijkswaterstaat.nl/en"
+    category = "conservation"
+    blurb = "Executive agency for Dutch water and infrastructure. We monitor coastal erosion and land cover for them from drone surveys."
+
+  [[params.partner_item]]
     name = "Elephant Listening Project"
     logo = "/images/clients/elephantlistening/logo.png"
     link = "https://elephantlisteningproject.org/"
