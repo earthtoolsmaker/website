@@ -152,6 +152,12 @@ and we intend to expand it to more sites along the Wadden Sea coast and to
 coastlines in other countries: the same pipeline of fly, map, classify and
 compare applies to any shore a drone can survey.
 
+The bigger idea is preparedness. As sea levels rise, decisions about where
+to reinforce dikes, restore marshes or let nature take its course all depend
+on knowing precisely how each stretch of coast is responding. By making that
+evidence continuous, affordable and easy to read, CODAP helps coastal
+communities prepare for and adapt to the rising sea rather than react to it.
+
 <div class="about-cta demo-cta">
   <h3 class="about-cta__title">Explore the live portal</h3>
   <p class="about-cta__description">The CODAP portal is public. Pick a flight, drag the swipe handle, and watch two years of coastal change unfold in your browser.</p>
