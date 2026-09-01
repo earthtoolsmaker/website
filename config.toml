@@ -226,6 +226,13 @@ pagerSize = 6
     blurb = "The Allen Institute for AI, whose EarthRanger platform supports protected-area management worldwide."
 
   [[params.partner_item]]
+    name = "EarthRanger"
+    logo = "/images/clients/earthranger/logo.png"
+    link = "https://www.earthranger.com/"
+    category = "technology"
+    blurb = "The operations platform behind real-time conservation at 900+ protected areas. We joined its engineering team to scale the backend."
+
+  [[params.partner_item]]
     name = "BearID Project"
     logo = "/images/clients/bearid/logo.png"
     link = "https://bearresearch.org/"
