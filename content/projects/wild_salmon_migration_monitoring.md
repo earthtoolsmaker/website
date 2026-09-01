@@ -230,6 +230,17 @@ fixed sensors can't cover.
 {{< /tab >}}
 {{< /tabs >}}
 
+### Where the system runs
+
+Those sensors are not a lab prototype: they are deployed across watersheds from
+Alaska down through British Columbia to Washington and Oregon, at video weirs,
+sonar stations and a fish ladder.
+
+![Map of SalmonVision project locations across Alaska, British Columbia, Washington and Oregon](/images/projects/wild_salmon_migration_monitoring/sites/project-locations.png)
+*SalmonVision project locations by site type: video weirs, sonar counters and a
+fish ladder, from the Chignik and Redoubt weirs in Alaska to Spencer Creek in
+Oregon.*
+
 ### In the web app
 
 Every detection flows into a review app, where counts are tallied on a timeline
