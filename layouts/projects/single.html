@@ -89,6 +89,8 @@
   </div>
 </div>
 
+{{ partial "image-lightbox.html" . }}
+
 {{/* ---------- 4. CTA BAND (status-aware) — same column width as the article ---------- */}}
 <div class="project-single__col">
   {{ if eq .Params.status "fundraising" }}
