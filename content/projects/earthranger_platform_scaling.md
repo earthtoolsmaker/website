@@ -54,7 +54,7 @@ backend and its database keep up with a platform that protects more parks,
 more wildlife and more data every year.
 
 {{< image_carousel id="earthranger-intro" items="2" >}}
-  {{< carousel_image src="/images/projects/earthranger_platform_scaling/cover.jpg" alt="An EarthRanger operations room with live maps on wall screens" caption="An EarthRanger operations room. Live maps show tracked wildlife, ranger patrols and field reports in real time. Photo courtesy of EarthRanger." >}}
+  {{< carousel_image src="/images/projects/earthranger_platform_scaling/ops-room.jpg" alt="An EarthRanger operations room with live maps on wall screens" caption="An EarthRanger operations room. Live maps show tracked wildlife, ranger patrols and field reports in real time. Photo courtesy of EarthRanger." >}}
   {{< carousel_image src="/images/projects/earthranger_platform_scaling/leopard.jpg" alt="A leopard resting in a tree" caption="EarthRanger supports the people protecting wildlife across more than 900 conservation sites in over 80 countries. Photo courtesy of EarthRanger." >}}
 {{< /image_carousel >}}
 
