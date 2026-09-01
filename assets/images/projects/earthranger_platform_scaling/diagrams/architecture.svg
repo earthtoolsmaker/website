@@ -1,0 +1,125 @@
+<svg viewBox="0 0 1062 380" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#e29578"/></marker>
+  <marker id="arrow-write" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#e29578"/></marker>
+  <marker id="arrow-read" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#006d77"/></marker>
+  <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.08"/></filter>
+  <style>
+    .title { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 26px; font-weight: 600; fill: #161616; }
+    .desc  { font-size: 15px; fill: #60626a; }
+    .step  { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; fill: #e29578; }
+    .chip  { font-size: 11px; font-weight: 700; fill: #fff; }
+    .lbl   { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; }
+    .ping  { animation: ping 2.2s ease-in-out infinite; } .ping.b{animation-delay:-0.7s} .ping.c{animation-delay:-1.4s}
+    .flow  { stroke-dasharray: 6 7; animation: flow 1.6s linear infinite; }
+    .part  { animation: partpulse 2.6s ease-in-out infinite; } .part.b{animation-delay:-0.9s} .part.c{animation-delay:-1.8s}
+    @keyframes ping { 0%,100%{opacity:0.35} 50%{opacity:1} }
+    @keyframes flow { to { stroke-dashoffset: -13; } }
+    @keyframes partpulse { 0%,100%{opacity:0.75} 50%{opacity:1} }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</defs>
+
+<g stroke="#e29578" stroke-width="3.5" fill="none" stroke-linecap="round">
+  <line x1="336" y1="134" x2="377" y2="134" marker-end="url(#arrow)"/>
+  <line x1="682" y1="134" x2="723" y2="134" marker-end="url(#arrow)"/>
+</g>
+
+<!-- CARD 1 — THE FIELD -->
+<rect x="36" y="28" width="298" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(185,128)">
+  <!-- radio tower -->
+  <g transform="translate(-92,-20)" fill="#15463f">
+    <path d="M-3 46 L-14 46 L-4 -18 L4 -18 L14 46 L3 46 L0 28 Z"/>
+    <rect x="-2" y="-30" width="4" height="14" rx="2"/>
+    <circle cx="0" cy="-34" r="4" fill="#e29578"/>
+  </g>
+  <g fill="none" stroke="#e29578" stroke-width="2.5" stroke-linecap="round">
+    <path class="ping" d="M-104 -66 A20 20 0 0 1 -80 -66"/>
+    <path class="ping b" d="M-110 -74 A28 28 0 0 1 -74 -74"/>
+  </g>
+  <!-- collared elephant, side view facing right -->
+  <g transform="translate(-10,24)">
+    <g fill="#737a80">
+      <ellipse cx="-6" cy="-2" rx="27" ry="19"/>
+      <rect x="-28" y="8" width="9" height="20" rx="4"/><rect x="-12" y="10" width="9" height="20" rx="4"/>
+      <rect x="6" y="8" width="9" height="20" rx="4"/>
+      <circle cx="24" cy="-14" r="12"/>
+      <path d="M33 -10 Q42 -2 40 12 Q38 20 33 20 Q36 8 30 -4 Z"/>
+      <ellipse cx="18" cy="-14" rx="9" ry="11" fill="#8b9298"/>
+      <path d="M-30 -6 Q-38 -10 -36 -2" stroke="#737a80" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+    <circle cx="27" cy="-17" r="1.8" fill="#2c3235"/>
+    <path d="M15 -3 Q24 3 33 -2" fill="none" stroke="#e29578" stroke-width="3.5" stroke-linecap="round"/>
+    <g fill="none" stroke="#e29578" stroke-width="2.5" stroke-linecap="round">
+      <path class="ping c" d="M14 -40 A16 16 0 0 1 34 -40"/>
+    </g>
+  </g>
+  <!-- ranger dashboard -->
+  <g transform="translate(74,-42)">
+    <rect x="-38" y="-26" width="76" height="52" rx="8" fill="#006d77"/>
+    <rect x="-30" y="-18" width="60" height="26" rx="4" fill="#0a7d86"/>
+    <circle class="ping" cx="-14" cy="-8" r="4" fill="#3fd07a"/>
+    <circle class="ping b" cx="8" cy="-2" r="4" fill="#e29578"/>
+    <path d="M-24 2 Q-8 -12 12 -6" fill="none" stroke="#bfe0d6" stroke-width="2"/>
+    <rect x="-30" y="12" width="36" height="5" rx="2.5" fill="#bfe0d6"/>
+  </g>
+</g>
+<text class="step" x="185" y="280" text-anchor="middle">01</text>
+<text class="title" x="185" y="312" text-anchor="middle">The field</text>
+<text class="desc"  x="185" y="338" text-anchor="middle">Trackers stream in, teams query maps</text>
+
+<!-- CARD 2 — SPLIT THE PATHS -->
+<rect x="381" y="28" width="298" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(530,128)">
+  <!-- router node -->
+  <g transform="translate(-72,0)">
+    <rect x="-30" y="-30" width="60" height="60" rx="14" fill="#006d77"/>
+    <path d="M-12 0 H2 M2 0 L12 -12 M2 0 L12 12" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- write path to primary -->
+  <path class="flow" d="M-38 -14 Q-6 -46 40 -46" fill="none" stroke="#e29578" stroke-width="3.5" stroke-linecap="round" marker-end="url(#arrow-write)"/>
+  <g transform="translate(78,-46)">
+    <ellipse cx="0" cy="-16" rx="26" ry="9" fill="#e29578"/>
+    <path d="M-26 -16 V16 A26 9 0 0 0 26 16 V-16" fill="#e8a68c"/>
+    <ellipse cx="0" cy="16" rx="26" ry="9" fill="#e29578" opacity="0.6"/>
+  </g>
+  <text class="lbl" x="6" y="-64" text-anchor="middle" fill="#e29578">WRITES</text>
+  <!-- read path to replicas -->
+  <path class="flow" d="M-38 14 Q-6 46 34 46" fill="none" stroke="#006d77" stroke-width="3.5" stroke-linecap="round" marker-end="url(#arrow-read)"/>
+  <g transform="translate(66,46)">
+    <g transform="translate(16,-8)" opacity="0.55"><ellipse cx="0" cy="-13" rx="21" ry="7" fill="#006d77"/><path d="M-21 -13 V13 A21 7 0 0 0 21 13 V-13" fill="#0a7d86"/></g>
+    <g><ellipse cx="0" cy="-13" rx="21" ry="7" fill="#006d77"/><path d="M-21 -13 V13 A21 7 0 0 0 21 13 V-13" fill="#0a7d86"/><ellipse cx="0" cy="13" rx="21" ry="7" fill="#006d77" opacity="0.6"/></g>
+  </g>
+  <text class="lbl" x="2" y="76" text-anchor="middle" fill="#006d77">READS</text>
+</g>
+<text class="step" x="530" y="280" text-anchor="middle">02</text>
+<text class="title" x="530" y="312" text-anchor="middle">Split the paths</text>
+<text class="desc"  x="530" y="338" text-anchor="middle">Writes and reads stop competing</text>
+
+<!-- CARD 3 — PARTITIONED DATA -->
+<rect x="727" y="28" width="298" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(876,124)">
+  <!-- one big table split into slices -->
+  <g stroke="#fbf6f6" stroke-width="3">
+    <rect class="part"   x="-104" y="-52" width="64" height="104" rx="8" fill="#9fb6bd"/>
+    <rect class="part b" x="-34"  y="-52" width="64" height="104" rx="8" fill="#83c5be"/>
+    <rect class="part c" x="36"   y="-52" width="64" height="104" rx="8" fill="#006d77"/>
+  </g>
+  <!-- row lines -->
+  <g stroke="#fff" stroke-width="2.5" opacity="0.5" stroke-linecap="round">
+    <line x1="-94" y1="-30" x2="-50" y2="-30"/><line x1="-94" y1="-10" x2="-50" y2="-10"/><line x1="-94" y1="10" x2="-50" y2="10"/>
+    <line x1="-24" y1="-30" x2="20" y2="-30"/><line x1="-24" y1="-10" x2="20" y2="-10"/><line x1="-24" y1="10" x2="20" y2="10"/>
+    <line x1="46" y1="-30" x2="90" y2="-30"/><line x1="46" y1="-10" x2="90" y2="-10"/><line x1="46" y1="10" x2="90" y2="10"/>
+  </g>
+  <!-- query hits one slice only -->
+  <g transform="translate(68,-74)">
+    <circle cx="0" cy="0" r="14" fill="none" stroke="#e29578" stroke-width="4"/>
+    <line x1="10" y1="10" x2="22" y2="22" stroke="#e29578" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(0,74)"><rect x="-68" y="-12" width="136" height="24" rx="12" fill="#3fd07a"/><text class="chip" x="0" y="4" text-anchor="middle">Only the slice it needs</text></g>
+</g>
+<text class="step" x="876" y="280" text-anchor="middle">03</text>
+<text class="title" x="876" y="312" text-anchor="middle">Partitioned data</text>
+<text class="desc"  x="876" y="338" text-anchor="middle">Queries stay fast as tables grow</text>
+</svg>
