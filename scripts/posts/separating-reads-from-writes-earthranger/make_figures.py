@@ -4,8 +4,9 @@ Usage:
     uv run --with matplotlib python make_figures.py
 
 Outputs PNGs into the post's page bundle
-(content/posts/separating-reads-from-writes-earthranger/images/) and the cover
-into assets/images/posts/separating-reads-from-writes-earthranger/.
+(content/posts/separating-reads-from-writes-earthranger/images/). The cover is
+a hand-drawn SVG in assets/images/posts/separating-reads-from-writes-earthranger/,
+rendered to cover.png with headless Chromium so the site's web fonts apply.
 """
 
 from pathlib import Path
@@ -17,7 +18,6 @@ HERE = Path(__file__).resolve().parent
 SITE = HERE.parent.parent.parent
 SLUG = "separating-reads-from-writes-earthranger"
 BUNDLE = SITE / "content" / "posts" / SLUG / "images"
-COVER_DIR = SITE / "assets" / "images" / "posts" / SLUG
 
 INK = "#1e293b"
 MUTED = "#64748b"
@@ -322,46 +322,11 @@ def make_rollout(path):
     plt.close(fig)
 
 
-# ------------------------------------------------------------------- cover
-# The site shows covers in a 10:7 box with object-fit: cover, and cards overlay
-# dark gradients top and bottom, so keep the drawing centred with safe margins.
-def make_cover(path):
-    fig, ax = canvas(10, 7)
-    H = 70
-
-    # app pods feeding in from the left
-    for i, yy in enumerate([H / 2 + 12, H / 2 + 4, H / 2 - 4, H / 2 - 12]):
-        box(ax, 8, yy - 2.6, 9, 5.2, fc=CARD, ec=FAINT, lw=1.4, radius=1.0)
-        arrow(ax, (17, yy), (34, H / 2 + (yy - H / 2) * 0.35), color=FAINT, lw=2.4, style="-", shrink=2)
-
-    # pgcat node
-    box(ax, 34, H / 2 - 9, 20, 18, fc=PAPER, ec=READ, lw=2.6, radius=2.4)
-    label(ax, 44, H / 2 + 1.5, "pgcat", size=20, weight="bold", color=READ)
-    label(ax, 44, H / 2 - 4.5, "reads the query", size=9.5, color=MUTED)
-
-    # writes up to the primary (thin), reads down to replicas (thick)
-    prim = (78, H / 2 + 17)
-    cylinder(ax, prim[0], prim[1], 11, 8.5, WRITE, WRITE_LIGHT)
-    arrow(ax, (54, H / 2 + 4), (prim[0] - 6.5, prim[1]), color=WRITE, lw=2.4, rad=-0.2)
-    label(ax, 63, H / 2 + 15.5, "10%", size=13, weight="bold", color=WRITE)
-
-    reps = [(70, H / 2 - 13), (80, H / 2 - 17), (90, H / 2 - 13)]
-    for r in reps:
-        cylinder(ax, r[0], r[1], 9, 7, READ, READ_LIGHT)
-    arrow(ax, (54, H / 2 - 4), (reps[0][0] - 5.5, reps[0][1] + 1), color=READ, lw=5.0, rad=0.2)
-    label(ax, 62, H / 2 - 15.5, "90%", size=13, weight="bold", color=READ)
-
-    fig.savefig(path, pad_inches=0)
-    plt.close(fig)
-
-
 if __name__ == "__main__":
     BUNDLE.mkdir(parents=True, exist_ok=True)
-    COVER_DIR.mkdir(parents=True, exist_ok=True)
     make_traffic_split(BUNDLE / "traffic_split.png")
     make_architecture(BUNDLE / "architecture.png")
     make_routing(BUNDLE / "routing.png")
     make_read_your_writes(BUNDLE / "read_your_writes.png")
     make_rollout(BUNDLE / "rollout.png")
-    make_cover(COVER_DIR / "cover.png")
     print("done:", BUNDLE)

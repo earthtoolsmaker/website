@@ -1,0 +1,94 @@
+<svg viewBox="0 0 1500 1050" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f3"/><stop offset="100%" stop-color="#f1e9e1"/></linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#1c2b28" flood-opacity="0.10"/></filter>
+  <marker id="aw" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#c2603f"/></marker>
+  <marker id="ar" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#0e7c86"/></marker>
+  <marker id="ag" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#c9bfb3"/></marker>
+  <style>
+    .eyebrow { font-size: 28px; font-weight: 800; letter-spacing: 0.26em; fill: #e29578; }
+    .h1      { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 96px; font-weight: 600; fill: #161616; }
+    .sub     { font-size: 34px; fill: #60626a; }
+    .tag     { font-size: 26px; font-weight: 800; letter-spacing: 0.14em; }
+    .chip    { font-size: 30px; font-weight: 800; fill: #fff; }
+    .pod     { font-size: 22px; font-weight: 700; fill: #8a8276; letter-spacing: 0.08em; }
+  </style>
+  <!-- database cylinder centred on (0,0): body 124 wide, 96 tall -->
+  <g id="db-primary">
+    <path d="M-62 -48 V48 A62 22 0 0 0 62 48 V-48" fill="#d4784f"/>
+    <ellipse cx="0" cy="-48" rx="62" ry="22" fill="#f2c0a4" stroke="#c2603f" stroke-width="3"/>
+    <path d="M-62 -48 V48 A62 22 0 0 0 62 48 V-48" fill="none" stroke="#c2603f" stroke-width="3"/>
+  </g>
+  <g id="db-replica">
+    <path d="M-52 -40 V40 A52 18 0 0 0 52 40 V-40" fill="#2a9299"/>
+    <ellipse cx="0" cy="-40" rx="52" ry="18" fill="#bfe0d6" stroke="#0e7c86" stroke-width="3"/>
+    <path d="M-52 -40 V40 A52 18 0 0 0 52 40 V-40" fill="none" stroke="#0e7c86" stroke-width="3"/>
+  </g>
+</defs>
+
+<rect x="0" y="0" width="1500" height="1050" fill="url(#bg)"/>
+
+<!-- header -->
+<text class="eyebrow" x="120" y="156">INFRASTRUCTURE · POSTGRESQL</text>
+<text class="h1"  x="116" y="268">Separating Reads from Writes</text>
+<text class="sub" x="120" y="326">One address, two paths: how EarthRanger scales with pgcat</text>
+
+<!-- ===== illustration, vertical centre ~ 720 ===== -->
+<g transform="translate(0,-28)">
+
+<!-- application pods on the left -->
+<g filter="url(#soft)">
+  <rect x="120" y="560" width="150" height="70" rx="16" fill="#ffffff" stroke="#e6dcd2" stroke-width="2"/>
+  <rect x="120" y="650" width="150" height="70" rx="16" fill="#ffffff" stroke="#e6dcd2" stroke-width="2"/>
+  <rect x="120" y="740" width="150" height="70" rx="16" fill="#ffffff" stroke="#e6dcd2" stroke-width="2"/>
+  <rect x="120" y="830" width="150" height="70" rx="16" fill="#ffffff" stroke="#e6dcd2" stroke-width="2"/>
+</g>
+<text class="pod" x="195" y="603" text-anchor="middle">API</text>
+<text class="pod" x="195" y="693" text-anchor="middle">API</text>
+<text class="pod" x="195" y="783" text-anchor="middle">API</text>
+<text class="pod" x="195" y="873" text-anchor="middle">WORKER</text>
+
+<!-- pods converge on the router -->
+<g fill="none" stroke="#c9bfb3" stroke-width="5" stroke-linecap="round">
+  <path d="M274 595 C 380 595 400 700 470 705"/>
+  <path d="M274 685 C 380 685 400 715 470 720"/>
+  <path d="M274 775 C 380 775 400 745 470 735"/>
+  <path d="M274 865 C 380 865 400 765 470 750"/>
+</g>
+
+<!-- pgcat router -->
+<g transform="translate(560,725)">
+  <rect x="-90" y="-90" width="180" height="180" rx="36" fill="#0e7c86" filter="url(#soft)"/>
+  <path d="M-38 0 H8 M8 0 L40 -34 M8 0 L40 34" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="-38" cy="0" r="9" fill="#ffffff"/>
+</g>
+<text class="tag" x="560" y="870" fill="#0e7c86" text-anchor="middle">PGCAT</text>
+
+<!-- writes path (thin) to the primary -->
+<path d="M652 690 C 780 640 880 560 990 548" fill="none" stroke="#c2603f" stroke-width="7" stroke-linecap="round" marker-end="url(#aw)"/>
+<g transform="translate(1090,548)"><use href="#db-primary"/></g>
+<text class="tag" x="1090" y="650" fill="#c2603f" text-anchor="middle">PRIMARY</text>
+<g transform="translate(800,588)">
+  <rect x="-92" y="-26" width="184" height="52" rx="26" fill="#c2603f"/>
+  <text class="chip" x="0" y="11" text-anchor="middle">10% writes</text>
+</g>
+
+<!-- reads path (thick) to the replicas -->
+<path d="M652 765 C 780 800 860 870 950 878" fill="none" stroke="#0e7c86" stroke-width="16" stroke-linecap="round" marker-end="url(#ar)"/>
+<g transform="translate(1050,880)"><use href="#db-replica"/></g>
+<g transform="translate(1190,880)"><use href="#db-replica"/></g>
+<g transform="translate(1330,880)"><use href="#db-replica"/></g>
+<text class="tag" x="1190" y="975" fill="#0e7c86" text-anchor="middle">READ REPLICAS</text>
+<g transform="translate(800,860)">
+  <rect x="-88" y="-26" width="176" height="52" rx="26" fill="#0e7c86"/>
+  <text class="chip" x="0" y="11" text-anchor="middle">90% reads</text>
+</g>
+
+<!-- streaming replication, primary to replicas -->
+<g fill="none" stroke="#c9bfb3" stroke-width="4" stroke-dasharray="10 12" stroke-linecap="round">
+  <path d="M1075 668 C 1068 720 1058 770 1050 815"/>
+  <path d="M1110 668 C 1140 720 1170 770 1185 815"/>
+  <path d="M1160 660 C 1240 700 1300 760 1320 815"/>
+</g>
+</g>
+</svg>
