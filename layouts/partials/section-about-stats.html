@@ -7,6 +7,10 @@
         <div class="about-stats__value">{{ len (where site.RegularPages "Section" "projects") }}</div>
         <div class="about-stats__label">conservation projects</div>
       </div>
+      <div class="about-stats__item">
+        <div class="about-stats__value">{{ partial "partner-count.html" $ }}</div>
+        <div class="about-stats__label">partner organizations</div>
+      </div>
       {{ range .stats }}
       <div class="about-stats__item">
         <div class="about-stats__value">{{ .value }}</div>

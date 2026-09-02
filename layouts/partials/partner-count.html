@@ -1,0 +1,2 @@
+{{/* Number of partner organizations shown on the Partners page: every partner_item with a category. */}}
+{{ return len (where .Site.Params.partner_item "category" "in" (slice "conservation" "research" "technology" "funders")) }}
