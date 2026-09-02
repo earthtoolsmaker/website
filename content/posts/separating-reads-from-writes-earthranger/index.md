@@ -188,20 +188,10 @@ pgcat intercepts it and never forwards it to the server. It is the reason
 `default_role` was set to `auto` rather than hard-coded: *auto* means "the
 parser decides unless the client says otherwise".
 
-In the Django application this became a small context manager that developers
-wrap around the code paths known to read straight after writing:
-
-```python
-@contextmanager
-def use_primary():
-    with connection.cursor() as cursor:
-        cursor.execute("SET SERVER ROLE TO 'primary'")
-    try:
-        yield
-    finally:
-        with connection.cursor() as cursor:
-            cursor.execute("SET SERVER ROLE TO 'auto'")
-```
+In the Django application this became a small context manager, `use_primary`,
+that pins the connection to the primary on entry and hands control back to the
+parser on exit. Developers wrap it around the code paths known to read straight
+after writing, and nothing else changes.
 
 The important design choice here is that the override is **per call site, and
 opt-in**. We considered the alternatives: pinning every non-GET request to the
