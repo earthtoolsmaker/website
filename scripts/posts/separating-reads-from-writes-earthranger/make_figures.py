@@ -286,7 +286,7 @@ def make_rollout(path):
 
     steps = [
         ("Local and CI", "pgcat in the dev stack,\ntest suite through the pooler", FAINT, INK),
-        ("Staging and test clusters", "stress tests: ingestion writes\nand dashboard reads at once", READ_LIGHT, READ),
+        ("Staging and\ntest clusters", "stress tests: ingestion writes\nand dashboard reads at once", READ_LIGHT, READ),
         ("Prod cluster 1", "smallest and quietest,\none full daily cycle", WRITE_LIGHT, WRITE),
         ("Prod cluster 2 ...", "next by size,\nsame gate each time", WRITE_LIGHT, WRITE),
         ("Busiest cluster", "last, once every smaller\nversion of it has passed", WRITE, PAPER),
@@ -294,11 +294,11 @@ def make_rollout(path):
     n = len(steps)
     bw, gap = 16.4, 2.6
     x0 = (100 - (n * bw + (n - 1) * gap)) / 2
-    y, bh = H / 2 + 1, 10.5
+    y, bh = H / 2 + 0.5, 12.5
     for i, (title, sub, fc, tc) in enumerate(steps):
         x = x0 + i * (bw + gap)
         box(ax, x, y, bw, bh, fc=fc, ec=fc if fc != FAINT else FAINT, lw=1.4, radius=1.4)
-        label(ax, x + bw / 2, y + bh - 2.8, title, size=9.5, weight="bold", color=tc)
+        label(ax, x + bw / 2, y + bh - 3.6, title, size=9.5, weight="bold", color=tc, linespacing=1.15)
         label(ax, x + bw / 2, y + 3.6, sub, size=7.6, color=tc if fc == WRITE else MUTED, linespacing=1.25)
         if i < n - 1:
             arrow(ax, (x + bw, y + bh / 2), (x + bw + gap, y + bh / 2), color=MUTED, lw=1.8, shrink=0.5)
