@@ -1,5 +1,5 @@
 ---
-title: "One Address, Two Kinds of Traffic: Separating Reads from Writes to Scale EarthRanger"
+title: "Separating Reads from Writes to Scale EarthRanger"
 description: How we split read and write traffic on the EarthRanger backend with pgcat on Kubernetes and Cloud SQL read replicas, so the platform scales out with every new protected area.
 date: 2026-09-02
 image: /images/posts/separating-reads-from-writes-earthranger/cover.png
