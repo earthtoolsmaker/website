@@ -90,36 +90,18 @@ The layout that came out of it:
 
 ## pgcat: a pooler that reads the query
 
-The pgcat configuration that matters fits on a screen. One pool, one shard
-(pgcat can also shard, which we did not need), a primary and its replicas, and
-the two switches that turn the pooler into a router:
+The pgcat configuration that matters is small: one pool, one shard (pgcat can
+also shard, which we did not need), the primary and its replicas listed with
+their roles, and a handful of switches that turn the pooler into a router.
 
-```toml
-[pools.earthranger]
-pool_mode = "transaction"
-default_role = "auto"
-query_parser_enabled = true
-query_parser_read_write_splitting = true
-primary_reads_enabled = false
-load_balancing_mode = "random"
-
-[pools.earthranger.shards.0]
-database = "earthranger"
-servers = [
-  ["10.0.0.10", 5432, "primary"],
-  ["10.0.0.11", 5432, "replica"],
-  ["10.0.0.12", 5432, "replica"],
-]
-```
-
-With `query_parser_enabled` and `query_parser_read_write_splitting` on, pgcat
-looks at each statement as it arrives. A plain `SELECT` goes to one of the
-replicas, picked by the load balancer. Anything else, from `INSERT` and
-`UPDATE` to `BEGIN` and schema changes, goes to the primary.
-`primary_reads_enabled = false` keeps reads off the primary entirely, which is
-the whole point: the primary should be doing the 10%, not a random share of the
-90%. And `default_role = "auto"` is what lets the parser decide, while leaving
-the application a way to overrule it, which we will come to.
+With the query parser and read/write splitting enabled, pgcat looks at each
+statement as it arrives. A plain `SELECT` goes to one of the replicas, picked
+by the load balancer. Anything else, from `INSERT` and `UPDATE` to `BEGIN` and
+schema changes, goes to the primary. Reads on the primary are switched off
+entirely, which is the whole point: the primary should be doing the 10%, not a
+random share of the 90%. And the pool's default role is set to *auto*, which
+lets the parser decide while leaving the application a way to overrule it,
+which we will come to.
 
 ![How pgcat routes a statement: parse it, send SELECTs to a replica, send everything else to the primary, unless the client has set the server role explicitly](./images/routing.png)
 *The decision pgcat makes for every statement. The application can pin the
@@ -143,43 +125,8 @@ regular workload next to them: a **Deployment** with several pgcat replicas
 behind a **ClusterIP Service**, the configuration in a **ConfigMap**, and the
 database credentials in a **Secret**.
 
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: pgcat
-spec:
-  replicas: 3
-  selector:
-    matchLabels: { app: pgcat }
-  template:
-    metadata:
-      labels: { app: pgcat }
-    spec:
-      containers:
-        - name: pgcat
-          image: ghcr.io/postgresml/pgcat:latest
-          ports:
-            - { containerPort: 6432, name: postgres }
-            - { containerPort: 9930, name: metrics }
-          volumeMounts:
-            - { name: config, mountPath: /etc/pgcat }
-      volumes:
-        - name: config
-          configMap: { name: pgcat-config }
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: pgcat
-spec:
-  selector: { app: pgcat }
-  ports:
-    - { port: 6432, targetPort: postgres }
-```
-
 The application's change is then a single line: its `DATABASE_URL` points at
-`pgcat.<namespace>.svc.cluster.local:6432` instead of the Cloud SQL primary.
+the pgcat Service inside the cluster instead of the Cloud SQL primary.
 
 We chose a standalone Deployment over a sidecar in every application pod for
 three reasons. There is **one place to change** the routing: a new replica is
