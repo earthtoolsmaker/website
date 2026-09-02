@@ -66,12 +66,31 @@ database address, and something between them and PostgreSQL decides where each
 query goes.
 
 That something is [pgcat](https://github.com/postgresml/pgcat), a PostgreSQL
-connection pooler written in Rust. A connection pooler sits in front of the
-database, accepts connections from the application, and multiplexes them onto a
-smaller number of real server connections, which is worth having on its own. What
-makes pgcat different from older poolers is that it can also **parse the
-queries passing through it** and route a read to a replica and a write to the
-primary.
+**connection pooler**.
+
+A connection pooler solves a problem every PostgreSQL application meets as it
+grows. Opening a connection to PostgreSQL is expensive: the server starts a
+dedicated process for each one, with its own memory, and it has a hard limit
+on how many it will accept. Meanwhile the application side wants lots of
+connections. Every API pod, every worker, every autoscaled copy of them opens
+its own, and most of those sit idle most of the time, waiting for the next
+request. A pooler sits between the two. The application connects to the
+pooler, which is cheap and can be done freely, and the pooler keeps a small,
+fixed set of real connections to PostgreSQL that it hands out for the duration
+of a transaction and takes back afterwards. Hundreds of client connections
+become a few dozen server connections, the database is protected from
+connection storms when the application scales up, and connection setup cost
+disappears from the request path. [PgBouncer](https://www.pgbouncer.org/) has
+been the standard tool for this for years, and many teams run one without
+thinking of it as anything more than plumbing.
+
+pgcat, a newer pooler written in Rust, does the same job and adds one thing
+that matters here: because every query passes through it, it can **parse the
+queries** and choose which server to send each one to. It can route a read to
+a replica and a write to the primary, spread reads across several replicas,
+and drop a replica that stops responding. In other words, the component that
+was going to sit in front of the database anyway can also be the component
+that separates reads from writes, without the application knowing.
 
 ![Architecture: API and worker pods in Kubernetes connect to a pgcat Service; pgcat sends writes to the Cloud SQL primary and reads to its replicas](./images/architecture.png)
 *The application keeps one connection string. pgcat routes each statement,
