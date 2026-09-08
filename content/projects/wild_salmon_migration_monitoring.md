@@ -17,7 +17,7 @@ stats:
     label: sensing modalities
   - value: "24/7"
     label: automated counting
-  - value: "20"
+  - value: "34"
     label: sites monitored
   - value: "1M+"
     label: salmon counted
