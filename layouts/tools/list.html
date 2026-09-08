@@ -41,7 +41,7 @@
           <div class="about-stats__label">tools</div>
         </div>
         <div class="about-stats__item">
-          <div class="about-stats__value">100%</div>
+          <div class="about-stats__value">{{ len (where (where .Site.RegularPages "Section" "tools") "Params.open_source" "!=" false) }}</div>
           <div class="about-stats__label">free &amp; open source</div>
         </div>
         <div class="about-stats__item">

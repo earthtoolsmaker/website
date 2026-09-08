@@ -1,14 +1,15 @@
 {{/*
   Partner logo row for tool pages. Pass a front-matter list key to read
-  { name, link, logo } entries from the page, e.g. {{< partner_logos "partners" >}};
-  with no argument it falls back to the SalmonVision partner list below.
+  { name, link, logo } entries from the page, e.g. {{< partner_logos "partners" >}}.
+  With a key that the page does not define, nothing is rendered. With no
+  argument it uses the SalmonVision partner list below.
 
   A clean, equal-height, vertically-centered strip of partner logos (reusing the
   site's .partner-logo-container styling). A sliding carousel is pointless for a
   handful of logos and leaves them unaligned, so this is a static flex row that
-  wraps on small screens. Partners are defined inline since the list is specific
-  to this page; logo lookup prefers a logo_dark variant and downscales large
-  rasters (mirroring partials/partners-logo-slider.html).
+  wraps on small screens. The inline list below is the SalmonVision default,
+  used when no key is given; logo lookup prefers a logo_dark variant and
+  downscales large rasters (mirroring partials/partners-logo-slider.html).
 */}}
 
 {{ $partners := slice
@@ -17,7 +18,7 @@
   (dict "name" "Lumax AI"                  "link" "https://lumax.ai/"              "logo" "/images/clients/lumax-ai/logo.png")
   (dict "name" "BC Hydro"                  "link" "https://www.bchydro.com/"       "logo" "/images/clients/bc-hydro/logo.png")
 }}
-{{ with .Get 0 }}{{ with index $.Page.Params . }}{{ $partners = . }}{{ end }}{{ end }}
+{{ with .Get 0 }}{{ $partners = index $.Page.Params . }}{{ end }}
 
 <div class="tool-partners">
   {{ range $partners }}
