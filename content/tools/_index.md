@@ -1,5 +1,5 @@
 ---
 title: Tools
-description: Free, open-source software you can download and run. These are the conservation tools we build with field teams to monitor wildlife and protect ecosystems.
+description: The conservation software we build with field teams to monitor wildlife and protect ecosystems. Most of it is free and open source, ready to download and run.
 image: /images/pages/home/hero.jpg
 ---

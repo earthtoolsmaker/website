@@ -9,6 +9,7 @@ card_tint: "#dbe8f1"
 summary: Automated bird surveys from drone imagery. AI finds every bird, identifies its species, sex and behaviour, checks whether it is alive, and turns it all into georeferenced maps and reports.
 project: /projects/bird_flu_monitoring
 landing_page_url: https://ai-bird.org/
+open_source: false
 manual_url: https://manual.ai-bird.org/
 date: 2026-09-08
 partners:
@@ -78,7 +79,7 @@ A survey is one flight and a few clicks. The drone does the walking, the models 
 
   <div class="support__card">
     <h3 class="support__card-title">1. Fly the drone</h3>
-    <p class="support__card-description">Capture aerial imagery of your survey area with an off-the-shelf consumer drone. No specialist hardware, and nobody has to walk through the colony.</p>
+    <p class="support__card-description">Capture aerial imagery of your survey area with an off-the-shelf drone. No specialist hardware, and nobody has to walk through the colony.</p>
   </div>
 
   <div class="support__card">

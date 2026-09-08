@@ -88,7 +88,7 @@
 <g transform="translate(500,126)">
   <rect x="0" y="0" width="526" height="66" rx="16" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
   <g class="glow g2"><rect x="0" y="0" width="66" height="66" rx="16" fill="#006d77"/><rect x="50" y="0" width="16" height="66" fill="#006d77"/></g>
-  <g transform="translate(33,33)" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><circle cx="-6" cy="4" r="8"/><path d="M0 -2 L10 -12 M10 -12 H3 M10 -12 V-5"/></g>
+  <g transform="translate(33,33)" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><circle cx="-9" cy="-3" r="5.5"/><path d="M-9 2.5 V11 M-13 7.5 H-5"/><circle cx="7" cy="5" r="5.5"/><path d="M11 1 L16.5 -4.5 M16.5 -4.5 H11.5 M16.5 -4.5 V0.5"/></g>
   <text class="label" x="86" y="27">SEX</text>
   <text class="value" x="86" y="52">Male or female</text>
 </g>
