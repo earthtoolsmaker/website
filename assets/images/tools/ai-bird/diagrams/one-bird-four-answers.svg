@@ -1,0 +1,109 @@
+<svg viewBox="0 0 1062 400" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.08"/></filter>
+  <style>
+    .label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; fill: #e29578; }
+    .value { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 22px; font-weight: 600; fill: #161616; }
+    .chip  { font-size: 11px; font-weight: 700; fill: #fff; }
+    .big   { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 40px; font-weight: 600; fill: #fff; }
+    .box   { animation: boxp 2.4s ease-in-out infinite; }
+    .glow  { animation: glow 3.2s ease-in-out infinite; }
+    .g2 { animation-delay: 0.8s } .g3 { animation-delay: 1.6s } .g4 { animation-delay: 2.4s }
+    @keyframes boxp { 0%,100%{opacity:0.55} 50%{opacity:1} }
+    @keyframes glow { 0%,100%{opacity:0.75} 25%{opacity:1} 50%{opacity:0.75} }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <!-- adult gull seen from directly above, standing, facing +x. Length ~240, width ~80. -->
+  <g id="gull-top">
+    <!-- ground shadow -->
+    <ellipse cx="2" cy="10" rx="80" ry="30" fill="#6f6140" opacity="0.18"/>
+    <!-- tail -->
+    <path d="M-50 0 L-100 -15 L-93 0 L-100 15 Z" fill="#f1efe6"/>
+    <path d="M-72 -6 L-96 -13 M-72 6 L-96 13" stroke="#d9d6c9" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- body -->
+    <ellipse cx="0" cy="0" rx="72" ry="34" fill="#fbfbf7"/>
+    <ellipse cx="0" cy="4" rx="70" ry="30" fill="none" stroke="#e6e3d8" stroke-width="2"/>
+    <!-- grey mantle and folded wings -->
+    <ellipse cx="-8" cy="0" rx="52" ry="24" fill="#a4adb2"/>
+    <path d="M32 -12 C-8 -40 -70 -32 -116 -6 C-74 -13 -32 -5 32 -12 Z" fill="#9aa4aa"/>
+    <path d="M32 12 C-8 40 -70 32 -116 6 C-74 13 -32 5 32 12 Z" fill="#9aa4aa"/>
+    <!-- white tertial crescents on the folded wings -->
+    <g fill="none" stroke="#f3f3ee" stroke-width="2.2" stroke-linecap="round">
+      <path d="M-30 -24 Q-20 -28 -10 -26"/><path d="M-48 -22 Q-40 -27 -30 -25"/>
+      <path d="M-30 24 Q-20 28 -10 26"/><path d="M-48 22 Q-40 27 -30 25"/>
+    </g>
+    <!-- black primaries crossing above the tail, with white mirrors -->
+    <path d="M-64 -17 C-90 -20 -110 -13 -124 -5 C-110 -10 -90 -11 -64 -8 Z" fill="#2b3035"/>
+    <path d="M-64 17 C-90 20 -110 13 -124 5 C-110 10 -90 11 -64 8 Z" fill="#2b3035"/>
+    <circle cx="-113" cy="-8" r="1.8" fill="#fbfbf7"/><circle cx="-113" cy="8" r="1.8" fill="#fbfbf7"/>
+    <!-- neck and head -->
+    <ellipse cx="54" cy="0" rx="26" ry="18" fill="#fbfbf7"/>
+    <circle cx="78" cy="0" r="21" fill="#fbfbf7"/>
+    <path d="M62 -16 Q80 -22 96 -8" fill="none" stroke="#ecebe3" stroke-width="2" stroke-linecap="round"/>
+    <!-- eye with pale orbital ring -->
+    <circle cx="86" cy="-9" r="3.8" fill="#e8d9a8"/><circle cx="86" cy="-9" r="2.6" fill="#28323d"/>
+    <!-- yellow bill with the red gonys spot -->
+    <path d="M96 -5 C108 -6 116 -3 125 1 C116 4 108 6 96 5 Z" fill="#e2b23b"/>
+    <circle cx="115" cy="2.6" r="1.9" fill="#d64b3a"/>
+  </g>
+</defs>
+
+<!-- LEFT : one detected bird in the imagery -->
+<rect x="36" y="30" width="400" height="340" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(236,200)">
+  <rect x="-176" y="-146" width="352" height="292" rx="14" fill="#ddcb9c"/>
+  <clipPath id="tile"><rect x="-176" y="-146" width="352" height="292" rx="14"/></clipPath>
+  <g clip-path="url(#tile)">
+    <path d="M-176 90 Q-60 74 40 92 Q120 106 176 88 L176 146 L-176 146 Z" fill="#cdbb8d"/>
+    <!-- sand texture -->
+    <g fill="#c9b98a" opacity="0.7"><circle cx="-140" cy="-100" r="2"/><circle cx="-90" cy="-60" r="1.6"/><circle cx="-120" cy="20" r="2"/><circle cx="120" cy="-110" r="1.6"/><circle cx="150" cy="-40" r="2"/><circle cx="90" cy="30" r="1.6"/><circle cx="-40" cy="110" r="1.6"/><circle cx="130" cy="120" r="2"/><circle cx="-150" cy="70" r="1.6"/></g>
+    <!-- neighbouring birds, out of focus -->
+    <g opacity="0.45"><use href="#gull-top" transform="translate(-130,-50) rotate(35) scale(0.3)"/><use href="#gull-top" transform="translate(142,86) rotate(-60) scale(0.3)"/><use href="#gull-top" transform="translate(128,-96) rotate(150) scale(0.28)"/></g>
+    <!-- the bird: an adult gull seen from directly above, standing, facing right -->
+    <use href="#gull-top" transform="translate(-6,-2) rotate(-28) scale(0.98)"/>
+    <!-- detection box with corner ticks -->
+    <rect class="box" x="-110" y="-72" width="230" height="150" rx="4" fill="none" stroke="#0a7d86" stroke-width="3"/>
+    <g stroke="#0a7d86" stroke-width="4" fill="none" stroke-linecap="round"><path d="M-110 -52 V-72 H-90 M100 -72 H120 V-52 M-110 58 V78 H-90 M120 58 V78 H100"/></g>
+  </g>
+  <g transform="translate(-118,-116)"><rect x="0" y="-10" width="82" height="20" rx="10" fill="#006d77"/><text class="chip" x="41" y="3.5" text-anchor="middle" font-size="10">detected bird</text></g>
+</g>
+
+<!-- lead lines from the box to each answer -->
+<g fill="none" stroke="#e29578" stroke-width="2.5" stroke-linecap="round">
+  <path d="M356 128 C420 128 440 72 500 72"/>
+  <path d="M356 176 C420 176 440 158 500 158"/>
+  <path d="M356 224 C420 224 440 244 500 244"/>
+  <path d="M356 272 C420 272 440 330 500 330"/>
+</g>
+<g fill="#e29578"><circle cx="356" cy="128" r="4.5"/><circle cx="356" cy="176" r="4.5"/><circle cx="356" cy="224" r="4.5"/><circle cx="356" cy="272" r="4.5"/></g>
+
+<!-- RIGHT : the four answers -->
+<g transform="translate(500,40)">
+  <rect x="0" y="0" width="526" height="66" rx="16" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+  <g class="glow"><rect x="0" y="0" width="66" height="66" rx="16" fill="#15577E"/><rect x="50" y="0" width="16" height="66" fill="#15577E"/></g>
+  <text class="big" x="33" y="47" text-anchor="middle">10</text>
+  <text class="label" x="86" y="27">SPECIES</text>
+  <text class="value" x="86" y="52">One of ten seabird species</text>
+</g>
+<g transform="translate(500,126)">
+  <rect x="0" y="0" width="526" height="66" rx="16" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+  <g class="glow g2"><rect x="0" y="0" width="66" height="66" rx="16" fill="#006d77"/><rect x="50" y="0" width="16" height="66" fill="#006d77"/></g>
+  <g transform="translate(33,33)" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><circle cx="-6" cy="4" r="8"/><path d="M0 -2 L10 -12 M10 -12 H3 M10 -12 V-5"/></g>
+  <text class="label" x="86" y="27">SEX</text>
+  <text class="value" x="86" y="52">Male or female</text>
+</g>
+<g transform="translate(500,212)">
+  <rect x="0" y="0" width="526" height="66" rx="16" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+  <g class="glow g3"><rect x="0" y="0" width="66" height="66" rx="16" fill="#0a7d86"/><rect x="50" y="0" width="16" height="66" fill="#0a7d86"/></g>
+  <g transform="translate(33,33)" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M-14 6 Q-6 -8 0 0 Q6 8 14 -6"/><path d="M-14 -8 Q-6 -2 0 -6" opacity="0.6"/></g>
+  <text class="label" x="86" y="27">BEHAVIOUR</text>
+  <text class="value" x="86" y="52">What the bird is doing</text>
+</g>
+<g transform="translate(500,298)">
+  <rect x="0" y="0" width="526" height="66" rx="16" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+  <g class="glow g4"><rect x="0" y="0" width="66" height="66" rx="16" fill="#3fa67a"/><rect x="50" y="0" width="16" height="66" fill="#3fa67a"/></g>
+  <g transform="translate(33,33)" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M-16 0 H-8 L-4 -10 L2 10 L6 0 H16"/></g>
+  <text class="label" x="86" y="27">STATUS</text>
+  <text class="value" x="86" y="52">Alive or dead</text>
+</g>
+</svg>

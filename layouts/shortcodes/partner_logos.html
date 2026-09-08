@@ -1,5 +1,7 @@
 {{/*
-  Partner logo row for the SalmonVision tool page.
+  Partner logo row for tool pages. Pass a front-matter list key to read
+  { name, link, logo } entries from the page, e.g. {{< partner_logos "partners" >}};
+  with no argument it falls back to the SalmonVision partner list below.
 
   A clean, equal-height, vertically-centered strip of partner logos (reusing the
   site's .partner-logo-container styling). A sliding carousel is pointless for a
@@ -15,6 +17,7 @@
   (dict "name" "Lumax AI"                  "link" "https://lumax.ai/"              "logo" "/images/clients/lumax-ai/logo.png")
   (dict "name" "BC Hydro"                  "link" "https://www.bchydro.com/"       "logo" "/images/clients/bc-hydro/logo.png")
 }}
+{{ with .Get 0 }}{{ with index $.Page.Params . }}{{ $partners = . }}{{ end }}{{ end }}
 
 <div class="tool-partners">
   {{ range $partners }}

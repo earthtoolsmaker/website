@@ -1,0 +1,181 @@
+<svg viewBox="0 0 1062 380" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e3a4a"/><stop offset="100%" stop-color="#176074"/></linearGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#e29578"/></marker>
+  <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.08"/></filter>
+  <style>
+    .title { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 26px; font-weight: 600; fill: #161616; }
+    .desc  { font-size: 15px; fill: #60626a; }
+    .step  { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; fill: #e29578; }
+    .chip  { font-size: 11px; font-weight: 700; fill: #fff; }
+    .hover { transform-box: fill-box; transform-origin: 50% 50%; animation: hover 3.4s ease-in-out infinite; }
+    .beam  { animation: beam 2.4s ease-in-out infinite; }
+    .box   { animation: boxp 2.2s ease-in-out infinite; }
+    .box2  { animation: boxp 2.2s ease-in-out 0.7s infinite; }
+    .box3  { animation: boxp 2.2s ease-in-out 1.4s infinite; }
+    .tag   { animation: tag 4.8s ease-in-out infinite; }
+    .tag2  { animation: tag 4.8s ease-in-out 1.2s infinite; }
+    .tag3  { animation: tag 4.8s ease-in-out 2.4s infinite; }
+    .tag4  { animation: tag 4.8s ease-in-out 3.6s infinite; }
+    .pin   { transform-box: fill-box; transform-origin: 50% 100%; animation: pin 2.8s ease-in-out infinite; }
+    .glow  { animation: glow 2.4s ease-in-out infinite; }
+    .wave  { animation: wave 5s ease-in-out infinite; }
+    @keyframes hover { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+    @keyframes beam  { 0%,100%{opacity:0.12} 50%{opacity:0.32} }
+    @keyframes boxp  { 0%,100%{opacity:0.55} 50%{opacity:1} }
+    @keyframes tag   { 0%,100%{opacity:0.55} 25%{opacity:1} 50%{opacity:0.55} }
+    @keyframes pin   { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+    @keyframes glow  { 0%,100%{opacity:0.6} 50%{opacity:1} }
+    @keyframes wave  { 0%,100%{transform:translateX(0)} 50%{transform:translateX(-6px)} }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <!-- gull, top-down (wings spread); stroke set by the <use> -->
+  <g id="gull"><path d="M-9 1 Q-4 -4 0 -1 Q4 -4 9 1" fill="none" stroke-width="2.6" stroke-linecap="round"/></g>
+  <!-- adult gull seen from directly above, standing, facing +x. Length ~240, width ~80. -->
+  <g id="gull-top">
+    <!-- ground shadow -->
+    <ellipse cx="2" cy="10" rx="80" ry="30" fill="#6f6140" opacity="0.18"/>
+    <!-- tail -->
+    <path d="M-50 0 L-100 -15 L-93 0 L-100 15 Z" fill="#f1efe6"/>
+    <path d="M-72 -6 L-96 -13 M-72 6 L-96 13" stroke="#d9d6c9" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- body -->
+    <ellipse cx="0" cy="0" rx="72" ry="34" fill="#fbfbf7"/>
+    <ellipse cx="0" cy="4" rx="70" ry="30" fill="none" stroke="#e6e3d8" stroke-width="2"/>
+    <!-- grey mantle and folded wings -->
+    <ellipse cx="-8" cy="0" rx="52" ry="24" fill="#a4adb2"/>
+    <path d="M32 -12 C-8 -40 -70 -32 -116 -6 C-74 -13 -32 -5 32 -12 Z" fill="#9aa4aa"/>
+    <path d="M32 12 C-8 40 -70 32 -116 6 C-74 13 -32 5 32 12 Z" fill="#9aa4aa"/>
+    <!-- white tertial crescents on the folded wings -->
+    <g fill="none" stroke="#f3f3ee" stroke-width="2.2" stroke-linecap="round">
+      <path d="M-30 -24 Q-20 -28 -10 -26"/><path d="M-48 -22 Q-40 -27 -30 -25"/>
+      <path d="M-30 24 Q-20 28 -10 26"/><path d="M-48 22 Q-40 27 -30 25"/>
+    </g>
+    <!-- black primaries crossing above the tail, with white mirrors -->
+    <path d="M-64 -17 C-90 -20 -110 -13 -124 -5 C-110 -10 -90 -11 -64 -8 Z" fill="#2b3035"/>
+    <path d="M-64 17 C-90 20 -110 13 -124 5 C-110 10 -90 11 -64 8 Z" fill="#2b3035"/>
+    <circle cx="-113" cy="-8" r="1.8" fill="#fbfbf7"/><circle cx="-113" cy="8" r="1.8" fill="#fbfbf7"/>
+    <!-- neck and head -->
+    <ellipse cx="54" cy="0" rx="26" ry="18" fill="#fbfbf7"/>
+    <circle cx="78" cy="0" r="21" fill="#fbfbf7"/>
+    <path d="M62 -16 Q80 -22 96 -8" fill="none" stroke="#ecebe3" stroke-width="2" stroke-linecap="round"/>
+    <!-- eye with pale orbital ring -->
+    <circle cx="86" cy="-9" r="3.8" fill="#e8d9a8"/><circle cx="86" cy="-9" r="2.6" fill="#28323d"/>
+    <!-- yellow bill with the red gonys spot -->
+    <path d="M96 -5 C108 -6 116 -3 125 1 C116 4 108 6 96 5 Z" fill="#e2b23b"/>
+    <circle cx="115" cy="2.6" r="1.9" fill="#d64b3a"/>
+  </g>
+  <!-- quadcopter drone -->
+  <g id="drone" fill="#28323d">
+    <g stroke="#28323d" stroke-width="2.5" stroke-linecap="round"><path d="M-9 -2 L-17 -8 M9 -2 L17 -8 M-9 2 L-17 8 M9 2 L17 8"/></g>
+    <ellipse cx="-17" cy="-8" rx="7.5" ry="2.2" fill="#6b7c88"/><ellipse cx="17" cy="-8" rx="7.5" ry="2.2" fill="#6b7c88"/>
+    <ellipse cx="-17" cy="8" rx="7.5" ry="2.2" fill="#6b7c88"/><ellipse cx="17" cy="8" rx="7.5" ry="2.2" fill="#6b7c88"/>
+    <rect x="-11" y="-4" width="22" height="8" rx="3"/>
+    <rect x="-3.5" y="3" width="7" height="5" rx="1.5" fill="#15577E"/>
+  </g>
+</defs>
+
+<g stroke="#e29578" stroke-width="3.5" fill="none" stroke-linecap="round">
+  <line x1="250" y1="134" x2="291" y2="134" marker-end="url(#arrow)"/>
+  <line x1="509" y1="134" x2="550" y2="134" marker-end="url(#arrow)"/>
+  <line x1="768" y1="134" x2="809" y2="134" marker-end="url(#arrow)"/>
+</g>
+
+<!-- CARD 1 : FLY -->
+<rect x="36" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(142,128)">
+  <rect x="-78" y="-58" width="156" height="116" rx="12" fill="#e0d2a8"/>
+  <clipPath id="c1"><rect x="-78" y="-58" width="156" height="116" rx="12"/></clipPath>
+  <g clip-path="url(#c1)">
+    <!-- wet sand, surf and sea, as a drone sees a beach colony -->
+    <path d="M-78 14 Q-30 8 20 14 Q54 18 78 12 L78 58 L-78 58 Z" fill="#cdbb8d"/>
+    <path d="M-78 26 Q-20 20 30 28 Q60 32 78 26 L78 58 L-78 58 Z" fill="#4f8f9b"/>
+    <g class="wave" fill="#ffffff" opacity="0.8"><path d="M-84 24 Q-60 18 -36 26 Q-12 34 12 26 Q36 18 60 28 Q84 36 96 26 L96 34 Q72 42 48 34 Q24 26 0 34 Q-24 42 -48 34 Q-72 26 -84 32 Z"/></g>
+    <!-- birds resting on the dry sand -->
+    <g fill="#fff" opacity="0.9"><circle cx="-52" cy="-30" r="1.7"/><circle cx="-38" cy="-22" r="1.7"/><circle cx="-24" cy="-32" r="1.7"/><circle cx="-8" cy="-20" r="1.7"/><circle cx="8" cy="-30" r="1.7"/><circle cx="24" cy="-22" r="1.7"/><circle cx="40" cy="-30" r="1.7"/><circle cx="54" cy="-18" r="1.7"/><circle cx="-44" cy="-8" r="1.5"/><circle cx="-16" cy="-4" r="1.5"/><circle cx="14" cy="-8" r="1.5"/><circle cx="36" cy="-4" r="1.5"/><circle cx="58" cy="0" r="1.5"/><circle cx="-60" cy="2" r="1.5"/></g>
+    <g transform="translate(-6,-40)">
+      <path class="beam" d="M-4 6 L-26 46 L26 46 L4 6 Z" fill="#15577E"/>
+      <g class="hover"><use href="#drone"/></g>
+    </g>
+  </g>
+  <g transform="translate(46,-46)"><rect x="-22" y="-10" width="44" height="18" rx="9" fill="#006d77"/><text class="chip" x="0" y="3.5" text-anchor="middle" font-size="9.5">drone</text></g>
+</g>
+<text class="step" x="142" y="280" text-anchor="middle">01</text>
+<text class="title" x="142" y="312" text-anchor="middle">Fly</text>
+<text class="desc"  x="142" y="338" text-anchor="middle">Survey the colony from above</text>
+
+<!-- CARD 2 : DETECT -->
+<rect x="295" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(401,128)">
+  <rect x="-78" y="-58" width="156" height="116" rx="12" fill="#ddcb9c"/>
+  <clipPath id="c2"><rect x="-78" y="-58" width="156" height="116" rx="12"/></clipPath>
+  <g clip-path="url(#c2)">
+    <path d="M-78 30 Q0 22 78 32 L78 58 L-78 58 Z" fill="#cdbb8d"/>
+    <g>
+      <g transform="translate(-46,-30)"><use href="#gull-top" transform="scale(0.075)"/><rect class="box" x="-10" y="-8" width="20" height="16" rx="2" fill="none" stroke="#0a7d86" stroke-width="2"/></g>
+      <g transform="translate(-6,-36)"><use href="#gull-top" transform="rotate(-30) scale(0.075)"/><rect class="box2" x="-10" y="-8" width="20" height="16" rx="2" fill="none" stroke="#0a7d86" stroke-width="2"/></g>
+      <g transform="translate(38,-28)"><use href="#gull-top" transform="rotate(20) scale(0.075)"/><rect class="box3" x="-10" y="-8" width="20" height="16" rx="2" fill="none" stroke="#0a7d86" stroke-width="2"/></g>
+      <g transform="translate(-30,-2)"><use href="#gull-top" transform="rotate(160) scale(0.075)"/><rect class="box2" x="-10" y="-8" width="20" height="16" rx="2" fill="none" stroke="#0a7d86" stroke-width="2"/></g>
+      <g transform="translate(14,4)"><use href="#gull" stroke="#fbfbf7"/><rect class="box" x="-12" y="-9" width="24" height="18" rx="2" fill="none" stroke="#0a7d86" stroke-width="2"/></g>
+      <g transform="translate(54,8)"><use href="#gull-top" transform="rotate(-100) scale(0.075)"/><rect class="box3" x="-10" y="-8" width="20" height="16" rx="2" fill="none" stroke="#0a7d86" stroke-width="2"/></g>
+      <g transform="translate(-52,32)"><use href="#gull-top" transform="rotate(60) scale(0.075)"/><rect class="box" x="-10" y="-8" width="20" height="16" rx="2" fill="none" stroke="#0a7d86" stroke-width="2"/></g>
+      <g transform="translate(2,40)"><use href="#gull-top" transform="rotate(-20) scale(0.075)"/><rect class="box3" x="-10" y="-8" width="20" height="16" rx="2" fill="none" stroke="#0a7d86" stroke-width="2"/></g>
+      <g transform="translate(46,42)"><use href="#gull-top" transform="rotate(120) scale(0.075)"/><rect class="box2" x="-10" y="-8" width="20" height="16" rx="2" fill="none" stroke="#0a7d86" stroke-width="2"/></g>
+    </g>
+  </g>
+  <g transform="translate(40,-46)"><rect x="-32" y="-10" width="64" height="18" rx="9" fill="#006d77"/><text class="chip" x="0" y="3.5" text-anchor="middle" font-size="9.5">every bird</text></g>
+</g>
+<text class="step" x="401" y="280" text-anchor="middle">02</text>
+<text class="title" x="401" y="312" text-anchor="middle">Detect</text>
+<text class="desc"  x="401" y="338" text-anchor="middle">Find every bird in every frame</text>
+
+<!-- CARD 3 : CLASSIFY -->
+<rect x="554" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(660,128)">
+  <rect x="-78" y="-58" width="156" height="116" rx="12" fill="#ddcb9c"/>
+  <clipPath id="c3"><rect x="-78" y="-58" width="156" height="116" rx="12"/></clipPath>
+  <g clip-path="url(#c3)">
+    <path d="M-78 34 Q0 26 78 36 L78 58 L-78 58 Z" fill="#cdbb8d"/>
+    <!-- one bird, seen large -->
+    <use href="#gull-top" transform="translate(-34,4) rotate(-25) scale(0.23)"/>
+    <rect class="box" x="-64" y="-26" width="60" height="60" rx="3" fill="none" stroke="#0a7d86" stroke-width="2.4"/>
+  </g>
+  <!-- four attribute tags -->
+  <g transform="translate(40,-30)">
+    <g class="tag"><rect x="-30" y="-9" width="60" height="18" rx="9" fill="#15577E"/><text class="chip" x="0" y="3.5" text-anchor="middle" font-size="9.5">species</text></g>
+    <g class="tag2" transform="translate(0,24)"><rect x="-30" y="-9" width="60" height="18" rx="9" fill="#006d77"/><text class="chip" x="0" y="3.5" text-anchor="middle" font-size="9.5">sex</text></g>
+    <g class="tag3" transform="translate(0,48)"><rect x="-30" y="-9" width="60" height="18" rx="9" fill="#0a7d86"/><text class="chip" x="0" y="3.5" text-anchor="middle" font-size="9.5">behaviour</text></g>
+    <g class="tag4" transform="translate(0,72)"><rect x="-30" y="-9" width="60" height="18" rx="9" fill="#3fa67a"/><text class="chip" x="0" y="3.5" text-anchor="middle" font-size="9.5">alive</text></g>
+  </g>
+  <g transform="translate(36,-46)"><rect x="-32" y="-10" width="64" height="18" rx="9" fill="#006d77"/><text class="chip" x="0" y="3.5" text-anchor="middle" font-size="9.5">10 species</text></g>
+</g>
+<text class="step" x="660" y="280" text-anchor="middle">03</text>
+<text class="title" x="660" y="312" text-anchor="middle">Classify</text>
+<text class="desc"  x="660" y="338" text-anchor="middle">Species, sex, behaviour, status</text>
+
+<!-- CARD 4 : MAP & REPORT -->
+<rect x="813" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<g transform="translate(919,128)">
+  <rect x="-80" y="-64" width="160" height="128" rx="12" fill="url(#panel)"/>
+  <text class="chip" x="-66" y="-46" font-size="10" fill="#cfe9e0" letter-spacing="0.08em">SURVEY MAP</text>
+  <!-- georeferenced mini map -->
+  <g transform="translate(0,-4)">
+    <rect x="-66" y="-32" width="132" height="60" rx="6" fill="#0a4a55"/>
+    <clipPath id="c4"><rect x="-66" y="-32" width="132" height="60" rx="6"/></clipPath>
+    <g clip-path="url(#c4)">
+      <path d="M-66 10 Q-30 2 10 12 Q40 20 66 10 L66 28 L-66 28 Z" fill="#0d5f6b"/>
+      <g stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"><path d="M-33 -32 V28 M0 -32 V28 M33 -32 V28 M-66 -12 H66 M-66 8 H66"/></g>
+      <g><circle cx="-48" cy="-18" r="2.6" fill="#15577E" stroke="#cfe9e0" stroke-width="0.8"/><circle cx="-30" cy="-8" r="2.6" fill="#3fa67a" stroke="#cfe9e0" stroke-width="0.8"/><circle cx="-12" cy="-20" r="2.6" fill="#3fa67a" stroke="#cfe9e0" stroke-width="0.8"/><circle cx="6" cy="-6" r="2.6" fill="#15577E" stroke="#cfe9e0" stroke-width="0.8"/><circle cx="26" cy="-16" r="2.6" fill="#e29578" stroke="#cfe9e0" stroke-width="0.8"/><circle cx="44" cy="-4" r="2.6" fill="#3fa67a" stroke="#cfe9e0" stroke-width="0.8"/><circle cx="-40" cy="4" r="2.6" fill="#15577E" stroke="#cfe9e0" stroke-width="0.8"/><circle cx="18" cy="6" r="2.6" fill="#3fa67a" stroke="#cfe9e0" stroke-width="0.8"/><circle cx="54" cy="-22" r="2.6" fill="#15577E" stroke="#cfe9e0" stroke-width="0.8"/></g>
+      <g class="pin" transform="translate(-4,-26)"><path d="M0 0 C-6 -8 -6 -18 0 -18 C6 -18 6 -8 0 0 Z" fill="#e29578"/><circle cx="0" cy="-12" r="2.6" fill="#fff"/></g>
+    </g>
+  </g>
+  <!-- export chips -->
+  <g transform="translate(0,40)">
+    <g transform="translate(-42,0)"><rect x="-20" y="-9" width="40" height="18" rx="6" fill="#0a4a55"/><text class="chip" x="0" y="3.5" text-anchor="middle" font-size="9">GeoJSON</text></g>
+    <g transform="translate(0,0)"><rect x="-17" y="-9" width="34" height="18" rx="6" fill="#0a4a55"/><text class="chip" x="0" y="3.5" text-anchor="middle" font-size="9">CSV</text></g>
+    <g class="glow" transform="translate(40,0)"><rect x="-22" y="-9" width="44" height="18" rx="9" fill="#0a7d86" stroke="#3fd07a" stroke-width="1.6"/><text class="chip" x="0" y="3.5" text-anchor="middle" font-size="9">report</text></g>
+  </g>
+</g>
+<text class="step" x="919" y="280" text-anchor="middle">04</text>
+<text class="title" x="919" y="312" text-anchor="middle">Map &amp; report</text>
+<text class="desc"  x="919" y="338" text-anchor="middle">Georeferenced, ready to export</text>
+</svg>
