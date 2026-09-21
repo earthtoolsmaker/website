@@ -169,7 +169,7 @@ wisp, easy to confuse with a passing cloud, a bank of fog, or kicked-up dust,
 and every false alarm that reaches a fire crew chips away at their trust in the
 system.
 
-{{< youtube id=oddZXXiy-UY >}}
+{{< youtube id=WCAAUIcNajM >}}
 <p class="media-caption">There is a wildfire in the opening frame of this real camera sequence. Try to find it before the box appears.</p>
 
 So we taught the system to look at *how a candidate behaves over time*. Real

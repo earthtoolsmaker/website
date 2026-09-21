@@ -46,7 +46,7 @@ and it only exists across frames. **Smoke is a behavior, not an appearance.**
 Here is the same idea in 23 seconds, on another real camera sequence. There
 is a wildfire in the opening frame; try to find it before the box appears:
 
-{{< youtube id=oddZXXiy-UY >}}
+{{< youtube id=WCAAUIcNajM >}}
 <p class="media-caption">One frame shows a smudge that could be anything. Nine minutes of frames show something only smoke does.</p>
 
 The temporal model is built to read exactly that behavior. Here is the whole
