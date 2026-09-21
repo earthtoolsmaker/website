@@ -169,6 +169,9 @@ wisp, easy to confuse with a passing cloud, a bank of fog, or kicked-up dust,
 and every false alarm that reaches a fire crew chips away at their trust in the
 system.
 
+{{< youtube id=WCAAUIcNajM >}}
+<p class="media-caption">There is a wildfire in the opening frame of this real camera sequence. Try to find it before the box appears.</p>
+
 So we taught the system to look at *how a candidate behaves over time*. Real
 smoke does things a cloud doesn't: it stays anchored to one spot on the
 hillside, grows, and slowly drifts. To make that easy to read, the system locks
