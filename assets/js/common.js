@@ -257,6 +257,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
   /* ============================
+  // Before/after compare slider
+  ============================ */
+  document.querySelectorAll('.compare__frame').forEach(function (frame) {
+    var handle = frame.querySelector('.compare__handle');
+    var pos = 50;
+    function set(p) {
+      pos = Math.max(0, Math.min(100, p));
+      frame.style.setProperty('--pos', pos + '%');
+      handle.setAttribute('aria-valuenow', Math.round(pos));
+    }
+    function fromEvent(e) {
+      var r = frame.getBoundingClientRect();
+      set((e.clientX - r.left) / r.width * 100);
+    }
+    frame.addEventListener('pointerdown', function (e) {
+      frame.setPointerCapture(e.pointerId);
+      fromEvent(e);
+      handle.focus({ preventScroll: true });
+    });
+    frame.addEventListener('pointermove', function (e) {
+      if (frame.hasPointerCapture(e.pointerId)) fromEvent(e);
+    });
+    handle.addEventListener('keydown', function (e) {
+      var step = e.shiftKey ? 10 : 2;
+      if (e.key === 'ArrowLeft') { set(pos - step); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { set(pos + step); e.preventDefault(); }
+      if (e.key === 'Home') { set(0); e.preventDefault(); }
+      if (e.key === 'End') { set(100); e.preventDefault(); }
+    });
+  });
+
+  /* ============================
   // Image Carousel with Lightbox
   ============================ */
 

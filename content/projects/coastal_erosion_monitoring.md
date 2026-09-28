@@ -4,6 +4,8 @@ summary: Drone-based monitoring of coastal erosion, sedimentation and land cover
 tags: ["aquatic", "marine", "vision"]
 related_projects:
   - wadden_sea_seal_monitoring
+related_posts:
+  - mapping-a-salt-marsh-centimetre-by-centimetre
 tagline: Tracking how the Wadden coast at Wierum erodes, builds up and greens over, from drone surveys to an interactive map.
 stats:
   - value: "6"
@@ -154,6 +156,11 @@ This also makes it simple to judge coastal protection works. At Wierum, a
 structure was built to protect the marsh cliff from erosion: the change map
 and transects show within minutes where sediment is building up and where the
 cliff is still eroding, pointing directly to its weak spots.
+
+{{< compare before="/images/projects/coastal_erosion_monitoring/portal/compare-20240125.jpg" after="/images/projects/coastal_erosion_monitoring/portal/compare-20260302.jpg"
+    before_label="Jan 2024" after_label="Mar 2026"
+    alt="The same 120 m of marsh cliff and groyne field at Wierum, two winters apart"
+    caption="Drag the handle: the same 120 m of marsh cliff and groyne field in January 2024 and March 2026." >}}
 
 ## The impact
 
