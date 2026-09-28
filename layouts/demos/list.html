@@ -35,26 +35,16 @@
   {{ partial "spaces-cta.html" (dict "class" "") }}
 
   <!-- begin spaces stats -->
-  <section class="section about-stats spaces-stats animate">
+  <section class="section spaces-stats animate">
     <div class="container">
-      <div class="about-stats__grid">
-        <div class="about-stats__item">
-          <div class="about-stats__value">{{ len (where .Site.RegularPages "Section" "demos") }}</div>
-          <div class="about-stats__label">interactive demos</div>
-        </div>
-        <div class="about-stats__item">
-          <div class="about-stats__value">9+</div>
-          <div class="about-stats__label">species monitored</div>
-        </div>
-        <div class="about-stats__item">
-          <div class="about-stats__value">6</div>
-          <div class="about-stats__label">ecosystems</div>
-        </div>
-        <div class="about-stats__item">
-          <div class="about-stats__value">100%</div>
-          <div class="about-stats__label">free &amp; open source</div>
-        </div>
-      </div>
+      {{ $species := "" }}
+      {{ range first 1 (where site.Data.about.stats "label" "species monitored") }}{{ $species = .value }}{{ end }}
+      {{ partial "stats-card.html" (dict "class" "stats-card--flat" "items" (slice
+        (dict "value" (len (where .Site.RegularPages "Section" "demos")) "title" "Demos" "detail" "run in your browser")
+        (dict "value" $species "title" "Species" "detail" "from salmon to elephants" "url" "/posts/")
+        (dict "value" "6" "title" "Ecosystems" "detail" "forests, rivers, reefs and more")
+        (dict "value" (len (where .Site.RegularPages "Section" "tools")) "title" "Field tools" "detail" "ready to download and run" "url" "/tools/")
+      )) }}
     </div>
   </section>
   <!-- end spaces stats -->

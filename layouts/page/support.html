@@ -2,7 +2,7 @@
 
 {{ if .Params.hero_image }}
 <!-- begin hero (same component as the about page) -->
-<div class="about-hero">
+<div class="about-hero about-hero--overlay-nav">
   {{ $imgPath := strings.TrimPrefix "/" .Params.hero_image }}
   {{ partial "responsive-image.html" (dict
     "src" $imgPath

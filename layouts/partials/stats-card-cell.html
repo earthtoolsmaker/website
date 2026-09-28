@@ -1,0 +1,7 @@
+{{/* One stats-card cell body: number, then title + detail. */}}
+{{/* Set a trailing "+" as a small raised mark; the serif "+" sits low and reads as "9 +". */}}
+<span class="stats-card__value">{{ replaceRE `\+$` `<sup class="stats-card__plus">+</sup>` (string .value) | safeHTML }}</span>
+<span class="stats-card__text">
+  <span class="stats-card__title">{{ .title }}</span>
+  <span class="stats-card__detail">{{ .detail }}</span>
+</span>

@@ -1,5 +1,7 @@
 <!-- begin header -->
-<header class="header">
+{{/* Float the header over full-bleed photo heroes: the homepage, and the About,
+     Partners and Support pages when they have a hero image (see .about-hero--overlay-nav). */}}
+<header class="header{{ if or .IsHome (and .Params.hero_image (in (slice "about" "partners" "support") .Layout)) }} header--overlay{{ end }}">
   <div class="container-big">
     <div class="row">
       <div class="header__inner col col-12">

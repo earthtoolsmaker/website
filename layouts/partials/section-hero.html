@@ -1,11 +1,24 @@
 {{ if .Site.Params.hero.enable }}
 <!-- begin hero -->
 <section class="hero">
-  {{ partial "hero-scene.html" . }}
-  <div class="container">
-    <div class="row">
-      <div class="col col-10 push-1 col-w-12 push-w-0">
+  <div class="hero__photo">
+    {{ with .Site.Params.hero.hero_cover }}
+    {{ partial "responsive-image.html" (dict
+      "src" (strings.TrimPrefix "/" .)
+      "alt" ""
+      "sizes" "100vw"
+      "widths" (slice 600 900 1200 1600 2000)
+      "lazy" false
+      "fetchpriority" "high"
+      "lqip" false
+    ) }}
+    {{ end }}
+    <div class="hero__overlay">
+      <div class="container">
         <div class="hero__inner">
+          {{ if .Site.Params.hero.hero_eyebrow }}
+          <p class="hero__eyebrow">{{ .Site.Params.hero.hero_eyebrow }}</p>
+          {{ end }}
           {{ if .Site.Params.hero.hero_title }}
           <h1 class="hero__title">{{ .Site.Params.hero.hero_title | safeHTML }}</h1>
           {{ end }}
@@ -26,6 +39,11 @@
       </div>
     </div>
   </div>
+
+  {{/* Proof strip: the stats card, overlapping the bottom of the photo. */}}
+  <div class="container">
+    {{ partial "stats-card.html" (dict "items" (partial "site-stats.html" .) "class" "") }}
+  </div>
 </section>
-<!-- end author -->
+<!-- end hero -->
 {{ end }}

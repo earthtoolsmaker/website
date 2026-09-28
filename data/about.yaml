@@ -1,8 +1,6 @@
 stats:
-  - value: "9+"
+  - value: "10+"
     label: "species monitored"
-  - value: "100%"
-    label: "open source"
 
 timeline:
   - year: "2024"

@@ -2,7 +2,7 @@
 
 {{/* ---- Hero (about-style) ---- */}}
 {{ if .Params.hero_image }}
-<div class="about-hero partners-hero">
+<div class="about-hero about-hero--overlay-nav partners-hero">
   {{ $imgPath := strings.TrimPrefix "/" .Params.hero_image }}
   {{ partial "responsive-image.html" (dict
     "src" $imgPath
@@ -34,30 +34,6 @@
   <div class="partners-page__intro">
     {{ .Content }}
   </div>
-
-  {{/* ---- Stats band (reuses about-stats styling) ---- */}}
-  <section class="section about-stats partners-stats animate">
-    <div class="container-wide">
-      <div class="about-stats__grid">
-        <div class="about-stats__item">
-          <div class="about-stats__value">{{ partial "partner-count.html" . }}</div>
-          <div class="about-stats__label">partner organizations</div>
-        </div>
-        <div class="about-stats__item">
-          <div class="about-stats__value">{{ len (where site.RegularPages "Section" "projects") }}</div>
-          <div class="about-stats__label">conservation projects</div>
-        </div>
-        <div class="about-stats__item">
-          <div class="about-stats__value">{{ len (where site.RegularPages "Section" "tools") }}</div>
-          <div class="about-stats__label">open-source tools</div>
-        </div>
-        <div class="about-stats__item">
-          <div class="about-stats__value">{{ len (where site.RegularPages "Section" "demos") }}</div>
-          <div class="about-stats__label">interactive demos</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   {{/* ---- Grouped partner sections ---- */}}
   {{ $partners := .Site.Params.partner_item }}

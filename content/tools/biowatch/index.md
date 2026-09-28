@@ -31,22 +31,17 @@ all_downloads_url: https://github.com/earthtoolsmaker/biowatch/releases/tag/v1.0
   </div>
 </div>
 
-<section class="about-stats about-stats--three tools-stats">
-  <div class="about-stats__grid">
-    <div class="about-stats__item">
-      <div class="about-stats__value">100%</div>
-      <div class="about-stats__label">offline &amp; private</div>
-    </div>
-    <div class="about-stats__item">
-      <div class="about-stats__value">4</div>
-      <div class="about-stats__label">on-device AI models</div>
-    </div>
-    <div class="about-stats__item">
-      <div class="about-stats__value">Free</div>
-      <div class="about-stats__label">open source</div>
-    </div>
-  </div>
-</section>
+{{< stats_card class="stats-card--three stats-card--wide" >}}
+- value: "100%"
+  title: "Offline & private"
+  detail: "runs on your own machine"
+- value: "4"
+  title: "AI models"
+  detail: "on-device, no cloud needed"
+- value: "Free"
+  title: "Open source"
+  detail: "download and install"
+{{< /stats_card >}}
 
 Biowatch is a free, open-source desktop application that lets you analyze, visualize, and explore camera trap datasets entirely offline. Your sensitive wildlife data never gets uploaded to any server. Everything runs locally on your computer.
 

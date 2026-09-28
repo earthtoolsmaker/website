@@ -1,0 +1,17 @@
+{{/* Stats card: a row of stats (number | title + detail | chevron). Used on the
+     homepage (overlapping the hero photo) and flat on Projects, About and Tools.
+     Params:
+       "items": slice of dicts with value, title, detail and an optional url
+                (see site-stats.html for the site-wide set)
+       "class": extra modifier classes, e.g. "stats-card--flat" */}}
+<div class="stats-card-wrap">
+  <div class="stats-card {{ .class }}">
+    {{ range .items }}
+    {{ if .url }}
+    <a class="stats-card__item" href="{{ .url }}">{{ partial "stats-card-cell.html" . }}<i class="stats-card__chevron fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+    {{ else }}
+    <div class="stats-card__item">{{ partial "stats-card-cell.html" . }}</div>
+    {{ end }}
+    {{ end }}
+  </div>
+</div>
