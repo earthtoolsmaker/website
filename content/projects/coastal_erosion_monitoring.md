@@ -57,7 +57,7 @@ browser.
 {{< image_carousel id="codap-portal-intro" >}}
   {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/site-overview.png" alt="The CODAP portal showing the Wierum site with land cover predictions over a drone orthophoto" caption="The monitoring site at Wierum in the portal. AI land cover predictions are draped over the drone orthophoto, with the survey boundary in yellow and the class legend on the right." >}}
   {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/landcover-detail.png" alt="Zoomed view of land cover predictions along the marsh edge, with a tooltip identifying dike vegetation" caption="Zooming in on the marsh edge. Hovering any spot reveals what the model sees there, here the grassy face of the sea dike." >}}
-  {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/erosion-ddem.png" alt="Elevation change map of the Wierum site between January 2024 and March 2026" caption="The Erosion tab distils two years of change into one map: blue where sediment builds up, red where the coast is eroding." >}}
+  {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/erosion-groynes.jpg" alt="Elevation change along the groyne fields at Wierum between January 2024 and March 2026" caption="The Erosion tab distils two years of change into one map: blue where sediment builds up between the groynes, red where the marsh edge is eroding." >}}
 {{< /image_carousel >}}
 
 ## Why this coastline matters
@@ -103,10 +103,19 @@ point on the marsh and flats.
 
 A **semantic segmentation model** then classifies the orthophoto pixel by
 pixel into coastal land cover types such as intertidal mud, salt marsh
-vegetation, macro algae, shells and the built surfaces of the sea dike,
-following a 16-class annotation scheme designed with coastal ecologists. The
-predictions, orthophotos and elevation data are published as map tiles that
-the [CODAP portal](https://app.codaportal.org) streams straight to the
+vegetation, macro algae, shells and the built surfaces of the sea dike. The
+model learns from examples: ecologists outline patches of each class on the
+drone photos in QGIS, following a 44-class annotation scheme designed with
+coastal ecologists and organised on three levels, from broad zones such as
+salt marsh down to individual plant species. The current model maps six of
+these classes, and new ones are added as more examples are labeled.
+
+{{< image_carousel id="codap-labeling" items="1" items_tablet="1" >}}
+  {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/qgis-labeling.jpg" alt="QGIS with drone orthophotos of Wierum and two label polygons, one for intertidal mudflat and one for asphalt" caption="Labeling in QGIS: the drone photos of each survey are loaded as layers, and ecologists draw polygons on top, here for intertidal mudflat and asphalt." >}}
+{{< /image_carousel >}}
+
+The predictions, orthophotos and elevation data are published as map tiles
+that the [CODAP portal](https://app.codaportal.org) streams straight to the
 browser. No GIS software needed, just a link.
 
 ## Comparing surveys through time
@@ -120,7 +129,7 @@ mode for studying one survey in depth.
 {{< image_carousel id="codap-portal-compare" >}}
   {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/overlay-compare.png" alt="Swipe comparison of the Wierum marsh edge between January 2024 and March 2026" caption="Dragging the swipe handle across the marsh edge, January 2024 against March 2026. Two winters apart, the vegetated fringe below the dike visibly changes shape." >}}
   {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/split-compare.png" alt="Split-screen comparison of two drone surveys of the same stretch of coast" caption="Split view, the same stretch of coast on two dates, panning and zooming in lockstep. The timeline slider below selects any pair of flights." >}}
-  {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/landcover-winter.png" alt="Single mode showing the bare winter mudflat of the January 2024 baseline flight" caption="Single mode on the January 2024 baseline: the same marsh edge in the depth of winter, bare mud where the summer surveys show green." >}}
+  {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/overlay-winter-summer.jpg" alt="Swipe comparison of drone photos of the marsh edge in January 2025 and August 2025" caption="Winter against summer: the swipe handle splits 13 January 2025 (left) from 29 August 2025 (right) on the same stretch of marsh edge." >}}
 {{< /image_carousel >}}
 
 ## Measuring erosion, centimetre by centimetre
@@ -131,13 +140,20 @@ computes a **change map** of the entire site: blue where sediment has
 accumulated, red where the surface has eroded, at centimetre resolution.
 
 {{< image_carousel id="codap-portal-erosion" items="1" items_tablet="1" >}}
-  {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/erosion-ddem.png" alt="Elevation change map of the Wierum site between January 2024 and March 2026" caption="Two years of elevation change in one image. Blue marks sediment building up on the flats; the red scar along the marsh edge is erosion, exactly where the coastline is retreating." >}}
+  {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/erosion-groynes.jpg" alt="Elevation change along the groyne fields at Wierum between January 2024 and March 2026" caption="Two years of elevation change along the groyne fields. Blue marks sediment building up between the groynes; the red scar along the marsh edge is erosion, exactly where the coastline is retreating." >}}
+  {{< carousel_image src="/images/projects/coastal_erosion_monitoring/portal/erosion-transects.jpg" alt="Two transects drawn across a groyne field to the marsh edge, each with its elevation change profile" caption="Draw a transect and the portal plots the elevation change along it: the ground raised across the groyne field, then a sharp drop where the line crosses the eroding marsh edge." >}}
 {{< /image_carousel >}}
 
 Patterns that would take years of ground surveys to establish become visible
-at a glance: the flats in front of Wierum are accreting while a narrow band
-along the marsh edge erodes, the kind of insight that directly informs where
-protection or restoration effort should go.
+at a glance: between January 2024 and March 2026, much of the flats in front
+of Wierum rose by 10 to 50 cm, while a narrow band along the marsh edge
+dropped by up to about 50 cm. With **Draw transect**, anyone can draw a line
+across the map and read the profile of change along it.
+
+This also makes it simple to judge coastal protection works. At Wierum, a
+structure was built to protect the marsh cliff from erosion: the change map
+and transects show within minutes where sediment is building up and where the
+cliff is still eroding, pointing directly to its weak spots.
 
 ## The impact
 
