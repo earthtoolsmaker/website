@@ -4,6 +4,8 @@ summary: Drone-based monitoring of coastal erosion, sedimentation and land cover
 tags: ["aquatic", "marine", "vision"]
 related_projects:
   - wadden_sea_seal_monitoring
+related_posts:
+  - mapping-a-salt-marsh-centimetre-by-centimetre
 tagline: Tracking how the Wadden coast at Wierum erodes, builds up and greens over, from drone surveys to an interactive map.
 stats:
   - value: "6"
