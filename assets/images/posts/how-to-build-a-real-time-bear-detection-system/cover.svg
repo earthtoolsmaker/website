@@ -2,6 +2,7 @@
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f3"/><stop offset="100%" stop-color="#f1e9e1"/></linearGradient>
   <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#e7f1ef" stop-opacity="0.92"/><stop offset="70%" stop-color="#e7f1ef" stop-opacity="0.4"/><stop offset="100%" stop-color="#e7f1ef" stop-opacity="0"/></radialGradient>
+  <linearGradient id="beam"><stop offset="0%" stop-color="#2bb673" stop-opacity="0.26"/><stop offset="100%" stop-color="#2bb673" stop-opacity="0.07"/></linearGradient>
   <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="9" stdDeviation="18" flood-color="#1c2b28" flood-opacity="0.13"/></filter>
   <style>
     .eyebrow { font-size: 28px; font-weight: 800; letter-spacing: 0.26em; fill: #e29578; }
@@ -55,14 +56,14 @@
   <circle cx="34" cy="-2" r="2.5" fill="#cdd3d8"/><circle cx="22" cy="20" r="2" fill="#cdd3d8"/>
 </g>
 
-<!-- camera trap on the left, scanning right -->
+<!-- detection beam: a cone from the camera lens (394,548) opening onto the bounding box -->
+<path d="M394 548 L857 472 L857 908 Z" fill="url(#beam)"/>
+<path d="M394 548 L857 472 M394 548 L857 908" stroke="#2bb673" stroke-width="2" opacity="0.4" stroke-dasharray="6 7"/>
+
+<!-- camera trap on the left, scanning right (drawn over the beam so the lens sits on its apex) -->
 <g transform="translate(330,560)"><use href="#cameratrap"/></g>
 
-<!-- detection beam from camera lens toward the bear -->
-<path d="M404 548 L760 430 L760 950 L404 720 Z" fill="#2bb673" opacity="0.10"/>
-<path d="M404 548 L760 430 M404 720 L760 950" stroke="#2bb673" stroke-width="2" opacity="0.35" stroke-dasharray="6 7"/>
-
-<!-- bear face in medallion inside the beam -->
+<!-- bear face in medallion, framed by the detection box -->
 <g filter="url(#soft)"><circle cx="1075" cy="690" r="220" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g>
 <g transform="translate(1075,696) scale(3.2)"><use href="#bear"/></g>
 
