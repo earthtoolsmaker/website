@@ -5,8 +5,8 @@ date: 2026-09-28
 image: /images/posts/mapping-a-salt-marsh-centimetre-by-centimetre/cover.png
 tags: ["AI", "vision", "segmentation", "marine", "geospatial"]
 related_posts:
+  - watching-a-coastline-move
   - how-to-build-a-benthic-coral-reefs-analyser
-  - racing-models-not-opinions
 ---
 
 Near the village of Wierum, on the Frisian coast of the Wadden Sea, a drone
