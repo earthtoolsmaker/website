@@ -155,6 +155,11 @@ structure was built to protect the marsh cliff from erosion: the change map
 and transects show within minutes where sediment is building up and where the
 cliff is still eroding, pointing directly to its weak spots.
 
+{{< compare before="/images/projects/coastal_erosion_monitoring/portal/compare-20240125.jpg" after="/images/projects/coastal_erosion_monitoring/portal/compare-20260302.jpg"
+    before_label="Jan 2024" after_label="Mar 2026"
+    alt="The same 120 m of marsh cliff and groyne field at Wierum, two winters apart"
+    caption="Drag the handle: the same 120 m of marsh cliff and groyne field in January 2024 and March 2026." >}}
+
 ## The impact
 
 CODAP turns coastal monitoring from an occasional, labour-intensive campaign

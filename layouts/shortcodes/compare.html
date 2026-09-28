@@ -1,0 +1,43 @@
+{{/*
+  compare — before/after image slider. Stacks two same-sized, aligned images
+  and reveals the "after" image from the left as the handle is dragged.
+
+  Usage (images are page-bundle resources):
+  {{< compare before="images/a.jpg" after="images/b.jpg"
+      before_label="13 Jan 2025" after_label="29 Aug 2025"
+      alt="…" caption="…" >}}
+
+  Paths starting with "/" are looked up in assets/ instead
+  (e.g. before="/images/projects/foo/a.jpg"), for pages without a bundle.
+
+  Works with mouse, touch and the keyboard (arrow keys on the handle).
+  Styles: assets/sass/3-modules/_compare.scss. Behaviour: assets/js/common.js.
+  Images carry `no-zoom` so the page lightbox leaves them alone.
+*/}}
+{{ $get := dict }}
+{{ range slice "before" "after" }}
+  {{ $path := $.Get . }}
+  {{ $res := cond (hasPrefix $path "/") (resources.Get (strings.TrimPrefix "/" $path)) ($.Page.Resources.Get $path) }}
+  {{ $get = merge $get (dict . $res) }}
+{{ end }}
+{{ $before := $get.before }}
+{{ $after := $get.after }}
+{{ $alt := .Get "alt" | default "" }}
+{{ with and $before $after }}
+{{ $b := $before.Resize "1400x webp q82" }}
+{{ $a := $after.Resize "1400x webp q82" }}
+<figure class="compare">
+  <div class="compare__frame" style="aspect-ratio: {{ $b.Width }} / {{ $b.Height }}; --pos: 50%;">
+    <img class="compare__img no-zoom" src="{{ $b.RelPermalink }}" alt="{{ $alt }} ({{ $.Get "before_label" }})" loading="lazy" decoding="async">
+    <img class="compare__img compare__img--after no-zoom" src="{{ $a.RelPermalink }}" alt="{{ $alt }} ({{ $.Get "after_label" }})" loading="lazy" decoding="async">
+    <span class="compare__label compare__label--before">{{ $.Get "before_label" }}</span>
+    <span class="compare__label compare__label--after">{{ $.Get "after_label" }}</span>
+    <div class="compare__handle" role="slider" tabindex="0" aria-label="Drag to compare the two dates" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+      <span class="compare__knob"><i class="fa-solid fa-left-right"></i></span>
+    </div>
+  </div>
+  {{ with $.Get "caption" }}<figcaption class="media-caption">{{ . }}</figcaption>{{ end }}
+</figure>
+{{ else }}
+{{ errorf "compare shortcode: could not find %q / %q in %s" (.Get "before") (.Get "after") .Page.File.Path }}
+{{ end }}
