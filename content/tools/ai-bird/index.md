@@ -36,22 +36,17 @@ partners:
   </div>
 </div>
 
-<section class="about-stats about-stats--three tools-stats">
-  <div class="about-stats__grid">
-    <div class="about-stats__item">
-      <div class="about-stats__value">10</div>
-      <div class="about-stats__label">seabird species identified</div>
-    </div>
-    <div class="about-stats__item">
-      <div class="about-stats__value">4</div>
-      <div class="about-stats__label">traits per bird: species, sex, behaviour, status</div>
-    </div>
-    <div class="about-stats__item">
-      <div class="about-stats__value">3</div>
-      <div class="about-stats__label">steps from flight to report</div>
-    </div>
-  </div>
-</section>
+{{< stats_card class="stats-card--three" >}}
+- value: "10"
+  title: "Seabird species"
+  detail: "identified from drone imagery"
+- value: "4"
+  title: "Traits per bird"
+  detail: "species, sex, behaviour, status"
+- value: "3"
+  title: "Steps"
+  detail: "from flight to report"
+{{< /stats_card >}}
 
 AI-BIRD (Automated Intelligence for Bird Inventory and Reproduction using Drones) is a web platform that turns drone imagery into bird surveys. Upload the photos from a flight over a colony and trained vision models detect every bird, classify each one, and produce georeferenced inventory maps and exportable reports, ready to compare from one survey to the next.
 

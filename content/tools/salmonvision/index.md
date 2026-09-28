@@ -48,22 +48,20 @@ faq:
   </div>
 </div>
 
-<section class="about-stats about-stats--three tools-stats">
-  <div class="about-stats__grid">
-    <div class="about-stats__item">
-      <div class="about-stats__value">24/7</div>
-      <div class="about-stats__label">automated monitoring</div>
-    </div>
-    <div class="about-stats__item">
-      <div class="about-stats__value">20</div>
-      <div class="about-stats__label">monitoring projects</div>
-    </div>
-    <div class="about-stats__item">
-      <div class="about-stats__value">1M+</div>
-      <div class="about-stats__label">salmon counted</div>
-    </div>
-  </div>
-</section>
+{{< stats_card class="stats-card--wide" >}}
+- value: "24/7"
+  title: Automated monitoring
+  detail: fish counted in real time
+- value: "34"
+  title: Sites
+  detail: on salmon rivers
+- value: "1M+"
+  title: Salmon counted
+  detail: by camera, sonar and drone
+- value: "14"
+  title: Fish species
+  detail: detected by the models
+{{< /stats_card >}}
 
 SalmonVision is a collaborative system for counting wild salmon as they return to their natal streams. It combines underwater cameras, sonar, and drones with computer-vision models that detect, classify, and count fish in real time, turning a labour-intensive manual task into precise, automated reports.
 

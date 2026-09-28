@@ -438,49 +438,6 @@
   }
 }
 
-/* About Stats Strip */
-.about-stats {
-  .about-stats__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    text-align: center;
-    padding: 28px 0;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-
-    @media (max-width: $mobile) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px 16px;
-    }
-  }
-
-  .about-stats__value {
-    font-size: 42px;
-    font-weight: 700;
-    line-height: 1.1;
-    color: var(--heading-font-color);
-
-    @media (max-width: $mobile) {
-      font-size: 32px;
-    }
-  }
-
-  .about-stats__label {
-    font-size: 16px;
-    color: var(--text-color);
-  }
-}
-
-/* Three-up variant for pages with three stats (e.g. a single tool page) */
-.about-stats--three .about-stats__grid {
-  grid-template-columns: repeat(3, 1fr);
-
-  @media (max-width: $mobile) {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* About Timeline */
 .about-timeline {
   .timeline {
@@ -604,6 +561,24 @@
     &__description {
       font-size: 16px;
     }
+  }
+}
+
+// About / Partners / Support: the header floats over the photo (.header--overlay), so the
+// band starts at the top of the page, grows by the header height, and gets a
+// top wash that keeps the white nav legible over bright skies.
+.about-hero--overlay-nav {
+  height: 540px;
+  margin-top: 0;
+
+  .about-hero__overlay {
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0, rgba(0, 0, 0, 0) 160px),
+      linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 45%, rgba(0, 0, 0, 0) 90%);
+  }
+
+  @media (max-width: $mobile) {
+    height: 404px;
   }
 }
 

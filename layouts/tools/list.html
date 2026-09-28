@@ -33,26 +33,15 @@
   </div>
 
   <!-- begin tools stats -->
-  <section class="section about-stats tools-stats animate">
+  <section class="section tools-stats animate">
     <div class="container">
-      <div class="about-stats__grid">
-        <div class="about-stats__item">
-          <div class="about-stats__value">{{ len (where .Site.RegularPages "Section" "tools") }}</div>
-          <div class="about-stats__label">tools</div>
-        </div>
-        <div class="about-stats__item">
-          <div class="about-stats__value">{{ len (where (where .Site.RegularPages "Section" "tools") "Params.open_source" "!=" false) }}</div>
-          <div class="about-stats__label">free &amp; open source</div>
-        </div>
-        <div class="about-stats__item">
-          <div class="about-stats__value">500+</div>
-          <div class="about-stats__label">fires detected</div>
-        </div>
-        <div class="about-stats__item">
-          <div class="about-stats__value">1M+</div>
-          <div class="about-stats__label">salmon tracked</div>
-        </div>
-      </div>
+      {{ $tools := where .Site.RegularPages "Section" "tools" }}
+      {{ partial "stats-card.html" (dict "class" "stats-card--flat stats-card--wide" "items" (slice
+        (dict "value" (len $tools) "title" "Tools" "detail" "built with field teams")
+        (dict "value" (len (where $tools "Params.open_source" "!=" false)) "title" "Open source" "detail" "free to use and adapt")
+        (dict "value" "500+" "title" "Fires detected" "detail" "by Pyronear" "url" "/tools/pyronear/")
+        (dict "value" "1M+" "title" "Salmon tracked" "detail" "by SalmonVision" "url" "/tools/salmonvision/")
+      )) }}
     </div>
   </section>
   <!-- end tools stats -->

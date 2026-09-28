@@ -1,0 +1,17 @@
+{{/* Stats card for page content (tool pages). The inner content is a YAML list of
+     items with value, title, detail and an optional url; see stats-card.html.
+     Optional "class" param adds modifiers, e.g. "stats-card--wide" for values
+     like "24/7" or "1M+".
+
+     {{< stats_card class="stats-card--wide" >}}
+     - value: "34"
+       title: Sites
+       detail: monitored on the river
+     {{< /stats_card >}}
+*/}}
+<section class="tools-stats">
+  {{ partial "stats-card.html" (dict
+    "items" (transform.Unmarshal (trim .Inner "\n"))
+    "class" (printf "stats-card--flat %s" (.Get "class"))
+  ) }}
+</section>

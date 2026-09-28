@@ -41,22 +41,17 @@ why_pyronear:
   </div>
 </div>
 
-<section class="about-stats about-stats--three tools-stats">
-  <div class="about-stats__grid">
-    <div class="about-stats__item">
-      <div class="about-stats__value">24/7</div>
-      <div class="about-stats__label">monitoring</div>
-    </div>
-    <div class="about-stats__item">
-      <div class="about-stats__value">50</div>
-      <div class="about-stats__label">sites monitored</div>
-    </div>
-    <div class="about-stats__item">
-      <div class="about-stats__value">500+</div>
-      <div class="about-stats__label">fires detected</div>
-    </div>
-  </div>
-</section>
+{{< stats_card class="stats-card--three stats-card--wide" >}}
+- value: "24/7"
+  title: "Monitoring"
+  detail: "watching for the first smoke"
+- value: "50"
+  title: "Sites"
+  detail: "cameras on high vantage points"
+- value: "500+"
+  title: "Fires detected"
+  detail: "alerts within minutes"
+{{< /stats_card >}}
 
 Pyronear is a complete, open-source fire-detection system. A computer-vision model runs on a low-power microcomputer wired to cameras on high vantage points, watching the forest for the first signs of smoke. When it detects a fire, it sends an alert to a supervision platform used by fire departments: efficient, automatic, energy-efficient, and modular by design.
 

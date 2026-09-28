@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 {{ if .Params.hero_image }}
-<div class="about-hero">
+<div class="about-hero about-hero--overlay-nav">
   {{ $imgPath := strings.TrimPrefix "/" .Params.hero_image }}
   {{ partial "responsive-image.html" (dict
     "src" $imgPath

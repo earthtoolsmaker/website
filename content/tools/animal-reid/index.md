@@ -27,22 +27,17 @@ js:
   </div>
 </div>
 
-<section class="about-stats about-stats--three tools-stats">
-  <div class="about-stats__grid">
-    <div class="about-stats__item">
-      <div class="about-stats__value">4</div>
-      <div class="about-stats__label">species supported</div>
-    </div>
-    <div class="about-stats__item">
-      <div class="about-stats__value">0 tags</div>
-      <div class="about-stats__label">fully non-invasive</div>
-    </div>
-    <div class="about-stats__item">
-      <div class="about-stats__value">100%</div>
-      <div class="about-stats__label">open source</div>
-    </div>
-  </div>
-</section>
+{{< stats_card class="stats-card--three stats-card--wide" >}}
+- value: "4"
+  title: "Species"
+  detail: "bear, trout, seal, snow leopard"
+- value: "0"
+  title: "Tags"
+  detail: "fully non-invasive"
+- value: "100%"
+  title: "Open source"
+  detail: "free to use and adapt"
+{{< /stats_card >}}
 
 Animal reID is a modular computer vision framework for identifying individual animals. It adapts to each species by choosing the right technique, whether facial recognition, spot-pattern matching, or local feature analysis.
 

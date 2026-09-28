@@ -60,6 +60,49 @@ $nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
   border-bottom-color: rgba(255, 255, 255, .10);
 }
 
+// Homepage: the header floats over the hero photo (white on dark) until the
+// visitor scrolls, then falls back to the standard condensed header above.
+.header--overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+.header--overlay:not(.is-scrolled) {
+  .brandmark__word { filter: brightness(0) invert(1); }
+
+  .hamburger div,
+  .hamburger div:before,
+  .hamburger div:after { background-color: var(--white); }
+
+  .header__cta .button {
+    color: var(--white);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, .7);
+    border-radius: 999px;
+    box-shadow: none;
+
+    &:hover {
+      color: var(--white);
+      background: rgba(255, 255, 255, .12);
+      transform: none;
+    }
+  }
+
+  // Top-level links only: dropdown items and the hamburger panel keep their
+  // normal colors on their own light background.
+  @media (min-width: $nav-collapse + 1) {
+    .nav__list > .nav__item > .nav__link {
+      color: rgba(255, 255, 255, .9);
+
+      &::after { background-color: var(--primary-color); }
+
+      &:hover,
+      &.active-link { color: var(--white); }
+    }
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .header { transition: none; }
 }
