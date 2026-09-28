@@ -24,8 +24,10 @@
 {{ $after := $get.after }}
 {{ $alt := .Get "alt" | default "" }}
 {{ with and $before $after }}
-{{ $b := $before.Resize "1400x webp q82" }}
-{{ $a := $after.Resize "1400x webp q82" }}
+{{/* Cap at 1400px but never upscale; both images share the same width. */}}
+{{ $w := math.Min 1400 $before.Width $after.Width }}
+{{ $b := $before.Resize (printf "%dx webp q82" (int $w)) }}
+{{ $a := $after.Resize (printf "%dx webp q82" (int $w)) }}
 <figure class="compare">
   <div class="compare__frame" style="aspect-ratio: {{ $b.Width }} / {{ $b.Height }}; --pos: 50%;">
     <img class="compare__img no-zoom" src="{{ $b.RelPermalink }}" alt="{{ $alt }} ({{ $.Get "before_label" }})" loading="lazy" decoding="async">
