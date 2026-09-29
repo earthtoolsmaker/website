@@ -1,15 +1,15 @@
-services:
-  - title: "Data pipelines"
-    description: "Terabytes of audio, video, and sensor data turned into usable signals."
+steps:
+  - title: "Start from the field problem"
+    description: "We sit down with the people collecting the data: what they record, where, and what decision it should feed."
 
-  - title: "Custom ML models"
-    description: "Species ID, behavior detection, environmental monitoring, all trained on your data."
+  - title: "Build on the best research"
+    description: "We start from published methods and models, adapt them to your species, sites and sensors, or train new ones on your data."
 
-  - title: "Apps & deployment"
-    description: "Web apps and dashboards your team actually uses, running on anything from edge devices to the cloud."
+  - title: "Deploy where the data is"
+    description: "A camera on a riverbank, a server in a ranger station, or the cloud: systems built for the power and connectivity you actually have."
 
-  - title: "Built to last"
-    description: "Documented, maintained and retrained as conditions change, so systems keep working season after season."
+  - title: "Keep it running"
+    description: "Monitoring, retraining and support season after season, so the system still works when conditions change."
 
 examples:
   - image: "/images/projects/early_forest_fire_detection/cover.jpg"

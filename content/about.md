@@ -14,7 +14,7 @@ gap_statement: A paper is not a tool <span><i>a&nbsp;ranger&nbsp;can&nbsp;run</i
 gap_body: "Conservation teams collect more data than they can ever look at: years of audio, millions of camera-trap photos, endless hours of underwater video. Research labs publish methods that could help, but they rarely leave the lab. We're a small team of engineers and ecologists who carry them the rest of the way."
 ---
 
-{{< services >}}
+{{< how_we_work >}}
 
 {{< team >}}
 
