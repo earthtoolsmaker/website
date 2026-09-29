@@ -1,9 +1,14 @@
 ---
 layout: support
 title: Support Our Work
-hero_image: /images/projects/bird_flu_monitoring/cover.png
-hero_title: Help us build the next tool
+hero_image: /images/pages/support/hero.jpg
+hero_eyebrow: Support our work
+hero_title: Help us build the <span><i>next&nbsp;tool</i></span>.
 hero_description: Every tool we ship is free and open source for the people protecting wild places. None of them get built without support.
+hero_button_primary: Talk to us
+hero_button_primary_link: /contact/
+hero_button_secondary: Ways to help
+hero_button_secondary_link: "#partner-with-us"
 aliases:
   - /sponsor/
 ---

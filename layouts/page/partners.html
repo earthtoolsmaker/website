@@ -112,31 +112,7 @@
       {{ with .Site.Data.support.tracks_intro }}
       <p class="support__section-intro">{{ . }}</p>
       {{ end }}
-      <div class="partner-tracks">
-        {{ range .Site.Data.support.tracks }}
-        <article class="partner-card partner-track">
-          <div class="partner-card__head">
-            <span class="partner-card__tag">{{ .label }}</span>
-            <h3 class="partner-card__name">{{ .title }}</h3>
-          </div>
-          <div class="partner-card__step">
-            <p>{{ .description }}</p>
-          </div>
-          <div class="partner-card__step">
-            <span class="partner-card__label">In practice</span>
-            {{ .proof | markdownify }}
-          </div>
-          <div class="partner-card__step">
-            <span class="partner-card__label">What you get</span>
-            <ul class="support__track-offers">
-              {{ range .offers }}
-              <li>{{ . }}</li>
-              {{ end }}
-            </ul>
-          </div>
-        </article>
-        {{ end }}
-      </div>
+      {{ partial "support-tracks.html" . }}
     </div>
   </section>
 
