@@ -1,4 +1,4 @@
-{{ with .Site.Data.about }}
+{{ with site.Data.about.timeline }}
 <!-- begin about timeline -->
 <section class="section about-timeline animate">
   <div class="container-wide">
@@ -13,21 +13,21 @@
       </svg>
     </div>
 
-    <div class="timeline">
-      {{ range .timeline }}
-      <div class="timeline__item">
-        <h3 class="timeline__year">{{ .year }} · {{ .title }}</h3>
-        <p class="timeline__description">{{ .description }}</p>
-      </div>
+    <div class="journey">
+      {{ range $i, $y := first 2 . }}
+      {{ partial "journey-year.html" (dict "year" $y "current" (eq $i 0)) }}
       {{ end }}
     </div>
 
-    {{ with .support_cta }}
-    <div class="about-cta">
-      <h3 class="about-cta__title">{{ .title }}</h3>
-      <p class="about-cta__description">{{ .description }}</p>
-      <a href="{{ .button_link }}" class="link-no-decoration button button--middle">{{ .button_text }}</a>
-    </div>
+    {{ with after 2 . }}
+    <details class="journey__older">
+      <summary class="journey__more">Show {{ if eq (len .) 1 }}{{ (index . 0).year }}{{ else }}earlier years{{ end }}</summary>
+      <div class="journey">
+        {{ range . }}
+        {{ partial "journey-year.html" (dict "year" . "current" false) }}
+        {{ end }}
+      </div>
+    </details>
     {{ end }}
 
   </div>
