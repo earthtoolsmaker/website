@@ -984,3 +984,33 @@
     max-width: 120px;
   }
 }
+
+/* About: closing ask (Support page band + a quiet line for funders) */
+.about-closing__actions {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12px;
+
+  .fa-arrow-right {
+    margin-left: 4px;
+    font-size: 14px;
+    transform: rotate(-36deg); // same arrow as the hero "Start a project" button
+  }
+
+  @media (max-width: $tablet) {
+    align-items: flex-start;
+  }
+}
+
+.about-closing__funders {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.page__content .about-closing__funders a {
+  color: var(--white);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}

@@ -23,3 +23,5 @@ gap_body: "Conservation teams collect more data than they can ever look at: year
 {{< about_timeline >}}
 
 {{< trusted_by >}}
+
+{{< about_closing >}}
