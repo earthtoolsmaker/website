@@ -176,8 +176,8 @@
 /* Shared About CTA band */
 // Mid-page CTA card: same surface as the stats, partner and listing cards.
 // Title and text on the left; the actions (last child: one button or a
-// wrapper of two) move to a right-hand column when the card is wider than
-// 860px, and stack under the text otherwise (posts at 780px, tablets, phones).
+// wrapper of two) move to a right-hand column on screens 1024px and wider,
+// and stack under the text otherwise (blog posts, tablets, phones).
 .about-cta {
   margin: 48px 0 0;
   padding: 32px 36px;
@@ -217,31 +217,45 @@
   }
 }
 
-// The element holding a card is its size container (the card cannot query
-// its own width to change its own layout)
-:has(> .about-cta) {
-  container-type: inline-size;
+@mixin about-cta-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 40px;
+
+  > * {
+    grid-column: 1;
+  }
+
+  > :last-child {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .about-cta__description {
+    margin-bottom: 0;
+  }
 }
 
-@container (min-width: 861px) {
+// A media query rather than a container query: size containment on the card's
+// parent would stop its margins collapsing and double the gaps around it.
+// Blog post text is 780px wide, so cards there stay stacked; project pages
+// share .post__content but are wider, so they get the columns back.
+@media (min-width: 1024px) {
   .about-cta {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    column-gap: 40px;
+    @include about-cta-columns;
+  }
 
-    > * {
-      grid-column: 1;
-    }
-
-    > :last-child {
-      grid-column: 2;
-      grid-row: 1 / span 2;
-    }
+  .post__content .about-cta {
+    display: block;
 
     .about-cta__description {
-      margin-bottom: 0;
+      margin-bottom: 24px;
     }
+  }
+
+  .project-single__col .post__content .about-cta {
+    @include about-cta-columns;
   }
 }
 
