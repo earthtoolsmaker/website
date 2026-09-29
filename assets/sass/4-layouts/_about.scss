@@ -438,7 +438,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
   }
 }
 
@@ -497,7 +497,7 @@
       right: auto;
       width: 2px;
       height: auto;
-      background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+      background: var(--primary-color);
     }
   }
 
