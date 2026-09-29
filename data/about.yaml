@@ -9,7 +9,7 @@ timeline:
     title: "From research to platforms"
     items:
       - tag: "Seabirds"
-        text: "AI-BIRD, built with Lumax AI and Sovon, surveys seabird colonies from drone flights to track avian influenza. It started as a 2024 idea waiting for funding."
+        text: "Funded and shipped: AI-BIRD, built with Lumax AI and Sovon, surveys seabird colonies from drone flights to track avian influenza."
         link: "/tools/ai-bird/"
         link_label: "AI-BIRD"
       - tag: "Coasts"
