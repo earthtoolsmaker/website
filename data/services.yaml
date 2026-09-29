@@ -17,20 +17,17 @@ proof:
     featured: true
     research: "We surveyed the literature, raced 28 published methods on a shared leaderboard, and kept what won."
     field: "Pyronear's production smoke verifier: 4× fewer false alarms, smoke spotted 35 km away."
-    with: "With Pyronear"
     link: "/projects/early_forest_fire_detection/"
     image: "/images/projects/early_forest_fire_detection/cover.jpg"
 
   - tag: "Seabirds"
     title: "Every bird in the colony, from the sky"
     summary: "AI-BIRD surveys 10 seabird species, alive or dead, to track avian influenza."
-    with: "With Lumax AI and Sovon"
     link: "/tools/ai-bird/"
     image: "/images/projects/bird_flu_monitoring/cover.png"
 
   - tag: "Salmon"
     title: "Counting every salmon, every river"
     summary: "SalmonVision counts migrating salmon in real time at 34 sites."
-    with: "With the Pacific Salmon Foundation"
     link: "/projects/wild_salmon_migration_monitoring/"
     image: "/images/projects/wild_salmon_migration_monitoring/cover.png"
