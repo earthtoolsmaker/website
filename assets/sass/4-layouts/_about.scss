@@ -783,13 +783,13 @@
   font-weight: 700;
   line-height: 1.4;
 
-  // research / ecology side of the bridge: teal; engineering side: terracotta
-  &--research {
+  // A person's main discipline in teal, their specialities in terracotta
+  &--discipline {
     color: var(--secondary-color);
     background: rgba(131, 197, 190, 0.22);
   }
 
-  &--engineering {
+  &--skill {
     color: var(--tertiary-color);
     background: rgba(226, 149, 120, 0.16);
   }

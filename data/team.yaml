@@ -2,9 +2,9 @@ members:
   - name: "Arthur Caillau"
     role: "Founder & Lead Conservation Technologist"
     tags:
-      - { label: "Engineering", kind: engineering }
-      - { label: "Computer vision", kind: engineering }
-      - { label: "Infrastructure", kind: engineering }
+      - { label: "Engineering", kind: discipline }
+      - { label: "Computer vision", kind: skill }
+      - { label: "Infrastructure", kind: skill }
     bio: "Bridging conservation research and field use, turning promising methods into tools conservationists rely on."
     image: "/images/team/arthur_caillau.jpeg"
     github: "https://github.com/Chouffe"
@@ -13,8 +13,9 @@ members:
   - name: "Jeremy Vuillermet"
     role: "Lead Frontend Engineer"
     tags:
-      - { label: "Frontend", kind: engineering }
-      - { label: "Product design", kind: engineering }
+      - { label: "Engineering", kind: discipline }
+      - { label: "Frontend", kind: skill }
+      - { label: "Product design", kind: skill }
     bio: "Puts conservation technology into the hands of field researchers, with interfaces that make complex tools simple."
     image: "/images/team/jeremy-vuillermet.jpg"
     github: "https://github.com/ioRekz"
@@ -23,9 +24,9 @@ members:
   - name: "Eelke Folmer"
     role: "Conservation Data Scientist"
     tags:
-      - { label: "Ecology", kind: research }
-      - { label: "Geospatial", kind: engineering }
-      - { label: "Drones", kind: engineering }
+      - { label: "Ecology", kind: discipline }
+      - { label: "Geospatial", kind: skill }
+      - { label: "Drones", kind: skill }
     bio: "Bridges ecology and technology through geospatial analytics, drone imagery and photogrammetry."
     image: "/images/team/eelke-folmer.webp"
     linkedin: "https://www.linkedin.com/in/eelkefolmer/"
@@ -33,8 +34,8 @@ members:
   - name: "Thor Veen"
     role: "Biodiversity & AI Specialist"
     tags:
-      - { label: "Evolutionary biology", kind: research }
-      - { label: "Computer vision", kind: engineering }
+      - { label: "Evolutionary biology", kind: discipline }
+      - { label: "Computer vision", kind: skill }
     bio: "Evolutionary biologist turned conservation technologist, building wildlife monitoring with computer vision."
     image: "/images/team/thor-veen.webp"
     linkedin: "https://www.linkedin.com/in/thorveen/"
