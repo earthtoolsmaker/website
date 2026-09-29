@@ -406,7 +406,7 @@
 
 /* About: how we work (research -> field path) */
 // Horizontal path: four equal columns, each step centred under its dot; the
-// axis labels sit over the first and last dots and the line joins them
+// axis labels sit over the first and last dots and the line runs edge to edge
 .how-we-work__axis {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -430,14 +430,13 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
 
-  // the path: a line from the first dot's centre to the last one's (a column
-  // is (100% - 3 gaps) / 4 wide, so its centre is half of that in)
+  // the path: a line across the full width, through the centred dots
   &::before {
     content: "";
     position: absolute;
     top: 8px;
-    left: calc((100% - 96px) / 8);
-    right: calc((100% - 96px) / 8);
+    left: 0;
+    right: 0;
     height: 2px;
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   }
