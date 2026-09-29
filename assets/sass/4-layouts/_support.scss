@@ -130,10 +130,10 @@
       font-size: 13px;
     }
 
-    // Same hover as the site's other white buttons (.button--secondary)
+    // Fills teal on hover, like the site's teal buttons
     &:hover {
-      background-color: #f0f0f0;
-      color: var(--secondary-color);
+      background-color: var(--secondary-color);
+      color: var(--white);
     }
 
     // the band shares the buttons' teal focus ring color
