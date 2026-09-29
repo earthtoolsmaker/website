@@ -540,7 +540,6 @@
 
 .proof--featured .proof__image {
   aspect-ratio: 16 / 10;
-  margin-bottom: 18px;
 }
 
 .proof:not(.proof--featured) {
@@ -581,24 +580,40 @@
   font-size: 20px;
 }
 
-// Featured story: research -> field as a two-cell card, echoing the stats
-// card (hairline dividers, 14px radius, soft shadow); an arrow badge sits on
-// the divider
-.proof__path {
+// Featured story: one card echoing the stats card (hairline dividers, 14px
+// radius, soft shadow) holding the photo, the title and research -> field,
+// with an arrow badge on the divider between those two
+.proof__card {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px; // dividers: the card background shows through the gap
+  overflow: hidden;
   border: 1px solid var(--light-gray);
   border-radius: 14px;
   background-color: var(--light-gray);
   box-shadow: 0 14px 32px -22px rgba(0, 0, 0, 0.3);
 }
 
+.page__content .proof__card > .proof__image {
+  grid-column: 1 / -1;
+  border-radius: 0;
+}
+
+// The story's tag and title, spanning both columns
+.proof__head {
+  grid-column: 1 / -1;
+  padding: 20px 22px 18px;
+  background-color: var(--white);
+
+  .proof__title {
+    margin-bottom: 0;
+  }
+}
+
 .proof__step {
   position: relative;
-  padding: 18px 22px;
+  padding: 18px 22px 20px;
   background-color: var(--white);
-  border-radius: 13px 0 0 13px;
 
   p {
     margin: 0;
@@ -609,7 +624,6 @@
 
   &--field {
     padding-left: 30px; // room for the arrow badge on the divider
-    border-radius: 0 13px 13px 0;
   }
 }
 
@@ -666,38 +680,22 @@
     gap: 36px;
   }
 
-  .proof--featured {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 32px;
-    align-content: center;
-
-    > * {
-      grid-column: 2;
-    }
-
-    .proof__image {
-      grid-column: 1;
-      grid-row: 1 / span 3;
-      align-self: center;
-      margin-bottom: 0;
-    }
+  // The card spans the column: photo filling the left half, title and
+  // research / field stacked on the right (the arrow badge points down)
+  .page__content .proof__card > .proof__image {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    aspect-ratio: auto;
   }
 
-  // Stacked cells: the divider is horizontal, the arrow badge sits on it
-  // pointing down
-  .proof__path {
-    grid-template-columns: 1fr;
-  }
-
+  .proof__head,
   .proof__step {
-    border-radius: 13px 13px 0 0;
+    grid-column: 2;
+  }
 
-    &--field {
-      padding-left: 22px;
-      padding-top: 24px;
-      border-radius: 0 0 13px 13px;
-    }
+  .proof__step--field {
+    padding-left: 22px;
+    padding-top: 24px;
   }
 
   .proof__arrow {
@@ -719,12 +717,20 @@
 // Tablets and phones: one column, each smaller story keeps its photo beside
 // the text at full width
 @media (max-width: $desktop) {
-  .proof--featured {
-    display: block;
+  // One column: photo on top, then the title, research and field
+  .proof__card {
+    grid-template-columns: 1fr;
+  }
 
-    .proof__image {
-      margin-bottom: 18px;
-    }
+  .page__content .proof__card > .proof__image {
+    grid-column: 1;
+    grid-row: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .proof__head,
+  .proof__step {
+    grid-column: 1;
   }
 
   .paper-to-field__side {

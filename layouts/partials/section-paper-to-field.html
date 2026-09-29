@@ -18,20 +18,22 @@
     <div class="paper-to-field__grid">
       {{ range where . "featured" true }}
       <article class="proof proof--featured">
-        <a class="proof__image" href="{{ .link }}">
-          {{ partial "responsive-image.html" (dict
-            "src" (strings.TrimPrefix "/" .image)
-            "alt" .title
-            "class" "no-lightense"
-            "sizes" "(max-width: 768px) 100vw, 55vw"
-            "widths" (slice 600 900 1200)
-            "lazy" true
-            "lqip" true
-          ) }}
-        </a>
-        <span class="proof__tag">{{ .tag }}</span>
-        <h3 class="proof__title"><a href="{{ .link }}">{{ .title }}</a></h3>
-        <div class="proof__path">
+        <div class="proof__card">
+          <a class="proof__image" href="{{ .link }}">
+            {{ partial "responsive-image.html" (dict
+              "src" (strings.TrimPrefix "/" .image)
+              "alt" .title
+              "class" "no-lightense"
+              "sizes" "(max-width: 768px) 100vw, 55vw"
+              "widths" (slice 600 900 1200)
+              "lazy" true
+              "lqip" true
+            ) }}
+          </a>
+          <div class="proof__head">
+            <span class="proof__tag">{{ .tag }}</span>
+            <h3 class="proof__title"><a href="{{ .link }}">{{ .title }}</a></h3>
+          </div>
           <div class="proof__step">
             <span class="proof__label">Research</span>
             <p>{{ .research }}</p>
