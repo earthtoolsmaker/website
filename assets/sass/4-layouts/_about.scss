@@ -405,10 +405,18 @@
 }
 
 /* About: how we work (research -> field path) */
+// Horizontal path: four equal columns, each step centred under its dot; the
+// axis labels sit over the first and last dots and the line joins them
 .how-we-work__axis {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
   margin-bottom: 12px;
+  text-align: center;
+
+  span:last-child {
+    grid-column: 4;
+  }
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -422,13 +430,14 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
 
-  // the path: a line through the step dots
+  // the path: a line from the first dot's centre to the last one's (a column
+  // is (100% - 3 gaps) / 4 wide, so its centre is half of that in)
   &::before {
     content: "";
     position: absolute;
     top: 8px;
-    left: 8px;
-    right: 8px;
+    left: calc((100% - 96px) / 8);
+    right: calc((100% - 96px) / 8);
     height: 2px;
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   }
@@ -437,12 +446,14 @@
 .how-we-work__step {
   position: relative;
   padding-top: 36px;
+  text-align: center;
 
   &::before {
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     box-sizing: border-box;
     width: 18px;
     height: 18px;
@@ -492,10 +503,12 @@
 
   .how-we-work__step {
     padding-top: 0;
+    text-align: left;
 
     &::before {
       top: 2px;
       left: -36px;
+      transform: none;
     }
   }
 }
