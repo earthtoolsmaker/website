@@ -47,21 +47,8 @@
 
           <div class="testimonials__slider my-slider" id="customize">
           {{ range .Site.Params.testimonial_item }}
-            {{ $item := . }}
-            {{/* designation is "Title - Organisation": shown as "Title, Organisation";
-                 the organisation names the logo */}}
-            {{ $parts := split (.designation | default "") " - " }}
-            {{ $org := .name }}
-            {{ if gt (len $parts) 1 }}{{ $org = index $parts 1 }}{{ end }}
             <div class="testimonial-item">
               <figure class="quote-card">
-                {{ with .logo }}{{ with resources.Get (strings.TrimPrefix "/" .) }}
-                {{ if $item.link }}
-                <a class="quote-card__logo" href="{{ $item.link }}" target="_blank" rel="noopener"><img src="{{ .RelPermalink }}" alt="{{ $org }}" loading="lazy"></a>
-                {{ else }}
-                <div class="quote-card__logo"><img src="{{ .RelPermalink }}" alt="{{ $org }}" loading="lazy"></div>
-                {{ end }}
-                {{ end }}{{ end }}
                 <div class="quote-card__body">
                   <span class="quote-card__mark" aria-hidden="true">&ldquo;</span>
                   <blockquote class="quote-card__text">{{ .content }}</blockquote>
@@ -72,6 +59,7 @@
                   {{ end }}{{ end }}
                   <span class="quote-card__who">
                     <span class="quote-card__name">{{ .name }}</span>
+                    {{/* designation is "Title - Organisation", shown as "Title, Organisation" */}}
                     {{ with .designation }}<span class="quote-card__role">{{ replace . " - " ", " }}</span>{{ end }}
                   </span>
                 </figcaption>

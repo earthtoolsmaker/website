@@ -36,8 +36,8 @@
 }
 
 // Quote card: same surface as the listing and partner cards (white, hairline
-// border, 14px radius, soft shadow) with hairline rows: partner logo, quote,
-// person. The row dividers are the card background showing through the gaps.
+// border, 14px radius, soft shadow) with two hairline rows: quote, person.
+// The row divider is the card background showing through the gap.
 .quote-card {
   display: flex;
   flex-direction: column;
@@ -54,37 +54,23 @@
   }
 }
 
-// Logo band, sized like .partner-card__logo so wide and tall logos weigh the same
-.quote-card__logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 88px;
-  padding: 0 24px;
-
-  // Tall logos (Wild Salmon Center) need the height; wide ones hit max-width
-  img {
-    height: 56px;
-    width: auto;
-    max-width: 70%;
-    object-fit: contain;
-  }
-}
-
 .quote-card__body {
-  padding: 20px 24px;
+  padding: 24px 24px 28px;
 
   @media (max-width: $mobile) {
-    padding: 18px 20px;
+    padding: 20px 20px 22px;
   }
 }
 
+// line-height 1 keeps the glyph inside its box (a tighter line-height drew it
+// above the box, into the padding); the fixed height trims the empty space
+// the glyph leaves below itself
 .quote-card__mark {
   display: block;
-  height: 22px;
+  height: 30px;
   font-family: $heading-font-family;
   font-size: 54px;
-  line-height: 0.6;
+  line-height: 1;
   color: var(--secondary-color);
 }
 
