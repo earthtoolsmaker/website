@@ -17,9 +17,8 @@
 
     <div class="how-we-work__axis" aria-hidden="true"><span>Research</span><span>Field</span></div>
     <div class="how-we-work__steps">
-      {{ range $i, $step := . }}
+      {{ range $step := . }}
       <div class="how-we-work__step">
-        <span class="how-we-work__num">{{ printf "%02d" (add $i 1) }}</span>
         <h3 class="how-we-work__title">{{ $step.title }}</h3>
         <p class="how-we-work__text">{{ $step.description }}</p>
       </div>
