@@ -1,0 +1,31 @@
+{{ with site.Data.services.steps }}
+<!-- begin how we work -->
+<section class="section how-we-work animate">
+  <div class="container-wide">
+
+    <div class="section__info">
+      <div class="section__head">
+        <h2 class="section__title">How We Work</h2>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none">
+        <path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+          d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8" />
+      </svg>
+    </div>
+
+    <p class="about-intro">Every project follows the same path, from what the research makes possible to what runs in the field every day.</p>
+
+    <div class="how-we-work__axis" aria-hidden="true"><span>Research</span><span>Field</span></div>
+    <div class="how-we-work__steps">
+      {{ range $step := . }}
+      <div class="how-we-work__step">
+        <h3 class="how-we-work__title">{{ $step.title }}</h3>
+        <p class="how-we-work__text">{{ $step.description }}</p>
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+<!-- end how we work -->
+{{ end }}

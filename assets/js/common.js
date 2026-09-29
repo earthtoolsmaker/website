@@ -215,15 +215,38 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   /* ============================
-  // Team Bio Toggle
+  // Trusted by panels (About page)
   ============================ */
-  document.querySelectorAll(".team-card__image").forEach(function (toggle) {
-    toggle.addEventListener("click", function () {
-      var card = toggle.closest(".team-card");
-      if (card) {
-        card.classList.toggle("team-card--open");
-        toggle.setAttribute("aria-expanded", card.classList.contains("team-card--open"));
+  // Each partner logo opens its panel below the row. With a mouse the panel
+  // follows the pointer and stays on the last logo; on touch screens a tap
+  // toggles it. Escape closes it.
+  document.querySelectorAll(".trusted-by").forEach(function (section) {
+    var logos = section.querySelectorAll(".trusted-by__logo");
+    var canHover = window.matchMedia("(hover: hover)").matches;
+
+    function show(active) {
+      logos.forEach(function (logo) {
+        var open = logo === active;
+        var panel = document.getElementById(logo.getAttribute("aria-controls"));
+        logo.setAttribute("aria-expanded", open);
+        panel.hidden = !open;
+      });
+    }
+
+    logos.forEach(function (logo) {
+      logo.addEventListener("click", function () {
+        var isOpen = logo.getAttribute("aria-expanded") === "true";
+        show(isOpen && !canHover ? null : logo);
+      });
+      if (canHover) {
+        logo.addEventListener("mouseenter", function () {
+          show(logo);
+        });
       }
+    });
+
+    section.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") show(null);
     });
   });
 

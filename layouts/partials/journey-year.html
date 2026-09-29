@@ -1,0 +1,17 @@
+{{/* One year of the About journey. Params: year (timeline entry), current (bool). */}}
+{{ $y := .year }}
+<div class="journey__year{{ if .current }} journey__year--current{{ end }}">
+  <div class="journey__label">
+    <span class="journey__num">{{ $y.year }}</span>
+    <span class="journey__title">{{ $y.title }}</span>
+    {{ if .current }}<span class="journey__badge">This year</span>{{ end }}
+  </div>
+  <div class="journey__items">
+    {{ range $y.items }}
+    <div class="journey__item">
+      <span class="journey__tag">{{ .tag }}</span>
+      <p class="journey__text">{{ .text }}{{ if .link }} <a class="journey__link" href="{{ .link }}">{{ .link_label | default "Project" }} ›</a>{{ end }}</p>
+    </div>
+    {{ end }}
+  </div>
+</div>

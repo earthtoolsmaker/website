@@ -1,0 +1,61 @@
+{{ with site.Data.about.trusted_by }}
+<!-- begin trusted by -->
+{{/* Each logo is a button that opens its panel below the row (hover, tap or
+     keyboard; see "Trusted by panels" in assets/js/common.js). Panels start
+     hidden, so without JS the row is still a plain row of logos. */}}
+<section class="section trusted-by animate" aria-label="Trusted by">
+  <div class="trusted-by__row">
+    <span class="trusted-by__label">Trusted by</span>
+    <div class="trusted-by__logos">
+      {{ range $i, $t := . }}
+        {{ $match := where site.Params.partner_item "name" $t.name }}
+        {{ if not $match }}{{ warnf "about trusted_by: no partner_item named %q" $t.name }}{{ end }}
+        {{ range first 1 $match }}
+          {{ with partial "partner-logo.html" . }}
+          <button class="trusted-by__logo" type="button" aria-expanded="false" aria-controls="trusted-by-panel-{{ $i }}">
+            <img src="{{ .RelPermalink }}" alt="{{ $t.name }}" loading="lazy">
+          </button>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+    <a class="trusted-by__all" href="/partners/">All {{ partial "partner-count.html" . }} partners ›</a>
+  </div>
+
+  {{ range $i, $t := . }}
+  {{ range first 1 (where site.Params.partner_item "name" $t.name) }}
+  {{ $p := . }}
+  <div class="trusted-by__panel" hidden id="trusted-by-panel-{{ $i }}">
+    {{/* Native lazy loading, not the site's LazyLoad: the browser fetches the
+         photo when its panel is first shown, and there is no in-flight load
+         for the library to cancel when a panel hides again. */}}
+    {{ with $t.image }}
+    {{ with resources.Get (strings.TrimPrefix "/" .) }}
+    {{ $small := .Resize "300x webp q80" }}
+    {{ $large := .Resize "600x webp q80" }}
+    {{ $fallback := .Resize "600x q85" }}
+    <div class="trusted-by__image">
+      <picture>
+        <source type="image/webp" srcset="{{ $small.RelPermalink }} 300w, {{ $large.RelPermalink }} 600w" sizes="(max-width: 768px) 100vw, 280px">
+        <img class="no-lightense" src="{{ $fallback.RelPermalink }}" alt="{{ $t.title }}" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}" loading="lazy" decoding="async">
+      </picture>
+    </div>
+    {{ else }}
+    {{ warnf "about trusted_by: image %q for %q not found" . $t.name }}
+    {{ end }}
+    {{ end }}
+    <div class="trusted-by__body">
+      <span class="trusted-by__tag">{{ $t.tag }}</span>
+      <h3 class="trusted-by__title">{{ $t.title }}</h3>
+      <p class="trusted-by__text">{{ $t.text }}</p>
+      <div class="trusted-by__links">
+        {{ range $t.links }}<a href="{{ .url }}">{{ .label }} ›</a>{{ end }}
+        {{ with $p.link }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ replaceRE `^https?://(www\.)?([^/]+).*$` "$2" . }} ↗</a>{{ end }}
+      </div>
+    </div>
+  </div>
+  {{ end }}
+  {{ end }}
+</section>
+<!-- end trusted by -->
+{{ end }}

@@ -1,0 +1,13 @@
+{{/* Logo image resource for a params.partner_item entry: prefers a
+     logo_dark.png variant (for white-on-transparent logos) and downscales
+     large rasters to 380px wide (they display at <= 190px; SVGs can't be
+     resized). Returns "" when the partner has no logo. */}}
+{{ $img := "" }}
+{{ with .logo }}
+  {{ $path := strings.TrimPrefix "/" . }}
+  {{ $img = or (resources.Get (replace $path "logo.png" "logo_dark.png")) (resources.Get $path) }}
+  {{ if and $img (not (strings.HasSuffix $path ".svg")) (gt $img.Width 380) }}
+    {{ $img = $img.Resize "380x" }}
+  {{ end }}
+{{ end }}
+{{ return $img }}

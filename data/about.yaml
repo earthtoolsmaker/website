@@ -2,19 +2,108 @@ stats:
   - value: "10+"
     label: "species monitored"
 
+# Newest year first. The first entry is shown as "this year"; the two most
+# recent years are shown, older ones fold behind a "Show" button.
 timeline:
-  - year: "2024"
-    title: "First field deployments"
-    description: "EarthToolsMaker starts shipping: coral reef health monitoring, forest elephant acoustics with Cornell, bear identification, and SalmonVision counting fish on British Columbia rivers."
+  - year: "2026"
+    title: "From research to platforms"
+    items:
+      - tag: "Seabirds"
+        text: "Funded and shipped: AI-BIRD, built with Lumax AI and Sovon, surveys seabird colonies from drone flights to track avian influenza."
+        link: "/tools/ai-bird/"
+        link_label: "AI-BIRD"
+      - tag: "Coasts"
+        text: "Drone monitoring of erosion and land cover on the Wadden Sea for Rijkswaterstaat."
+        link: "/projects/coastal_erosion_monitoring/"
+      - tag: "Wildfire"
+        text: "28 research papers raced head to head became Pyronear's production smoke verifier, with 4× fewer false alarms."
+        link: "/projects/early_forest_fire_detection/"
+      - tag: "Salmon"
+        text: "Sonar counts smolt runs no camera could see."
+        link: "/projects/monitoring_smolt_salmon_migration_with_sonar/"
   - year: "2025"
     title: "Tools others can run"
-    description: "BioWatch turns camera-trap archives into maps and insights. Seal surveys take off over the Wadden Sea. Snow leopard monitoring begins in the mountains of Central Asia."
-  - year: "2026"
-    title: "Earlier, faster, further"
-    description: "Sonar counts smolt runs no camera could see. Fire detection spots smoke at 35 km, minutes after ignition."
+    items:
+      - tag: "Camera traps"
+        text: "BioWatch turns camera-trap archives into maps and insights."
+      - tag: "Seals"
+        text: "Seal surveys take off over the Wadden Sea."
+      - tag: "Snow leopards"
+        text: "Snow leopard monitoring begins in the mountains of Central Asia."
+  - year: "2024"
+    title: "First field deployments"
+    items:
+      - tag: "Coral reefs"
+        text: "Coral reef health monitoring."
+      - tag: "Elephants"
+        text: "Forest elephant acoustics with Cornell."
+      - tag: "Bears"
+        text: "Bear identification."
+      - tag: "Salmon"
+        text: "SalmonVision starts counting fish on British Columbia rivers."
 
-support_cta:
-  title: "Help us keep these tools in the field"
-  description: "Your support sustains our ongoing projects, keeping tools maintained, models improving, and everything free for the people who rely on them."
-  button_text: "Support our work"
-  button_link: "/support/"
+# The About "Trusted by" row: one entry per logo, in display order. `name`
+# must match a params.partner_item name in config.toml exactly (the build
+# warns otherwise); the logo and the partner's own site come from there.
+# Selecting a logo opens a panel with the image, text and links below.
+trusted_by:
+  - name: "Pyronear"
+    tag: "Wildfire"
+    title: "Early smoke detection"
+    text: "We trained their detection models and built the MLOps pipeline, then raced 28 published methods into a smoke verifier with 4× fewer false alarms."
+    image: "/images/projects/early_forest_fire_detection/cover.jpg"
+    links:
+      - { label: "Project", url: "/projects/early_forest_fire_detection/" }
+      - { label: "Racing models, not opinions", url: "/posts/racing-models-not-opinions/" }
+
+  - name: "BearID Project"
+    tag: "Bears"
+    title: "Knowing one bear from another"
+    text: "With the BearID Project, we built facial recognition that tells individual brown bears apart from photos, for population monitoring without tags or tranquilizers."
+    image: "/images/projects/bear_identification/cover.png"
+    links:
+      - { label: "Project", url: "/projects/bear_identification/" }
+      - { label: "Bear ID with metric learning", url: "/posts/bear-identification-with-metric-learning-guide/" }
+
+  - name: "Pacific Salmon Foundation"
+    tag: "Salmon"
+    title: "Counting salmon in real time"
+    text: "Together we built SalmonVision, which counts and classifies migrating salmon in real time at 34 sites."
+    image: "/images/projects/wild_salmon_migration_monitoring/cover.png"
+    links:
+      - { label: "Project", url: "/projects/wild_salmon_migration_monitoring/" }
+      - { label: "Tracking the journey", url: "/posts/tracking-the-journey-how-to-monitor-wild-salmon-migrations/" }
+
+  - name: "Cornell Lab of Ornithology"
+    tag: "Elephants"
+    title: "Listening for forest elephants"
+    text: "With their Elephant Listening Project, we built tooling that scans terabytes of Congo-basin rainforest audio for elephant rumbles and gunshots."
+    image: "/images/projects/forest_elephants_passive_acoustic_monitoring/cover.png"
+    links:
+      - { label: "Project", url: "/projects/elephants_passive_acoustic_monitoring/" }
+      - { label: "Elephant rumbles at scale", url: "/posts/how-to-analyze-elephant-rumbles-at-scale/" }
+
+  - name: "Sovon"
+    tag: "Seabirds"
+    title: "Seabird surveys from the sky"
+    text: "With Sovon and Lumax AI we built AI-BIRD, which turns drone flights over seabird colonies into surveys of 10 species, alive or dead."
+    image: "/images/projects/bird_flu_monitoring/cover.png"
+    links:
+      - { label: "AI-BIRD", url: "/tools/ai-bird/" }
+
+  - name: "EarthRanger"
+    tag: "Platform"
+    title: "Scaling conservation operations"
+    text: "We joined its engineering team at Ai2 to scale the backend behind real-time conservation at 900+ protected areas."
+    image: "/images/projects/earthranger_platform_scaling/cover.jpg"
+    links:
+      - { label: "Project", url: "/projects/earthranger_platform_scaling/" }
+      - { label: "Separating reads from writes", url: "/posts/separating-reads-from-writes-earthranger/" }
+
+  - name: "Foundation Conservation Carpathia"
+    tag: "Bears"
+    title: "Keeping bears away from farms"
+    text: "Low-power technology that detects bears and deters them from Romanian farms, in Europe's largest forested national park project."
+    image: "/images/projects/human_wildlife_conflict_bear/cover_unsplash.jpg"
+    links:
+      - { label: "Project", url: "/projects/carpathian-bear-deterrence/" }

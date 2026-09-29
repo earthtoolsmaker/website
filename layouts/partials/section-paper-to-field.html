@@ -1,0 +1,81 @@
+{{ with site.Data.services.proof }}
+<!-- begin from paper to field -->
+<section class="section paper-to-field animate">
+  <div class="container-wide">
+
+    <div class="section__info">
+      <div class="section__head">
+        <h2 class="section__title">From Paper to Field</h2>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none">
+        <path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+          d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8" />
+      </svg>
+    </div>
+
+    <p class="about-intro">Three projects, three places where published research became something people rely on every day.</p>
+
+    <div class="paper-to-field__grid">
+      {{ range where . "featured" true }}
+      <article class="proof proof--featured">
+        <div class="proof__card">
+          <a class="proof__image" href="{{ .link }}">
+            {{ partial "responsive-image.html" (dict
+              "src" (strings.TrimPrefix "/" .image)
+              "alt" .title
+              "class" "no-lightense"
+              "sizes" "(max-width: 768px) 100vw, 55vw"
+              "widths" (slice 600 900 1200)
+              "lazy" true
+              "lqip" true
+            ) }}
+          </a>
+          <div class="proof__head">
+            <span class="proof__tag">{{ .tag }}</span>
+            <h3 class="proof__title"><a href="{{ .link }}">{{ .title }}</a></h3>
+          </div>
+          <div class="proof__step">
+            <span class="proof__label">Research</span>
+            <p>{{ .research }}</p>
+          </div>
+          <div class="proof__step proof__step--field">
+            <span class="proof__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="proof__label">Field</span>
+            <p>{{ .field }}</p>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+
+      <div class="paper-to-field__side">
+        {{ range where . "featured" "!=" true }}
+        <article class="proof">
+          <a class="proof__image" href="{{ .link }}">
+            {{ partial "responsive-image.html" (dict
+              "src" (strings.TrimPrefix "/" .image)
+              "alt" .title
+              "class" "no-lightense"
+              "sizes" "(max-width: 768px) 30vw, 200px"
+              "widths" (slice 200 400)
+              "lazy" true
+              "lqip" true
+            ) }}
+          </a>
+          <div class="proof__body">
+            <span class="proof__tag">{{ .tag }}</span>
+            <h3 class="proof__title"><a href="{{ .link }}">{{ .title }}</a></h3>
+            <p class="proof__summary">{{ .summary }}</p>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+
+    <p class="paper-to-field__more">
+      Explore all {{ len (where site.RegularPages "Section" "projects") }} projects on our <a href="/projects/">projects page</a>, or browse the <a href="/tools/">tools</a> behind them.
+    </p>
+
+  </div>
+</section>
+<!-- end from paper to field -->
+{{ end }}
