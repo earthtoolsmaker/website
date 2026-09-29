@@ -1,31 +1,5 @@
-<article class="article col col-4 col-w-6 col-t-12">
-  <div class="article__content">
-    {{ if .Get "image" }}
-    <div class="article__image">
-      {{ $imgPath := strings.TrimPrefix "/" (.Get "image") }}
-      {{ partial "responsive-image.html" (dict
-        "src" $imgPath
-        "alt" (.Get "title")
-        "sizes" "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 400px"
-        "widths" (slice 400 600 800)
-        "lazy" true
-        "lqip" true
-      ) }}
-    </div>
-    {{ end }}
-    <div class="article__inner">
-      <div class="article__info">
-        {{/* Inline reset: this card renders inside tool/prose content, whose
-             `a:not(.button)` rule adds a border-bottom underline and font-weight
-             override. Reset both so the card matches the blog-card titles. */}}
-        <h3 class="article__title"><a href="{{ .Get "link" }}" class="article__link" style="border-bottom: none; font-weight: inherit;">{{ .Get "title" }}</a></h3>
-        {{ if .Get "description" }}
-        <p class="article__excerpt">{{ .Get "description" }}</p>
-        {{ end }}
-        {{ if .Get "date" }}
-        <time class="article__date">{{ .Get "date" }}</time>
-        {{ end }}
-      </div>
-    </div>
-  </div>
-</article>
+{{- /* Blog card inside page content. Params: title, link, image, description, date (display string).
+     When link resolves to a post, its real date is used (card-meta.html); else the date string. */ -}}
+{{- $card := dict "href" (.Get "link") "title" (.Get "title") "image" (.Get "image") "excerpt" (.Get "description") "meta" (.Get "date") -}}
+{{- with site.GetPage (.Get "link") }}{{ $card = merge $card (partial "card-meta.html" .) }}{{ end -}}
+{{- partial "card.html" $card -}}

@@ -32,28 +32,7 @@
   <div class="container animate">
     <div class="row">
       {{ range (where .Site.RegularPages "Section" "demos" ) }}
-      <article class="space col col-4 col-w-6 col-t-12">
-        <div class="space__content">
-          {{ if .Params.card_image }}
-          <div class="space__image">
-            {{ partial "space-image.html" (dict "path" .Params.card_image "alt" .Params.title) }}
-          </div>
-          {{ end }}
-          <div class="space__inner">
-            <div class="space__info">
-              {{ if .Params.subtitle }}
-              <div class="space__subtitle">{{ .Params.subtitle }}</div>
-              {{ end }}
-              {{ if .Params.title }}
-              <h3 class="space__title"><a href="{{ .RelPermalink }}" class="space__link">{{ .Params.title }}</a></h3>
-              {{ end }}
-              {{ if .Params.summary }}
-              <p class="space__excerpt">{{ .Params.summary }}</p>
-              {{ end }}
-            </div>
-          </div>
-        </div>
-      </article>
+      {{ partial "card-for-page.html" (dict "page" .) }}
       {{ end }}
     </div>
   </div>

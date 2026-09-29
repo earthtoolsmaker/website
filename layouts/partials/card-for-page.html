@@ -1,0 +1,14 @@
+{{- /* Card for a page, by section. Params: page, optional class (see card.html). */ -}}
+{{- $p := .page -}}
+{{- $card := merge (dict "href" $p.RelPermalink "title" $p.Title) (partial "card-meta.html" $p) -}}
+{{- with .class }}{{ $card = merge $card (dict "class" .) }}{{ end -}}
+{{- if eq $p.Section "posts" -}}
+  {{- $card = merge $card (dict "image" $p.Params.image "excerpt" $p.Params.description) -}}
+{{- else if eq $p.Section "tools" -}}
+  {{- $card = merge $card (dict "logo" $p.Params.icon "tint" $p.Params.card_tint "logo_chip" $p.Params.logo_container "excerpt" $p.Params.summary) -}}
+{{- else if eq $p.Section "demos" -}}
+  {{- $card = merge $card (dict "illustration" $p.Params.card_image "excerpt" $p.Params.summary) -}}
+{{- else -}}
+  {{- $card = merge $card (dict "image" $p.Params.image "excerpt" $p.Params.summary) -}}
+{{- end -}}
+{{- partial "card.html" $card -}}

@@ -1,18 +1,4 @@
-<article class="space col col-4 col-w-6 col-t-12">
-  <div class="space__content">
-    {{ if .Get "image" }}
-    <div class="space__image">
-      {{ partial "space-image.html" (dict "path" (.Get "image") "alt" (.Get "title")) }}
-    </div>
-    {{ end }}
-    <div class="space__inner">
-      <div class="space__info">
-        {{ if .Get "subtitle" }}
-        <div class="space__subtitle">{{ .Get "subtitle" }}</div>
-        {{ end }}
-        <h3 class="space__title"><a href="{{ .Get "link" }}" class="space__link" style="border-bottom: none; font-weight: inherit;">{{ .Get "title" }}</a></h3>
-        <p class="space__excerpt">{{ .Get "summary" }}</p>
-      </div>
-    </div>
-  </div>
-</article>
+{{- /* Demo card inside page content. Params: title, link, image (card SVG), summary. */ -}}
+{{- $card := dict "href" (.Get "link") "title" (.Get "title") "illustration" (.Get "image") "excerpt" (.Get "summary") -}}
+{{- with site.GetPage (.Get "link") }}{{ $card = merge $card (partial "card-meta.html" .) }}{{ end -}}
+{{- partial "card.html" $card -}}

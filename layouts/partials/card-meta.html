@@ -1,0 +1,5 @@
+{{- /* Footer meta for a page's card (see docs/specs/2026-09-29-card-redesign-design.md).
+     Posts: (dict "date" .Date). Other pages have no footer meta: an empty dict. */ -}}
+{{- $out := dict -}}
+{{- if eq .Section "posts" }}{{ $out = dict "date" .Date }}{{ end -}}
+{{- return $out -}}
