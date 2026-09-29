@@ -31,9 +31,16 @@
         </a>
         <span class="proof__tag">{{ .tag }}</span>
         <h3 class="proof__title"><a href="{{ .link }}">{{ .title }}</a></h3>
-        <div class="proof__rows">
-          <span class="proof__label">Research</span><p>{{ .research }}</p>
-          <span class="proof__label proof__label--field">Field</span><p>{{ .field }}</p>
+        <div class="proof__path">
+          <div class="proof__step">
+            <span class="proof__label">Research</span>
+            <p>{{ .research }}</p>
+          </div>
+          <span class="proof__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+          <div class="proof__step proof__step--field">
+            <span class="proof__label">Field</span>
+            <p>{{ .field }}</p>
+          </div>
         </div>
         <p class="proof__with">{{ .with }}</p>
       </article>

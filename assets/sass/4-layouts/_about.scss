@@ -573,30 +573,49 @@
   font-size: 20px;
 }
 
-.proof__rows {
+// Featured story: research -> field as two boxes joined by an arrow
+.proof__path {
   display: grid;
-  grid-template-columns: 84px 1fr;
-  gap: 8px 12px;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.proof__step {
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: var(--background-alt-color);
 
   p {
     margin: 0;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.55;
     color: var(--text-color);
+  }
+
+  &--field {
+    background: rgba(131, 197, 190, 0.2);
   }
 }
 
 .proof__label {
-  padding-top: 3px;
+  display: block;
+  margin-bottom: 4px;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-alt-color);
+}
 
-  &--field {
-    color: var(--secondary-color);
-  }
+.proof__step--field .proof__label {
+  color: var(--secondary-color);
+}
+
+.proof__arrow {
+  align-self: center;
+  font-size: 16px;
+  color: var(--secondary-color);
 }
 
 .proof__summary {
@@ -633,13 +652,14 @@
     font-size: 24px;
   }
 
-  .proof__rows {
+  .proof__path {
     grid-template-columns: 1fr;
-    gap: 2px;
+    gap: 6px;
+  }
 
-    p + .proof__label {
-      margin-top: 8px;
-    }
+  .proof__arrow {
+    justify-self: center;
+    transform: rotate(90deg);
   }
 }
 
