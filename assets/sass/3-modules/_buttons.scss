@@ -62,7 +62,10 @@
 
   // Secondary action (homepage "View all"): teal outline pill that fills on
   // hover. The inset ring replaces the offset shadow, so no press motion.
-  &--pill {
+  // Also the second action inside mid-page CTA cards (.about-cta)
+  &--pill,
+  .about-cta &--ghost,
+  .about-cta &--secondary {
     padding: 10px 22px;
     color: var(--secondary-color);
     background: transparent;

@@ -174,18 +174,96 @@
 }
 
 /* Shared About CTA band */
+// Mid-page CTA card: same surface as the stats, partner and listing cards.
+// Title and text on the left; the actions (last child: one button or a
+// wrapper of two) move to a right-hand column on screens 1024px and wider,
+// and stack under the text otherwise (blog posts, tablets, phones).
 .about-cta {
   margin: 48px 0 0;
-  padding: 40px 24px;
-  text-align: center;
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  background: var(--background-color);
+  padding: 32px 36px;
+  text-align: left;
+  border: 1px solid var(--light-gray);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 0 14px 32px -22px rgba(0, 0, 0, 0.3);
+
+  // Actions wrapper (projects-cta__buttons, tools-cta__buttons, ...)
+  > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  // Spacing comes from the wrapper's gap (.button--cta-container adds margins)
+  .button {
+    margin: 0;
+  }
+
+  // Inside the card the peach support button joins the teal primary look
+  .button--cta {
+    color: var(--button-color);
+    background-color: var(--button-background-color);
+
+    &:hover {
+      color: var(--button-color);
+      background-color: var(--button-background-hover);
+    }
+  }
+
+  @media (max-width: $mobile) {
+    padding: 24px 20px;
+  }
+}
+
+@mixin about-cta-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 40px;
+
+  > * {
+    grid-column: 1;
+  }
+
+  > :last-child {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .about-cta__description {
+    margin-bottom: 0;
+  }
+}
+
+// A media query rather than a container query: size containment on the card's
+// parent would stop its margins collapsing and double the gaps around it.
+// Blog post text is 780px wide, so cards there stay stacked; project pages
+// share .post__content but are wider, so they get the columns back.
+@media (min-width: 1024px) {
+  .about-cta {
+    @include about-cta-columns;
+  }
+
+  .post__content .about-cta {
+    display: block;
+
+    .about-cta__description {
+      margin-bottom: 24px;
+    }
+  }
+
+  .project-single__col .post__content .about-cta {
+    @include about-cta-columns;
+  }
 }
 
 .about-cta__title {
   margin-bottom: 8px;
-  font-size: 26px;
+  font-family: $heading-font-family;
+  font-size: 24px;
+  line-height: 1.2;
   color: var(--heading-font-color);
 
   @media (max-width: $mobile) {
@@ -195,10 +273,10 @@
 
 .about-cta__description {
   max-width: 560px;
-  margin: 0 auto 24px;
-  font-size: 17px;
+  margin: 0 0 24px;
+  font-size: 16px;
   line-height: 1.6;
-  color: var(--text-color);
+  color: var(--text-alt-color);
 }
 
 /* About Hero (full-bleed photo with text overlay) */
@@ -1271,7 +1349,7 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  align-items: center;
+  align-items: flex-start; // the band stacks its content on the left
   gap: 12px;
 
   .fa-arrow-right {
@@ -1279,22 +1357,12 @@
     font-size: 14px;
     transform: rotate(-36deg); // same arrow as the hero "Start a project" button
   }
-
-  @media (max-width: $tablet) {
-    align-items: flex-start;
-  }
 }
 
 .about-closing__funders {
   margin: 0;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.85);
-}
-
-// The Support band's hover (pale peach) clashes with the teal here; use the light teal
-.support__cta-band.about-closing__band .button:hover {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
 }
 
 .page__content .about-closing__funders a {

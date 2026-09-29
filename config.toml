@@ -451,7 +451,7 @@ pagerSize = 6
   # Footer Settings
   [params.footer]
     # footer_description = "I’m Aaron, a creative Illustrator & Art Director based in San Francisco. I seek to push the limits of creativity to create high-engaging and memorable interactive experiences."
-    footer_description = "Developing Open Source technology to address conservation and environmental challenges for wildlife and the planet."
+    footer_description = "Developing technology to address conservation and environmental challenges for wildlife and the planet."
 
 
   #-------------------------------
