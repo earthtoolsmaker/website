@@ -21,7 +21,8 @@
 
     {{ with after 2 . }}
     <details class="journey__older">
-      <summary class="journey__more">Show {{ if eq (len .) 1 }}{{ (index . 0).year }}{{ else }}earlier years{{ end }}</summary>
+      {{ $label := cond (eq (len .) 1) (index . 0).year "earlier years" }}
+      <summary class="journey__more"><span class="journey__more-closed">Show {{ $label }}</span><span class="journey__more-open">Hide {{ $label }}</span></summary>
       <div class="journey">
         {{ range . }}
         {{ partial "journey-year.html" (dict "year" . "current" false) }}

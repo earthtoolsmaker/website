@@ -875,6 +875,16 @@
   margin-bottom: 24px;
 }
 
+// The summary reads "Show 2024" when closed and "Hide 2024" when open
+.journey__more-open,
+.journey__older[open] .journey__more-closed {
+  display: none;
+}
+
+.journey__older[open] .journey__more-open {
+  display: inline;
+}
+
 @media (max-width: $mobile) {
   .journey__year {
     grid-template-columns: 1fr;
