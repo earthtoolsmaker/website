@@ -638,8 +638,62 @@
   font-size: $base-font-size;
 }
 
-@media (max-width: $tablet) {
+// Up to $wide the column is 1000px or less, too narrow for three stories
+// side by side: the featured story takes the full width (photo left, text
+// right) and the two smaller stories sit side by side below it
+@media (max-width: $wide) {
   .paper-to-field__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .proof--featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+    align-content: center;
+
+    > * {
+      grid-column: 2;
+    }
+
+    .proof__image {
+      grid-column: 1;
+      grid-row: 1 / span 3;
+      align-self: center;
+      margin-bottom: 0;
+    }
+  }
+
+  .proof__path {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .proof__arrow {
+    justify-self: center;
+    transform: rotate(90deg);
+  }
+
+  .paper-to-field__side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+// Tablets and phones: one column, each smaller story keeps its photo beside
+// the text at full width
+@media (max-width: $desktop) {
+  .proof--featured {
+    display: block;
+
+    .proof__image {
+      margin-bottom: 18px;
+    }
+  }
+
+  .paper-to-field__side {
     grid-template-columns: 1fr;
   }
 }
@@ -654,15 +708,6 @@
     font-size: 24px;
   }
 
-  .proof__path {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
-
-  .proof__arrow {
-    justify-self: center;
-    transform: rotate(90deg);
-  }
 }
 
 /* About: the team (2 x 2, photo beside text, bio always visible) */
