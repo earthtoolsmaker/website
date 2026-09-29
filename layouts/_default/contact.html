@@ -1,26 +1,8 @@
 {{ define "main" }}
 
-{{ if .Params.Image }}
-<!-- begin hero image -->
-<div class="hero__image">
-  <div class="hero__image__inner">
-    {{ $imgPath := strings.TrimPrefix "/" .Params.Image }}
-    {{ partial "responsive-image.html" (dict
-      "src" $imgPath
-      "alt" .Title
-      "sizes" "100vw"
-      "widths" (slice 600 900 1200)
-      "lazy" true
-      "lqip" true
-    ) }}
-  </div>
-</div>
-<!-- end hero image -->
-{{ end }}
-
 <!-- begin page -->
 <div class="container">
-  <article class="page">
+  <article class="page page--wide">
     <div class="page__content">
 
       <div class="contact-grid">

@@ -156,3 +156,8 @@
     background-color: transparent;
   }
 }
+
+/* Contact page spans the full container width, like the blog listing */
+.page.page--wide {
+  max-width: none;
+}
