@@ -194,6 +194,13 @@
     }
   }
 
+  // The card overlay is part of the link, so the prose link hover colour
+  // would win over the card hover: keep the title teal like listing cards
+  .card__content:hover a.card__link,
+  .card__content:has(.card__link:focus-visible) a.card__link {
+    color: var(--secondary-color);
+  }
+
   .card .card__title {
     margin: 0 0 6px;
     font-size: 19px;
