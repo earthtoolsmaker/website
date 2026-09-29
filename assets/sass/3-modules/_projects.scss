@@ -14,6 +14,13 @@
   flex-wrap: wrap;
 }
 
-.projects-stats {
-  margin: 36px 0 44px;
+
+// Projects listing: room under the stats card that overlaps the hero photo,
+// the same gap the homepage leaves (.section margin)
+.projects-page {
+  margin-top: 80px;
+
+  @media (max-width: $mobile) {
+    margin-top: 60px;
+  }
 }
