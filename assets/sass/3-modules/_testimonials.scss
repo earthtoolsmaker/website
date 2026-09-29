@@ -9,7 +9,7 @@
 
   .controls .prev,
   .controls .next {
-    color: var(--tertiary-color);
+    color: var(--secondary-color);
   }
 
   .testimonials__info {
@@ -25,121 +25,122 @@
   }
 }
 
+// Cards keep their natural height (short quotes stay short)
 .testimonial-item {
-  margin-bottom: 36px;
-  // Top room so the hover lift isn't clipped by the slider's overflow:hidden
-  padding-top: 12px;
-  position: relative;
+  // Room for the card shadow inside the slider's overflow:hidden
+  padding-bottom: 36px;
 
   @media (max-width: $mobile) {
-    margin-bottom: 32px;
+    padding-bottom: 32px;
   }
 }
 
-.testimonial-content {
-  position: relative;
-  padding: 32px;
-  border-radius: 16px;
-  background: var(--background-alt-color);
-  border: 1px solid var(--border-color);
-  box-shadow: 0 6px 26px rgba(0, 0, 0, 0.05);
-  will-change: transform;
-  transition: transform .3s ease;
-
-  &:hover {
-    transform: translateY(-8px);
-  }
-
-  @media (max-width: $mobile) {
-    padding: 20px;
-  }
-}
-
-.client-meta {
-  text-align: center;
-
-}
-
-.image-container {
-  display: block;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 12px;
-  border-radius: 50%;
+// Quote card: same surface as the listing and partner cards (white, hairline
+// border, 14px radius, soft shadow) with hairline rows: partner logo, quote,
+// person. The row dividers are the card background showing through the gaps.
+.quote-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 0;
   overflow: hidden;
-  transform: translate(0);
-  background: var(--background-alt-color);
+  border: 1px solid var(--light-gray);
+  border-radius: 14px;
+  background-color: var(--light-gray);
+  box-shadow: 0 14px 32px -22px rgba(0, 0, 0, 0.3);
 
-  .client-avatar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    user-select: none;
-    object-fit: cover;
+  > * {
+    background-color: var(--white);
   }
+}
+
+// Logo band, sized like .partner-card__logo so wide and tall logos weigh the same
+.quote-card__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88px;
+  padding: 0 24px;
+
+  // Tall logos (Wild Salmon Center) need the height; wide ones hit max-width
+  img {
+    height: 56px;
+    width: auto;
+    max-width: 70%;
+    object-fit: contain;
+  }
+}
+
+.quote-card__body {
+  padding: 20px 24px;
 
   @media (max-width: $mobile) {
-    width: 80px;
-    height: 80px;
+    padding: 18px 20px;
   }
 }
 
-.client-logo {
-  margin-top: 20px;
-  text-align: center;
+.quote-card__mark {
+  display: block;
+  height: 22px;
+  font-family: $heading-font-family;
+  font-size: 54px;
+  line-height: 0.6;
+  color: var(--secondary-color);
+}
 
-  .client-logo-image {
-    display: inline-block;
-    width: auto;
-    height: auto;
-    // Bounding box normalises visual weight across square + wide logos
-    max-width: 140px;
-    max-height: 46px;
-    filter: grayscale(100%);
-    opacity: 0.7;
+// Resets the site-wide blockquote style (bold 26px, margins, decorative mark)
+.quote-card__text {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: $heading-font-family;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--heading-font-color);
 
-    @media (max-width: $mobile) {
-      max-width: 110px;
-      max-height: 36px;
-    }
+  &::after {
+    content: none;
   }
 }
 
-.client-info {
-  margin-bottom: 16px;
+.quote-card__person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px 16px;
 
-
-  .client-name {
-    margin-bottom: 4px;
-    font-size: 18px;
-    font-family: $base-font-family;
-    font-weight: 700;
-
-    a::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
-      border-radius: 16px;
-    }
-  }
-
-  .client-designation {
-    margin-bottom: 0;
-    font-size: 14px;
-    line-height: 1;
-    color: var(--gray);
+  @media (max-width: $mobile) {
+    padding: 14px 20px;
   }
 }
 
-.client-text {
-  margin-bottom: 16px;
-  font-size: 16px;
+.quote-card__avatar {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.quote-card__who {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.quote-card__name {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--heading-font-color);
+}
+
+.quote-card__role {
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: var(--text-alt-color);
 }
 
 .tns-outer {

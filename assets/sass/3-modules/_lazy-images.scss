@@ -77,19 +77,6 @@ picture img[width][height] {
   }
 }
 
-// Client testimonial images
-.client-logo picture,
-.image-container picture {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
 // Case study images - ensure picture fills the link container
 .case-study__image {
   a {
