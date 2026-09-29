@@ -1017,15 +1017,24 @@
     gap: 16px;
   }
 
+  // Three equal columns, each logo centred in its cell; the last row is
+  // centred too (7 logos sit as 3 + 3 + 1)
   .trusted-by__logos {
     order: 3;
     flex-basis: 100%;
-    justify-content: flex-start;
+    justify-content: center;
+    gap: 14px 0;
+  }
+
+  .trusted-by__logo {
+    display: flex;
+    flex: 0 0 33.333%;
+    justify-content: center;
   }
 
   .trusted-by__logo img {
     height: 32px;
-    max-width: 120px;
+    max-width: 100%;
   }
 }
 
