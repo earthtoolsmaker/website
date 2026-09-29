@@ -1,24 +1,56 @@
 {{ with site.Data.about.trusted_by }}
 <!-- begin trusted by -->
+{{/* Each logo is a button that opens its panel below the row (hover, tap or
+     keyboard; see "Trusted by panels" in assets/js/common.js). Panels start
+     hidden, so without JS the row is still a plain row of logos. */}}
 <section class="section trusted-by animate" aria-label="Trusted by">
   <div class="trusted-by__row">
     <span class="trusted-by__label">Trusted by</span>
     <div class="trusted-by__logos">
-      {{ range $name := . }}
-        {{ $match := where site.Params.partner_item "name" $name }}
-        {{ if not $match }}{{ warnf "about trusted_by: no partner_item named %q" $name }}{{ end }}
+      {{ range $i, $t := . }}
+        {{ $match := where site.Params.partner_item "name" $t.name }}
+        {{ if not $match }}{{ warnf "about trusted_by: no partner_item named %q" $t.name }}{{ end }}
         {{ range first 1 $match }}
-          {{ $p := . }}
-          {{ with partial "partner-logo.html" $p }}
-          <a class="trusted-by__logo" href="{{ $p.link }}" target="_blank" rel="noopener noreferrer" title="{{ $p.name }}">
-            <img src="{{ .RelPermalink }}" alt="{{ $p.name }}" loading="lazy">
-          </a>
+          {{ with partial "partner-logo.html" . }}
+          <button class="trusted-by__logo" type="button" aria-expanded="false" aria-controls="trusted-by-panel-{{ $i }}">
+            <img src="{{ .RelPermalink }}" alt="{{ $t.name }}" loading="lazy">
+          </button>
           {{ end }}
         {{ end }}
       {{ end }}
     </div>
     <a class="trusted-by__all" href="/partners/">All {{ partial "partner-count.html" . }} partners ›</a>
   </div>
+
+  {{ range $i, $t := . }}
+  {{ range first 1 (where site.Params.partner_item "name" $t.name) }}
+  {{ $p := . }}
+  <div class="trusted-by__panel" hidden id="trusted-by-panel-{{ $i }}">
+    {{ with $t.image }}
+    <div class="trusted-by__image">
+      {{ partial "responsive-image.html" (dict
+        "src" (strings.TrimPrefix "/" .)
+        "alt" $t.title
+        "class" "no-lightense"
+        "sizes" "(max-width: 768px) 100vw, 280px"
+        "widths" (slice 300 600)
+        "lazy" true
+        "lqip" false
+      ) }}
+    </div>
+    {{ end }}
+    <div class="trusted-by__body">
+      <span class="trusted-by__tag">{{ $t.tag }}</span>
+      <h3 class="trusted-by__title">{{ $t.title }}</h3>
+      <p class="trusted-by__text">{{ $t.text }}</p>
+      <div class="trusted-by__links">
+        {{ range $t.links }}<a href="{{ .url }}">{{ .label }} ›</a>{{ end }}
+        {{ with $p.link }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ replaceRE `^https?://(www\.)?([^/]+).*$` "$2" . }} ↗</a>{{ end }}
+      </div>
+    </div>
+  </div>
+  {{ end }}
+  {{ end }}
 </section>
 <!-- end trusted by -->
 {{ end }}

@@ -42,13 +42,67 @@ timeline:
       - tag: "Salmon"
         text: "SalmonVision starts counting fish on British Columbia rivers."
 
-# Logos in the About "Trusted by" row. Names must match params.partner_item
-# names in config.toml exactly; the build warns about any that don't.
+# The About "Trusted by" row: one entry per logo, in display order. `name`
+# must match a params.partner_item name in config.toml exactly (the build
+# warns otherwise); the logo and the partner's own site come from there.
+# Selecting a logo opens a panel with the image, text and links below.
 trusted_by:
-  - "Pyronear"
-  - "Wild Salmon Center"
-  - "Pacific Salmon Foundation"
-  - "Cornell Lab of Ornithology"
-  - "Sovon"
-  - "EarthRanger"
-  - "Foundation Conservation Carpathia"
+  - name: "Pyronear"
+    tag: "Wildfire"
+    title: "Early smoke detection"
+    text: "We trained their detection models and built the MLOps pipeline, then raced 28 published methods into a smoke verifier with 4× fewer false alarms."
+    image: "/images/projects/early_forest_fire_detection/cover.jpg"
+    links:
+      - { label: "Project", url: "/projects/early_forest_fire_detection/" }
+      - { label: "Racing models, not opinions", url: "/posts/racing-models-not-opinions/" }
+
+  - name: "Wild Salmon Center"
+    tag: "Salmon"
+    title: "Salmon strongholds, counted"
+    text: "A SalmonVision collaborator, bringing automated salmon counts to wild salmon strongholds across the Pacific Rim."
+    image: "/images/projects/wild_salmon_migration_monitoring/sites/haida.jpg"
+    links:
+      - { label: "SalmonVision", url: "/tools/salmonvision/" }
+
+  - name: "Pacific Salmon Foundation"
+    tag: "Salmon"
+    title: "Counting salmon in real time"
+    text: "Together we built SalmonVision, which counts and classifies migrating salmon in real time at 34 sites."
+    image: "/images/projects/wild_salmon_migration_monitoring/cover.png"
+    links:
+      - { label: "Project", url: "/projects/wild_salmon_migration_monitoring/" }
+      - { label: "Tracking the journey", url: "/posts/tracking-the-journey-how-to-monitor-wild-salmon-migrations/" }
+
+  - name: "Cornell Lab of Ornithology"
+    tag: "Elephants"
+    title: "Listening for forest elephants"
+    text: "With their Elephant Listening Project, we built tooling that scans terabytes of Congo-basin rainforest audio for elephant rumbles and gunshots."
+    image: "/images/projects/forest_elephants_passive_acoustic_monitoring/cover.png"
+    links:
+      - { label: "Project", url: "/projects/elephants_passive_acoustic_monitoring/" }
+      - { label: "Elephant rumbles at scale", url: "/posts/how-to-analyze-elephant-rumbles-at-scale/" }
+
+  - name: "Sovon"
+    tag: "Seabirds"
+    title: "Seabird surveys from the sky"
+    text: "With Sovon and Lumax AI we built AI-BIRD, which turns drone flights over seabird colonies into surveys of 10 species, alive or dead."
+    image: "/images/projects/bird_flu_monitoring/cover.png"
+    links:
+      - { label: "AI-BIRD", url: "/tools/ai-bird/" }
+
+  - name: "EarthRanger"
+    tag: "Platform"
+    title: "Scaling conservation operations"
+    text: "We joined its engineering team at Ai2 to scale the backend behind real-time conservation at 900+ protected areas."
+    image: "/images/projects/earthranger_platform_scaling/cover.jpg"
+    links:
+      - { label: "Project", url: "/projects/earthranger_platform_scaling/" }
+      - { label: "Separating reads from writes", url: "/posts/separating-reads-from-writes-earthranger/" }
+
+  - name: "Foundation Conservation Carpathia"
+    tag: "Bears"
+    title: "Keeping bears away from farms"
+    text: "Low-power technology that detects bears and deters them from Romanian farms, in Europe's largest forested national park project."
+    image: "/images/projects/human_wildlife_conflict_bear/cover_unsplash.jpg"
+    links:
+      - { label: "Project", url: "/projects/carpathian-bear-deterrence/" }
