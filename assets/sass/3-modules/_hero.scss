@@ -211,6 +211,16 @@
   }
 }
 
+// Listing pages under a photo hero (Projects, Tools): room below the stats
+// card that overlaps the photo, the same gap the homepage leaves (.section margin)
+.hero-listing {
+  margin-top: 80px;
+
+  @media (max-width: $mobile) {
+    margin-top: 60px;
+  }
+}
+
 // Homepage: float over the bottom of the hero photo.
 .hero .stats-card {
   margin-top: -44px;
