@@ -1,7 +1,6 @@
 ---
 layout: contact
 title: Contact
-image: /images/pages/home/hero.jpg
 ---
 
 We're thrilled that you're interested in reaching out to us. Whether you have a
