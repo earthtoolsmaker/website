@@ -1010,31 +1010,58 @@
   color: var(--secondary-color);
 }
 
-@media (max-width: $tablet) {
+// Up to $wide the content column is 1000px or less, too narrow for the label,
+// seven logos and the link on one line: the label and link go on a line above
+// and the logos take the full width below
+@media (max-width: $wide) {
   .trusted-by__row {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 16px;
   }
 
-  // Three equal columns, each logo centred in its cell; the last row is
-  // centred too (7 logos sit as 3 + 3 + 1)
   .trusted-by__logos {
     order: 3;
     flex-basis: 100%;
+    column-gap: 12px; // a minimum: space-between still spreads the seven logos
+  }
+}
+
+// Tablets and phones: a centred grid, each logo centred in an equal cell and
+// the last row centred too (7 logos sit as 4 + 3, then 3 + 3 + 1 on phones)
+@media (max-width: $desktop) {
+  .trusted-by__logos {
     justify-content: center;
     gap: 14px 0;
   }
 
   .trusted-by__logo {
     display: flex;
-    flex: 0 0 33.333%;
+    flex: 0 0 25%;
     justify-content: center;
   }
 
   .trusted-by__logo img {
     height: 32px;
     max-width: 100%;
+  }
+
+  // The cell is wider than its logo: highlight the logo, not the whole cell
+  .trusted-by__logo:hover,
+  .trusted-by__logo[aria-expanded="true"] {
+    background: transparent;
+
+    img {
+      border-radius: 4px;
+      background: rgba(131, 197, 190, 0.18);
+      box-shadow: 0 0 0 8px rgba(131, 197, 190, 0.18);
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .trusted-by__logo {
+    flex-basis: 33.333%;
   }
 }
 
