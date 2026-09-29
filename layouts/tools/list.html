@@ -1,54 +1,37 @@
 {{ define "main" }}
 
-{{ if .Params.Image }}
-<!-- begin hero image -->
-<div class="hero__image">
-  <div class="hero__image__inner">
-    {{ $imgPath := strings.TrimPrefix "/" .Params.Image }}
-    {{ partial "responsive-image.html" (dict
-      "src" $imgPath
-      "alt" .Title
-      "sizes" "100vw"
-      "widths" (slice 600 900 1200)
-      "lazy" true
-      "lqip" true
-    ) }}
+{{ $tools := where .Site.RegularPages "Section" "tools" }}
+
+{{/* Homepage-style photo hero, with the tools stats card overlapping its bottom edge */}}
+{{ if .Params.hero_image }}
+<section class="hero">
+  {{ partial "photo-hero.html" (dict
+    "image" .Params.hero_image
+    "eyebrow" .Params.hero_eyebrow
+    "title" (.Params.hero_title | default .Title)
+    "description" .Params.hero_description
+    "button_primary" .Params.hero_button_primary
+    "button_primary_link" .Params.hero_button_primary_link
+    "button_secondary" .Params.hero_button_secondary
+    "button_secondary_link" .Params.hero_button_secondary_link
+  ) }}
+  <div class="container">
+    {{ partial "stats-card.html" (dict "class" "stats-card--wide" "items" (slice
+      (dict "value" (len $tools) "title" "Tools" "detail" "built with field teams")
+      (dict "value" "10" "title" "Seabird species" "detail" "identified by AI-BIRD" "url" "/tools/ai-bird/")
+      (dict "value" "500+" "title" "Fires detected" "detail" "by Pyronear" "url" "/tools/pyronear/")
+      (dict "value" "1M+" "title" "Salmon tracked" "detail" "by SalmonVision" "url" "/tools/salmonvision/")
+    )) }}
   </div>
-</div>
-<!-- end hero image -->
+</section>
 {{ end }}
 
 <!-- begin page-wrapper -->
-<div class="page-wrapper">
-
-  <div class="container">
-    <div class="page-wrapper__info">
-      {{ if .Title }}
-      <h1 class="page-info__title">{{ .Title }}</h1>
-      {{ end }}
-      {{ if .Description }}
-      <p class="page-info__description">{{ .Description }}</p>
-      {{ end }}
-    </div>
-  </div>
-
-  <!-- begin tools stats -->
-  <section class="section tools-stats animate">
-    <div class="container">
-      {{ $tools := where .Site.RegularPages "Section" "tools" }}
-      {{ partial "stats-card.html" (dict "class" "stats-card--flat stats-card--wide" "items" (slice
-        (dict "value" (len $tools) "title" "Tools" "detail" "built with field teams")
-        (dict "value" (len (where $tools "Params.open_source" "!=" false)) "title" "Open source" "detail" "free to use and adapt")
-        (dict "value" "500+" "title" "Fires detected" "detail" "by Pyronear" "url" "/tools/pyronear/")
-        (dict "value" "1M+" "title" "Salmon tracked" "detail" "by SalmonVision" "url" "/tools/salmonvision/")
-      )) }}
-    </div>
-  </section>
-  <!-- end tools stats -->
+<div class="page-wrapper hero-listing">
 
   <div class="container animate">
     <div class="row">
-      {{ range (where .Site.RegularPages "Section" "tools" ) }}
+      {{ range $tools }}
       {{ partial "tool-card.html" . }}
       {{ end }}
     </div>
