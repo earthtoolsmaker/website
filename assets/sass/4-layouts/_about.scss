@@ -514,7 +514,9 @@
   gap: 32px;
 }
 
-.page__content .proof__image {
+// a.proof__image matches the specificity of .page__content a:not(.button), so
+// the article link underline (and its darker :hover colour) stays off
+.page__content a.proof__image {
   display: block;
   overflow: hidden;
   border: none;
@@ -594,9 +596,15 @@
   box-shadow: 0 14px 32px -22px rgba(0, 0, 0, 0.3);
 }
 
-.page__content .proof__card > .proof__image {
+.page__content .proof__card > a.proof__image {
   grid-column: 1 / -1;
   border-radius: 0;
+
+  // Square photo: the card clips its outer corners (page images are
+  // otherwise rounded by .page__content img)
+  img {
+    border-radius: 0;
+  }
 }
 
 // The story's tag and title, spanning both columns
@@ -682,7 +690,7 @@
 
   // The card spans the column: photo filling the left half, title and
   // research / field stacked on the right (the arrow badge points down)
-  .page__content .proof__card > .proof__image {
+  .page__content .proof__card > a.proof__image {
     grid-column: 1;
     grid-row: 1 / span 3;
     aspect-ratio: auto;
@@ -722,7 +730,7 @@
     grid-template-columns: 1fr;
   }
 
-  .page__content .proof__card > .proof__image {
+  .page__content .proof__card > a.proof__image {
     grid-column: 1;
     grid-row: auto;
     aspect-ratio: 16 / 10;
