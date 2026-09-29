@@ -4,7 +4,6 @@
 .layout-about .page-head,
 .layout-about .services .container-wide,
 .layout-about .team .container-wide,
-.layout-about .about-stats .container-wide,
 .layout-about .about-partners .container-wide,
 .layout-about .about-timeline .container-wide {
   max-width: 1000px;
@@ -14,11 +13,46 @@
 
 .layout-about .services .container-wide,
 .layout-about .team .container-wide,
-.layout-about .about-stats .container-wide,
 .layout-about .about-partners .container-wide,
 .layout-about .about-timeline .container-wide {
   padding-left: 0;
   padding-right: 0;
+}
+
+/* About page: the content shares the hero copy's left edge (.container) and
+   sections use its full width; running prose stays at a readable measure. */
+.layout-about--wide {
+  margin-top: 80px; // same gap the homepage leaves below its stats card (.section margin)
+
+  .page {
+    max-width: none;
+  }
+
+  .services .container-wide,
+  .team .container-wide,
+  .about-timeline .container-wide,
+  .about-partners .container-wide {
+    max-width: none;
+  }
+
+  .page__content > p,
+  .services__intro,
+  .about-timeline .timeline {
+    max-width: 760px;
+  }
+
+  // Scale the case-study photos with the wider column instead of a fixed 400px
+  @media (min-width: #{$tablet + 1px}) {
+    .case-study__image {
+      width: 46%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 60px;
+  }
 }
 
 .layout-about .page-title {

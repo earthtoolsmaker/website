@@ -1,24 +1,22 @@
 {{ define "main" }}
 
 {{ if .Params.hero_image }}
-<div class="about-hero about-hero--overlay-nav">
-  {{ $imgPath := strings.TrimPrefix "/" .Params.hero_image }}
-  {{ partial "responsive-image.html" (dict
-    "src" $imgPath
-    "alt" .Title
-    "sizes" "100vw"
-    "widths" (slice 600 900 1200 1500)
-    "lazy" false
-    "fetchpriority" "high"
-    "lqip" false
+{{/* Homepage-style photo hero, with the site stats card overlapping its bottom edge */}}
+<section class="hero">
+  {{ partial "photo-hero.html" (dict
+    "image" .Params.hero_image
+    "eyebrow" .Params.hero_eyebrow
+    "title" (.Params.hero_title | default .Title)
+    "description" .Params.hero_description
+    "button_primary" .Params.hero_button_primary
+    "button_primary_link" .Params.hero_button_primary_link
+    "button_secondary" .Params.hero_button_secondary
+    "button_secondary_link" .Params.hero_button_secondary_link
   ) }}
-  <div class="about-hero__overlay">
-    <div class="container-wide">
-      <h1 class="about-hero__title">{{ .Params.hero_title | default .Title }}</h1>
-      {{ with .Params.hero_description }}<p class="about-hero__description">{{ . }}</p>{{ end }}
-    </div>
+  <div class="container">
+    {{ partial "stats-card.html" (dict "items" (partial "site-stats.html" .) "class" "") }}
   </div>
-</div>
+</section>
 {{ else }}
 <div class="container-wide layout-about">
   <div class="page-head">
@@ -30,7 +28,8 @@
 {{ end }}
 
 <!-- begin page -->
-<div class="container-wide layout-about">
+{{/* .container (not .container-wide) so the content shares the hero copy's left edge */}}
+<div class="container layout-about layout-about--wide">
   <article class="page">
     <div class="page__content">
       {{ .Content }}

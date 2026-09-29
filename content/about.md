@@ -2,17 +2,20 @@
 layout: about
 title: About
 hero_image: /images/pages/about/hero-forest.jpg
-hero_title: Technology for the people protecting wild places
-hero_description: We build open-source AI for conservation. We listen for elephants in rainforest audio, count salmon as they swim upriver, and spot wildfire smoke from 35 km away.
+hero_eyebrow: About us
+hero_title: From the research lab <span><i>to&nbsp;the&nbsp;field</i></span>.
+hero_description: "We turn conservation research into systems that run in the field: listening for elephants in rainforest audio, counting salmon as they swim upriver, and spotting wildfire smoke 35 km away."
+hero_button_primary: Work with us
+hero_button_primary_link: /contact/
+hero_button_secondary: Meet the team
+hero_button_secondary_link: "#team"
 ---
 
-Conservation teams collect more data than they can ever look at: years of audio, millions of camera-trap photos, endless hours of underwater video. The bottleneck isn't passion or knowledge. It's tooling. We're a small team of engineers and ecologists who close that gap, building machine learning tools side by side with the researchers and rangers who use them.
+Conservation teams collect more data than they can ever look at: years of audio, millions of camera-trap photos, endless hours of underwater video. Research labs publish methods that could help, but a paper is not a tool a ranger can run. We're a small team of engineers and ecologists who close that gap, building machine learning tools side by side with the researchers and rangers who use them.
 
-**Free to use. Free to modify. Open source, end to end.**
+**From research code to systems that run every day.**
 
 {{< services >}}
-
-{{< about_stats >}}
 
 {{< team >}}
 

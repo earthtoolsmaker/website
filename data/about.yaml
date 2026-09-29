@@ -5,7 +5,7 @@ stats:
 timeline:
   - year: "2024"
     title: "First field deployments"
-    description: "EarthToolsMaker starts shipping: coral reef health monitoring, forest elephant acoustics with Cornell, bear identification, and SalmonVision counting fish on British Columbia rivers."
+    description: "earthtoolsmaker starts shipping: coral reef health monitoring, forest elephant acoustics with Cornell, bear identification, and SalmonVision counting fish on British Columbia rivers."
   - year: "2025"
     title: "Tools others can run"
     description: "BioWatch turns camera-trap archives into maps and insights. Seal surveys take off over the Wadden Sea. Snow leopard monitoring begins in the mountains of Central Asia."

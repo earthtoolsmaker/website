@@ -8,8 +8,8 @@ services:
   - title: "Apps & deployment"
     description: "Web apps and dashboards your team actually uses, running on anything from edge devices to the cloud."
 
-  - title: "Open source by default"
-    description: "Transparent, reproducible, and yours to keep, with no vendor lock-in."
+  - title: "Built to last"
+    description: "Documented, maintained and retrained as conditions change, so systems keep working season after season."
 
 examples:
   - image: "/images/projects/early_forest_fire_detection/cover.jpg"
