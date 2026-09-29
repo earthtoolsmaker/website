@@ -143,6 +143,36 @@
   color: var(--text-alt-color);
 }
 
+// Large screens (three cards in view, the slider's 1024px breakpoint in
+// common.js): equal-height cards with the quote centred in its row, and the
+// person rows sized for a two-line role so the dividers line up. Smaller
+// screens keep natural heights.
+@media (min-width: 1024px) {
+  .testimonials__slider.tns-horizontal.tns-subpixel {
+    display: flex;
+  }
+
+  // Beats tiny-slider's inline-block on slides so the card can fill its slide
+  .testimonials__slider.tns-horizontal > .testimonial-item {
+    display: flex;
+  }
+
+  .quote-card {
+    flex: 1;
+  }
+
+  .quote-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .quote-card__person {
+    min-height: 82px;
+  }
+}
+
 .tns-outer {
   position: relative;
 }
