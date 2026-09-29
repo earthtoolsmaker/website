@@ -230,10 +230,6 @@ document.addEventListener("DOMContentLoaded", function() {
         var panel = document.getElementById(logo.getAttribute("aria-controls"));
         logo.setAttribute("aria-expanded", open);
         panel.hidden = !open;
-        // Load the photo right away: the lazy loader only notices it once the
-        // panel is visible, so it would pop in a beat late.
-        var img = open && panel.querySelector("img.lazy:not(.loaded)");
-        if (img && window.LazyLoad) LazyLoad.load(img);
       });
     }
 

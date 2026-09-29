@@ -26,18 +26,23 @@
   {{ range first 1 (where site.Params.partner_item "name" $t.name) }}
   {{ $p := . }}
   <div class="trusted-by__panel" hidden id="trusted-by-panel-{{ $i }}">
+    {{/* Native lazy loading, not the site's LazyLoad: the browser fetches the
+         photo when its panel is first shown, and there is no in-flight load
+         for the library to cancel when a panel hides again. */}}
     {{ with $t.image }}
+    {{ with resources.Get (strings.TrimPrefix "/" .) }}
+    {{ $small := .Resize "300x webp q80" }}
+    {{ $large := .Resize "600x webp q80" }}
+    {{ $fallback := .Resize "600x q85" }}
     <div class="trusted-by__image">
-      {{ partial "responsive-image.html" (dict
-        "src" (strings.TrimPrefix "/" .)
-        "alt" $t.title
-        "class" "no-lightense"
-        "sizes" "(max-width: 768px) 100vw, 280px"
-        "widths" (slice 300 600)
-        "lazy" true
-        "lqip" false
-      ) }}
+      <picture>
+        <source type="image/webp" srcset="{{ $small.RelPermalink }} 300w, {{ $large.RelPermalink }} 600w" sizes="(max-width: 768px) 100vw, 280px">
+        <img class="no-lightense" src="{{ $fallback.RelPermalink }}" alt="{{ $t.title }}" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}" loading="lazy" decoding="async">
+      </picture>
     </div>
+    {{ else }}
+    {{ warnf "about trusted_by: image %q for %q not found" . $t.name }}
+    {{ end }}
     {{ end }}
     <div class="trusted-by__body">
       <span class="trusted-by__tag">{{ $t.tag }}</span>
