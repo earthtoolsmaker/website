@@ -16,10 +16,10 @@ gap_body: "Conservation teams collect more data than they can ever look at: year
 
 {{< how_we_work >}}
 
+{{< paper_to_field >}}
+
 {{< team >}}
 
 {{< about_timeline >}}
 
-{{< about_partners >}}
-
-{{< paper_to_field >}}
+{{< trusted_by >}}

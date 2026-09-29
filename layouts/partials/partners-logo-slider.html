@@ -1,16 +1,7 @@
 {{ with .Site.Params.partner_item }}
 <div class="about-partners-slider" id="about-partners-slider">
   {{ range $partner := . }}
-  {{ $img := "" }}
-  {{ with $partner.logo }}
-    {{ $imgPath := strings.TrimPrefix "/" . }}
-    {{/* Prefer a dark-text variant (for white-on-transparent logos) when one exists */}}
-    {{ $img = or (resources.Get (replace $imgPath "logo.png" "logo_dark.png")) (resources.Get $imgPath) }}
-    {{/* Downscale large raster logos — they display at <=190px wide (SVGs can't be resized) */}}
-    {{ if and $img (not (strings.HasSuffix $imgPath ".svg")) (gt $img.Width 380) }}
-      {{ $img = $img.Resize "380x" }}
-    {{ end }}
-  {{ end }}
+  {{ $img := partial "partner-logo.html" $partner }}
   <div class="partners-slide">
     {{ if $partner.link }}
     <a href="{{ $partner.link }}" target="_blank" rel="noopener noreferrer" class="partner-logo-container"{{ if $partner.show_name }} data-name="{{ $partner.name }}"{{ end }}>

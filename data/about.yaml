@@ -41,3 +41,14 @@ timeline:
         text: "Bear identification."
       - tag: "Salmon"
         text: "SalmonVision starts counting fish on British Columbia rivers."
+
+# Logos in the About "Trusted by" row. Names must match params.partner_item
+# names in config.toml exactly; the build warns about any that don't.
+trusted_by:
+  - "Pyronear"
+  - "Wild Salmon Center"
+  - "Pacific Salmon Foundation"
+  - "Cornell Lab of Ornithology"
+  - "Sovon"
+  - "Rijkswaterstaat"
+  - "Foundation Conservation Carpathia"

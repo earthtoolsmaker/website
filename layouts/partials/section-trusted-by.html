@@ -1,0 +1,24 @@
+{{ with site.Data.about.trusted_by }}
+<!-- begin trusted by -->
+<section class="section trusted-by animate" aria-label="Trusted by">
+  <div class="trusted-by__row">
+    <span class="trusted-by__label">Trusted by</span>
+    <div class="trusted-by__logos">
+      {{ range $name := . }}
+        {{ $match := where site.Params.partner_item "name" $name }}
+        {{ if not $match }}{{ warnf "about trusted_by: no partner_item named %q" $name }}{{ end }}
+        {{ range first 1 $match }}
+          {{ $p := . }}
+          {{ with partial "partner-logo.html" $p }}
+          <a class="trusted-by__logo" href="{{ $p.link }}" target="_blank" rel="noopener noreferrer" title="{{ $p.name }}">
+            <img src="{{ .RelPermalink }}" alt="{{ $p.name }}" loading="lazy">
+          </a>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+    <a class="trusted-by__all" href="/partners/">All {{ partial "partner-count.html" . }} partners ›</a>
+  </div>
+</section>
+<!-- end trusted by -->
+{{ end }}
