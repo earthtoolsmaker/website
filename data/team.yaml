@@ -36,6 +36,7 @@ members:
     tags:
       - { label: "Evolutionary biology", kind: discipline }
       - { label: "Computer vision", kind: skill }
+      - { label: "Drones", kind: skill }
     bio: "Evolutionary biologist turned conservation technologist, building wildlife monitoring with computer vision."
     image: "/images/team/thor-veen.webp"
     linkedin: "https://www.linkedin.com/in/thorveen/"
