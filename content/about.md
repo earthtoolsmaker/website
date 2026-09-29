@@ -1,6 +1,7 @@
 ---
 layout: about
 title: About
+description: "earthtoolsmaker turns conservation research into systems that run in the field. A small team of engineers and ecologists carrying published methods the rest of the way, from the lab to the rangers and researchers who use them."
 hero_image: /images/pages/about/hero-forest.jpg
 hero_eyebrow: About us
 hero_title: From the research lab <span><i>to&nbsp;the&nbsp;field</i></span>.
@@ -9,11 +10,9 @@ hero_button_primary: Work with us
 hero_button_primary_link: /contact/
 hero_button_secondary: Meet the team
 hero_button_secondary_link: "#team"
+gap_statement: A paper is not a tool <span><i>a&nbsp;ranger&nbsp;can&nbsp;run</i></span>.
+gap_body: "Conservation teams collect more data than they can ever look at: years of audio, millions of camera-trap photos, endless hours of underwater video. Research labs publish methods that could help, but they rarely leave the lab. We're a small team of engineers and ecologists who carry them the rest of the way."
 ---
-
-Conservation teams collect more data than they can ever look at: years of audio, millions of camera-trap photos, endless hours of underwater video. Research labs publish methods that could help, but a paper is not a tool a ranger can run. We're a small team of engineers and ecologists who close that gap, building machine learning tools side by side with the researchers and rangers who use them.
-
-**From research code to systems that run every day.**
 
 {{< services >}}
 

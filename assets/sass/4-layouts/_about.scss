@@ -684,3 +684,49 @@
     }
   }
 }
+
+/* About: the gap (statement + context, two columns) */
+.about-gap {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: 48px;
+  align-items: start;
+
+  &__statement {
+    margin: 0;
+    font-family: $heading-font-family;
+    font-size: 40px;
+    line-height: 1.12;
+    color: var(--heading-font-color);
+
+    span {
+      color: var(--secondary-color);
+    }
+  }
+
+  &__body {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-color);
+  }
+
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    &__statement {
+      font-size: 32px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &__statement {
+      font-size: 28px;
+    }
+
+    &__body {
+      font-size: 16px;
+    }
+  }
+}
