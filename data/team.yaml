@@ -1,26 +1,38 @@
 members:
   - name: "Arthur Caillau"
     role: "Founder & Lead Conservation Technologist"
-    bio: "Bridging conservation research and field use, turning promising methods into tools conservationists rely on. Passionate about making cutting-edge technology accessible to protect biodiversity and drive real-world conservation impact."
+    tags:
+      - { label: "Engineering", kind: engineering }
+    bio: "Bridging conservation research and field use, turning promising methods into tools conservationists rely on."
     image: "/images/team/arthur_caillau.jpeg"
     github: "https://github.com/Chouffe"
     linkedin: "https://www.linkedin.com/in/acaillau/"
 
   - name: "Jeremy Vuillermet"
     role: "Lead Frontend Engineer"
-    bio: "Crafting intuitive interfaces that put powerful conservation technology into the hands of field researchers and wildlife experts. Focused on creating seamless user experiences for complex AI-driven tools."
+    tags:
+      - { label: "Frontend", kind: engineering }
+      - { label: "Product design", kind: engineering }
+    bio: "Puts conservation technology into the hands of field researchers, with interfaces that make complex tools simple."
     image: "/images/team/jeremy-vuillermet.jpg"
     github: "https://github.com/ioRekz"
     linkedin: "https://www.linkedin.com/in/jeremy-vuillermet-57a68590/"
 
   - name: "Eelke Folmer"
     role: "Conservation Data Scientist"
-    bio: "Bridging ecology and technology through data science, geospatial analytics, and machine learning. Leverages drone imagery and photogrammetry to deliver actionable insights for conservation projects worldwide."
+    tags:
+      - { label: "Ecology", kind: research }
+      - { label: "Geospatial", kind: engineering }
+      - { label: "Drones", kind: engineering }
+    bio: "Bridges ecology and technology through geospatial analytics, drone imagery and photogrammetry."
     image: "/images/team/eelke-folmer.webp"
     linkedin: "https://www.linkedin.com/in/eelkefolmer/"
 
   - name: "Thor Veen"
     role: "Biodiversity & AI Specialist"
-    bio: "Evolutionary biologist turned conservation technologist. Combines expertise in biodiversity monitoring with cutting-edge computer vision and machine learning to develop innovative wildlife tracking solutions."
+    tags:
+      - { label: "Evolutionary biology", kind: research }
+      - { label: "Computer vision", kind: engineering }
+    bio: "Evolutionary biologist turned conservation technologist, building wildlife monitoring with computer vision."
     image: "/images/team/thor-veen.webp"
     linkedin: "https://www.linkedin.com/in/thorveen/"
