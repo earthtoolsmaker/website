@@ -1,53 +1,33 @@
 {{ define "main" }}
 
-{{ if .Params.Image }}
-<!-- begin hero image -->
-<div class="hero__image">
-  <div class="hero__image__inner">
-    {{ $imgPath := strings.TrimPrefix "/" .Params.Image }}
-    {{ partial "responsive-image.html" (dict
-      "src" $imgPath
-      "alt" .Title
-      "sizes" "100vw"
-      "widths" (slice 600 900 1200)
-      "lazy" true
-      "lqip" true
-    ) }}
+{{/* Homepage-style photo hero, with the demos stats card overlapping its bottom edge */}}
+{{ if .Params.hero_image }}
+<section class="hero">
+  {{ partial "photo-hero.html" (dict
+    "image" .Params.hero_image
+    "eyebrow" .Params.hero_eyebrow
+    "title" (.Params.hero_title | default .Title)
+    "description" .Params.hero_description
+    "button_primary" .Params.hero_button_primary
+    "button_primary_link" .Params.hero_button_primary_link
+    "button_secondary" .Params.hero_button_secondary
+    "button_secondary_link" .Params.hero_button_secondary_link
+  ) }}
+  <div class="container">
+    {{ $species := "" }}
+    {{ range first 1 (where site.Data.about.stats "label" "species monitored") }}{{ $species = .value }}{{ end }}
+    {{ partial "stats-card.html" (dict "class" "" "items" (slice
+      (dict "value" (len (where .Site.RegularPages "Section" "demos")) "title" "Demos" "detail" "run in your browser")
+      (dict "value" $species "title" "Species" "detail" "from salmon to elephants" "url" "/posts/")
+      (dict "value" "6" "title" "Ecosystems" "detail" "forests, rivers, reefs and more")
+      (dict "value" (len (where .Site.RegularPages "Section" "tools")) "title" "Field tools" "detail" "in use today" "url" "/tools/")
+    )) }}
   </div>
-</div>
-<!-- end hero image -->
+</section>
 {{ end }}
 
 <!-- begin page-wrapper -->
-<div class="page-wrapper">
-
-  <div class="container">
-    <div class="page-wrapper__info">
-      {{ if .Title }}
-      <h1 class="page-info__title">{{ .Title }}</h1>
-      {{ end }}
-      {{ if .Description }}
-      <p class="page-info__description">{{ .Description }}</p>
-      {{ end }}
-    </div>
-  </div>
-
-  {{ partial "spaces-cta.html" (dict "class" "") }}
-
-  <!-- begin spaces stats -->
-  <section class="section spaces-stats animate">
-    <div class="container">
-      {{ $species := "" }}
-      {{ range first 1 (where site.Data.about.stats "label" "species monitored") }}{{ $species = .value }}{{ end }}
-      {{ partial "stats-card.html" (dict "class" "stats-card--flat" "items" (slice
-        (dict "value" (len (where .Site.RegularPages "Section" "demos")) "title" "Demos" "detail" "run in your browser")
-        (dict "value" $species "title" "Species" "detail" "from salmon to elephants" "url" "/posts/")
-        (dict "value" "6" "title" "Ecosystems" "detail" "forests, rivers, reefs and more")
-        (dict "value" (len (where .Site.RegularPages "Section" "tools")) "title" "Field tools" "detail" "ready to download and run" "url" "/tools/")
-      )) }}
-    </div>
-  </section>
-  <!-- end spaces stats -->
+<div class="page-wrapper hero-listing">
 
   <div class="container animate">
     <div class="row">
