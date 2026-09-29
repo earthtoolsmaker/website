@@ -130,6 +130,11 @@
   -webkit-box-orient: vertical;
 }
 
+// Cards without footer meta (projects, tools, demos) use the space for a third line
+.card__excerpt--long {
+  -webkit-line-clamp: 3;
+}
+
 .card__footer {
   display: flex;
   align-items: center;

@@ -29,7 +29,8 @@
     {{ end }}
     <div class="card__body">
       <h3 class="card__title"><a href="{{ .href }}" class="card__link">{{ .title }}</a></h3>
-      {{ with .excerpt }}<p class="card__excerpt">{{ . }}</p>{{ end }}
+      {{/* Without footer meta the excerpt gets a third line */}}
+      {{ with .excerpt }}<p class="card__excerpt{{ if not (or $.date $.meta) }} card__excerpt--long{{ end }}">{{ . }}</p>{{ end }}
       <div class="card__footer">
         {{ if .date }}<time class="card__meta" datetime="{{ .date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .date.Format "2 Jan, 2006" }}</time>
         {{ else if .meta }}<span class="card__meta">{{ .meta }}</span>{{ end }}

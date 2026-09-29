@@ -15,10 +15,10 @@ Direction chosen in the visual companion: **"C, no chip"**, a photo-led card wit
 |                             |
 +-----------------------------+
 |  Title in Newsreader        |
-|  Excerpt, two lines max,    |
+|  Excerpt, 2 or 3 lines,     |
 |  grey ...                   |
 |                             |   (body grows: footers line up per row)
-|  Meta                    >  |   partner or date, chevron
+|  Date (posts only)       >  |   chevron
 +-----------------------------+
 ```
 
@@ -29,21 +29,16 @@ Direction chosen in the visual companion: **"C, no chip"**, a photo-led card wit
   - **illustration** (demos): `space-image.html` SVG, `object-fit: cover`.
 - **Body:** padding about `16px 18px 16px`, column flex, grows to fill the card.
   - **Title:** `$heading-font-family`, about 19px, line-height 1.2, `--heading-font-color`. No left bar.
-  - **Excerpt:** 14.5px, line-height 1.55, `--text-alt-color`, clamped to 2 lines for every type (tools were 3).
-  - **Footer:** `margin-top: auto` so footers line up along each grid row. Meta on the left (12.5px, weight 600, `--text-alt-color`), chevron on the right (`fa-chevron-right`, 12px, `#c3c8cf` as on the stats card). When there is no meta, the chevron still sits on the right.
+  - **Excerpt:** 14.5px, line-height 1.55, `--text-alt-color`, clamped to 2 lines on post cards (which carry a date) and 3 lines on cards without footer meta (projects, tools, demos).
+  - **Footer:** `margin-top: auto` so footers line up along each grid row. Date on the left for posts (12.5px, weight 600, `--text-alt-color`), chevron on the right (`fa-chevron-right`, 12px, `#c3c8cf` as on the stats card). When there is no meta, the chevron still sits on the right.
 - **Hover / focus-visible:** no lift. Title turns `--secondary-color`, chevron turns `--secondary-color` and shifts 2px right (0.2s). The existing photo treatment stays: 50% grayscale on desktop, full colour on hover (moved from `.article__*` selectors in `_lazy-images.scss` to the new card selectors). Transitions off under `prefers-reduced-motion`.
 - **Click target:** the whole card, via the title link's `::after` overlay, as today. Keyboard focus shows a `--secondary-color` outline on the card.
 
 ## Footer meta
 
-| Type | Meta |
-|------|------|
-| Project | name of the first entry in `clients` |
-| Post | date, `2 Jan, 2006`, in a `<time datetime>` |
-| Tool | first client of the page at its `project` param |
-| Demo | first client of the page at its `project` param |
+Only post cards carry footer meta: the date, `2 Jan, 2006`, in a `<time datetime>`. Project, tool and demo cards show the chevron only and use the space for a third excerpt line.
 
-If the lookup finds nothing (no `project` param, the linked page doesn't exist, or it has no clients), the footer shows only the chevron. Today that applies to the `animal-reid` tool and the `human_wildlife_bear_conflict` demo.
+(Revised during implementation: the first version showed the first partner on project, tool and demo cards; it read oddly, so it was dropped.)
 
 ## Architecture
 
@@ -65,7 +60,7 @@ Renders one card from a dict. It knows nothing about page types.
 
 ### `layouts/partials/card-for-page.html` (new)
 
-Takes a page, builds the dict from its section and calls `card.html`: projects (`image`, `summary`, client meta), posts (`image`, `description`, `date`), tools (`icon` as `logo`, `card_tint`, `logo_container`, `summary`, project client meta), demos (`card_image` as `illustration`, `summary`, project client meta). Also accepts an optional `class` override, so the call is `{{ partial "card-for-page.html" (dict "page" . "class" "...") }}`, or `{{ partial "card-for-page.html" (dict "page" .) }}` for the default.
+Takes a page, builds the dict from its section and calls `card.html`: projects (`image`, `summary`), posts (`image`, `description`, `date`), tools (`icon` as `logo`, `card_tint`, `logo_container`, `summary`), demos (`card_image` as `illustration`, `summary`). Footer meta comes from `partials/card-meta.html`. Also accepts an optional `class` override, so the call is `{{ partial "card-for-page.html" (dict "page" . "class" "...") }}`, or `{{ partial "card-for-page.html" (dict "page" .) }}` for the default.
 
 ### Call sites
 
@@ -75,7 +70,7 @@ Takes a page, builds the dict from its section and calls `card.html`: projects (
 | `partials/related-posts.html` | inline card replaced by `card-for-page.html` with `class "col col-6 col-t-12 animate"` |
 | `projects/single.html` (demo cards) | inline card replaced by `card-for-page.html` |
 | `demos/list.html` | inline card replaced by `card-for-page.html` |
-| `shortcodes/project_card.html`, `article_card.html`, `space_card.html` | call `card.html` with their args (`excerpt` / `description` / `summary` as excerpt). If `link` resolves with `site.GetPage`, meta comes from that page (client or date), so `animal-reid`'s embedded cards match the listings; otherwise `article_card` falls back to its `date` string. The inline link-style resets move into the SCSS. |
+| `shortcodes/project_card.html`, `article_card.html`, `space_card.html` | call `card.html` with their args (`excerpt` / `description` / `summary` as excerpt). If `link` resolves with `site.GetPage`, meta comes from that page (a post's date), so `animal-reid`'s embedded cards match the listings; otherwise `article_card` falls back to its `date` string. The inline link-style resets move into the SCSS. |
 
 ### SCSS
 
@@ -95,6 +90,6 @@ Takes a page, builds the dict from its section and calls `card.html`: projects (
 
 - `hugo` builds with no new warnings.
 - Visual check at desktop, tablet and 375px on: home (projects, tools, blog), `/projects/`, `/posts/`, `/tools/`, `/demos/`, a project page (related projects, demo cards, related posts), a post (You may also like), `/support/` (project cards), `/tools/animal-reid/` (shortcode cards).
-- Footers line up across each grid row; meta matches the table above on every listing; missing-meta cards show the chevron only.
+- Footers line up across each grid row; only post cards show a date; other cards show the chevron only and a 3-line excerpt.
 - Hover and keyboard focus: title and chevron go teal, photo goes full colour, no lift.
 - `grep` finds no remaining `article__`, `tool__content`, `space__content` card markup in `layouts/`.
