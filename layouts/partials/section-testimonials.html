@@ -46,51 +46,25 @@
           </div>
 
           <div class="testimonials__slider my-slider" id="customize">
-          {{ with .Site.Params.testimonial_item }}
-            {{ range . }}
-              <div class="testimonial-item">
-                <div class="testimonial-content">
-                  <div class="client-meta">
-                    {{ if .image }}
-                    <div class="image-container">
-                      {{ $imgPath := strings.TrimPrefix "/" .image }}
-                      {{ $img := resources.Get $imgPath }}
-                      {{ if $img }}
-                      <img class="client-avatar" src="{{ $img.RelPermalink }}" alt="{{ .name }}" loading="lazy">
-                      {{ end }}
-                    </div>
-                    {{ end }}
-                    <div class="client-info">
-                      {{ if .name }}
-                      <h3 class="client-name">
-                      {{ if .link }}
-                        <a href="{{ .link }}" target="_blank" rel="noopener">{{ .name }}</a>
-                      {{ else }}
-                        {{ .name }}
-                      {{ end }}
-                      {{ end }}
-                      </h3>
-                      {{ if .designation }}
-                      <p class="client-designation">{{ .designation }}</p>
-                      {{ end }}
-                    </div>
-                    {{ if .content }}
-                    <p class="client-text">{{ .content }}</p>
-                    {{ end }}
-                    {{ if .logo }}
-                      <div class="client-logo">
-                        {{ $orgName := index (split .designation " - ") 1 }}
-                        {{ $imgPath := strings.TrimPrefix "/" .logo }}
-                        {{ $img := resources.Get $imgPath }}
-                        {{ if $img }}
-                        <img class="client-logo-image" src="{{ $img.RelPermalink }}" title="{{ $orgName }}" alt="{{ $orgName }}" />
-                        {{ end }}
-                      </div>
-                    {{ end }}
-                  </div>
+          {{ range .Site.Params.testimonial_item }}
+            <div class="testimonial-item">
+              <figure class="quote-card">
+                <div class="quote-card__body">
+                  <span class="quote-card__mark" aria-hidden="true">&ldquo;</span>
+                  <blockquote class="quote-card__text">{{ .content }}</blockquote>
                 </div>
-              </div>
-            {{ end }}
+                <figcaption class="quote-card__person">
+                  {{ with .image }}{{ with resources.Get (strings.TrimPrefix "/" .) }}
+                  <img class="quote-card__avatar" src="{{ .RelPermalink }}" alt="" loading="lazy">
+                  {{ end }}{{ end }}
+                  <span class="quote-card__who">
+                    <span class="quote-card__name">{{ .name }}</span>
+                    {{/* designation is "Title - Organisation", shown as "Title, Organisation" */}}
+                    {{ with .designation }}<span class="quote-card__role">{{ replace . " - " ", " }}</span>{{ end }}
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
           {{ end }}
           </div>
 
