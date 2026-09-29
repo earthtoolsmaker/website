@@ -1,44 +1,18 @@
 {{ if .Site.Params.hero.enable }}
 <!-- begin hero -->
 <section class="hero">
-  <div class="hero__photo">
-    {{ with .Site.Params.hero.hero_cover }}
-    {{ partial "responsive-image.html" (dict
-      "src" (strings.TrimPrefix "/" .)
-      "alt" ""
-      "sizes" "100vw"
-      "widths" (slice 600 900 1200 1600 2000)
-      "lazy" false
-      "fetchpriority" "high"
-      "lqip" false
-    ) }}
-    {{ end }}
-    <div class="hero__overlay">
-      <div class="container">
-        <div class="hero__inner">
-          {{ if .Site.Params.hero.hero_eyebrow }}
-          <p class="hero__eyebrow">{{ .Site.Params.hero.hero_eyebrow }}</p>
-          {{ end }}
-          {{ if .Site.Params.hero.hero_title }}
-          <h1 class="hero__title">{{ .Site.Params.hero.hero_title | safeHTML }}</h1>
-          {{ end }}
-          {{ if .Site.Params.hero.hero_description }}
-          <p class="hero__description">{{ .Site.Params.hero.hero_description | safeHTML }}</p>
-          {{ end }}
-          {{ if or (.Site.Params.hero.hero_button_contact) (.Site.Params.hero.hero_button_work) }}
-          <div class="hero__buttons">
-            {{ if .Site.Params.hero.hero_button_contact }}
-            <a href="/contact/" class="button hero__button__left">{{ .Site.Params.hero.hero_button_contact }} <i class="hero__button__arrow fa-solid fa-arrow-right"></i></a>
-            {{ end }}
-            {{ if .Site.Params.hero.hero_button_work }}
-            <a href="/projects/" class="button button--secondary hero__button__right">{{ .Site.Params.hero.hero_button_work }} <i class="hero__button__arrow fa-solid fa-chevron-right"></i></a>
-            {{ end }}
-          </div>
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </div>
+  {{ with .Site.Params.hero }}
+  {{ partial "photo-hero.html" (dict
+    "image" .hero_cover
+    "eyebrow" .hero_eyebrow
+    "title" .hero_title
+    "description" .hero_description
+    "button_primary" .hero_button_contact
+    "button_primary_link" "/contact/"
+    "button_secondary" .hero_button_work
+    "button_secondary_link" "/projects/"
+  ) }}
+  {{ end }}
 
   {{/* Proof strip: the stats card, overlapping the bottom of the photo. */}}
   <div class="container">

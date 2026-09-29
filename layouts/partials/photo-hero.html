@@ -1,0 +1,42 @@
+{{/* Full-bleed photo band with left-aligned copy over a dark teal wash.
+     Shared by the homepage hero and the Partners page.
+     Params: image, eyebrow, title (may contain a <span> accent), description,
+     button_primary / button_primary_link, button_secondary / button_secondary_link. */}}
+<div class="hero__photo">
+  {{ with .image }}
+  {{ partial "responsive-image.html" (dict
+    "src" (strings.TrimPrefix "/" .)
+    "alt" ""
+    "sizes" "100vw"
+    "widths" (slice 600 900 1200 1600 2000)
+    "lazy" false
+    "fetchpriority" "high"
+    "lqip" false
+  ) }}
+  {{ end }}
+  <div class="hero__overlay">
+    <div class="container">
+      <div class="hero__inner">
+        {{ with .eyebrow }}
+        <p class="hero__eyebrow">{{ . }}</p>
+        {{ end }}
+        {{ with .title }}
+        <h1 class="hero__title">{{ . | safeHTML }}</h1>
+        {{ end }}
+        {{ with .description }}
+        <p class="hero__description">{{ . | safeHTML }}</p>
+        {{ end }}
+        {{ if or .button_primary .button_secondary }}
+        <div class="hero__buttons">
+          {{ with .button_primary }}
+          <a href="{{ $.button_primary_link }}" class="button hero__button__left">{{ . }} <i class="hero__button__arrow fa-solid fa-arrow-right"></i></a>
+          {{ end }}
+          {{ with .button_secondary }}
+          <a href="{{ $.button_secondary_link }}" class="button button--secondary hero__button__right">{{ . }} <i class="hero__button__arrow fa-solid fa-chevron-right"></i></a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>

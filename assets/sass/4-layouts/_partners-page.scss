@@ -2,27 +2,12 @@
 :: Partners Page
 ======================= */
 
-/* Trim the gap between the hero image and the content */
-.partners-hero {
-  margin-bottom: 28px;
-}
-
-/* Match the About page's centered content column */
+/* Sections fill the page .container, lining up with the hero copy */
 .layout-about .partners-section .container-wide,
 .layout-about .partners-cta .container-wide {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: none;
   padding-left: 0;
   padding-right: 0;
-}
-
-.partners-page__intro {
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 1.15rem;
-  line-height: 1.7;
 }
 
 .partners-section__title {
