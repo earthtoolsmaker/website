@@ -174,3 +174,32 @@
     transition: none;
   }
 }
+
+// Cards inside page content (shortcodes): undo the prose link, heading,
+// paragraph and image styling so they match listing cards, as .stats-card does.
+.post__content,
+.page__content,
+.tool-content {
+  .card a.card__link {
+    font-weight: inherit;
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
+
+  .card .card__title {
+    margin: 0 0 6px;
+    font-size: 19px;
+    line-height: 1.2;
+  }
+
+  .card .card__excerpt {
+    margin: 0;
+  }
+
+  .card .card__media img {
+    border-radius: 0;
+  }
+}
