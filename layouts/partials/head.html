@@ -58,6 +58,14 @@
   {{ $styles := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 
+  {{/* End-of-page CTA band photo (support__cta-band): resized once, handed to every
+       band through a CSS variable so raw-HTML bands in content need no markup */}}
+  {{ with resources.Get "images/pages/support/hero.jpg" }}
+  {{ $small := .Resize "900x webp q75" }}
+  {{ $large := .Resize "1600x webp q75" }}
+  <style>:root{--cta-band-photo:url({{ $small.RelPermalink | safeCSS }})}@media (min-width:901px){:root{--cta-band-photo:url({{ $large.RelPermalink | safeCSS }})}}</style>
+  {{ end }}
+
   {{ if .Param "math" }}
       {{ partialCached "math.html" . }}
   {{ end }}
