@@ -3,6 +3,8 @@ members:
     role: "Founder & Lead Conservation Technologist"
     tags:
       - { label: "Engineering", kind: engineering }
+      - { label: "Computer vision", kind: engineering }
+      - { label: "Infrastructure", kind: engineering }
     bio: "Bridging conservation research and field use, turning promising methods into tools conservationists rely on."
     image: "/images/team/arthur_caillau.jpeg"
     github: "https://github.com/Chouffe"

@@ -56,13 +56,14 @@ trusted_by:
       - { label: "Project", url: "/projects/early_forest_fire_detection/" }
       - { label: "Racing models, not opinions", url: "/posts/racing-models-not-opinions/" }
 
-  - name: "Wild Salmon Center"
-    tag: "Salmon"
-    title: "Salmon strongholds, counted"
-    text: "A SalmonVision collaborator, bringing automated salmon counts to wild salmon strongholds across the Pacific Rim."
-    image: "/images/projects/wild_salmon_migration_monitoring/sites/haida.jpg"
+  - name: "BearID Project"
+    tag: "Bears"
+    title: "Knowing one bear from another"
+    text: "With the BearID Project, we built facial recognition that tells individual brown bears apart from photos, for population monitoring without tags or tranquilizers."
+    image: "/images/projects/bear_identification/cover.png"
     links:
-      - { label: "SalmonVision", url: "/tools/salmonvision/" }
+      - { label: "Project", url: "/projects/bear_identification/" }
+      - { label: "Bear ID with metric learning", url: "/posts/bear-identification-with-metric-learning-guide/" }
 
   - name: "Pacific Salmon Foundation"
     tag: "Salmon"
