@@ -43,18 +43,18 @@
           {{ with $m.bio }}<p class="team-member__bio">{{ . }}</p>{{ end }}
           <div class="team-member__socials">
             {{ with $m.github }}
-            <a href="{{ . }}" class="team-member__social" target="_blank" rel="noopener" aria-label="GitHub">
-              <i class="fa-brands fa-github"></i>
+            <a href="{{ . }}" class="team-member__social" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github" aria-hidden="true"></i><span class="team-member__social-label">GitHub</span>
             </a>
             {{ end }}
             {{ with $m.linkedin }}
-            <a href="{{ . }}" class="team-member__social" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
+            <a href="{{ . }}" class="team-member__social" target="_blank" rel="noopener">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span class="team-member__social-label">LinkedIn</span>
             </a>
             {{ end }}
             {{ with $m.website }}
-            <a href="{{ . }}" class="team-member__social" target="_blank" rel="noopener" aria-label="Website">
-              <i class="fa-solid fa-globe"></i>
+            <a href="{{ . }}" class="team-member__social" target="_blank" rel="noopener">
+              <i class="fa-solid fa-globe" aria-hidden="true"></i><span class="team-member__social-label">Website</span>
             </a>
             {{ end }}
           </div>
