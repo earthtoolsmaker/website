@@ -1,6 +1,15 @@
 {{ define "main" }}
 
-{{/* ---- Hero (homepage-style photo band, no stats card) ---- */}}
+{{/* ---- Partner categories: shared by the stats card and the grouped sections ---- */}}
+{{ $partners := .Site.Params.partner_item }}
+{{ $categories := slice
+  (dict "key" "conservation" "title" "Conservation Organizations" "stat" "Conservation" "detail" "organizations in the field")
+  (dict "key" "research"     "title" "Research Institutions"      "stat" "Research"     "detail" "universities and institutes")
+  (dict "key" "technology"   "title" "Technology Partners"        "stat" "Technology"   "detail" "platforms and engineering")
+  (dict "key" "funders"      "title" "Funders &amp; Supporters"   "stat" "Funders"      "detail" "grants and supporters")
+}}
+
+{{/* ---- Hero (homepage-style photo band, stats card overlapping its bottom edge) ---- */}}
 {{ if .Params.hero_image }}
 <section class="hero">
   {{ partial "photo-hero.html" (dict
@@ -13,6 +22,16 @@
     "button_secondary" .Params.hero_button_secondary
     "button_secondary_link" .Params.hero_button_secondary_link
   ) }}
+  {{/* One stat per category, each jumping to its section below */}}
+  {{ $stats := slice }}
+  {{ range $cat := $categories }}
+    {{ with where $partners "category" $cat.key }}
+      {{ $stats = $stats | append (dict "value" (len .) "title" $cat.stat "detail" $cat.detail "url" (printf "#partners-%s" $cat.key)) }}
+    {{ end }}
+  {{ end }}
+  <div class="container">
+    {{ partial "stats-card.html" (dict "items" $stats "class" "") }}
+  </div>
 </section>
 {{ else }}
 <div class="container-wide layout-about">
@@ -26,18 +45,10 @@
 <div class="container layout-about partners-page">
 
   {{/* ---- Grouped partner sections ---- */}}
-  {{ $partners := .Site.Params.partner_item }}
-  {{ $categories := slice
-    (dict "key" "conservation" "title" "Conservation Organizations")
-    (dict "key" "research"     "title" "Research Institutions")
-    (dict "key" "technology"   "title" "Technology Partners")
-    (dict "key" "funders"      "title" "Funders &amp; Supporters")
-  }}
-
   {{ range $cat := $categories }}
     {{ $items := where $partners "category" $cat.key }}
     {{ with $items }}
-    <section class="section partners-section animate">
+    <section id="partners-{{ $cat.key }}" class="section partners-section animate">
       <div class="container-wide">
         <h2 class="partners-section__title">{{ $cat.title | safeHTML }}</h2>
         <div class="partners-grid">
@@ -56,13 +67,37 @@
                 {{ $img = $img.Resize "380x" }}
               {{ end }}
             {{ end }}
-            <a class="partner-card" href="{{ $p.link }}" target="_blank" rel="noopener noreferrer">
+            {{/* The partner's projects: those listing them as a client, by name or website */}}
+            {{ $site := lower (strings.TrimSuffix "/" (replaceRE `^https?://(www\.)?` "" $p.link)) }}
+            {{ $projects := slice }}
+            {{ range where site.RegularPages "Section" "projects" }}
+              {{ $proj := . }}
+              {{ range .Params.clients }}
+                {{ $client := lower (strings.TrimSuffix "/" (replaceRE `^https?://(www\.)?` "" (.link | default ""))) }}
+                {{ if and (or (eq (trim .name " ") $p.name) (eq $client $site)) (not (in $projects $proj)) }}
+                  {{ $projects = $projects | append $proj }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+            <article class="partner-card">
               <div class="partner-card__logo">
                 {{ with $img }}<img src="{{ .RelPermalink }}" alt="{{ $p.name }}" loading="lazy">{{ end }}
               </div>
-              <h3 class="partner-card__name">{{ $p.name }}</h3>
-              {{ with $p.blurb }}<p class="partner-card__blurb">{{ . }}</p>{{ end }}
-            </a>
+              <div class="partner-card__head">
+                {{ with $p.tag }}<span class="partner-card__tag">{{ . }}</span>{{ end }}
+                <h3 class="partner-card__name">{{ $p.name }}</h3>
+              </div>
+              {{ with $p.blurb }}
+              <div class="partner-card__step">
+                <span class="partner-card__label">Who they are</span>
+                <p>{{ . }}</p>
+              </div>
+              {{ end }}
+              <div class="partner-card__links">
+                {{ range first 2 $projects }}<a href="{{ .RelPermalink }}">{{ .Title }} ›</a>{{ end }}
+                <a href="{{ $p.link }}" target="_blank" rel="noopener noreferrer">{{ replaceRE `^https?://(www\.)?([^/]+).*$` "$2" $p.link }} ↗</a>
+              </div>
+            </article>
           {{ end }}
         </div>
       </div>
@@ -70,26 +105,36 @@
     {{ end }}
   {{ end }}
 
-  {{/* ---- Partner With Us (ways to partner, reuses support track cards) ---- */}}
+  {{/* ---- Partner With Us (the support tracks, as cards matching the partner cards) ---- */}}
   <section id="partner-with-us" class="section partners-section support-tracks animate">
     <div class="container-wide">
       <h2 class="partners-section__title">Partner With Us</h2>
       {{ with .Site.Data.support.tracks_intro }}
       <p class="support__section-intro">{{ . }}</p>
       {{ end }}
-      <div class="support__grid">
+      <div class="partner-tracks">
         {{ range .Site.Data.support.tracks }}
-        <div class="support__card support__track">
-          <span class="support__track-label">{{ .label }}</span>
-          <h3 class="support__card-title">{{ .title }}</h3>
-          <p class="support__card-description">{{ .description }}</p>
-          <div class="support__track-proof">{{ .proof | markdownify }}</div>
-          <ul class="support__track-offers">
-            {{ range .offers }}
-            <li>{{ . }}</li>
-            {{ end }}
-          </ul>
-        </div>
+        <article class="partner-card partner-track">
+          <div class="partner-card__head">
+            <span class="partner-card__tag">{{ .label }}</span>
+            <h3 class="partner-card__name">{{ .title }}</h3>
+          </div>
+          <div class="partner-card__step">
+            <p>{{ .description }}</p>
+          </div>
+          <div class="partner-card__step">
+            <span class="partner-card__label">In practice</span>
+            {{ .proof | markdownify }}
+          </div>
+          <div class="partner-card__step">
+            <span class="partner-card__label">What you get</span>
+            <ul class="support__track-offers">
+              {{ range .offers }}
+              <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </div>
+        </article>
         {{ end }}
       </div>
     </div>
