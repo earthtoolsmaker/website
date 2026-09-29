@@ -59,6 +59,39 @@
       color: var(--dark);
     }
   }
+
+  // Secondary action (homepage "View all"): teal outline pill that fills on
+  // hover. The inset ring replaces the offset shadow, so no press motion.
+  &--pill {
+    padding: 10px 22px;
+    color: var(--secondary-color);
+    background: transparent;
+    border-radius: 999px;
+    box-shadow: inset 0 0 0 1.5px var(--secondary-color);
+
+    i {
+      margin-left: 4px;
+      font-size: 13px;
+      transition: transform .15s ease;
+    }
+
+    &:hover,
+    &:active {
+      color: var(--white);
+      background: var(--secondary-color);
+      box-shadow: inset 0 0 0 1.5px var(--secondary-color);
+      transform: none;
+    }
+
+    &:hover i {
+      transform: translateX(3px);
+    }
+
+    // "View all projects" -> "View all" on phones, so the pill stays beside its title
+    @media (max-width: $mobile) {
+      .button__noun { display: none; }
+    }
+  }
 }
 
 .button--cta-container {
