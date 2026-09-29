@@ -15,8 +15,8 @@ proof:
   - tag: "Wildfire"
     title: "28 papers in, one smoke verifier out"
     featured: true
-    research: "We surveyed the literature, raced 28 published methods on a shared leaderboard, and kept what won."
-    field: "Pyronear's production smoke verifier: 4× fewer false alarms, smoke spotted 35 km away."
+    research: "We surveyed the literature, raced 28 published methods head to head on a shared leaderboard, and shipped the winner."
+    field: "Watching the forest 24/7 from 50+ camera stations: 500+ wildfires detected in real time, with 4× fewer false alarms and smoke spotted up to 35 km away."
     link: "/projects/early_forest_fire_detection/"
     image: "/images/projects/early_forest_fire_detection/cover.jpg"
 
