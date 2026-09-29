@@ -1,0 +1,17 @@
+{{- /* Footer meta for a page's card (see docs/specs/2026-09-29-card-redesign-design.md).
+     Posts: (dict "date" .Date). Everything else: (dict "meta" <first client name>) of the
+     page's project: the page itself for projects, else the page at its `project` param.
+     Returns an empty dict when there is nothing to show. */ -}}
+{{- $out := dict -}}
+{{- if eq .Section "posts" -}}
+  {{- $out = dict "date" .Date -}}
+{{- else -}}
+  {{- $proj := false -}}
+  {{- if eq .Section "projects" -}}
+    {{- $proj = . -}}
+  {{- else -}}
+    {{- with .Params.project }}{{ $proj = site.GetPage . }}{{ end -}}
+  {{- end -}}
+  {{- with $proj }}{{ with .Params.clients }}{{ $out = dict "meta" (index . 0).name }}{{ end }}{{ end -}}
+{{- end -}}
+{{- return $out -}}

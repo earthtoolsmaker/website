@@ -1,0 +1,40 @@
+{{- /* One listing card: projects, posts, tools, demos (docs/specs/2026-09-29-card-redesign-design.md).
+     Params: href, title (required); excerpt; one media key: image (photo), illustration (SVG)
+     or logo (+ tint, logo_chip); meta (footer text) or date (time.Time, wins over meta);
+     class (column classes, default "col col-4 col-w-6 col-t-12"). */ -}}
+<article class="card {{ .class | default "col col-4 col-w-6 col-t-12" }}">
+  <div class="card__content">
+    {{ if .image }}
+    <div class="card__media">
+      {{ partial "responsive-image.html" (dict
+        "src" (strings.TrimPrefix "/" .image)
+        "alt" .title
+        "sizes" "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 400px"
+        "widths" (slice 400 600 800)
+        "lazy" true
+        "lqip" true
+      ) }}
+    </div>
+    {{ else if .illustration }}
+    <div class="card__media">
+      {{ partial "space-image.html" (dict "path" .illustration "alt" .title) }}
+    </div>
+    {{ else if .logo }}
+    <div class="card__media card__media--logo"{{ with .tint }} style="--card-tint: {{ . }}"{{ end }}>
+      <div class="card__logo{{ if .logo_chip }} card__logo--chip{{ end }}">
+        {{ $icon := resources.Get (strings.TrimPrefix "/" .logo) }}
+        <img src="{{ with $icon }}{{ .RelPermalink }}{{ else }}{{ $.logo }}{{ end }}" alt="{{ .title }} logo" />
+      </div>
+    </div>
+    {{ end }}
+    <div class="card__body">
+      <h3 class="card__title"><a href="{{ .href }}" class="card__link">{{ .title }}</a></h3>
+      {{ with .excerpt }}<p class="card__excerpt">{{ . }}</p>{{ end }}
+      <div class="card__footer">
+        {{ if .date }}<time class="card__meta" datetime="{{ .date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .date.Format "2 Jan, 2006" }}</time>
+        {{ else if .meta }}<span class="card__meta">{{ .meta }}</span>{{ end }}
+        <i class="card__chevron fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+</article>
