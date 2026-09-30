@@ -13,8 +13,103 @@
   }
 }
 
+// Under the photo hero: the form card rides up over the bottom of the photo,
+// the copy column starts below it.
+.contact-grid--overlap {
+  .form-card {
+    position: relative;
+    z-index: 2;
+    margin-top: -120px;
+    box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.35), 0 1px 0 var(--light-gray);
+  }
+
+  .contact-info {
+    padding-top: 56px;
+  }
+
+  @media (max-width: $tablet) {
+    .form-card {
+      order: -1;
+      margin-top: -48px;
+    }
+
+    .contact-info {
+      padding-top: 0;
+    }
+  }
+}
+
 .contact-description {
   margin-bottom: 32px;
+}
+
+/* "What happens next": the vertical form of About's "How We Work" path
+   (teal line, 18px ring markers, bold sans title, body-size text) */
+.page__content .contact-steps__heading {
+  margin: 0 0 14px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+
+  @media (max-width: $mobile) {
+    font-size: 24px;
+  }
+}
+
+.contact-steps__accent {
+  display: block;
+  margin-bottom: 32px;
+}
+
+.contact-steps__step {
+  position: relative;
+  margin: 0; // the global li margin would open a gap in the path
+  padding: 0 0 28px 36px;
+
+  // ring marker
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    box-sizing: border-box;
+    width: 18px;
+    height: 18px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 50%;
+    background: var(--background-color);
+  }
+
+  // the path, from this marker down to the next one
+  &:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 20px; // 1px into this ring and the next, so they join
+    bottom: -4px;
+    left: 8px;
+    width: 2px;
+    background: var(--primary-color);
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.page__content .contact-steps__title {
+  margin: 0 0 6px;
+  font-family: $base-font-family;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--heading-font-color);
+}
+
+.page__content .contact-steps__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
 }
 
 .contact-channels {
@@ -106,16 +201,15 @@
   }
 }
 
-.form-card {
-  padding: 32px;
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  background-color: var(--background-color);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, .06);
+// The form card is a .partner-card (Support page): it brings the border, radius,
+// shadow and hairline dividers; the form body only needs more room than a step.
+.form-card .partner-card__step {
+  padding: 22px 22px 24px;
+}
 
-  @media (max-width: $mobile) {
-    padding: 24px;
-  }
+// A lone head (no body copy under it) reads better with a little more air
+.form-card .partner-card__tag {
+  margin-bottom: 10px;
 }
 
 .form__group {
@@ -126,12 +220,15 @@
   }
 }
 
+// Same small caps as the partner cards' "In practice" / "What you get" labels
 .form__label {
   display: block;
   margin-bottom: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--heading-font-color);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-alt-color);
 }
 
 .form__input {
@@ -139,13 +236,14 @@
   padding: 14px 16px;
   font-size: 16px;
   font-weight: 400;
-  border: 1px solid var(--border-color);
+  // White field with the card's cool grey border, rather than the warm cream tint
+  border: 1px solid var(--light-gray);
   border-radius: 12px;
   outline: 0;
   transition: .2s ease-in-out;
   resize: vertical;
   color: var(--heading-font-color);
-  background-color: var(--background-alt-color);
+  background-color: var(--background-color);
 
   &::placeholder {
     color: var(--text-alt-color);
@@ -153,8 +251,13 @@
 
   &:focus {
     border-color: var(--primary-color);
-    background-color: transparent;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 18%, transparent);
   }
+}
+
+// --light-gray turns near-white in dark mode; keep the quieter border there
+:root[dark] .form__input {
+  border-color: var(--border-color);
 }
 
 /* Contact page spans the full container width, like the blog listing */
