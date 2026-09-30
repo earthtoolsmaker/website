@@ -46,8 +46,8 @@
     {{ $speciesCount := "" }}
     {{ range first 1 (where site.Data.about.stats "label" "species monitored") }}{{ $speciesCount = .value }}{{ end }}
     {{ partial "stats-card.html" (dict "class" "" "items" (slice
-      (dict "value" $speciesCount "title" "Species" "detail" "from salmon to elephants")
-      (dict "value" (len $ecosystems) "title" "Ecosystems" "detail" "forests, rivers, reefs and more")
+      (dict "value" $speciesCount "title" "Species" "detail" "from salmon to elephants" "url" "#species")
+      (dict "value" (len $ecosystems) "title" "Ecosystems" "detail" "forests, rivers, reefs and more" "url" "#ecosystems")
       (dict "value" (len (where $tagged "Section" "projects")) "title" "Projects" "detail" "delivered in the field" "url" "/projects/")
       (dict "value" (len (where $tagged "Section" "demos")) "title" "Live demos" "detail" "run in your browser" "url" "/demos/")
     )) }}
@@ -56,7 +56,7 @@
 
 <div class="page-wrapper hero-listing">
   {{ range slice (dict "title" "Species" "key" "species" "cards" $species) (dict "title" "Ecosystems" "key" "ecosystems" "cards" $ecosystems) }}
-  <section class="section">
+  <section class="section nature-index-section" id="{{ .key }}">
     <div class="container"><div class="row"><div class="col col-12"><div class="container__inner">
       {{ partial "nature-section-head.html" (dict "title" .title) }}
       <div class="row nature-grid nature-grid--{{ .key }}">
