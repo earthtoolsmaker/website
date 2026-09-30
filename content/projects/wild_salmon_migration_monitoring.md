@@ -1,5 +1,6 @@
 ---
 title: Wild Salmon Migration Monitoring
+nature: ["pacific-salmon", "rivers"]
 summary: The project monitors wild salmon migration to ensure the number passing through meets state regulations, addressing threats from human activities like fisheries and dams.
 tags: ["aquatic", "freshwater", "vision"]
 related_projects:

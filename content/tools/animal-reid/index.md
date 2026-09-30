@@ -1,5 +1,6 @@
 ---
 title: Animal reID
+nature: ["brown-bear", "snow-leopard", "harbour-seal", "grey-seal", "rainbow-trout"]
 weight: 40
 show_title: true
 button_cta: Try Demo

@@ -1,5 +1,6 @@
 ---
 title: Coastal Erosion and Land Cover Monitoring
+nature: ["wadden-sea-and-coasts"]
 summary: Drone-based monitoring of coastal erosion, sedimentation and land cover change on the Wadden Sea coast, served through an interactive web portal.
 tags: ["aquatic", "marine", "vision"]
 related_projects:

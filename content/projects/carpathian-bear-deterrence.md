@@ -1,5 +1,6 @@
 ---
 title: Bear Deterrence in the Carpathians
+nature: ["brown-bear", "temperate-forests", "high-mountains"]
 summary: Utilizing low-power technology to detect and deter bears from encroaching on Romanian farms.
 tags: ["bear", "edge", "camera traps", "vision"]
 related_projects:

@@ -1,5 +1,6 @@
 ---
 title: "Tropical Bat Call Detection and Classification"
+nature: ["cambodian-bats"]
 summary: Transforming bat population monitoring in Cambodia through advanced bio-acoustic analysis driven by Machine Learning algorithms.
 tags: ["acoustics", "audio"]
 related_projects:

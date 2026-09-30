@@ -1,5 +1,6 @@
 ---
 title: A guide to designing a bear face recognition system
+nature: ["brown-bear"]
 description: Identify bears with Metric Learning.
 date: 2024-04-12
 image: /images/posts/bear-identification-with-metric-learning-guide/cover.png 

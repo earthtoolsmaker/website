@@ -1,5 +1,6 @@
 ---
 title: "Mapping a Salt Marsh, Centimetre by Centimetre"
+nature: ["wadden-sea-and-coasts"]
 description: How we trained a U-Net to map land cover on the Wadden Sea coast from drone photos, from ecologists' labels at any level of detail to a seamless map of every survey.
 date: 2026-09-28
 image: /images/posts/mapping-a-salt-marsh-centimetre-by-centimetre/cover.png

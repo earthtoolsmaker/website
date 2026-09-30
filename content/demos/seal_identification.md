@@ -1,5 +1,6 @@
 ---
 title: Seal Identification
+nature: ["harbour-seal", "grey-seal", "wadden-sea-and-coasts"]
 card_image: /images/pages/spaces/seal_identification/card.svg
 summary: Re-identifying individual seals by their whisker and face patterns, non-invasively and across seasons.
 date: 2025-01-24

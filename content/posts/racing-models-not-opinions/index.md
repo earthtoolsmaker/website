@@ -1,5 +1,6 @@
 ---
 title: "Racing Models, Not Opinions: How We Ran Wildfire ML R&D for Pyronear"
+nature: ["temperate-forests"]
 description: How a literature survey, self-contained experiments, and a shared leaderboard turned 28 research papers into a production smoke verifier with 4x fewer false alarms.
 date: 2026-06-12
 image: /images/posts/racing-models-not-opinions/cover.png

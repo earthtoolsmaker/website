@@ -1,5 +1,6 @@
 ---
 title: Pyronear
+nature: ["temperate-forests"]
 weight: 10
 show_title: false
 button_cta: Visit Pyronear

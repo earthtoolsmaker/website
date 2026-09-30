@@ -1,5 +1,6 @@
 ---
 title: Forest Elephants Passive Acoustic Monitoring
+nature: ["african-forest-elephant", "tropical-rainforests"]
 summary: Conservation efforts struggle to monitor forest elephants in dense rainforests, with acoustic monitoring providing a promising solution via accurate, user-friendly detection systems that aid in population monitoring and anti-poaching efforts while mitigating human-elephant conflicts.
 tags: ["acoustics", "audio"]
 related_projects:

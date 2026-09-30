@@ -1,5 +1,6 @@
 ---
 title: Wadden Sea Seal Monitoring
+nature: ["harbour-seal", "grey-seal", "wadden-sea-and-coasts"]
 summary: Automated seal population monitoring system using AI to count, classify, and identify individual seals from aerial imagery in the Wadden Sea.
 tags: ["aquatic", "marine", "identification", "vision"]
 related_projects:

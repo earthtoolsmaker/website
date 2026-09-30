@@ -1,5 +1,6 @@
 ---
 title: Coral Reefs Health Monitoring
+nature: ["coral-reefs"]
 summary: Segmentation of coral reefs in benthic imagery to quantify the long-term growth or decline of coral cover within marine protected areas.
 tags: ["aquatic", "marine", "vision"]
 related_projects:

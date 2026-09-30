@@ -1,5 +1,6 @@
 ---
 title: Bear Detector for Human Wildlife conflicts
+nature: ["brown-bear", "temperate-forests"]
 card_image: /images/pages/spaces/human_wildlife_bear_conflict/card.svg
 summary: Detecting and deterring bears near Romanian farms so people and predators can coexist.
 github_repo: https://github.com/earthtoolsmaker/bear-conservation

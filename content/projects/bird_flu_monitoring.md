@@ -1,5 +1,6 @@
 ---
 title: Bird Flu Monitoring
+nature: ["seabirds", "wadden-sea-and-coasts"]
 summary: Utilize drones for precise monitoring of breeding seabird colonies by detection of live and dead adults and chicks to determine survival and reproduction and asses the impact of avian influenza.
 tags: ["vision"]
 related_projects:

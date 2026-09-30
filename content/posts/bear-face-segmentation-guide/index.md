@@ -1,5 +1,6 @@
 ---
 title: A guide to designing a bear face segmentation system
+nature: ["brown-bear"]
 description: Detecting bears in real time using low-power technology.
 date: 2024-04-11
 params:

@@ -1,5 +1,6 @@
 ---
 title: "Watching a Coastline Move, Centimetre by Centimetre"
+nature: ["wadden-sea-and-coasts"]
 description: How CODAP measures erosion and sedimentation on the Wadden Sea coast by differencing drone elevation models, cleaning out the noise without losing real change, and reading the result with transects.
 date: 2026-09-28
 image: /images/posts/watching-a-coastline-move/cover.png

@@ -1,5 +1,6 @@
 ---
 title: Early Forest Fire Detection
+nature: ["temperate-forests"]
 summary: Democratize open and low-tech solutions for fighting wildfires, for the benefit of the ecosystems and the citizens.
 tags: ["wildfire", "edge", "vision"]
 related_projects:

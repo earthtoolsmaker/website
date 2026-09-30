@@ -1,5 +1,6 @@
 ---
 title: Trout Identification
+nature: ["rainbow-trout", "rivers"]
 card_image: /images/pages/spaces/trout_identification/card.svg
 summary: Reading the spot patterns on trout to identify individual fish, a non-invasive way to monitor populations.
 github_repo: https://github.com/earthtoolsmaker/trout-reid

@@ -1,5 +1,6 @@
 ---
 title: Forest Elephant Rumbles Detection
+nature: ["african-forest-elephant", "tropical-rainforests"]
 card_image: /images/pages/spaces/forest_elephant_rumble_detection/card.svg
 summary: Listening to African forests to detect and classify elephant rumbles from audio recordings.
 github_repo: https://github.com/earthtoolsmaker/forest-elephants-rumble-detection
