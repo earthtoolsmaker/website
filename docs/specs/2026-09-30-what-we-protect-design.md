@@ -120,7 +120,7 @@ Only content specifically about a term is tagged. Left untagged: Biowatch (proje
 
 Before tagging, the implementer checks each item's body for the species it actually covers (for example, whether `local-feature-matching-lightglue` uses trout or another animal, and whether `animal-reid` covers seals and trout) and adjusts the row if the content says otherwise.
 
-## 4. Index page `/nature/` (`layouts/nature/taxonomy.html`)
+## 4. Index page `/nature/` (`layouts/nature/terms.html`, Hugo 0.145's lookup name for a taxonomy list)
 
 1. `photo-hero.html`: eyebrow "What we protect", a title with the usual italic accent, a one-line description, buttons "Start a project" (`/contact/`) and "Browse projects" (`/projects/`). Copy in `content/nature/_index.md`, hero photo at `assets/images/pages/nature/hero.jpg` (Unsplash).
 2. **Species** grid, then **Ecosystems** grid, split on `kind`. Each tile is the shared `card.html`: photo, title, scientific name (or summary for group terms and ecosystems) as excerpt, and a footer meta such as "3 projects · 2 demos" (only non-zero counts, over projects, demos, tools, posts).
@@ -131,7 +131,7 @@ Before tagging, the implementer checks each item's body for the species it actua
 
 1. **Hero:** `photo-hero.html` with the term photo; eyebrow "Species" or "Ecosystem"; title; scientific name in italics under it (species only); summary as the description. Species with `iucn_status` show a small pill badge with the full category name ("Vulnerable"), coloured by category (LC green, NT yellow-green, VU yellow, EN orange, CR red), linking to its IUCN source when one has key `iucn`. Photo credit appears as small text at the bottom of the hero ("Photo: Name / Unsplash", linked).
 2. **About:** a compact grid of facts (label over value), each value followed by a superscript number linking to its entry in "Learn more".
-3. **Our work:** up to four sections in this order, each hidden when empty: Projects (`project-card.html`), Live demos (`card-for-page.html`), Tools (`tool-card.html`), Blog posts (`article.html`).
+3. **Our work:** up to four sections in this order, each hidden when empty: Projects, Live demos, Tools, Blog posts. All use `card-for-page.html`, which already picks the right card look per section (project, demo, tool, post).
 4. **Learn more:** numbered list of sources (name, linked, `target="_blank" rel="noopener"`), numbering matching the fact superscripts.
 5. `projects-cta.html` at the bottom, as on the projects listing.
 
@@ -153,5 +153,5 @@ Before tagging, the implementer checks each item's body for the species it actua
 - `hugo` builds with no errors or warnings.
 - Every term page renders, is non-empty, and lists exactly the items from the tagging map.
 - Every fact's `source` key resolves to a listed source; every source URL returns HTTP 200 (curl).
-- Screenshots of `/nature/`, one species page (snow leopard) and one ecosystem page (rivers), at desktop and phone widths, in light and dark mode; no horizontal scroll on phones.
+- Screenshots of `/nature/`, one species page (snow leopard) and one ecosystem page (rivers), at desktop and phone widths; no horizontal scroll on phones. (The site is light-only, `color_scheme = "light"`, so there is no dark mode to check.)
 - The Work dropdown entry, the stats band Species tile, and project-page chips all resolve to the right pages.
