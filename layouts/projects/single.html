@@ -6,7 +6,7 @@
      opt out of the eyebrow with `hide_funding_eyebrow: true` in front matter. */}}
 {{ $kicker := slice }}
 {{ if and (eq .Params.status "fundraising") (not .Params.hide_funding_eyebrow) }}{{ $kicker = $kicker | append "Seeking funding" }}{{ end }}
-<div class="about-hero project-hero{{ if not .Params.image }} project-hero--gradient{{ end }}">
+<div class="about-hero project-hero{{ if .Params.image }} about-hero--overlay-nav{{ else }} project-hero--gradient{{ end }}">
   {{ if .Params.image }}
   {{ $imgPath := strings.TrimPrefix "/" .Params.image }}
   {{ partial "responsive-image.html" (dict
