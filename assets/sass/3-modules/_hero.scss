@@ -221,6 +221,45 @@
   }
 }
 
+// Contact: a shorter band, with room at the bottom for the form card that
+// overlaps it (.contact-grid--overlap), so the copy never sits under the card.
+.hero--compact {
+  .hero__photo {
+    height: 620px;
+  }
+
+  .hero__overlay {
+    padding-bottom: 120px;
+  }
+
+  // The band grows with its copy, so the photo is pinned behind the overlay
+  // (the base rule only does this below $mobile)
+  @media (max-width: $tablet) {
+    .hero__photo {
+      height: auto;
+
+      picture {
+        position: absolute;
+        inset: 0;
+      }
+    }
+
+    .hero__overlay {
+      position: relative;
+      padding-bottom: 80px;
+    }
+  }
+}
+
+// Plain pages under a compact hero: the same gap below the photo as the listings
+.page.page--under-hero {
+  margin-top: 64px;
+
+  @media (max-width: $mobile) {
+    margin-top: 40px;
+  }
+}
+
 // Homepage: float over the bottom of the hero photo.
 .hero .stats-card {
   margin-top: -44px;

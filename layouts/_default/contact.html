@@ -1,14 +1,26 @@
 {{ define "main" }}
 
+{{/* Compact photo hero; the form card overlaps its bottom edge */}}
+{{ if .Params.hero_image }}
+<section class="hero hero--compact">
+  {{ partial "photo-hero.html" (dict
+    "image" .Params.hero_image
+    "eyebrow" .Params.hero_eyebrow
+    "title" (.Params.hero_title | default .Title)
+    "description" .Params.hero_description
+  ) }}
+</section>
+{{ end }}
+
 <!-- begin page -->
 <div class="container">
   <article class="page page--wide">
     <div class="page__content">
 
-      <div class="contact-grid">
+      <div class="contact-grid{{ if .Params.hero_image }} contact-grid--overlap{{ end }}">
 
         <div class="contact-info">
-          {{ if .Title }}
+          {{ if and .Title (not .Params.hero_image) }}
           <h1 class="page-title">{{ .Title }}</h1>
           {{ end }}
           {{ if .Description }}
@@ -16,6 +28,27 @@
           {{ end }}
           {{ if .Content }}
           <div class="contact-description">{{ .Content }}</div>
+          {{ end }}
+
+          {{/* Same path language as About's "How We Work": teal line, ring markers */}}
+          {{ with .Params.steps }}
+          <div class="contact-steps">
+            {{ with $.Params.steps_title }}
+            <h2 class="contact-steps__heading">{{ . }}</h2>
+            <svg class="contact-steps__accent" xmlns="http://www.w3.org/2000/svg" width="52" height="12" fill="none" aria-hidden="true">
+              <path stroke="var(--accent-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                d="m2 1.734 8 8 8-8 8 8 8-8 8 8 8-8" />
+            </svg>
+            {{ end }}
+            <ol class="contact-steps__list list-reset">
+              {{ range . }}
+              <li class="contact-steps__step">
+                <h3 class="contact-steps__title">{{ .title }}</h3>
+                <p class="contact-steps__text">{{ .text }}</p>
+              </li>
+              {{ end }}
+            </ol>
+          </div>
           {{ end }}
 
           {{ with .Site.Params.social }}
@@ -41,8 +74,15 @@
           {{ end }}
         </div>
 
-        <div class="form-card">
-          {{ partial "contact-form.html" . }}
+        {{/* Same card as the Support page's partner tracks: head, divider, body */}}
+        <div class="form-card partner-card">
+          <div class="partner-card__head">
+            <span class="partner-card__tag">Projects, partnerships, questions</span>
+            <h2 class="partner-card__name">Send us a message</h2>
+          </div>
+          <div class="partner-card__step">
+            {{ partial "contact-form.html" . }}
+          </div>
         </div>
 
       </div>

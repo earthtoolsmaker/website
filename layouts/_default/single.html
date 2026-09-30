@@ -76,6 +76,28 @@
 </div>
 {{ end }}
 
+{{ else if .Params.hero_image }}
+
+{{/* Plain pages with a hero_image (e.g. Privacy Policy): compact photo hero */}}
+<section class="hero hero--compact">
+  {{ partial "photo-hero.html" (dict
+    "image" .Params.hero_image
+    "eyebrow" .Params.hero_eyebrow
+    "title" (.Params.hero_title | default .Title)
+    "description" .Params.hero_description
+  ) }}
+</section>
+
+<!-- begin page -->
+<div class="container">
+  <article class="page page--under-hero">
+    <div class="page__content">
+      {{ .Content }}
+    </div>
+  </article>
+</div>
+<!-- end page -->
+
 {{ else }}
 
 <div class="container">
