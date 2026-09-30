@@ -51,14 +51,24 @@
               {{ $active := eq $menuURL $pageURL }}
 
               {{ if .HasChildren }}
+              {{/* The parent ("Work") is current when one of its children is. */}}
+              {{ $parentActive := false }}
+              {{ range .Children }}{{ if eq (.URL | absLangURL) $pageURL }}{{ $parentActive = true }}{{ end }}{{ end }}
               <li class="nav__item dropdown">
-                <span class="nav__link dropdown-toggle">{{ .Name }} <i class="arrow-down fa-solid fa-chevron-down"></i></span>
+                {{/* tabindex: focusing the toggle opens the menu via :focus-within, so keyboard users can reach the items */}}
+                <span class="nav__link dropdown-toggle {{ if $parentActive }}active-link{{ end }}" tabindex="0">{{ .Name }} <i class="arrow-down fa-solid fa-chevron-down"></i></span>
                 <div class="dropdown-menu">
                   {{ range .Children }}
                   {{ $childURL := .URL | absLangURL }}
                   {{ $active := eq $childURL $pageURL }}
                   <a href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{ .URL }}{{else}}{{.URL | relLangURL}}{{end}}"
-                    class="nav__link {{ if $active }}active-link{{ end }}">{{ .Name }}</a>
+                    class="nav__link dropdown-item {{ if $active }}active-link{{ end }}">
+                    {{ with .Params.icon }}<span class="dropdown-item__icon"><i class="{{ . }}" aria-hidden="true"></i></span>{{ end }}
+                    <span class="dropdown-item__text">
+                      <span class="dropdown-item__title">{{ .Name }}</span>
+                      {{ with .Params.description }}<span class="dropdown-item__desc">{{ . }}</span>{{ end }}
+                    </span>
+                  </a>
                   {{ end }}
                 </div>
               </li>

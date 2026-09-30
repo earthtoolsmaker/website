@@ -53,6 +53,9 @@ pagerSize = 6
     name = "Projects"
     url = "/projects/"
     weight = 1
+    [menu.main.params]
+      icon = "fa-solid fa-earth-africa"
+      description = "Field work with our conservation partners"
 
   [[menu.main]]
     parent = "work"
@@ -60,18 +63,27 @@ pagerSize = 6
     name = "Tools"
     url = "/tools/"
     weight = 2
+    [menu.main.params]
+      icon = "fa-solid fa-screwdriver-wrench"
+      description = "Open software you can download and run"
 
   [[menu.main]]
     parent = "work"
     name = "Live Demos"
     url = "/demos/"
     weight = 3
+    [menu.main.params]
+      icon = "fa-solid fa-circle-play"
+      description = "Try our models right in your browser"
 
   [[menu.main]]
     parent = "work"
     name = "What we protect"
     url = "/nature/"
     weight = 4
+    [menu.main.params]
+      icon = "fa-solid fa-paw"
+      description = "The species and ecosystems we protect"
 
   [[menu.main]]
     name = "Blog"

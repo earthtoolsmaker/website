@@ -2,6 +2,12 @@
 $logo-compact: 1100px; // <= this width the logo shows compact "etm"
 $nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
 
+// Nav popovers (Work dropdown + hamburger panel): Support-style surface, rows
+// tinted with the primary teal (#83c5be) on hover and for the current page.
+$nav-popover-shadow: 0 18px 36px -20px rgba(0, 0, 0, .35);
+$nav-row-hover: rgba(131, 197, 190, .18);
+$nav-row-active: rgba(131, 197, 190, .30);
+
 // Header bottom margin, exposed as a custom property so full-bleed heroes can
 // cancel it (margin-top: calc(-1 * var(--header-mb))) and stay flush under the
 // nav without hard-coding a matching magic number that drifts when this changes.
@@ -246,20 +252,25 @@ a:focus-visible .brandmark--slide .brandmark__pan img,
   display: flex;
   align-items: center;
 
+  // Hamburger panel: a floating card on the same Support-style surface as the
+  // desktop dropdown. Left-aligned rows; the "Work" toggle turns into a small
+  // label over its (described) children, then a hairline before the rest.
   @media (max-width: $nav-collapse) {
     position: absolute;
     top: 80px;
     right: $base-spacing-unit;
     z-index: -1;
     display: block;
-    min-width: 160px;
-    padding: 20px 24px;
-    border-radius: 16px;
+    width: 340px;
+    max-width: calc(100vw - #{2 * $base-spacing-unit});
+    padding: 6px;
+    border: 1px solid var(--light-gray);
+    border-radius: 14px;
     transform: translate3d(0, -12px, 0);
     opacity: 0;
     visibility: hidden;
     background-color: var(--background-color);
-    box-shadow: 0 8px 40px -8px rgba(0, 0, 0, .20);
+    box-shadow: $nav-popover-shadow;
     transition: all .2s ease;
 
     &.is-visible {
@@ -271,52 +282,69 @@ a:focus-visible .brandmark--slide .brandmark__pan img,
 
     .nav__list {
       flex-direction: column;
+      align-items: stretch;
       width: 100%;
 
       .nav__item {
         display: block;
         width: 100%;
         margin: 0;
-        text-align: right;
 
         &.dropdown {
-          .dropdown-toggle {
-            display: none;
+          margin-bottom: 6px;
+          padding-bottom: 6px;
+          border-bottom: 1px solid var(--light-gray);
+
+          // Label, not a row: the state selectors outrank the tinted-row
+          // .nav__link:hover / .active-link rules below
+          .dropdown-toggle,
+          .dropdown-toggle:hover,
+          .dropdown-toggle.active-link {
+            display: block;
+            padding: 10px 12px 4px;
+            font-size: 11px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--text-alt-color);
+            background: none;
+            cursor: default;
           }
         }
 
         .dropdown-menu {
-          position: relative;
-          left: 0;
+          position: static;
+          width: auto;
           padding: 0;
           opacity: 1;
           visibility: visible;
-          transform: scale(1);
-          min-width: auto;
+          transform: none;
           border: none;
           box-shadow: none;
 
-          .nav__link {
-            display: block;
-            margin-bottom: 0;
-            font-size: 16px;
-          }
+          &::before,
+          &::after { content: none; }
         }
 
         .nav__link {
-          position: relative;
-          display: inline-block;
-          padding: 2px 0;
+          display: block;
+          padding: 10px 12px;
+          border-radius: 10px;
           font-size: 16px;
-          line-height: 1.6;
+          line-height: 1.3;
+          transition: background-color .15s ease, color .15s ease;
 
-          // Hamburger panel: color change only, no underline.
+          // Hamburger panel: tinted rows, no underline.
           &::after { content: none; }
+
+          &:hover { background-color: $nav-row-hover; }
+          &.active-link { background-color: $nav-row-active; }
 
           .arrow-down {
             display: none;
           }
         }
+
+        .dropdown-item { display: flex; }
       }
     }
   }
@@ -391,7 +419,8 @@ a:focus-visible .brandmark--slide .brandmark__pan img,
     &.dropdown {
       position: relative;
 
-      &:hover {
+      &:hover,
+      &:focus-within {
         .dropdown-menu {
           opacity: 1;
           visibility: visible;
@@ -414,49 +443,139 @@ a:focus-visible .brandmark--slide .brandmark__pan img,
         &::before {
           content: none;
         }
+
+        &:hover,
+        &.active-link { color: var(--secondary-color); }
+
+        &:focus { outline: none; }
+        &:focus-visible {
+          outline: 2px solid var(--secondary-color);
+          outline-offset: 4px;
+          border-radius: 4px;
+        }
       }
     }
   }
 
+  // Work dropdown: Support-style surface with a small nub pointing at "Work".
   .dropdown-menu {
     position: absolute;
-    top: calc(100% + 8px);
-    left: -32px;
+    top: calc(100% + 14px);
+    left: -28px;
     transform: translate3d(0, -12px, 0);
     backface-visibility: hidden;
     z-index: 100;
-    min-width: 150px;
+    width: max-content; // one-line descriptions
     display: block;
-    padding: 20px;
+    padding: 8px;
     opacity: 0;
     visibility: hidden;
     transition: all .25s ease;
-    border-radius: 16px;
-    box-shadow: 0 8px 40px -8px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--light-gray);
+    border-radius: 14px;
+    box-shadow: $nav-popover-shadow;
     background-color: var(--background-color);
+
+    // Nub, centered under "Work"
+    &::before {
+      content: "";
+      position: absolute;
+      top: -7px;
+      left: 46px;
+      width: 12px;
+      height: 12px;
+      background-color: inherit;
+      border-left: 1px solid var(--light-gray);
+      border-top: 1px solid var(--light-gray);
+      border-top-left-radius: 3px;
+      transform: rotate(45deg);
+    }
+
+    // Invisible bridge over the gap, so the menu stays open while the pointer
+    // travels down from "Work"
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 100%;
+      height: 16px;
+    }
 
     .nav__link {
       position: relative;
-      display: inline-block;
-      padding: 0 0 0 12px;
+      padding: 10px 12px;
+      border-radius: 10px;
       font-size: 16px;
-      line-height: 1.6;
-      transition: color .2s ease;
+      line-height: 1.3;
+      transition: background-color .15s ease, color .15s ease;
 
-      // Dropdown items (desktop + hamburger): color change only, no dot/underline.
+      // Dropdown rows: tint on hover / current page, no dot/underline.
       &::before { content: none; }
       &::after { content: none; }
 
-      &:hover,
-      &.active-link {
-        color: var(--secondary-color);
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+      &:hover { background-color: $nav-row-hover; }
+      &.active-link { background-color: $nav-row-active; }
     }
   }
+}
+
+// Described row: icon tile + title + one-line description (menu params
+// icon / description in config.toml). Shared by the dropdown and the hamburger.
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  // A little air so a hovered row never merges into the current one
+  & + & { margin-top: 2px; }
+
+  &:hover .dropdown-item__title,
+  &.active-link .dropdown-item__title { color: var(--secondary-color); }
+}
+
+// White chip with a hairline (like the threat chips), so it stays distinct
+// on the tinted hover / current rows
+.dropdown-item__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--light-gray);
+  border-radius: 10px;
+  background-color: var(--white);
+  color: var(--secondary-color);
+  font-size: 15px;
+  transition: border-color .15s ease;
+
+  i {
+    width: 1.25em; // fixed width: glyphs of different widths center alike
+    text-align: center;
+  }
+
+  .dropdown-item:hover &,
+  .dropdown-item.active-link & { border-color: var(--primary-color); }
+}
+
+.dropdown-item__text {
+  display: block;
+  min-width: 0;
+}
+
+.dropdown-item__title {
+  display: block;
+  font-weight: 700;
+  transition: color .15s ease;
+}
+
+.dropdown-item__desc {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-alt-color);
 }
 
 .dark-mode {
