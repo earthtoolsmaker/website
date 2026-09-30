@@ -56,24 +56,6 @@
   </div>
   {{ end }}
 
-  {{ with .Params.facts }}
-  <section class="section nature-about">
-    <div class="container"><div class="row"><div class="col col-12"><div class="container__inner">
-      {{ partial "nature-section-head.html" (dict "title" "Key facts") }}
-      <dl class="nature-facts">
-        {{ range . }}
-        {{ $n := index $sourceNum (.source | default "") }}
-        {{ if not $n }}{{ errorf "%s: fact %q cites unknown source %q" $.RelPermalink .label .source }}{{ end }}
-        <div class="nature-facts__item">
-          <dt>{{ .label }}</dt>
-          <dd>{{ .value }}<sup><a href="#source-{{ $n }}" aria-label="Source {{ $n }}">{{ $n }}</a></sup></dd>
-        </div>
-        {{ end }}
-      </dl>
-    </div></div></div></div>
-  </section>
-  {{ end }}
-
   <div class="nature-work">
     {{ range slice (dict "section" "projects" "title" "Projects") (dict "section" "demos" "title" "Live demos") (dict "section" "tools" "title" "Tools") (dict "section" "posts" "title" "Blog posts") }}
     {{ $heading := .title }}

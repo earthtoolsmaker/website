@@ -155,3 +155,12 @@ Before tagging, the implementer checks each item's body for the species it actua
 - Every fact's `source` key resolves to a listed source; every source URL returns HTTP 200 (curl).
 - Screenshots of `/nature/`, one species page (snow leopard) and one ecosystem page (rivers), at desktop and phone widths; no horizontal scroll on phones. (The site is light-only, `color_scheme = "light"`, so there is no dark mode to check.)
 - The Work dropdown entry, the stats band Species tile, and project-page chips all resolve to the right pages.
+
+## 9. Revisions after review (2026-09-30)
+
+- **Term pages are written pages, not fact sheets.** The key-facts cards (section 5.2, `facts:`) are replaced by:
+  - `stats:` (3 to 4 entries of `value`, `label`, `detail`, `source`), rendered as the shared stats card overlapping the hero's bottom edge; each tile links to its source. Values must not contain `<` (the stats card renders values as HTML).
+  - A Markdown body (about 150 to 300 words, sections "Why it matters", "Under pressure", "What we do") in the project-page reading column, with images and carousels from existing project folders or Unsplash. Inline citations use the `{{< cite "key" >}}` shortcode, numbered as in "Learn more"; an unknown key fails the build.
+  - Pacific salmon embeds the existing `{{< salmon_species >}}` cards.
+- **Headers:** `/nature/` and every term page float the header over the photo hero (`header--overlay`), and `/nature/` carries a stats card (Species, Ecosystems, Projects, Live demos). The Species and Ecosystems tiles, here and on the homepage, Projects and Demos stats bands, link to `/nature/#species` and `/nature/#ecosystems`.
+- **Trout term corrected:** the trout project works on westslope cutthroat trout (*Oncorhynchus lewisi*) in the Elk River, not rainbow trout. The term is `westslope-cutthroat-trout`, with no IUCN badge (no IUCN assessment).

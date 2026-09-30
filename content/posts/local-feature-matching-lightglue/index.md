@@ -1,6 +1,6 @@
 ---
 title: "Identify individuals with Local Feature Matching"
-nature: ["rainbow-trout"]
+nature: ["westslope-cutthroat-trout"]
 description: A comprehensive examination of using local feature matching for individual identification.
 date: 2024-12-09
 image: /images/posts/local-feature-matching-lightglue/cover.png
