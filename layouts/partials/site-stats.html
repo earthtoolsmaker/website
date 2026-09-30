@@ -5,7 +5,7 @@
   (dict "value" (partial "partner-count.html" .) "title" "Partners" "detail" "institutes, NGOs, agencies" "url" "/partners/")
 }}
 {{ range first 1 (where site.Data.about.stats "label" "species monitored") }}
-  {{ $items = $items | append (dict "value" .value "title" "Species" "detail" "from salmon to elephants" "url" "/posts/") }}
+  {{ $items = $items | append (dict "value" .value "title" "Species" "detail" "from salmon to elephants" "url" "/nature/") }}
 {{ end }}
 {{ $items = $items | append (dict "value" (len (where site.RegularPages "Section" "tools")) "title" "Field tools" "detail" "in use today" "url" "/tools/") }}
 {{ return $items }}
