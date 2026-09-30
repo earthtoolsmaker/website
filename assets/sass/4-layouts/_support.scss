@@ -192,29 +192,76 @@
   }
 }
 
+// Same surface as .partner-card (Support page): white, hairline border, 14px
+// radius, soft shadow, and a hairline divider between the head (label +
+// title) and the body. Flat markup, so the dividers are borders, not gaps.
 .support__card {
-  padding: 28px;
-  background-color: var(--background-alt-color);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  box-shadow: 0 6px 26px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--light-gray);
+  border-radius: 14px;
+  background-color: var(--white);
+  box-shadow: 0 14px 32px -22px rgba(0, 0, 0, 0.3);
 
   .support__card-title {
-    font-family: $base-font-family;
-    font-size: $font-size-h5;
-    font-weight: 700;
-    margin-bottom: 12px;
+    margin: 0;
+    padding: 18px 22px 16px;
+    border-bottom: 1px solid var(--light-gray);
+    font-size: 22px;
+    line-height: 1.2;
     color: var(--heading-font-color);
   }
 
+  // Grows so cards in a grid row end level
   .support__card-description {
-    margin-bottom: 0;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
+    flex: 1;
+    margin: 0;
+    padding: 16px 22px 18px;
+    font-size: 15px;
+    line-height: 1.55;
     color: var(--text-color);
+  }
 
-    @media (max-width: $mobile) {
-      font-size: 16px;
+  // Track variant: keeps its subgrid rows; label sits above the title as one
+  // head block, then the proof and offers are their own divided steps
+  &.support__track {
+    display: grid;
+  }
+
+  .support__track-label {
+    margin: 0;
+    padding: 18px 22px 4px;
+    font-size: 12px;
+  }
+
+  .support__track-label + .support__card-title {
+    padding-top: 0;
+  }
+
+  .support__track-proof {
+    margin: 0;
+    padding: 16px 22px 18px;
+    border-top: 1px solid var(--light-gray);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .support__track-offers {
+    margin: 0;
+    padding: 16px 22px 18px;
+    border-top: 1px solid var(--light-gray);
+
+    li {
+      font-size: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        background-color: var(--secondary-color);
+      }
     }
   }
 }
