@@ -1,21 +1,10 @@
 {{ define "main" }}
 {{/* /nature/: every species and ecosystem we work for (docs/specs/2026-09-30-what-we-protect-design.md) */}}
-<section class="hero">
-  {{ partial "photo-hero.html" (dict
-    "image" .Params.hero_image
-    "eyebrow" .Params.hero_eyebrow
-    "title" (.Params.hero_title | default .Title)
-    "description" .Params.hero_description
-    "button_primary" .Params.hero_button_primary
-    "button_primary_link" .Params.hero_button_primary_link
-    "button_secondary" .Params.hero_button_secondary
-    "button_secondary_link" .Params.hero_button_secondary_link
-  ) }}
-</section>
-
 {{ $species := slice }}
 {{ $ecosystems := slice }}
+{{ $tagged := slice }}
 {{ range .Pages }}
+  {{ $tagged = $tagged | union .Pages }}
   {{ $term := . }}
   {{ if not (in (slice "species" "ecosystem") .Params.nature_kind) }}
     {{ errorf "nature term %s has no content/nature/<slug>/_index.md with nature_kind species or ecosystem (typo in a page's nature list?)" .RelPermalink }}
@@ -40,6 +29,30 @@
 {{/* Species: most work first, ties by name (Hugo's sort is stable). Ecosystems: by name. */}}
 {{ $species = sort (sort $species "title") "count" "desc" }}
 {{ $ecosystems = sort $ecosystems "title" }}
+
+{{/* Photo hero with the stats card overlapping its bottom edge, as on the other listings */}}
+<section class="hero">
+  {{ partial "photo-hero.html" (dict
+    "image" .Params.hero_image
+    "eyebrow" .Params.hero_eyebrow
+    "title" (.Params.hero_title | default .Title)
+    "description" .Params.hero_description
+    "button_primary" .Params.hero_button_primary
+    "button_primary_link" .Params.hero_button_primary_link
+    "button_secondary" .Params.hero_button_secondary
+    "button_secondary_link" .Params.hero_button_secondary_link
+  ) }}
+  <div class="container">
+    {{ $speciesCount := "" }}
+    {{ range first 1 (where site.Data.about.stats "label" "species monitored") }}{{ $speciesCount = .value }}{{ end }}
+    {{ partial "stats-card.html" (dict "class" "" "items" (slice
+      (dict "value" $speciesCount "title" "Species" "detail" "from salmon to elephants")
+      (dict "value" (len $ecosystems) "title" "Ecosystems" "detail" "forests, rivers, reefs and more")
+      (dict "value" (len (where $tagged "Section" "projects")) "title" "Projects" "detail" "delivered in the field" "url" "/projects/")
+      (dict "value" (len (where $tagged "Section" "demos")) "title" "Live demos" "detail" "run in your browser" "url" "/demos/")
+    )) }}
+  </div>
+</section>
 
 <div class="page-wrapper hero-listing">
   {{ range slice (dict "title" "Species" "key" "species" "cards" $species) (dict "title" "Ecosystems" "key" "ecosystems" "cards" $ecosystems) }}
