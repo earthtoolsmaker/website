@@ -6,7 +6,7 @@
     <path d="M0 1 L9 5 L0 9 Z" fill="#e29578"/>
   </marker>
   <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%">
-    <feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.08"/>
+    <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.10"/>
   </filter>
   <linearGradient id="smokeg" x1="0" y1="1" x2="0" y2="0">
     <stop offset="0%" stop-color="#9aa4a7"/><stop offset="55%" stop-color="#bcc3c6"/><stop offset="100%" stop-color="#dde1e3"/>
@@ -50,7 +50,7 @@
 </g>
 
 <!-- ============ CARD 1 — WATCH (cx=142) ============ -->
-<rect x="36" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<rect x="36" y="28" width="212" height="212" rx="20" fill="#ffffff" stroke="#e1e4e9" stroke-width="1.5" filter="url(#cardshadow)"/>
 <g transform="translate(142,128)">
   <clipPath id="clip1"><rect x="-90" y="-78" width="180" height="156" rx="8"/></clipPath>
   <g clip-path="url(#clip1)">
@@ -82,7 +82,7 @@
 <text class="desc"  x="142" y="338" text-anchor="middle">Cameras scan the forest</text>
 
 <!-- ============ CARD 2 — DETECT (cx=401) ============ -->
-<rect x="295" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<rect x="295" y="28" width="212" height="212" rx="20" fill="#ffffff" stroke="#e1e4e9" stroke-width="1.5" filter="url(#cardshadow)"/>
 <g transform="translate(401,128)">
   <path d="M-46 60 l10 0 l-10 -28 l-10 28 Z M-46 46 l7 0 l-7 -17 l-7 17 Z" fill="#3a8576"/>
   <path d="M46 60 l10 0 l-10 -28 l-10 28 Z M46 46 l7 0 l-7 -17 l-7 17 Z" fill="#3a8576"/>
@@ -121,7 +121,7 @@
 <text class="desc"  x="401" y="338" text-anchor="middle">AI flags the smoke</text>
 
 <!-- ============ CARD 3 — ALERT (cx=660) ============ -->
-<rect x="554" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<rect x="554" y="28" width="212" height="212" rx="20" fill="#ffffff" stroke="#e1e4e9" stroke-width="1.5" filter="url(#cardshadow)"/>
 <g transform="translate(660,128)">
   <!-- firehouse -->
   <rect x="-64" y="2" width="64" height="54" rx="4" fill="#006d77"/>
@@ -146,7 +146,7 @@
 <text class="desc"  x="660" y="338" text-anchor="middle">Sent to the fire dept</text>
 
 <!-- ============ CARD 4 — RESPOND (cx=919) ============ -->
-<rect x="813" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<rect x="813" y="28" width="212" height="212" rx="20" fill="#ffffff" stroke="#e1e4e9" stroke-width="1.5" filter="url(#cardshadow)"/>
 <g transform="translate(919,128)">
   <!-- small flame being doused -->
   <g transform="translate(62,42) scale(0.5)">
