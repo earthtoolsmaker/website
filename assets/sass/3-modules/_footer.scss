@@ -1,377 +1,320 @@
-/* Footer */
+/* Footer: soil profile (O, A, B, C horizons) */
 .footer {
-  border-top: 1px solid #ede0d4;
-  // background: #ede0d4;
-  background: #fff5ed;
+  --soil-o: #d9bfa4;
+  --soil-a: #f6ede3;
+  --soil-b: #efe1d2;
+  --soil-c: #e6d2bd;
+  --soil-ink: #8a6448;
+  --soil-ink-soft: rgba(138, 100, 72, .42);
+  --soil-ink-faint: rgba(138, 100, 72, .16);
+  --soil-text: #3a2a1f;
+  --soil-text-alt: #7c6554;
+  --soil-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
 
-  .footer__inner {
-    padding: 28px 0;
-  
-    .row .col {
-      flex-grow: 1;
-    }
-
-    @media (max-width: $desktop) {
-      .row .col {
-        &:last-child>.widget-footer {
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
-}
-
-/* Widgets */
-.widget-footer {
-  @media (max-width: $desktop) {
-    margin-bottom: 36px;
-  }
-
-  @media (max-width: $mobile) {
-    margin-bottom: 32px;
-  }
-}
-
-.widget-title {
-  margin-bottom: 16px;
-  font-size: 18px;
-}
-
-/* Widget Footer Info */
-.logo-footer__link {
-  display: inline-flex;
-  margin-bottom: 16px;
-  font-size: 32px;
-  font-family: $heading-font-family;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: -1px;
-  transition: color .25s ease;
-}
-
-.logo-footer__image,
-.logo-footer__image__dark {
-  max-height: 50px;
-}
-
-.logo-footer__image__dark {
-  display: none;
-}
-
-.dark-mode {
-  .logo-footer__image {
-    display: none;
-  }
-
-  .logo-footer__image__dark {
-    display: block;
-  }
-}
-
-.widget-footer__desc {
-  max-width: 480px;
-  margin-bottom: 14px;
-  font-size: 16px;
-}
-
-/* Widget Recent Posts */
-.widget-recent-posts {
-  padding-right: 32px;
-
-  @media (max-width: $desktop) {
-    padding-right: 0;
-  }
-}
-
-.recent-posts {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-bottom: 14px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  // @media (max-width: $mobile) {
-  //   flex-direction: column;
-  //   align-items: flex-start;
-  //   margin-bottom: 32px;
-  // }
-}
-
-.recent-posts__image {
-  position: relative;
-  display: block;
-  transform: translate(0);
-  width: 100px;
-  min-width: 100px;
-  flex-shrink: 0;
-  margin-right: 16px;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  margin-top: 96px;
+  color: var(--soil-text);
   overflow: hidden;
-  background: var(--background-alt-color);
-
-  &:hover {
-    transform: translateY(-2px);
-  }
-
-  &::after {
-    content: "";
-    display: table;
-    // Match the 1500×1050 (70%) cover aspect ratio so object-fit: cover
-    // fills the box without cropping the title text on the left edge.
-    padding-top: 70%;
-  }
-
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  // @media (max-width: $mobile) {
-  //   min-width: 100%;
-  //   margin-right: 0;
-  //   margin-bottom: 20px;
-  //   border-radius: 22px;
-  //
-  //   &:hover {
-  //     transform: translateY(-8px);
-  //   }
-  // }
-}
-
-.recent-posts__content {
-  font-size: 0;
-  line-height: 1;
-
-  .recent-posts__date {
-    font-size: 14px;
-    line-height: 1;
-    font-weight: 600;
-    color: var(--text-alt-color);
-  }
-
-  .recent-posts__title {
-    margin: 8px 0 0;
-    font-size: 16px;
-    line-height: 1.4;
-
-    a {
-      text-decoration: underline;
-      text-decoration-color: transparent;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 2px;
-      color: var(--heading-font-color);
-
-      &:hover {
-        text-decoration-color: var(--heading-font-color);
-      }
-    }
-
-    @media (max-width: $mobile) {
-      font-size: 18px;
-    }
-  }
-}
-
-/* Widget Footer Navigation */
-.widget-nav {
-  text-align: left;
-
-  .footer__nav-list {
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: start;
-    column-gap: 48px;
-    line-height: 1;
-  }
-
-  .footer__nav-item {
-    margin-bottom: 12px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .footer__nav-link {
-    position: relative;
-    font-size: 16px;
-    line-height: 1.6;
-    font-weight: 700;
-
-    &:hover {
-      &::before {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-
-    &.active-link {
-      &::before {
-        opacity: 1;
-        visibility: visible;
-        background-color: var(--primary-color);
-      }
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      display: block;
-      width: 6px;
-      right: -6px;
-      height: 6px;
-      opacity: 0;
-      visibility: hidden;
-      transition: all .2s;
-      border-radius: 50%;
-      background-color: var(--text-alt-color);
-    }
-  }
-}
-
-/* Footer Info */
-.footer__info {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px 0;
-  border-top: 1px solid var(--border-color);
 
   @media (max-width: $tablet) {
-    flex-direction: column;
-    align-items: flex-start;
+    margin-top: 64px;
+  }
+}
+
+/* Drawings */
+.soil-art {
+  display: block;
+  width: 100%;
+}
+
+.soil-art__soft {
+  fill: none;
+  stroke: var(--soil-ink-soft);
+  stroke-width: 1;
+  stroke-linecap: round;
+}
+
+// Flat-color plants on the surface. The drawing also owns the wavy ground line
+// and the top of the organic band down to below its lowest dip, so plant bases
+// follow the exact curve and the band's flat top never shows above the line.
+.soil-surface .soil-art {
+  height: 82px;
+}
+
+.soil-surface__ground {
+  fill: var(--soil-o);
+}
+
+.soil-surface__line {
+  fill: none;
+  stroke: var(--soil-ink);
+  stroke-width: 1.1;
+}
+
+/* Bands */
+.soil-band {
+  position: relative;
+
+  > .soil-art {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
+}
+
+.soil-band__edge {
+  position: absolute;
+  left: 0;
+  top: -9px;
+  width: 100%;
+  height: 10px;
+}
+
+.soil-band__edge-line {
+  fill: none;
+  stroke: var(--soil-ink);
+  stroke-width: 1.1;
+}
+
+// Labels sit at the screen edge; content keeps the site container alignment
+// and is only pushed right when the container gets too close to the labels.
+.soil-band__inner {
+  padding-left: unquote("max(0px, calc(140px - (100vw - 100%) / 2))"); // LibSass has no CSS max()
+}
+
+// Continues the surface drawing's soil fill (which already shows ~10px of it)
+.soil-band--o {
+  height: 16px;
+  background: var(--soil-o);
+}
+
+.soil-band--a {
+  background-color: var(--soil-a);
+
+  .soil-band__edge-fill { fill: var(--soil-a); }
+}
+
+.soil-band--b {
+  min-height: 84px;
+  background-color: var(--soil-b);
+  background-position: 6px 4px;
+
+  .soil-band__edge-fill { fill: var(--soil-b); }
+}
+
+.soil-band--c {
+  height: 66px;
+  background-color: var(--soil-c);
+
+  .soil-band__edge-fill { fill: var(--soil-c); }
+}
+
+// Stipple texture in the mineral horizons
+.soil-band--a,
+.soil-band--b,
+.soil-band--c {
+  background-image: radial-gradient(var(--soil-ink-faint) .9px, transparent 1.2px);
+  background-size: 17px 13px;
+}
+
+/* Horizon labels (name + depth), hidden on phones */
+.soil-band__tag {
+  position: absolute;
+  z-index: 3;
+  left: 24px;
+  top: 14px;
+  font-family: var(--soil-mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: .04em;
+  color: var(--soil-text-alt);
+}
+
+// The organic band starts ~10px below the ground line (the surface drawing shows
+// its top), so its label sits slightly above the band itself
+.soil-band--o .soil-band__tag {
+  top: -5px;
+}
+
+.soil-band--c .soil-band__tag {
+  top: 12px;
+}
+
+/* Content (A horizon) */
+.footer__content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  padding: 36px 0 32px;
+}
+
+.logo-footer__link {
+  display: inline-flex;
+  font-family: $heading-font-family;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.footer__desc {
+  max-width: 380px;
+  margin: 12px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--soil-text-alt);
+}
+
+.footer .social-footer {
+  margin-top: 16px;
+
+  .social__item {
+    margin-right: 8px;
+  }
+
+  .social__link {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    font-size: 15px;
+    color: var(--soil-text);
+    border: 1px solid var(--soil-ink-soft);
+    border-radius: 50%;
+    transition: color .2s, border-color .2s, background-color .2s;
+
+    // Also overrides the global black GitHub hover fill
+    &:hover {
+      color: var(--secondary-color);
+      border-color: var(--secondary-color);
+      background-color: transparent;
+    }
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+// The nav columns and the bottom-line links share one column grid, so
+// Privacy Policy sits under Explore and Back to top under Organisation.
+$footer-col: 140px;
+
+.footer__nav,
+.footer__info__right {
+  display: grid;
+  grid-template-columns: repeat(2, $footer-col);
+  column-gap: 72px;
+}
+
+.footer__col-title {
+  margin-bottom: 12px;
+  font-family: var(--soil-mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--soil-text-alt);
+}
+
+.footer__col li {
+  margin-bottom: 0;
+}
+
+.footer__nav-link {
+  display: block;
+  padding: 5px 0;
+  font-size: 16px;
+  color: var(--soil-text);
+  transition: color .2s;
+
+  &:hover,
+  &.active-link {
+    color: var(--secondary-color);
+  }
+}
+
+/* Bottom line (B horizon) */
+.footer__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 0;
+  font-size: 14px;
+  color: var(--soil-text-alt);
+
+  a,
+  .top {
+    color: var(--soil-text-alt);
+    transition: color .2s;
+
+    &:hover {
+      color: var(--secondary-color);
+    }
   }
 }
 
 .footer__info__right {
-  display: flex;
   align-items: center;
+  justify-items: start;
 }
 
-.copyright {
-  margin-right: auto;
-  font-size: 16px;
-  color: var(--heading-font-color);
-
-  a {
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-    color: var(--heading-font-color);
-
-    &:hover {
-      text-decoration-color: var(--heading-font-color);
-    }
-  }
-
-  @media (max-width: $mobile) {
-    font-size: 15px;
-  }
-}
-
-// Toggle Theme
-.toggle-theme {
-  margin-right: 24px;
-  line-height: 1;
-  color: var(--heading-font-color);
+.top {
+  padding: 0;
+  font: inherit;
+  background: none;
+  border: 0;
   cursor: pointer;
 
-  &:hover {
-    .toggle-text {
-      text-decoration-color: var(--heading-font-color);
-    }
-  }
-
-  .toggle-text {
-    margin-left: 7px;
-    font-size: 16px;
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-    transition: $global-transition;
-  }
-
-  @media (max-width: $tablet) {
-    margin-right: 16px;
-
-    .toggle-text {
-      font-size: 15px;
-    }
-  }
-}
-
-.toggle-sun,
-.toggle-moon {
-  display: flex;
-  align-items: center;
-  font-size: 17px;
-
   i {
-    font-size: 14px;
-  }
-
-  @media (max-width: $mobile) {
-    font-size: 16px;
+    margin-left: 4px;
+    font-size: 12px;
   }
 }
 
-.toggle-sun {
-  display: none;
+/* Tablet and phone */
+@media (max-width: $desktop) {
+  .footer__nav,
+  .footer__info__right {
+    column-gap: 48px;
+  }
 }
 
-.dark-mode {
-  .toggle-sun {
-    display: flex;
+@media (max-width: $tablet) {
+  .soil-band__inner {
+    padding-left: 0;
   }
 
-  .toggle-moon {
+  .soil-band__tag {
     display: none;
   }
-}
 
-// Scroll Button Top
-.top {
-  display: flex;
-  align-items: center;
-  font-size: 17px;
-  color: var(--heading-font-color);
-  cursor: pointer;
-
-  i {
-    font-size: 14px;
+  .footer__content {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 30px 0 24px;
   }
 
-  &:hover {
-    .top__text {
-      text-decoration-color: var(--heading-font-color);
-    }
+  .footer__nav,
+  .footer__info__right {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
   }
 
-  .top__text {
-    margin-left: 7px;
-    font-size: 16px;
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-    transition: $global-transition;
+  .footer__nav {
+    row-gap: 20px;
   }
 
-  @media (max-width: $mobile) {
-    font-size: 16px;
+  .footer__info__right {
+    align-self: stretch;
+  }
 
-    .top__text {
-      font-size: 15px;
-    }
+  .footer__info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 22px 0;
   }
 }

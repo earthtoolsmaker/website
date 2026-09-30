@@ -1,38 +1,97 @@
 <!-- begin footer -->
+{{/* Soil-profile footer: the page ends in a cross-section of soil horizons (O, A, B, C).
+     The drawings are generated inline SVGs in partials/footer-soil/. */}}
 <footer class="footer">
 
-  <div class="container">
-    <div class="row">
-      <div class="col col-12">
+  <div class="soil-surface">{{ partial "footer-soil/surface.html" . }}</div>
 
-        <div class="footer__inner">
-          <div class="row">
-            {{ partial "footer-widgets/widget-info.html" . }}
-            {{ partial "footer-widgets/widget-recent-posts.html" . }}
-            {{ partial "footer-widgets/widget-navigation.html" . }}
-          </div>
-        </div>
+  <div class="soil-band soil-band--o">
+    <div class="soil-band__tag" aria-hidden="true">organic · 0-5 cm</div>
+    {{ partial "footer-soil/litter.html" . }}
+  </div>
 
-        <div class="footer__info">
-          <div class="copyright"> 2023-{{ dateFormat "2006" now }} &copy; <a href="/">{{ .Site.Title }}</a>. All Right
-            Reserved.</div>
-          <div class="footer__info__right">
-            {{ if or (eq .Site.Params.color_scheme "light") (eq .Site.Params.color_scheme "dark") }}
-            {{ else }}
-            <div class="toggle-theme">
-              <div class="toggle-moon" title="Enable dark mode" aria-hidden="true"><i class="fa-solid fa-moon"></i>
-                <span class="toggle-text">Dark</span></div>
-              <div class="toggle-sun" title="Enable light mode" aria-hidden="true"><i class="fa-regular fa-sun"></i>
-                <span class="toggle-text">Light</span></div>
+  <div class="soil-band soil-band--a">
+    {{ partial "footer-soil/edge.html" "a" }}
+    <div class="soil-band__tag" aria-hidden="true">topsoil<br>5-30 cm</div>
+    <div class="container">
+      <div class="soil-band__inner">
+        <div class="footer__content">
+
+          <div class="footer__brand">
+            <a class="logo-footer__link" href="{{ .Site.BaseURL }}">
+              {{ $panIcon := resources.Get "images/logos/etm-logo.png" }}
+              {{ $wordEtm := resources.Get "images/logos/logo-word-etm.png" }}
+              {{ $wordFull := resources.Get "images/logos/logo-word-full.png" }}
+              {{ if and $panIcon $wordEtm $wordFull }}
+                {{/* Footer: "etm" slides up to the full wordmark on hover (pangolin rolls) */}}
+              <span class="brandmark brandmark--slide brandmark--sm">
+                <span class="brandmark__pan"><img src="{{ $panIcon.RelPermalink }}" alt="{{ site.Title }}"></span>
+                <span class="brandmark__words">
+                  <img class="brandmark__word brandmark__word--full" src="{{ $wordFull.RelPermalink }}" alt="" aria-hidden="true">
+                  <img class="brandmark__word brandmark__word--etm" src="{{ $wordEtm.RelPermalink }}" alt="" aria-hidden="true">
+                </span>
+              </span>
+              {{ else }}
+              {{ .Site.Title }}
+              {{ end }}
+            </a>
+
+            {{ with .Site.Params.footer.footer_description }}
+            <p class="footer__desc">{{ . }}</p>
+            {{ end }}
+
+            {{ if .Site.Params.social }}
+            <div class="social-footer">
+              {{ partial "social-links.html" . }}
             </div>
             {{ end }}
-            <div class="top" title="Top"><i class="fa-solid fa-arrow-up"></i> <span class="top__text">Back to top</span>
-            </div>
           </div>
-        </div>
 
+          <nav class="footer__nav" aria-label="Footer">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.footer }}
+            {{ if .HasChildren }}
+            <div class="footer__col">
+              <h3 class="footer__col-title">{{ .Name }}</h3>
+              <ul class="list-reset">
+                {{ range .Children }}
+                <li><a href="{{ .URL }}" class="footer__nav-link{{ if $currentPage.IsMenuCurrent "footer" . }} active-link{{ end }}">{{ .Name }}</a></li>
+                {{ end }}
+              </ul>
+            </div>
+            {{ end }}
+            {{ end }}
+          </nav>
+
+        </div>
       </div>
     </div>
+  </div>
+
+  <div class="soil-band soil-band--b">
+    {{ partial "footer-soil/edge.html" "b" }}
+    <div class="soil-band__tag" aria-hidden="true">subsoil<br>30-90 cm</div>
+    <div class="container">
+      <div class="soil-band__inner">
+        <div class="footer__info">
+          <div class="copyright">&copy; 2023-{{ dateFormat "2006" now }} <a href="/">{{ .Site.Title }}</a></div>
+          <div class="footer__info__right">
+            {{ range .Site.Menus.footer }}
+            {{ if and (not .HasChildren) .URL }}
+            <a href="{{ .URL }}">{{ .Name }}</a>
+            {{ end }}
+            {{ end }}
+            <button class="top" type="button">Back to top <i class="fa-solid fa-arrow-up"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="soil-band soil-band--c">
+    {{ partial "footer-soil/edge.html" "c" }}
+    <div class="soil-band__tag" aria-hidden="true">parent rock<br>90 cm+</div>
+    {{ partial "footer-soil/rocks.html" . }}
   </div>
 
 </footer>
