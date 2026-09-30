@@ -115,61 +115,68 @@
   color: var(--heading-font-color);
 }
 
+// Numbered step cards (project pages), same surface as .partner-card: white,
+// hairline border, 14px radius, soft shadow. Subgrid lines up the number /
+// title / description rows across a grid row, with a hairline divider above
+// the description (without subgrid support each card sizes on its own)
 .services__list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   margin-bottom: 48px;
 
-  @media (max-width: $tablet) {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+  // Four steps read better as a 2x2 than as four narrow columns
+  &:has(> :nth-child(4)) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (max-width: $mobile) {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-}
-
-.services__item {
-  padding-left: 20px;
-  border-left: 2px solid var(--border-color);
-
-  // Reserve two title lines so descriptions align across columns
-  .services__item-title {
-    min-height: 2.4em;
-  }
-
-  @media (max-width: $mobile) {
-    .services__item-title {
-      min-height: 0;
+    &,
+    &:has(> :nth-child(4)) {
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
   }
 }
 
+.services__item {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  overflow: hidden;
+  border: 1px solid var(--light-gray);
+  border-radius: 14px;
+  background-color: var(--white);
+  box-shadow: 0 14px 32px -22px rgba(0, 0, 0, 0.3);
+}
+
+// Styled as the .partner-card__tag label
 .services__number {
   display: block;
-  margin-bottom: 14px;
-  font-size: 21px;
+  padding: 18px 22px 0;
+  margin-bottom: 4px;
+  font-size: 12px;
   font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  color: var(--tertiary-color);
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  color: var(--secondary-color);
 }
 
 .services__item-title {
-  font-family: $base-font-family;
-  font-size: 18px;
-  line-height: 1.2;
-  font-weight: 700;
-  margin-bottom: 10px;
+  margin: 0;
+  padding: 0 22px 16px;
+  font-size: 20px;
+  line-height: 1.25;
   color: var(--heading-font-color);
 }
 
 .services__item-description {
-  font-size: 16px;
-  line-height: 1.6;
+  margin: 0;
+  padding: 16px 22px 18px;
+  border-top: 1px solid var(--light-gray);
+  font-size: 15px;
+  line-height: 1.55;
   color: var(--text-color);
 }
 
