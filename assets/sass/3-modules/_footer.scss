@@ -37,7 +37,12 @@
 // and the top of the organic band down to below its lowest dip, so plant bases
 // follow the exact curve and the band's flat top never shows above the line.
 .soil-surface .soil-art {
-  height: 82px;
+  // Grows with the viewBox ratio (2400x82) past 2400px wide, so the slice
+  // never crops the tree tops on very wide screens
+  height: unquote("max(82px, 100vw * 82 / 2400)"); // LibSass has no CSS max()
+  // Tuck under the organic band: at fractional device pixel ratios (e.g. 125%)
+  // the drawing's bottom edge is anti-aliased and shows a light seam.
+  margin-bottom: -1px;
 }
 
 .soil-surface__ground {
