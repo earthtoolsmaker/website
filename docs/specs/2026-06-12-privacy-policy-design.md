@@ -30,7 +30,7 @@ Audit of the codebase (2026-06-12):
 
 ## Decisions
 
-- **Responsible party:** the policy names "EarthToolsMaker" informally and
+- **Responsible party:** the policy names "earthtoolsmaker" informally and
   points readers to the `/contact/` page. No email or postal address is
   published, and no registered legal entity is named.
 - **No cookie banner:** the site sets no cookies itself, so none is needed.

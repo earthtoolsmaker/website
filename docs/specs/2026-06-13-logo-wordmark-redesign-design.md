@@ -5,7 +5,7 @@
 
 ## Goal
 
-Replace the EarthToolsMaker text wordmark with a cleaner, more distinctive
+Replace the earthtoolsmaker text wordmark with a cleaner, more distinctive
 treatment, and add a playful animated brandmark. Keep the existing
 pangolin-and-globe icon; change the text and add motion.
 

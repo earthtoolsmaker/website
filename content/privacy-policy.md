@@ -8,7 +8,7 @@ hero_description: No analytics, no tracking cookies, no ads. Here is the little 
 
 *Last updated: June 12, 2026*
 
-EarthToolsMaker is a static website. We do not collect or store personal data ourselves: there are no analytics, no tracking cookies, and no ads. The few places where data is involved at all are described below.
+earthtoolsmaker is a static website. We do not collect or store personal data ourselves: there are no analytics, no tracking cookies, and no ads. The few places where data is involved at all are described below.
 
 ## Hosting
 

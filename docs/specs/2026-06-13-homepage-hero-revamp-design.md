@@ -8,7 +8,7 @@
 The homepage hero is pure centered typography on a plain page background: a
 93px Newsreader headline with a teal-gradient italic span, a description line,
 and two buttons. It's clean but visually flat — it carries no imagery and does
-little to convey what EarthToolsMaker actually does. The goal was explicitly
+little to convey what earthtoolsmaker actually does. The goal was explicitly
 **more visual impact** and a **modernized aesthetic**, not more conversion or
 credibility machinery.
 

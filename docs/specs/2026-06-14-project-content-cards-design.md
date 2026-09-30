@@ -10,7 +10,7 @@ Make long project articles more scannable by converting discrete, list-shaped pa
 
 ## Copy polish (in scope)
 
-Alongside the structural carding, give each article a light editorial pass: tighten wordiness, cut marketing buzzwords ("holistic", "innovative", "seamlessly", "cutting-edge"), prefer active voice and concrete nouns, and keep the EarthToolsMaker voice (plain, confident, field-grounded — matching the about/support/spaces pages). Preserve every factual and technical claim; never invent numbers or capabilities. Leave specialized technical passages, quotes, captions, and links intact unless a change is a clear improvement.
+Alongside the structural carding, give each article a light editorial pass: tighten wordiness, cut marketing buzzwords ("holistic", "innovative", "seamlessly", "cutting-edge"), prefer active voice and concrete nouns, and keep the earthtoolsmaker voice (plain, confident, field-grounded — matching the about/support/spaces pages). Preserve every factual and technical claim; never invent numbers or capabilities. Leave specialized technical passages, quotes, captions, and links intact unless a change is a clear improvement.
 
 ## The card convention ("light" intensity)
 

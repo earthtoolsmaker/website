@@ -1,6 +1,6 @@
 # Image Optimization Guide
 
-This document explains how image optimization works on the EarthToolsMaker website.
+This document explains how image optimization works on the earthtoolsmaker website.
 
 ## Overview
 

@@ -63,7 +63,7 @@ Partner logos stay on each case study as today.
 ### 7. The journey (timeline)
 Chronological, oldest first (narrative momentum; ends on 2026 right before the support CTA). Left-border timeline style:
 
-- **2024 — First field deployments.** EarthToolsMaker starts shipping: coral reef health monitoring, forest elephant acoustics with Cornell, bear identification, and SalmonVision counting fish on British Columbia rivers.
+- **2024 — First field deployments.** earthtoolsmaker starts shipping: coral reef health monitoring, forest elephant acoustics with Cornell, bear identification, and SalmonVision counting fish on British Columbia rivers.
 - **2025 — Tools others can run.** BioWatch turns camera-trap archives into maps and insights. Seal surveys take off over the Wadden Sea. Snow leopard monitoring begins in the mountains of Central Asia.
 - **2026 — Earlier, faster, further.** Sonar counts smolt runs no camera could see. Fire detection spots smoke at 35 km, minutes after ignition.
 
