@@ -2,10 +2,11 @@
 {{/* Float the header over full-bleed photo heroes: the homepage, top-level pages
      (About, Partners, Support, Contact, Privacy Policy...) and the Projects, Tools,
      Demos and Blog listings and the What we protect index, when they have a hero image,
-     plus every species and ecosystem page (its photo is `image`). */}}
+     plus every species and ecosystem page and every project page (their photo is `image`). */}}
 {{ $photoHeroPage := or (and (eq .Kind "page") (eq .Type "page")) (and (eq .Kind "section") (in (slice "projects" "tools" "demos" "posts") .Section)) (and (eq .Kind "taxonomy") (eq .Type "nature")) }}
 {{ $natureTerm := and (eq .Kind "term") (eq .Type "nature") .Params.image }}
-<header class="header{{ if or .IsHome (and .Params.hero_image $photoHeroPage) $natureTerm }} header--overlay{{ end }}">
+{{ $projectPage := and (eq .Kind "page") (eq .Section "projects") .Params.image }}
+<header class="header{{ if or .IsHome (and .Params.hero_image $photoHeroPage) $natureTerm $projectPage }} header--overlay{{ end }}">
   <div class="container-big">
     <div class="row">
       <div class="header__inner col col-12">

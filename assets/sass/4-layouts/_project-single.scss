@@ -98,6 +98,11 @@ $project-live-color: #3fb950;
     height: 26px;
   }
 
+  // Header floats over the photo: drop the partner chips below it.
+  &.about-hero--overlay-nav .project-hero__partners {
+    top: 104px;
+  }
+
   @media (max-width: $mobile) {
     .project-hero__stats { gap: 24px; }
     .project-hero__stat-value { font-size: 30px; }
@@ -125,6 +130,11 @@ $project-live-color: #3fb950;
       align-items: stretch;
       justify-content: flex-end;
     }
+    // Clear the floating header (the old fixed 404px overlay-nav height).
+    &.about-hero--overlay-nav .about-hero__overlay {
+      min-height: 404px;
+      padding-top: 88px;
+    }
     // Keep the main hero text/stats above the partner block.
     .about-hero__overlay > .container-wide:last-child { order: 1; }
 
@@ -149,7 +159,7 @@ $project-live-color: #3fb950;
   gap: 12px 22px;
   margin: -28px 0 0;               // pull up into the hero's bottom margin
   padding: 16px 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--light-gray);
 
   &__link {
     display: inline-flex;
