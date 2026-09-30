@@ -4,7 +4,7 @@
   <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e3a4a"/><stop offset="100%" stop-color="#176074"/></linearGradient>
   <radialGradient id="heat" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#e29578" stop-opacity="0.85"/><stop offset="60%" stop-color="#e29578" stop-opacity="0.35"/><stop offset="100%" stop-color="#e29578" stop-opacity="0"/></radialGradient>
   <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#e29578"/></marker>
-  <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.08"/></filter>
+  <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.10"/></filter>
   <style>
     .title { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 26px; font-weight: 600; fill: #161616; }
     .desc  { font-size: 15px; fill: #60626a; }
@@ -50,7 +50,7 @@
 </g>
 
 <!-- CARD 1 — IMPORT -->
-<rect x="36" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<rect x="36" y="28" width="212" height="212" rx="20" fill="#ffffff" stroke="#e1e4e9" stroke-width="1.5" filter="url(#cardshadow)"/>
 <g transform="translate(142,118)">
   <g transform="translate(-16,4) rotate(-10)"><use href="#tile"/></g>
   <g transform="translate(10,-2) rotate(8)"><use href="#tile"/></g>
@@ -62,7 +62,7 @@
 <text class="desc"  x="142" y="338" text-anchor="middle">Images or datasets</text>
 
 <!-- CARD 2 — IDENTIFY -->
-<rect x="295" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<rect x="295" y="28" width="212" height="212" rx="20" fill="#ffffff" stroke="#e1e4e9" stroke-width="1.5" filter="url(#cardshadow)"/>
 <g transform="translate(401,128)">
   <rect x="-78" y="-58" width="156" height="116" rx="12" fill="url(#forest)"/>
   <clipPath id="c2"><rect x="-78" y="-58" width="156" height="116" rx="12"/></clipPath>
@@ -80,7 +80,7 @@
 <text class="desc"  x="401" y="338" text-anchor="middle">Species, on your machine</text>
 
 <!-- CARD 3 — EXPLORE -->
-<rect x="554" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<rect x="554" y="28" width="212" height="212" rx="20" fill="#ffffff" stroke="#e1e4e9" stroke-width="1.5" filter="url(#cardshadow)"/>
 <g transform="translate(660,128)">
   <rect x="-78" y="-58" width="156" height="116" rx="12" fill="#e3ece4"/>
   <clipPath id="c3"><rect x="-78" y="-58" width="156" height="116" rx="12"/></clipPath>
@@ -102,7 +102,7 @@
 <text class="desc"  x="660" y="338" text-anchor="middle">Maps &amp; activity charts</text>
 
 <!-- CARD 4 — EXPORT -->
-<rect x="813" y="28" width="212" height="212" rx="20" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<rect x="813" y="28" width="212" height="212" rx="20" fill="#ffffff" stroke="#e1e4e9" stroke-width="1.5" filter="url(#cardshadow)"/>
 <g transform="translate(919,128)">
   <rect x="-80" y="-64" width="160" height="128" rx="12" fill="url(#panel)"/>
   <text class="chip" x="-66" y="-46" font-size="10" fill="#cfe9e0" letter-spacing="0.08em">ONE FOLDER / SPECIES</text>

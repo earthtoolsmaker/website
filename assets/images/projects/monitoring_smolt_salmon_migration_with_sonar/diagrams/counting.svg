@@ -3,7 +3,7 @@
   <linearGradient id="sonar" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e3a4a"/><stop offset="100%" stop-color="#176074"/></linearGradient>
   <radialGradient id="fishglow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff7a45"/><stop offset="100%" stop-color="#ff7a45" stop-opacity="0"/></radialGradient>
   <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 Z" fill="#e29578"/></marker>
-  <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.08"/></filter>
+  <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.10"/></filter>
   <pattern id="sonar-noise" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="0.7" fill="#bfe0d6" opacity="0.16"/><circle cx="5" cy="4.5" r="0.6" fill="#bfe0d6" opacity="0.12"/></pattern>
   <style>
     .cap   { font-size: 14px; fill: #60626a; }
@@ -39,7 +39,7 @@
 </defs>
 
 <!-- PANEL 1 — trigger placed -->
-<rect x="20" y="20" width="280" height="220" rx="14" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<rect x="20" y="20" width="280" height="220" rx="14" fill="#ffffff" stroke="#e1e4e9" stroke-width="1.5" filter="url(#cardshadow)"/>
 <g transform="translate(160,130)">
   <use href="#tile"/>
   <!-- regional trigger line across the weir-box exit -->
@@ -52,7 +52,7 @@
 <line x1="318" y1="130" x2="362" y2="130" stroke="#e29578" stroke-width="3.5" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
 
 <!-- PANEL 2 — fish counted on crossing -->
-<rect x="380" y="20" width="280" height="220" rx="14" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<rect x="380" y="20" width="280" height="220" rx="14" fill="#ffffff" stroke="#e1e4e9" stroke-width="1.5" filter="url(#cardshadow)"/>
 <g transform="translate(520,130)">
   <use href="#tile"/>
   <g clip-path="url(#tc)">

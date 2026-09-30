@@ -1,7 +1,7 @@
 <svg viewBox="0 0 1040 400" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
 <defs>
   <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="150%">
-    <feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#1c2b28" flood-opacity="0.08"/>
+    <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.10"/>
   </filter>
   <style>
     .title { font-family: Newsreader, Georgia, 'Times New Roman', serif; font-size: 23px; font-weight: 600; fill: #161616; }
@@ -38,7 +38,7 @@
 <text class="desc" x="478" y="200" font-weight="800" fill="#006d77">P</text>
 
 <!-- legend -->
-<rect x="712" y="96" width="300" height="216" rx="16" fill="#fbf6f6" stroke="#ede0d4" stroke-width="2" filter="url(#cardshadow)"/>
+<rect x="712" y="96" width="300" height="216" rx="16" fill="#ffffff" stroke="#e1e4e9" stroke-width="1.5" filter="url(#cardshadow)"/>
 <g>
   <circle cx="744" cy="138" r="8" fill="#006d77"/>
   <text class="leg"  x="764" y="134">Positive</text>
