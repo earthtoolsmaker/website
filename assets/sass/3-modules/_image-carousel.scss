@@ -249,6 +249,57 @@
   }
 }
 
+// Cards mode (text cards as slides, e.g. .support__card): the arrows move above
+// the slider, top right, as outlined chips instead of dark circles over the
+// text, and slides stretch to the tallest card. Doubled class so it also wins
+// over the .dark-mode overrides above.
+.image-carousel.image-carousel--cards {
+  .image-carousel__wrapper {
+    padding: 56px 8px 20px; // top room for the arrows
+  }
+
+  .image-carousel__controls {
+    top: 0;
+    left: auto;
+    right: 8px;
+    gap: 8px;
+    padding: 0;
+    transform: none;
+
+    .prev,
+    .next {
+      width: 36px;
+      height: 36px;
+      font-size: 15px;
+      color: var(--text-color);
+      border: 1px solid var(--light-gray);
+      background: var(--white);
+      backdrop-filter: none;
+
+      &:hover {
+        border-color: var(--secondary-color);
+        color: var(--secondary-color);
+        background: var(--white);
+        transform: none;
+      }
+    }
+  }
+
+  // Equal-height slides: flex row instead of tiny-slider's inline-blocks
+  .tns-horizontal.tns-subpixel {
+    display: flex;
+
+    > .tns-item {
+      display: flex;
+      flex: none;
+    }
+  }
+
+  .tns-item > * {
+    flex: 1;
+  }
+}
+
 
 /* Fullscreen Lightbox */
 .image-lightbox {

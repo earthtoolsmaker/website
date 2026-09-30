@@ -71,7 +71,7 @@
   margin: 24px 0 8px;
 
   .partner-logo-container {
-    flex: 1 1 180px;
+    flex: 1 1 160px;
     height: 120px;
     padding: 20px;
   }
@@ -337,3 +337,48 @@
   flex-wrap: wrap;
 }
 
+
+// Locator map band (coast_map shortcode) along the bottom of a card: a zoomed
+// crop of the shared coast image, centred on the place (the dot sits at the
+// band's centre), with the place name in the corner
+.coast-map {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+  border-top: 1px solid var(--light-gray);
+  background-color: #d8e5e9; // the map's sea, while the image loads
+}
+
+.coast-map__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: none;
+  height: auto;
+}
+
+.coast-map__dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 0 5px rgba(0, 109, 119, 0.22);
+}
+
+.coast-map__place {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-alt-color);
+}
