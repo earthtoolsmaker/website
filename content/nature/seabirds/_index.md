@@ -8,7 +8,7 @@ photo_credit:
   url: https://unsplash.com/photos/IxLQGMImJVQ
 facts:
 - label: Colonial breeders
-  value: 95% of seabirds nest in colonies
+  value: Nearly 95% of seabirds nest in colonies
   source: wiki
 - label: Main threat
   value: Avian influenza H5N1, clade 2.3.4.4b
@@ -24,8 +24,8 @@ sources:
   name: Emerging Infectious Diseases, H5N1 in Sandwich terns, Netherlands 2022
   url: https://wwwnc.cdc.gov/eid/article/28/12/22-1292
 - key: wiki
-  name: Wikipedia, Seabird
-  url: https://en.wikipedia.org/wiki/Seabird
+  name: Wikipedia, Bird colony
+  url: https://en.wikipedia.org/wiki/Bird_colony
 - key: whs
   name: IUCN World Heritage Outlook, Wadden Sea
   url: https://worldheritageoutlook.iucn.org/node/1110

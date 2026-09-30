@@ -16,10 +16,10 @@ facts:
   value: 350,000 to 500,000 worldwide
   source: wiki
 - label: Wadden Sea count
-  value: 23,772 moulting seals (2024 to 2025)
+  value: 23,772 moulting seals (2024)
   source: whs
 - label: Wadden Sea pups
-  value: 8,230 (2024 to 2025)
+  value: 8,230 (2024)
   source: whs
 - label: Range
   value: Northern Atlantic and Pacific coasts

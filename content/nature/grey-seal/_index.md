@@ -16,13 +16,13 @@ facts:
   value: About 632,000 worldwide (2016)
   source: wiki
 - label: Wadden Sea count
-  value: 12,064 moulting seals (2024 to 2025)
+  value: 12,064 moulting seals (2025)
   source: whs
 - label: Wadden Sea pups
-  value: 3,051 (2024 to 2025)
+  value: 3,051 (2025)
   source: whs
 - label: Size
-  value: Bulls up to 3.3 m long
+  value: Record bulls about 3.3 m long
   source: wiki
 sources:
 - key: iucn

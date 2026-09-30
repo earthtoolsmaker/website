@@ -14,7 +14,7 @@ facts:
   value: North Pacific, Bering Sea to Mexico
   source: wiki
 - label: Life cycle
-  value: Return to natal streams, die after spawning
+  value: Return to natal streams, most die after spawning
   source: wiki
 - label: Role
   value: Up to 24% of riverside forest nitrogen
