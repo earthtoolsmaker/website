@@ -6,14 +6,30 @@
 <div class="container">
   <div class="post-head">
 
+    {{ if .Params.Image }}
+    <div class="post-image">
+      {{ $imgPath := strings.TrimPrefix "/" .Params.Image }}
+      {{ partial "responsive-image.html" (dict
+        "src" $imgPath
+        "alt" .Title
+        "class" "no-lightense"
+        "sizes" "100vw"
+        "widths" (slice 600 900 1200)
+        "lazy" false
+        "fetchpriority" "high"
+        "lqip" true
+      ) }}
+      {{ partial "post-kicker.html" (dict "page" . "class" "post-kicker--cover") }}
+    </div>
+    {{ if .Params.image_caption }}
+    <div class="post-image-caption">{{ .Params.image_caption | markdownify }}</div>
+    {{ end }}
+    {{ end }}
+
     <div class="post-info">
 
-      {{ if .Params.tags }}
-      <div class="post-kicker">
-        {{ range ($.GetTerms "tags") }}
-        <a href="{{ .Permalink }}" class="post-kicker__tag">{{ .LinkTitle }}</a>
-        {{ end }}
-      </div>
+      {{ if not .Params.Image }}
+      {{ partial "post-kicker.html" (dict "page" .) }}
       {{ end }}
 
       {{ if .Title }}
@@ -30,24 +46,6 @@
       </div>
 
     </div>
-
-    {{ if .Params.Image }}
-    <div class="post-image">
-      {{ $imgPath := strings.TrimPrefix "/" .Params.Image }}
-      {{ partial "responsive-image.html" (dict
-        "src" $imgPath
-        "alt" .Title
-        "class" "no-lightense"
-        "sizes" "100vw"
-        "widths" (slice 600 900 1200)
-        "lazy" true
-        "lqip" true
-      ) }}
-    </div>
-    {{ if .Params.image_caption }}
-    <div class="post-image-caption">{{ .Params.image_caption | markdownify }}</div>
-    {{ end }}
-    {{ end }}
 
   </div>
 </div>
