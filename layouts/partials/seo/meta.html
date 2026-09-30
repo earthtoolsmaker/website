@@ -7,8 +7,8 @@
 {{/* Title — preserves the site's existing title logic */}}
 <title>{{ if not .IsHome }}{{ .Title }}{{ .Params.name }} | {{ end }}{{ .Site.Title }}</title>
 
-{{/* Description with fallback chain: page description -> summary -> site description */}}
-{{ $description := .Description | default .Summary | default .Site.Params.description }}
+{{/* Description with fallback chain: page description -> hero description -> summary -> site description */}}
+{{ $description := .Description | default (.Params.hero_description | plainify) | default .Summary | default .Site.Params.description }}
 <meta name="description" content="{{ $description }}">
 
 {{/* Canonical — always the page's own www permalink */}}
@@ -33,8 +33,8 @@
 {{ $ogType := "website" }}
 {{ if and .IsPage (eq .Section "posts") }}{{ $ogType = "article" }}{{ end }}
 
-{{/* Shared title expression for OG/Twitter — mirrors the <title> logic above */}}
-{{ $title := .Site.Title }}
+{{/* Shared title expression for OG/Twitter — mirrors the <title> logic above, plus the tagline on the home page */}}
+{{ $title := printf "%s | %s" .Site.Title .Site.Params.tagline }}
 {{ if not .IsHome }}{{ $title = printf "%s%s | %s" .Title (.Params.name | default "") .Site.Title }}{{ end }}
 
 {{/* Open Graph */}}
