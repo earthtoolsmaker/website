@@ -6,7 +6,7 @@
 
 ## Goal
 
-Add a `/partners/` page that showcases the organizations EarthToolsMaker (ETM)
+Add a `/partners/` page that showcases the organizations earthtoolsmaker (ETM)
 builds conservation technology with. ETM is a conservation-tech studio/consultancy
 (not a foundation-funded nonprofit), so the page is a **showcase of collaborators**
 — social proof and a "who we work with" overview — rather than a funder/grant

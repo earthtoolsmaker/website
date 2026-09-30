@@ -7,9 +7,9 @@ content rewriting, no analytics/tracking, no performance refactor.
 
 ## Goal
 
-Help conservation NGOs and funders discover EarthToolsMaker through organic search.
+Help conservation NGOs and funders discover earthtoolsmaker through organic search.
 The single highest-leverage lever for this is **structured data that establishes
-EarthToolsMaker as a recognizable entity** (Organization) plus clean, non-redirecting
+earthtoolsmaker as a recognizable entity** (Organization) plus clean, non-redirecting
 canonical URLs and rich SERP metadata for projects and blog posts.
 
 ## Context (current state)
