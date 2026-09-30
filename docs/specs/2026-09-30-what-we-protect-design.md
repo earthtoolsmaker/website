@@ -6,7 +6,7 @@ Add a browsable hub of the species and ecosystems earthtoolsmaker protects or mo
 
 ## 1. Data model
 
-- **One combined Hugo taxonomy** named `nature`, living at `/nature/`. Species and ecosystems share it and are told apart by a `kind` field on the term page. `config.toml` gets:
+- **One combined Hugo taxonomy** named `nature`, living at `/nature/`. Species and ecosystems share it and are told apart by a `nature_kind` field on the term page. `config.toml` gets:
   ```toml
   [taxonomies]
     tag = "tags"
@@ -17,7 +17,7 @@ Add a browsable hub of the species and ecosystems earthtoolsmaker protects or mo
 - **Term pages:** `content/nature/<slug>/_index.md`, front matter:
   ```yaml
   title: Snow leopard
-  kind: species                  # species | ecosystem
+  nature_kind: species           # species | ecosystem (`kind` is reserved by Hugo)
   scientific_name: Panthera uncia  # species only; omitted for group terms that span several species
   iucn_status: VU                # species only: LC | NT | VU | EN | CR; omitted for group terms
   summary: One or two sentences, shown in the hero and as the card excerpt.
@@ -123,7 +123,7 @@ Before tagging, the implementer checks each item's body for the species it actua
 ## 4. Index page `/nature/` (`layouts/nature/terms.html`, Hugo 0.145's lookup name for a taxonomy list)
 
 1. `photo-hero.html`: eyebrow "What we protect", a title with the usual italic accent, a one-line description, buttons "Start a project" (`/contact/`) and "Browse projects" (`/projects/`). Copy in `content/nature/_index.md`, hero photo at `assets/images/pages/nature/hero.jpg` (Unsplash).
-2. **Species** grid, then **Ecosystems** grid, split on `kind`. Each tile is the shared `card.html`: photo, title, scientific name (or summary for group terms and ecosystems) as excerpt, and a footer meta such as "3 projects · 2 demos" (only non-zero counts, over projects, demos, tools, posts).
+2. **Species** grid, then **Ecosystems** grid, split on `nature_kind`. Each tile is the shared `card.html`: photo, title, scientific name (or summary for group terms and ecosystems) as excerpt, and a footer meta such as "3 projects · 2 demos" (only non-zero counts, over projects, demos, tools, posts).
 3. Species sorted by number of tagged items (descending, then title); ecosystems sorted by title.
 4. Section titles follow the site's current emoji-free style.
 

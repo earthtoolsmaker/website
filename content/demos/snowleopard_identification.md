@@ -1,5 +1,6 @@
 ---
 title: Snow Leopard Identification
+nature: ["snow-leopard", "high-mountains"]
 card_image: /images/pages/spaces/snowleopard_identification/card.svg
 summary: Identifying individual snow leopards by their coat patterns to support conservation across Central Asia.
 date: 2025-11-25

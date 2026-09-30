@@ -1,0 +1,116 @@
+// What we protect: /nature/ index and term pages
+// (docs/specs/2026-09-30-what-we-protect-design.md)
+
+// A shorter band than the homepage hero: these are hub pages
+.nature-hero .hero__photo {
+  height: 600px;
+
+  @media (max-width: $tablet) {
+    height: 560px;
+  }
+
+  @media (max-width: $mobile) {
+    height: auto; // the base rule pins the photo and lets the copy set the height
+  }
+}
+
+.nature-hero__latin {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.45em;
+  letter-spacing: 0;
+}
+
+.nature-hero__meta {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+.nature-hero__credit {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+// IUCN category colours (the Red List's own palette); dark text except CR
+.nature-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #161616;
+  background: var(--nature-badge-color);
+
+  &--lc { --nature-badge-color: #60c659; }
+  &--nt { --nature-badge-color: #cce226; }
+  &--vu { --nature-badge-color: #f9e814; }
+  &--en { --nature-badge-color: #fc7f3f; }
+  &--cr { --nature-badge-color: #d81e05; color: var(--white); }
+}
+
+.nature-badge-link:hover .nature-badge {
+  filter: brightness(1.08);
+}
+
+.nature-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 0 0 32px; // .section .container__inner pulls the bottom up by 32px
+
+  &__item {
+    padding: 20px 22px;
+    border: 1px solid var(--light-gray);
+    border-radius: 14px;
+    background: var(--background-color);
+  }
+
+  dt {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-alt-color);
+  }
+
+  dd {
+    margin: 0;
+    font-family: $heading-font-family;
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--heading-font-color);
+  }
+
+  sup a {
+    margin-left: 3px;
+    font-size: 12px;
+    color: var(--secondary-color);
+  }
+}
+
+.nature-sources__list {
+  margin: 0 0 32px;
+  padding-left: 1.4em;
+
+  li {
+    margin-bottom: 8px;
+    color: var(--text-alt-color);
+  }
+
+  a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+  }
+}

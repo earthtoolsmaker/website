@@ -13,6 +13,10 @@ timeout = "240s"
 [pagination]
 pagerSize = 6
 
+[taxonomies]
+  tag = "tags"
+  nature = "nature"
+
 [params]
   math = true
   logo = "/images/logos/etm-logo-text.png" # Full "earthtoolsmaker" wordmark (footer + home header). Non-home headers use the layered logo-pangolin / logo-word-* assets for the hover swap.
