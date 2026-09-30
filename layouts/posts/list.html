@@ -1,40 +1,37 @@
 {{ define "main" }}
 
-{{ if .Params.Image }}
-<!-- begin hero image -->
-<div class="hero__image">
-  <div class="hero__image__inner">
-    {{ $imgPath := strings.TrimPrefix "/" .Params.Image }}
-    {{ partial "responsive-image.html" (dict
-      "src" $imgPath
-      "alt" .Title
-      "sizes" "100vw"
-      "widths" (slice 600 900 1200)
-      "lazy" true
-      "lqip" true
-    ) }}
+{{ $posts := where .Site.RegularPages "Type" "posts" }}
+
+{{/* Homepage-style photo hero, with the blog stats card overlapping its bottom edge */}}
+{{ if .Params.hero_image }}
+<section class="hero">
+  {{ partial "photo-hero.html" (dict
+    "image" .Params.hero_image
+    "eyebrow" .Params.hero_eyebrow
+    "title" (.Params.hero_title | default .Title)
+    "description" .Params.hero_description
+    "button_primary" .Params.hero_button_primary
+    "button_primary_link" .Params.hero_button_primary_link
+    "button_secondary" .Params.hero_button_secondary
+    "button_secondary_link" .Params.hero_button_secondary_link
+  ) }}
+  <div class="container">
+    {{ partial "stats-card.html" (dict "class" "" "items" (slice
+      (dict "value" (len $posts) "title" "Articles" "detail" "field stories and guides")
+      (dict "value" (len .Site.Taxonomies.tags) "title" "Topics" "detail" "from wildfire to salmon" "url" "/tags/")
+      (dict "value" (len (where .Site.RegularPages "Section" "projects")) "title" "Projects" "detail" "behind the stories" "url" "/projects/")
+      (dict "value" (len (where .Site.RegularPages "Section" "demos")) "title" "Live demos" "detail" "run in your browser" "url" "/demos/")
+    )) }}
   </div>
-</div>
-<!-- end hero image -->
+</section>
 {{ end }}
 
 <!-- begin page-wrapper -->
-<div class="page-wrapper">
-
-  <div class="container">
-    <div class="page-wrapper__info">
-      {{ if .Title }}
-      <h1 class="page-info__title">{{ .Title }}</h1>
-      {{ end }}
-      {{ if .Description }}
-      <p class="page-info__description">{{ .Description }}</p>
-      {{ end }}
-    </div>
-  </div>
+<div class="page-wrapper hero-listing">
 
   <div class="container animate">
     <div class="row">
-      {{ range where .Site.RegularPages "Type" "posts" }}
+      {{ range $posts }}
         {{ partial "article.html" . }}
       {{ end }}
     </div>
