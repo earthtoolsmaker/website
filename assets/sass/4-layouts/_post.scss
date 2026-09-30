@@ -1,7 +1,8 @@
 /* Post + Page */
 
-// Posts: a wide frame (cover, outline, media) like the tool and project pages,
-// with body text in a narrower centred column so lines stay readable.
+// Posts: a wide frame (cover, media) like the tool and project pages, with
+// the title, outline and body text in a narrower centred column so lines stay
+// readable.
 $post-frame: 1000px;
 $post-measure: 860px;
 
@@ -321,9 +322,10 @@ $post-measure: 860px;
 
 /* Post outline ("On this page"): same surface as .support__card (Support
    page): white, hairline border, 14px radius, soft shadow, and a hairline
-   divider between the head and the section list when open. */
+   divider between the head and the section list when open. Sits in the text
+   column so the title, outline and body share one left edge. */
 .post-toc {
-  max-width: $post-frame;
+  max-width: $post-measure;
   margin: 0 auto 36px;
   overflow: hidden;
   border: 1px solid var(--light-gray);
