@@ -32,9 +32,29 @@
     "description" .Params.summary
     "extra" (cond (eq $extra "") "" (printf `<div class="nature-hero__meta">%s</div>` $extra | safeHTML))
   ) }}
+  {{/* Headline figures overlap the photo's bottom edge; each links to its source */}}
+  {{ with .Params.stats }}
+  {{ $items := slice }}
+  {{ range . }}
+    {{ $n := index $sourceNum (.source | default "") }}
+    {{ if not $n }}{{ errorf "%s: stat %q cites unknown source %q" $.RelPermalink .label .source }}{{ end }}
+    {{ $items = $items | append (dict "value" .value "title" .label "detail" .detail "url" (printf "#source-%d" $n)) }}
+  {{ end }}
+  <div class="container">
+    {{ partial "stats-card.html" (dict "class" (cond (eq (len $items) 3) "stats-card--three" "") "items" $items) }}
+  </div>
+  {{ end }}
 </section>
 
 <div class="page-wrapper hero-listing nature-term">
+
+  {{ with .Content }}
+  <div class="project-single__col project-single__body nature-body">
+    <div class="post__content">
+      {{ . }}
+    </div>
+  </div>
+  {{ end }}
 
   {{ with .Params.facts }}
   <section class="section nature-about">

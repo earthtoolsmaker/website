@@ -1,0 +1,7 @@
+{{- /* Footnote link to one of a nature term's `sources`, numbered as in its
+     "Learn more" list. Usage: {{< cite "iucn" >}} */ -}}
+{{- $key := .Get 0 -}}
+{{- $n := 0 -}}
+{{- range $i, $s := .Page.Params.sources }}{{ if eq $s.key $key }}{{ $n = add $i 1 }}{{ end }}{{ end -}}
+{{- if not $n }}{{ errorf "%s: cite %q is not in sources" .Page.RelPermalink $key }}{{ end -}}
+<sup class="nature-cite"><a href="#source-{{ $n }}" aria-label="Source {{ $n }}">{{ $n }}</a></sup>

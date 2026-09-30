@@ -23,6 +23,16 @@
   }
 }
 
+// Headline figures like "4,500 m" or "24%": the number column fits its value
+// instead of the fixed 52px the site-wide stats use
+.nature-hero .stats-card__item {
+  grid-template-columns: max-content 1fr auto;
+}
+
+.nature-hero .stats-card__value {
+  white-space: nowrap;
+}
+
 .nature-hero__latin {
   display: block;
   margin-top: 12px;
@@ -107,6 +117,14 @@
     font-size: 12px;
     color: var(--secondary-color);
   }
+}
+
+// Footnote links in the term text ({{< cite >}})
+.nature-cite a {
+  margin-left: 1px;
+  font-size: 12px;
+  text-decoration: none;
+  color: var(--secondary-color);
 }
 
 .nature-sources__list {
