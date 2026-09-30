@@ -4,6 +4,9 @@ nature_kind: species
 scientific_name: Ursus arctos
 summary: One of the world's most widely distributed land mammals, from the Carpathians to the coastal forests of British Columbia.
 image: /images/nature/brown-bear/hero.jpg
+photo_credit:
+  name: Alexandru-Bogdan Ghita
+  url: https://unsplash.com/photos/olmMuqK1xeA
 iucn_status: LC
 facts:
 - label: IUCN status

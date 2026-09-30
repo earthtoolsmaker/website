@@ -3,6 +3,9 @@ title: Tropical rainforests
 nature_kind: ecosystem
 summary: The dense Central African forests where forest elephants live, best surveyed by ear.
 image: /images/nature/tropical-rainforests/hero.jpg
+photo_credit:
+  name: Rutendo Petros
+  url: https://unsplash.com/photos/dN_QkdefdhA
 facts:
 - label: Extent
   value: About 2 million km², second only to the Amazon

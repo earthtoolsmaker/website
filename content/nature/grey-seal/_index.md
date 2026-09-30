@@ -4,6 +4,9 @@ nature_kind: species
 scientific_name: Halichoerus grypus
 summary: The larger of the Wadden Sea's two seals, breeding on its beaches and sandbanks in the thousands.
 image: /images/nature/grey-seal/hero.jpg
+photo_credit:
+  name: Nick Fewings
+  url: https://unsplash.com/photos/NA0jnt92ksI
 iucn_status: LC
 facts:
 - label: IUCN status

@@ -3,6 +3,9 @@ title: Cambodian bats
 nature_kind: species
 summary: Around 80 bat species live in Cambodia, from Lyle's flying fox to the insect-eating bats that protect rice fields.
 image: /images/nature/cambodian-bats/hero.jpg
+photo_credit:
+  name: James Wainscoat
+  url: https://unsplash.com/photos/NBEAMs2N47k
 facts:
 - label: Species in Cambodia
   value: 80 confirmed

@@ -4,6 +4,9 @@ nature_kind: species
 scientific_name: Oncorhynchus mykiss
 summary: A freshwater salmonid of Pacific-draining rivers, recognisable one by one from its spot patterns.
 image: /images/nature/rainbow-trout/hero.jpg
+photo_credit:
+  name: Marcus Ganahl
+  url: https://unsplash.com/photos/FtI7W735r1Y
 iucn_status: LC
 facts:
 - label: IUCN status

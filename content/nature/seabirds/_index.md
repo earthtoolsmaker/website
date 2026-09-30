@@ -3,6 +3,9 @@ title: Seabirds
 nature_kind: species
 summary: The terns, gulls and other colonial seabirds of the Dutch coast, surveyed by drone to track avian influenza.
 image: /images/nature/seabirds/hero.jpg
+photo_credit:
+  name: daniil kazorin
+  url: https://unsplash.com/photos/IxLQGMImJVQ
 facts:
 - label: Colonial breeders
   value: 95% of seabirds nest in colonies

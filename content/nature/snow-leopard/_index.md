@@ -4,6 +4,9 @@ nature_kind: species
 scientific_name: Panthera uncia
 summary: The elusive big cat of Central Asia's high mountains, and the top predator of their ecosystems.
 image: /images/nature/snow-leopard/hero.jpg
+photo_credit:
+  name: Mathieu Odin
+  url: https://unsplash.com/photos/YU8GTlre5Zk
 iucn_status: VU
 facts:
 - label: IUCN status

@@ -3,6 +3,9 @@ title: Rivers
 nature_kind: ecosystem
 summary: The freshwater corridors salmon and trout depend on to migrate, spawn and grow.
 image: /images/nature/rivers/hero.jpg
+photo_credit:
+  name: Meg von Haartman
+  url: https://unsplash.com/photos/ElQ0mnIa6tE
 facts:
 - label: Fish diversity
   value: 41% of known fish species

@@ -4,6 +4,9 @@ nature_kind: species
 scientific_name: Phoca vitulina
 summary: The most common seal of the Wadden Sea, hauling out on sandbanks between tides.
 image: /images/nature/harbour-seal/hero.jpg
+photo_credit:
+  name: Steve Adams
+  url: https://unsplash.com/photos/iy7F3hufI4M
 iucn_status: LC
 facts:
 - label: IUCN status

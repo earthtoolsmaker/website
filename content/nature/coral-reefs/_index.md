@@ -3,6 +3,9 @@ title: Coral reefs
 nature_kind: ecosystem
 summary: Less than 0.1% of the ocean's area, yet home to at least a quarter of all marine species.
 image: /images/nature/coral-reefs/hero.jpg
+photo_credit:
+  name: NEOM
+  url: https://unsplash.com/photos/HYHYGLs-Rp8
 facts:
 - label: Area
   value: Under 0.1% of the ocean

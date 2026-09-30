@@ -3,6 +3,9 @@ title: Temperate forests
 nature_kind: ecosystem
 summary: The broadleaf and conifer forests of Europe and North America, home to brown bears, where our wildfire cameras keep watch.
 image: /images/nature/temperate-forests/hero.jpg
+photo_credit:
+  name: István Gerényi
+  url: https://unsplash.com/photos/LKLG_PYm8lI
 facts:
 - label: Extent
   value: 25% of the world's forest area
