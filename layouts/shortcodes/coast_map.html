@@ -1,0 +1,30 @@
+{{/*
+  Local locator map for the SalmonVision First Nations cards: a zoomed view of
+  the BC North and Central Coast centred on one place, with a dot and a caption.
+
+  Usage: {{< coast_map lat="52.16" lon="-128.14" place="Bella Bella" >}}
+
+  Every card shares one SVG: Natural Earth 1:10m land (public domain) clipped to
+  lon -135.5 to -124.5, lat 50.8 to 60.3 in a linear (equirectangular)
+  projection, so a place is a plain percentage of the image. The image is drawn
+  $zoom times the band width and shifted (translate percentages are relative to
+  the image itself) so the place lands on the band's centre, where the dot is.
+  Keep the bbox below in sync with the SVG. Decorative (aria-hidden): the card
+  text already names the place.
+*/}}
+
+{{ $lon0 := -135.5 }}{{ $lon1 := -124.5 }}
+{{ $lat0 := 50.8 }}{{ $lat1 := 60.3 }}
+{{ $zoom := 4.6 }}{{/* about 150 km across */}}
+{{ $lat := float (.Get "lat") }}
+{{ $lon := float (.Get "lon") }}
+{{ $x := mul 100 (div (sub $lon $lon0) (sub $lon1 $lon0)) }}
+{{ $y := mul 100 (div (sub $lat1 $lat) (sub $lat1 $lat0)) }}
+{{ $map := resources.Get "images/maps/bc-north-coast.svg" | fingerprint }}
+
+<div class="coast-map" aria-hidden="true">
+  <img class="coast-map__img" src="{{ $map.RelPermalink }}" alt="" width="622" height="950" loading="lazy"
+       style="{{ printf "width: %.0f%%; transform: translate(-%.2f%%, -%.2f%%)" (mul $zoom 100) $x $y | safeCSS }}">
+  <span class="coast-map__dot"></span>
+  {{ with .Get "place" }}<span class="coast-map__place">{{ . }}</span>{{ end }}
+</div>

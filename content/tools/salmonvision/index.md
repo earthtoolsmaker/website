@@ -169,49 +169,73 @@ Run the sonar pipeline on ARIS footage to detect, track, and count juvenile smol
 
 First Nations across the North and Central Coast of British Columbia are at the heart of SalmonVision, contributing data and expertise to train the models and leading their use for salmon stewardship within their own territories.
 
-<div class="support__grid">
+{{< image_carousel id="first-nations" variant="cards" >}}
 
+  <div>
   <div class="support__card">
     <h3 class="support__card-title">Gitanyow Fishery Authority</h3>
     <p class="support__card-description">Salmon stewardship in Gitanyow territory.</p>
+    {{< coast_map lat="55.26" lon="-128.07" place="Gitanyow" >}}
+  </div>
   </div>
 
+  <div>
   <div class="support__card">
     <h3 class="support__card-title">Haida Fishery Program</h3>
     <p class="support__card-description">Salmon monitoring across the watersheds of Haida Gwaii.</p>
+    {{< coast_map lat="53.26" lon="-131.99" place="Skidegate" >}}
+  </div>
   </div>
 
+  <div>
   <div class="support__card">
     <h3 class="support__card-title">Heiltsuk Integrated Resource Management Department</h3>
     <p class="support__card-description">Stewardship and monitoring in Heiltsuk Territory.</p>
+    {{< coast_map lat="52.16" lon="-128.14" place="Bella Bella" >}}
+  </div>
   </div>
 
+  <div>
   <div class="support__card">
     <h3 class="support__card-title">Kitasoo Xai'xais Stewardship Authority</h3>
     <p class="support__card-description">Stewardship in Kitasoo Xai'xais Territory.</p>
+    {{< coast_map lat="52.59" lon="-128.52" place="Klemtu" >}}
+  </div>
   </div>
 
+  <div>
   <div class="support__card">
     <h3 class="support__card-title">Nuxalk Stewardship</h3>
     <p class="support__card-description">Conservation and monitoring in Nuxalk Nation territory.</p>
+    {{< coast_map lat="52.37" lon="-126.75" place="Bella Coola" >}}
+  </div>
   </div>
 
+  <div>
   <div class="support__card">
     <h3 class="support__card-title">Skeena Fisheries Commission</h3>
     <p class="support__card-description">Co-management of salmon across the Skeena watershed.</p>
+    {{< coast_map lat="55.25" lon="-127.67" place="Hazelton" >}}
+  </div>
   </div>
 
+  <div>
   <div class="support__card">
     <h3 class="support__card-title">Taku River Tlingit</h3>
     <p class="support__card-description">Salmon stewardship in the Taku River watershed.</p>
+    {{< coast_map lat="59.58" lon="-133.69" place="Atlin" >}}
+  </div>
   </div>
 
+  <div>
   <div class="support__card">
     <h3 class="support__card-title">Wuikinuxv Fishery Program</h3>
     <p class="support__card-description">Community-based salmon monitoring and management.</p>
+    {{< coast_map lat="51.68" lon="-127.18" place="Rivers Inlet" >}}
+  </div>
   </div>
 
-</div>
+{{< /image_carousel >}}
 
 <br/>
 <br/>
