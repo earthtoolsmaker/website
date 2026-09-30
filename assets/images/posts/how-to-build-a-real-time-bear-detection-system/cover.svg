@@ -1,6 +1,6 @@
 <svg viewBox="0 0 1500 1050" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f3"/><stop offset="100%" stop-color="#f1e9e1"/></linearGradient>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#e3f0ee"/></linearGradient>
   <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#e7f1ef" stop-opacity="0.92"/><stop offset="70%" stop-color="#e7f1ef" stop-opacity="0.4"/><stop offset="100%" stop-color="#e7f1ef" stop-opacity="0"/></radialGradient>
   <linearGradient id="beam"><stop offset="0%" stop-color="#2bb673" stop-opacity="0.26"/><stop offset="100%" stop-color="#2bb673" stop-opacity="0.07"/></linearGradient>
   <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="9" stdDeviation="18" flood-color="#1c2b28" flood-opacity="0.13"/></filter>
@@ -64,7 +64,7 @@
 <g transform="translate(330,560)"><use href="#cameratrap"/></g>
 
 <!-- bear face in medallion, framed by the detection box -->
-<g filter="url(#soft)"><circle cx="1075" cy="690" r="220" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g>
+<g filter="url(#soft)"><circle cx="1075" cy="690" r="220" fill="#ffffff" stroke="#e1e4e9" stroke-width="3"/></g>
 <g transform="translate(1075,696) scale(3.2)"><use href="#bear"/></g>
 
 <!-- green detection bounding box around the bear + label -->

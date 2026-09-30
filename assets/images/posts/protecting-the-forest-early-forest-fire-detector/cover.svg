@@ -1,6 +1,6 @@
 <svg viewBox="0 0 1500 1050" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f3"/><stop offset="100%" stop-color="#f1e9e1"/></linearGradient>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#e3f0ee"/></linearGradient>
   <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#88c8b9"/><stop offset="100%" stop-color="#4f9e8e"/></linearGradient>
   <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#cfe9e0"/><stop offset="100%" stop-color="#aedccf"/></linearGradient>
   <linearGradient id="smokeg" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#9aa4a7"/><stop offset="55%" stop-color="#bcc3c6"/><stop offset="100%" stop-color="#dde1e3"/></linearGradient>
@@ -51,7 +51,7 @@
 <text class="sub" x="120" y="334">Camera towers spot smoke before it spreads</text>
 
 <!-- ===== hero tower medallion (left) ===== -->
-<g filter="url(#soft)"><circle cx="430" cy="700" r="240" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g>
+<g filter="url(#soft)"><circle cx="430" cy="700" r="240" fill="#ffffff" stroke="#e1e4e9" stroke-width="3"/></g>
 <g transform="translate(430,700)">
   <clipPath id="mclip"><circle r="232"/></clipPath>
   <g clip-path="url(#mclip)">
