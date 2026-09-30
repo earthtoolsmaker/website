@@ -1,5 +1,6 @@
 ---
 title: How to detect elephant rumbles at scale
+nature: ["african-forest-elephant", "tropical-rainforests"]
 description: Learn how to leverage audio processing to localize elephant rumbles on terabytes of data.
 date: 2024-06-29
 params:

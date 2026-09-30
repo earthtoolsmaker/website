@@ -1,5 +1,6 @@
 ---
 title: Coral Reef Health Monitoring
+nature: ["coral-reefs"]
 card_image: /images/pages/spaces/coral_reef_health_monitoring/card.svg
 summary: Detecting and identifying coral species in benthic imagery to track reef health over time.
 github_repo: https://github.com/earthtoolsmaker/coralreef-conservation

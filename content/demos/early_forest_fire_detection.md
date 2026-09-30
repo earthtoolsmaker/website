@@ -1,5 +1,6 @@
 ---
 title: Early Forest Fire Detection
+nature: ["temperate-forests"]
 card_image: /images/pages/spaces/early_forest_fire_detection/card.svg
 summary: Real-time camera analysis that spots wildfires early and raises the alarm fast.
 github_repo: https://github.com/earthtoolsmaker/pyronear-mlops

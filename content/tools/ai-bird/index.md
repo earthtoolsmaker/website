@@ -1,5 +1,6 @@
 ---
 title: AI-BIRD
+nature: ["seabirds", "wadden-sea-and-coasts"]
 weight: 25
 show_title: false
 button_cta: Request a demo

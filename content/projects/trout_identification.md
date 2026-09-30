@@ -1,5 +1,6 @@
 ---
 title: Trout Identification
+nature: ["westslope-cutthroat-trout", "rivers"]
 summary: Non-invasive technology for monitoring trout populations using computer vision to accurately identify individual fish.
 tags: ["aquatic", "freshwater", "identification", "vision"]
 related_projects:

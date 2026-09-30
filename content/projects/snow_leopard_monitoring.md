@@ -1,5 +1,6 @@
 ---
 title: Snow Leopard Monitoring
+nature: ["snow-leopard", "high-mountains"]
 summary: Non-invasive snow leopard monitoring using computer vision analysis of camera trap photos to identify individual animals.
 space: /demos/snowleopard_identification/
 tags: ["identification", "camera traps", "vision"]

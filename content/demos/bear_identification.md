@@ -1,5 +1,6 @@
 ---
 title: Bear Identification
+nature: ["brown-bear", "temperate-forests"]
 card_image: /images/pages/spaces/bear_identification/card.svg
 summary: Facial recognition that tells individual bears apart from photos, tracking British Columbia's black bear population over time.
 github_repo: https://github.com/earthtoolsmaker/bear-conservation

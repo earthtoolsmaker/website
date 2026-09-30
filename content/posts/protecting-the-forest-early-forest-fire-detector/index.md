@@ -1,5 +1,6 @@
 ---
 title: "Protecting the Forest: Building an early forest fire detector"
+nature: ["temperate-forests"]
 description: Detecting early forest fires in real time using low powered technology
 date: 2024-08-21
 params:

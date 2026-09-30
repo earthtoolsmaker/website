@@ -1,5 +1,6 @@
 ---
 title: Smolt Sonar Monitoring
+nature: ["pacific-salmon", "rivers"]
 card_image: /images/pages/spaces/smolt_sonar_monitoring/card.svg
 summary: Detecting, tracking and counting juvenile salmon in ARIS sonar as they migrate downstream.
 date: 2026-01-10

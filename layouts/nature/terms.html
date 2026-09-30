@@ -1,0 +1,71 @@
+{{ define "main" }}
+{{/* /nature/: every species and ecosystem we work for (docs/specs/2026-09-30-what-we-protect-design.md) */}}
+{{ $species := slice }}
+{{ $ecosystems := slice }}
+{{ $tagged := slice }}
+{{ range .Pages }}
+  {{ $tagged = $tagged | union .Pages }}
+  {{ $term := . }}
+  {{ if not (in (slice "species" "ecosystem") .Params.nature_kind) }}
+    {{ errorf "nature term %s has no content/nature/<slug>/_index.md with nature_kind species or ecosystem (typo in a page's nature list?)" .RelPermalink }}
+  {{ end }}
+  {{ if not .Pages }}{{ errorf "nature term %s has no tagged pages" .RelPermalink }}{{ end }}
+  {{/* Footer meta such as "3 projects · 2 demos", non-zero counts only */}}
+  {{ $parts := slice }}
+  {{ range slice (slice "projects" "project") (slice "demos" "demo") (slice "tools" "tool") (slice "posts" "post") }}
+    {{ $n := len (where $term.Pages "Section" (index . 0)) }}
+    {{ if $n }}{{ $parts = $parts | append (printf "%d %s%s" $n (index . 1) (cond (eq $n 1) "" "s")) }}{{ end }}
+  {{ end }}
+  {{ $card := dict
+    "href" .RelPermalink
+    "title" .Title
+    "image" .Params.image
+    "excerpt" (.Params.scientific_name | default .Params.summary)
+    "meta" (delimit $parts " · ")
+    "count" (len .Pages)
+  }}
+  {{ if eq .Params.nature_kind "species" }}{{ $species = $species | append $card }}{{ else }}{{ $ecosystems = $ecosystems | append $card }}{{ end }}
+{{ end }}
+{{/* Species: most work first, ties by name (Hugo's sort is stable). Ecosystems: by name. */}}
+{{ $species = sort (sort $species "title") "count" "desc" }}
+{{ $ecosystems = sort $ecosystems "title" }}
+
+{{/* Photo hero with the stats card overlapping its bottom edge, as on the other listings */}}
+<section class="hero">
+  {{ partial "photo-hero.html" (dict
+    "image" .Params.hero_image
+    "eyebrow" .Params.hero_eyebrow
+    "title" (.Params.hero_title | default .Title)
+    "description" .Params.hero_description
+    "button_primary" .Params.hero_button_primary
+    "button_primary_link" .Params.hero_button_primary_link
+    "button_secondary" .Params.hero_button_secondary
+    "button_secondary_link" .Params.hero_button_secondary_link
+  ) }}
+  <div class="container">
+    {{ $speciesCount := "" }}
+    {{ range first 1 (where site.Data.about.stats "label" "species monitored") }}{{ $speciesCount = .value }}{{ end }}
+    {{ partial "stats-card.html" (dict "class" "" "items" (slice
+      (dict "value" $speciesCount "title" "Species" "detail" "from salmon to elephants" "url" "#species")
+      (dict "value" (len $ecosystems) "title" "Ecosystems" "detail" "forests, rivers, reefs and more" "url" "#ecosystems")
+      (dict "value" (len (where $tagged "Section" "projects")) "title" "Projects" "detail" "delivered in the field" "url" "/projects/")
+      (dict "value" (len (where $tagged "Section" "demos")) "title" "Live demos" "detail" "run in your browser" "url" "/demos/")
+    )) }}
+  </div>
+</section>
+
+<div class="page-wrapper hero-listing">
+  {{ range slice (dict "title" "Species" "key" "species" "cards" $species) (dict "title" "Ecosystems" "key" "ecosystems" "cards" $ecosystems) }}
+  <section class="section nature-index-section" id="{{ .key }}">
+    <div class="container"><div class="row"><div class="col col-12"><div class="container__inner">
+      {{ partial "nature-section-head.html" (dict "title" .title) }}
+      <div class="row nature-grid nature-grid--{{ .key }}">
+        {{ range .cards }}{{ partial "card.html" . }}{{ end }}
+      </div>
+    </div></div></div></div>
+  </section>
+  {{ end }}
+
+  {{ partial "projects-cta.html" (dict "class" "projects-cta--bottom") }}
+</div>
+{{ end }}

@@ -18,8 +18,8 @@
     {{ range first 1 (where site.Data.about.stats "label" "species monitored") }}{{ $species = .value }}{{ end }}
     {{ partial "stats-card.html" (dict "class" "" "items" (slice
       (dict "value" (len (where .Site.RegularPages "Section" "demos")) "title" "Demos" "detail" "run in your browser")
-      (dict "value" $species "title" "Species" "detail" "from salmon to elephants" "url" "/posts/")
-      (dict "value" "6" "title" "Ecosystems" "detail" "forests, rivers, reefs and more")
+      (dict "value" $species "title" "Species" "detail" "from salmon to elephants" "url" "/nature/#species")
+      (dict "value" "6" "title" "Ecosystems" "detail" "forests, rivers, reefs and more" "url" "/nature/#ecosystems")
       (dict "value" (len (where .Site.RegularPages "Section" "tools")) "title" "Field tools" "detail" "in use today" "url" "/tools/")
     )) }}
   </div>

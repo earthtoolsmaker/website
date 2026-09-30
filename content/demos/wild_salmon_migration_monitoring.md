@@ -1,5 +1,6 @@
 ---
 title: Wild Salmon Migration Monitoring
+nature: ["pacific-salmon", "rivers"]
 card_image: /images/pages/spaces/wild_salmon_migration_monitoring/card.svg
 summary: Classifying and counting wild salmon from underwater camera streams as they migrate back to spawn.
 github_repo: https://github.com/Salmon-Computer-Vision/salmon-computer-vision/tree/master

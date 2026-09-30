@@ -1,5 +1,6 @@
 ---
 title: Temporal Smoke Verification
+nature: ["temperate-forests"]
 card_image: /images/pages/spaces/temporal_smoke_verification/card.svg
 summary: Watching camera sequences over time to tell genuine wildfire smoke from look-alikes.
 github_repo: https://github.com/pyronear/temporal-model

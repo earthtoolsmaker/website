@@ -1,5 +1,6 @@
 ---
 title: SalmonVision
+nature: ["pacific-salmon", "rivers"]
 weight: 20
 show_title: false
 button_cta: Visit SalmonVision

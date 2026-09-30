@@ -1,5 +1,6 @@
 ---
 title: How to build a real time bear detection system
+nature: ["brown-bear"]
 description: Detecting bears in real time using low-power technology.
 date: 2024-04-09
 image: /images/posts/how-to-build-a-real-time-bear-detection-system/cover.png 

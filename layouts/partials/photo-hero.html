@@ -1,7 +1,8 @@
 {{/* Full-bleed photo band with left-aligned copy over a dark teal wash.
      Shared by the homepage hero and the Partners page.
      Params: image, eyebrow, title (may contain a <span> accent), description,
-     button_primary / button_primary_link, button_secondary / button_secondary_link. */}}
+     button_primary / button_primary_link, button_secondary / button_secondary_link,
+     extra (HTML shown under the description). */}}
 <div class="hero__photo">
   {{ with .image }}
   {{ partial "responsive-image.html" (dict
@@ -26,6 +27,7 @@
         {{ with .description }}
         <p class="hero__description">{{ . | safeHTML }}</p>
         {{ end }}
+        {{ with .extra }}{{ . }}{{ end }}
         {{ if or .button_primary .button_secondary }}
         <div class="hero__buttons">
           {{ with .button_primary }}

@@ -1,5 +1,6 @@
 ---
 title: Bear Identification
+nature: ["brown-bear", "temperate-forests"]
 summary: Noninvasive technologies to identify and monitor bears, facilitating their conservation.
 tags: ["bear", "identification", "vision"]
 related_projects:

@@ -1,0 +1,91 @@
+{{ define "main" }}
+{{/* One species or ecosystem (docs/specs/2026-09-30-what-we-protect-design.md) */}}
+{{ $iucnNames := dict "LC" "Least Concern" "NT" "Near Threatened" "VU" "Vulnerable" "EN" "Endangered" "CR" "Critically Endangered" }}
+
+{{/* Source number by key: fact superscripts and the Learn more list share it */}}
+{{ $sourceNum := dict }}
+{{ range $i, $s := .Params.sources }}{{ $sourceNum = merge $sourceNum (dict $s.key (add $i 1)) }}{{ end }}
+
+{{ $title := .Title }}
+{{ with .Params.scientific_name }}{{ $title = printf `%s<span class="nature-hero__latin"><i>%s</i></span>` $.Title . }}{{ end }}
+
+{{ $extra := "" }}
+{{ with .Params.iucn_status }}
+  {{ $name := index $iucnNames . }}
+  {{ if not $name }}{{ errorf "%s: unknown iucn_status %q (use LC, NT, VU, EN or CR)" $.RelPermalink . }}{{ end }}
+  {{ $badge := printf `<span class="nature-badge nature-badge--%s">IUCN: %s</span>` (lower .) $name }}
+  {{ range first 1 (where $.Params.sources "key" "iucn") }}
+    {{ $badge = printf `<a class="nature-badge-link" href="%s" target="_blank" rel="noopener">%s</a>` .url $badge }}
+  {{ end }}
+  {{ $extra = $badge }}
+{{ end }}
+{{ with .Params.photo_credit }}
+  {{ $site := cond (strings.Contains .url "unsplash.com") " / Unsplash" "" }}
+  {{ $extra = printf `%s<p class="nature-hero__credit">Photo: <a href="%s" target="_blank" rel="noopener">%s</a>%s</p>` $extra .url .name $site }}
+{{ end }}
+
+<section class="hero nature-hero">
+  {{ partial "photo-hero.html" (dict
+    "image" .Params.image
+    "eyebrow" (cond (eq .Params.nature_kind "species") "Species" "Ecosystem")
+    "title" $title
+    "description" .Params.summary
+    "extra" (cond (eq $extra "") "" (printf `<div class="nature-hero__meta">%s</div>` $extra | safeHTML))
+  ) }}
+  {{/* Headline figures overlap the photo's bottom edge; each links to its source */}}
+  {{ with .Params.stats }}
+  {{ $items := slice }}
+  {{ range . }}
+    {{ $n := index $sourceNum (.source | default "") }}
+    {{ if not $n }}{{ errorf "%s: stat %q cites unknown source %q" $.RelPermalink .label .source }}{{ end }}
+    {{ $items = $items | append (dict "value" .value "title" .label "detail" .detail "url" (printf "#source-%d" $n)) }}
+  {{ end }}
+  <div class="container">
+    {{ partial "stats-card.html" (dict "class" (cond (eq (len $items) 3) "stats-card--three" "") "items" $items) }}
+  </div>
+  {{ end }}
+</section>
+
+<div class="page-wrapper hero-listing nature-term">
+
+  {{ with .Content }}
+  <div class="project-single__col project-single__body nature-body">
+    <div class="post__content">
+      {{ . }}
+    </div>
+  </div>
+  {{ end }}
+
+  <div class="nature-work">
+    {{ range slice (dict "section" "projects" "title" "Projects") (dict "section" "demos" "title" "Live demos") (dict "section" "tools" "title" "Tools") (dict "section" "posts" "title" "Blog posts") }}
+    {{ $heading := .title }}
+    {{ with where $.Pages.ByDate.Reverse "Section" .section }}
+    <section class="section">
+      <div class="container"><div class="row"><div class="col col-12"><div class="container__inner">
+        {{ partial "nature-section-head.html" (dict "title" $heading) }}
+        <div class="row">
+          {{ range . }}{{ partial "card-for-page.html" (dict "page" .) }}{{ end }}
+        </div>
+      </div></div></div></div>
+    </section>
+    {{ end }}
+    {{ end }}
+  </div>
+
+  {{ with .Params.sources }}
+  <section class="section nature-sources">
+    <div class="container"><div class="row"><div class="col col-12"><div class="container__inner">
+      {{ partial "nature-section-head.html" (dict "title" "Learn more") }}
+      <ol class="nature-sources__list">
+        {{ range $i, $s := . }}
+        <li id="source-{{ add $i 1 }}"><a href="{{ $s.url }}" target="_blank" rel="noopener">{{ $s.name }}</a></li>
+        {{ end }}
+      </ol>
+    </div></div></div></div>
+  </section>
+  {{ end }}
+
+  {{ partial "projects-cta.html" (dict "class" "projects-cta--bottom") }}
+
+</div>
+{{ end }}

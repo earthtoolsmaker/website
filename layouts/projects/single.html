@@ -78,6 +78,11 @@
       {{ range . }}<span class="project-facts__chip">{{ . }}</span>{{ end }}
     </span>
     {{ end }}
+    {{ with .GetTerms "nature" }}
+    <span class="project-facts__nature">
+      {{ range . }}<a class="project-facts__chip project-facts__chip--nature" href="{{ .RelPermalink }}"><i class="fa-solid fa-leaf" aria-hidden="true"></i> {{ .LinkTitle }}</a>{{ end }}
+    </span>
+    {{ end }}
     {{ if eq .Params.status "completed" }}
     <span class="project-facts__live"><span class="project-facts__live-dot" aria-hidden="true"></span>Live</span>
     {{ end }}
