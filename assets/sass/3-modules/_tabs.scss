@@ -1,81 +1,78 @@
 /* Tabs */
+
+/* Segmented control: a white pill track with a hairline border (same
+   surface as .support__card and the threat chips), sized to its tabs; the
+   active tab is a teal pill, like a selected threat chip. On phones the
+   track fills the width, tabs share it equally and long labels wrap onto
+   two lines, so nothing scrolls sideways. */
 .tabs {
   margin: 32px 0;
 }
 
 .tabs__nav {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 32px;
-  border-bottom: 1px solid var(--border-color);
+  gap: 4px;
+  width: fit-content;
+  max-width: 100%;
   margin-bottom: 24px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  @media (max-width: $tablet) {
-    gap: 16px;
-  }
+  padding: 5px;
+  background-color: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: 999px;
 
   @media (max-width: $mobile) {
-    gap: 8px;
+    width: 100%;
+    border-radius: 18px;
   }
 }
 
 .tabs__tab {
-  position: relative;
-  flex: 0 0 auto;
+  flex: 0 1 auto;
   white-space: nowrap;
-  padding: 12px 24px;
-  font-size: 18px;
+  padding: 9px 20px;
+  font-size: 15px;
   font-weight: 700;
   font-family: $base-font-family;
-  line-height: 1.4;
+  line-height: 1.25;
   color: var(--text-alt-color);
   background: transparent;
   border: none;
+  border-radius: 999px;
   cursor: pointer;
   transition: $global-transition;
 
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 3px;
-    background-color: transparent;
-    transition: $global-transition;
-  }
-
   &:hover {
-    color: var(--heading-font-color);
-
-    &::after {
-      background-color: var(--secondary-color);
-    }
+    color: var(--secondary-color);
   }
 
-  &--active {
-    color: var(--heading-font-color);
-
-    &::after {
-      background-color: var(--secondary-color);
-    }
+  &:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
   }
 
-  @media (max-width: $tablet) {
-    padding: 10px 16px;
-    font-size: 16px;
+  &--active,
+  &--active:hover {
+    color: var(--white);
+    background-color: var(--secondary-color);
+  }
+
+  @media (max-width: $mobile) {
+    flex: 1 1 0;
+    min-width: 0;
+    white-space: normal;
+    padding: 9px 8px;
+    font-size: 14px;
+    border-radius: 14px;
   }
 }
 
 .tabs__tab-icon {
-  margin-right: 8px;
+  margin-right: 6px;
+}
+
+// Brand icons carry inline colours (BioWatch OS tabs); go white on teal
+.tabs__tab--active .tabs__tab-icon i {
+  color: inherit !important;
 }
 
 .tabs__panels {
