@@ -291,7 +291,11 @@ $post-measure: 860px;
 }
 
 .post-head .post-image {
-  margin-bottom: 32px;
+  margin-bottom: 48px;
+
+  @media (max-width: $mobile) {
+    margin-bottom: 36px;
+  }
 }
 
 .post-info,
