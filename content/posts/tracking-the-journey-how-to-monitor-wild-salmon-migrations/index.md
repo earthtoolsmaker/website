@@ -189,7 +189,7 @@ thing it surfaced was a severe class imbalance.
 
 The research team has curated a dataset featuring 16 distinct species of fish
 found in the rivers of British Columbia. The model recognizes the main Pacific
-salmon species individually. Tap a card for more:
+salmon species individually:
 
 {{< salmon_species >}}
 
