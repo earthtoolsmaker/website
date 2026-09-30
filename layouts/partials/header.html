@@ -1,7 +1,7 @@
 <!-- begin header -->
 {{/* Float the header over full-bleed photo heroes: the homepage, the About,
-     Partners and Support pages, and the Projects, Tools and Demos listings, when they have a hero image. */}}
-{{ $photoHeroPage := or (in (slice "about" "partners" "support") .Layout) (and (eq .Kind "section") (in (slice "projects" "tools" "demos") .Section)) }}
+     Partners and Support pages, and the Projects, Tools, Demos and Blog listings, when they have a hero image. */}}
+{{ $photoHeroPage := or (in (slice "about" "partners" "support") .Layout) (and (eq .Kind "section") (in (slice "projects" "tools" "demos" "posts") .Section)) }}
 <header class="header{{ if or .IsHome (and .Params.hero_image $photoHeroPage) }} header--overlay{{ end }}">
   <div class="container-big">
     <div class="row">
