@@ -148,7 +148,7 @@
   }
 }
 
-/* Custom tooltip on the social channel links (contact page + footer) */
+/* Custom tooltip on the social channel links (contact page + footer), styled like the cards */
 .contact-channels__link[data-tooltip],
 .social__link[data-tooltip] {
 
@@ -171,22 +171,29 @@
     width: max-content;
     max-width: 240px;
     padding: 8px 12px;
-    border-radius: 8px;
-    background-color: var(--heading-font-color);
-    color: var(--background-color);
+    border: 1px solid var(--light-gray);
+    border-radius: 10px;
+    background-color: var(--white);
+    color: var(--text-color);
     font-size: 13px;
     font-weight: 400;
     line-height: 1.4;
     text-align: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, .18);
+    // Same shadow as the cards
+    box-shadow: 0 14px 32px -22px rgba(0, 0, 0, .3);
   }
 
-  /* arrow */
+  /* arrow: a bordered square turned 45deg, tucked under the bubble */
   &::after {
     content: "";
-    bottom: calc(100% + 4px);
-    border: 6px solid transparent;
-    border-top-color: var(--heading-font-color);
+    bottom: calc(100% + 5px);
+    width: 10px;
+    height: 10px;
+    border-right: 1px solid var(--light-gray);
+    border-bottom: 1px solid var(--light-gray);
+    background-color: var(--white);
+    transform: translate(-50%, 4px) rotate(45deg);
+    z-index: 11;
   }
 
   &:hover,
@@ -197,6 +204,10 @@
       opacity: 1;
       visibility: visible;
       transform: translate(-50%, 0);
+    }
+
+    &::after {
+      transform: translate(-50%, 0) rotate(45deg);
     }
   }
 }

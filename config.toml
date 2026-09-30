@@ -100,52 +100,65 @@ pagerSize = 6
     url = "/contact/"
     weight = 6
 
-      # Footer Menu
+      # Footer Menu: two columns (parents) plus Privacy Policy in the bottom line
       [[menu.footer]]
-      name = "Home"
-      url = "/"
+      identifier = "explore"
+      name = "Explore"
       weight = 1
 
       [[menu.footer]]
-      name = "Projects"
-      url = "/projects/"
+      identifier = "organisation"
+      name = "Organisation"
       weight = 2
 
       [[menu.footer]]
+      parent = "explore"
+      name = "Projects"
+      url = "/projects/"
+      weight = 1
+
+      [[menu.footer]]
+      parent = "explore"
       identifier = "tools"
       name = "Tools"
       url = "/tools/"
+      weight = 2
+
+      [[menu.footer]]
+      parent = "explore"
+      name = "Live Demos"
+      url = "/demos/"
       weight = 3
 
       [[menu.footer]]
-      name = "Live Demos"
-      url = "/demos/"
+      parent = "explore"
+      name = "Blog"
+      url = "/posts/"
       weight = 4
 
       [[menu.footer]]
-      name = "Blog"
-      url = "/posts/"
-      weight = 5
-
-      [[menu.footer]]
+      parent = "organisation"
       name = "About"
       url = "/about/"
-      weight = 6
+      weight = 1
 
       [[menu.footer]]
+      parent = "organisation"
       name = "Partners"
       url = "/partners/"
-      weight = 7
+      weight = 2
 
       [[menu.footer]]
+      parent = "organisation"
       name = "Support Us"
       url = "/support/"
-      weight = 8
+      weight = 3
 
       [[menu.footer]]
+      parent = "organisation"
       name = "Contact"
       url = "/contact/"
-      weight = 9
+      weight = 4
 
       [[menu.footer]]
       name = "Privacy Policy"
