@@ -1,4 +1,10 @@
 /* Post + Page */
+
+// Posts: a wide frame (cover, outline, media) like the tool and project pages,
+// with body text in a narrower centred column so lines stay readable.
+$post-frame: 1000px;
+$post-measure: 860px;
+
 .post-head,
 .page-head {
   max-width: 780px;
@@ -230,6 +236,46 @@
   }
 }
 
+// Cover first, at the full frame width; the title block below it sits in the
+// text column.
+.post-head,
+.post {
+  max-width: $post-frame;
+}
+
+.post-head .post-image {
+  margin-bottom: 32px;
+}
+
+.post-info {
+  max-width: $post-measure;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Text blocks take the text column; media and wide blocks keep the frame
+.post__content > * {
+  max-width: $post-measure;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post__content > p:has(> img),
+.post__content > p:has(> picture),
+.post__content > p:has(> a > img),
+.post__content > div:not([class]),
+.post__content > figure,
+.post__content > table,
+.post__content > .table-container,
+.post__content > .highlight,
+.post__content > .image-carousel,
+.post__content > .gallery-box,
+.post__content > .support__grid,
+.post__content > .threats,
+.post__content > .about-cta {
+  max-width: none;
+}
+
 .post__content,
 .page__content {
   color: var(--text-color);
@@ -277,7 +323,7 @@
    page): white, hairline border, 14px radius, soft shadow, and a hairline
    divider between the head and the section list when open. */
 .post-toc {
-  max-width: 780px;
+  max-width: $post-frame;
   margin: 0 auto 36px;
   overflow: hidden;
   border: 1px solid var(--light-gray);
@@ -407,7 +453,7 @@ html {
 
 /* Related posts */
 .related-posts {
-  max-width: 780px;
+  max-width: $post-frame;
   margin: 0 auto 48px;
 
   @media (max-width: $mobile) {
@@ -426,7 +472,7 @@ html {
 }
 
 .post__comments {
-  max-width: 780px;
+  max-width: $post-frame;
   margin: 0 auto 80px;
 
   @media (max-width: $mobile) {
