@@ -65,6 +65,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
+  // Footer bird: one visit to the bird house when the soil surface scrolls into
+  // view. Starts every SMIL animation of the bird together (see surface.html).
+  var soilBird = document.querySelector(".soil-bird");
+  if (soilBird && !prefersReducedMotion && "IntersectionObserver" in window) {
+    var birdObserver = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      birdObserver.disconnect();
+      soilBird.querySelectorAll("animate, animateTransform").forEach(function (anim) {
+        anim.beginElement();
+      });
+    }, { threshold: 0.5 });
+    birdObserver.observe(soilBird.closest(".soil-surface"));
+  }
+
   // Close menu when clicking outside
   document.addEventListener("click", (event) => {
     const isMenuOpen = menuList.classList.contains("is-visible");
