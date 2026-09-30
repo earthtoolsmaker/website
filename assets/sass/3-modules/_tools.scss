@@ -238,6 +238,45 @@
   margin: 36px 0 44px;
 }
 
+// Right under the video hero: float the card over the hero's bottom edge, as on
+// the homepage, inset so the hero's rounded corners stay visible.
+.tool-hero:has(+ .tools-stats) {
+  margin-bottom: 0;
+
+  .tool-hero__overlay {
+    padding-bottom: 36px + 44px;
+
+    @media (max-width: $mobile) {
+      padding-bottom: 22px + 32px;
+    }
+  }
+}
+
+.tool-hero + .tools-stats {
+  position: relative;
+  margin-top: -44px;
+  padding: 0 40px;
+
+  .stats-card {
+    border: none;
+    box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.35), 0 1px 0 var(--light-gray);
+  }
+
+  // The inset card is narrower: let the detail line wrap instead of clipping.
+  .stats-card__item {
+    grid-template-columns: var(--stats-value-w) minmax(0, 1fr) auto;
+  }
+
+  .stats-card__detail {
+    white-space: normal;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: -32px;
+    padding: 0 16px;
+  }
+}
+
 // --- Interactive pill chips (the .threats shortcode) on tool pages: clicking a
 //     pill (a radio <label>) highlights it and reveals its explanation panel
 //     below. Pure CSS via the general-sibling combinator. Mirrors the
