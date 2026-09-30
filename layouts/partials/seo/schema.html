@@ -6,7 +6,7 @@
 
 {{/* Resolve logo (absolute URL), shared by Organization + Article publisher */}}
 {{ $logoURL := "" }}
-{{ with resources.Get .Site.Params.seo.default_image }}{{ $logoURL = .Permalink }}{{ end }}
+{{ with resources.Get .Site.Params.seo.logo }}{{ $logoURL = .Permalink }}{{ end }}
 
 {{/* sameAs — single source of truth is params.social */}}
 {{ $sameAs := slice }}
