@@ -71,7 +71,7 @@ $nav-collapse: 900px;  // <= this width the inline nav folds into the hamburger
 .header--overlay:not(.is-scrolled) {
   .brandmark__word { filter: brightness(0) invert(1); }
 
-  .hamburger div,
+  .hamburger:not(.is-open) div,
   .hamburger div:before,
   .hamburger div:after { background-color: var(--white); }
 
