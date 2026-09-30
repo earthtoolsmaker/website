@@ -179,6 +179,25 @@ $project-live-color: #3fb950;
     color: var(--text-color);
   }
 
+  &__nature {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__chip--nature {
+    background: transparent;
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+
+    i { font-size: 11px; margin-right: 3px; }
+
+    &:hover {
+      background: var(--secondary-color);
+      color: var(--white);
+    }
+  }
+
   &__live {
     margin-left: auto;
     display: inline-flex;
