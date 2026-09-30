@@ -1,0 +1,9 @@
+{{/* Post tag links. Pass the page as "page"; "class" adds a modifier
+     (e.g. post-kicker--cover for the chips over the cover image). */}}
+{{ with .page.Params.tags }}
+<div class="post-kicker{{ with $.class }} {{ . }}{{ end }}">
+  {{ range ($.page.GetTerms "tags") }}
+  <a href="{{ .Permalink }}" class="post-kicker__tag">{{ .LinkTitle }}</a>
+  {{ end }}
+</div>
+{{ end }}

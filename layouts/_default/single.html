@@ -19,6 +19,7 @@
         "fetchpriority" "high"
         "lqip" true
       ) }}
+      {{ partial "post-kicker.html" (dict "page" . "class" "post-kicker--cover") }}
     </div>
     {{ if .Params.image_caption }}
     <div class="post-image-caption">{{ .Params.image_caption | markdownify }}</div>
@@ -27,12 +28,8 @@
 
     <div class="post-info">
 
-      {{ if .Params.tags }}
-      <div class="post-kicker">
-        {{ range ($.GetTerms "tags") }}
-        <a href="{{ .Permalink }}" class="post-kicker__tag">{{ .LinkTitle }}</a>
-        {{ end }}
-      </div>
+      {{ if not .Params.Image }}
+      {{ partial "post-kicker.html" (dict "page" .) }}
       {{ end }}
 
       {{ if .Title }}
