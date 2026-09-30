@@ -35,12 +35,21 @@
          when a panel hides again. */}}
     {{ with $t.image }}
     {{ with resources.Get (strings.TrimPrefix "/" .) }}
-    {{ $small := .Resize "300x webp q80" }}
-    {{ $large := .Resize "600x webp q80" }}
-    {{ $fallback := .Resize "600x q85" }}
+    {{/* The 300px column stretches to the panel's height and the photo
+         covers it, so a landscape photo renders wider than 300px: sizes
+         says 450px. Widths are capped at the source's (no upscaling). */}}
+    {{ $img := . }}
+    {{ $widths := slice }}
+    {{ range slice 450 900 1400 }}{{ $widths = $widths | append (math.Min . $img.Width | int) }}{{ end }}
+    {{ $srcset := slice }}
+    {{ range uniq $widths }}
+      {{ $r := $img.Resize (printf "%dx webp q85" .) }}
+      {{ $srcset = $srcset | append (printf "%s %dw" $r.RelPermalink .) }}
+    {{ end }}
+    {{ $fallback := .Resize (printf "%dx q85" (math.Min 900 .Width | int)) }}
     <div class="trusted-by__image">
       <picture>
-        <source type="image/webp" srcset="{{ $small.RelPermalink }} 300w, {{ $large.RelPermalink }} 600w" sizes="(max-width: 768px) 100vw, 300px">
+        <source type="image/webp" srcset="{{ delimit $srcset ", " }}" sizes="(max-width: 768px) 100vw, 450px">
         <img class="no-lightense no-round" src="{{ $fallback.RelPermalink }}" alt="{{ $t.title }}" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}" loading="lazy" decoding="async">
       </picture>
     </div>
