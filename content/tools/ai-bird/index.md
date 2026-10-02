@@ -184,12 +184,6 @@ Highly pathogenic bird flu can tear through a dense seabird colony in days. Beca
   <a href="/projects/bird_flu_monitoring/" class="link-no-decoration button button--middle">Bird Flu Monitoring project</a>
 </div>
 
-## Our Partners
-
-AI-BIRD is built in close collaboration with Lumax AI and Sovon, the Dutch centre for field ornithology.
-
-{{< partner_logos "partners" >}}
-
 <div class="support__cta-band">
   <div class="support__cta-band-text">
     <h3 class="support__cta-band-title">Ready to survey from the sky?</h3>

@@ -242,7 +242,7 @@ system like this?", fundraising ones say "Help fund this project".
 | Before/after | `compare` |
 | Photo series | `image_carousel` / `carousel_image` |
 | Live model | `hf_space` (iframe embed with the pangolin loader) |
-| Partner logos | `partner_logos`, `partner-logo.html` |
+| Partner logos | `.space-partners` strip: `space_partners` shortcode (demos), `clients` (projects), `partners` front matter (tools, shown under Resources); `partner-logo.html` |
 | Citations | `cite` |
 | Collapsible outline | native `<details>` (see `post-toc.html`) |
 
