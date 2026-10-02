@@ -108,64 +108,114 @@
     background-color: green;
   }
 
+  // Steps: the path from About's "How We Work". One column per step along a
+  // mint line, each title centred under a teal ring; vertical below tablet
   .space-content__manual {
     max-width: 1280px;
-    padding: 0.5em 1.8em;
-    line-height: 1.6em;
+    margin: 0 auto;
   }
 
   .space-content__manual-title {
-    display: block;
-    margin-bottom: 2em;
+    margin-bottom: 24px;
+    font-family: $base-font-family;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--secondary-color);
   }
 
   .space-manual__list {
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
     gap: 32px;
     margin: 0;
     padding: 0;
     list-style: none;
 
-    @media (max-width: $tablet) {
-      gap: 32px;
-    }
-
-    @media (max-width: $mobile) {
-      grid-template-columns: 1fr;
-      gap: 24px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--primary-color);
     }
   }
 
   .space-manual__item {
-    padding-left: 20px;
-    border-left: 2px solid var(--border-color);
-  }
+    position: relative;
+    margin: 0;
+    padding-top: 36px;
+    text-align: center;
 
-  .space-manual__number {
-    display: block;
-    margin-bottom: 14px;
-    font-size: 21px;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: 0.04em;
-    color: var(--tertiary-color);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      box-sizing: border-box;
+      width: 18px;
+      height: 18px;
+      border: 3px solid var(--secondary-color);
+      border-radius: 50%;
+      background: var(--background-color);
+    }
   }
 
   .space-manual__step-title {
+    margin-bottom: 8px;
     font-family: $base-font-family;
     font-size: 18px;
-    line-height: 1.2;
     font-weight: 700;
-    margin-bottom: 10px;
+    line-height: 1.3;
     color: var(--heading-font-color);
   }
 
   .space-manual__step-description {
+    margin: 0;
+    text-align: left; // the title is centred under its ring; the description reads left-aligned
     font-size: 16px;
     line-height: 1.6;
     color: var(--text-color);
-    margin: 0;
+  }
+
+  @media (max-width: $tablet) {
+    .space-content__manual-title {
+      text-align: left;
+    }
+
+    .space-manual__list {
+      grid-auto-flow: row;
+      gap: 28px;
+      padding-left: 36px;
+
+      &::before {
+        top: 8px;
+        bottom: 8px;
+        left: 8px;
+        right: auto;
+        width: 2px;
+        height: auto;
+      }
+    }
+
+    .space-manual__item {
+      padding-top: 0;
+      text-align: left;
+
+      &::before {
+        top: 2px;
+        left: -36px;
+        transform: none;
+      }
+    }
   }
 
   .space-content__hf_space {
