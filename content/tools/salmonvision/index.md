@@ -11,6 +11,22 @@ summary: Underwater cameras, sonar and drones combined with innovative AI techno
 github_repo: https://github.com/Salmon-Computer-Vision/salmon-computer-vision
 manual_url: https://salmonvision.org/user-guide/
 project: /projects/wild_salmon_migration_monitoring
+partners:
+  - name: Wild Salmon Center
+    link: https://wildsalmoncenter.org/
+    logo: /images/clients/wild_salmon_centre/logo.png
+  - name: Pacific Salmon Foundation
+    link: https://psf.ca/
+    logo: /images/clients/psf/logo.png
+  - name: Lumax AI
+    link: https://lumax.ai/
+    logo: /images/clients/lumax-ai/logo.png
+  - name: BC Hydro
+    link: https://www.bchydro.com/
+    logo: /images/clients/bc-hydro/logo.png
+  - name: Simon Fraser University
+    link: https://www.sfu.ca/
+    logo: /images/clients/sfu/logo.png
 js:
   - /js/biowatch.js
   - /js/tabs.js
@@ -255,12 +271,3 @@ Tap a question to see the answer.
   <p class="about-cta__description">See deployments, count dashboards, and how to get involved on the SalmonVision website.</p>
   <a href="https://salmonvision.org" class="link-no-decoration button button--middle" target="_blank">Visit SalmonVision</a>
 </div>
-
-<br/>
-<br/>
-
-## Our Partners
-
-SalmonVision is built and sustained through close collaboration with leading conservation organizations, research institutions, and industry partners.
-
-{{< partner_logos >}}
