@@ -3,7 +3,7 @@ layout: contact
 title: Contact
 hero_image: /images/pages/contact/hero.jpg
 hero_eyebrow: Contact
-hero_title: Let's talk about <span><i>your&nbsp;project</i></span>.
+hero_title: Let's talk about <span><i>your&nbsp;project</i></span>
 hero_description: A species to monitor, a site to protect, a pile of footage nobody has time to watch? Tell us about it, or just say hello.
 steps_title: What happens next
 steps:

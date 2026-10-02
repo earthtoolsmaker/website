@@ -98,6 +98,9 @@ h5 18, h6 16, line-height 1.3.
 a photo) italic with `<span><i>...</i></span>`. One per title, never a whole
 sentence.
 
+**No trailing period on display titles.** Hero titles, statement lines and CTA
+band titles end without a full stop, even when they read as a sentence.
+
 **Eyebrows and kickers.** The standard label is Mulish **12px, 700, uppercase,
 `letter-spacing: 0.12em`**, teal on light backgrounds and mint on photos. Join
 multiple items with ` · `. Use it for hero eyebrows, CTA band eyebrows, tags and

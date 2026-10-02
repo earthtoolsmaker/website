@@ -3,7 +3,7 @@ layout: support
 title: Support Our Work
 hero_image: /images/pages/support/hero.jpg
 hero_eyebrow: Support our work
-hero_title: Help us build the <span><i>next&nbsp;tool</i></span>.
+hero_title: Help us build the <span><i>next&nbsp;tool</i></span>
 hero_description: Many of our tools are free to use, built for the people protecting wild places. None of them get built without support.
 hero_button_primary: Talk to us
 hero_button_primary_link: /contact/
