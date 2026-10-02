@@ -343,7 +343,11 @@ Intro → cards → CTA.
 
 **Resource footer** (tools, demos): Font Awesome icons (`fa-circle-info`,
 `fa-github`, `fa-book`, `fa-arrow-up-right-from-square`), links joined by
-` · `, thin top border.
+` · `, thin `--light-gray` top border.
+
+**Dividers.** Hairlines between sections, inside cards and above footers
+(including `hr`) are 1px `--light-gray`, as on About. Sand `--border-color`
+is for the header hairline and diagram strokes only.
 
 ---
 

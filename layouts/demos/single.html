@@ -67,11 +67,11 @@
     {{ with .Params.github_repo }}{{ $resources = $resources | append (dict "icon" "fa-brands fa-github" "label" "Source code" "url" .) }}{{ end }}
     {{ with .Params.hf_space_code }}{{ $resources = $resources | append (dict "icon" "fa-solid fa-arrow-up-right-from-square" "label" "Hosted on Hugging Face" "url" .) }}{{ end }}
     {{ if $resources }}
-    <div class="space-resources" style="margin-top:48px;padding-top:24px;border-top:1px solid var(--border-color);text-align:center;">
+    <div class="space-resources" style="margin-top:48px;padding-top:24px;border-top:1px solid var(--light-gray);text-align:center;">
       <div style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-alt-color);margin-bottom:14px;">Resources</div>
       <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 18px;">
         {{ range $i, $r := $resources }}
-        {{ if gt $i 0 }}<span aria-hidden="true" style="color:var(--border-color);">·</span>{{ end }}
+        {{ if gt $i 0 }}<span aria-hidden="true" style="color:var(--light-gray);">·</span>{{ end }}
         <a class="link-no-decoration" target="_blank" rel="noopener" href="{{ $r.url }}" style="display:inline-flex;align-items:center;gap:0.45em;font-size:15px;color:var(--text-alt-color);">
           <i class="{{ $r.icon }}"></i>{{ $r.label }}
         </a>
