@@ -41,13 +41,13 @@
   <div class="space-content">
     {{ $manual_steps := .Params.manual_steps }}
     {{ if .Params.manual_steps }}
+    {{/* Same path language as About's "How We Work": teal line, ring markers */}}
     <div class="space-content__manual">
-      <b class="space-content__manual-title">Manual</b>
+      <h2 class="space-content__manual-title">How to use it</h2>
       <ol class="space-manual__list">
-        {{ range $index, $step := $manual_steps }}
+        {{ range $step := $manual_steps }}
           <li class="space-manual__item">
-            <span class="space-manual__number" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span>
-            <h4 class="space-manual__step-title">{{ $step.step_name }}</h4>
+            <h3 class="space-manual__step-title">{{ $step.step_name }}</h3>
             <p class="space-manual__step-description">{{ $step.description }}</p>
           </li>
         {{ end }}

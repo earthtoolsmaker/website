@@ -334,6 +334,10 @@ partners.
 **Demo page**
 Centered title and summary → steps → embedded demo → content → resource footer.
 
+**Step sequences** (demo steps, About "How We Work", Contact): a mint line with
+teal ring markers, titles in Mulish 18px/700, no step numbers. Horizontal with
+one column per step, vertical below `$tablet`.
+
 **Post page**
 Tag kicker → title → description → `date · author · N min read` → cover →
 "On this page" (2+ headings) → body → share, prev/next → 2 related cards.
