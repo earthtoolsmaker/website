@@ -112,44 +112,7 @@
   color: var(--text-color);
 }
 
-.contact-channels {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 16px;
-  margin-top: 40px;
-}
-
-.contact-channels__item {
-  display: inline-flex;
-  align-items: center;
-}
-
-.page__content a.contact-channels__link:not(.button) {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 15px;
-  font-weight: 400;
-  color: var(--heading-font-color);
-  border-bottom: none;
-  text-decoration: none;
-
-  i,
-  img {
-    font-size: 20px;
-    width: 22px;
-    text-align: center;
-  }
-
-  &:hover {
-    color: var(--secondary-color);
-  }
-}
-
-/* Custom tooltip on the social channel links (contact page + footer), styled like the cards */
-.contact-channels__link[data-tooltip],
+/* Custom tooltip on the footer social links, styled like the cards */
 .social__link[data-tooltip] {
 
   &::before,
