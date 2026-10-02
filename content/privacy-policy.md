@@ -2,7 +2,7 @@
 title: Privacy Policy
 hero_image: /images/pages/privacy/hero.jpg
 hero_eyebrow: Privacy
-hero_title: Privacy <span><i>policy</i></span>.
+hero_title: Privacy <span><i>policy</i></span>
 hero_description: No analytics, no tracking cookies, no ads. Here is the little data that does move, and where it goes.
 ---
 
