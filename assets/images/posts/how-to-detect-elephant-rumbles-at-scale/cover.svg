@@ -1,6 +1,6 @@
 <svg viewBox="0 0 1500 1050" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f3"/><stop offset="100%" stop-color="#f1e9e1"/></linearGradient>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#e3f0ee"/></linearGradient>
   <linearGradient id="spectro" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#dde1e3"/><stop offset="100%" stop-color="#9aa3a8"/></linearGradient>
   <pattern id="specnoise" width="6" height="13" patternUnits="userSpaceOnUse"><line x1="1.5" y1="0" x2="1.5" y2="13" stroke="#6f777c" stroke-width="1.6" opacity="0.4"/><line x1="4" y1="0" x2="4" y2="13" stroke="#8b9398" stroke-width="1" opacity="0.26"/></pattern>
   <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="9" stdDeviation="18" flood-color="#1c2b28" flood-opacity="0.13"/></filter>
@@ -37,7 +37,7 @@
 <text class="sub" x="120" y="334">Finding elephant calls in terabytes of audio</text>
 
 <!-- elephant in a soft medallion -->
-<g filter="url(#soft)"><circle cx="360" cy="700" r="220" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g>
+<g filter="url(#soft)"><circle cx="360" cy="700" r="220" fill="#ffffff" stroke="#e1e4e9" stroke-width="3"/></g>
 <g transform="translate(322,712) scale(3.6)"><use href="#elephant"/></g>
 
 <!-- rumble waves emanating from the trunk toward the spectrogram -->

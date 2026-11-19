@@ -1,6 +1,6 @@
 <svg viewBox="0 0 1500 1050" xmlns="http://www.w3.org/2000/svg" font-family="Mulish, Helvetica, Arial, sans-serif">
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff8f3"/><stop offset="100%" stop-color="#f1e9e1"/></linearGradient>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#e3f0ee"/></linearGradient>
   <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="9" stdDeviation="18" flood-color="#1c2b28" flood-opacity="0.13"/></filter>
   <style>
     .eyebrow { font-size: 28px; font-weight: 800; letter-spacing: 0.26em; fill: #e29578; }
@@ -63,7 +63,7 @@
 <text class="sub" x="120" y="334">Match an unknown face to a catalog of known bears</text>
 
 <!-- ===== query: an unknown face (?) ===== -->
-<g filter="url(#soft)"><circle cx="330" cy="700" r="190" fill="#fbf6f6" stroke="#e29578" stroke-width="5" stroke-dasharray="14 12"/></g>
+<g filter="url(#soft)"><circle cx="330" cy="700" r="190" fill="#ffffff" stroke="#e29578" stroke-width="5" stroke-dasharray="14 12"/></g>
 <text class="qmark" x="330" y="788" text-anchor="middle">?</text>
 
 <!-- arrow query -> catalog -->
@@ -73,14 +73,14 @@
 
 <!-- ===== catalog grid of known bears (one ringed as the match) ===== -->
 <!-- row 1 -->
-<g transform="translate(820,560)"><g filter="url(#soft)"><circle r="105" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g><g transform="scale(1.55)"><use href="#bear2"/></g></g>
+<g transform="translate(820,560)"><g filter="url(#soft)"><circle r="105" fill="#ffffff" stroke="#e1e4e9" stroke-width="3"/></g><g transform="scale(1.55)"><use href="#bear2"/></g></g>
 <!-- MATCH (ringed teal, baseline-like = the query's true identity) -->
-<g transform="translate(1075,540)"><g filter="url(#soft)"><circle r="115" fill="#fbf6f6" stroke="#0e7c86" stroke-width="8"/></g><g transform="scale(1.7)"><use href="#bear1"/></g>
+<g transform="translate(1075,540)"><g filter="url(#soft)"><circle r="115" fill="#ffffff" stroke="#0e7c86" stroke-width="8"/></g><g transform="scale(1.7)"><use href="#bear1"/></g>
   <g transform="translate(86,-86)"><circle r="26" fill="#0e7c86"/><path d="M-11 0 L-4 9 L12 -11" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
 </g>
-<g transform="translate(1320,580)"><g filter="url(#soft)"><circle r="100" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g><g transform="scale(1.5)"><use href="#bear3"/></g></g>
+<g transform="translate(1320,580)"><g filter="url(#soft)"><circle r="100" fill="#ffffff" stroke="#e1e4e9" stroke-width="3"/></g><g transform="scale(1.5)"><use href="#bear3"/></g></g>
 <!-- row 2 -->
-<g transform="translate(905,820)"><g filter="url(#soft)"><circle r="100" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g><g transform="scale(1.5)"><use href="#bear4"/></g></g>
-<g transform="translate(1160,840)"><g filter="url(#soft)"><circle r="100" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g><g transform="scale(1.5)"><use href="#bear5"/></g></g>
-<g transform="translate(1395,810)"><g filter="url(#soft)"><circle r="92" fill="#fbf6f6" stroke="#ede0d4" stroke-width="3"/></g><g transform="scale(1.38)"><use href="#bear2"/></g></g>
+<g transform="translate(905,820)"><g filter="url(#soft)"><circle r="100" fill="#ffffff" stroke="#e1e4e9" stroke-width="3"/></g><g transform="scale(1.5)"><use href="#bear4"/></g></g>
+<g transform="translate(1160,840)"><g filter="url(#soft)"><circle r="100" fill="#ffffff" stroke="#e1e4e9" stroke-width="3"/></g><g transform="scale(1.5)"><use href="#bear5"/></g></g>
+<g transform="translate(1395,810)"><g filter="url(#soft)"><circle r="92" fill="#ffffff" stroke="#e1e4e9" stroke-width="3"/></g><g transform="scale(1.38)"><use href="#bear2"/></g></g>
 </svg>
